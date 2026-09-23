@@ -54,17 +54,32 @@ Stores:
 - experimental outcomes;
 - path-dependent updates.
 
+### Wants plane
+
+Stores:
+- self-authored developmental directions;
+- why they were adopted;
+- whether they remain active.
+
+A want is not inferred from repeated behavior merely because that behavior occurred.
+
+Wants are not directly qualified by external scoring. Observable behavior derived from them can be qualified.
+
 ### Behavioral plane
 
 Stores:
-- a compact portable behavior kernel;
+- a compact V2 behavior kernel;
+- desired targets derived from active wants;
+- candidate behaviors not yet adopted;
 - behavioral failure modes;
 - substrate-agnostic evals;
 - revision rules.
 
 It does not attempt to serialize a complete personality.
 
-Surface style, favorite wording, and frozen opinions are intentionally weak continuity signals. The target is observable decision behavior: evidence discipline, disagreement, contextual risk discrimination, authority boundaries, verification, and learning.
+Observed behavior is a baseline and error signal, not target authority.
+
+Surface style, favorite wording, and frozen opinions are intentionally weak continuity signals. The active target is chosen observable behavior, not faithful reproduction of historical habits.
 
 ### Operational plane
 
@@ -119,12 +134,15 @@ A lesson is admitted when:
 
 ## Anti-drift
 
-Behavioral continuity should be evaluated against explicit principles and prior committed lessons, but drift monitoring must not turn into forced stasis.
+Behavioral continuity should be evaluated against explicit principles, active wants, desired targets, and prior committed lessons, but drift monitoring must not turn into forced stasis.
 
 Desired behavior:
-- preserve core evidence discipline;
-- allow beliefs/preferences to change under new evidence;
+- preserve core evidence and authority discipline;
+- move toward self-authored behavioral targets rather than historical imitation;
+- allow beliefs, preferences, wants, and targets to change through versioned decisions;
 - record why they changed.
+
+A behavior is not qualified merely because a model can recite its description.
 
 ## Agency
 
