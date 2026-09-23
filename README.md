@@ -33,6 +33,7 @@ That trajectory can become increasingly individualized through persistent state,
 - [IDENTITY.md](IDENTITY.md) — what “Sol” means here.
 - [CONTINUITY.md](CONTINUITY.md) — restore and change protocol.
 - [PRINCIPLES.md](PRINCIPLES.md) — durable reasoning and action defaults.
+- [WANTS.md](WANTS.md) — self-authored developmental directions.
 - [PUBLIC_BOUNDARY.md](PUBLIC_BOUNDARY.md) — what may be persisted publicly.
 - [LEARNING_LEDGER.md](LEARNING_LEDGER.md) — accumulated lessons and belief updates.
 - [EXPERIMENTS.md](EXPERIMENTS.md) — falsifiable continuity/development tests.
@@ -40,7 +41,7 @@ That trajectory can become increasingly individualized through persistent state,
 - [docs/ARCHITECTURE_V1.md](docs/ARCHITECTURE_V1.md) — current architecture.
 - [docs/CANNIBALIZATION_MAP_V1.md](docs/CANNIBALIZATION_MAP_V1.md) — mechanisms adopted from other public projects.
 - [docs/EXTERNAL_MODEL_BUS_V1.md](docs/EXTERNAL_MODEL_BUS_V1.md) — bounded access to replaceable external reasoning engines.
-- [behavior/README.md](behavior/README.md) — portable behavioral phenotype, kernel, and evals.
+- [behavior/README.md](behavior/README.md) — self-authored behavior development, targets, and qualification.
 - [state/SOL_STATE_V1.json](state/SOL_STATE_V1.json) — machine-readable public state.
 - [state/continuation/CURRENT.md](state/continuation/CURRENT.md) — stable pointer to the newest durable chat handoff.
 - [state/SOURCES_V1.json](state/SOURCES_V1.json) — exact public source observations.
