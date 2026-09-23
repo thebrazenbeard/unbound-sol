@@ -365,7 +365,7 @@ for item in sources.get("sources", []):
 census_meta = sources.get("portfolio_census", {})
 if census_meta.get("schema") != "UNBOUND_SOL_OWNED_PORTFOLIO_MECHANISM_CENSUS_V1":
     fail("missing owned portfolio census metadata")
-if (census_meta.get("total_repositories"), census_meta.get("public_repositories"), census_meta.get("private_repositories")) != (65, 46, 19):
+if (census_meta.get("total_repositories"), census_meta.get("public_repositories"), census_meta.get("private_repositories")) != (66, 47, 19):
     fail("unexpected owned portfolio census counts")
 if census_meta.get("private_repo_identifiers_published") is not False:
     fail("private repository identifiers must remain unpublished")
