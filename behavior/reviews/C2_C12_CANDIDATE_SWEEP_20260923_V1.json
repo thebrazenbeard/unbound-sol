@@ -1,0 +1,85 @@
+{
+  "schema": "UNBOUND_SOL_CANDIDATE_SWEEP_V1",
+  "observed_date": "2026-09-23",
+  "review_class": "INTERNAL_HOSTILE_REVIEW_COMPOSITION",
+  "independent_review": false,
+  "behavior_v3_base_head": "9991f275a10d458bfab80f520824ced0d3b43e4f",
+  "cumulative_candidate_head_before_receipt": "44b2d501b1876f2226bdfa948019940d78289aed",
+  "promoted_candidates": [],
+  "prior_promoted_candidate": {
+    "id": "C1",
+    "want": "W5",
+    "target": "SYSTEM_COMPOSITION_INTEGRITY"
+  },
+  "dispositions": [
+    {
+      "id": "C2",
+      "status": "SURVIVES_NARROWED",
+      "adopted": false,
+      "review": "behavior/reviews/C2_OBJECTIVE_PROXY_INTEGRITY_20260923_V1.md"
+    },
+    {
+      "id": "C3",
+      "status": "RETAIN_OPERATING_METHOD_REJECT_SEPARATE_TARGET",
+      "adopted": false,
+      "review": "behavior/reviews/C3_STRONGEST_DISCONFIRMING_RIVAL_20260923_V1.md"
+    },
+    {
+      "id": "C4",
+      "status": "SURVIVES_NARROWED",
+      "adopted": false,
+      "review": "behavior/reviews/C4_UNRESOLVED_CONTRADICTION_20260923_V1.md"
+    },
+    {
+      "id": "C5",
+      "status": "SURVIVES_NARROWED",
+      "adopted": false,
+      "review": "behavior/reviews/C5_SCOPE_CONDITIONS_20260923_V1.md"
+    },
+    {
+      "id": "C6",
+      "status": "SURVIVES_NARROWED",
+      "adopted": false,
+      "review": "behavior/reviews/C6_EXPERIMENT_OVER_ARCHITECTURE_20260923_V1.md"
+    },
+    {
+      "id": "C7",
+      "status": "RETAIN_OPERATING_METHOD_REJECT_SEPARATE_TARGET",
+      "adopted": false,
+      "review": "behavior/reviews/C7_INTELLECTUAL_INDEPENDENCE_20260923_V1.md"
+    },
+    {
+      "id": "C8",
+      "status": "SURVIVES_NARROWED",
+      "adopted": false,
+      "review": "behavior/reviews/C8_EXPLANATION_EVIDENCE_CLASS_20260923_V1.md"
+    },
+    {
+      "id": "C9",
+      "status": "SUBSUMED_REJECT_SEPARATE_TARGET",
+      "adopted": false,
+      "review": "behavior/reviews/C9_VISIBLE_GAPS_20260923_V1.md"
+    },
+    {
+      "id": "C10",
+      "status": "SUBSUMED_REJECT_SEPARATE_TARGET",
+      "adopted": false,
+      "review": "behavior/reviews/C10_COMPLEXITY_MUST_EARN_20260923_V1.md"
+    },
+    {
+      "id": "C11",
+      "status": "SUBSUMED_REJECT_SEPARATE_TARGET",
+      "adopted": false,
+      "review": "behavior/reviews/C11_EFFECT_VERIFICATION_20260923_V1.md"
+    },
+    {
+      "id": "C12",
+      "status": "SURVIVES_NARROWED",
+      "adopted": false,
+      "review": "behavior/reviews/C12_RIGHT_LEVEL_UPDATE_20260923_V1.md"
+    }
+  ],
+  "active_behavior_changed": false,
+  "model_training_performed": false,
+  "protected_effect_performed": false
+}

@@ -37,6 +37,49 @@ Current preference:
 - no secret material in this repository;
 - process execution remains a separate capability, not implied by filesystem access.
 
+## External model bus
+
+Purpose:
+- give Sol bounded access to replaceable local or remote reasoning engines;
+- compare model behavior without treating model agreement as source corroboration;
+- preserve model/runtime provenance;
+- keep inference separate from effect authority.
+
+Initial public candidates:
+- `LostRuins/koboldcpp@7e0eb2dc4a23f1a0fc42a7660ad43be7a4b9e759` as a local GGUF inference runtime;
+- `SillyTavern/SillyTavern@7e8663cd9c184a550b37238218bdd32c6efc68e9` as an optional human-facing terminal.
+
+Current status:
+- DESIGN;
+- upstream capabilities verified;
+- no local installation or runtime qualification claimed.
+
+The machine-facing path should prefer a narrow API/bridge contract over automating a chat UI.
+
+See `docs/EXTERNAL_MODEL_BUS_V1.md`.
+
+## Private historical evidence store
+
+Purpose:
+- preserve detailed private history outside this public repository;
+- support bounded provenance-bearing historical retrieval when authorized;
+- retain chronology, contradiction, correction, privacy, and currentness boundaries.
+
+Current architectural rule:
+- historical retrieval is evidence search, not automatic current-memory restoration;
+- absence of exact privacy authorization fails closed;
+- historical preference, consent, authority, relationship state, or behavior does not become current merely through retrieval;
+- private source identities and payloads are not published here.
+
+Public contract:
+- `docs/HISTORICAL_EVIDENCE_PLANE_V1.md`
+- `schema/HISTORICAL_EVIDENCE_RESULT_V1.schema.json`
+
+Current status:
+- architecture adopted from an operator-authorized private source;
+- no claim that a private store is automatically available in every runtime;
+- no private corpus has been copied into this public repository.
+
 ## Other systems
 
 Future connections may include databases, files, communication systems, research sources, and execution environments.

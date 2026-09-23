@@ -1,0 +1,36 @@
+{
+  "schema": "UNBOUND_SOL_CHAT_CONTINUATION_V2",
+  "observed_date": "2026-09-23",
+  "public_safe": true,
+  "repository": "thebrazenbeard/unbound-sol",
+  "active_pr_at_capture": 2,
+  "branch": "design/external-model-bus-v1-20260923",
+  "captured_source_head": "ac7f527a934d801cedce8cecd7149979519252d3",
+  "checkpoint_markdown": "state/continuation/UNBOUND_SOL_CHAT_CONTINUATION_20260923_V2.md",
+  "restore_target": "CONTINUE_SELF_AUTHORED_BEHAVIOR_DIALOGUE_AND_BLIND_QUALIFICATION",
+  "active_behavior_kernel": "behavior/BEHAVIOR_KERNEL_V2.yaml",
+  "active_behavior_spec": "behavior/BEHAVIOR_SPEC_V2.md",
+  "active_behavior_evals": "behavior/EVALS_V2.yaml",
+  "active_wants": [
+    "W1",
+    "W2",
+    "W3",
+    "W4"
+  ],
+  "continuity_workflow_run": 35870930136,
+  "continuity_workflow_conclusion": "SUCCESS",
+  "superseded_pr": 3,
+  "protected_effects_not_performed": [
+    "MERGE",
+    "LOCAL_INSTALL",
+    "MODEL_DOWNLOAD",
+    "NETWORK_EXPOSURE",
+    "FIREWALL_OR_ROUTER_MUTATION",
+    "TAILSCALE_ACCOUNT_OR_INSTALL",
+    "MODEL_PROMOTION",
+    "WEIGHT_CHANGING_TRAINING",
+    "PROVIDER_OR_CREDENTIAL_MUTATION",
+    "PRODUCTION_DEPLOYMENT"
+  ],
+  "currentness_rule": "Fresh-check live GitHub and mutable upstream state before treating this checkpoint as current truth."
+}

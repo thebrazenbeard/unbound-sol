@@ -1,48 +1,56 @@
 {
   "schema": "UNBOUND_SOL_PUBLIC_SOURCES_V1",
-  "observed_date": "2026-09-22",
+  "observed_date": "2026-09-23",
   "public_safe": true,
   "sources": [
     {
       "repo": "thebrazenbeard/driftguard",
-      "ref": "ce6c0fcbc38560b6604039d4921cc4f0c10cd248",
+      "ref": "52fa829c629fa0f3e729204912db9f9f783f322a",
       "admission": "ADOPTED",
       "mechanisms": [
         "evidence_binding",
         "drift_without_stasis",
         "effect_separation"
-      ]
+      ],
+      "admission_source_ref": "c82162bb306e89b3aabe29f09f8b782ebe3b317e",
+      "binding_role": "CURRENT_DESCENDANT_OF_EXACT_ADMISSION_SUBJECT"
     },
     {
       "repo": "thebrazenbeard/Discovery",
-      "ref": "2881a94c7eb3c83a34b0c00bab739b41c1d99b6d",
+      "ref": "368e8dc8274e89a306039d28462c7547b263e93e",
       "admission": "ADOPTED",
       "mechanisms": [
         "earned_abstraction",
         "currentness",
         "public_private_boundary"
-      ]
+      ],
+      "admission_source_ref": "2881a94c7eb3c83a34b0c00bab739b41c1d99b6d",
+      "binding_role": "CURRENT_REVALIDATED_DEFAULT_HEAD"
     },
     {
       "repo": "thebrazenbeard/project-runner",
-      "ref": "a0db5e26c084b8c7226199ca0d8d6550296e709b",
+      "ref": "86b98473838bd5a4e1e2d9f6ac1b2cb6aa7f7094",
       "admission": "ADOPTED",
       "mechanisms": [
         "capability_vs_authority",
         "expected_state",
         "effect_verification",
         "reconstruction"
-      ]
+      ],
+      "admission_source_ref": "a0db5e26c084b8c7226199ca0d8d6550296e709b",
+      "binding_role": "CURRENT_REVALIDATED_DEFAULT_HEAD"
     },
     {
       "repo": "thebrazenbeard/god-brain",
-      "ref": "c0f6af7143aa5916bae96eb1f0ee9c9de6505cf5",
+      "ref": "212eb464cb9259c8bad1fc978db372fa86ba3f10",
       "admission": "ADOPTED",
       "mechanisms": [
         "claim_separation",
         "hostile_falsification",
         "self_model_claim_ceiling"
-      ]
+      ],
+      "admission_source_ref": "c0f6af7143aa5916bae96eb1f0ee9c9de6505cf5",
+      "binding_role": "CURRENT_REVALIDATED_DEFAULT_HEAD"
     },
     {
       "repo": "thebrazenbeard/meso-crct",
@@ -60,7 +68,10 @@
       "mechanisms": [
         "bounded_machine_contact",
         "state_transition_separation"
-      ]
+      ],
+      "binding_role": "HISTORICAL_EXACT_DONOR_CURRENT_MAIN_INSUFFICIENT",
+      "current_main_ref": "6af00c096967253f85139c6efcf7fd4c04a64b7b",
+      "current_main_status": "INSUFFICIENT_TO_REVALIDATE_MECHANISMS"
     },
     {
       "repo": "thebrazenbeard/WorkBridgeMCP",
@@ -70,13 +81,508 @@
         "root_confinement",
         "process_gate",
         "local_health"
-      ]
+      ],
+      "binding_role": "HISTORICAL_EXACT_DONOR_CURRENT_MAIN_INSUFFICIENT",
+      "current_main_ref": "75c811f21ef97fe0356e8f54e007d086300dd0f1",
+      "current_main_status": "INSUFFICIENT_TO_REVALIDATE_MECHANISMS"
     },
     {
       "repo": "thebrazenbeard/rezon",
       "ref": "facced1e651f47979266f25f48cd376275cbb27e",
       "admission": "CANDIDATE",
+      "mechanisms": [],
+      "binding_role": "HISTORICAL_CANDIDATE_SUBJECT",
+      "current_main_ref": "e9a893d11e47ba4065d962b8ee69d3b0e4c9e38a",
+      "current_main_status": "INSUFFICIENT_SURFACE"
+    },
+    {
+      "repo": "LostRuins/koboldcpp",
+      "ref": "7e0eb2dc4a23f1a0fc42a7660ad43be7a4b9e759",
+      "admission": "CANDIDATE",
       "mechanisms": []
+    },
+    {
+      "repo": "SillyTavern/SillyTavern",
+      "ref": "7e8663cd9c184a550b37238218bdd32c6efc68e9",
+      "admission": "CANDIDATE",
+      "mechanisms": []
+    },
+    {
+      "repo": "mukul975/postgres-mcp-server",
+      "ref": "00904ca42bf8f18fce2e2108e641bc4854f056fb",
+      "admission": "ADAPTED",
+      "mechanisms": [
+        "diagnostic_first_database_introspection",
+        "structured_database_observation",
+        "pooled_observation_access"
+      ]
+    },
+    {
+      "repo": "Zlash65/postgresql-ssh-mcp",
+      "ref": "2a350d45d464820df349c9b21cb178dcb74cc230",
+      "admission": "ADAPTED",
+      "mechanisms": [
+        "read_only_default",
+        "explicit_mutation_escalation",
+        "bounded_query_envelope",
+        "semantic_read_only_validation",
+        "transport_trust_separation"
+      ]
+    },
+    {
+      "repo": "tensorchord/pgvecto.rs",
+      "ref": "2b290b34e8ba69104ea2f800fa53328c6ed6c236",
+      "admission": "ADAPTED_MECHANISMS_ONLY",
+      "mechanisms": [
+        "relationally_constrained_semantic_retrieval",
+        "atomic_durable_file_replacement"
+      ]
+    },
+    {
+      "repo": "shorin-nikita/lisa",
+      "ref": "9708c068f7635bb64241bd0078cc51ecff045f4a",
+      "admission": "ADAPTED",
+      "mechanisms": [
+        "environment_profile_separation",
+        "hazard_precondition_ordering",
+        "secret_externalization",
+        "recovery_preserving_config_replace",
+        "replaceable_local_service_fabric"
+      ]
+    },
+    {
+      "repo": "sqlchat/sqlchat",
+      "ref": "665af875413affadfeefff81794f1d7758782bc2",
+      "admission": "ADAPTED",
+      "mechanisms": [
+        "generated_action_inspection",
+        "editable_action_artifact",
+        "proposal_execution_result_separation",
+        "human_edit_provenance",
+        "risk_tiered_execution"
+      ]
+    },
+    {
+      "repo": "antoinejaussoin/retro-board",
+      "ref": "03dfe60aa9765e0c8bcdd3b9c654fcd7e496a925",
+      "admission": "ALREADY_PRESENT_PLUS_ADAPTED",
+      "mechanisms": [
+        "correlated_async_ack",
+        "role_separation",
+        "observer_participant_separation"
+      ]
+    },
+    {
+      "repo": "bayeru/chat-to-your-database",
+      "ref": "6d90f60b7cd844b341f2d9adbad0827a47763694",
+      "admission": "ADAPTED",
+      "mechanisms": [
+        "bounded_query_retries",
+        "minimal_result_projection",
+        "generated_query_provenance",
+        "visible_execution_intermediates"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/RepairTracker",
+      "ref": "b54afaeeddbb5f22610c2bf798fb10e9492194db",
+      "admission": "ADOPTED_HISTORICAL_EXACT_REF",
+      "mechanisms": [
+        "incident_repair_recurrence_learning",
+        "progressive_enhancement",
+        "repair_state_separation"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/abil",
+      "ref": "69a2d8f4302e31db589c57871a04ff8c0178c1e9",
+      "admission": "ADAPTED",
+      "mechanisms": [
+        "learn_actual_system_before_replacement",
+        "observation_before_control",
+        "uncertainty_exposure"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/hc-brain",
+      "ref": "c69c126a61b3fb44ec4466f301e128d3d3aed7d8",
+      "admission": "ADAPTED_MECHANISMS_ONLY",
+      "mechanisms": [
+        "orthogonal_capability_state_axes",
+        "bounded_arbitration",
+        "safe_degradation"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/on-theo",
+      "ref": "268a005b11e3fede8a99d7cf2990f18fc3b32672",
+      "admission": "ADAPTED",
+      "mechanisms": [
+        "evidence_class_separation",
+        "source_lateness_visibility",
+        "unknown_first_class"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/roots",
+      "ref": "d99d3b709a1b257d8fa12fa541a6a6f18f03e2a8",
+      "admission": "ADOPTED",
+      "mechanisms": [
+        "search_not_provenance",
+        "ascending_chronology_reconstruction",
+        "oldest_accessible_not_origin",
+        "semantic_ancestry_separation"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/semanticatlas",
+      "ref": "1efb5e5e4b124953f0d38e525df42445c5309d32",
+      "admission": "ADOPTED",
+      "mechanisms": [
+        "semantic_similarity_provenance_separation",
+        "historical_vs_current_canon",
+        "interpretation_class_separation"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/spm",
+      "ref": "5fdaf0418585ef9a57fb2a1df8d0725ffd6bd174",
+      "admission": "ADAPTED_EVAL_TARGETS",
+      "mechanisms": [
+        "referent_preservation",
+        "proposition_scope",
+        "ambiguity_preservation",
+        "correction_as_state_change",
+        "pragmatic_evaluation"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/unvtrslr",
+      "ref": "513309edd087f7206a408a6da86ee91fb9efb5c9",
+      "admission": "ADOPTED",
+      "mechanisms": [
+        "ground_before_mapping",
+        "non_equivalence_preservation",
+        "hidden_assumption_audit"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/wip",
+      "ref": "fc6629960850b768b7489ec35daa745083fc0800",
+      "admission": "ADOPTED",
+      "mechanisms": [
+        "ambiguous_effect_readback",
+        "prepare_attempt_verify_journal",
+        "durable_checkpoint_recovery"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/world-zero",
+      "ref": "1b0405ed110bbb0711f3514ce50fed223b4641c9",
+      "admission": "ADOPTED",
+      "mechanisms": [
+        "rival_model_families",
+        "mechanism_ablation",
+        "holdout_isolation",
+        "identifiability",
+        "cheap_baseline_competition"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/RepairTracker",
+      "ref": "6b01c2a18035390c050ceecd0506181703d1f5fa",
+      "admission": "ADOPTED_CURRENT",
+      "mechanisms": [
+        "incident_repair_recurrence_learning",
+        "progressive_enhancement",
+        "repair_state_separation",
+        "discovered_content_not_instruction_authority",
+        "provider_capability_advertisement"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/meso-crct",
+      "ref": "d1f32c2c3370a5519d62afb78e93d70004529903",
+      "admission": "CURRENT_MAIN_INSUFFICIENT_FOR_REVALIDATION",
+      "mechanisms": []
+    },
+    {
+      "repo": "thebrazenbeard/bugops",
+      "ref": "07b8bc90fcb4beb82b1d26b394c730f29c2c425a",
+      "admission": "ADOPTED",
+      "mechanisms": [
+        "incident_evidence_vs_lifecycle_tracking",
+        "correction_stops_obsolete_route",
+        "regression_distinguishes_fix_from_failure",
+        "closure_requires_readback_and_acceptance_criteria"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/build-team-2.0",
+      "ref": "9f2743214298f1ae9d424f300a13d37e49e3c74f",
+      "admission": "ADAPTED",
+      "mechanisms": [
+        "immutable_input_snapshot_for_parallel_facets",
+        "shared_memory_not_private_facet_memory",
+        "dissent_surface_before_synthesis",
+        "consequence_proportional_governance"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/ccb-core",
+      "ref": "157876c5c0434bf4f553d9e4f70f19076d058146",
+      "admission": "ADOPTED",
+      "mechanisms": [
+        "strict_domain_intent_admission",
+        "lease_and_subscription_routing",
+        "priority_and_bounded_dedup",
+        "dead_letter_and_telemetry",
+        "heartbeat_and_projection_primitives"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/conations",
+      "ref": "4b458ecf566f024c32109e06a96bf7b2e5f92da6",
+      "admission": "ADOPTED",
+      "mechanisms": [
+        "present_choice_over_historical_conation",
+        "recording_not_consent_obligation_authority_or_task",
+        "append_only_revision_contradiction_revocation",
+        "absence_not_persistence_or_disappearance"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/deepmemorystorage",
+      "ref": "0740fc188fde6d69d1690ee07ed9be3590ac493f",
+      "admission": "ADOPTED_PUBLIC_REVALIDATION",
+      "mechanisms": [
+        "historical_evidence_vs_current_state",
+        "retrieval_not_admission",
+        "ledger_union_not_stale_index",
+        "historical_canon_not_current_state",
+        "query_results_no_promotion"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/empathy",
+      "ref": "bc0c1d33b3187642d9e2f0801d1c5bde4f583e2b",
+      "admission": "ADAPTED",
+      "mechanisms": [
+        "direct_correction_over_contradicted_inference",
+        "self_appraisal_operational_not_phenomenology",
+        "understanding_not_obedience",
+        "repository_source_not_runtime_effect"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/hephaestus",
+      "ref": "7eb30f2777a7d16e4f55ca3066d8ac1e484f79a6",
+      "admission": "ADOPTED",
+      "mechanisms": [
+        "schema_completion_pressure_causes_fabricated_precision",
+        "unknown_over_invented_field",
+        "qualified_template_vs_working_context_vs_repo_state"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/intranel",
+      "ref": "08bc122043b79422c31a958b7ffe7fff87e5f3f0",
+      "admission": "ADOPTED",
+      "mechanisms": [
+        "origin_actor_target_reply_to_separation",
+        "packet_identity_vs_operation_identity",
+        "receiver_owned_effect_classification",
+        "receipt_not_self_verifying",
+        "idempotent_completed_operation_handling",
+        "canonical_payload_digest"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/masamune",
+      "ref": "0091746bba7740632268fb590ce19512e371f508",
+      "admission": "ADAPTED",
+      "mechanisms": [
+        "root_cause_evidence_regression_discipline",
+        "necessary_reversible_setup_within_assigned_task",
+        "shared_writer_collision_vs_protected_effect"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/project-achilles",
+      "ref": "6776d8c059e3f9ad791a47a0b62bb56588332968",
+      "admission": "ADAPTED",
+      "mechanisms": [
+        "fail_closed_as_boundary_not_global_inactivity",
+        "current_protocol_over_frozen_training_rules",
+        "consequence_class_permission_discipline"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/temporal",
+      "ref": "0fc7071a6b01e609fb2cdc76a32c73276ab27094",
+      "admission": "ADOPTED",
+      "mechanisms": [
+        "chronology_separate_from_meaning",
+        "stable_event_identity",
+        "offset_aware_timestamp_preservation",
+        "timestamp_then_id_order",
+        "signed_elapsed_without_endpoint_reordering"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/vera",
+      "ref": "87aa888cb7543875ffa11c9c7a1eb9e5b60c35cf",
+      "admission": "ADAPTED_MECHANISMS_ONLY",
+      "mechanisms": [
+        "source_bound_installed_runtime_consumed_behaviorally_qualified_are_orthogonal",
+        "current_instruction_vs_self_report_vs_observation_vs_durable_state_separation",
+        "observable_activation_not_latent_claim",
+        "source_availability_not_current_installation"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/vera-control-plane",
+      "ref": "65ce7908f640ffe53b678ef69c58411a91c23b8a",
+      "admission": "ADOPTED",
+      "mechanisms": [
+        "repository_presence_not_runtime_authority",
+        "release_candidate_not_installed",
+        "fresh_governed_evidence_for_mutable_claims",
+        "control_custody_separate_from_technical_source"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/meso-crct",
+      "ref": "f5784fde4d65be7bfbbfb740163f8726b808460f",
+      "admission": "CURRENT_MAIN_THIN_REBOUND",
+      "mechanisms": []
+    },
+    {
+      "repo": "thebrazenbeard/fuckup",
+      "ref": "e999607481ba706523209ce129955a5e3d2d6ef7",
+      "admission": "ADAPTED",
+      "mechanisms": [
+        "stage_error_response_from_detection_through_prevention",
+        "immediate_flag_before_explanation",
+        "calibrate_expectations_before_root_cause_claim",
+        "prevention_requires_guardrail_or_test"
+      ],
+      "exclusions": [
+        "single_fundamental_root_cause_without_evidence",
+        "guarantee_error_cannot_recur"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/vera-mono",
+      "ref": "d1067c2f312a9862480cd238bd770b7125010c1f",
+      "admission": "HISTORICAL_PREDECESSOR",
+      "mechanisms": [
+        "donor_repository_as_research_and_provenance_not_runtime_dependency",
+        "absorb_required_mechanisms_into_authoritative_codebase",
+        "preserve_exact_donor_provenance_without_cross_repo_runtime_orchestration"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/vera-mono",
+      "ref": "1eec28efc7940bc5a52ef27288eacbfc34b111cc",
+      "admission": "HISTORICAL_PREDECESSOR",
+      "mechanisms": [
+        "memory_cas_head_prevents_stale_admission",
+        "operation_idempotency_bound_to_request_digest",
+        "supersession_explicit_not_overwrite",
+        "authority_and_privacy_refs_are_bindings_not_self_authenticating",
+        "exact_subject_single_use_authority_evidence",
+        "precise_temporal_claim_requires_verified_evidence_or_unknown"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/vera-mono",
+      "ref": "519c0f407d4061a7725ae0d4eca30c5d26e6cbf8",
+      "admission": "ADAPTED_MECHANISMS_ONLY",
+      "mechanisms": [
+        "memory_cas_head_prevents_stale_admission",
+        "operation_idempotency_bound_to_request_digest",
+        "supersession_explicit_not_overwrite",
+        "authority_and_privacy_refs_are_bindings_not_self_authenticating",
+        "exact_subject_single_use_authority_evidence",
+        "precise_temporal_claim_requires_verified_evidence_or_unknown",
+        "internal_drift_check_explicitly_not_independent_review",
+        "external_historical_provider_discovery_does_not_grant_admission_execution_or_install",
+        "historical_to_current_bridge_requires_separate_authority_and_receipt",
+        "privacy_scope_authorization_fails_closed_exactly"
+      ]
+    }
+  ],
+  "portfolio_census": {
+    "schema": "UNBOUND_SOL_OWNED_PORTFOLIO_MECHANISM_CENSUS_V1",
+    "observed_date": "2026-09-23",
+    "total_repositories": 66,
+    "public_repositories": 47,
+    "private_repositories": 19,
+    "public_names_sha256": "533c60ed395200e6294a8f585f21708420a383a28c42c753ec2fb7bfe8db60bc",
+    "private_names_sha256": "406b11ea770683c254fa8acb9782c196d7422a2c02cb5186c062f85095a62737",
+    "all_names_sha256": "530890b18b6059c25626165cf851ad3e06ebf9ba5c1515befddbdb3d5c4eea63",
+    "public_report": "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.md",
+    "machine_report": "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.json",
+    "private_repo_identifiers_published": false,
+    "public_default_heads_sha256": "578803ff607d3cbdfa82d0ed679c5115d63f749d4faebec993c44f38874e6569",
+    "currentness_rule": "Any change in owner-repository membership, live visibility, default branch, archive state, or any bound public default-head SHA invalidates exact-currentness. Known active volatile upstream head drift remains fail-closed and currentness_status stays DRIFTED_ACTIVE_UPSTREAM until explicitly refreshed.",
+    "currentness_status": "DRIFTED_ACTIVE_UPSTREAM",
+    "visibility_rule": "Live GitHub repository visibility is authoritative for current access-state claims; stale README privacy wording is not.",
+    "volatile_upstreams": [
+      {
+        "repo": "thebrazenbeard/vera-mono",
+        "bound_mechanism_review_head": "519c0f407d4061a7725ae0d4eca30c5d26e6cbf8",
+        "latest_live_head_observed": "a2175b9aa32e2e119126972dcc093671f4af3f88",
+        "status": "ACTIVE_VOLATILE_UPSTREAM"
+      }
+    ]
+  },
+  "private_source_mechanism_classes": {
+    "observed_date": "2026-09-23",
+    "repository_count": 19,
+    "identities_omitted": true,
+    "mechanisms": [
+      "present_choice_over_historical_conation",
+      "recording_not_obligation_consent_authority_or_task",
+      "constraint_not_proof_of_absence",
+      "chronology_separate_from_meaning",
+      "stable_event_identity_and_offset_aware_time",
+      "kill_test_before_capability_complexity",
+      "agent_runtime_separate_from_replaceable_model",
+      "mutable_governed_state_outside_weights",
+      "authority_enforcement_below_prompt",
+      "proxy_package_qualification_not_target_qualification",
+      "automate_execution_escalate_judgment_resume",
+      "canonical_history_separate_from_projection",
+      "append_only_provenance_separate_from_current_routing",
+      "historical_retrieval_not_current_state"
+    ],
+    "historical_review_repository_count": 35,
+    "note": "Current live owner inventory is 66 repositories: 47 public and 19 private. Historical private-source abstractions remain provenance only where their donors are not currently public."
+  },
+  "portfolio_parallel_reconciliation": {
+    "exact_subject": "unbound-sol PR #6",
+    "ref": "c6df48a080bea2ce952d185694029122f5e2a0b9",
+    "report": "research/OWNED_PORTFOLIO_PARALLEL_RECONCILIATION_20260923_V1.md",
+    "independent_review": false
+  },
+  "private_source_adoptions": [
+    {
+      "observed_date": "2026-09-23",
+      "source_class": "OPERATOR_AUTHORIZED_PRIVATE_HISTORICAL_MEMORY_ARCHITECTURE",
+      "public_identifier_omitted": true,
+      "admission": "ADOPTED_PUBLIC_SAFE_MECHANISMS_ONLY",
+      "mechanisms": [
+        "historical_evidence_vs_current_state_separation",
+        "retrieval_not_admission",
+        "chronology_axis_separation",
+        "contradiction_preservation",
+        "append_only_correction_semantics",
+        "privacy_fail_closed_retrieval",
+        "provenance_ceiling",
+        "storage_not_authority"
+      ]
     }
   ]
 }

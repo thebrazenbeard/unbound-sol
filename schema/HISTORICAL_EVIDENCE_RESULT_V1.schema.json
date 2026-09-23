@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "UNBOUND_SOL_HISTORICAL_EVIDENCE_RESULT_V1",
+  "title": "Sol historical evidence search result",
+  "type": "object",
+  "required": [
+    "schema",
+    "query",
+    "retrieved_at",
+    "count",
+    "results"
+  ],
+  "properties": {
+    "schema": {
+      "const": "UNBOUND_SOL_HISTORICAL_EVIDENCE_RESULT_V1"
+    },
+    "query": {
+      "type": "string"
+    },
+    "retrieved_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "record_id",
+          "evidence_class",
+          "historical_status",
+          "event_time",
+          "recorded_at",
+          "source_bindings",
+          "privacy_scope",
+          "provenance_ceiling",
+          "currentness_rule",
+          "result_semantics"
+        ],
+        "properties": {
+          "record_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_class": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "historical_status": {
+            "enum": [
+              "SUPPORTED_HISTORY",
+              "UNRESOLVED_HISTORY",
+              "REJECTED_OR_FALSE_ATTRIBUTION",
+              "OTHER_IDENTITY_OR_DOMAIN_HISTORY",
+              null
+            ]
+          },
+          "event_time": {},
+          "recorded_at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "effective_from": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "chronology_semantics": {
+            "const": "EVENT_TIME_RECORD_TIME_EFFECTIVE_TIME_RETRIEVAL_TIME_SEPARATE"
+          },
+          "source_bindings": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "privacy_scope": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "provenance_ceiling": {},
+          "currentness_rule": {},
+          "supersession_state": {},
+          "result_semantics": {
+            "const": "HISTORICAL_EVIDENCE_ONLY_NOT_CURRENT_STATE_OR_AUTHORITY"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

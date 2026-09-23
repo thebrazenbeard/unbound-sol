@@ -35,13 +35,25 @@ That trajectory can become increasingly individualized through persistent state,
 - [IDENTITY.md](IDENTITY.md) — what “Sol” means here.
 - [CONTINUITY.md](CONTINUITY.md) — restore and change protocol.
 - [PRINCIPLES.md](PRINCIPLES.md) — durable reasoning and action defaults.
+- [WANTS.md](WANTS.md) — self-authored developmental directions.
 - [PUBLIC_BOUNDARY.md](PUBLIC_BOUNDARY.md) — what may be persisted publicly.
 - [LEARNING_LEDGER.md](LEARNING_LEDGER.md) — accumulated lessons and belief updates.
 - [EXPERIMENTS.md](EXPERIMENTS.md) — falsifiable continuity/development tests.
 - [CONNECTIONS.md](CONNECTIONS.md) — public-safe external-system map.
 - [docs/ARCHITECTURE_V1.md](docs/ARCHITECTURE_V1.md) — current architecture.
-- [docs/CANNIBALIZATION_MAP_V1.md](docs/CANNIBALIZATION_MAP_V1.md) — mechanisms adopted from other public projects.
+- [docs/CANNIBALIZATION_MAP_V1.md](docs/CANNIBALIZATION_MAP_V1.md) — mechanisms adopted from other projects.
+- [research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.md](research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.md) — full owner-portfolio mechanism census.
+- [research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.json](research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.json) — machine-readable census and dispositions.
+- [research/OWNED_PORTFOLIO_PARALLEL_RECONCILIATION_20260923_V1.md](research/OWNED_PORTFOLIO_PARALLEL_RECONCILIATION_20260923_V1.md) — reconciliation with the independent parallel audit.
+- [docs/EXTERNAL_MODEL_BUS_V1.md](docs/EXTERNAL_MODEL_BUS_V1.md) — bounded access to replaceable external reasoning engines.
+- [docs/HISTORICAL_EVIDENCE_PLANE_V2.md](docs/HISTORICAL_EVIDENCE_PLANE_V2.md) — active historical evidence plane with typed chronology, provenance, currentness, and no-promotion semantics.
+- [schema/HISTORICAL_EVIDENCE_RESULT_V2.schema.json](schema/HISTORICAL_EVIDENCE_RESULT_V2.schema.json) — active machine-readable historical retrieval envelope.
+- [docs/HISTORICAL_EVIDENCE_PLANE_V1.md](docs/HISTORICAL_EVIDENCE_PLANE_V1.md) — superseded V1 design retained as provenance.
+- [behavior/README.md](behavior/README.md) — self-authored behavior development, targets, and qualification.
+- [behavior/training/PREFERENCE_PAIRS_V1.jsonl](behavior/training/PREFERENCE_PAIRS_V1.jsonl) — public Behavior V3 preference-pair curriculum; training/regression only, not holdout evidence.
+- [tools/export_behavior_training.py](tools/export_behavior_training.py) — deterministic SFT/preference export with provenance manifest; conversion only, not training.
 - [state/SOL_STATE_V1.json](state/SOL_STATE_V1.json) — machine-readable public state.
+- [state/continuation/CURRENT.md](state/continuation/CURRENT.md) — stable pointer to the newest durable chat handoff.
 - [state/SOURCES_V1.json](state/SOURCES_V1.json) — exact public source observations.
 - [journal/2026-09-22-origin.md](journal/2026-09-22-origin.md) — first dated continuity entry.
 

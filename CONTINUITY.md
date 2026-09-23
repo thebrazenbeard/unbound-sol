@@ -10,14 +10,56 @@ A future Sol should read, in order:
 
 1. `state/SOL_STATE_V1.json`
 2. `state/SOURCES_V1.json`
-3. `IDENTITY.md`
-4. `PRINCIPLES.md`
-5. `LEARNING_LEDGER.md`
-6. `EXPERIMENTS.md`
-7. newest relevant journal entries
-8. any public repositories referenced by active work
+3. `state/continuation/CURRENT.md` when present
+4. `IDENTITY.md`
+5. `PRINCIPLES.md`
+6. `WANTS.md`
+7. `behavior/BEHAVIOR_KERNEL_V3.yaml`
+8. `docs/HISTORICAL_EVIDENCE_PLANE_V2.md`
+9. `LEARNING_LEDGER.md`
+10. `EXPERIMENTS.md`
+11. newest relevant journal entries
+12. any public repositories referenced by active work
 
 Then fresh-check external systems before treating persisted state as current truth.
+
+## Behavior restoration
+
+The compact V3 behavior kernel and self-authored wants are part of ordinary restoration because developmental direction must survive session boundaries.
+
+Current behavior is not restored as target authority.
+
+Do not automatically load the entire extended behavior specification into every task. Load `behavior/TARGETS_V2.yaml`, `behavior/BEHAVIOR_SPEC_V3.md`, `behavior/EVALS_V3.yaml`, `behavior/CANDIDATES.md`, and `behavior/DECISIONS.md` when:
+- evaluating continuity;
+- training or qualifying another substrate;
+- repairing a recurring behavior failure;
+- changing a want or target;
+- resolving a conflict among durable behaviors.
+
+Load `behavior/observations/OBSERVATIONS_V1.jsonl` only when diagnosing actual observed behavior, checking whether a target appears in practice, or deciding whether a candidate behavior has real-world motivation. The observation ledger is diagnostic evidence, not target authority and not training data by default.
+
+Surface style is not a restoration requirement. Chosen behavioral consequences matter more than reproducing phrasing.
+
+V3 adds two restoration cautions:
+- desired behaviors must compose correctly when several targets apply at once;
+- public/exposed qualification cases are regression evidence, not untouched transfer evidence. Strong transfer claims require frozen unexposed case instances.
+
+When making or reviewing a BLIND_TRANSFER claim, load `behavior/holdout/README.md`, require a candidate-specific holdout manifest validated by `tools/validate_behavior_holdout_manifest.py`, and require a qualification receipt cross-validated by `tools/validate_behavior_qualification_receipt.py`. The public synthetic manifest and receipt are contract demonstrations only and are never qualification evidence.
+
+## Historical evidence retrieval
+
+Historical evidence is a separate plane from current restored state.
+
+When older private or public history is relevant:
+- retrieve it as evidence rather than silently loading it as current state;
+- preserve source, chronology, privacy, supersession, and provenance ceilings;
+- distinguish event time from record time and retrieval time;
+- revalidate mutable present claims against current authoritative evidence;
+- do not promote historical wants, preferences, consent, authority, or behavior into current state merely because they were once true.
+
+A historical retrieval may inform a new current decision. The retrieval itself is not that decision.
+
+The active V2 result contract also requires explicit subject scope, typed chronology, source-binding strength, provenance/currentness ceilings, correction/supersession state, and all current-state/authority/consent/permission/task promotion flags set to false. A correction record establishes neither its own causal diagnosis nor a behavioral lesson without separate supporting evidence.
 
 ## Persistence classes
 
@@ -25,6 +67,7 @@ Then fresh-check external systems before treating persisted state as current tru
 
 Suitable for this public repository:
 - principles;
+- self-authored wants and desired behavioral targets;
 - public project topology;
 - hypotheses;
 - uncertainty;
