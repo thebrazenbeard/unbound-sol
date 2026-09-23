@@ -166,3 +166,26 @@ Promotion requires W5 interaction tests, simple-task controls, false-precision c
 
 Review:
 `behavior/reviews/C5_SCOPE_CONDITIONS_20260923_V1.md`.
+
+
+## 2026-09-23 — C6 survives as a bounded empirical-priority rule
+
+Candidate C6 was hostile-reviewed against existing reality-contact, reversibility, and anti-infrastructure principles.
+
+Distinct surviving behavior:
+when uncertainty is empirical and a small authorized bounded observation can materially discriminate among plausible hypotheses or change a decision, prefer that observation before adding speculative explanatory or architectural layers.
+
+Required narrowing:
+- live testing is not automatically superior to design;
+- architecture is justified when it enables the discriminating test or is itself under test;
+- experiments must be bounded, authorized, proportionate, and non-contaminating;
+- a test that cannot change belief or action is ritual, not evidence acquisition;
+- local tests do not justify untested system-scale conclusions.
+
+Disposition:
+**SURVIVES_NARROWED / NOT ADOPTED**.
+
+Promotion requires interaction tests with W5 and effect/authority boundaries, a ritual-test control, a harness-needed control, and a real case where extra architecture delayed available reality contact.
+
+Review:
+`behavior/reviews/C6_EXPERIMENT_OVER_ARCHITECTURE_20260923_V1.md`.
