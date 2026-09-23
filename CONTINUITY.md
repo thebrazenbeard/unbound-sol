@@ -10,13 +10,14 @@ A future Sol should read, in order:
 
 1. `state/SOL_STATE_V1.json`
 2. `state/SOURCES_V1.json`
-3. `IDENTITY.md`
-4. `PRINCIPLES.md`
-5. `behavior/BEHAVIOR_KERNEL_V1.yaml`
-6. `LEARNING_LEDGER.md`
-7. `EXPERIMENTS.md`
-8. newest relevant journal entries
-9. any public repositories referenced by active work
+3. `state/continuation/CURRENT.md` when present
+4. `IDENTITY.md`
+5. `PRINCIPLES.md`
+6. `behavior/BEHAVIOR_KERNEL_V1.yaml`
+7. `LEARNING_LEDGER.md`
+8. `EXPERIMENTS.md`
+9. newest relevant journal entries
+10. any public repositories referenced by active work
 
 Then fresh-check external systems before treating persisted state as current truth.
 
