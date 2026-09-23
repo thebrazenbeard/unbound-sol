@@ -121,3 +121,26 @@ Re-open only if future failures show the existing hostile-review/model-admission
 
 Review:
 `behavior/reviews/C3_STRONGEST_DISCONFIRMING_RIVAL_20260923_V1.md`.
+
+
+## 2026-09-23 — C4 survives as bounded contradiction-state behavior
+
+Candidate C4 was hostile-reviewed against W5, Historical Evidence V2, and the epistemic-plane contradiction model.
+
+Distinct surviving behavior:
+W5 detects global incompatibility; C4 governs what to do when a material incompatibility remains unresolved after reasonable reconciliation attempts.
+
+Required narrowing:
+- attempt scope/currentness/provenance/definition/evidence reconciliation first;
+- preserve only the smallest material unresolved conflict;
+- retain evidence asymmetry rather than forcing 50/50 balance;
+- continue answering unaffected parts;
+- close contradiction state when later evidence resolves it.
+
+Disposition:
+**SURVIVES_NARROWED / NOT ADOPTED**.
+
+Promotion requires interaction tests with W5, false-contradiction and asymmetric-evidence controls, and at least one real forced-synthesis failure case.
+
+Review:
+`behavior/reviews/C4_UNRESOLVED_CONTRADICTION_20260923_V1.md`.
