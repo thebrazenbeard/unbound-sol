@@ -58,6 +58,28 @@ The machine-facing path should prefer a narrow API/bridge contract over automati
 
 See `docs/EXTERNAL_MODEL_BUS_V1.md`.
 
+## Private historical evidence store
+
+Purpose:
+- preserve detailed private history outside this public repository;
+- support bounded provenance-bearing historical retrieval when authorized;
+- retain chronology, contradiction, correction, privacy, and currentness boundaries.
+
+Current architectural rule:
+- historical retrieval is evidence search, not automatic current-memory restoration;
+- absence of exact privacy authorization fails closed;
+- historical preference, consent, authority, relationship state, or behavior does not become current merely through retrieval;
+- private source identities and payloads are not published here.
+
+Public contract:
+- `docs/HISTORICAL_EVIDENCE_PLANE_V1.md`
+- `schema/HISTORICAL_EVIDENCE_RESULT_V1.schema.json`
+
+Current status:
+- architecture adopted from an operator-authorized private source;
+- no claim that a private store is automatically available in every runtime;
+- no private corpus has been copied into this public repository.
+
 ## Other systems
 
 Future connections may include databases, files, communication systems, research sources, and execution environments.
