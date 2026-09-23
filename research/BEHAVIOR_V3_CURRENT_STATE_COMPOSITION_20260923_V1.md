@@ -16,10 +16,14 @@ Behavior hardening:
 
 Public training curriculum:
 - PR #12
-- exact head: `295f0b54335efa8918c404f479be385490d27709`
+- exact head: `142086f5a041b6c2e944217e60a45d5db592d496`
+
+Training export lane:
+- PR #14
+- exact head: `ea366b2f497a8f30b8fd8d71da8cdfbec120b591`
 
 Composed validation head before this receipt:
-- `8a6113179042de217ec9ee4efde029e889e32a22`
+- `a38fe22e727661e71a85af6000d2a45bb1b9dd16`
 
 ## Composition result
 
@@ -36,12 +40,17 @@ The composition activates:
 - resolvable-ambiguity controls;
 - correction/error-cause separation;
 - exposure-aware transfer qualification;
-- 24 public preference-pair training/regression examples.
+- 24 public preference-pair training/regression examples;
+- training hostile-review counterbalance/length guards;
+- deterministic `preference` and `sft` export with source/output SHA-256 manifests;
+- exporter atomic replacement/readback self-test.
 
 The public curriculum remains:
 - `PUBLIC_TRAINING_REGRESSION_ONLY`;
 - `holdout_eligible = false`;
-- `PUBLIC_CURRICULUM_PREPARED_NOT_TRAINED`.
+- `PUBLIC_CURRICULUM_PREPARED_NOT_TRAINED`;
+- exported data remains derived public training/regression material;
+- `training_export_effect = FORMAT_CONVERSION_ONLY_NOT_TRAINING`.
 
 No model-training effect is claimed.
 
@@ -77,8 +86,10 @@ Added:
 - Behavior V3 active-state and marker enforcement;
 - interaction/exposure marker enforcement;
 - public curriculum validator execution;
+- training hostile-review minimum-size/length-balance/rejected-longer guards;
+- deterministic exporter self-test;
 - explicit `PUBLIC_CURRICULUM_PREPARED_NOT_TRAINED` check;
-- public-training holdout-ineligibility check;
+- public-training and derived-export holdout-ineligibility checks;
 - `.jsonl` secret scanning.
 
 One validation run therefore gates all three active layers.
