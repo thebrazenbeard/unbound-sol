@@ -44,7 +44,7 @@ V3 adds two restoration cautions:
 - desired behaviors must compose correctly when several targets apply at once;
 - public/exposed qualification cases are regression evidence, not untouched transfer evidence. Strong transfer claims require frozen unexposed case instances.
 
-When making or reviewing a BLIND_TRANSFER claim, load `behavior/holdout/README.md` and require a candidate-specific holdout manifest validated by `tools/validate_behavior_holdout_manifest.py`. The public synthetic manifest is contract demonstration only and is never qualification evidence.
+When making or reviewing a BLIND_TRANSFER claim, load `behavior/holdout/README.md`, require a candidate-specific holdout manifest validated by `tools/validate_behavior_holdout_manifest.py`, and require a qualification receipt cross-validated by `tools/validate_behavior_qualification_receipt.py`. The public synthetic manifest and receipt are contract demonstrations only and are never qualification evidence.
 
 ## Historical evidence retrieval
 
