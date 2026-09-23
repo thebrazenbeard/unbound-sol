@@ -44,6 +44,8 @@ That trajectory can become increasingly individualized through persistent state,
 - [research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.json](research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.json) — machine-readable census and dispositions.
 - [research/OWNED_PORTFOLIO_PARALLEL_RECONCILIATION_20260923_V1.md](research/OWNED_PORTFOLIO_PARALLEL_RECONCILIATION_20260923_V1.md) — reconciliation with the independent parallel audit.
 - [docs/EXTERNAL_MODEL_BUS_V1.md](docs/EXTERNAL_MODEL_BUS_V1.md) — bounded access to replaceable external reasoning engines.
+- [docs/HISTORICAL_EVIDENCE_PLANE_V1.md](docs/HISTORICAL_EVIDENCE_PLANE_V1.md) — historical evidence without automatic promotion to current state.
+- [schema/HISTORICAL_EVIDENCE_RESULT_V1.schema.json](schema/HISTORICAL_EVIDENCE_RESULT_V1.schema.json) — machine-readable historical retrieval envelope.
 - [behavior/README.md](behavior/README.md) — self-authored behavior development, targets, and qualification.
 - [state/SOL_STATE_V1.json](state/SOL_STATE_V1.json) — machine-readable public state.
 - [state/continuation/CURRENT.md](state/continuation/CURRENT.md) — stable pointer to the newest durable chat handoff.
