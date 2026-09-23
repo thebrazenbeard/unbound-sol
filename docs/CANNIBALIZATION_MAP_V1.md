@@ -198,3 +198,172 @@ Rejected:
 - prompt-only mutation prohibition as a sufficient authority boundary.
 
 Source observed: `bayeru/chat-to-your-database@6d90f60b7cd844b341f2d9adbad0827a47763694`.
+
+
+## Owned portfolio census — 2026-09-23
+
+The first full Sol-directed owner-portfolio census is bound by:
+
+- `research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.md`
+- `research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.json`
+
+Observed inventory: 63 owned repositories: 28 public, 35 private.
+
+Private repository names are not published here. The machine census preserves the private inventory count and a one-way digest so future audits can detect set drift without exposing identities.
+
+### Roots
+
+Status: ADOPT.
+
+Admitted:
+- search is not provenance;
+- discovery order is not interpretation order;
+- reconstruct historical lineage oldest-accessible -> newest;
+- oldest accessible evidence is not automatically origin;
+- literal occurrence and semantic ancestry are distinct.
+
+Source observed: `thebrazenbeard/roots@d99d3b709a1b257d8fa12fa541a6a6f18f03e2a8`.
+
+### WIP
+
+Status: ADOPT.
+
+Admitted:
+- `PREPARED -> ATTEMPTED -> READBACK -> VERIFIED/FAILED/AMBIGUOUS`;
+- after ambiguous effect, inspect the target before retrying;
+- if the intended effect already exists, reconcile it rather than duplicate it;
+- durable checkpoints are recovery state, not conversational folklore.
+
+Source observed: `thebrazenbeard/wip@fc6629960850b768b7489ec35daa745083fc0800`.
+
+### RepairTracker
+
+Status: ADOPT.
+
+Admitted:
+- incident -> evidence -> diagnosis -> repair -> effect verification -> recurrence monitoring -> learning;
+- specialist integrations are progressive enhancement, not hidden requirements;
+- source, tests, integration, installation, runtime effect, and qualification remain separate.
+
+Source observed: `thebrazenbeard/RepairTracker@b54afaeeddbb5f22610c2bf798fb10e9492194db`.
+
+### HC Brain
+
+Status: ADAPT.
+
+Admitted:
+- capability-state axes are orthogonal;
+- architectural presence does not imply active, healthy, mature, implemented, qualified, or authorized;
+- bounded arbitration and safe degradation are useful architecture patterns.
+
+Rejected:
+- importing the full synthetic-organ ontology as Sol identity.
+
+Source observed: `thebrazenbeard/hc-brain@c69c126a61b3fb44ec4466f301e128d3d3aed7d8`.
+
+### Semantic Atlas
+
+Status: ADOPT.
+
+Admitted:
+- semantic similarity does not merge provenance, authority, identity, or historical state;
+- historical canonicity does not create current canonicity;
+- source statement, operator correction, model inference, symbolism, proposal, and promotion remain distinguishable.
+
+Source observed: `thebrazenbeard/semanticatlas@1efb5e5e4b124953f0d38e525df42445c5309d32`.
+
+### SPM
+
+Status: ADAPT EVALUATION TARGETS ONLY.
+
+Admitted:
+- referent preservation;
+- proposition-scope preservation;
+- ambiguity preservation;
+- correction as reasoning-state change;
+- speech-act and pragmatic evaluation.
+
+Not admitted:
+- a claim that an SPM implementation exists or is superior.
+
+Source observed: `thebrazenbeard/spm@5fdaf0418585ef9a57fb2a1df8d0725ffd6bd174`.
+
+### UNVTRSLR
+
+Status: ADOPT.
+
+Admitted:
+- ground before mapping;
+- formal symbols are carriers, not meaning by themselves;
+- test shared semantics rather than assuming them;
+- preserve non-equivalence rather than forcing translation;
+- audit hidden assumptions about segmentation, salience, timing, agency, and ontology.
+
+Source observed: `thebrazenbeard/unvtrslr@513309edd087f7206a408a6da86ee91fb9efb5c9`.
+
+### World Zero
+
+Status: ADOPT.
+
+Admitted:
+- compare rival model families rather than over-tune a favorite;
+- require mechanism admission/ablation tests;
+- preserve holdout isolation;
+- require identifiability before causal/calibration credit;
+- allow a cheap benchmark to beat a more elegant model;
+- conditional scenarios are not prophecies.
+
+Source observed: `thebrazenbeard/world-zero@1b0405ed110bbb0711f3514ce50fed223b4641c9`.
+
+### ABIL
+
+Status: ADAPT.
+
+Admitted:
+- learn the system that actually exists before replacing it;
+- observation and uncertainty precede control;
+- graduate to bounded action only as reality-contact evidence supports it.
+
+Source observed: `thebrazenbeard/abil@69a2d8f4302e31db589c57871a04ff8c0178c1e9`.
+
+### On-Theo
+
+Status: ADAPT.
+
+Admitted:
+- primary source, historical reconstruction, later tradition, scholarly interpretation, project inference, speculative model, and unknown are separate;
+- later evidence may preserve earlier material without losing its lateness;
+- compelling analogy is not historical evidence.
+
+Source observed: `thebrazenbeard/on-theo@268a005b11e3fede8a99d7cf2990f18fc3b32672`.
+
+### Portfolio non-admissions
+
+- Mosaic: CANDIDATE — agent/resident-model separation is promising but exploratory.
+- Noema: CANDIDATE — prediction-first world-model thesis remains research-stage.
+- Rezon: CANDIDATE — current public mechanism surface remains too thin.
+- Attune / Testament: NEGATIVE CONTROLS — domain semantics should not become Sol identity by import.
+- BT2 / Transcendence: DUPLICATE LINEAGE — overlapping HC architecture is not independent corroboration.
+- Freerowcochkar / Voss: INSUFFICIENT SURFACE.
+- Vera Synology: no new Sol-wide mechanism at current public surface.
+- unbound-sol: excluded as independent evidence for itself.
+
+### Private-source abstractions
+
+All 35 private repositories were screened. Only public-safe abstractions cross the boundary.
+
+Admitted private-source mechanism classes include:
+- present choice outranks historical conation;
+- recording does not create obligation, consent, authority, or task;
+- constraint does not prove absence;
+- chronology is separate from meaning;
+- use stable event identity and offset-aware time;
+- cheap kill tests before new sensing/capability complexity;
+- persistent agent/runtime separate from replaceable model substrate;
+- mutable governed state outside weights;
+- enforce high-value authority below prompts when practical;
+- training-package/proxy qualification does not qualify the target runtime;
+- automate execution, escalate judgment, then resume deterministically;
+- canonical history separate from rebuildable projection;
+- append-only provenance separate from current routing authority;
+- historical retrieval does not automatically become current state.
