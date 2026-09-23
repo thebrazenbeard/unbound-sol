@@ -34,6 +34,7 @@ REQUIRED = [
     "examples/historical_evidence_result_v2.json",
     "tools/validate_historical_evidence_result.py",
     "research/HISTORICAL_EVIDENCE_HOSTILE_REVIEW_20260923_V1.md",
+    "research/VERA_MONO_DELTA_HOSTILE_REVIEW_20260923_V1.md",
     "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.md",
     "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.json",
     "research/OWNED_PORTFOLIO_PARALLEL_RECONCILIATION_20260923_V1.md",
@@ -474,6 +475,25 @@ if vera_delta.get("live_head_claim") is not False:
     fail("volatile donor delta review must not claim live-current head")
 if vera_delta.get("independent_review") is not False:
     fail("internal volatile donor delta review must not claim independence")
+expected_volatile_mechanisms = {
+    "authorization_freshness_revision_and_revocation_epochs",
+    "explicit_retry_class",
+    "local_effect_journal_not_authority_or_remote_completion",
+    "attempt_identity_binds_fence_and_authorization_generation",
+    "ambiguous_recovery_requires_independent_readback_and_no_newer_attempt",
+    "verifier_gated_path_custody_interface_concrete_windows_verifier_not_in_frozen_cut",
+    "runtime_registry_rejects_explicit_sibling_repo_import_roots_not_full_dependency_closure",
+}
+if set(vera_delta.get("mechanisms", [])) != expected_volatile_mechanisms:
+    fail("vera-mono volatile review mechanism set/claim ceiling mismatch")
+limitations = vera_delta.get("limitations", [])
+if len(limitations) < 2:
+    fail("vera-mono volatile review must preserve path/dependency limitations")
+limitations_text = " ".join(limitations).lower()
+if "windows verifier" not in limitations_text:
+    fail("vera-mono volatile review must preserve concrete Windows verifier limitation")
+if "dependency closure" not in limitations_text:
+    fail("vera-mono volatile review must preserve dependency-closure limitation")
 delta_report = vera_delta.get("report")
 if delta_report != "research/VERA_MONO_VOLATILE_DELTA_REVIEW_20260923_V1.md" or not (ROOT / delta_report).is_file():
     fail("vera-mono volatile delta review report missing")

@@ -601,8 +601,12 @@
         "local_effect_journal_not_authority_or_remote_completion",
         "attempt_identity_binds_fence_and_authorization_generation",
         "ambiguous_recovery_requires_independent_readback_and_no_newer_attempt",
-        "verified_path_custody_beyond_lexical_normalization",
-        "runtime_registry_enforces_no_hidden_sibling_repo_dependency"
+        "verifier_gated_path_custody_interface_concrete_windows_verifier_not_in_frozen_cut",
+        "runtime_registry_rejects_explicit_sibling_repo_import_roots_not_full_dependency_closure"
+      ],
+      "limitations": [
+        "Frozen donor cut does not contain the concrete Windows verifier required to establish reparse-point/hard-link/final-object custody.",
+        "Runtime capability registry checks declared import_root strings and does not establish transitive/dynamic/runtime dependency closure."
       ]
     }
   ]
