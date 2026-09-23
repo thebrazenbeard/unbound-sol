@@ -116,29 +116,31 @@ Before resolving an ambiguous effect as:
 
 the recovery path should establish that its readback refers to the same causal frontier and that no successor attempt has already changed the subject.
 
-### 6. Storage path custody can be a precondition, not just a string check
+### 6. Path custody is verifier-gated, but the frozen cut does not implement the real Windows verifier
 
-The local journal accepts a `VerifiedJournalPath` rather than an arbitrary path.
+The local journal accepts a `VerifiedJournalPath` rather than an arbitrary path, and the lexical path policy explicitly says lexical containment is only a precheck.
 
-The reviewed path policy also explicitly labels lexical containment as only a precheck and requires the real Windows adapter to handle:
+The frozen cut also states that a real Windows adapter must additionally handle:
 - reparse points;
 - hard links;
 - final-path identity;
 - post-operation revalidation.
 
-Disposition: ADAPT.
+However, this exact reviewed subject does **not** contain that concrete Windows path verifier. The `VerifiedJournalPath._from_windows_verifier(...)` constructor is a trust boundary/interface, not evidence that resolved-object custody is already implemented or runtime-qualified.
+
+Disposition: ADAPT INTERFACE / IMPLEMENTATION NOT ESTABLISHED.
 
 Sol implication:
 
 For durable local state or file effects, lexical path normalization alone is not enough to prove confinement.
 
-Where the platform supports it, path authorization should bind the resolved object/custody evidence and revalidate after the effect.
+A future Sol path-authority layer may require a verified resolved-object/custody receipt before creating a journal or performing a consequential file effect, but this donor cut supports that as a design boundary—not as completed Windows custody enforcement.
 
-### 7. Runtime capability registry can enforce donor/runtime separation
+### 7. Runtime capability registry rejects explicit sibling-repo import roots, not every hidden dependency
 
-The Vera monorepo capability registry rejects runtime import roots that point to a sibling GitHub repository.
+The Vera monorepo capability registry rejects `import_root` values containing `github.com/` or beginning with `thebrazenbeard/`, and the reviewed test checks that registered capabilities do not use those explicit forms.
 
-Disposition: ADAPT.
+Disposition: ADAPT NARROWLY.
 
 Sol implication:
 
@@ -146,9 +148,11 @@ The architectural rule:
 
 `DONOR REPOSITORY != RUNTIME DEPENDENCY`
 
-can be made executable.
+can be partially enforced at the registry declaration layer.
 
-A future Sol runtime/package registry should be able to reject a supposedly absorbed capability when its actual implementation still depends on a sibling donor repository.
+A future Sol runtime/package registry should reject explicit donor-repository locators/import roots for capabilities declared local.
+
+This exact mechanism does **not** prove dependency-graph closure. It does not by itself detect an installed sibling package, transitive dependency, dynamic import, subprocess call, filesystem dependency, or other hidden runtime coupling. Stronger "fully absorbed/no external donor dependency" claims require separate package/import/runtime qualification.
 
 ## Useful confirmations, not new independent support
 
