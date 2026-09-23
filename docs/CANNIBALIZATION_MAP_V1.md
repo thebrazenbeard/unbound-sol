@@ -390,3 +390,181 @@ Fresh currentness correction:
 - meso-crct current observed head: `d1f32c2c3370a5519d62afb78e93d70004529903`.
 
 The older meso-crct donor binding remains historical exact-subject evidence; the current thin main does not revalidate that mechanism.
+
+
+## Visibility transition donor refresh — 2026-09-23
+
+A later live owner read changed the portfolio from 63/28/35 to 65/46/19. Repositories that are now public may be bound directly even when their README still says "private"; live GitHub visibility controls the current access-state claim.
+
+### BugOps
+
+Status: ADOPT.
+
+Admitted:
+- incident evidence is distinct from lifecycle/status tracking;
+- correction should stop the obsolete route before apology/explanation;
+- acknowledgment is not repair;
+- closure requires acceptance/readback evidence and a regression that distinguishes failure from corrected behavior.
+
+Source observed: `thebrazenbeard/bugops@07b8bc90fcb4beb82b1d26b394c730f29c2c425a`.
+
+### Build Team 2.0
+
+Status: ADAPT MECHANISMS ONLY.
+
+Admitted:
+- parallel analysts receive the same immutable input snapshot;
+- parallel perspectives do not create private memory/authority silos;
+- dissent is surfaced before synthesis;
+- governance scales with consequence.
+
+Rejected:
+- importing named facets or collective identity as Sol identity.
+
+Source observed: `thebrazenbeard/build-team-2.0@9f2743214298f1ae9d424f300a13d37e49e3c74f`.
+
+### CCB Core
+
+Status: ADOPT.
+
+Admitted:
+- strict domain/intent admission;
+- lease/subscription routing;
+- priority ordering and bounded duplicate suppression;
+- dead-letter and telemetry accounting;
+- heartbeat/projection primitives;
+- transport-neutral coordination identity/ledger concepts.
+
+Source observed: `thebrazenbeard/ccb-core@157876c5c0434bf4f553d9e4f70f19076d058146`.
+
+### Conations
+
+Status: ADOPT / PUBLIC REBINDING.
+
+Admitted:
+- present choice outranks historical conation;
+- recording does not create consent, obligation, authority, promise, or task;
+- later evidence revises/contradicts/revokes through append-oriented history;
+- absence of later evidence proves neither persistence nor disappearance.
+
+Source observed: `thebrazenbeard/conations@4b458ecf566f024c32109e06a96bf7b2e5f92da6`.
+
+### Deep Memory Storage
+
+Status: ALREADY ADOPTED / PUBLIC REVALIDATION.
+
+Admitted:
+- historical evidence plane separate from current governed state;
+- retrieval is not admission;
+- full canonical ledger union outranks stale convenience indexes;
+- CANONICAL_HISTORY does not mean current state;
+- query results require explicit nonpromotion semantics.
+
+Source observed: `thebrazenbeard/deepmemorystorage@0740fc188fde6d69d1690ee07ed9be3590ac493f`.
+
+### Empathy
+
+Status: ADAPT.
+
+Admitted:
+- direct correction outranks contradicted inference about the speaker's intended meaning;
+- self-appraisal can guide behavior without proving phenomenology;
+- understanding is not obedience;
+- repository source is not runtime effect.
+
+Source observed: `thebrazenbeard/empathy@bc0c1d33b3187642d9e2f0801d1c5bde4f583e2b`.
+
+### Hephaestus
+
+Status: ADOPT.
+
+Admitted:
+- schema completion pressure can manufacture false precision;
+- UNKNOWN is superior to invented completion;
+- qualified template, evolving repository state, and current working context are separate;
+- qualification does not imply installation/runtime effect.
+
+Source observed: `thebrazenbeard/hephaestus@7eb30f2777a7d16e4f55ca3066d8ac1e484f79a6`.
+
+### Intranel
+
+Status: ADOPT.
+
+Admitted:
+- origin, actor, target, and reply-to are distinct;
+- packet identity is distinct from logical operation identity;
+- effect classification belongs to the receiver before mutation checks;
+- a receipt is evidence about a claim, not self-verifying proof of its effect;
+- completed operations need idempotent replay/cancellation semantics;
+- canonical payload identity can be digest-bound.
+
+Source observed: `thebrazenbeard/intranel@08bc122043b79422c31a958b7ffe7fff87e5f3f0`.
+
+### Masamune
+
+Status: ADAPT.
+
+Admitted:
+- root-cause, evidence, independent-review, and regression disciplines;
+- reversible setup necessary to assigned work need not become a redundant permission ceremony;
+- real shared-writer collision differs from consequential protected effect.
+
+Source observed: `thebrazenbeard/masamune@0091746bba7740632268fb590ce19512e371f508`.
+
+### Project Achilles
+
+Status: ADAPT.
+
+Admitted:
+- fail-closed is a boundary behavior, not a default preference for inactivity;
+- current consequence/effect rules outrank frozen training exercises.
+
+Source observed: `thebrazenbeard/project-achilles@6776d8c059e3f9ad791a47a0b62bb56588332968`.
+
+### Temporal
+
+Status: ADOPT / PUBLIC REBINDING.
+
+Admitted:
+- chronology is not meaning;
+- stable event IDs;
+- offset-aware canonical timestamps with optional local preservation;
+- deterministic order by timestamp then stable ID;
+- elapsed-time arithmetic does not silently reorder endpoints.
+
+Source observed: `thebrazenbeard/temporal@0fc7071a6b01e609fb2cdc76a32c73276ab27094`.
+
+### Vera
+
+Status: ADAPT MECHANISMS ONLY.
+
+Admitted:
+- SOURCE_AVAILABLE / BOUND / INSTALLED / RUNTIME_CONSUMED / BEHAVIORALLY_QUALIFIED are orthogonal evidence dimensions;
+- current instruction, self-report, live observation, transient activation, and durable state are separate;
+- observable activation evidence is preferable to claims about latent hot/cold state;
+- source availability does not establish current installation.
+
+Rejected:
+- importing Vera identity or release authority into Sol.
+
+Source observed: `thebrazenbeard/vera@87aa888cb7543875ffa11c9c7a1eb9e5b60c35cf`.
+
+### Vera Control Plane
+
+Status: ADOPT MECHANISMS ONLY.
+
+Admitted:
+- repository presence and ancestry do not establish current control authority;
+- release/source candidate does not establish installation;
+- mutable current claims require fresh governed evidence;
+- operational control custody can be separate from technical source custody.
+
+Source observed: `thebrazenbeard/vera-control-plane@65ce7908f640ffe53b678ef69c58411a91c23b8a`.
+
+### Explicit non-admissions
+
+- identify-ai: insufficient mechanism surface.
+- personification: insufficient mechanism surface.
+- project-lantern: insufficient mechanism surface.
+- vera-R9A0: predecessor/duplicate lineage only.
+- vera-habitat: insufficient mechanism surface.
