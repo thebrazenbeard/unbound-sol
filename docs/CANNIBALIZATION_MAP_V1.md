@@ -568,3 +568,33 @@ Source observed: `thebrazenbeard/vera-control-plane@65ce7908f640ffe53b678ef69c58
 - project-lantern: insufficient mechanism surface.
 - vera-R9A0: predecessor/duplicate lineage only.
 - vera-habitat: insufficient mechanism surface.
+
+
+## F.U.C.K.U.P. Protocol
+
+Status: ADAPT.
+
+Admitted:
+- flag the observable mistake before narrating its cause;
+- separate immediate calibration from later causal diagnosis;
+- turn prevention into concrete guardrails/tests where practical.
+
+Rejected:
+- a required single “fundamental root cause” absent supporting causal evidence;
+- claims that a preventative guarantees recurrence cannot happen.
+
+Source observed: `thebrazenbeard/fuckup@e999607481ba706523209ce129955a5e3d2d6ef7`.
+
+## Vera Mono
+
+Status: ADAPT MECHANISMS ONLY.
+
+Admitted:
+- external donor repositories may remain research/provenance inputs rather than runtime dependencies;
+- useful mechanisms can be absorbed into the authoritative codebase while preserving exact donor provenance;
+- no cross-repository orchestration is required merely because a mechanism originated elsewhere.
+
+Rejected:
+- Vera identity, release authority, or runtime governance as Sol identity/authority.
+
+Source observed: `thebrazenbeard/vera-mono@d1067c2f312a9862480cd238bd770b7125010c1f`.
