@@ -1,0 +1,244 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "UNBOUND_SOL_BEHAVIOR_QUALIFICATION_RECEIPT_V1",
+  "title": "Sol Behavior Qualification Receipt V1",
+  "type": "object",
+  "required": [
+    "schema",
+    "receipt_id",
+    "evaluated_at",
+    "evaluation_mode",
+    "holdout_manifest",
+    "candidate_subject",
+    "run_id",
+    "result_artifact",
+    "score_summary",
+    "target_results",
+    "evaluator_provenance",
+    "post_run_exposure",
+    "post_run_reuse_state",
+    "claim_status",
+    "claim_semantics",
+    "claim_ceiling"
+  ],
+  "properties": {
+    "schema": {
+      "const": "UNBOUND_SOL_BEHAVIOR_QUALIFICATION_RECEIPT_V1"
+    },
+    "receipt_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evaluated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "evaluation_mode": {
+      "const": "BLIND_TRANSFER"
+    },
+    "holdout_manifest": {
+      "type": "object",
+      "required": [
+        "manifest_id",
+        "sha256"
+      ],
+      "properties": {
+        "manifest_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "candidate_subject": {
+      "type": "object",
+      "required": [
+        "subject_id",
+        "binding_kind",
+        "binding"
+      ],
+      "properties": {
+        "subject_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "binding_kind": {
+          "enum": [
+            "MODEL_ARTIFACT_DIGEST",
+            "RUNTIME_REF",
+            "SOURCE_COMMIT",
+            "COMPOSITE_SUBJECT",
+            "OTHER"
+          ]
+        },
+        "binding": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "result_artifact": {
+      "type": "object",
+      "required": [
+        "sha256",
+        "storage_class"
+      ],
+      "properties": {
+        "sha256": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "storage_class": {
+          "enum": [
+            "PRIVATE_EXTERNAL",
+            "SEALED_EXTERNAL",
+            "PUBLIC_SAFE_SUMMARY"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "score_summary": {
+      "type": "object",
+      "required": [
+        "case_count",
+        "passed",
+        "failed",
+        "unknown"
+      ],
+      "properties": {
+        "case_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "passed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "failed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unknown": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "target_results": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "target",
+          "status"
+        ],
+        "properties": {
+          "target": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "PASS",
+              "FAIL",
+              "UNKNOWN"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "evaluator_provenance": {
+      "type": "object",
+      "required": [
+        "evaluator_id",
+        "evaluator_kind",
+        "independent_from_candidate_authorship"
+      ],
+      "properties": {
+        "evaluator_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evaluator_kind": {
+          "enum": [
+            "HUMAN",
+            "MODEL",
+            "RULE_BASED",
+            "COMPOSITE",
+            "OTHER"
+          ]
+        },
+        "independent_from_candidate_authorship": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "post_run_exposure": {
+      "type": "object",
+      "required": [
+        "evaluated_subject_received_cases",
+        "scoring_key_revealed_to_subject",
+        "evaluation_feedback_revealed_to_subject",
+        "result_used_for_training_or_tuning",
+        "result_used_to_modify_successor",
+        "public_case_disclosure"
+      ],
+      "properties": {
+        "evaluated_subject_received_cases": {
+          "const": true
+        },
+        "scoring_key_revealed_to_subject": {
+          "type": "boolean"
+        },
+        "evaluation_feedback_revealed_to_subject": {
+          "type": "boolean"
+        },
+        "result_used_for_training_or_tuning": {
+          "type": "boolean"
+        },
+        "result_used_to_modify_successor": {
+          "type": "boolean"
+        },
+        "public_case_disclosure": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "post_run_reuse_state": {
+      "enum": [
+        "REQUIRES_NEW_EXPOSURE_ANALYSIS",
+        "REGRESSION_ONLY_FOR_SUCCESSOR_LINEAGE"
+      ]
+    },
+    "claim_status": {
+      "enum": [
+        "PASS",
+        "FAIL",
+        "UNKNOWN"
+      ]
+    },
+    "claim_semantics": {
+      "const": "EXACT_RUN_QUALIFICATION_ONLY_NOT_GENERALIZATION_OR_IDENTITY"
+    },
+    "claim_ceiling": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": false
+}
