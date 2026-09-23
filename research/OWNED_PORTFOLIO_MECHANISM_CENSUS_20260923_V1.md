@@ -17,7 +17,7 @@ The hashes are computed over lexicographically sorted `repository_full_name` val
 
 The exact observed public default-head cut is separately bound by SHA-256 over lexicographically sorted `repository_full_name@default_head_sha` lines:
 
-`46fb42b01e28d236c28b7bbcbf258a3ec11ff74b217db7dec2482d2ebb4ae16a`
+`b97f8b70199dae2e0ce0e697dbcddb10c5bd7a8e32251f1847bb5268034f969c`
 
 That head binding is part of currentness. An unchanged repository count/name digest does not make the mechanism census current after a donor default head moves.
 
@@ -356,7 +356,7 @@ Inventory digests:
 
 Changes relative to the 65-repository cut:
 - `thebrazenbeard/fuckup` is now a public current-census subject at `e999607481ba706523209ce129955a5e3d2d6ef7`;
-- `thebrazenbeard/vera-mono` is now a public current-census subject at `d1067c2f312a9862480cd238bd770b7125010c1f`;
+- `thebrazenbeard/vera-mono` is now a public current-census subject at `1eec28efc7940bc5a52ef27288eacbfc34b111cc`;
 - `thebrazenbeard/identify-ai` is no longer present in the live owner inventory and is removed from current-census authority while its prior observation remains historical provenance;
 - `thebrazenbeard/meso-crct` advanced from `d1f32c2c3370a5519d62afb78e93d70004529903` to `f5784fde4d65be7bfbbfb740163f8726b808460f`.
 
@@ -382,7 +382,14 @@ Disposition: **ADAPT NOW**.
 Admit:
 - donor repositories may be research/provenance sources without becoming runtime dependencies;
 - mechanisms may be absorbed into the authoritative implementation while retaining exact donor provenance;
-- cross-repository orchestration should not be mistaken for identity or required runtime structure.
+- CAS-bound memory heads can reject stale writes;
+- operation IDs should be idempotent only when bound to the same request digest;
+- supersession should remain explicit rather than silently overwriting prior records;
+- stored authority/privacy references are bindings, not self-authenticating proof;
+- exact-subject authority evidence can be single-use where consequence warrants;
+- precise temporal claims should require verified evidence or remain UNKNOWN.
+
+The current head also revalidates existing bus/temporal mechanisms already admitted from other donors. That overlap is not counted as independent corroboration.
 
 Do not import Vera identity or authority into Sol.
 
