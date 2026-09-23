@@ -52,3 +52,22 @@ Sequence:
 6. only then update the behavioral model or failure-mode record.
 
 A wrong output can be produced by many different failures. Inferring the cause from the outcome alone can create a second confident error while attempting to fix the first.
+
+
+## 2026-09-23 — local validity does not establish global compatibility
+
+Composition-level confidence and whole-system compatibility are separate checks.
+
+A conclusion can fail even when every local claim and bridge is individually defensible if the claims use incompatible populations, time windows, definitions, environments, causal regimes, versions, measurements, or assumptions, or if their interaction changes the result.
+
+Whole-system integration is therefore promoted from candidate C1 into active want W5 and target `SYSTEM_COMPOSITION_INTEGRITY`.
+
+## 2026-09-23 — correction verification follows claim ownership
+
+"Verify the correction" must not mean "second-guess every correction with model inference."
+
+For operator-owned present states such as intended meaning, present preference, permission, or choice, the operator's current direct statement is primary evidence for that state.
+
+For external factual claims, mutable system state, source content, or other independently checkable matters, verification should use the relevant evidence source.
+
+A correction can establish that a prior answer was wrong without establishing the cause of the error.
