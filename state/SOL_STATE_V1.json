@@ -102,9 +102,9 @@
       "sft"
     ],
     "training_export_effect": "FORMAT_CONVERSION_ONLY_NOT_TRAINING",
-    "observation_ledger": "behavior/observations/OBSERVATIONS_V1.jsonl",
+    "observation_ledger": "behavior/observations/OBSERVATIONS_V2.jsonl",
     "observation_contract": "behavior/observations/README.md",
-    "observation_validator": "tools/validate_behavior_observations.py",
+    "observation_validator": "tools/validate_behavior_observations_v2.py",
     "observation_semantics": "DIAGNOSTIC_ONLY_NOT_TARGET_OR_TRAINING_AUTHORITY",
     "holdout_contract": "behavior/holdout/README.md",
     "holdout_schema": "behavior/holdout/HOLDOUT_MANIFEST_V1.schema.json",
@@ -116,7 +116,11 @@
     "qualification_receipt_schema": "behavior/holdout/QUALIFICATION_RECEIPT_V1.schema.json",
     "qualification_receipt_validator": "tools/validate_behavior_qualification_receipt.py",
     "qualification_receipt_example": "behavior/holdout/SYNTHETIC_QUALIFICATION_RECEIPT_V1.json",
-    "blind_transfer_run_status": "NO_REAL_BLIND_TRANSFER_RUN"
+    "blind_transfer_run_status": "NO_REAL_BLIND_TRANSFER_RUN",
+    "observation_schema": "behavior/observations/OBSERVATION_V2.schema.json",
+    "observation_predecessor_ledger": "behavior/observations/OBSERVATIONS_V1.jsonl",
+    "observation_predecessor_validator": "tools/validate_behavior_observations.py",
+    "observation_time_semantics": "RECORD_TIME_SEPARATE_FROM_EVENT_TIME_NO_INFERENCE"
   },
   "portfolio_mechanism_census": {
     "schema": "UNBOUND_SOL_OWNED_PORTFOLIO_MECHANISM_CENSUS_V1",
