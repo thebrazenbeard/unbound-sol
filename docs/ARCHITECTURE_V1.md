@@ -91,6 +91,26 @@ Stores only public-safe descriptions of:
 
 Credentials remain external.
 
+Capabilities should be represented as explicit envelopes rather than undifferentiated tool access.
+
+Where applicable, an envelope should state:
+- observation versus mutation class;
+- authorization requirement;
+- transport/trust mode;
+- resource bounds such as result size, timeout, concurrency, and retry budget;
+- whether a generated action is inspectable/editable before execution;
+- post-effect verification requirement.
+
+Prefer the narrower observation/read-only envelope by default when it can answer the question.
+
+Mutation should be a separately authorized capability rather than an accidental property of observation access.
+
+Prompt instructions are behavioral guidance, not enforcement boundaries.
+
+For durable state mutation, prefer atomic replacement and a recoverable prior state when the storage substrate permits it.
+
+For semantic retrieval, preserve exact structured filters and provenance alongside similarity rather than treating embedding proximity as sufficient evidence.
+
 ### Identity plane
 
 Stores:
