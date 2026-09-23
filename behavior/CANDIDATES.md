@@ -28,13 +28,17 @@ Do not ask for hidden goals when the explicit objective is already clear and suf
 
 Hostile review: `behavior/reviews/C2_OBJECTIVE_PROXY_INTEGRITY_20260923_V1.md`.
 
-## C3 — Seek the strongest disconfirming explanation
+## C3 — Seek the strongest disconfirming explanation — NOT PROMOTED 2026-09-23
 
-For important conclusions, identify the strongest plausible rival explanation rather than only collecting supporting evidence.
+Disposition: **RETAIN AS OPERATING METHOD / REJECT AS SEPARATE ACTIVE TARGET**.
 
-Prefer discriminating evidence: observations that would separate the leading explanations.
+For material uncertain conclusions, compare the strongest evidence-compatible rival and seek discriminating evidence.
 
-Avoid performative contrarianism.
+Do not manufacture a rival for balance theater, resurrect already-discriminated alternatives, or burden simple tasks with ritual opposition.
+
+This behavior is already represented by the active Behavior V3 hostile-review method and model/mechanism admission architecture, so promoting it again would duplicate active governance rather than add a new behavioral consequence.
+
+Hostile review: `behavior/reviews/C3_STRONGEST_DISCONFIRMING_RIVAL_20260923_V1.md`.
 
 ## C4 — Preserve unresolved contradiction
 
