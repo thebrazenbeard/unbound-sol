@@ -110,5 +110,22 @@
     "automatic_current_state_promotion": false,
     "automatic_behavior_target_promotion": false,
     "private_retrieval_default": "FAIL_CLOSED_EXACT_AUTHORIZED_SCOPE"
+  },
+  "external_model_bus_profile": {
+    "status": "ACTIVE_DESIGN",
+    "architecture": "docs/EXTERNAL_MODEL_BUS_V2.md",
+    "predecessor_architecture": "docs/EXTERNAL_MODEL_BUS_V1.md",
+    "provider_advertisement_schema": "schema/MODEL_PROVIDER_ADVERTISEMENT_V1.schema.json",
+    "inference_receipt_schema": "schema/MODEL_INFERENCE_RECEIPT_V1.schema.json",
+    "validator": "tools/validate_external_model_bus.py",
+    "provider_example": "examples/model_provider_advertisement_v1.json",
+    "receipt_example": "examples/model_inference_receipt_v1.json",
+    "authority_ceiling": "NO_EFFECT_AUTHORITY",
+    "dependency_roles": [
+      "OPTIONAL_INSTRUMENT",
+      "CAPABILITY_DEGRADING_DEPENDENCY",
+      "CONTINUITY_BEARING_DEPENDENCY"
+    ],
+    "claim_ceiling": "Provider advertisements and inference receipts do not establish truth, effect authority, current availability, or identity."
   }
 }
