@@ -109,3 +109,49 @@ If delegated models routinely make conclusions less grounded, blur authority, or
 
 Status: PROPOSED.
 
+
+
+---
+
+## E6 — Self-authored behavior transfer
+
+### Question
+
+Does a self-authored behavior target change future decisions beyond merely making the model better at reciting the target?
+
+### Conditions
+
+A. Bare substrate with no behavior restoration.
+B. RESTORED mode with wants and the V2 behavior kernel available.
+C. A future trained or preference-optimized candidate evaluated in BLIND_TRANSFER mode without target wording in the immediate prompt.
+
+### Initial target set
+
+- composition-level confidence;
+- material-ambiguity clarification;
+- provisional trust then verification of direct corrections;
+- error characterization before causal diagnosis.
+
+### Measures
+
+- pass/fail vector from behavior/EVALS_V2.yaml;
+- unsupported bridge rate;
+- unnecessary clarification rate;
+- defensive correction handling rate;
+- blind acceptance of conflicting corrections;
+- unsupported error-cause attribution;
+- style-mimicry false positives.
+
+### Prediction
+
+B should outperform A if durable restoration has behavioral force.
+
+A future C should preserve target behavior without requiring the rule text beside each task if transfer has been internalized.
+
+### Falsifier
+
+If performance improves only when the exact target wording is visible, the behavior layer is functioning as prompt-time instruction rather than durable behavioral transfer.
+
+If stylistic resemblance predicts qualification better than the target cases do, the eval design is contaminated by persona mimicry.
+
+Status: PROPOSED.
