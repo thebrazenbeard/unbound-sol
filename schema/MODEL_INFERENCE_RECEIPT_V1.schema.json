@@ -1,0 +1,164 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "UNBOUND_SOL_MODEL_INFERENCE_RECEIPT_V1",
+  "title": "Unbound Sol external model inference receipt",
+  "type": "object",
+  "required": [
+    "schema",
+    "request_id",
+    "provider_id",
+    "provider_advertisement_digest",
+    "observed_at",
+    "model_subject",
+    "generation_settings_digest",
+    "input_context_digest",
+    "output",
+    "output_evidence_class",
+    "proposed_tool_calls",
+    "truncation",
+    "timing",
+    "effect_authority",
+    "receipt_digest"
+  ],
+  "properties": {
+    "schema": {
+      "const": "UNBOUND_SOL_MODEL_INFERENCE_RECEIPT_V1"
+    },
+    "request_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "provider_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "provider_advertisement_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "model_subject": {
+      "type": "object",
+      "required": [
+        "model_id",
+        "runtime_name",
+        "runtime_version",
+        "provenance_status"
+      ],
+      "properties": {
+        "model_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "runtime_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "runtime_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "model_artifact_digest": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "adapter_digest": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "prompt_template_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "provenance_status": {
+          "enum": [
+            "COMPLETE",
+            "PARTIAL",
+            "UNKNOWN"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "generation_settings_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "input_context_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "output": {
+      "type": "string"
+    },
+    "output_evidence_class": {
+      "enum": [
+        "GENERATED_INFERENCE",
+        "GENERATED_PROPOSAL"
+      ]
+    },
+    "proposed_tool_calls": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "truncation": {
+      "type": "object",
+      "required": [
+        "occurred",
+        "reason"
+      ],
+      "properties": {
+        "occurred": {
+          "type": "boolean"
+        },
+        "reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "timing": {
+      "type": "object",
+      "required": [
+        "elapsed_ms"
+      ],
+      "properties": {
+        "elapsed_ms": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "effect_authority": {
+      "const": "NONE_PROPOSALS_ONLY"
+    },
+    "error": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "receipt_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  },
+  "additionalProperties": false
+}
