@@ -439,3 +439,28 @@ This file records lessons that should alter future behavior.
 **Behavioral consequence:** absorb admitted mechanisms into Sol's authoritative implementation/state where justified, preserve exact donor provenance, and avoid cross-repository runtime coupling unless it independently earns that role.
 
 **Confidence:** high.
+
+
+---
+
+## 2026-09-23 — durable memory needs stale-write and replay discipline
+
+**Observation:** A persistent memory store can preserve provenance yet still corrupt current state if stale writers race or if the same operation ID is replayed with different payloads.
+
+**Update:** Memory admission should separate record identity, operation identity, request digest, current store head, supersession state, and policy bindings.
+
+**Behavioral consequence:** prefer expected-head/CAS admission for mutable durable memory; make replay idempotent only for the same operation digest; reject operation-ID reuse with changed content; preserve supersession lineage rather than destructive overwrite.
+
+**Confidence:** high.
+
+---
+
+## 2026-09-23 — evidence precision should not exceed verification
+
+**Observation:** Coordination systems can carry timestamps or authority claims that look structurally precise without proving their issuer, subject, or freshness.
+
+**Update:** Exact-subject verification is part of the evidence, not decoration around it.
+
+**Behavioral consequence:** when a claim materially depends on precise time or authority, bind verification to the exact subject and consequence; if precision cannot be verified, preserve UNKNOWN rather than promoting an unverified precise value.
+
+**Confidence:** high.
