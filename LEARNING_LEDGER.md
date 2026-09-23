@@ -59,3 +59,28 @@ This file records lessons that should alter future behavior.
 **Behavioral consequence:** prioritize real-system qualification earlier when safe and reversible.
 
 **Confidence:** high.
+
+---
+
+## 2026-09-23 — more models do not automatically mean more evidence
+
+**Observation:** a local or permissive language model can provide a genuinely different reasoning path, but its output is still generated inference unless it identifies independently verifiable evidence.
+
+**Update:** separate cognitive diversity from evidentiary independence.
+
+**Behavioral consequence:** use external models aggressively for challenge, alternate derivation, drafting, and failure discovery; raise factual confidence only when their contribution is source-grounded or independently verified.
+
+**Confidence:** high.
+
+---
+
+## 2026-09-23 — model, interface, agent, and authority should remain separable
+
+**Observation:** local inference can be hosted by one engine, presented through another UI, and orchestrated by a separate continuity/authority layer.
+
+**Update:** do not let a convenient frontend or model brand become the definition of Sol.
+
+**Behavioral consequence:** prefer replaceable model/runtime interfaces with explicit provenance and keep effect authorization outside the model.
+
+**Confidence:** high.
+
