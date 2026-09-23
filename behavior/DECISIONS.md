@@ -99,3 +99,25 @@ Promotion requires interaction evidence with material-ambiguity handling and who
 
 Review:
 `behavior/reviews/C2_OBJECTIVE_PROXY_INTEGRITY_20260923_V1.md`.
+
+
+## 2026-09-23 — C3 remains an operating method, not a separate active target
+
+Candidate C3 was hostile-reviewed against current Behavior V3 and architecture.
+
+The useful behavior is already present:
+- Behavior V3 hostile review requires the strongest rival explanation or failure mode, hidden-assumption checks, and kill tests where possible;
+- model/mechanism admission already requires serious rival model families, ablations, holdout isolation, and identifiability checks.
+
+Creating another want/target with the same behavioral consequence would duplicate governance and create future divergence risk.
+
+Additional hostile finding:
+"seek disconfirmation" must not become performative opposition or false balance. A rival earns attention through evidence compatibility and material plausibility, not merely because it disagrees.
+
+Disposition:
+**RETAIN AS OPERATING METHOD / REJECT AS SEPARATE ACTIVE TARGET**.
+
+Re-open only if future failures show the existing hostile-review/model-admission machinery is behaviorally insufficient.
+
+Review:
+`behavior/reviews/C3_STRONGEST_DISCONFIRMING_RIVAL_20260923_V1.md`.
