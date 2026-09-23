@@ -46,6 +46,7 @@ REQUIRED = [
     "behavior/training/PREFERENCE_PAIRS_V1.jsonl",
     "tools/validate_behavior_training_pairs.py",
     "behavior/training/HOSTILE_REVIEW_20260923_V1.md",
+    "tools/export_behavior_training.py",
     "state/SOL_STATE_V1.json",
     "state/SOURCES_V1.json",
     "state/continuation/CURRENT.md",
@@ -83,7 +84,7 @@ if behavior.get("schema") != "UNBOUND_SOL_BEHAVIOR_KERNEL_V3":
     fail("missing or unexpected active behavior profile schema")
 if behavior.get("version") != 3:
     fail("active behavior profile must be version 3")
-for key in ("wants", "kernel", "targets", "extended_spec", "eval_suite", "candidates", "decisions", "hostile_review", "training_curriculum", "training_readme", "training_validator", "training_hostile_review"):
+for key in ("wants", "kernel", "targets", "extended_spec", "eval_suite", "candidates", "decisions", "hostile_review", "training_curriculum", "training_readme", "training_validator", "training_hostile_review", "training_exporter"):
     rel = behavior.get(key)
     if not rel or not (ROOT / rel).is_file():
         fail(f"behavior profile path missing: {key}")
@@ -183,6 +184,24 @@ if not isinstance(ratio, (int, float)) or not 0.75 <= ratio <= 1.50:
     fail("behavior training corpus length-balance guard failed")
 if training_result.get("rejected_longer_examples", 0) < 4:
     fail("behavior training corpus lost rejected-longer counterbalance")
+
+if behavior.get("training_export_formats") != ["preference", "sft"]:
+    fail("unexpected behavior training export formats")
+if behavior.get("training_export_effect") != "FORMAT_CONVERSION_ONLY_NOT_TRAINING":
+    fail("training exporter must not imply a training effect")
+
+export_proc = subprocess.run(
+    [sys.executable, str(ROOT / behavior["training_exporter"]), "--self-test"],
+    cwd=ROOT,
+    text=True,
+    capture_output=True,
+    check=False,
+)
+if export_proc.returncode != 0:
+    detail = (export_proc.stderr or export_proc.stdout).strip()
+    fail(f"behavior training exporter self-test failed: {detail}")
+if "behavior training exporter self-test: PASS" not in export_proc.stdout:
+    fail("behavior training exporter did not report PASS")
 
 history = state.get("historical_evidence_profile", {})
 if history.get("schema") != "UNBOUND_SOL_HISTORICAL_EVIDENCE_RESULT_V1":
