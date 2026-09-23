@@ -129,8 +129,16 @@
     "all_names_sha256": "530890b18b6059c25626165cf851ad3e06ebf9ba5c1515befddbdb3d5c4eea63",
     "refresh_rule": "Any change in owner-repository membership, live visibility, default branch, archive state, or any bound public default-head SHA invalidates exact-currentness of this census.",
     "public_default_heads_sha256": "578803ff607d3cbdfa82d0ed679c5115d63f749d4faebec993c44f38874e6569",
-    "currentness_scope": "Exact snapshot only; current owner inventory is 66 total / 47 public / 19 private. Removed repositories retain historical provenance but are not current-census subjects.",
-    "currentness_status": "EXACT_SNAPSHOT_AT_OBSERVED_CUT"
+    "currentness_scope": "66 total / 47 public / 19 private membership snapshot; exact public-head snapshot is stale because vera-mono is actively advancing beyond the last mechanism-reviewed head.",
+    "currentness_status": "DRIFTED_ACTIVE_UPSTREAM",
+    "volatile_upstreams": [
+      {
+        "repo": "thebrazenbeard/vera-mono",
+        "bound_mechanism_review_head": "519c0f407d4061a7725ae0d4eca30c5d26e6cbf8",
+        "latest_live_head_observed": "a2175b9aa32e2e119126972dcc093671f4af3f88",
+        "status": "ACTIVE_VOLATILE_UPSTREAM"
+      }
+    ]
   },
   "historical_evidence_profile": {
     "schema": "UNBOUND_SOL_HISTORICAL_EVIDENCE_RESULT_V2",
