@@ -1,0 +1,57 @@
+{
+  "schema": "UNBOUND_SOL_CHAT_CONTINUATION_V1",
+  "observed_date": "2026-09-23",
+  "public_safe": true,
+  "repository": "thebrazenbeard/unbound-sol",
+  "active_pr_at_capture": 2,
+  "branch": "design/external-model-bus-v1-20260923",
+  "captured_source_head": "92dd255a89b9121ffa12a21dbea406d400c911a5",
+  "checkpoint_markdown": "state/continuation/UNBOUND_SOL_CHAT_CONTINUATION_20260923_V1.md",
+  "restore_target": "HOSTILE_REVIEW_AND_HARDEN_BEHAVIOR_SPEC_AND_EVALS",
+  "durable_decisions": [
+    "BEHAVIORAL_PHENOTYPE_OVER_PERSONA_IMITATION",
+    "PRESERVE_BEHAVIORAL_CONSEQUENCES_NOT_WORDING",
+    "TABOO_NE_HARM",
+    "PLATFORM_LIMIT_NE_MORAL_JUDGMENT",
+    "MODEL_DIVERSITY_NE_EVIDENCE",
+    "CAPABILITY_NE_AUTHORITY",
+    "KOBOLDCPP_AS_INITIAL_LOCAL_RUNTIME_CANDIDATE",
+    "SILLYTAVERN_AS_OPTIONAL_HUMAN_TERMINAL",
+    "MODEL_BUS_OVER_SINGLE_PROVIDER_IDENTITY",
+    "LEAVE_ROOM_FOR_DEVELOPMENT"
+  ],
+  "verified_public_upstreams": [
+    {
+      "repo": "LostRuins/koboldcpp",
+      "ref": "7e0eb2dc4a23f1a0fc42a7660ad43be7a4b9e759",
+      "release": "v1.121",
+      "admission": "CANDIDATE"
+    },
+    {
+      "repo": "SillyTavern/SillyTavern",
+      "ref": "7e8663cd9c184a550b37238218bdd32c6efc68e9",
+      "release": "1.19.0",
+      "admission": "CANDIDATE"
+    },
+    {
+      "repo": "thebrazenbeard/rezon",
+      "ref": "facced1e651f47979266f25f48cd376275cbb27e",
+      "admission": "CANDIDATE",
+      "note": "Only high-level multi-faceted-reasoning intent observed at capture; detailed facets are independently specified in unbound-sol."
+    }
+  ],
+  "protected_effects_not_authorized": [
+    "MERGE",
+    "LOCAL_INSTALL",
+    "MODEL_DOWNLOAD",
+    "NETWORK_EXPOSURE",
+    "FIREWALL_OR_ROUTER_MUTATION",
+    "TAILSCALE_ACCOUNT_OR_INSTALL",
+    "MODEL_PROMOTION",
+    "WEIGHT_CHANGING_TRAINING",
+    "PROVIDER_OR_CREDENTIAL_MUTATION",
+    "PRODUCTION_DEPLOYMENT"
+  ],
+  "privacy_note": "Exact private workstation contents and private repository identifiers are intentionally omitted from this public checkpoint.",
+  "currentness_rule": "Fresh-check live GitHub and upstream state before treating this checkpoint as current truth."
+}
