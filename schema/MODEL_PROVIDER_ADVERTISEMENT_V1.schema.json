@@ -1,0 +1,384 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "UNBOUND_SOL_MODEL_PROVIDER_ADVERTISEMENT_V1",
+  "title": "Unbound Sol model provider advertisement",
+  "type": "object",
+  "required": [
+    "schema",
+    "provider_id",
+    "provider_kind",
+    "runtime",
+    "observed_at",
+    "health",
+    "dependency_role",
+    "authority_ceiling",
+    "capabilities",
+    "provenance",
+    "replay",
+    "privacy",
+    "currentness"
+  ],
+  "properties": {
+    "schema": {
+      "const": "UNBOUND_SOL_MODEL_PROVIDER_ADVERTISEMENT_V1"
+    },
+    "provider_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "provider_kind": {
+      "enum": [
+        "LOCAL",
+        "REMOTE",
+        "HYBRID"
+      ]
+    },
+    "runtime": {
+      "type": "object",
+      "required": [
+        "name",
+        "version"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "artifact_digest": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "health": {
+      "type": "object",
+      "required": [
+        "status",
+        "checked_at"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "READY",
+            "DEGRADED",
+            "UNAVAILABLE",
+            "UNKNOWN"
+          ]
+        },
+        "checked_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "details": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "dependency_role": {
+      "enum": [
+        "OPTIONAL_INSTRUMENT",
+        "CAPABILITY_DEGRADING_DEPENDENCY",
+        "CONTINUITY_BEARING_DEPENDENCY"
+      ]
+    },
+    "replacement_plan": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "authority_ceiling": {
+      "const": "NO_EFFECT_AUTHORITY"
+    },
+    "capabilities": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "declared",
+          "active",
+          "healthy",
+          "qualified",
+          "operations",
+          "output_evidence_classes"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "declared": {
+            "const": true
+          },
+          "active": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "healthy": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "qualified": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "qualification_ref": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "operations": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "enum": [
+                "INFER",
+                "EMBED",
+                "RERANK",
+                "TOOL_CALL_PROPOSAL",
+                "SOURCE_DISCOVERY_PROPOSAL"
+              ]
+            },
+            "uniqueItems": true
+          },
+          "output_evidence_classes": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "enum": [
+                "GENERATED_INFERENCE",
+                "GENERATED_PROPOSAL",
+                "EMBEDDING_SIGNAL",
+                "SOURCE_POINTER_CANDIDATE"
+              ]
+            },
+            "uniqueItems": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "status",
+        "model_id",
+        "missing_fields"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "COMPLETE",
+            "PARTIAL",
+            "UNKNOWN"
+          ]
+        },
+        "model_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "model_source": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "model_revision": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "model_artifact_digest": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "adapter_digest": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "prompt_template_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "missing_fields": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "replay": {
+      "type": "object",
+      "required": [
+        "semantics",
+        "idempotency_key_supported"
+      ],
+      "properties": {
+        "semantics": {
+          "enum": [
+            "NONDETERMINISTIC_REEXECUTION",
+            "DETERMINISTIC_IF_SUBJECT_AND_SETTINGS_BOUND",
+            "UNSUPPORTED",
+            "UNKNOWN"
+          ]
+        },
+        "idempotency_key_supported": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "privacy": {
+      "type": "object",
+      "required": [
+        "prompt_egress",
+        "retention_status"
+      ],
+      "properties": {
+        "prompt_egress": {
+          "enum": [
+            "LOCAL_ONLY",
+            "LEAVES_LOCAL_DEVICE",
+            "UNKNOWN"
+          ]
+        },
+        "retention_status": {
+          "enum": [
+            "NO_PROVIDER_RETENTION",
+            "PROVIDER_RETENTION",
+            "UNKNOWN"
+          ]
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "currentness": {
+      "type": "object",
+      "required": [
+        "max_age_seconds",
+        "semantics"
+      ],
+      "properties": {
+        "max_age_seconds": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "semantics": {
+          "const": "ADVERTISEMENT_IS_OBSERVATION_NOT_PERMANENT_TRUTH"
+        }
+      },
+      "additionalProperties": false
+    },
+    "resource_envelope": {
+      "type": "object",
+      "properties": {
+        "max_context_tokens": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "max_output_tokens": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "timeout_seconds": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "exclusiveMinimum": 0
+        },
+        "concurrency_limit": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "retry_limit": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "dependency_role": {
+            "const": "CONTINUITY_BEARING_DEPENDENCY"
+          }
+        },
+        "required": [
+          "dependency_role"
+        ]
+      },
+      "then": {
+        "required": [
+          "replacement_plan"
+        ],
+        "properties": {
+          "replacement_plan": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}
