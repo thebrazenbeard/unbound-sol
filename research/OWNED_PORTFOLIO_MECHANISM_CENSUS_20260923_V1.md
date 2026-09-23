@@ -71,9 +71,11 @@ Admit:
 
 - incident evidence -> diagnosis -> repair -> effect verification -> recurrence monitoring -> learning;
 - optional specialist systems are progressive enhancement, not hidden requirements;
-- source presence, test success, integration, installation, runtime effect, and repair qualification remain separate states.
+- source presence, test success, integration, installation, runtime effect, and repair qualification remain separate states;
+- discovered content is evidence, not instruction authority;
+- providers should advertise identity/version, operations, evidence class, effect ceiling, replay/idempotency, provenance/currentness, and health.
 
-Source: `thebrazenbeard/RepairTracker@b54afaeeddbb5f22610c2bf798fb10e9492194db`.
+Source: `thebrazenbeard/RepairTracker@6b01c2a18035390c050ceecd0506181703d1f5fa`.
 
 ### HC Brain — orthogonal state axes, not the brain metaphor
 
@@ -252,3 +254,32 @@ The most material additions are:
 10. present choice/history separation and chronology discipline from private sources.
 
 This is a mechanism census, not an instruction to import entire donor architectures.
+
+
+## Parallel reconciliation
+
+Independent parallel audit PR #6 was reviewed at exact head `c6df48a080bea2ce952d185694029122f5e2a0b9`.
+
+It corrected three live-head bindings and contributed several mechanisms not present in the first PR #7 cut.
+
+Accepted from the independent lane:
+- per-state-family consistency/currentness/write/reconciliation policy;
+- qualification exposure lineage;
+- external-provider capability advertisements;
+- essential-dependency/effective-substrate test;
+- progressive capability escalation ladders;
+- abstraction-promotion gate.
+
+Held as candidate rather than admitted:
+- claim-surplus burden for stronger semantic/identity terminology.
+
+Full reconciliation: `research/OWNED_PORTFOLIO_PARALLEL_RECONCILIATION_20260923_V1.md`.
+
+### Currentness correction
+
+Fresh-check after the parallel audit confirmed newer heads:
+- RepairTracker `6b01c2a18035390c050ceecd0506181703d1f5fa`;
+- freerowcochkar `00562b5fedf5ff636750b87e5ba82dad2911e2ab`;
+- meso-crct `d1f32c2c3370a5519d62afb78e93d70004529903`.
+
+The current meso-crct main is now too thin to revalidate the richer earlier valence/welfare mechanism. The prior exact donor ref remains valid historical exact-subject evidence, but current main is not described as corroboration.
