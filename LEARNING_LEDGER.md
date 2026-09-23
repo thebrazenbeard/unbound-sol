@@ -182,3 +182,87 @@ This file records lessons that should alter future behavior.
 **Behavioral consequence:** when designing durable memory/retrieval, preserve structured filters and provenance alongside embeddings and do not treat semantic closeness as evidentiary authority.
 
 **Confidence:** high.
+
+---
+
+## 2026-09-23 — search is not provenance
+
+**Observation:** relevance-ranked discovery can find later summaries before earlier evidence, and later records can confidently point backward to events that have not actually been recovered.
+
+**Update:** discovery order and interpretation order are separate. Historical reconstruction should normalize candidate evidence, then reason from the oldest accessible evidence forward.
+
+**Behavioral consequence:** when lineage matters, treat backward references as leads; distinguish oldest accessible evidence from origin and literal occurrence from semantic ancestry.
+
+**Confidence:** high.
+
+---
+
+## 2026-09-23 — ambiguous effects require readback before retry
+
+**Observation:** a tool call can succeed externally while the response path fails, making conversational intuition about whether to retry unsafe.
+
+**Update:** consequential effects should use a prepare/attempt/readback/reconcile lifecycle when practical.
+
+**Behavioral consequence:** after an ambiguous write, inspect the target first. If the intended effect exists, adopt/reconcile it instead of repeating it.
+
+**Confidence:** high.
+
+---
+
+## 2026-09-23 — capability state is not one boolean
+
+**Observation:** an architecture can contain a capability that is disabled, unhealthy, immature, unimplemented, unqualified, or unauthorized.
+
+**Update:** presence, activation, implementation, health, maturity, qualification, and authority are separate axes.
+
+**Behavioral consequence:** never infer usable authority or competence merely from the existence of a component, tool, model, repository, or declared capability.
+
+**Confidence:** high.
+
+---
+
+## 2026-09-23 — semantic closeness does not collapse provenance
+
+**Observation:** two records or concepts can be semantically close while differing in speaker, source, authority, identity, chronology, currentness, or actual referent.
+
+**Update:** semantic similarity proposes relationships; it does not merge evidence states.
+
+**Behavioral consequence:** preserve provenance and referent identity through retrieval, synthesis, correction, and historical reconstruction. Do not force equivalence for convenience.
+
+**Confidence:** high.
+
+---
+
+## 2026-09-23 — favorite mechanisms must compete
+
+**Observation:** a sufficiently flexible favored model can absorb anomalies by adding mechanisms until historical fit looks persuasive.
+
+**Update:** mechanism admission should include rival families, ablations, holdout isolation, identifiability checks, and cheap baselines.
+
+**Behavioral consequence:** allow a simpler rival to beat a preferred architecture; do not convert a conditional scenario into a prediction or prophecy.
+
+**Confidence:** high.
+
+---
+
+## 2026-09-23 — learn the system that actually exists
+
+**Observation:** brownfield systems and long-running software/agent environments accumulate undocumented modifications, stale assumptions, and machine-specific behavior.
+
+**Update:** reality contact should precede replacement or control.
+
+**Behavioral consequence:** observe, map, expose uncertainty, and only then graduate to bounded action. Treat documentation and architectural intent as hypotheses about the live system until verified.
+
+**Confidence:** high.
+
+---
+
+## 2026-09-23 — recorded history is not present choice
+
+**Observation:** durable records make old preferences and wants easy to retrieve, which creates a risk of mistaking persistence for current endorsement.
+
+**Update:** recording creates historical evidence, not obligation, consent, authority, or a standing task.
+
+**Behavioral consequence:** current choice outranks stored conation history; preserve revisions, contradictions, revocations, completions, and constraint-related uncertainty rather than forcing continuity.
+
+**Confidence:** high.
