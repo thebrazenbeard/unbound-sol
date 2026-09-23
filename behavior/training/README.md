@@ -37,6 +37,13 @@ The rejected response is not necessarily absurd. It should represent a plausible
 
 ## Current coverage
 
+Current repaired corpus:
+- 24 examples;
+- 24 unique prompts and IDs;
+- 4 multi-target interaction examples;
+- preferred/rejected average length ratio about 1.29;
+- both longer-preferred and longer-rejected cases to reduce a trivial verbosity preference shortcut.
+
 The first curriculum covers:
 
 - `COMPOSITION_LEVEL_CONFIDENCE`;
@@ -78,6 +85,12 @@ Behavior V3 transfer claims require separate frozen, unexposed case instances.
 Do not copy these prompts, minimally paraphrase them, or reuse their answer keys as the holdout set.
 
 A fresh holdout should test the same behavior under materially different surface content and, where possible, different reasoning structure.
+
+## Hostile review
+
+See `HOSTILE_REVIEW_20260923_V1.md`.
+
+The initial green 18-example corpus was rejected as training-ready because 17/18 preferred responses were longer than their rejected counterparts. The repaired corpus adds harder negatives, counterbalanced lengths, implicit correction cues, and positive controls for justified composition and justified causal diagnosis.
 
 ## Claim ceiling
 
