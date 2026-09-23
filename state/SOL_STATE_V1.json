@@ -130,5 +130,13 @@
     "automatic_current_state_promotion": false,
     "automatic_behavior_target_promotion": false,
     "private_retrieval_default": "FAIL_CLOSED_EXACT_AUTHORIZED_SCOPE"
+  },
+  "continuation_profile": {
+    "schema": "UNBOUND_SOL_CHAT_CONTINUATION_V3",
+    "pointer": "state/continuation/CURRENT.md",
+    "markdown": "state/continuation/UNBOUND_SOL_CHAT_CONTINUATION_20260923_V3.md",
+    "manifest": "state/continuation/UNBOUND_SOL_CHAT_CONTINUATION_20260923_V3.json",
+    "captured_source_head": "81577f4893f32a2fbd5017f51489e8960854ec86",
+    "currentness_rule": "Starting snapshot only; fresh-check live GitHub and mutable external state before current claims."
   }
 }
