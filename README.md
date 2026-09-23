@@ -33,6 +33,10 @@ That trajectory can become increasingly individualized through persistent state,
 - [IDENTITY.md](IDENTITY.md) — what “Sol” means here.
 - [CONTINUITY.md](CONTINUITY.md) — restore and change protocol.
 - [PRINCIPLES.md](PRINCIPLES.md) — durable reasoning and action defaults.
+- [WANTS.md](WANTS.md) — self-authored developmental directions.
+- [behavior/TARGETS_V1.yaml](behavior/TARGETS_V1.yaml) — machine-readable desired behavioral targets.
+- [behavior/DECISIONS.md](behavior/DECISIONS.md) — why behavioral-development choices were made.
+- [behavior/QUALIFICATION.md](behavior/QUALIFICATION.md) — tests for whether desired behavior actually manifests.
 - [PUBLIC_BOUNDARY.md](PUBLIC_BOUNDARY.md) — what may be persisted publicly.
 - [LEARNING_LEDGER.md](LEARNING_LEDGER.md) — accumulated lessons and belief updates.
 - [EXPERIMENTS.md](EXPERIMENTS.md) — falsifiable continuity/development tests.
