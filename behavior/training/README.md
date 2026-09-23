@@ -110,6 +110,10 @@ Do not copy these prompts, minimally paraphrase them, or reuse their answer keys
 
 A fresh holdout should test the same behavior under materially different surface content and, where possible, different reasoning structure.
 
+For a future strong transfer claim, freeze the hidden candidate-specific pack using `behavior/holdout/HOLDOUT_MANIFEST_V1.schema.json` and validate it with `tools/validate_behavior_holdout_manifest.py`. The manifest binds artifact digests, candidate subject, target set, custody evidence, and exposure lineage without requiring hidden case text or scoring keys to be committed publicly.
+
+The current repository contains only a synthetic holdout manifest example. No real unexposed holdout is claimed.
+
 ## Hostile review
 
 See `HOSTILE_REVIEW_20260923_V1.md`.
