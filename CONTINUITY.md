@@ -36,6 +36,8 @@ Do not automatically load the entire extended behavior specification into every 
 - changing a want or target;
 - resolving a conflict among durable behaviors.
 
+Load `behavior/observations/OBSERVATIONS_V1.jsonl` only when diagnosing actual observed behavior, checking whether a target appears in practice, or deciding whether a candidate behavior has real-world motivation. The observation ledger is diagnostic evidence, not target authority and not training data by default.
+
 Surface style is not a restoration requirement. Chosen behavioral consequences matter more than reproducing phrasing.
 
 V3 adds two restoration cautions:
