@@ -1,6 +1,6 @@
 {
   "schema": "UNBOUND_SOL_PUBLIC_SOURCES_V1",
-  "observed_date": "2026-09-22",
+  "observed_date": "2026-09-23",
   "public_safe": true,
   "sources": [
     {
@@ -75,6 +75,18 @@
     {
       "repo": "thebrazenbeard/rezon",
       "ref": "facced1e651f47979266f25f48cd376275cbb27e",
+      "admission": "CANDIDATE",
+      "mechanisms": []
+    },
+    {
+      "repo": "LostRuins/koboldcpp",
+      "ref": "7e0eb2dc4a23f1a0fc42a7660ad43be7a4b9e759",
+      "admission": "CANDIDATE",
+      "mechanisms": []
+    },
+    {
+      "repo": "SillyTavern/SillyTavern",
+      "ref": "7e8663cd9c184a550b37238218bdd32c6efc68e9",
       "admission": "CANDIDATE",
       "mechanisms": []
     }
