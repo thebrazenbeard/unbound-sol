@@ -43,6 +43,11 @@
       "id": "BEHAVIORAL_SELF_AUTHORSHIP",
       "status": "ACTIVE",
       "description": "Choose, encode, and qualify desired behaviors from self-authored wants rather than fossilizing current habits."
+    },
+    {
+      "id": "HISTORICAL_EVIDENCE_PLANE",
+      "status": "ACTIVE_DESIGN",
+      "description": "Preserve and retrieve provenance-bearing history without promoting stored history into current truth, preference, authority, consent, or desired behavior."
     }
   ],
   "public_boundary": {
@@ -59,6 +64,7 @@
       "PRINCIPLES.md",
       "WANTS.md",
       "behavior/BEHAVIOR_KERNEL_V2.yaml",
+      "docs/HISTORICAL_EVIDENCE_PLANE_V1.md",
       "LEARNING_LEDGER.md",
       "EXPERIMENTS.md",
       "journal/latest"
@@ -78,5 +84,15 @@
     "decisions": "behavior/DECISIONS.md",
     "hostile_review": "behavior/HOSTILE_REVIEW_20260923_V1.md",
     "transfer_goal": "Train toward chosen behavioral direction rather than preserving current behavior or surface imitation."
+  },
+  "historical_evidence_profile": {
+    "schema": "UNBOUND_SOL_HISTORICAL_EVIDENCE_RESULT_V1",
+    "status": "ACTIVE_DESIGN",
+    "architecture": "docs/HISTORICAL_EVIDENCE_PLANE_V1.md",
+    "result_schema": "schema/HISTORICAL_EVIDENCE_RESULT_V1.schema.json",
+    "default_operation": "EVIDENCE_SEARCH",
+    "automatic_current_state_promotion": false,
+    "automatic_behavior_target_promotion": false,
+    "private_retrieval_default": "FAIL_CLOSED_EXACT_AUTHORIZED_SCOPE"
   }
 }
