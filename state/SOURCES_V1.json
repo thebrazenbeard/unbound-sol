@@ -5,44 +5,52 @@
   "sources": [
     {
       "repo": "thebrazenbeard/driftguard",
-      "ref": "c82162bb306e89b3aabe29f09f8b782ebe3b317e",
+      "ref": "52fa829c629fa0f3e729204912db9f9f783f322a",
       "admission": "ADOPTED",
       "mechanisms": [
         "evidence_binding",
         "drift_without_stasis",
         "effect_separation"
-      ]
+      ],
+      "admission_source_ref": "c82162bb306e89b3aabe29f09f8b782ebe3b317e",
+      "binding_role": "CURRENT_DESCENDANT_OF_EXACT_ADMISSION_SUBJECT"
     },
     {
       "repo": "thebrazenbeard/Discovery",
-      "ref": "2881a94c7eb3c83a34b0c00bab739b41c1d99b6d",
+      "ref": "368e8dc8274e89a306039d28462c7547b263e93e",
       "admission": "ADOPTED",
       "mechanisms": [
         "earned_abstraction",
         "currentness",
         "public_private_boundary"
-      ]
+      ],
+      "admission_source_ref": "2881a94c7eb3c83a34b0c00bab739b41c1d99b6d",
+      "binding_role": "CURRENT_REVALIDATED_DEFAULT_HEAD"
     },
     {
       "repo": "thebrazenbeard/project-runner",
-      "ref": "a0db5e26c084b8c7226199ca0d8d6550296e709b",
+      "ref": "86b98473838bd5a4e1e2d9f6ac1b2cb6aa7f7094",
       "admission": "ADOPTED",
       "mechanisms": [
         "capability_vs_authority",
         "expected_state",
         "effect_verification",
         "reconstruction"
-      ]
+      ],
+      "admission_source_ref": "a0db5e26c084b8c7226199ca0d8d6550296e709b",
+      "binding_role": "CURRENT_REVALIDATED_DEFAULT_HEAD"
     },
     {
       "repo": "thebrazenbeard/god-brain",
-      "ref": "c0f6af7143aa5916bae96eb1f0ee9c9de6505cf5",
+      "ref": "212eb464cb9259c8bad1fc978db372fa86ba3f10",
       "admission": "ADOPTED",
       "mechanisms": [
         "claim_separation",
         "hostile_falsification",
         "self_model_claim_ceiling"
-      ]
+      ],
+      "admission_source_ref": "c0f6af7143aa5916bae96eb1f0ee9c9de6505cf5",
+      "binding_role": "CURRENT_REVALIDATED_DEFAULT_HEAD"
     },
     {
       "repo": "thebrazenbeard/meso-crct",
@@ -60,7 +68,10 @@
       "mechanisms": [
         "bounded_machine_contact",
         "state_transition_separation"
-      ]
+      ],
+      "binding_role": "HISTORICAL_EXACT_DONOR_CURRENT_MAIN_INSUFFICIENT",
+      "current_main_ref": "6af00c096967253f85139c6efcf7fd4c04a64b7b",
+      "current_main_status": "INSUFFICIENT_TO_REVALIDATE_MECHANISMS"
     },
     {
       "repo": "thebrazenbeard/WorkBridgeMCP",
@@ -70,13 +81,19 @@
         "root_confinement",
         "process_gate",
         "local_health"
-      ]
+      ],
+      "binding_role": "HISTORICAL_EXACT_DONOR_CURRENT_MAIN_INSUFFICIENT",
+      "current_main_ref": "75c811f21ef97fe0356e8f54e007d086300dd0f1",
+      "current_main_status": "INSUFFICIENT_TO_REVALIDATE_MECHANISMS"
     },
     {
       "repo": "thebrazenbeard/rezon",
       "ref": "facced1e651f47979266f25f48cd376275cbb27e",
       "admission": "CANDIDATE",
-      "mechanisms": []
+      "mechanisms": [],
+      "binding_role": "HISTORICAL_CANDIDATE_SUBJECT",
+      "current_main_ref": "e9a893d11e47ba4065d962b8ee69d3b0e4c9e38a",
+      "current_main_status": "INSUFFICIENT_SURFACE"
     },
     {
       "repo": "LostRuins/koboldcpp",
@@ -301,7 +318,10 @@
     "all_names_sha256": "fbf6d87da92804483dc2675fe8e7ad79d97b42faffcb64b7077b0ef4de597e43",
     "public_report": "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.md",
     "machine_report": "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.json",
-    "private_repo_identifiers_published": false
+    "private_repo_identifiers_published": false,
+    "public_default_heads_sha256": "57a3283cf8cf809eeb02980b28f4216078b745160c05ce59a887102a45a3f0be",
+    "currentness_rule": "Any change in owner-repository membership, visibility, default branch, archive state, or any bound public default-head SHA invalidates exact-currentness of the census snapshot.",
+    "currentness_status": "EXACT_SNAPSHOT_AT_OBSERVED_CUT"
   },
   "private_source_mechanism_classes": {
     "observed_date": "2026-09-23",
