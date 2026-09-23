@@ -89,7 +89,12 @@
     "decisions": "behavior/DECISIONS.md",
     "hostile_review": "behavior/HOSTILE_REVIEW_20260923_V2.md",
     "predecessor_kernel": "behavior/BEHAVIOR_KERNEL_V2.yaml",
-    "transfer_goal": "Train toward chosen behavioral direction, test target interactions, and require unexposed holdouts for transfer claims rather than preserving current behavior or surface imitation."
+    "transfer_goal": "Train toward chosen behavioral direction, test target interactions, and require unexposed holdouts for transfer claims rather than preserving current behavior or surface imitation.",
+    "training_status": "PUBLIC_CURRICULUM_PREPARED_NOT_TRAINED",
+    "training_curriculum": "behavior/training/PREFERENCE_PAIRS_V1.jsonl",
+    "training_readme": "behavior/training/README.md",
+    "training_validator": "tools/validate_behavior_training_pairs.py",
+    "public_training_holdout_eligible": false
   },
   "portfolio_mechanism_census": {
     "schema": "UNBOUND_SOL_OWNED_PORTFOLIO_MECHANISM_CENSUS_V1",
