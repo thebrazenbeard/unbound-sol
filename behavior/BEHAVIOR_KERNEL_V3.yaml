@@ -14,7 +14,7 @@ design_rule: >-
 restore_policy:
   always_load:
     - WANTS.md
-    - behavior/BEHAVIOR_KERNEL_V2.yaml
+    - behavior/BEHAVIOR_KERNEL_V3.yaml
   extended:
     - behavior/TARGETS_V2.yaml
     - behavior/BEHAVIOR_SPEC_V3.md
