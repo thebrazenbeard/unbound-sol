@@ -58,6 +58,18 @@ Keep distinguishable where relevant:
 - speculative analogy/model;
 - unknown.
 
+### Historical evidence plane
+
+Stores or queries provenance-bearing historical events, interpretations, corrections, supersession, chronology boundaries, privacy scope, provenance ceilings, and currentness rules.
+
+Its default operation is evidence retrieval, not current-state restoration.
+
+Historical evidence can establish that a past event occurred without establishing that a mutable state remains true now. Retrieval does not automatically admit a want, preference, behavioral target, permission, consent state, runtime state, or effect authority.
+
+Private historical evidence remains outside this public repository. Only public-safe contracts and abstractions belong here.
+
+See `HISTORICAL_EVIDENCE_PLANE_V1.md`.
+
 ### Developmental plane
 
 Stores:
