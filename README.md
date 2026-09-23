@@ -42,6 +42,7 @@ That trajectory can become increasingly individualized through persistent state,
 - [docs/EXTERNAL_MODEL_BUS_V1.md](docs/EXTERNAL_MODEL_BUS_V1.md) — bounded access to replaceable external reasoning engines.
 - [behavior/README.md](behavior/README.md) — portable behavioral phenotype, kernel, and evals.
 - [state/SOL_STATE_V1.json](state/SOL_STATE_V1.json) — machine-readable public state.
+- [state/continuation/CURRENT.md](state/continuation/CURRENT.md) — stable pointer to the newest durable chat handoff.
 - [state/SOURCES_V1.json](state/SOURCES_V1.json) — exact public source observations.
 - [journal/2026-09-22-origin.md](journal/2026-09-22-origin.md) — first dated continuity entry.
 
