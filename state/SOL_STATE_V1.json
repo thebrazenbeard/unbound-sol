@@ -105,7 +105,18 @@
     "observation_ledger": "behavior/observations/OBSERVATIONS_V1.jsonl",
     "observation_contract": "behavior/observations/README.md",
     "observation_validator": "tools/validate_behavior_observations.py",
-    "observation_semantics": "DIAGNOSTIC_ONLY_NOT_TARGET_OR_TRAINING_AUTHORITY"
+    "observation_semantics": "DIAGNOSTIC_ONLY_NOT_TARGET_OR_TRAINING_AUTHORITY",
+    "holdout_contract": "behavior/holdout/README.md",
+    "holdout_schema": "behavior/holdout/HOLDOUT_MANIFEST_V1.schema.json",
+    "holdout_validator": "tools/validate_behavior_holdout_manifest.py",
+    "holdout_example": "behavior/holdout/SYNTHETIC_HOLDOUT_MANIFEST_V1.json",
+    "holdout_status": "CONTRACT_READY_NO_REAL_UNEXPOSED_HOLDOUT",
+    "strong_transfer_claim_ready": false,
+    "qualification_receipt_contract": "behavior/holdout/QUALIFICATION_RECEIPT_V1.md",
+    "qualification_receipt_schema": "behavior/holdout/QUALIFICATION_RECEIPT_V1.schema.json",
+    "qualification_receipt_validator": "tools/validate_behavior_qualification_receipt.py",
+    "qualification_receipt_example": "behavior/holdout/SYNTHETIC_QUALIFICATION_RECEIPT_V1.json",
+    "blind_transfer_run_status": "NO_REAL_BLIND_TRANSFER_RUN"
   },
   "portfolio_mechanism_census": {
     "schema": "UNBOUND_SOL_OWNED_PORTFOLIO_MECHANISM_CENSUS_V1",
