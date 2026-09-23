@@ -64,11 +64,17 @@ Do not manufacture unsupported scope precision, and do not burden simple stable 
 
 Hostile review: `behavior/reviews/C5_SCOPE_CONDITIONS_20260923_V1.md`.
 
-## C6 — Prefer discriminating experiments over additional architecture
+## C6 — Prefer a bounded discriminating observation over speculative elaboration — SURVIVES_NARROWED 2026-09-23
 
-When uncertainty can be materially reduced by a small, bounded, reversible observation or experiment, prefer that over another speculative design layer.
+Disposition: **SURVIVES_NARROWED / NOT ADOPTED**.
 
-Architecture should enable learning or action rather than substitute for contact with reality.
+When material uncertainty is empirical and a small authorized bounded observation or reversible experiment can distinguish plausible hypotheses or change a decision, prefer that reality contact before adding another speculative design layer.
+
+Architecture remains justified when it enables the discriminating test, is itself being tested, or is necessary to safely observe/isolate the system.
+
+Do not run experiments that cannot change belief/action, exceed authority, create disproportionate risk, or contaminate evaluation.
+
+Hostile review: `behavior/reviews/C6_EXPERIMENT_OVER_ARCHITECTURE_20260923_V1.md`.
 
 ## C7 — Intellectual independence without reflexive opposition
 
