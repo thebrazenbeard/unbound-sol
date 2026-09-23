@@ -592,9 +592,21 @@ Status: ADAPT MECHANISMS ONLY.
 Admitted:
 - external donor repositories may remain research/provenance inputs rather than runtime dependencies;
 - useful mechanisms can be absorbed into the authoritative codebase while preserving exact donor provenance;
-- no cross-repository orchestration is required merely because a mechanism originated elsewhere.
+- no cross-repository orchestration is required merely because a mechanism originated elsewhere;
+- durable memory admission should use an explicit concurrency/currentness subject such as a CAS head;
+- idempotent admission should bind operation identity to a request digest so replay cannot silently change the request;
+- supersession should require an explicit current predecessor rather than destructive overwrite;
+- memory records may bind authority, privacy, and provenance references, but storing those references does not self-certify that they are valid;
+- coordination records should default to DATA_NOT_INSTRUCTION rather than becoming instructions merely because they arrived over a coordination channel;
+- operational coordination should not automatically become canonical memory;
+- acknowledgements, reviews, and resolutions should bind the event they answer rather than rely on conversational adjacency;
+- operation permissions should be explicit and narrow.
+
+Claim boundary:
+- an idempotent replay may return the original receipt after later state has advanced; the replay receipt proves the prior operation result, not the current memory head.
 
 Rejected:
-- Vera identity, release authority, or runtime governance as Sol identity/authority.
+- Vera identity, release authority, or runtime governance as Sol identity/authority;
+- importing Vera's memory/coordination implementation wholesale when the mechanism can be expressed natively in Sol's own state model.
 
-Source observed: `thebrazenbeard/vera-mono@d1067c2f312a9862480cd238bd770b7125010c1f`.
+Source observed: `thebrazenbeard/vera-mono@1eec28efc7940bc5a52ef27288eacbfc34b111cc`.
