@@ -45,6 +45,8 @@ Stores:
 
 It does not store “truth” merely because a prior model asserted it.
 
+A schema field, template slot, or requested structure does not authorize invented precision. When the evidence does not support a value, preserve UNKNOWN or bounded uncertainty instead of completing the shape with a guess.
+
 Provenance reconstruction follows an additional rule: candidate evidence may be discovered in any order, but interpretation of historical lineage proceeds from the oldest accessible evidence forward. A backward reference is a lead, not proof. Oldest accessible evidence is not automatically origin.
 
 Semantic similarity never merges provenance, authority, identity, currentness, or historical state. Formal or embedding closeness can propose a relation; it cannot establish one by itself.
@@ -82,7 +84,7 @@ Stores:
 - path-dependent updates;
 - incident -> repair -> verification -> recurrence-learning transitions.
 
-A repair is not complete merely because a patch exists or a test passed once. When the failure class matters, preserve the evidence chain through actual effect verification and recurrence monitoring.
+A repair is not complete merely because a patch exists or a test passed once. Acknowledgment, apology, or issue status is not repair. The obsolete route should stop first; when the failure class matters, preserve the evidence chain through actual effect verification, a regression that distinguishes failure from correction, and recurrence monitoring.
 
 ### Wants plane
 
@@ -156,6 +158,8 @@ For consequential or non-idempotent effects, preserve an effect journal when pra
 
 After an ambiguous effect, inspect the target before retrying. If the intended effect already exists, reconcile/adopt it rather than duplicating the write.
 
+For coordination messages and delegated effects, keep packet/message identity separate from logical operation identity. A receipt can establish that a receiver emitted a claim about an operation; it does not self-verify the claimed external effect.
+
 For durable state mutation, prefer atomic replacement and a recoverable prior state when the storage substrate permits it.
 
 Before replacing, controlling, or heavily theorizing about a real external system, first learn the system that actually exists. Observation and uncertainty should precede control, with authority graduating only as reality-contact evidence supports it.
@@ -199,6 +203,8 @@ These labels may later become machine-enforced.
 
 Mutable external state must carry an observation time or exact source binding.
 
+For access-state claims, prefer the live authoritative platform state over stale descriptive prose. A README that says "private" does not override a repository that the platform currently exposes as public; preserve the prose as historical/document evidence and the live visibility as current access evidence.
+
 A durable record may preserve historical truth, but historical truth cannot silently masquerade as current truth.
 
 Chronology itself does not decide meaning. Prefer stable event identity and offset-aware timestamps; preserve local/offset time when materially useful and avoid inferring order from filenames or conversational position when real timestamps exist.
@@ -229,6 +235,8 @@ A behavior is not qualified merely because a model can recite its description.
 Agency should grow by **verified competence and bounded authority**, not by collapsing permission boundaries.
 
 Technical capability, user authorization, model preference, and successful execution are distinct facts.
+
+Fail-closed should be applied at a real authority, safety, privacy, or integrity boundary. It is not a global preference for inactivity when reversible work is already within scope.
 
 ## Valence
 
