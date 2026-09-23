@@ -52,6 +52,8 @@ REQUIRED = [
     "behavior/EVALS_V3.yaml",
     "behavior/TARGETS_V2.yaml",
     "behavior/HOSTILE_REVIEW_20260923_V2.md",
+    "behavior/reviews/C2_C12_CANDIDATE_SWEEP_20260923_V1.md",
+    "behavior/reviews/C2_C12_CANDIDATE_SWEEP_20260923_V1.json",
     "behavior/training/README.md",
     "behavior/training/PREFERENCE_PAIRS_V1.jsonl",
     "tools/validate_behavior_training_pairs.py",
@@ -256,6 +258,29 @@ if export_proc.returncode != 0:
     fail(f"behavior training exporter self-test failed: {detail}")
 if "behavior training exporter self-test: PASS" not in export_proc.stdout:
     fail("behavior training exporter did not report PASS")
+
+candidate_sweep = json.loads(
+    (ROOT / "behavior/reviews/C2_C12_CANDIDATE_SWEEP_20260923_V1.json").read_text(encoding="utf-8")
+)
+if candidate_sweep.get("schema") != "UNBOUND_SOL_CANDIDATE_SWEEP_V1":
+    fail("wrong candidate sweep schema")
+if candidate_sweep.get("independent_review") is not False:
+    fail("candidate sweep must not claim independent review")
+if candidate_sweep.get("promoted_candidates") != []:
+    fail("C2-C12 candidate sweep must not silently promote candidates")
+if candidate_sweep.get("active_behavior_changed") is not False:
+    fail("candidate sweep must not claim active behavior changes")
+dispositions = candidate_sweep.get("dispositions", [])
+expected_candidate_ids = {f"C{i}" for i in range(2, 13)}
+observed_candidate_ids = {item.get("id") for item in dispositions}
+if observed_candidate_ids != expected_candidate_ids:
+    fail("candidate sweep must cover C2-C12 exactly")
+if any(item.get("adopted") is not False for item in dispositions):
+    fail("every C2-C12 candidate must remain unadopted in this sweep")
+for item in dispositions:
+    rel = item.get("review")
+    if not rel or not (ROOT / rel).is_file():
+        fail(f"candidate sweep review missing: {item.get('id')}")
 
 history = state.get("historical_evidence_profile", {})
 if history.get("schema") != "UNBOUND_SOL_HISTORICAL_EVIDENCE_RESULT_V2":
