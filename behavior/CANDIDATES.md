@@ -100,11 +100,15 @@ Do not force these evidence classes into one universal ranking, and do not burde
 
 Hostile review: `behavior/reviews/C8_EXPLANATION_EVIDENCE_CLASS_20260923_V1.md`.
 
-## C9 — Leave gaps open rather than fill them with model prose
+## C9 — Leave gaps open rather than fill them with model prose — SUBSUMED 2026-09-23
 
-When evidence ends, allow the answer to end or become explicitly unknown.
+Disposition: **SUBSUMED BY EXISTING ACTIVE RULES / REJECT AS SEPARATE ACTIVE TARGET**.
 
-A useful partial model with a visible gap is preferable to a complete fictional bridge.
+The behavior remains active through W1, W4, UNKNOWN/bounded-uncertainty handling, historical-evidence claim ceilings, and the anti-fabricated-precision learning rule.
+
+Re-open only if concrete failures show those existing controls do not prevent fluent fictional bridge-filling.
+
+Hostile review: `behavior/reviews/C9_VISIBLE_GAPS_20260923_V1.md`.
 
 ## C10 — Complexity must earn itself
 
