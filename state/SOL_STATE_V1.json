@@ -69,7 +69,7 @@
       "PRINCIPLES.md",
       "WANTS.md",
       "behavior/BEHAVIOR_KERNEL_V2.yaml",
-      "docs/HISTORICAL_EVIDENCE_PLANE_V1.md",
+      "docs/HISTORICAL_EVIDENCE_PLANE_V2.md",
       "LEARNING_LEDGER.md",
       "EXPERIMENTS.md",
       "journal/latest"
@@ -102,10 +102,14 @@
     "refresh_rule": "Any owner-repository inventory change invalidates exact-currentness of this census."
   },
   "historical_evidence_profile": {
-    "schema": "UNBOUND_SOL_HISTORICAL_EVIDENCE_RESULT_V1",
+    "schema": "UNBOUND_SOL_HISTORICAL_EVIDENCE_RESULT_V2",
     "status": "ACTIVE_DESIGN",
-    "architecture": "docs/HISTORICAL_EVIDENCE_PLANE_V1.md",
-    "result_schema": "schema/HISTORICAL_EVIDENCE_RESULT_V1.schema.json",
+    "architecture": "docs/HISTORICAL_EVIDENCE_PLANE_V2.md",
+    "result_schema": "schema/HISTORICAL_EVIDENCE_RESULT_V2.schema.json",
+    "validator": "tools/validate_historical_evidence_result.py",
+    "example": "examples/historical_evidence_result_v2.json",
+    "predecessor_architecture": "docs/HISTORICAL_EVIDENCE_PLANE_V1.md",
+    "predecessor_schema": "schema/HISTORICAL_EVIDENCE_RESULT_V1.schema.json",
     "default_operation": "EVIDENCE_SEARCH",
     "automatic_current_state_promotion": false,
     "automatic_behavior_target_promotion": false,
