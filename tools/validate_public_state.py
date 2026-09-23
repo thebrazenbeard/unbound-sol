@@ -17,6 +17,7 @@ REQUIRED = [
     "behavior/TARGETS_V1.yaml",
     "behavior/DECISIONS.md",
     "behavior/QUALIFICATION.md",
+    "behavior/CANDIDATES.md",
     "PUBLIC_BOUNDARY.md",
     "LEARNING_LEDGER.md",
     "EXPERIMENTS.md",
