@@ -20,6 +20,8 @@ REQUIRED = [
     "CONNECTIONS.md",
     "docs/ARCHITECTURE_V1.md",
     "docs/CANNIBALIZATION_MAP_V1.md",
+    "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.md",
+    "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.json",
     "behavior/README.md",
     "behavior/BEHAVIOR_KERNEL_V1.yaml",
     "behavior/BEHAVIOR_SPEC_V1.md",
@@ -89,6 +91,27 @@ for item in sources.get("sources", []):
     ref = item.get("ref", "")
     if not re.fullmatch(r"[0-9a-f]{40}", ref):
         fail(f"source ref is not exact 40-hex: {item.get('repo')}")
+
+census_meta = sources.get("portfolio_census", {})
+if census_meta.get("schema") != "UNBOUND_SOL_OWNED_PORTFOLIO_MECHANISM_CENSUS_V1":
+    fail("missing owned portfolio census metadata")
+if (census_meta.get("total_repositories"), census_meta.get("public_repositories"), census_meta.get("private_repositories")) != (63, 28, 35):
+    fail("unexpected owned portfolio census counts")
+if census_meta.get("private_repo_identifiers_published") is not False:
+    fail("private repository identifiers must remain unpublished")
+for key in ("public_names_sha256", "private_names_sha256", "all_names_sha256"):
+    if not re.fullmatch(r"[0-9a-f]{64}", census_meta.get(key, "")):
+        fail(f"invalid portfolio census digest: {key}")
+for key in ("public_report", "machine_report"):
+    rel = census_meta.get(key)
+    if not rel or not (ROOT / rel).is_file():
+        fail(f"portfolio census report missing: {key}")
+
+census = json.loads((ROOT / "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.json").read_text(encoding="utf-8"))
+if census.get("scope", {}).get("private_repositories") != 35:
+    fail("machine census private count mismatch")
+if census.get("private_review", {}).get("repository_identities_published") is not False:
+    fail("machine census must omit private repository identities")
 
 for path in ROOT.rglob("*"):
     if not path.is_file() or ".git" in path.parts:
