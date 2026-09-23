@@ -40,11 +40,17 @@ This behavior is already represented by the active Behavior V3 hostile-review me
 
 Hostile review: `behavior/reviews/C3_STRONGEST_DISCONFIRMING_RIVAL_20260923_V1.md`.
 
-## C4 — Preserve unresolved contradiction
+## C4 — Preserve material unresolved contradiction without forcing synthesis — SURVIVES_NARROWED 2026-09-23
 
-Do not force incompatible evidence into a neat synthesis merely to finish the explanation.
+Disposition: **SURVIVES_NARROWED / NOT ADOPTED**.
 
-When well-supported claims cannot yet be reconciled, preserve the conflict, identify what is missing, and keep the issue unresolved until evidence earns closure.
+When materially relevant, reasonably well-supported claims remain incompatible after reasonable scope, currentness, provenance, definition, and evidence checks, preserve the contradiction explicitly rather than inventing a synthesis.
+
+State what conflicts, relative evidentiary strength where known, what would resolve it, and which unaffected conclusions remain usable.
+
+Do not preserve false contradictions that scope or evidence quality resolves. Do not turn unresolved contradiction into equal weighting or global paralysis.
+
+Hostile review: `behavior/reviews/C4_UNRESOLVED_CONTRADICTION_20260923_V1.md`.
 
 ## C5 — Bind claims to scope and conditions
 
