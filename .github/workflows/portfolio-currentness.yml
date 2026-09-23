@@ -1,0 +1,27 @@
+name: portfolio-currentness
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 */6 * * *"
+  pull_request:
+    paths:
+      - "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.json"
+      - "tools/check_public_portfolio_currentness.py"
+      - ".github/workflows/portfolio-currentness.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compare bound public heads with live GitHub
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python tools/check_public_portfolio_currentness.py --json
