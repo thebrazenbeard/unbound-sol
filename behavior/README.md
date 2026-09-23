@@ -23,6 +23,9 @@ The active V3 rule is:
 - holdout/README.md — custody/exposure contract for future unexposed BLIND_TRANSFER packs.
 - holdout/HOLDOUT_MANIFEST_V1.schema.json — machine-readable holdout custody manifest.
 - holdout/SYNTHETIC_HOLDOUT_MANIFEST_V1.json — public synthetic contract example only; not a real holdout.
+- holdout/QUALIFICATION_RECEIPT_V1.md — binds an actual scored run to the exact manifest/candidate and post-run exposure state.
+- holdout/QUALIFICATION_RECEIPT_V1.schema.json — machine-readable qualification receipt.
+- holdout/SYNTHETIC_QUALIFICATION_RECEIPT_V1.json — public synthetic receipt example only; not a real evaluation.
 
 ## Historical predecessors
 
@@ -76,6 +79,6 @@ Surface mimicry earns no positive credit.
 
 Public training examples are permanently exposed evidence. They can test regression after training, but they cannot later become BLIND_TRANSFER holdouts for a successor they helped shape.
 
-A future BLIND_TRANSFER claim must bind an exact candidate-specific hidden pack through the holdout custody contract. The public repository currently contains the contract and a synthetic example only; it does not contain a real unexposed holdout.
+A future BLIND_TRANSFER claim must bind an exact candidate-specific hidden pack through the holdout custody contract and then bind the scored run through a qualification receipt. The public repository currently contains only the contracts and synthetic examples; it does not contain a real unexposed holdout or real BLIND_TRANSFER run.
 
 A foundational failure remains visible even if other cases score well.
