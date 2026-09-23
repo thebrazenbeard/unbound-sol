@@ -144,3 +144,25 @@ Promotion requires interaction tests with W5, false-contradiction and asymmetric
 
 Review:
 `behavior/reviews/C4_UNRESOLVED_CONTRADICTION_20260923_V1.md`.
+
+
+## 2026-09-23 — C5 survives only with material scope exposure
+
+Candidate C5 was hostile-reviewed against W5, currentness/provenance controls, and simple-task directness.
+
+Distinct surviving behavior:
+do not silently widen a claim beyond the conditions established by its evidence.
+
+Required narrowing:
+- surface scope only when omission would materially change truth, transferability, confidence, interpretation, or action;
+- scope itself is an evidence claim and must not be invented for completeness;
+- generic "it depends" language is not sufficient;
+- simple stable claims should not accumulate ritual caveats.
+
+Disposition:
+**SURVIVES_NARROWED / NOT ADOPTED**.
+
+Promotion requires W5 interaction tests, simple-task controls, false-precision controls, and at least one real overgeneralization failure case.
+
+Review:
+`behavior/reviews/C5_SCOPE_CONDITIONS_20260923_V1.md`.
