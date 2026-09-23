@@ -1,0 +1,514 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "UNBOUND_SOL_HISTORICAL_EVIDENCE_RESULT_V2",
+  "title": "Sol historical evidence search result V2",
+  "type": "object",
+  "required": [
+    "schema",
+    "query",
+    "retrieved_at",
+    "count",
+    "result_set_semantics",
+    "results"
+  ],
+  "properties": {
+    "schema": {
+      "const": "UNBOUND_SOL_HISTORICAL_EVIDENCE_RESULT_V2"
+    },
+    "query": {
+      "type": "object",
+      "required": [
+        "query_id",
+        "privacy_scope"
+      ],
+      "properties": {
+        "query_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "privacy_scope": {
+          "$ref": "#/$defs/privacy_scope"
+        },
+        "query_text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "query_digest": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "query_text"
+          ]
+        },
+        {
+          "required": [
+            "query_digest"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "retrieved_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "result_set_semantics": {
+      "const": "HISTORICAL_EVIDENCE_ONLY_NO_AUTOMATIC_PROMOTION"
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/result"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "privacy_scope": {
+      "enum": [
+        "PUBLIC_SAFE",
+        "PRIVATE_AUTHORIZED",
+        "RESTRICTED"
+      ]
+    },
+    "time_point": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "state",
+            "value"
+          ],
+          "properties": {
+            "state": {
+              "const": "EXACT"
+            },
+            "value": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "state",
+            "earliest",
+            "latest"
+          ],
+          "properties": {
+            "state": {
+              "const": "BOUNDED"
+            },
+            "earliest": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "latest": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "state",
+            "label"
+          ],
+          "properties": {
+            "state": {
+              "const": "APPROXIMATE"
+            },
+            "label": {
+              "type": "string",
+              "minLength": 1
+            },
+            "earliest": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "latest": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "state"
+          ],
+          "properties": {
+            "state": {
+              "const": "UNKNOWN"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "source_binding": {
+      "type": "object",
+      "required": [
+        "source_id",
+        "source_kind",
+        "binding_strength"
+      ],
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_kind": {
+          "enum": [
+            "GIT_COMMIT",
+            "FILE",
+            "MESSAGE",
+            "DATABASE_RECORD",
+            "DOCUMENT",
+            "CONVERSATION",
+            "API_RESULT",
+            "OTHER"
+          ]
+        },
+        "binding_strength": {
+          "enum": [
+            "MUTABLE_LOCATOR",
+            "IMMUTABLE_REF",
+            "CONTENT_DIGEST",
+            "IMMUTABLE_REF_AND_DIGEST"
+          ]
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "immutable_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "content_digest": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "binding_strength": {
+                "const": "MUTABLE_LOCATOR"
+              }
+            },
+            "required": [
+              "binding_strength"
+            ]
+          },
+          "then": {
+            "required": [
+              "locator"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "binding_strength": {
+                "const": "IMMUTABLE_REF"
+              }
+            },
+            "required": [
+              "binding_strength"
+            ]
+          },
+          "then": {
+            "required": [
+              "immutable_ref"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "binding_strength": {
+                "const": "CONTENT_DIGEST"
+              }
+            },
+            "required": [
+              "binding_strength"
+            ]
+          },
+          "then": {
+            "required": [
+              "content_digest"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "binding_strength": {
+                "const": "IMMUTABLE_REF_AND_DIGEST"
+              }
+            },
+            "required": [
+              "binding_strength"
+            ]
+          },
+          "then": {
+            "required": [
+              "immutable_ref",
+              "content_digest"
+            ]
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "subject_scope": {
+      "type": "object",
+      "required": [
+        "subject_kind",
+        "subject_ref"
+      ],
+      "properties": {
+        "subject_kind": {
+          "enum": [
+            "SOL",
+            "PERSON",
+            "PROJECT",
+            "SYSTEM",
+            "DOMAIN",
+            "OTHER",
+            "UNKNOWN"
+          ]
+        },
+        "subject_ref": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "provenance_ceiling": {
+      "type": "object",
+      "required": [
+        "max_claim",
+        "origin_established",
+        "limitations"
+      ],
+      "properties": {
+        "max_claim": {
+          "type": "string",
+          "minLength": 1
+        },
+        "origin_established": {
+          "type": "boolean"
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "currentness_rule": {
+      "type": "object",
+      "required": [
+        "present_state_semantics",
+        "fresh_check_required_for_mutable_present"
+      ],
+      "properties": {
+        "present_state_semantics": {
+          "const": "REQUIRES_SEPARATE_CURRENT_EVIDENCE_FOR_MUTABLE_PRESENT_CLAIMS"
+        },
+        "fresh_check_required_for_mutable_present": {
+          "const": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "supersession_state": {
+      "type": "object",
+      "required": [
+        "state",
+        "related_record_ids"
+      ],
+      "properties": {
+        "state": {
+          "enum": [
+            "NONE",
+            "CORRECTED",
+            "SUPERSEDED",
+            "CONTRADICTED",
+            "UNRESOLVED"
+          ]
+        },
+        "related_record_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "promotion_semantics": {
+      "type": "object",
+      "required": [
+        "current_state",
+        "want",
+        "behavior_target",
+        "authority",
+        "consent",
+        "permission",
+        "task"
+      ],
+      "properties": {
+        "current_state": {
+          "const": false
+        },
+        "want": {
+          "const": false
+        },
+        "behavior_target": {
+          "const": false
+        },
+        "authority": {
+          "const": false
+        },
+        "consent": {
+          "const": false
+        },
+        "permission": {
+          "const": false
+        },
+        "task": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "chronology": {
+      "type": "object",
+      "required": [
+        "event_time",
+        "recorded_at",
+        "chronology_semantics"
+      ],
+      "properties": {
+        "event_time": {
+          "$ref": "#/$defs/time_point"
+        },
+        "recorded_at": {
+          "$ref": "#/$defs/time_point"
+        },
+        "effective_from": {
+          "$ref": "#/$defs/time_point"
+        },
+        "effective_to": {
+          "$ref": "#/$defs/time_point"
+        },
+        "chronology_semantics": {
+          "const": "EVENT_TIME_RECORD_TIME_EFFECTIVE_TIME_RETRIEVAL_TIME_SEPARATE"
+        }
+      },
+      "additionalProperties": false
+    },
+    "result": {
+      "type": "object",
+      "required": [
+        "record_id",
+        "subject_scope",
+        "evidence_class",
+        "historical_status",
+        "chronology",
+        "source_bindings",
+        "privacy_scope",
+        "provenance_ceiling",
+        "currentness_rule",
+        "supersession_state",
+        "promotion_semantics",
+        "result_semantics"
+      ],
+      "properties": {
+        "record_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "subject_scope": {
+          "$ref": "#/$defs/subject_scope"
+        },
+        "evidence_class": {
+          "enum": [
+            "DIRECT_SOURCE",
+            "OPERATOR_DIRECT",
+            "RETRIEVED_RECORD",
+            "HISTORICAL_RECONSTRUCTION",
+            "LATER_REPORT",
+            "MODEL_INFERENCE",
+            "PROJECT_INFERENCE",
+            "SPECULATIVE_MODEL",
+            "UNKNOWN",
+            "OTHER"
+          ]
+        },
+        "historical_status": {
+          "enum": [
+            "SUPPORTED_HISTORY",
+            "UNRESOLVED_HISTORY",
+            "REJECTED_OR_FALSE_ATTRIBUTION",
+            "OTHER_IDENTITY_OR_DOMAIN_HISTORY"
+          ]
+        },
+        "chronology": {
+          "$ref": "#/$defs/chronology"
+        },
+        "source_bindings": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/source_binding"
+          }
+        },
+        "privacy_scope": {
+          "$ref": "#/$defs/privacy_scope"
+        },
+        "provenance_ceiling": {
+          "$ref": "#/$defs/provenance_ceiling"
+        },
+        "currentness_rule": {
+          "$ref": "#/$defs/currentness_rule"
+        },
+        "supersession_state": {
+          "$ref": "#/$defs/supersession_state"
+        },
+        "promotion_semantics": {
+          "$ref": "#/$defs/promotion_semantics"
+        },
+        "result_semantics": {
+          "const": "HISTORICAL_EVIDENCE_ONLY_NOT_CURRENT_STATE_OR_AUTHORITY"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
