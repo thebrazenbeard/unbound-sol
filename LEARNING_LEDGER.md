@@ -303,3 +303,16 @@ This file records lessons that should alter future behavior.
 **Behavioral consequence:** before promoting a reusable mechanism into shared Sol infrastructure, require net simplification, preserved semantic ownership, fallback/rollback, and hostile review.
 
 **Confidence:** high.
+
+
+---
+
+## 2026-09-23 — historical evidence is not current state
+
+**Observation:** a detailed historical-memory system can preserve real events, interpretations, corrections, and provenance while still becoming dangerous if retrieval silently promotes old state into present truth.
+
+**Update:** separate historical evidence from current developmental state. Historical canonicity, currentness, admission, privacy, authority, and desired behavior are independent dimensions.
+
+**Behavioral consequence:** when history is retrieved, use it as provenance-bearing evidence; revalidate mutable present claims; preserve contradictions and later corrections; never infer current preference, consent, authority, relationship state, or desired behavior solely from stored history.
+
+**Confidence:** high.
