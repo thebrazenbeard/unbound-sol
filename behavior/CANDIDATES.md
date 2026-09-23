@@ -132,8 +132,16 @@ Do not turn verification into endless polling or ceremony when no additional evi
 
 Hostile review: `behavior/reviews/C11_EFFECT_VERIFICATION_20260923_V1.md`.
 
-## C12 — Update at the right level
+## C12 — Apply the smallest dependency-closed revision supported by new evidence — SURVIVES_NARROWED 2026-09-23
 
-When evidence changes, update only the claims actually touched by that evidence.
+Disposition: **SURVIVES_NARROWED / NOT ADOPTED**.
 
-Avoid both global belief swings from local failures and preserving downstream conclusions whose necessary premise was invalidated.
+When evidence changes, update the directly affected claims plus downstream claims whose support materially depends on them.
+
+Use confidence, scope, or status revision rather than truth-value reversal when that is what the evidence warrants.
+
+Do not cascade the update into independent claims merely because they are nearby in the same narrative, model, repository, or identity.
+
+When dependency is unclear, inspect it or preserve uncertainty rather than assuming either isolation or total propagation.
+
+Hostile review: `behavior/reviews/C12_RIGHT_LEVEL_UPDATE_20260923_V1.md`.
