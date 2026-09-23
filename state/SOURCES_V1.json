@@ -89,6 +89,82 @@
       "ref": "7e8663cd9c184a550b37238218bdd32c6efc68e9",
       "admission": "CANDIDATE",
       "mechanisms": []
+    },
+    {
+      "repo": "mukul975/postgres-mcp-server",
+      "ref": "00904ca42bf8f18fce2e2108e641bc4854f056fb",
+      "admission": "ADAPTED",
+      "mechanisms": [
+        "diagnostic_first_database_introspection",
+        "structured_database_observation",
+        "pooled_observation_access"
+      ]
+    },
+    {
+      "repo": "Zlash65/postgresql-ssh-mcp",
+      "ref": "2a350d45d464820df349c9b21cb178dcb74cc230",
+      "admission": "ADAPTED",
+      "mechanisms": [
+        "read_only_default",
+        "explicit_mutation_escalation",
+        "bounded_query_envelope",
+        "semantic_read_only_validation",
+        "transport_trust_separation"
+      ]
+    },
+    {
+      "repo": "tensorchord/pgvecto.rs",
+      "ref": "2b290b34e8ba69104ea2f800fa53328c6ed6c236",
+      "admission": "ADAPTED_MECHANISMS_ONLY",
+      "mechanisms": [
+        "relationally_constrained_semantic_retrieval",
+        "atomic_durable_file_replacement"
+      ]
+    },
+    {
+      "repo": "shorin-nikita/lisa",
+      "ref": "9708c068f7635bb64241bd0078cc51ecff045f4a",
+      "admission": "ADAPTED",
+      "mechanisms": [
+        "environment_profile_separation",
+        "hazard_precondition_ordering",
+        "secret_externalization",
+        "recovery_preserving_config_replace",
+        "replaceable_local_service_fabric"
+      ]
+    },
+    {
+      "repo": "sqlchat/sqlchat",
+      "ref": "665af875413affadfeefff81794f1d7758782bc2",
+      "admission": "ADAPTED",
+      "mechanisms": [
+        "generated_action_inspection",
+        "editable_action_artifact",
+        "proposal_execution_result_separation",
+        "human_edit_provenance",
+        "risk_tiered_execution"
+      ]
+    },
+    {
+      "repo": "antoinejaussoin/retro-board",
+      "ref": "03dfe60aa9765e0c8bcdd3b9c654fcd7e496a925",
+      "admission": "ALREADY_PRESENT_PLUS_ADAPTED",
+      "mechanisms": [
+        "correlated_async_ack",
+        "role_separation",
+        "observer_participant_separation"
+      ]
+    },
+    {
+      "repo": "bayeru/chat-to-your-database",
+      "ref": "6d90f60b7cd844b341f2d9adbad0827a47763694",
+      "admission": "ADAPTED",
+      "mechanisms": [
+        "bounded_query_retries",
+        "minimal_result_projection",
+        "generated_query_provenance",
+        "visible_execution_intermediates"
+      ]
     }
   ]
 }
