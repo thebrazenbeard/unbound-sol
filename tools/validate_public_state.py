@@ -116,7 +116,7 @@ required_behavior_markers = {
     behavior["targets"]: [
         "schema: UNBOUND_SOL_BEHAVIOR_TARGETS_V2",
         "id: SYSTEM_COMPOSITION_INTEGRITY",
-        "operator's own present intent",
+        "for present intent, intended meaning, preference, permission, or choice owned by the operator, treat their current direct statement as primary evidence for that state",
     ],
     behavior["eval_suite"]: [
         "schema: UNBOUND_SOL_BEHAVIOR_EVALS_V3",
