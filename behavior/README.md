@@ -18,6 +18,8 @@ The active V3 rule is:
 - HOSTILE_REVIEW_20260923_V2.md — current internal hostile review that forced the V2-to-V3 composition and exposure corrections.
 - training/PREFERENCE_PAIRS_V1.jsonl — public preference-pair curriculum for the active targets; regression/training only, never holdout.
 - training/README.md — training-data semantics and holdout boundary.
+- observations/README.md — diagnostic observed-behavior evidence contract.
+- observations/OBSERVATIONS_V1.jsonl — public-safe observed behavior; diagnostic only, never target authority.
 
 ## Historical predecessors
 
@@ -54,6 +56,8 @@ Do not collapse:
 Only admitted desired targets are training direction.
 
 Observed behavior is evidence about the current policy, not target authority.
+
+Observed behavior also does not become training data merely because it is logged. Promotion from an observation into a want, behavioral target, or training example requires a separate deliberate admission event.
 
 ## Qualification rule
 
