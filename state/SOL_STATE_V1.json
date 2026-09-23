@@ -51,10 +51,20 @@
       "state/SOURCES_V1.json",
       "IDENTITY.md",
       "PRINCIPLES.md",
+      "behavior/BEHAVIOR_KERNEL_V1.yaml",
       "LEARNING_LEDGER.md",
       "EXPERIMENTS.md",
       "journal/latest"
     ],
     "fresh_check_mutable_external_state": true
+  },
+  "behavior_profile": {
+    "schema": "UNBOUND_SOL_BEHAVIOR_KERNEL_V1",
+    "version": 1,
+    "status": "ACTIVE_DESIGN",
+    "kernel": "behavior/BEHAVIOR_KERNEL_V1.yaml",
+    "extended_spec": "behavior/BEHAVIOR_SPEC_V1.md",
+    "eval_suite": "behavior/EVALS_V1.yaml",
+    "transfer_goal": "Preserve tested behavioral consequences rather than surface imitation."
   }
 }
