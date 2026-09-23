@@ -13,8 +13,8 @@
     "privacy_rule": "Private repository identities are intentionally omitted from this public census. The count and digest bind the inspected private inventory without publishing its names.",
     "public_default_heads_sha256": "578803ff607d3cbdfa82d0ed679c5115d63f749d4faebec993c44f38874e6569",
     "head_digest_algorithm": "SHA-256 over lexicographically sorted repository_full_name@default_head_sha values, UTF-8/ASCII, one per line with trailing newline",
-    "currentness_status": "EXACT_SNAPSHOT_AT_OBSERVED_CUT",
-    "currentness_rule": "Any change in owner repository membership, live visibility, default branch, archive state, or any bound public default-head SHA invalidates exact-currentness of this census.",
+    "currentness_status": "DRIFTED_ACTIVE_UPSTREAM",
+    "currentness_rule": "The bound snapshot is exact for its observed cut. Any later membership/visibility/default-branch/archive/head change invalidates exact-currentness. Known active volatile donors remain fail-closed drift until explicitly refreshed.",
     "bound_public_metadata": [
       "repo",
       "ref",
@@ -23,7 +23,16 @@
       "archived",
       "ref_role"
     ],
-    "visibility_rule": "For current access-state claims, live GitHub repository visibility outranks stale README prose such as 'private'. README privacy language remains document-level evidence, not live access-control evidence."
+    "visibility_rule": "For current access-state claims, live GitHub repository visibility outranks stale README prose such as 'private'. README privacy language remains document-level evidence, not live access-control evidence.",
+    "volatile_upstreams": [
+      {
+        "repo": "thebrazenbeard/vera-mono",
+        "bound_mechanism_review_head": "519c0f407d4061a7725ae0d4eca30c5d26e6cbf8",
+        "latest_live_head_observed": "a2175b9aa32e2e119126972dcc093671f4af3f88",
+        "status": "ACTIVE_VOLATILE_UPSTREAM",
+        "latest_delta_disposition": "NO_NEW_GENERAL_SOL_MECHANISM_IN_LATEST_4_COMMIT_DELTA"
+      }
+    ]
   },
   "method": {
     "first_pass": "Inspect live owner inventory plus repository root/README/purpose surface for every accessible owned repository.",
@@ -668,7 +677,10 @@
       "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT",
       "default_branch": "main",
       "visibility": "public",
-      "archived": false
+      "archived": false,
+      "head_volatility": "ACTIVE_UPSTREAM",
+      "latest_live_head_observed": "a2175b9aa32e2e119126972dcc093671f4af3f88",
+      "latest_live_delta_disposition": "NO_NEW_GENERAL_SOL_MECHANISM"
     },
     {
       "repo": "thebrazenbeard/vera-R9A0",
