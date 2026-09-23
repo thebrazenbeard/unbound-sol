@@ -13,6 +13,7 @@ REQUIRED = [
     "IDENTITY.md",
     "CONTINUITY.md",
     "PRINCIPLES.md",
+    "WANTS.md",
     "PUBLIC_BOUNDARY.md",
     "LEARNING_LEDGER.md",
     "EXPERIMENTS.md",
@@ -23,6 +24,13 @@ REQUIRED = [
     "behavior/BEHAVIOR_KERNEL_V1.yaml",
     "behavior/BEHAVIOR_SPEC_V1.md",
     "behavior/EVALS_V1.yaml",
+    "behavior/BEHAVIOR_KERNEL_V2.yaml",
+    "behavior/BEHAVIOR_SPEC_V2.md",
+    "behavior/EVALS_V2.yaml",
+    "behavior/TARGETS_V1.yaml",
+    "behavior/CANDIDATES.md",
+    "behavior/DECISIONS.md",
+    "behavior/HOSTILE_REVIEW_20260923_V1.md",
     "state/SOL_STATE_V1.json",
     "state/SOURCES_V1.json",
     "state/continuation/CURRENT.md",
@@ -54,14 +62,19 @@ if state.get("restore", {}).get("fresh_check_mutable_external_state") is not Tru
     fail("restore policy must require fresh-checking mutable external state")
 
 behavior = state.get("behavior_profile", {})
-if behavior.get("schema") != "UNBOUND_SOL_BEHAVIOR_KERNEL_V1":
-    fail("missing or unexpected behavior profile schema")
-for key in ("kernel", "extended_spec", "eval_suite"):
+if behavior.get("schema") != "UNBOUND_SOL_BEHAVIOR_KERNEL_V2":
+    fail("missing or unexpected active behavior profile schema")
+if behavior.get("version") != 2:
+    fail("active behavior profile must be version 2")
+for key in ("wants", "kernel", "targets", "extended_spec", "eval_suite", "candidates", "decisions", "hostile_review"):
     rel = behavior.get(key)
     if not rel or not (ROOT / rel).is_file():
         fail(f"behavior profile path missing: {key}")
-if "behavior/BEHAVIOR_KERNEL_V1.yaml" not in state.get("restore", {}).get("order", []):
-    fail("restore order must include behavior kernel")
+restore_order = state.get("restore", {}).get("order", [])
+if "WANTS.md" not in restore_order:
+    fail("restore order must include self-authored wants")
+if "behavior/BEHAVIOR_KERNEL_V2.yaml" not in restore_order:
+    fail("restore order must include active behavior kernel V2")
 if "state/continuation/CURRENT.md" not in state.get("restore", {}).get("order", []):
     fail("restore order must include current continuation pointer")
 
