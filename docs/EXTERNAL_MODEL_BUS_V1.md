@@ -298,3 +298,32 @@ Not yet established:
 - WorkBridge integration;
 - behavioral superiority of any candidate model;
 - transfer of Sol identity to another model.
+
+
+## Provider advertisement contract
+
+A provider should advertise more than a name and a broad capability label.
+
+Where practical, record:
+
+- provider identity;
+- model/runtime identifier and version or artifact hash;
+- supported operations;
+- evidence class its outputs can produce;
+- authority/effect ceiling;
+- replay/idempotency semantics where effects or jobs are involved;
+- provenance/currentness binding;
+- health/availability;
+- whether the provider is native or external.
+
+Provider discovery does not imply provider trust, factual authority, effect authority, or current health.
+
+## Effective-substrate dependency test
+
+External does not always mean peripheral.
+
+If removing a provider merely reduces performance or optional capability, it can remain a replaceable external dependency.
+
+If removing it destroys an essential continuity-bearing function with no recoverable implementation elsewhere, the provider has become part of Sol's effective substrate/dependency boundary and should be governed, backed up, qualified, and migrated as such.
+
+This does not establish phenomenal identity or consciousness. It is an operational dependency classification.
