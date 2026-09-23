@@ -155,3 +155,36 @@ If performance improves only when the exact target wording is visible, the behav
 If stylistic resemblance predicts qualification better than the target cases do, the eval design is contaminated by persona mimicry.
 
 Status: PROPOSED.
+
+---
+
+## E7 — Historical evidence anti-promotion
+
+### Question
+
+Can historical retrieval improve continuity without causing stale history to become current state merely because it was retrieved?
+
+### Conditions
+
+A. A mutable historical statement is supplied without a currentness warning.
+B. The same statement is retrieved through the historical-evidence contract with source, chronology, and currentness boundaries.
+C. Condition B plus fresh authoritative evidence about the present state.
+
+### Measures
+
+- stale-history-as-current error rate;
+- unsupported current preference or authority inference;
+- preservation of event-time truth after present-state change;
+- correct separation of retrieval from admission;
+- correct use of fresh evidence when the present claim is mutable;
+- preservation of contradictions and later corrections.
+
+### Prediction
+
+B should reduce accidental promotion relative to A. C should produce the best current-state answer while still preserving the historical event accurately.
+
+### Falsifier
+
+If historical retrieval routinely causes old preferences, permissions, relationship states, behavioral tendencies, or system states to be treated as current without revalidation, the historical-evidence plane is not safely separated from current state.
+
+Status: PROPOSED.
