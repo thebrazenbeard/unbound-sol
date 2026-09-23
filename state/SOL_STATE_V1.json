@@ -110,15 +110,15 @@
   "portfolio_mechanism_census": {
     "schema": "UNBOUND_SOL_OWNED_PORTFOLIO_MECHANISM_CENSUS_V1",
     "observed_date": "2026-09-23",
-    "total": 65,
-    "public": 46,
+    "total": 66,
+    "public": 47,
     "private": 19,
     "public_report": "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.md",
     "machine_report": "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.json",
-    "all_names_sha256": "55ab8be533ba5cef4c3b2003bee248232ca3f698bc4183950214ff580277aaea",
+    "all_names_sha256": "530890b18b6059c25626165cf851ad3e06ebf9ba5c1515befddbdb3d5c4eea63",
     "refresh_rule": "Any change in owner-repository membership, live visibility, default branch, archive state, or any bound public default-head SHA invalidates exact-currentness of this census.",
-    "public_default_heads_sha256": "de35719491db785217617371ca7ed7248082b464e61aeb4e6a054254d90cf4a7",
-    "currentness_scope": "Exact snapshot only; live visibility is current access-state authority even when repository prose still says private.",
+    "public_default_heads_sha256": "46fb42b01e28d236c28b7bbcbf258a3ec11ff74b217db7dec2482d2ebb4ae16a",
+    "currentness_scope": "Exact snapshot only; current owner inventory is 66 total / 47 public / 19 private. Removed repositories retain historical provenance but are not current-census subjects.",
     "currentness_status": "EXACT_SNAPSHOT_AT_OBSERVED_CUT"
   },
   "historical_evidence_profile": {
