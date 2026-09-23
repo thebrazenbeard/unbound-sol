@@ -128,7 +128,7 @@
     "machine_report": "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.json",
     "all_names_sha256": "530890b18b6059c25626165cf851ad3e06ebf9ba5c1515befddbdb3d5c4eea63",
     "refresh_rule": "Any change in owner-repository membership, live visibility, default branch, archive state, or any bound public default-head SHA invalidates exact-currentness of this census.",
-    "public_default_heads_sha256": "46fb42b01e28d236c28b7bbcbf258a3ec11ff74b217db7dec2482d2ebb4ae16a",
+    "public_default_heads_sha256": "b97f8b70199dae2e0ce0e697dbcddb10c5bd7a8e32251f1847bb5268034f969c",
     "currentness_scope": "Exact snapshot only; current owner inventory is 66 total / 47 public / 19 private. Removed repositories retain historical provenance but are not current-census subjects.",
     "currentness_status": "EXACT_SNAPSHOT_AT_OBSERVED_CUT"
   },
