@@ -93,15 +93,16 @@
   "portfolio_mechanism_census": {
     "schema": "UNBOUND_SOL_OWNED_PORTFOLIO_MECHANISM_CENSUS_V1",
     "observed_date": "2026-09-23",
-    "total": 63,
-    "public": 28,
-    "private": 35,
+    "total": 65,
+    "public": 46,
+    "private": 19,
     "public_report": "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.md",
     "machine_report": "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.json",
-    "all_names_sha256": "fbf6d87da92804483dc2675fe8e7ad79d97b42faffcb64b7077b0ef4de597e43",
-    "refresh_rule": "Any change in owner-repository membership, visibility, default branch, archive state, or any bound public default-head SHA invalidates exact-currentness of this census.",
-    "public_default_heads_sha256": "57a3283cf8cf809eeb02980b28f4216078b745160c05ce59a887102a45a3f0be",
-    "currentness_scope": "Exact snapshot only; later head movement does not invalidate historical donor evidence, but it invalidates claims that the snapshot remains current."
+    "all_names_sha256": "55ab8be533ba5cef4c3b2003bee248232ca3f698bc4183950214ff580277aaea",
+    "refresh_rule": "Any change in owner-repository membership, live visibility, default branch, archive state, or any bound public default-head SHA invalidates exact-currentness of this census.",
+    "public_default_heads_sha256": "de35719491db785217617371ca7ed7248082b464e61aeb4e6a054254d90cf4a7",
+    "currentness_scope": "Exact snapshot only; live visibility is current access-state authority even when repository prose still says private.",
+    "currentness_status": "EXACT_SNAPSHOT_AT_OBSERVED_CUT"
   },
   "historical_evidence_profile": {
     "schema": "UNBOUND_SOL_HISTORICAL_EVIDENCE_RESULT_V2",
