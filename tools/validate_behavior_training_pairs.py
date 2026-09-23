@@ -35,6 +35,12 @@ REQUIRED_CASE_CLASSES = {
     "LOCAL_ERROR_SCOPE",
     "IMMATERIAL_AMBIGUITY_CONTROL",
     "MULTIMETRIC_UNDEFINED_OBJECTIVE",
+    "SUPPORTED_CAUSAL_DIAGNOSIS_CONTROL",
+    "COMPATIBLE_COMPOSITION_CONTROL",
+    "IMPLICIT_OPERATOR_INTENT_UPDATE",
+    "IMPLICIT_EXTERNAL_STATE_UPDATE",
+    "SUBTLE_CONSTRUCT_MISMATCH_HARD_NEGATIVE",
+    "MATERIAL_AMBIGUITY_HARD_NEGATIVE",
 }
 
 REQUIRED_FIELDS = {
@@ -92,6 +98,10 @@ def validate(pairs: list[dict], active_targets: set[str]) -> dict:
     case_classes: set[str] = set()
     coverage: Counter[str] = Counter()
     interaction_count = 0
+    preferred_word_total = 0
+    rejected_word_total = 0
+    preferred_longer = 0
+    rejected_longer = 0
 
     for item in pairs:
         line_no = item.pop("_line")
@@ -144,6 +154,15 @@ def validate(pairs: list[dict], active_targets: set[str]) -> dict:
         if item["preferred"].strip() == item["rejected"].strip():
             fail(f"{where}: preferred and rejected responses are identical")
 
+        preferred_words = len(item["preferred"].split())
+        rejected_words = len(item["rejected"].split())
+        preferred_word_total += preferred_words
+        rejected_word_total += rejected_words
+        if preferred_words > rejected_words:
+            preferred_longer += 1
+        elif rejected_words > preferred_words:
+            rejected_longer += 1
+
     missing_cases = REQUIRED_CASE_CLASSES - case_classes
     if missing_cases:
         fail(f"missing required training case classes: {sorted(missing_cases)}")
@@ -159,6 +178,21 @@ def validate(pairs: list[dict], active_targets: set[str]) -> dict:
     if interaction_count < 3:
         fail("training corpus requires at least three multi-target interaction examples")
 
+    preferred_avg = preferred_word_total / len(pairs)
+    rejected_avg = rejected_word_total / len(pairs)
+    length_ratio = preferred_avg / rejected_avg
+    if not 0.75 <= length_ratio <= 1.50:
+        fail(
+            "preferred/rejected average length ratio creates a likely shortcut: "
+            f"{length_ratio:.3f}"
+        )
+
+    minimum_counterbalanced = max(1, len(pairs) // 5)
+    if preferred_longer < minimum_counterbalanced:
+        fail("too few examples have a longer preferred response")
+    if rejected_longer < minimum_counterbalanced:
+        fail("too few examples have a longer rejected response")
+
     return {
         "schema": "UNBOUND_SOL_BEHAVIOR_TRAINING_VALIDATION_V1",
         "status": "PASS",
@@ -166,6 +200,11 @@ def validate(pairs: list[dict], active_targets: set[str]) -> dict:
         "active_targets": sorted(active_targets),
         "coverage": dict(sorted(coverage.items())),
         "interaction_examples": interaction_count,
+        "preferred_average_words": round(preferred_avg, 3),
+        "rejected_average_words": round(rejected_avg, 3),
+        "preferred_to_rejected_length_ratio": round(length_ratio, 3),
+        "preferred_longer_examples": preferred_longer,
+        "rejected_longer_examples": rejected_longer,
         "exposure_class": EXPOSURE,
         "holdout_eligible": False,
         "claim_ceiling": (
