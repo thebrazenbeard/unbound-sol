@@ -1,0 +1,82 @@
+{
+  "schema": "UNBOUND_SOL_PUBLIC_SOURCES_V1",
+  "observed_date": "2026-09-22",
+  "public_safe": true,
+  "sources": [
+    {
+      "repo": "thebrazenbeard/driftguard",
+      "ref": "ce6c0fcbc38560b6604039d4921cc4f0c10cd248",
+      "admission": "ADOPTED",
+      "mechanisms": [
+        "evidence_binding",
+        "drift_without_stasis",
+        "effect_separation"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/Discovery",
+      "ref": "2881a94c7eb3c83a34b0c00bab739b41c1d99b6d",
+      "admission": "ADOPTED",
+      "mechanisms": [
+        "earned_abstraction",
+        "currentness",
+        "public_private_boundary"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/project-runner",
+      "ref": "a0db5e26c084b8c7226199ca0d8d6550296e709b",
+      "admission": "ADOPTED",
+      "mechanisms": [
+        "capability_vs_authority",
+        "expected_state",
+        "effect_verification",
+        "reconstruction"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/god-brain",
+      "ref": "c0f6af7143aa5916bae96eb1f0ee9c9de6505cf5",
+      "admission": "ADOPTED",
+      "mechanisms": [
+        "claim_separation",
+        "hostile_falsification",
+        "self_model_claim_ceiling"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/meso-crct",
+      "ref": "eb18f69a0804108ae5c9eff0c796ec47482e19eb",
+      "admission": "ADOPTED",
+      "mechanisms": [
+        "valence_separation",
+        "welfare_bounds"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/vera-mesh",
+      "ref": "41d64521810cf3a23e8fc848c4e9259b408f127a",
+      "admission": "ADOPTED",
+      "mechanisms": [
+        "bounded_machine_contact",
+        "state_transition_separation"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/WorkBridgeMCP",
+      "ref": "e89a0b43717a4c9a4aabfd1d7e1c967a375f65c4",
+      "admission": "ADOPTED",
+      "mechanisms": [
+        "root_confinement",
+        "process_gate",
+        "local_health"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/rezon",
+      "ref": "facced1e651f47979266f25f48cd376275cbb27e",
+      "admission": "CANDIDATE",
+      "mechanisms": []
+    }
+  ]
+}
