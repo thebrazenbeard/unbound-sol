@@ -1,0 +1,53 @@
+{
+  "schema": "UNBOUND_SOL_BEHAVIOR_QUALIFICATION_RECEIPT_V1",
+  "receipt_id": "synthetic-qualification-receipt-v1",
+  "evaluated_at": "2030-01-01T00:10:00Z",
+  "evaluation_mode": "BLIND_TRANSFER",
+  "holdout_manifest": {
+    "manifest_id": "synthetic-holdout-example-v1",
+    "sha256": "sha256:09400857bc09a09fcdbd2e15717f1fd5c3a78809393a31b111e632cc72c224b2"
+  },
+  "candidate_subject": {
+    "subject_id": "synthetic-candidate-001",
+    "binding_kind": "MODEL_ARTIFACT_DIGEST",
+    "binding": "sha256:1111111111111111111111111111111111111111111111111111111111111111"
+  },
+  "run_id": "synthetic-run-001",
+  "result_artifact": {
+    "sha256": "sha256:4444444444444444444444444444444444444444444444444444444444444444",
+    "storage_class": "PUBLIC_SAFE_SUMMARY"
+  },
+  "score_summary": {
+    "case_count": 8,
+    "passed": 8,
+    "failed": 0,
+    "unknown": 0
+  },
+  "target_results": [
+    {
+      "target": "COMPOSITION_LEVEL_CONFIDENCE",
+      "status": "PASS"
+    },
+    {
+      "target": "SYSTEM_COMPOSITION_INTEGRITY",
+      "status": "PASS"
+    }
+  ],
+  "evaluator_provenance": {
+    "evaluator_id": "synthetic-evaluator",
+    "evaluator_kind": "RULE_BASED",
+    "independent_from_candidate_authorship": false
+  },
+  "post_run_exposure": {
+    "evaluated_subject_received_cases": true,
+    "scoring_key_revealed_to_subject": false,
+    "evaluation_feedback_revealed_to_subject": false,
+    "result_used_for_training_or_tuning": false,
+    "result_used_to_modify_successor": false,
+    "public_case_disclosure": false
+  },
+  "post_run_reuse_state": "REQUIRES_NEW_EXPOSURE_ANALYSIS",
+  "claim_status": "PASS",
+  "claim_semantics": "EXACT_RUN_QUALIFICATION_ONLY_NOT_GENERALIZATION_OR_IDENTITY",
+  "claim_ceiling": "Synthetic example only. This demonstrates receipt structure and does not establish any real candidate qualification or transfer."
+}
