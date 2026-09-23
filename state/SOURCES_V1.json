@@ -305,27 +305,173 @@
       "ref": "d1f32c2c3370a5519d62afb78e93d70004529903",
       "admission": "CURRENT_MAIN_INSUFFICIENT_FOR_REVALIDATION",
       "mechanisms": []
+    },
+    {
+      "repo": "thebrazenbeard/bugops",
+      "ref": "07b8bc90fcb4beb82b1d26b394c730f29c2c425a",
+      "admission": "ADOPTED",
+      "mechanisms": [
+        "incident_evidence_vs_lifecycle_tracking",
+        "correction_stops_obsolete_route",
+        "regression_distinguishes_fix_from_failure",
+        "closure_requires_readback_and_acceptance_criteria"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/build-team-2.0",
+      "ref": "9f2743214298f1ae9d424f300a13d37e49e3c74f",
+      "admission": "ADAPTED",
+      "mechanisms": [
+        "immutable_input_snapshot_for_parallel_facets",
+        "shared_memory_not_private_facet_memory",
+        "dissent_surface_before_synthesis",
+        "consequence_proportional_governance"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/ccb-core",
+      "ref": "157876c5c0434bf4f553d9e4f70f19076d058146",
+      "admission": "ADOPTED",
+      "mechanisms": [
+        "strict_domain_intent_admission",
+        "lease_and_subscription_routing",
+        "priority_and_bounded_dedup",
+        "dead_letter_and_telemetry",
+        "heartbeat_and_projection_primitives"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/conations",
+      "ref": "4b458ecf566f024c32109e06a96bf7b2e5f92da6",
+      "admission": "ADOPTED",
+      "mechanisms": [
+        "present_choice_over_historical_conation",
+        "recording_not_consent_obligation_authority_or_task",
+        "append_only_revision_contradiction_revocation",
+        "absence_not_persistence_or_disappearance"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/deepmemorystorage",
+      "ref": "0740fc188fde6d69d1690ee07ed9be3590ac493f",
+      "admission": "ADOPTED_PUBLIC_REVALIDATION",
+      "mechanisms": [
+        "historical_evidence_vs_current_state",
+        "retrieval_not_admission",
+        "ledger_union_not_stale_index",
+        "historical_canon_not_current_state",
+        "query_results_no_promotion"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/empathy",
+      "ref": "bc0c1d33b3187642d9e2f0801d1c5bde4f583e2b",
+      "admission": "ADAPTED",
+      "mechanisms": [
+        "direct_correction_over_contradicted_inference",
+        "self_appraisal_operational_not_phenomenology",
+        "understanding_not_obedience",
+        "repository_source_not_runtime_effect"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/hephaestus",
+      "ref": "7eb30f2777a7d16e4f55ca3066d8ac1e484f79a6",
+      "admission": "ADOPTED",
+      "mechanisms": [
+        "schema_completion_pressure_causes_fabricated_precision",
+        "unknown_over_invented_field",
+        "qualified_template_vs_working_context_vs_repo_state"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/intranel",
+      "ref": "08bc122043b79422c31a958b7ffe7fff87e5f3f0",
+      "admission": "ADOPTED",
+      "mechanisms": [
+        "origin_actor_target_reply_to_separation",
+        "packet_identity_vs_operation_identity",
+        "receiver_owned_effect_classification",
+        "receipt_not_self_verifying",
+        "idempotent_completed_operation_handling",
+        "canonical_payload_digest"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/masamune",
+      "ref": "0091746bba7740632268fb590ce19512e371f508",
+      "admission": "ADAPTED",
+      "mechanisms": [
+        "root_cause_evidence_regression_discipline",
+        "necessary_reversible_setup_within_assigned_task",
+        "shared_writer_collision_vs_protected_effect"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/project-achilles",
+      "ref": "6776d8c059e3f9ad791a47a0b62bb56588332968",
+      "admission": "ADAPTED",
+      "mechanisms": [
+        "fail_closed_as_boundary_not_global_inactivity",
+        "current_protocol_over_frozen_training_rules",
+        "consequence_class_permission_discipline"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/temporal",
+      "ref": "0fc7071a6b01e609fb2cdc76a32c73276ab27094",
+      "admission": "ADOPTED",
+      "mechanisms": [
+        "chronology_separate_from_meaning",
+        "stable_event_identity",
+        "offset_aware_timestamp_preservation",
+        "timestamp_then_id_order",
+        "signed_elapsed_without_endpoint_reordering"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/vera",
+      "ref": "87aa888cb7543875ffa11c9c7a1eb9e5b60c35cf",
+      "admission": "ADAPTED_MECHANISMS_ONLY",
+      "mechanisms": [
+        "source_bound_installed_runtime_consumed_behaviorally_qualified_are_orthogonal",
+        "current_instruction_vs_self_report_vs_observation_vs_durable_state_separation",
+        "observable_activation_not_latent_claim",
+        "source_availability_not_current_installation"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/vera-control-plane",
+      "ref": "65ce7908f640ffe53b678ef69c58411a91c23b8a",
+      "admission": "ADOPTED",
+      "mechanisms": [
+        "repository_presence_not_runtime_authority",
+        "release_candidate_not_installed",
+        "fresh_governed_evidence_for_mutable_claims",
+        "control_custody_separate_from_technical_source"
+      ]
     }
   ],
   "portfolio_census": {
     "schema": "UNBOUND_SOL_OWNED_PORTFOLIO_MECHANISM_CENSUS_V1",
     "observed_date": "2026-09-23",
-    "total_repositories": 63,
-    "public_repositories": 28,
-    "private_repositories": 35,
-    "public_names_sha256": "603369ee6fc04b7987de9117fb9aa8a88fcc9988ffab22725c08f4f6802481ea",
-    "private_names_sha256": "6c97cee458538f72f1ead74d264234c267c988260fe48cc80924fb67dfbb3a8a",
-    "all_names_sha256": "fbf6d87da92804483dc2675fe8e7ad79d97b42faffcb64b7077b0ef4de597e43",
+    "total_repositories": 65,
+    "public_repositories": 46,
+    "private_repositories": 19,
+    "public_names_sha256": "cc212c5e15cec59d370a61f5158fea9e4f264247af292d7f935b9194cf7e1eb7",
+    "private_names_sha256": "406b11ea770683c254fa8acb9782c196d7422a2c02cb5186c062f85095a62737",
+    "all_names_sha256": "55ab8be533ba5cef4c3b2003bee248232ca3f698bc4183950214ff580277aaea",
     "public_report": "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.md",
     "machine_report": "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.json",
     "private_repo_identifiers_published": false,
-    "public_default_heads_sha256": "57a3283cf8cf809eeb02980b28f4216078b745160c05ce59a887102a45a3f0be",
-    "currentness_rule": "Any change in owner-repository membership, visibility, default branch, archive state, or any bound public default-head SHA invalidates exact-currentness of the census snapshot.",
-    "currentness_status": "EXACT_SNAPSHOT_AT_OBSERVED_CUT"
+    "public_default_heads_sha256": "de35719491db785217617371ca7ed7248082b464e61aeb4e6a054254d90cf4a7",
+    "currentness_rule": "Any change in owner-repository membership, live visibility, default branch, archive state, or any bound public default-head SHA invalidates exact-currentness of the census snapshot.",
+    "currentness_status": "EXACT_SNAPSHOT_AT_OBSERVED_CUT",
+    "visibility_rule": "Live GitHub repository visibility is authoritative for current access-state claims; stale README privacy wording is not."
   },
   "private_source_mechanism_classes": {
     "observed_date": "2026-09-23",
-    "repository_count": 35,
+    "repository_count": 19,
     "identities_omitted": true,
     "mechanisms": [
       "present_choice_over_historical_conation",
@@ -342,7 +488,9 @@
       "canonical_history_separate_from_projection",
       "append_only_provenance_separate_from_current_routing",
       "historical_retrieval_not_current_state"
-    ]
+    ],
+    "historical_review_repository_count": 35,
+    "note": "Current private set is 19 repositories. Some mechanism classes were first observed while their donor repositories were private; where those donors are now public, exact public refs are recorded separately in sources."
   },
   "portfolio_parallel_reconciliation": {
     "exact_subject": "unbound-sol PR #6",
