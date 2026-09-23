@@ -27,6 +27,8 @@ REQUIRED = [
     "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.json",
     "research/OWNED_PORTFOLIO_PARALLEL_RECONCILIATION_20260923_V1.md",
     "research/PORTFOLIO_CURRENTNESS_HOSTILE_REVIEW_20260923_V1.md",
+    "tools/check_public_portfolio_currentness.py",
+    ".github/workflows/portfolio-currentness.yml",
     "behavior/README.md",
     "behavior/BEHAVIOR_KERNEL_V1.yaml",
     "behavior/BEHAVIOR_SPEC_V1.md",
@@ -147,6 +149,12 @@ for item in public_subjects:
         fail(f"public census ref is not exact 40-hex: {item.get('repo')}")
     if not item.get("ref_role"):
         fail(f"public census ref role missing: {item.get('repo')}")
+    if item.get("visibility") != "public":
+        fail(f"public census visibility must be public: {item.get('repo')}")
+    if not isinstance(item.get("archived"), bool):
+        fail(f"public census archived flag missing/non-boolean: {item.get('repo')}")
+    if not item.get("default_branch"):
+        fail(f"public census default branch missing: {item.get('repo')}")
 
 head_payload = "".join(
     f"{item['repo']}@{item['ref']}\n"
