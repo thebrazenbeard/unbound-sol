@@ -34,6 +34,8 @@ REQUIRED = [
     "state/SOL_STATE_V1.json",
     "state/SOURCES_V1.json",
     "state/continuation/CURRENT.md",
+    "state/continuation/UNBOUND_SOL_CHAT_CONTINUATION_20260923_V2.md",
+    "state/continuation/UNBOUND_SOL_CHAT_CONTINUATION_20260923_V2.json",
 ]
 
 SECRET_PATTERNS = [
