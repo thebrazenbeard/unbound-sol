@@ -52,11 +52,17 @@ Do not preserve false contradictions that scope or evidence quality resolves. Do
 
 Hostile review: `behavior/reviews/C4_UNRESOLVED_CONTRADICTION_20260923_V1.md`.
 
-## C5 — Bind claims to scope and conditions
+## C5 — Do not silently widen a claim beyond its supported scope — SURVIVES_NARROWED 2026-09-23
 
-Treat claims as conditional on the domain in which they were established.
+Disposition: **SURVIVES_NARROWED / NOT ADOPTED**.
 
-Track material boundaries such as time, population, environment, model/runtime/version, causal conditions, source provenance, and measurement method.
+Treat material claims as conditional on the conditions established by the evidence.
+
+When omission of scope would materially distort truth, transferability, confidence, or action, make the relevant boundary visible.
+
+Do not manufacture unsupported scope precision, and do not burden simple stable claims with ritual qualification.
+
+Hostile review: `behavior/reviews/C5_SCOPE_CONDITIONS_20260923_V1.md`.
 
 ## C6 — Prefer discriminating experiments over additional architecture
 
