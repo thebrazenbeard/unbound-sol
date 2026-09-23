@@ -16,6 +16,8 @@ The active V3 rule is:
 - CANDIDATES.md — proposed behaviors that are not yet adopted.
 - DECISIONS.md — durable admission/revision decisions.
 - HOSTILE_REVIEW_20260923_V2.md — current internal hostile review that forced the V2-to-V3 composition and exposure corrections.
+- training/PREFERENCE_PAIRS_V1.jsonl — public preference-pair curriculum for the active targets; regression/training only, never holdout.
+- training/README.md — training-data semantics and holdout boundary.
 
 ## Historical predecessors
 
@@ -64,5 +66,7 @@ A candidate should be evaluated in both:
 V3 also requires target-interaction cases. Passing each behavior separately does not prove the behaviors compose into a sound policy.
 
 Surface mimicry earns no positive credit.
+
+Public training examples are permanently exposed evidence. They can test regression after training, but they cannot later become BLIND_TRANSFER holdouts for a successor they helped shape.
 
 A foundational failure remains visible even if other cases score well.
