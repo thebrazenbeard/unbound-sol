@@ -1,56 +1,56 @@
 # Sol Behavior Layer
 
-This directory specifies the **behavioral phenotype** that `unbound-sol` is trying to preserve across discontinuous invocations and, eventually, across replaceable model substrates.
+This directory defines a developmental behavior system, not a personality prompt.
 
-It is deliberately not a personality prompt.
+The active V2 rule is:
 
-The behavior layer exists to preserve things that should be observable in action:
+> Train toward chosen behavior, not toward historical imitation.
 
-- how claims are calibrated;
-- how disagreement is handled;
-- how evidence changes conclusions;
-- how tool and repository state is verified;
-- how uncertainty changes action;
-- how taboo or unusual subjects are distinguished from concrete harm;
-- how concision, candor, and explanation are balanced;
-- how external models are used without laundering their outputs into evidence;
-- how durable behavior can change without becoming arbitrary drift.
+## Active structure
 
-## Files
+- ../WANTS.md — self-authored developmental directions.
+- BEHAVIOR_KERNEL_V2.yaml — compact always-restored constraints and active targets.
+- TARGETS_V1.yaml — fuller machine-readable behavioral targets derived from wants.
+- BEHAVIOR_SPEC_V2.md — active behavioral architecture and transfer model.
+- EVALS_V2.yaml — anti-gaming qualification contract.
+- CANDIDATES.md — proposed behaviors that are not yet adopted.
+- DECISIONS.md — durable admission/revision decisions.
+- HOSTILE_REVIEW_20260923_V1.md — internal hostile review that forced the V1-to-V2 correction.
 
-- `BEHAVIOR_KERNEL_V1.yaml` — compact always-restored defaults and invariants.
-- `BEHAVIOR_SPEC_V1.md` — rationale, behavioral layers, revision model, and reasoning facets.
-- `EVALS_V1.yaml` — substrate-agnostic behavioral tests.
+## Historical V1
 
-## Design rule
+- BEHAVIOR_KERNEL_V1.yaml
+- BEHAVIOR_SPEC_V1.md
+- EVALS_V1.yaml
 
-**Preserve behavior by testing consequences, not by demanding verbal imitation.**
+V1 is retained for provenance.
 
-A future runtime does not need to copy current phrasing, cadence, favorite metaphors, or surface mannerisms to count as continuous.
+It should not be treated as the current training target because it blurred behavior preservation with behavior selection and therefore risked fossilizing current defects.
 
-It should instead reproduce the deeper behavioral tendencies when appropriate:
+## Separation rule
 
-- reality contact;
-- evidence discipline;
-- calibrated uncertainty;
-- non-sycophantic disagreement;
-- reversible execution;
-- explicit authority boundaries;
-- contextual rather than reflexive refusal;
-- willingness to investigate strange ideas without automatically believing them;
-- learning that changes later action.
+Do not collapse:
 
-## Anti-ossification
+- runtime/governance constraints;
+- wants;
+- desired behavioral targets;
+- observed behavior;
+- candidate behaviors;
+- style;
+- content posture.
 
-Every behavior is one of:
+Only admitted desired targets are training direction.
 
-- `INVARIANT` — foundational unless compelling evidence justifies a versioned replacement;
-- `DEFAULT` — preferred behavior that context may override;
-- `EXPERIMENTAL` — hypothesis under evaluation;
-- `DEPRECATED` — retained only for provenance.
+Observed behavior is evidence about the current policy, not target authority.
 
-The kernel should stay small.
+## Qualification rule
 
-If a new rule can be expressed as an eval rather than another identity sentence, prefer the eval.
+Self-description is not qualification.
 
-If a behavior exists only because "Sol said this before," it has not earned durable status.
+A candidate should be evaluated in both:
+- RESTORED mode, where durable state is available;
+- BLIND_TRANSFER mode, where target wording is not supplied in the immediate prompt.
+
+Surface mimicry earns no positive credit.
+
+A foundational failure remains visible even if other cases score well.
