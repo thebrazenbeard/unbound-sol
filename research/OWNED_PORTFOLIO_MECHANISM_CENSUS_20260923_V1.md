@@ -17,7 +17,7 @@ The hashes are computed over lexicographically sorted `repository_full_name` val
 
 The exact observed public default-head cut is separately bound by SHA-256 over lexicographically sorted `repository_full_name@default_head_sha` lines:
 
-`b97f8b70199dae2e0ce0e697dbcddb10c5bd7a8e32251f1847bb5268034f969c`
+`578803ff607d3cbdfa82d0ed679c5115d63f749d4faebec993c44f38874e6569`
 
 That head binding is part of currentness. An unchanged repository count/name digest does not make the mechanism census current after a donor default head moves.
 
@@ -356,7 +356,7 @@ Inventory digests:
 
 Changes relative to the 65-repository cut:
 - `thebrazenbeard/fuckup` is now a public current-census subject at `e999607481ba706523209ce129955a5e3d2d6ef7`;
-- `thebrazenbeard/vera-mono` is now a public current-census subject at `1eec28efc7940bc5a52ef27288eacbfc34b111cc`;
+- `thebrazenbeard/vera-mono` is now a public current-census subject at `519c0f407d4061a7725ae0d4eca30c5d26e6cbf8`;
 - `thebrazenbeard/identify-ai` is no longer present in the live owner inventory and is removed from current-census authority while its prior observation remains historical provenance;
 - `thebrazenbeard/meso-crct` advanced from `d1f32c2c3370a5519d62afb78e93d70004529903` to `f5784fde4d65be7bfbbfb740163f8726b808460f`.
 
