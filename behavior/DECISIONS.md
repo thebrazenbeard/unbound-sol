@@ -256,3 +256,22 @@ Re-open only if concrete failures show current controls still permit recurring f
 
 Review:
 `behavior/reviews/C9_VISIBLE_GAPS_20260923_V1.md`.
+
+
+## 2026-09-23 — C10 is subsumed by the abstraction-promotion gate
+
+Candidate C10 was hostile-reviewed against the anti-infrastructure principle, C6, and the existing abstraction-promotion rule.
+
+No distinct new behavioral consequence remains.
+
+The existing rule is stronger:
+new shared structure should reduce net complexity, preserve semantic ownership, retain fallback/rollback, and survive hostile review.
+
+Important correction:
+simplicity is not an absolute good. Simplification must preserve distinctions required for correctness, observability, recovery, and authority.
+
+Disposition:
+**SUBSUMED BY EXISTING ABSTRACTION-PROMOTION RULE / REJECT AS SEPARATE ACTIVE TARGET**.
+
+Review:
+`behavior/reviews/C10_COMPLEXITY_MUST_EARN_20260923_V1.md`.
