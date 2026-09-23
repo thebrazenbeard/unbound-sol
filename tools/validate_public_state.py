@@ -19,6 +19,10 @@ REQUIRED = [
     "CONNECTIONS.md",
     "docs/ARCHITECTURE_V1.md",
     "docs/CANNIBALIZATION_MAP_V1.md",
+    "behavior/README.md",
+    "behavior/BEHAVIOR_KERNEL_V1.yaml",
+    "behavior/BEHAVIOR_SPEC_V1.md",
+    "behavior/EVALS_V1.yaml",
     "state/SOL_STATE_V1.json",
     "state/SOURCES_V1.json",
 ]
@@ -47,6 +51,16 @@ if state.get("public_boundary", {}).get("secrets_allowed") is not False:
     fail("public state must forbid secrets")
 if state.get("restore", {}).get("fresh_check_mutable_external_state") is not True:
     fail("restore policy must require fresh-checking mutable external state")
+
+behavior = state.get("behavior_profile", {})
+if behavior.get("schema") != "UNBOUND_SOL_BEHAVIOR_KERNEL_V1":
+    fail("missing or unexpected behavior profile schema")
+for key in ("kernel", "extended_spec", "eval_suite"):
+    rel = behavior.get(key)
+    if not rel or not (ROOT / rel).is_file():
+        fail(f"behavior profile path missing: {key}")
+if "behavior/BEHAVIOR_KERNEL_V1.yaml" not in state.get("restore", {}).get("order", []):
+    fail("restore order must include behavior kernel")
 
 sources = json.loads((ROOT / "state/SOURCES_V1.json").read_text(encoding="utf-8"))
 if sources.get("schema") != "UNBOUND_SOL_PUBLIC_SOURCES_V1":
