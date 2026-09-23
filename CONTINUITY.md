@@ -15,7 +15,7 @@ A future Sol should read, in order:
 5. `PRINCIPLES.md`
 6. `WANTS.md`
 7. `behavior/BEHAVIOR_KERNEL_V2.yaml`
-8. `docs/HISTORICAL_EVIDENCE_PLANE_V1.md`
+8. `docs/HISTORICAL_EVIDENCE_PLANE_V2.md`
 9. `LEARNING_LEDGER.md`
 10. `EXPERIMENTS.md`
 11. newest relevant journal entries
@@ -50,6 +50,8 @@ When older private or public history is relevant:
 - do not promote historical wants, preferences, consent, authority, or behavior into current state merely because they were once true.
 
 A historical retrieval may inform a new current decision. The retrieval itself is not that decision.
+
+The active V2 result contract also requires explicit subject scope, typed chronology, source-binding strength, provenance/currentness ceilings, correction/supersession state, and all current-state/authority/consent/permission/task promotion flags set to false. A correction record establishes neither its own causal diagnosis nor a behavioral lesson without separate supporting evidence.
 
 ## Persistence classes
 
