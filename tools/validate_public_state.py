@@ -39,6 +39,7 @@ REQUIRED = [
     "research/OWNED_PORTFOLIO_PARALLEL_RECONCILIATION_20260923_V1.md",
     "research/PORTFOLIO_CURRENTNESS_HOSTILE_REVIEW_20260923_V1.md",
     "research/PORTFOLIO_VISIBILITY_CURRENTNESS_REPAIR_20260923_V1.md",
+    "research/VERA_MONO_VOLATILE_DELTA_REVIEW_20260923_V1.md",
     "tools/check_public_portfolio_currentness.py",
     ".github/workflows/portfolio-currentness.yml",
     "behavior/README.md",
@@ -457,6 +458,25 @@ for item in sources.get("sources", []):
         value = item.get(optional_ref)
         if value is not None and not re.fullmatch(r"[0-9a-f]{40}", value):
             fail(f"source {optional_ref} is not exact 40-hex: {item.get('repo')}")
+
+volatile_reviews = sources.get("volatile_delta_reviews", [])
+vera_reviews = [item for item in volatile_reviews if item.get("repo") == "thebrazenbeard/vera-mono"]
+if len(vera_reviews) != 1:
+    fail("expected exactly one vera-mono volatile delta review")
+vera_delta = vera_reviews[0]
+if vera_delta.get("admission_base_ref") != "519c0f407d4061a7725ae0d4eca30c5d26e6cbf8":
+    fail("vera-mono volatile review admission base mismatch")
+if vera_delta.get("reviewed_delta_through_ref") != "89da9203bbc4e542160a905818df1bec42cd4dda":
+    fail("vera-mono volatile review exact subject mismatch")
+if vera_delta.get("updates_admission_ref") is not False:
+    fail("volatile donor delta review must not silently update admission ref")
+if vera_delta.get("live_head_claim") is not False:
+    fail("volatile donor delta review must not claim live-current head")
+if vera_delta.get("independent_review") is not False:
+    fail("internal volatile donor delta review must not claim independence")
+delta_report = vera_delta.get("report")
+if delta_report != "research/VERA_MONO_VOLATILE_DELTA_REVIEW_20260923_V1.md" or not (ROOT / delta_report).is_file():
+    fail("vera-mono volatile delta review report missing")
 
 census_meta = sources.get("portfolio_census", {})
 if census_meta.get("schema") != "UNBOUND_SOL_OWNED_PORTFOLIO_MECHANISM_CENSUS_V1":
