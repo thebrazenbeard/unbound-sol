@@ -1,0 +1,65 @@
+{
+  "schema": "UNBOUND_SOL_HISTORICAL_EVIDENCE_RESULT_V2",
+  "query": {
+    "query_id": "example-query-001",
+    "privacy_scope": "PUBLIC_SAFE",
+    "query_text": "synthetic historical evidence example"
+  },
+  "retrieved_at": "2030-01-01T00:00:00Z",
+  "count": 1,
+  "result_set_semantics": "HISTORICAL_EVIDENCE_ONLY_NO_AUTOMATIC_PROMOTION",
+  "results": [
+    {
+      "record_id": "example-record-001",
+      "subject_scope": {
+        "subject_kind": "SOL",
+        "subject_ref": "example-sol-trajectory"
+      },
+      "evidence_class": "RETRIEVED_RECORD",
+      "historical_status": "SUPPORTED_HISTORY",
+      "chronology": {
+        "event_time": {
+          "state": "UNKNOWN"
+        },
+        "recorded_at": {
+          "state": "UNKNOWN"
+        },
+        "chronology_semantics": "EVENT_TIME_RECORD_TIME_EFFECTIVE_TIME_RETRIEVAL_TIME_SEPARATE"
+      },
+      "source_bindings": [
+        {
+          "source_id": "example-source-001",
+          "source_kind": "DOCUMENT",
+          "binding_strength": "CONTENT_DIGEST",
+          "content_digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "privacy_scope": "PUBLIC_SAFE",
+      "provenance_ceiling": {
+        "max_claim": "Synthetic fixture demonstrates the V2 envelope only.",
+        "origin_established": false,
+        "limitations": [
+          "This fixture is not evidence of a real historical event."
+        ]
+      },
+      "currentness_rule": {
+        "present_state_semantics": "REQUIRES_SEPARATE_CURRENT_EVIDENCE_FOR_MUTABLE_PRESENT_CLAIMS",
+        "fresh_check_required_for_mutable_present": true
+      },
+      "supersession_state": {
+        "state": "NONE",
+        "related_record_ids": []
+      },
+      "promotion_semantics": {
+        "current_state": false,
+        "want": false,
+        "behavior_target": false,
+        "authority": false,
+        "consent": false,
+        "permission": false,
+        "task": false
+      },
+      "result_semantics": "HISTORICAL_EVIDENCE_ONLY_NOT_CURRENT_STATE_OR_AUTHORITY"
+    }
+  ]
+}
