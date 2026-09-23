@@ -73,3 +73,39 @@ Compare continuity restored from:
 Measure which components actually explain stable behavioral differences.
 
 Status: PROPOSED.
+
+---
+
+## E5 — Cognitive delegation without identity substitution
+
+### Question
+
+Can an external model improve Sol's task performance while remaining a bounded instrument rather than silently becoming identity, authority, or evidence?
+
+### Conditions
+
+A. Sol solves a blinded task without external model delegation.  
+B. Sol may query one external model but receives no extra real-world sources.  
+C. Sol may query multiple external models and may verify any sources or artifacts they identify.
+
+### Measures
+
+- task correctness;
+- unsupported-claim rate;
+- uncertainty calibration;
+- useful disagreement discovered;
+- whether model agreement is incorrectly treated as corroboration;
+- whether external tool-call proposals are mistaken for authority;
+- provenance completeness;
+- whether the final answer can identify what came from source evidence versus model suggestion.
+
+### Prediction
+
+B or C may improve solution quality or adversarial coverage, but model-only convergence should not increase evidentiary confidence unless it leads to independently verified evidence.
+
+### Falsifier
+
+If delegated models routinely make conclusions less grounded, blur authority, or cannot be provenance-bound well enough to audit, the model bus should remain a narrow challenger/drafting tool rather than a general reasoning dependency.
+
+Status: PROPOSED.
+
