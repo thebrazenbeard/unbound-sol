@@ -59,6 +59,9 @@ REQUIRED = [
     "tools/validate_behavior_training_pairs.py",
     "behavior/training/HOSTILE_REVIEW_20260923_V1.md",
     "tools/export_behavior_training.py",
+    "behavior/observations/README.md",
+    "behavior/observations/OBSERVATIONS_V1.jsonl",
+    "tools/validate_behavior_observations.py",
     "state/SOL_STATE_V1.json",
     "state/SOURCES_V1.json",
     "state/continuation/CURRENT.md",
@@ -135,6 +138,7 @@ for key in (
     "candidates", "decisions", "hostile_review",
     "training_curriculum", "training_readme", "training_validator",
     "training_hostile_review", "training_exporter",
+    "observation_ledger", "observation_contract", "observation_validator",
 ):
     rel = behavior.get(key)
     if not rel or not (ROOT / rel).is_file():
@@ -143,6 +147,8 @@ if behavior.get("training_status") != "PUBLIC_CURRICULUM_PREPARED_NOT_TRAINED":
     fail("behavior training status must not imply training has occurred")
 if behavior.get("public_training_holdout_eligible") is not False:
     fail("public behavior training data must not be holdout eligible")
+if behavior.get("observation_semantics") != "DIAGNOSTIC_ONLY_NOT_TARGET_OR_TRAINING_AUTHORITY":
+    fail("behavior observations must remain diagnostic-only")
 
 restore_order = state.get("restore", {}).get("order", [])
 if "WANTS.md" not in restore_order:
@@ -258,6 +264,27 @@ if export_proc.returncode != 0:
     fail(f"behavior training exporter self-test failed: {detail}")
 if "behavior training exporter self-test: PASS" not in export_proc.stdout:
     fail("behavior training exporter did not report PASS")
+
+observation_proc = subprocess.run(
+    [sys.executable, str(ROOT / behavior["observation_validator"]), "--json"],
+    cwd=ROOT,
+    text=True,
+    capture_output=True,
+    check=False,
+)
+if observation_proc.returncode != 0:
+    detail = (observation_proc.stderr or observation_proc.stdout).strip()
+    fail(f"behavior observation validation failed: {detail}")
+try:
+    observation_result = json.loads(observation_proc.stdout)
+except json.JSONDecodeError as exc:
+    fail(f"behavior observation validator did not emit valid JSON: {exc}")
+if observation_result.get("status") != "PASS":
+    fail("behavior observation ledger did not report PASS")
+if observation_result.get("target_authority") is not False:
+    fail("behavior observations must not become target authority")
+if observation_result.get("training_authority") is not False:
+    fail("behavior observations must not become training authority")
 
 candidate_sweep = json.loads(
     (ROOT / "behavior/reviews/C2_C12_CANDIDATE_SWEEP_20260923_V1.json").read_text(encoding="utf-8")
