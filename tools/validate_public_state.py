@@ -4,6 +4,7 @@ from __future__ import annotations
 import json
 import pathlib
 import re
+import subprocess
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
@@ -22,6 +23,11 @@ REQUIRED = [
     "docs/CANNIBALIZATION_MAP_V1.md",
     "schema/HISTORICAL_EVIDENCE_RESULT_V1.schema.json",
     "docs/HISTORICAL_EVIDENCE_PLANE_V1.md",
+    "schema/HISTORICAL_EVIDENCE_RESULT_V2.schema.json",
+    "docs/HISTORICAL_EVIDENCE_PLANE_V2.md",
+    "examples/historical_evidence_result_v2.json",
+    "tools/validate_historical_evidence_result.py",
+    "research/HISTORICAL_EVIDENCE_HOSTILE_REVIEW_20260923_V1.md",
     "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.md",
     "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.json",
     "research/OWNED_PORTFOLIO_PARALLEL_RECONCILIATION_20260923_V1.md",
@@ -84,22 +90,38 @@ if "behavior/BEHAVIOR_KERNEL_V2.yaml" not in restore_order:
     fail("restore order must include active behavior kernel V2")
 if "state/continuation/CURRENT.md" not in state.get("restore", {}).get("order", []):
     fail("restore order must include current continuation pointer")
-if "docs/HISTORICAL_EVIDENCE_PLANE_V1.md" not in restore_order:
-    fail("restore order must include historical evidence plane")
+if "docs/HISTORICAL_EVIDENCE_PLANE_V2.md" not in restore_order:
+    fail("restore order must include active historical evidence plane V2")
+if "docs/HISTORICAL_EVIDENCE_PLANE_V1.md" in restore_order:
+    fail("restore order must not use superseded historical evidence plane V1")
 
 history = state.get("historical_evidence_profile", {})
-if history.get("schema") != "UNBOUND_SOL_HISTORICAL_EVIDENCE_RESULT_V1":
-    fail("missing or unexpected historical evidence profile schema")
+if history.get("schema") != "UNBOUND_SOL_HISTORICAL_EVIDENCE_RESULT_V2":
+    fail("missing or unexpected active historical evidence profile schema")
 if history.get("default_operation") != "EVIDENCE_SEARCH":
     fail("historical evidence default must be EVIDENCE_SEARCH")
 if history.get("automatic_current_state_promotion") is not False:
     fail("historical evidence must not auto-promote current state")
 if history.get("automatic_behavior_target_promotion") is not False:
     fail("historical evidence must not auto-promote behavior targets")
-for key in ("architecture", "result_schema"):
+for key in ("architecture", "result_schema", "validator", "example"):
     rel = history.get(key)
     if not rel or not (ROOT / rel).is_file():
         fail(f"historical evidence profile path missing: {key}")
+
+history_validator = ROOT / history["validator"]
+history_example = ROOT / history["example"]
+for args in (["--self-test"], [str(history_example)]):
+    proc = subprocess.run(
+        [sys.executable, str(history_validator), *args],
+        cwd=ROOT,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    if proc.returncode != 0:
+        detail = (proc.stderr or proc.stdout).strip()
+        fail(f"historical evidence V2 validation failed: {detail}")
 
 sources = json.loads((ROOT / "state/SOURCES_V1.json").read_text(encoding="utf-8"))
 if sources.get("schema") != "UNBOUND_SOL_PUBLIC_SOURCES_V1":
