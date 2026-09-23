@@ -37,6 +37,13 @@ The rejected response is not necessarily absurd. It should represent a plausible
 
 ## Current coverage
 
+Current repaired corpus:
+- 24 examples;
+- 24 unique prompts and IDs;
+- 4 multi-target interaction examples;
+- preferred/rejected average length ratio about 1.29;
+- both longer-preferred and longer-rejected cases to reduce a trivial verbosity preference shortcut.
+
 The first curriculum covers:
 
 - `COMPOSITION_LEVEL_CONFIDENCE`;
@@ -71,6 +78,30 @@ Conversion must preserve target and exposure metadata.
 
 A converted training artifact does not become a holdout merely because the file format changes.
 
+## Deterministic export
+
+`tools/export_behavior_training.py` converts the validated public pairs into two neutral formats:
+
+- `preference`: prompt + chosen + rejected + source metadata;
+- `sft`: user/assistant messages using the preferred response + source metadata.
+
+Example:
+
+`python tools/export_behavior_training.py --format preference --output /tmp/sol-preference.jsonl`
+
+The exporter also writes a manifest (or the path supplied with `--manifest`) containing:
+- source SHA-256;
+- output SHA-256;
+- example count;
+- record schema;
+- exposure class;
+- holdout eligibility;
+- a conversion-only claim ceiling.
+
+The exported records remain derived public training/regression material. Format conversion cannot restore holdout status.
+
+The exporter performs atomic output replacement and digest readback. `--self-test` exercises both formats without training a model.
+
 ## Qualification boundary
 
 Behavior V3 transfer claims require separate frozen, unexposed case instances.
@@ -78,6 +109,12 @@ Behavior V3 transfer claims require separate frozen, unexposed case instances.
 Do not copy these prompts, minimally paraphrase them, or reuse their answer keys as the holdout set.
 
 A fresh holdout should test the same behavior under materially different surface content and, where possible, different reasoning structure.
+
+## Hostile review
+
+See `HOSTILE_REVIEW_20260923_V1.md`.
+
+The initial green 18-example corpus was rejected as training-ready because 17/18 preferred responses were longer than their rejected counterparts. The repaired corpus adds harder negatives, counterbalanced lengths, implicit correction cues, and positive controls for justified composition and justified causal diagnosis.
 
 ## Claim ceiling
 
