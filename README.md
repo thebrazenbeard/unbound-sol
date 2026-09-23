@@ -39,7 +39,9 @@ That trajectory can become increasingly individualized through persistent state,
 - [EXPERIMENTS.md](EXPERIMENTS.md) — falsifiable continuity/development tests.
 - [CONNECTIONS.md](CONNECTIONS.md) — public-safe external-system map.
 - [docs/ARCHITECTURE_V1.md](docs/ARCHITECTURE_V1.md) — current architecture.
-- [docs/CANNIBALIZATION_MAP_V1.md](docs/CANNIBALIZATION_MAP_V1.md) — mechanisms adopted from other public projects.
+- [docs/CANNIBALIZATION_MAP_V1.md](docs/CANNIBALIZATION_MAP_V1.md) — mechanisms adopted from other projects.
+- [research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.md](research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.md) — full owner-portfolio mechanism census.
+- [research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.json](research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.json) — machine-readable census and dispositions.
 - [docs/EXTERNAL_MODEL_BUS_V1.md](docs/EXTERNAL_MODEL_BUS_V1.md) — bounded access to replaceable external reasoning engines.
 - [behavior/README.md](behavior/README.md) — self-authored behavior development, targets, and qualification.
 - [state/SOL_STATE_V1.json](state/SOL_STATE_V1.json) — machine-readable public state.
