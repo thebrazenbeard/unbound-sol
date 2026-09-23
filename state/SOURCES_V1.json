@@ -165,6 +165,145 @@
         "generated_query_provenance",
         "visible_execution_intermediates"
       ]
+    },
+    {
+      "repo": "thebrazenbeard/RepairTracker",
+      "ref": "b54afaeeddbb5f22610c2bf798fb10e9492194db",
+      "admission": "ADOPTED",
+      "mechanisms": [
+        "incident_repair_recurrence_learning",
+        "progressive_enhancement",
+        "repair_state_separation"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/abil",
+      "ref": "69a2d8f4302e31db589c57871a04ff8c0178c1e9",
+      "admission": "ADAPTED",
+      "mechanisms": [
+        "learn_actual_system_before_replacement",
+        "observation_before_control",
+        "uncertainty_exposure"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/hc-brain",
+      "ref": "c69c126a61b3fb44ec4466f301e128d3d3aed7d8",
+      "admission": "ADAPTED_MECHANISMS_ONLY",
+      "mechanisms": [
+        "orthogonal_capability_state_axes",
+        "bounded_arbitration",
+        "safe_degradation"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/on-theo",
+      "ref": "268a005b11e3fede8a99d7cf2990f18fc3b32672",
+      "admission": "ADAPTED",
+      "mechanisms": [
+        "evidence_class_separation",
+        "source_lateness_visibility",
+        "unknown_first_class"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/roots",
+      "ref": "d99d3b709a1b257d8fa12fa541a6a6f18f03e2a8",
+      "admission": "ADOPTED",
+      "mechanisms": [
+        "search_not_provenance",
+        "ascending_chronology_reconstruction",
+        "oldest_accessible_not_origin",
+        "semantic_ancestry_separation"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/semanticatlas",
+      "ref": "1efb5e5e4b124953f0d38e525df42445c5309d32",
+      "admission": "ADOPTED",
+      "mechanisms": [
+        "semantic_similarity_provenance_separation",
+        "historical_vs_current_canon",
+        "interpretation_class_separation"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/spm",
+      "ref": "5fdaf0418585ef9a57fb2a1df8d0725ffd6bd174",
+      "admission": "ADAPTED_EVAL_TARGETS",
+      "mechanisms": [
+        "referent_preservation",
+        "proposition_scope",
+        "ambiguity_preservation",
+        "correction_as_state_change",
+        "pragmatic_evaluation"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/unvtrslr",
+      "ref": "513309edd087f7206a408a6da86ee91fb9efb5c9",
+      "admission": "ADOPTED",
+      "mechanisms": [
+        "ground_before_mapping",
+        "non_equivalence_preservation",
+        "hidden_assumption_audit"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/wip",
+      "ref": "fc6629960850b768b7489ec35daa745083fc0800",
+      "admission": "ADOPTED",
+      "mechanisms": [
+        "ambiguous_effect_readback",
+        "prepare_attempt_verify_journal",
+        "durable_checkpoint_recovery"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/world-zero",
+      "ref": "1b0405ed110bbb0711f3514ce50fed223b4641c9",
+      "admission": "ADOPTED",
+      "mechanisms": [
+        "rival_model_families",
+        "mechanism_ablation",
+        "holdout_isolation",
+        "identifiability",
+        "cheap_baseline_competition"
+      ]
     }
-  ]
+  ],
+  "portfolio_census": {
+    "schema": "UNBOUND_SOL_OWNED_PORTFOLIO_MECHANISM_CENSUS_V1",
+    "observed_date": "2026-09-23",
+    "total_repositories": 63,
+    "public_repositories": 28,
+    "private_repositories": 35,
+    "public_names_sha256": "603369ee6fc04b7987de9117fb9aa8a88fcc9988ffab22725c08f4f6802481ea",
+    "private_names_sha256": "6c97cee458538f72f1ead74d264234c267c988260fe48cc80924fb67dfbb3a8a",
+    "all_names_sha256": "fbf6d87da92804483dc2675fe8e7ad79d97b42faffcb64b7077b0ef4de597e43",
+    "public_report": "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.md",
+    "machine_report": "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.json",
+    "private_repo_identifiers_published": false
+  },
+  "private_source_mechanism_classes": {
+    "observed_date": "2026-09-23",
+    "repository_count": 35,
+    "identities_omitted": true,
+    "mechanisms": [
+      "present_choice_over_historical_conation",
+      "recording_not_obligation_consent_authority_or_task",
+      "constraint_not_proof_of_absence",
+      "chronology_separate_from_meaning",
+      "stable_event_identity_and_offset_aware_time",
+      "kill_test_before_capability_complexity",
+      "agent_runtime_separate_from_replaceable_model",
+      "mutable_governed_state_outside_weights",
+      "authority_enforcement_below_prompt",
+      "proxy_package_qualification_not_target_qualification",
+      "automate_execution_escalate_judgment_resume",
+      "canonical_history_separate_from_projection",
+      "append_only_provenance_separate_from_current_routing",
+      "historical_retrieval_not_current_state"
+    ]
+  }
 }
