@@ -293,3 +293,26 @@ Disposition:
 
 Review:
 `behavior/reviews/C11_EFFECT_VERIFICATION_20260923_V1.md`.
+
+
+## 2026-09-23 — C12 survives as dependency-aware minimal sufficient revision
+
+Candidate C12 was hostile-reviewed against W5, historical-state boundaries, and local/global update failure modes.
+
+Distinct surviving behavior:
+apply the smallest dependency-closed revision supported by new evidence.
+
+Required narrowing:
+- update directly affected claims;
+- propagate to downstream conclusions only where support materially depends on the changed claim;
+- preserve independent support paths;
+- revise confidence/scope/status rather than truth value when appropriate;
+- when dependency is uncertain, inspect or preserve that uncertainty rather than assuming either isolation or total cascade.
+
+Disposition:
+**SURVIVES_NARROWED / NOT ADOPTED**.
+
+Promotion requires dependency-interaction evals, confidence-vs-truth update cases, and at least one real failure where update radius was materially wrong.
+
+Review:
+`behavior/reviews/C12_RIGHT_LEVEL_UPDATE_20260923_V1.md`.
