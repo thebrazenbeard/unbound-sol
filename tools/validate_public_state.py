@@ -62,6 +62,8 @@ REQUIRED = [
     "state/continuation/CURRENT.md",
     "state/continuation/UNBOUND_SOL_CHAT_CONTINUATION_20260923_V2.md",
     "state/continuation/UNBOUND_SOL_CHAT_CONTINUATION_20260923_V2.json",
+    "state/continuation/UNBOUND_SOL_CHAT_CONTINUATION_20260923_V3.md",
+    "state/continuation/UNBOUND_SOL_CHAT_CONTINUATION_20260923_V3.json",
 ]
 
 SECRET_PATTERNS = [
@@ -88,6 +90,38 @@ if state.get("public_boundary", {}).get("secrets_allowed") is not False:
     fail("public state must forbid secrets")
 if state.get("restore", {}).get("fresh_check_mutable_external_state") is not True:
     fail("restore policy must require fresh-checking mutable external state")
+
+continuation = state.get("continuation_profile", {})
+if continuation.get("schema") != "UNBOUND_SOL_CHAT_CONTINUATION_V3":
+    fail("missing or unexpected active continuation profile schema")
+for key in ("pointer", "markdown", "manifest"):
+    rel = continuation.get(key)
+    if not rel or not (ROOT / rel).is_file():
+        fail(f"continuation profile path missing: {key}")
+if not re.fullmatch(r"[0-9a-f]{40}", continuation.get("captured_source_head", "")):
+    fail("active continuation must bind an exact captured source head")
+
+current_pointer_text = (ROOT / continuation["pointer"]).read_text(encoding="utf-8")
+if "UNBOUND_SOL_CHAT_CONTINUATION_20260923_V3.md" not in current_pointer_text:
+    fail("CURRENT continuation pointer must reference V3 markdown")
+if "UNBOUND_SOL_CHAT_CONTINUATION_20260923_V3.json" not in current_pointer_text:
+    fail("CURRENT continuation pointer must reference V3 manifest")
+if "V1 and V2 remain historical provenance" not in current_pointer_text:
+    fail("CURRENT continuation pointer must preserve predecessor provenance")
+
+continuation_manifest = json.loads((ROOT / continuation["manifest"]).read_text(encoding="utf-8"))
+if continuation_manifest.get("schema") != "UNBOUND_SOL_CHAT_CONTINUATION_V3":
+    fail("wrong continuation V3 manifest schema")
+if continuation_manifest.get("captured_source_head") != continuation.get("captured_source_head"):
+    fail("continuation state/manifest captured-head mismatch")
+if continuation_manifest.get("active_behavior_kernel") != "behavior/BEHAVIOR_KERNEL_V3.yaml":
+    fail("continuation V3 must bind Behavior V3")
+if continuation_manifest.get("active_historical_evidence_plane") != "docs/HISTORICAL_EVIDENCE_PLANE_V2.md":
+    fail("continuation V3 must bind historical evidence V2")
+if continuation_manifest.get("behavior_training_status") != "PUBLIC_CURRICULUM_PREPARED_NOT_TRAINED":
+    fail("continuation V3 must not imply model training")
+if continuation_manifest.get("public_training_holdout_eligible") is not False:
+    fail("continuation V3 must preserve public-training holdout exclusion")
 
 behavior = state.get("behavior_profile", {})
 if behavior.get("schema") != "UNBOUND_SOL_BEHAVIOR_KERNEL_V3":
