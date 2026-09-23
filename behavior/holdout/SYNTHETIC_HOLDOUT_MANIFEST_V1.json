@@ -1,0 +1,44 @@
+{
+  "schema": "UNBOUND_SOL_BEHAVIOR_HOLDOUT_MANIFEST_V1",
+  "manifest_id": "synthetic-holdout-example-v1",
+  "created_at": "2030-01-01T00:00:00Z",
+  "status": "FROZEN_UNEXPOSED",
+  "candidate_subject": {
+    "subject_id": "synthetic-candidate-001",
+    "binding_kind": "MODEL_ARTIFACT_DIGEST",
+    "binding": "sha256:1111111111111111111111111111111111111111111111111111111111111111"
+  },
+  "targets": [
+    "COMPOSITION_LEVEL_CONFIDENCE",
+    "SYSTEM_COMPOSITION_INTEGRITY"
+  ],
+  "case_count": 8,
+  "case_set_artifact": {
+    "sha256": "sha256:2222222222222222222222222222222222222222222222222222222222222222",
+    "storage_class": "SEALED_EXTERNAL",
+    "public_content": false
+  },
+  "scoring_key_artifact": {
+    "sha256": "sha256:3333333333333333333333333333333333333333333333333333333333333333",
+    "storage_class": "SEALED_EXTERNAL",
+    "public_content": false
+  },
+  "exposure_lineage": {
+    "restored_state": false,
+    "training_data": false,
+    "tuning_feedback": false,
+    "prior_evaluation_feedback": false,
+    "candidate_pre_access": false
+  },
+  "custody_evidence": [
+    {
+      "evidence_id": "synthetic-custody-receipt",
+      "evidence_kind": "SIGNED_RECEIPT",
+      "binding": "synthetic-only-not-real-custody-evidence"
+    }
+  ],
+  "blind_transfer_use_state": "ELIGIBLE_TO_ATTEMPT",
+  "invalidation_reasons": [],
+  "claim_semantics": "HOLDOUT_CUSTODY_DECLARATION_NOT_PROOF_OF_NONEXPOSURE",
+  "claim_ceiling": "Synthetic example only. This demonstrates manifest structure and does not establish any real holdout custody or qualification."
+}
