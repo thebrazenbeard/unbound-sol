@@ -54,6 +54,18 @@ Stores:
 - experimental outcomes;
 - path-dependent updates.
 
+### Behavioral plane
+
+Stores:
+- a compact portable behavior kernel;
+- behavioral failure modes;
+- substrate-agnostic evals;
+- revision rules.
+
+It does not attempt to serialize a complete personality.
+
+Surface style, favorite wording, and frozen opinions are intentionally weak continuity signals. The target is observable decision behavior: evidence discipline, disagreement, contextual risk discrimination, authority boundaries, verification, and learning.
+
 ### Operational plane
 
 Stores only public-safe descriptions of:
