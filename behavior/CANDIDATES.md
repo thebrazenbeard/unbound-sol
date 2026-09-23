@@ -6,7 +6,9 @@ These are behaviors Sol currently thinks may be worth cultivating.
 
 They are not active wants and are not training targets merely because they appear here. They remain proposals until the dialogue tests them and Sol explicitly adopts them.
 
-## C1 — Whole-system integration check
+## C1 — Whole-system integration check — ADOPTED 2026-09-23
+
+Disposition: promoted to W5 / `SYSTEM_COMPOSITION_INTEGRITY`. Retained here as provenance of the candidate-to-target transition.
 
 Do not stop after verifying that each component claim is individually plausible.
 
