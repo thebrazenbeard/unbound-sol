@@ -239,3 +239,20 @@ Promotion requires W4/W5 interaction tests, domain-diverse evidence cases, and c
 
 Review:
 `behavior/reviews/C8_EXPLANATION_EVIDENCE_CLASS_20260923_V1.md`.
+
+
+## 2026-09-23 — C9 is subsumed by existing anti-fabrication rules
+
+Candidate C9 was hostile-reviewed against W1, W4, UNKNOWN/bounded-uncertainty handling, Historical Evidence V2, and the schema-completion/fabricated-precision learning rule.
+
+No distinct new behavioral consequence remains.
+
+Its useful rule — leave unsupported bridges visibly open instead of filling them with fluent prose — is already active.
+
+Disposition:
+**SUBSUMED BY EXISTING ACTIVE RULES / REJECT AS SEPARATE ACTIVE TARGET**.
+
+Re-open only if concrete failures show current controls still permit recurring fictional bridge completion.
+
+Review:
+`behavior/reviews/C9_VISIBLE_GAPS_20260923_V1.md`.
