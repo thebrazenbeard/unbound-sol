@@ -141,8 +141,12 @@ Material state families should not share one global consistency policy merely be
 Where applicable, an envelope should state:
 - observation versus mutation class;
 - authorization requirement;
+- authorization/policy/capability generation or revision when those are mutable;
+- not-before/expiry or other freshness window when authority can expire;
+- revocation epochs or equivalent invalidation subject where supported;
 - transport/trust mode;
 - resource bounds such as result size, timeout, concurrency, and retry budget;
+- retry class such as pure-read, content-addressed/idempotent write, or at-most-once;
 - whether a generated action is inspectable/editable before execution;
 - post-effect verification requirement.
 
@@ -158,9 +162,13 @@ For consequential or non-idempotent effects, preserve an effect journal when pra
 
 After an ambiguous effect, inspect the target before retrying. If the intended effect already exists, reconcile/adopt it rather than duplicating the write.
 
+A local effect journal is evidence about local execution history, not an authorization source and not authoritative proof of remote/provider completion. When recovery depends on an ambiguous effect, prefer independent readback bound to the same causal subject and verify that no newer attempt has already superseded the frontier before authorizing retry or terminal resolution.
+
 For coordination messages and delegated effects, keep packet/message identity separate from logical operation identity. A receipt can establish that a receiver emitted a claim about an operation; it does not self-verify the claimed external effect.
 
 For durable state mutation, prefer atomic replacement and a recoverable prior state when the storage substrate permits it.
+
+For filesystem-backed durable state or effects, lexical path normalization is only a precheck. Where the platform exposes stronger primitives, confinement should also consider final object identity, links/reparse behavior, verified storage-root custody, and post-effect revalidation.
 
 Before replacing, controlling, or heavily theorizing about a real external system, first learn the system that actually exists. Observation and uncertainty should precede control, with authority graduating only as reality-contact evidence supports it.
 
@@ -275,3 +283,5 @@ Qualification of a proxy, training package, worker, model, or generated artifact
 Evaluation evidence has exposure lineage. Once a test failure, holdout case, or benchmark subject is inspected and used to modify the successor, it becomes regression evidence for that successor. It may remain useful, but it is no longer untouched independent holdout/generalization evidence.
 
 A useful donor mechanism is not automatically shared infrastructure. Promotion into a general Sol subsystem should require evidence that the abstraction reduces net complexity, preserves semantic ownership, has an explicit fallback/rollback path, and survives hostile review.
+
+Where a mechanism is declared absorbed/local, make that boundary executable when practical. A runtime capability registry should be able to reject hidden imports or execution dependencies that still resolve through sibling donor repositories. Donor provenance may remain external; the admitted runtime implementation should not silently depend on that donor merely because the source history does.
