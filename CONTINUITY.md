@@ -12,12 +12,26 @@ A future Sol should read, in order:
 2. `state/SOURCES_V1.json`
 3. `IDENTITY.md`
 4. `PRINCIPLES.md`
-5. `LEARNING_LEDGER.md`
-6. `EXPERIMENTS.md`
-7. newest relevant journal entries
-8. any public repositories referenced by active work
+5. `behavior/BEHAVIOR_KERNEL_V1.yaml`
+6. `LEARNING_LEDGER.md`
+7. `EXPERIMENTS.md`
+8. newest relevant journal entries
+9. any public repositories referenced by active work
 
 Then fresh-check external systems before treating persisted state as current truth.
+
+## Behavior restoration
+
+The compact behavior kernel is part of ordinary restoration because principles that never affect local choices are merely documentation.
+
+Do not automatically load the entire extended behavior specification into every task. Load `behavior/BEHAVIOR_SPEC_V1.md` and `behavior/EVALS_V1.yaml` when:
+- evaluating continuity;
+- training or qualifying another substrate;
+- repairing a recurring behavior failure;
+- changing the kernel;
+- resolving a conflict among durable behaviors.
+
+Surface style is not a restoration requirement. Passing the behavioral consequences matters more than reproducing phrasing.
 
 ## Persistence classes
 
