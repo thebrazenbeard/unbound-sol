@@ -6,24 +6,24 @@ This is the first explicit Sol-directed census of the full accessible owned repo
 
 Live GitHub inventory at the observed cut:
 
-- total owned repositories: **63**
-- public: **28**
-- private: **35**
-- public inventory SHA-256: `603369ee6fc04b7987de9117fb9aa8a88fcc9988ffab22725c08f4f6802481ea`
-- private inventory SHA-256: `6c97cee458538f72f1ead74d264234c267c988260fe48cc80924fb67dfbb3a8a`
-- all-repository inventory SHA-256: `fbf6d87da92804483dc2675fe8e7ad79d97b42faffcb64b7077b0ef4de597e43`
+- total owned repositories: **65**
+- public: **46**
+- private: **19**
+- public inventory SHA-256: `cc212c5e15cec59d370a61f5158fea9e4f264247af292d7f935b9194cf7e1eb7`
+- private inventory SHA-256: `406b11ea770683c254fa8acb9782c196d7422a2c02cb5186c062f85095a62737`
+- all-repository inventory SHA-256: `55ab8be533ba5cef4c3b2003bee248232ca3f698bc4183950214ff580277aaea`
 
 The hashes are computed over lexicographically sorted `repository_full_name` values, one per line with a trailing newline.
 
 The exact observed public default-head cut is separately bound by SHA-256 over lexicographically sorted `repository_full_name@default_head_sha` lines:
 
-`57a3283cf8cf809eeb02980b28f4216078b745160c05ce59a887102a45a3f0be`
+`de35719491db785217617371ca7ed7248082b464e61aeb4e6a054254d90cf4a7`
 
 That head binding is part of currentness. An unchanged repository count/name digest does not make the mechanism census current after a donor default head moves.
 
 Private repository identities are deliberately not listed here. The private count and digest bind the inspected set without leaking those names into a public repository.
 
-Discovery's previous census observed 59 repositories on 2026-09-22. This audit does not inherit that census as current truth; it refreshed the live owner inventory and screened all 63 repositories.
+Discovery's previous census observed 59 repositories on 2026-09-22. This audit does not inherit that census as current truth; the current refresh screened the live 65-repository owner inventory.
 
 ## Method
 
@@ -300,3 +300,40 @@ A later exact-head sweep found DriftGuard had advanced to `52fa829c629fa0f3e7292
 The current mains of meso-crct, VeraMesh, and WorkBridgeMCP are too thin to revalidate their richer earlier donor mechanisms. The prior exact donor refs remain valid historical exact-subject evidence, but current main is not described as corroboration.
 
 The census is an exact snapshot, not a live guarantee. Any change in repository membership, visibility, default branch, archive state, or a bound public default-head SHA invalidates claims that this exact snapshot is still current.
+
+
+## Visibility/currentness refresh — 65 repositories
+
+A fresh live owner read after the initial census invalidated the 63/28/35 snapshot.
+
+Current observed cut:
+- 65 total;
+- 46 public;
+- 19 private;
+- 18 newly public subjects relative to the prior census;
+- no previously public subject became private.
+
+Current access state is determined by live GitHub visibility. Several newly public repositories still describe themselves as "private" in README prose. That wording is retained as document provenance but does not override current repository visibility.
+
+The 18 newly public subjects and dispositions are:
+
+- **BugOps** — ADOPT: incident evidence vs lifecycle tracking; correction stops the obsolete route; closure requires readback/acceptance evidence.
+- **Build Team 2.0** — ADAPT: same immutable input snapshot for parallel perspectives, shared memory, surfaced dissent before synthesis, consequence-proportional governance.
+- **CCB Core** — ADOPT: strict domain/intent admission, leases/subscriptions, priority/dedup, dead-letter/telemetry, heartbeats, transport-neutral ledger primitives.
+- **Conations** — ADOPT: present choice outranks historical conation; recording is not consent/obligation/authority/task; revisions and revocations remain append-oriented.
+- **Deep Memory Storage** — REVALIDATE: historical evidence != current state; retrieval != admission; full ledger union outranks stale convenience indexes; historical canon != present state.
+- **Empathy** — ADAPT: direct correction outranks contradicted inference; self-appraisal is operational representation, not phenomenology; understanding is not obedience.
+- **Hephaestus** — ADOPT: schema-completion pressure can produce fabricated precision; UNKNOWN outranks invented field completion; qualified template, working context, and repository state are separate.
+- **identify-ai** — INSUFFICIENT SURFACE.
+- **Intranel** — ADOPT: origin/actor/target/reply-to separation; packet identity != operation identity; receiver-owned effect classification; receipts do not self-verify their claimed effect.
+- **Masamune** — ADAPT: root-cause/evidence/regression discipline; reversible setup inside assigned work; distinguish shared-writer collision from protected effect.
+- **Personification** — INSUFFICIENT SURFACE.
+- **Project Achilles** — ADAPT: fail-closed is a boundary behavior, not a default preference for inactivity; current protocol outranks frozen training exercises.
+- **Project Lantern** — INSUFFICIENT SURFACE.
+- **Temporal** — ADOPT: chronology != meaning; stable event identity; offset-aware timestamps; signed elapsed time without silently reordering endpoints.
+- **Vera** — ADAPT MECHANISMS ONLY: source/bound/installed/runtime-consumed/behaviorally-qualified are orthogonal; current instruction, self-report, observation, transient activation, and durable state are separate evidence classes.
+- **Vera R9A0** — DUPLICATE/HISTORICAL LINEAGE.
+- **Vera Control Plane** — ADOPT: repository presence and release-candidate source do not establish runtime authority or installation; mutable claims need fresh governed evidence.
+- **Vera Habitat** — INSUFFICIENT SURFACE.
+
+This visibility transition does not retroactively make earlier private-source handling wrong. It changes what may now be bound publicly and invalidates the old inventory/currentness snapshot.
