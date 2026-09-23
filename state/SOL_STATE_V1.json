@@ -101,7 +101,11 @@
       "preference",
       "sft"
     ],
-    "training_export_effect": "FORMAT_CONVERSION_ONLY_NOT_TRAINING"
+    "training_export_effect": "FORMAT_CONVERSION_ONLY_NOT_TRAINING",
+    "observation_ledger": "behavior/observations/OBSERVATIONS_V1.jsonl",
+    "observation_contract": "behavior/observations/README.md",
+    "observation_validator": "tools/validate_behavior_observations.py",
+    "observation_semantics": "DIAGNOSTIC_ONLY_NOT_TARGET_OR_TRAINING_AUTHORITY"
   },
   "portfolio_mechanism_census": {
     "schema": "UNBOUND_SOL_OWNED_PORTFOLIO_MECHANISM_CENSUS_V1",
