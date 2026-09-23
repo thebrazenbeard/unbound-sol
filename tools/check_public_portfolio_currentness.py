@@ -67,13 +67,22 @@ def inspect_subject(subject: dict, token: str | None) -> dict:
         if current.get(key) != expected.get(key)
     ]
 
+    volatile = subject.get("head_volatility") == "ACTIVE_UPSTREAM"
+    volatile_head_only = volatile and drift == ["head"]
+
     return {
         "repo": repository,
         "ref_role": subject.get("ref_role"),
         "expected": expected,
         "current": current,
-        "status": "DRIFTED" if drift else "CURRENT",
+        "status": (
+            "DRIFTED_VOLATILE"
+            if volatile_head_only
+            else ("DRIFTED" if drift else "CURRENT")
+        ),
         "drift_fields": drift,
+        "head_volatility": subject.get("head_volatility"),
+        "latest_live_head_observed": subject.get("latest_live_head_observed"),
     }
 
 
@@ -97,10 +106,15 @@ def run(census_path: pathlib.Path, token: str | None) -> tuple[dict, int]:
                 }
             )
 
-    drifted = [item for item in results if item["status"] == "DRIFTED"]
+    drifted = [item for item in results if item["status"] in {"DRIFTED", "DRIFTED_VOLATILE"}]
+    volatile_drifted = [item for item in results if item["status"] == "DRIFTED_VOLATILE"]
+    unexpected_drifted = [item for item in results if item["status"] == "DRIFTED"]
 
-    if drifted:
+    if unexpected_drifted:
         status = "DRIFTED"
+        exit_code = 1
+    elif volatile_drifted:
+        status = "DRIFTED_VOLATILE"
         exit_code = 1
     elif unknown:
         status = "UNKNOWN"
@@ -117,6 +131,8 @@ def run(census_path: pathlib.Path, token: str | None) -> tuple[dict, int]:
         "checked_subjects": len(subjects),
         "current_count": sum(1 for item in results if item["status"] == "CURRENT"),
         "drifted_count": len(drifted),
+        "volatile_drifted_count": len(volatile_drifted),
+        "unexpected_drifted_count": len(unexpected_drifted),
         "unknown_count": len(unknown),
         "results": results,
         "unknown": unknown,
@@ -158,9 +174,9 @@ def main() -> int:
             f"drifted={report['drifted_count']} unknown={report['unknown_count']})"
         )
         for item in report["results"]:
-            if item["status"] == "DRIFTED":
+            if item["status"] in {"DRIFTED", "DRIFTED_VOLATILE"}:
                 print(
-                    f"DRIFTED {item['repo']}: "
+                    f"{item['status']} {item['repo']}: "
                     + ", ".join(item["drift_fields"])
                 )
         for item in report["unknown"]:
