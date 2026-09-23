@@ -37,6 +37,27 @@ Current preference:
 - no secret material in this repository;
 - process execution remains a separate capability, not implied by filesystem access.
 
+## External model bus
+
+Purpose:
+- give Sol bounded access to replaceable local or remote reasoning engines;
+- compare model behavior without treating model agreement as source corroboration;
+- preserve model/runtime provenance;
+- keep inference separate from effect authority.
+
+Initial public candidates:
+- `LostRuins/koboldcpp@7e0eb2dc4a23f1a0fc42a7660ad43be7a4b9e759` as a local GGUF inference runtime;
+- `SillyTavern/SillyTavern@7e8663cd9c184a550b37238218bdd32c6efc68e9` as an optional human-facing terminal.
+
+Current status:
+- DESIGN;
+- upstream capabilities verified;
+- no local installation or runtime qualification claimed.
+
+The machine-facing path should prefer a narrow API/bridge contract over automating a chat UI.
+
+See `docs/EXTERNAL_MODEL_BUS_V1.md`.
+
 ## Other systems
 
 Future connections may include databases, files, communication systems, research sources, and execution environments.
