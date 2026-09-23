@@ -114,9 +114,13 @@ A later evaluation receipt must bind:
 
 ## Files
 
-- `HOLDOUT_MANIFEST_V1.schema.json` — structural contract.
-- `SYNTHETIC_HOLDOUT_MANIFEST_V1.json` — fake public example only.
-- `../../tools/validate_behavior_holdout_manifest.py` — semantic validator.
+- `HOLDOUT_MANIFEST_V1.schema.json` — pre-run custody/freeze contract.
+- `SYNTHETIC_HOLDOUT_MANIFEST_V1.json` — fake public holdout example only.
+- `QUALIFICATION_RECEIPT_V1.md` — post-run binding and exposure semantics.
+- `QUALIFICATION_RECEIPT_V1.schema.json` — qualification receipt structure.
+- `SYNTHETIC_QUALIFICATION_RECEIPT_V1.json` — fake public receipt example only.
+- `../../tools/validate_behavior_holdout_manifest.py` — manifest semantic validator.
+- `../../tools/validate_behavior_qualification_receipt.py` — receipt/manifest cross-validator.
 
 ## Claim ceiling
 
