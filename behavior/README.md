@@ -19,7 +19,9 @@ The active V3 rule is:
 - training/PREFERENCE_PAIRS_V1.jsonl — public preference-pair curriculum for the active targets; regression/training only, never holdout.
 - training/README.md — training-data semantics and holdout boundary.
 - observations/README.md — diagnostic observed-behavior evidence contract.
-- observations/OBSERVATIONS_V1.jsonl — public-safe observed behavior; diagnostic only, never target authority.
+- observations/OBSERVATIONS_V2.jsonl — active public-safe observed behavior with separate record/event time; diagnostic only, never target authority.
+- observations/OBSERVATION_V2.schema.json — active observation record contract.
+- observations/OBSERVATIONS_V1.jsonl — superseded observation ledger retained as provenance.
 - holdout/README.md — custody/exposure contract for future unexposed BLIND_TRANSFER packs.
 - holdout/HOLDOUT_MANIFEST_V1.schema.json — machine-readable holdout custody manifest.
 - holdout/SYNTHETIC_HOLDOUT_MANIFEST_V1.json — public synthetic contract example only; not a real holdout.

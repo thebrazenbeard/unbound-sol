@@ -68,6 +68,10 @@ REQUIRED = [
     "behavior/observations/README.md",
     "behavior/observations/OBSERVATIONS_V1.jsonl",
     "tools/validate_behavior_observations.py",
+    "behavior/observations/OBSERVATION_V2.schema.json",
+    "behavior/observations/OBSERVATIONS_V2.jsonl",
+    "tools/validate_behavior_observations_v2.py",
+    "behavior/observations/HOSTILE_REVIEW_20260923_V1.md",
     "behavior/holdout/README.md",
     "behavior/holdout/HOLDOUT_MANIFEST_V1.schema.json",
     "behavior/holdout/SYNTHETIC_HOLDOUT_MANIFEST_V1.json",
@@ -158,7 +162,9 @@ for key in (
     "candidates", "decisions", "hostile_review",
     "training_curriculum", "training_readme", "training_validator",
     "training_hostile_review", "training_exporter",
-    "observation_ledger", "observation_contract", "observation_validator",
+    "observation_ledger", "observation_contract", "observation_schema",
+    "observation_validator", "observation_predecessor_ledger",
+    "observation_predecessor_validator",
     "holdout_contract", "holdout_schema", "holdout_validator", "holdout_example",
     "qualification_receipt_contract", "qualification_receipt_schema",
     "qualification_receipt_validator", "qualification_receipt_example",
@@ -299,8 +305,22 @@ if export_proc.returncode != 0:
 if "behavior training exporter self-test: PASS" not in export_proc.stdout:
     fail("behavior training exporter did not report PASS")
 
+observation_validator = ROOT / behavior["observation_validator"]
+observation_self_test = subprocess.run(
+    [sys.executable, str(observation_validator), "--self-test"],
+    cwd=ROOT,
+    text=True,
+    capture_output=True,
+    check=False,
+)
+if observation_self_test.returncode != 0:
+    detail = (observation_self_test.stderr or observation_self_test.stdout).strip()
+    fail(f"behavior observation V2 validator self-test failed: {detail}")
+if "behavior observations V2 validator self-test: PASS" not in observation_self_test.stdout:
+    fail("behavior observation V2 validator self-test did not report PASS")
+
 observation_proc = subprocess.run(
-    [sys.executable, str(ROOT / behavior["observation_validator"]), "--json"],
+    [sys.executable, str(observation_validator), "--json"],
     cwd=ROOT,
     text=True,
     capture_output=True,
@@ -308,17 +328,27 @@ observation_proc = subprocess.run(
 )
 if observation_proc.returncode != 0:
     detail = (observation_proc.stderr or observation_proc.stdout).strip()
-    fail(f"behavior observation validation failed: {detail}")
+    fail(f"behavior observation V2 validation failed: {detail}")
 try:
     observation_result = json.loads(observation_proc.stdout)
 except json.JSONDecodeError as exc:
-    fail(f"behavior observation validator did not emit valid JSON: {exc}")
+    fail(f"behavior observation V2 validator did not emit valid JSON: {exc}")
+if observation_result.get("schema") != "UNBOUND_SOL_BEHAVIOR_OBSERVATION_VALIDATION_V2":
+    fail("active behavior observation validator must report V2")
 if observation_result.get("status") != "PASS":
-    fail("behavior observation ledger did not report PASS")
+    fail("behavior observation V2 ledger did not report PASS")
+if observation_result.get("record_count") != 3:
+    fail("behavior observation V2 migration must preserve the three initial records")
+if observation_result.get("unknown_event_times") != 3:
+    fail("initial behavior observations must preserve unknown event-time precision")
+if observation_result.get("exact_event_times") != 0:
+    fail("initial behavior observations must not invent exact event times")
 if observation_result.get("target_authority") is not False:
     fail("behavior observations must not become target authority")
 if observation_result.get("training_authority") is not False:
     fail("behavior observations must not become training authority")
+if behavior.get("observation_time_semantics") != "RECORD_TIME_SEPARATE_FROM_EVENT_TIME_NO_INFERENCE":
+    fail("behavior observations must separate record time from event time")
 
 holdout_validator = ROOT / behavior["holdout_validator"]
 holdout_example = ROOT / behavior["holdout_example"]
