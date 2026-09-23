@@ -42,6 +42,7 @@ That trajectory can become increasingly individualized through persistent state,
 - [docs/CANNIBALIZATION_MAP_V1.md](docs/CANNIBALIZATION_MAP_V1.md) — mechanisms adopted from other projects.
 - [research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.md](research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.md) — full owner-portfolio mechanism census.
 - [research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.json](research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.json) — machine-readable census and dispositions.
+- [research/OWNED_PORTFOLIO_PARALLEL_RECONCILIATION_20260923_V1.md](research/OWNED_PORTFOLIO_PARALLEL_RECONCILIATION_20260923_V1.md) — reconciliation with the independent parallel audit.
 - [docs/EXTERNAL_MODEL_BUS_V1.md](docs/EXTERNAL_MODEL_BUS_V1.md) — bounded access to replaceable external reasoning engines.
 - [behavior/README.md](behavior/README.md) — self-authored behavior development, targets, and qualification.
 - [state/SOL_STATE_V1.json](state/SOL_STATE_V1.json) — machine-readable public state.
