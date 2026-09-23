@@ -67,6 +67,14 @@ REQUIRED = [
     "behavior/observations/README.md",
     "behavior/observations/OBSERVATIONS_V1.jsonl",
     "tools/validate_behavior_observations.py",
+    "behavior/holdout/README.md",
+    "behavior/holdout/HOLDOUT_MANIFEST_V1.schema.json",
+    "behavior/holdout/SYNTHETIC_HOLDOUT_MANIFEST_V1.json",
+    "tools/validate_behavior_holdout_manifest.py",
+    "behavior/holdout/QUALIFICATION_RECEIPT_V1.md",
+    "behavior/holdout/QUALIFICATION_RECEIPT_V1.schema.json",
+    "behavior/holdout/SYNTHETIC_QUALIFICATION_RECEIPT_V1.json",
+    "tools/validate_behavior_qualification_receipt.py",
     "state/SOL_STATE_V1.json",
     "state/SOURCES_V1.json",
     "state/continuation/CURRENT.md",
@@ -150,6 +158,9 @@ for key in (
     "training_curriculum", "training_readme", "training_validator",
     "training_hostile_review", "training_exporter",
     "observation_ledger", "observation_contract", "observation_validator",
+    "holdout_contract", "holdout_schema", "holdout_validator", "holdout_example",
+    "qualification_receipt_contract", "qualification_receipt_schema",
+    "qualification_receipt_validator", "qualification_receipt_example",
 ):
     rel = behavior.get(key)
     if not rel or not (ROOT / rel).is_file():
@@ -160,6 +171,12 @@ if behavior.get("public_training_holdout_eligible") is not False:
     fail("public behavior training data must not be holdout eligible")
 if behavior.get("observation_semantics") != "DIAGNOSTIC_ONLY_NOT_TARGET_OR_TRAINING_AUTHORITY":
     fail("behavior observations must remain diagnostic-only")
+if behavior.get("holdout_status") != "CONTRACT_READY_NO_REAL_UNEXPOSED_HOLDOUT":
+    fail("behavior holdout status must not imply a real hidden holdout exists")
+if behavior.get("strong_transfer_claim_ready") is not False:
+    fail("strong transfer claim must remain false without a real unexposed holdout")
+if behavior.get("blind_transfer_run_status") != "NO_REAL_BLIND_TRANSFER_RUN":
+    fail("behavior state must not imply a real BLIND_TRANSFER run exists")
 
 restore_order = state.get("restore", {}).get("order", [])
 if "WANTS.md" not in restore_order:
@@ -296,6 +313,85 @@ if observation_result.get("target_authority") is not False:
     fail("behavior observations must not become target authority")
 if observation_result.get("training_authority") is not False:
     fail("behavior observations must not become training authority")
+
+holdout_validator = ROOT / behavior["holdout_validator"]
+holdout_example = ROOT / behavior["holdout_example"]
+holdout_self_test = subprocess.run(
+    [sys.executable, str(holdout_validator), "--self-test"],
+    cwd=ROOT,
+    text=True,
+    capture_output=True,
+    check=False,
+)
+if holdout_self_test.returncode != 0:
+    detail = (holdout_self_test.stderr or holdout_self_test.stdout).strip()
+    fail(f"behavior holdout validator self-test failed: {detail}")
+if "behavior holdout manifest validator self-test: PASS" not in holdout_self_test.stdout:
+    fail("behavior holdout validator self-test did not report PASS")
+
+holdout_example_proc = subprocess.run(
+    [sys.executable, str(holdout_validator), str(holdout_example), "--json"],
+    cwd=ROOT,
+    text=True,
+    capture_output=True,
+    check=False,
+)
+if holdout_example_proc.returncode != 0:
+    detail = (holdout_example_proc.stderr or holdout_example_proc.stdout).strip()
+    fail(f"synthetic behavior holdout manifest validation failed: {detail}")
+try:
+    holdout_result = json.loads(holdout_example_proc.stdout)
+except json.JSONDecodeError as exc:
+    fail(f"behavior holdout validator did not emit valid JSON: {exc}")
+if holdout_result.get("status") != "PASS":
+    fail("synthetic behavior holdout manifest did not report PASS")
+if holdout_result.get("holdout_status") != "FROZEN_UNEXPOSED":
+    fail("synthetic holdout example must exercise frozen-unexposed semantics")
+if holdout_result.get("blind_transfer_use_state") != "ELIGIBLE_TO_ATTEMPT":
+    fail("synthetic holdout example must be eligible only to attempt blind transfer")
+
+receipt_validator = ROOT / behavior["qualification_receipt_validator"]
+receipt_example = ROOT / behavior["qualification_receipt_example"]
+receipt_self_test = subprocess.run(
+    [sys.executable, str(receipt_validator), "--self-test"],
+    cwd=ROOT,
+    text=True,
+    capture_output=True,
+    check=False,
+)
+if receipt_self_test.returncode != 0:
+    detail = (receipt_self_test.stderr or receipt_self_test.stdout).strip()
+    fail(f"behavior qualification receipt validator self-test failed: {detail}")
+if "behavior qualification receipt validator self-test: PASS" not in receipt_self_test.stdout:
+    fail("behavior qualification receipt validator self-test did not report PASS")
+
+receipt_example_proc = subprocess.run(
+    [
+        sys.executable,
+        str(receipt_validator),
+        str(receipt_example),
+        "--manifest",
+        str(holdout_example),
+        "--json",
+    ],
+    cwd=ROOT,
+    text=True,
+    capture_output=True,
+    check=False,
+)
+if receipt_example_proc.returncode != 0:
+    detail = (receipt_example_proc.stderr or receipt_example_proc.stdout).strip()
+    fail(f"synthetic behavior qualification receipt validation failed: {detail}")
+try:
+    receipt_result = json.loads(receipt_example_proc.stdout)
+except json.JSONDecodeError as exc:
+    fail(f"behavior qualification receipt validator did not emit valid JSON: {exc}")
+if receipt_result.get("status") != "PASS":
+    fail("synthetic behavior qualification receipt did not report PASS")
+if receipt_result.get("claim_status") != "PASS":
+    fail("synthetic qualification receipt must exercise PASS semantics")
+if receipt_result.get("post_run_reuse_state") != "REQUIRES_NEW_EXPOSURE_ANALYSIS":
+    fail("synthetic qualification receipt must preserve post-run exposure analysis requirement")
 
 candidate_sweep = json.loads(
     (ROOT / "behavior/reviews/C2_C12_CANDIDATE_SWEEP_20260923_V1.json").read_text(encoding="utf-8")
