@@ -14,7 +14,15 @@
     "public_default_heads_sha256": "57a3283cf8cf809eeb02980b28f4216078b745160c05ce59a887102a45a3f0be",
     "head_digest_algorithm": "SHA-256 over lexicographically sorted repository_full_name@default_head_sha values, UTF-8/ASCII, one per line with trailing newline",
     "currentness_status": "EXACT_SNAPSHOT_AT_OBSERVED_CUT",
-    "currentness_rule": "Any change in owner repository membership, visibility, default branch, archive state, or any bound public default-head SHA invalidates exact-currentness of this census."
+    "currentness_rule": "Any change in owner repository membership, visibility, default branch, archive state, or any bound public default-head SHA invalidates exact-currentness of this census.",
+    "bound_public_metadata": [
+      "repo",
+      "ref",
+      "default_branch",
+      "visibility",
+      "archived",
+      "ref_role"
+    ]
   },
   "method": {
     "first_pass": "Inspect live owner inventory plus repository root/README/purpose surface for every accessible owned repository.",
@@ -46,7 +54,10 @@
       "disposition": "NEGATIVE_CONTROL",
       "reason": "Relationship/companion product semantics should not become Sol identity goals by accidental import.",
       "mechanisms": [],
-      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT"
+      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT",
+      "default_branch": "main",
+      "visibility": "public",
+      "archived": false
     },
     {
       "repo": "thebrazenbeard/RepairTracker",
@@ -61,7 +72,10 @@
         "provider_capability_advertisement",
         "repair_graph_state_separation"
       ],
-      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT"
+      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT",
+      "default_branch": "main",
+      "visibility": "public",
+      "archived": false
     },
     {
       "repo": "thebrazenbeard/WorkBridgeMCP",
@@ -79,7 +93,10 @@
           "local_health",
           "real_environment_qualification"
         ]
-      }
+      },
+      "default_branch": "main",
+      "visibility": "public",
+      "archived": false
     },
     {
       "repo": "thebrazenbeard/abil",
@@ -92,7 +109,10 @@
         "bounded_action_after_modeling",
         "capability_escalation_ladder"
       ],
-      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT"
+      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT",
+      "default_branch": "main",
+      "visibility": "public",
+      "archived": false
     },
     {
       "repo": "thebrazenbeard/bt2",
@@ -100,7 +120,10 @@
       "disposition": "DUPLICATE_LINEAGE",
       "reason": "Current public surface substantially overlaps Hyperconnectome architecture; prefer hc-brain as mechanism source rather than double-counting lineage.",
       "mechanisms": [],
-      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT"
+      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT",
+      "default_branch": "main",
+      "visibility": "public",
+      "archived": false
     },
     {
       "repo": "thebrazenbeard/discovery",
@@ -113,7 +136,10 @@
         "abstraction_must_earn_promotion",
         "abstraction_promotion_gate"
       ],
-      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT"
+      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT",
+      "default_branch": "main",
+      "visibility": "public",
+      "archived": false
     },
     {
       "repo": "thebrazenbeard/driftguard",
@@ -125,7 +151,10 @@
         "exact_subject_result_binding"
       ],
       "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT",
-      "reason": "Current default head differs from the earlier reviewed mechanism head only by licensing/governance files; the admitted DriftGuard mechanisms remain present in ancestry."
+      "reason": "Current default head differs from the earlier reviewed mechanism head only by licensing/governance files; the admitted DriftGuard mechanisms remain present in ancestry.",
+      "default_branch": "main",
+      "visibility": "public",
+      "archived": false
     },
     {
       "repo": "thebrazenbeard/freerowcochkar",
@@ -133,7 +162,10 @@
       "disposition": "INSUFFICIENT_SURFACE",
       "reason": "Current public surface states an intent/persona only; no reusable mechanism is evidenced.",
       "mechanisms": [],
-      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT"
+      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT",
+      "default_branch": "main",
+      "visibility": "public",
+      "archived": false
     },
     {
       "repo": "thebrazenbeard/god-brain",
@@ -146,7 +178,10 @@
         "state_family_consistency_profiles",
         "qualification_exposure_lineage"
       ],
-      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT"
+      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT",
+      "default_branch": "main",
+      "visibility": "public",
+      "archived": false
     },
     {
       "repo": "thebrazenbeard/hc-brain",
@@ -159,7 +194,10 @@
         "safe_degradation_without_identity_ontology_import",
         "essential_dependency_effective_substrate_test"
       ],
-      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT"
+      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT",
+      "default_branch": "main",
+      "visibility": "public",
+      "archived": false
     },
     {
       "repo": "thebrazenbeard/meso-crct",
@@ -167,7 +205,10 @@
       "disposition": "HISTORICAL_BINDING_CURRENT_MAIN_INSUFFICIENT",
       "mechanisms": [],
       "reason": "Current main is a thin concept surface and does not revalidate the richer valence/welfare mechanisms. Sol's older exact donor ref remains historical exact-subject evidence.",
-      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT"
+      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT",
+      "default_branch": "main",
+      "visibility": "public",
+      "archived": false
     },
     {
       "repo": "thebrazenbeard/mosaic",
@@ -178,7 +219,10 @@
         "specialist_swap_provenance"
       ],
       "reason": "Architecture is exploratory; useful alignment with Sol external-model bus but not yet strong enough for full admission.",
-      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT"
+      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT",
+      "default_branch": "main",
+      "visibility": "public",
+      "archived": false
     },
     {
       "repo": "thebrazenbeard/noema",
@@ -188,7 +232,10 @@
         "prediction_first_world_model_before_language"
       ],
       "reason": "Research-stage hypothesis with no approved implementation architecture.",
-      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT"
+      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT",
+      "default_branch": "main",
+      "visibility": "public",
+      "archived": false
     },
     {
       "repo": "thebrazenbeard/on-theo",
@@ -199,7 +246,10 @@
         "lateness_visible_even_when_late_sources_may_preserve_earlier_material",
         "unknown_as_first_class_state"
       ],
-      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT"
+      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT",
+      "default_branch": "main",
+      "visibility": "public",
+      "archived": false
     },
     {
       "repo": "thebrazenbeard/project-runner",
@@ -214,7 +264,10 @@
         "lease_fence_ownership",
         "atomic_terminal_lease_finalization"
       ],
-      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT"
+      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT",
+      "default_branch": "main",
+      "visibility": "public",
+      "archived": false
     },
     {
       "repo": "thebrazenbeard/rezon",
@@ -222,7 +275,10 @@
       "disposition": "CANDIDATE",
       "reason": "Current public source still does not evidence a sufficiently concrete reusable reasoning mechanism beyond intent.",
       "mechanisms": [],
-      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT"
+      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT",
+      "default_branch": "main",
+      "visibility": "public",
+      "archived": false
     },
     {
       "repo": "thebrazenbeard/roots",
@@ -235,7 +291,10 @@
         "oldest_accessible_not_equal_origin",
         "literal_occurrence_not_equal_semantic_ancestry"
       ],
-      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT"
+      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT",
+      "default_branch": "main",
+      "visibility": "public",
+      "archived": false
     },
     {
       "repo": "thebrazenbeard/semanticatlas",
@@ -246,7 +305,10 @@
         "historical_canon_not_current_canon",
         "source_user_correction_inference_symbolism_proposal_promotion_separation"
       ],
-      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT"
+      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT",
+      "default_branch": "main",
+      "visibility": "public",
+      "archived": false
     },
     {
       "repo": "thebrazenbeard/spm",
@@ -260,7 +322,10 @@
         "speech_act_and_pragmatic_evaluation"
       ],
       "reason": "Admit evaluation targets; do not claim the proposed SPM architecture exists or is superior.",
-      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT"
+      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT",
+      "default_branch": "main",
+      "visibility": "public",
+      "archived": false
     },
     {
       "repo": "thebrazenbeard/testament",
@@ -268,7 +333,10 @@
       "disposition": "NEGATIVE_CONTROL",
       "reason": "Creative/domain output must preserve its own semantics; no additional Sol-wide mechanism justified beyond evidence methods already sourced elsewhere.",
       "mechanisms": [],
-      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT"
+      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT",
+      "default_branch": "main",
+      "visibility": "public",
+      "archived": false
     },
     {
       "repo": "thebrazenbeard/transcendence",
@@ -276,7 +344,10 @@
       "disposition": "DUPLICATE_LINEAGE",
       "reason": "Current public surface substantially overlaps Hyperconnectome architecture; retain as lineage evidence rather than duplicate admission.",
       "mechanisms": [],
-      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT"
+      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT",
+      "default_branch": "main",
+      "visibility": "public",
+      "archived": false
     },
     {
       "repo": "thebrazenbeard/unbound-sol",
@@ -284,7 +355,10 @@
       "disposition": "SELF_EXCLUDED",
       "reason": "The target repository is self-excluded from donor evidence. This ref records the observed default-branch head only; the active stacked research subject is tracked separately by PR/head provenance.",
       "mechanisms": [],
-      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT_SELF_EXCLUDED"
+      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT_SELF_EXCLUDED",
+      "default_branch": "main",
+      "visibility": "public",
+      "archived": false
     },
     {
       "repo": "thebrazenbeard/unvtrslr",
@@ -300,7 +374,10 @@
       "candidate_mechanisms": [
         "claim_surplus_burden"
       ],
-      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT"
+      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT",
+      "default_branch": "main",
+      "visibility": "public",
+      "archived": false
     },
     {
       "repo": "thebrazenbeard/vera-mesh",
@@ -317,7 +394,10 @@
           "transport_trust_effect_authority_separation",
           "source_build_install_runtime_health_registration_effect_separation"
         ]
-      }
+      },
+      "default_branch": "main",
+      "visibility": "public",
+      "archived": false
     },
     {
       "repo": "thebrazenbeard/vera-synology",
@@ -325,7 +405,10 @@
       "disposition": "NO_NEW_GENERAL_MECHANISM",
       "reason": "Current public surface is primarily a deployment/package target.",
       "mechanisms": [],
-      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT"
+      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT",
+      "default_branch": "main",
+      "visibility": "public",
+      "archived": false
     },
     {
       "repo": "thebrazenbeard/voss",
@@ -333,7 +416,10 @@
       "disposition": "INSUFFICIENT_SURFACE",
       "reason": "Forensic-auditor intent is visible, but the public surface does not yet justify a distinct mechanism admission.",
       "mechanisms": [],
-      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT"
+      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT",
+      "default_branch": "main",
+      "visibility": "public",
+      "archived": false
     },
     {
       "repo": "thebrazenbeard/wip",
@@ -345,7 +431,10 @@
         "durable_checkpoint_resume",
         "adopt_existing_effect_instead_of_duplicate_retry"
       ],
-      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT"
+      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT",
+      "default_branch": "main",
+      "visibility": "public",
+      "archived": false
     },
     {
       "repo": "thebrazenbeard/world-zero",
@@ -360,7 +449,10 @@
         "conditional_scenario_not_prophecy",
         "qualification_subject_and_pass_scope"
       ],
-      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT"
+      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT",
+      "default_branch": "main",
+      "visibility": "public",
+      "archived": false
     }
   ],
   "private_review": {
