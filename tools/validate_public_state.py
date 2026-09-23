@@ -481,7 +481,7 @@ expected_census_digests = {
     "public_names_sha256": "533c60ed395200e6294a8f585f21708420a383a28c42c753ec2fb7bfe8db60bc",
     "private_names_sha256": "406b11ea770683c254fa8acb9782c196d7422a2c02cb5186c062f85095a62737",
     "all_names_sha256": "530890b18b6059c25626165cf851ad3e06ebf9ba5c1515befddbdb3d5c4eea63",
-    "public_default_heads_sha256": "b97f8b70199dae2e0ce0e697dbcddb10c5bd7a8e32251f1847bb5268034f969c",
+    "public_default_heads_sha256": "578803ff607d3cbdfa82d0ed679c5115d63f749d4faebec993c44f38874e6569",
 }
 for key, expected in expected_census_digests.items():
     if scope.get(key) != expected:
