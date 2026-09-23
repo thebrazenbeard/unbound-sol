@@ -367,3 +367,26 @@ Admitted private-source mechanism classes include:
 - canonical history separate from rebuildable projection;
 - append-only provenance separate from current routing authority;
 - historical retrieval does not automatically become current state.
+
+
+## Parallel portfolio reconciliation correction
+
+Independent portfolio audit PR #6 was reconciled at exact head `c6df48a080bea2ce952d185694029122f5e2a0b9`.
+
+Accepted additions:
+- per-state-family consistency/currentness/write/recovery policy;
+- qualification exposure lineage;
+- provider capability advertisements;
+- essential external dependency -> effective substrate classification;
+- capability escalation ladders;
+- abstraction-promotion gate.
+
+Held candidate:
+- stronger semantic/identity claims incurring a claim-surplus falsification burden.
+
+Fresh currentness correction:
+- RepairTracker current observed head: `6b01c2a18035390c050ceecd0506181703d1f5fa`;
+- freerowcochkar current observed head: `00562b5fedf5ff636750b87e5ba82dad2911e2ab`;
+- meso-crct current observed head: `d1f32c2c3370a5519d62afb78e93d70004529903`.
+
+The older meso-crct donor binding remains historical exact-subject evidence; the current thin main does not revalidate that mechanism.
