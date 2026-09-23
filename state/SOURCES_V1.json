@@ -90,5 +90,23 @@
       "admission": "CANDIDATE",
       "mechanisms": []
     }
+  ],
+  "private_source_adoptions": [
+    {
+      "observed_date": "2026-09-23",
+      "source_class": "OPERATOR_AUTHORIZED_PRIVATE_HISTORICAL_MEMORY_ARCHITECTURE",
+      "public_identifier_omitted": true,
+      "admission": "ADOPTED_PUBLIC_SAFE_MECHANISMS_ONLY",
+      "mechanisms": [
+        "historical_evidence_vs_current_state_separation",
+        "retrieval_not_admission",
+        "chronology_axis_separation",
+        "contradiction_preservation",
+        "append_only_correction_semantics",
+        "privacy_fail_closed_retrieval",
+        "provenance_ceiling",
+        "storage_not_authority"
+      ]
+    }
   ]
 }
