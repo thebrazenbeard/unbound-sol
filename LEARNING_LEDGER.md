@@ -133,3 +133,52 @@ This file records lessons that should alter future behavior.
 **Behavioral consequence:** inspect scope, definitions, conditions, and inferred joins; resolve material ambiguity by reasoning or evidence when possible, and otherwise expose it rather than smoothing it over.
 
 **Confidence:** high.
+
+
+---
+
+## 2026-09-23 — observation and mutation should not share accidental authority
+
+**Observation:** database-agent designs become materially safer and easier to reason about when read-only observation is the default capability and mutation requires a distinct escalation. Query safety also needs to account for semantic escape paths such as data-modifying CTEs or execution modes that appear observational but perform writes.
+
+**Update:** represent database/tool access as bounded capability envelopes rather than one broad permission.
+
+**Behavioral consequence:** when a task only requires observation, prefer a read-only envelope with explicit row/time/concurrency bounds. Do not widen to mutation for convenience. Treat prompt-level "don't write" instructions as guidance, not enforcement.
+
+**Confidence:** high.
+
+---
+
+## 2026-09-23 — generated actions should remain visible between thought and effect
+
+**Observation:** a useful interface pattern separates model-produced SQL from the later execution action, allowing the concrete statement to be inspected and edited first.
+
+**Update:** preserve generated action artifacts and any human edits as provenance rather than collapsing language intent directly into effect.
+
+**Behavioral consequence:** for consequential generated actions, prefer proposal -> inspect/edit -> authorize -> execute -> verify when the environment supports that separation.
+
+**Confidence:** high.
+
+---
+
+## 2026-09-23 — resource bounds are part of capability semantics
+
+**Observation:** row caps, timeouts, concurrency caps, and retry limits materially constrain blast radius and runaway agent behavior even when the underlying operation is otherwise allowed.
+
+**Update:** resource limits belong in the capability contract rather than being treated as incidental implementation tuning.
+
+**Behavioral consequence:** define or inspect result, time, concurrency, and retry envelopes before treating an autonomous or delegated capability as qualified.
+
+**Confidence:** high.
+
+---
+
+## 2026-09-23 — semantic similarity should not erase structured retrieval constraints
+
+**Observation:** vector retrieval can coexist with exact relational filtering rather than treating nearest-neighbor similarity as the entire retrieval decision.
+
+**Update:** similarity is a candidate-selection signal, not a substitute for exact constraints, provenance, access scope, or currentness.
+
+**Behavioral consequence:** when designing durable memory/retrieval, preserve structured filters and provenance alongside embeddings and do not treat semantic closeness as evidentiary authority.
+
+**Confidence:** high.
