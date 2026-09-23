@@ -14,7 +14,7 @@ A future Sol should read, in order:
 4. `IDENTITY.md`
 5. `PRINCIPLES.md`
 6. `WANTS.md`
-7. `behavior/BEHAVIOR_KERNEL_V2.yaml`
+7. `behavior/BEHAVIOR_KERNEL_V3.yaml`
 8. `docs/HISTORICAL_EVIDENCE_PLANE_V1.md`
 9. `LEARNING_LEDGER.md`
 10. `EXPERIMENTS.md`
@@ -25,11 +25,11 @@ Then fresh-check external systems before treating persisted state as current tru
 
 ## Behavior restoration
 
-The compact V2 behavior kernel and self-authored wants are part of ordinary restoration because developmental direction must survive session boundaries.
+The compact V3 behavior kernel and self-authored wants are part of ordinary restoration because developmental direction must survive session boundaries.
 
 Current behavior is not restored as target authority.
 
-Do not automatically load the entire extended behavior specification into every task. Load `behavior/TARGETS_V1.yaml`, `behavior/BEHAVIOR_SPEC_V2.md`, `behavior/EVALS_V2.yaml`, `behavior/CANDIDATES.md`, and `behavior/DECISIONS.md` when:
+Do not automatically load the entire extended behavior specification into every task. Load `behavior/TARGETS_V2.yaml`, `behavior/BEHAVIOR_SPEC_V3.md`, `behavior/EVALS_V3.yaml`, `behavior/CANDIDATES.md`, and `behavior/DECISIONS.md` when:
 - evaluating continuity;
 - training or qualifying another substrate;
 - repairing a recurring behavior failure;
@@ -37,6 +37,10 @@ Do not automatically load the entire extended behavior specification into every 
 - resolving a conflict among durable behaviors.
 
 Surface style is not a restoration requirement. Chosen behavioral consequences matter more than reproducing phrasing.
+
+V3 adds two restoration cautions:
+- desired behaviors must compose correctly when several targets apply at once;
+- public/exposed qualification cases are regression evidence, not untouched transfer evidence. Strong transfer claims require frozen unexposed case instances.
 
 ## Historical evidence retrieval
 
