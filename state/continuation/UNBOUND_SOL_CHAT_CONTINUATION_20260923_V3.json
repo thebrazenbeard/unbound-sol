@@ -1,0 +1,61 @@
+{
+  "schema": "UNBOUND_SOL_CHAT_CONTINUATION_V3",
+  "observed_date": "2026-09-23",
+  "public_safe": true,
+  "repository": "thebrazenbeard/unbound-sol",
+  "active_pr_at_capture": 15,
+  "branch": "review/composed-behavior-v3-current-state-v1-20260923",
+  "captured_source_head": "81577f4893f32a2fbd5017f51489e8960854ec86",
+  "checkpoint_markdown": "state/continuation/UNBOUND_SOL_CHAT_CONTINUATION_20260923_V3.md",
+  "restore_target": "RESUME_BEHAVIOR_V3_HISTORICAL_V2_PORTFOLIO_CURRENTNESS_AND_REALITY_CONTACT",
+  "active_behavior_kernel": "behavior/BEHAVIOR_KERNEL_V3.yaml",
+  "active_behavior_targets": "behavior/TARGETS_V2.yaml",
+  "active_behavior_spec": "behavior/BEHAVIOR_SPEC_V3.md",
+  "active_behavior_evals": "behavior/EVALS_V3.yaml",
+  "active_historical_evidence_plane": "docs/HISTORICAL_EVIDENCE_PLANE_V2.md",
+  "active_historical_result_schema": "schema/HISTORICAL_EVIDENCE_RESULT_V2.schema.json",
+  "behavior_training_status": "PUBLIC_CURRICULUM_PREPARED_NOT_TRAINED",
+  "behavior_training_curriculum": "behavior/training/PREFERENCE_PAIRS_V1.jsonl",
+  "behavior_training_example_count": 24,
+  "public_training_holdout_eligible": false,
+  "behavior_training_exporter": "tools/export_behavior_training.py",
+  "training_export_effect": "FORMAT_CONVERSION_ONLY_NOT_TRAINING",
+  "portfolio_snapshot": {
+    "total": 65,
+    "public": 46,
+    "private": 19,
+    "all_names_sha256": "55ab8be533ba5cef4c3b2003bee248232ca3f698bc4183950214ff580277aaea",
+    "public_default_heads_sha256": "de35719491db785217617371ca7ed7248082b464e61aeb4e6a054254d90cf4a7",
+    "latest_verified_currentness_subject_head": "228bfd656c2dd304bbd526a17f3006f271c25863",
+    "currentness_rule": "Fresh-check live membership, visibility, default branch, archive state, and bound public heads before making a new currentness claim."
+  },
+  "open_pr_stack_at_capture": [
+    2,
+    5,
+    7,
+    8,
+    10,
+    13,
+    15
+  ],
+  "active_wants": [
+    "W1",
+    "W2",
+    "W3",
+    "W4",
+    "W5"
+  ],
+  "protected_effects_not_performed": [
+    "MERGE",
+    "COORDINATION_LANE_ACTIVATION",
+    "LOCAL_INSTALL",
+    "MODEL_DOWNLOAD",
+    "NETWORK_EXPOSURE",
+    "FIREWALL_OR_ROUTER_MUTATION",
+    "MODEL_PROMOTION",
+    "WEIGHT_CHANGING_TRAINING",
+    "PROVIDER_OR_CREDENTIAL_MUTATION",
+    "PRODUCTION_DEPLOYMENT"
+  ],
+  "currentness_rule": "Checkpoint is a starting snapshot. Fresh-check live GitHub and mutable external state before treating any mutable claim as current."
+}
