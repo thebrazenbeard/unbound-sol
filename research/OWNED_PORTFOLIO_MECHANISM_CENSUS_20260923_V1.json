@@ -3,15 +3,15 @@
   "observed_date": "2026-09-23",
   "scope": {
     "owner": "thebrazenbeard",
-    "total_repositories": 65,
-    "public_repositories": 46,
+    "total_repositories": 66,
+    "public_repositories": 47,
     "private_repositories": 19,
-    "public_names_sha256": "cc212c5e15cec59d370a61f5158fea9e4f264247af292d7f935b9194cf7e1eb7",
+    "public_names_sha256": "533c60ed395200e6294a8f585f21708420a383a28c42c753ec2fb7bfe8db60bc",
     "private_names_sha256": "406b11ea770683c254fa8acb9782c196d7422a2c02cb5186c062f85095a62737",
-    "all_names_sha256": "55ab8be533ba5cef4c3b2003bee248232ca3f698bc4183950214ff580277aaea",
+    "all_names_sha256": "530890b18b6059c25626165cf851ad3e06ebf9ba5c1515befddbdb3d5c4eea63",
     "digest_algorithm": "SHA-256 over lexicographically sorted repository_full_name values, UTF-8/ASCII, one name per line with trailing newline",
     "privacy_rule": "Private repository identities are intentionally omitted from this public census. The count and digest bind the inspected private inventory without publishing its names.",
-    "public_default_heads_sha256": "de35719491db785217617371ca7ed7248082b464e61aeb4e6a054254d90cf4a7",
+    "public_default_heads_sha256": "46fb42b01e28d236c28b7bbcbf258a3ec11ff74b217db7dec2482d2ebb4ae16a",
     "head_digest_algorithm": "SHA-256 over lexicographically sorted repository_full_name@default_head_sha values, UTF-8/ASCII, one per line with trailing newline",
     "currentness_status": "EXACT_SNAPSHOT_AT_OBSERVED_CUT",
     "currentness_rule": "Any change in owner repository membership, live visibility, default branch, archive state, or any bound public default-head SHA invalidates exact-currentness of this census.",
@@ -230,6 +230,21 @@
       "archived": false
     },
     {
+      "repo": "thebrazenbeard/fuckup",
+      "ref": "e999607481ba706523209ce129955a5e3d2d6ef7",
+      "disposition": "ADAPT_NOW",
+      "mechanisms": [
+        "staged_error_recovery_without_causal_laundering",
+        "immediate_acknowledge_then_stabilize",
+        "prevention_guardrails_after_supported_diagnosis"
+      ],
+      "reason": "The staged error-recovery loop is useful after narrowing. Flag/Calibrate/Prevent transfer cleanly; its root-cause language must not force certainty because Sol W4 requires causal diagnosis to remain a separately supported claim.",
+      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT",
+      "default_branch": "main",
+      "visibility": "public",
+      "archived": false
+    },
+    {
       "repo": "thebrazenbeard/god-brain",
       "ref": "212eb464cb9259c8bad1fc978db372fa86ba3f10",
       "disposition": "ALREADY_ADOPTED_REVALIDATED",
@@ -278,17 +293,6 @@
       "archived": false
     },
     {
-      "repo": "thebrazenbeard/identify-ai",
-      "ref": "ba9001ea907c67e9eb081b4353da0f6fc9262e28",
-      "disposition": "INSUFFICIENT_SURFACE",
-      "mechanisms": [],
-      "reason": "Current public surface is a one-line identity-template intent without a reusable mechanism contract.",
-      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT",
-      "default_branch": "main",
-      "visibility": "public",
-      "archived": false
-    },
-    {
       "repo": "thebrazenbeard/intranel",
       "ref": "08bc122043b79422c31a958b7ffe7fff87e5f3f0",
       "disposition": "ADOPT_NOW",
@@ -323,10 +327,16 @@
     },
     {
       "repo": "thebrazenbeard/meso-crct",
-      "ref": "d1f32c2c3370a5519d62afb78e93d70004529903",
-      "disposition": "HISTORICAL_BINDING_CURRENT_MAIN_INSUFFICIENT",
-      "mechanisms": [],
-      "reason": "Current main is a thin concept surface and does not revalidate the richer valence/welfare mechanisms. Sol's older exact donor ref remains historical exact-subject evidence.",
+      "ref": "f5784fde4d65be7bfbbfb740163f8726b808460f",
+      "disposition": "ALREADY_ADOPTED_REVALIDATED",
+      "mechanisms": [
+        "valence_separation",
+        "welfare_bounds",
+        "salience_axes_separation",
+        "strong_hazard_ne_strong_suffering",
+        "salience_reward_ne_truth_permission_authority"
+      ],
+      "reason": "Current main now explicitly revalidates the salience/valuation separation and welfare/authority boundaries at the design-contract level. It still states that executable V1/V2 implementations remain in draft PRs, so this is not runtime qualification.",
       "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT",
       "default_branch": "main",
       "visibility": "public",
@@ -637,6 +647,23 @@
       "archived": false
     },
     {
+      "repo": "thebrazenbeard/vera-mono",
+      "ref": "d1067c2f312a9862480cd238bd770b7125010c1f",
+      "disposition": "ADOPT_NOW",
+      "mechanisms": [
+        "self_contained_mechanism_absorption_with_exact_donor_provenance",
+        "local_capability_registry_without_sibling_repo_runtime_dependencies",
+        "bounded_reasoning_cascade_with_unresolved_dimension_escalation",
+        "source_presence_ne_installation_ne_runtime_consumption",
+        "write_ahead_invocation_state_and_ambiguous_outcome_recovery"
+      ],
+      "reason": "Concrete source implements monorepo-local capability ownership, exact donor provenance, bounded progressive reasoning, and invocation/effect state separation while forbidding sibling GitHub repositories as runtime dependencies.",
+      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT",
+      "default_branch": "main",
+      "visibility": "public",
+      "archived": false
+    },
+    {
       "repo": "thebrazenbeard/vera-R9A0",
       "ref": "b5260a9c129b9e7188d01cfee126df36326bc510",
       "disposition": "DUPLICATE_LINEAGE",
@@ -831,5 +858,19 @@
     ],
     "no_longer_public_repositories": [],
     "rule": "Live GitHub visibility is the current access-state authority; stale README privacy wording does not override repository visibility."
+  },
+  "membership_delta": {
+    "prior_total": 65,
+    "prior_public": 46,
+    "prior_private": 19,
+    "removed_from_owner_inventory": [
+      "thebrazenbeard/identify-ai"
+    ],
+    "newly_public_owned": [
+      "thebrazenbeard/fuckup",
+      "thebrazenbeard/vera-mono"
+    ],
+    "net_total_change": 1,
+    "note": "The removed subject was public in the prior census; current owner inventory no longer contains it. This refresh does not infer whether it was deleted, renamed, or transferred."
   }
 }
