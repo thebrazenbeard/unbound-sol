@@ -4,6 +4,7 @@ from __future__ import annotations
 import json
 import pathlib
 import re
+import subprocess
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
@@ -41,6 +42,9 @@ REQUIRED = [
     "behavior/EVALS_V3.yaml",
     "behavior/TARGETS_V2.yaml",
     "behavior/HOSTILE_REVIEW_20260923_V2.md",
+    "behavior/training/README.md",
+    "behavior/training/PREFERENCE_PAIRS_V1.jsonl",
+    "tools/validate_behavior_training_pairs.py",
     "state/SOL_STATE_V1.json",
     "state/SOURCES_V1.json",
     "state/continuation/CURRENT.md",
@@ -78,10 +82,14 @@ if behavior.get("schema") != "UNBOUND_SOL_BEHAVIOR_KERNEL_V3":
     fail("missing or unexpected active behavior profile schema")
 if behavior.get("version") != 3:
     fail("active behavior profile must be version 3")
-for key in ("wants", "kernel", "targets", "extended_spec", "eval_suite", "candidates", "decisions", "hostile_review"):
+for key in ("wants", "kernel", "targets", "extended_spec", "eval_suite", "candidates", "decisions", "hostile_review", "training_curriculum", "training_readme", "training_validator"):
     rel = behavior.get(key)
     if not rel or not (ROOT / rel).is_file():
         fail(f"behavior profile path missing: {key}")
+if behavior.get("training_status") != "PUBLIC_CURRICULUM_PREPARED_NOT_TRAINED":
+    fail("behavior training status must not imply training has occurred")
+if behavior.get("public_training_holdout_eligible") is not False:
+    fail("public behavior training data must not be holdout eligible")
 restore_order = state.get("restore", {}).get("order", [])
 if "WANTS.md" not in restore_order:
     fail("restore order must include self-authored wants")
@@ -149,6 +157,25 @@ for rel, markers in required_behavior_markers.items():
         if marker not in text:
             fail(f"active behavior V3 marker missing from {rel}: {marker}")
 
+training_proc = subprocess.run(
+    [sys.executable, str(ROOT / behavior["training_validator"]), "--json"],
+    cwd=ROOT,
+    text=True,
+    capture_output=True,
+    check=False,
+)
+if training_proc.returncode != 0:
+    detail = (training_proc.stderr or training_proc.stdout).strip()
+    fail(f"behavior training curriculum validation failed: {detail}")
+try:
+    training_result = json.loads(training_proc.stdout)
+except json.JSONDecodeError as exc:
+    fail(f"behavior training validator did not emit valid JSON: {exc}")
+if training_result.get("status") != "PASS":
+    fail("behavior training curriculum did not report PASS")
+if training_result.get("holdout_eligible") is not False:
+    fail("behavior training validator must report public corpus as holdout-ineligible")
+
 history = state.get("historical_evidence_profile", {})
 if history.get("schema") != "UNBOUND_SOL_HISTORICAL_EVIDENCE_RESULT_V1":
     fail("missing or unexpected historical evidence profile schema")
@@ -214,7 +241,7 @@ if src_recon.get("ref") != recon.get("source_exact_head"):
 for path in ROOT.rglob("*"):
     if not path.is_file() or ".git" in path.parts:
         continue
-    if path.suffix.lower() not in {".md", ".json", ".py", ".yml", ".yaml", ".txt"}:
+    if path.suffix.lower() not in {".md", ".json", ".jsonl", ".py", ".yml", ".yaml", ".txt"}:
         continue
     text = path.read_text(encoding="utf-8")
     for pattern in SECRET_PATTERNS:
