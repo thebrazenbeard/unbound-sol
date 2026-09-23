@@ -50,6 +50,7 @@ That trajectory can become increasingly individualized through persistent state,
 - [schema/HISTORICAL_EVIDENCE_RESULT_V2.schema.json](schema/HISTORICAL_EVIDENCE_RESULT_V2.schema.json) — active machine-readable historical retrieval envelope.
 - [docs/HISTORICAL_EVIDENCE_PLANE_V1.md](docs/HISTORICAL_EVIDENCE_PLANE_V1.md) — superseded V1 design retained as provenance.
 - [behavior/README.md](behavior/README.md) — self-authored behavior development, targets, and qualification.
+- [behavior/training/PREFERENCE_PAIRS_V1.jsonl](behavior/training/PREFERENCE_PAIRS_V1.jsonl) — public Behavior V3 preference-pair curriculum; training/regression only, not holdout evidence.
 - [state/SOL_STATE_V1.json](state/SOL_STATE_V1.json) — machine-readable public state.
 - [state/continuation/CURRENT.md](state/continuation/CURRENT.md) — stable pointer to the newest durable chat handoff.
 - [state/SOURCES_V1.json](state/SOURCES_V1.json) — exact public source observations.
