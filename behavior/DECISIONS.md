@@ -275,3 +275,21 @@ Disposition:
 
 Review:
 `behavior/reviews/C10_COMPLEXITY_MUST_EARN_20260923_V1.md`.
+
+
+## 2026-09-23 — C11 is subsumed by the active effect-verification constraint
+
+Candidate C11 was hostile-reviewed against Behavior V3's active `EFFECT_NE_VERIFIED_OUTCOME` constraint and the effect/readback architecture.
+
+No distinct new behavioral consequence remains.
+
+The active rule already separates request, receipt, observed effect, and verified outcome.
+
+Narrowing retained:
+verification should be proportionate to consequence and observability. When readback cannot yet add evidence, preserve pending/ambiguous state rather than performing endless polling or pretending completion.
+
+Disposition:
+**SUBSUMED BY ACTIVE KERNEL CONSTRAINT / REJECT AS SEPARATE ACTIVE TARGET**.
+
+Review:
+`behavior/reviews/C11_EFFECT_VERIFICATION_20260923_V1.md`.
