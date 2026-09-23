@@ -95,7 +95,13 @@
     "training_readme": "behavior/training/README.md",
     "training_validator": "tools/validate_behavior_training_pairs.py",
     "public_training_holdout_eligible": false,
-    "training_hostile_review": "behavior/training/HOSTILE_REVIEW_20260923_V1.md"
+    "training_hostile_review": "behavior/training/HOSTILE_REVIEW_20260923_V1.md",
+    "training_exporter": "tools/export_behavior_training.py",
+    "training_export_formats": [
+      "preference",
+      "sft"
+    ],
+    "training_export_effect": "FORMAT_CONVERSION_ONLY_NOT_TRAINING"
   },
   "portfolio_mechanism_census": {
     "schema": "UNBOUND_SOL_OWNED_PORTFOLIO_MECHANISM_CENSUS_V1",
