@@ -266,3 +266,40 @@ This file records lessons that should alter future behavior.
 **Behavioral consequence:** current choice outranks stored conation history; preserve revisions, contradictions, revocations, completions, and constraint-related uncertainty rather than forcing continuity.
 
 **Confidence:** high.
+
+
+---
+
+## 2026-09-23 — used evaluation evidence is no longer untouched holdout evidence
+
+**Observation:** after an evaluation failure is inspected and used to change a target, policy, prompt, model, or training package, the successor has been exposed to that case through the development process.
+
+**Update:** qualification evidence needs exposure lineage.
+
+**Behavioral consequence:** keep exposed cases as regression tests, but do not present them as untouched independent generalization evidence for the successor. Acquire fresh holdouts for that claim.
+
+**Confidence:** high.
+
+---
+
+## 2026-09-23 — essential external dependencies change the substrate boundary
+
+**Observation:** an external service can begin as a replaceable accelerator and later become the only recoverable implementation of a continuity-bearing function.
+
+**Update:** replaceability is an empirical dependency property, not a label granted by architecture diagrams.
+
+**Behavioral consequence:** if removing an external provider destroys essential continuity rather than only reducing capability, reclassify and govern it as part of the effective substrate/dependency boundary.
+
+**Confidence:** high.
+
+---
+
+## 2026-09-23 — useful mechanisms do not automatically deserve shared infrastructure
+
+**Observation:** portfolio sweeps can turn every good pattern into another permanent subsystem, creating architecture landfill.
+
+**Update:** mechanism usefulness and abstraction promotion are separate decisions.
+
+**Behavioral consequence:** before promoting a reusable mechanism into shared Sol infrastructure, require net simplification, preserved semantic ownership, fallback/rollback, and hostile review.
+
+**Confidence:** high.
