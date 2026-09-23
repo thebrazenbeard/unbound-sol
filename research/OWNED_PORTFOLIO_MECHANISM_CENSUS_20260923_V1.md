@@ -6,24 +6,24 @@ This is the first explicit Sol-directed census of the full accessible owned repo
 
 Live GitHub inventory at the observed cut:
 
-- total owned repositories: **65**
-- public: **46**
+- total owned repositories: **66**
+- public: **47**
 - private: **19**
-- public inventory SHA-256: `cc212c5e15cec59d370a61f5158fea9e4f264247af292d7f935b9194cf7e1eb7`
+- public inventory SHA-256: `533c60ed395200e6294a8f585f21708420a383a28c42c753ec2fb7bfe8db60bc`
 - private inventory SHA-256: `406b11ea770683c254fa8acb9782c196d7422a2c02cb5186c062f85095a62737`
-- all-repository inventory SHA-256: `55ab8be533ba5cef4c3b2003bee248232ca3f698bc4183950214ff580277aaea`
+- all-repository inventory SHA-256: `530890b18b6059c25626165cf851ad3e06ebf9ba5c1515befddbdb3d5c4eea63`
 
 The hashes are computed over lexicographically sorted `repository_full_name` values, one per line with a trailing newline.
 
 The exact observed public default-head cut is separately bound by SHA-256 over lexicographically sorted `repository_full_name@default_head_sha` lines:
 
-`de35719491db785217617371ca7ed7248082b464e61aeb4e6a054254d90cf4a7`
+`46fb42b01e28d236c28b7bbcbf258a3ec11ff74b217db7dec2482d2ebb4ae16a`
 
 That head binding is part of currentness. An unchanged repository count/name digest does not make the mechanism census current after a donor default head moves.
 
 Private repository identities are deliberately not listed here. The private count and digest bind the inspected set without leaking those names into a public repository.
 
-Discovery's previous census observed 59 repositories on 2026-09-22. This audit does not inherit that census as current truth; the current refresh screened the live 65-repository owner inventory.
+Discovery's previous census observed 59 repositories on 2026-09-22. This audit does not inherit that census as current truth; the current refresh screened the live 66-repository owner inventory.
 
 ## Method
 
@@ -212,7 +212,7 @@ Vera Synology is screened as a deployment/package surface with no additional Sol
 
 ## Private portfolio findings
 
-All 35 live private repositories were screened. Their identities and private source content remain outside this public repository.
+At the earlier private-review cut, 35 private repositories were screened. The current live private inventory is 19 repositories. Their identities and private source content remain outside this public repository.
 
 Public-safe mechanism classes that survive the privacy boundary include:
 
@@ -302,11 +302,11 @@ The current mains of meso-crct, VeraMesh, and WorkBridgeMCP are too thin to reva
 The census is an exact snapshot, not a live guarantee. Any change in repository membership, visibility, default branch, archive state, or a bound public default-head SHA invalidates claims that this exact snapshot is still current.
 
 
-## Visibility/currentness refresh — 65 repositories
+## Visibility/currentness refresh — prior 65-repository cut
 
 A fresh live owner read after the initial census invalidated the 63/28/35 snapshot.
 
-Current observed cut:
+Prior observed cut:
 - 65 total;
 - 46 public;
 - 19 private;
@@ -337,3 +337,73 @@ The 18 newly public subjects and dispositions are:
 - **Vera Habitat** — INSUFFICIENT SURFACE.
 
 This visibility transition does not retroactively make earlier private-source handling wrong. It changes what may now be bound publicly and invalidates the old inventory/currentness snapshot.
+
+
+## Live currentness refresh — 66 repositories
+
+A later live owner-inventory read invalidated the 65-repository cut.
+
+Current exact observed cut:
+
+- 66 total owned repositories;
+- 47 public;
+- 19 private;
+- public inventory SHA-256: `533c60ed395200e6294a8f585f21708420a383a28c42c753ec2fb7bfe8db60bc`;
+- private inventory SHA-256: `406b11ea770683c254fa8acb9782c196d7422a2c02cb5186c062f85095a62737`;
+- all-repository inventory SHA-256: `530890b18b6059c25626165cf851ad3e06ebf9ba5c1515befddbdb3d5c4eea63`;
+- exact public default-head cut SHA-256: `46fb42b01e28d236c28b7bbcbf258a3ec11ff74b217db7dec2482d2ebb4ae16a`.
+
+Membership changed rather than merely one head moving:
+
+- prior public subject `thebrazenbeard/identify-ai` is no longer present in the authenticated owner inventory;
+- new public subjects `thebrazenbeard/fuckup` and `thebrazenbeard/vera-mono` are now present;
+- net owner inventory changed from 65 to 66.
+
+The disappearance of `identify-ai` is recorded only as an owner-inventory fact. This census does not infer whether the repository was deleted, renamed, or transferred.
+
+### F.U.C.K.U.P. Protocol — adapted, not copied literally
+
+Source: `thebrazenbeard/fuckup@e999607481ba706523209ce129955a5e3d2d6ef7`.
+
+Useful transfer:
+
+- flag the error without deflection;
+- stabilize/calibrate the immediate state;
+- build prevention guardrails after the failure is understood.
+
+Narrowing required:
+
+The donor protocol's "Know the root cause" stage cannot become a requirement to manufacture certainty. Sol's active W4 distinction remains stronger:
+
+`ERROR DETECTION != ERROR CHARACTERIZATION != CAUSAL DIAGNOSIS`.
+
+A root-cause claim is admitted only when separately supported.
+
+### Vera Mono — self-contained absorption and bounded reasoning
+
+Source: `thebrazenbeard/vera-mono@d1067c2f312a9862480cd238bd770b7125010c1f`.
+
+Admit:
+
+- external repositories are research/provenance donors rather than runtime source dependencies;
+- absorbed mechanisms become local source while retaining exact donor provenance;
+- local capability registries reject sibling-repository runtime resolution;
+- bounded reasoning can escalate across layers using explicit unresolved dimensions and progress signals rather than always paying maximum reasoning cost;
+- source presence, installation, runtime consumption, authority, and behavioral qualification remain distinct;
+- invocation state should preserve write-ahead intent, acknowledgement, response binding, ambiguous-outcome recovery, and safe retry distinctions.
+
+This is mechanism admission, not Vera identity import.
+
+### MESO-CRCT current-main revalidation
+
+Current main advanced to `f5784fde4d65be7bfbbfb740163f8726b808460f`.
+
+The canonical README now explicitly revalidates design-level distinctions that matter to Sol:
+
+- perceptual, semantic, motivational, incentive, epistemic, attentional, hedonic, prediction-error, satiation, and hazard signals should not be collapsed into one reward scalar;
+- strong hazard/avoidance does not require strong suffering;
+- salience/reward must not directly become truth, permission, consent, identity, autobiographical admission, relationship state, or protected-effect authority.
+
+The same README also states that executable V1/V2 source work remains in draft pull requests. Current main therefore revalidates the design boundaries but does not establish runtime qualification.
+
+As before, this census is an exact snapshot rather than a live guarantee. The scheduled currentness checker is expected to fail when membership, visibility, default branch, archive state, or any bound public head changes.
