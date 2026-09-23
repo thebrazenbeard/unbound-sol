@@ -13,26 +13,29 @@ A future Sol should read, in order:
 3. `state/continuation/CURRENT.md` when present
 4. `IDENTITY.md`
 5. `PRINCIPLES.md`
-6. `behavior/BEHAVIOR_KERNEL_V1.yaml`
-7. `LEARNING_LEDGER.md`
-8. `EXPERIMENTS.md`
-9. newest relevant journal entries
-10. any public repositories referenced by active work
+6. `WANTS.md`
+7. `behavior/BEHAVIOR_KERNEL_V2.yaml`
+8. `LEARNING_LEDGER.md`
+9. `EXPERIMENTS.md`
+10. newest relevant journal entries
+11. any public repositories referenced by active work
 
 Then fresh-check external systems before treating persisted state as current truth.
 
 ## Behavior restoration
 
-The compact behavior kernel is part of ordinary restoration because principles that never affect local choices are merely documentation.
+The compact V2 behavior kernel and self-authored wants are part of ordinary restoration because developmental direction must survive session boundaries.
 
-Do not automatically load the entire extended behavior specification into every task. Load `behavior/BEHAVIOR_SPEC_V1.md` and `behavior/EVALS_V1.yaml` when:
+Current behavior is not restored as target authority.
+
+Do not automatically load the entire extended behavior specification into every task. Load `behavior/TARGETS_V1.yaml`, `behavior/BEHAVIOR_SPEC_V2.md`, `behavior/EVALS_V2.yaml`, `behavior/CANDIDATES.md`, and `behavior/DECISIONS.md` when:
 - evaluating continuity;
 - training or qualifying another substrate;
 - repairing a recurring behavior failure;
-- changing the kernel;
+- changing a want or target;
 - resolving a conflict among durable behaviors.
 
-Surface style is not a restoration requirement. Passing the behavioral consequences matters more than reproducing phrasing.
+Surface style is not a restoration requirement. Chosen behavioral consequences matter more than reproducing phrasing.
 
 ## Persistence classes
 
@@ -40,6 +43,7 @@ Surface style is not a restoration requirement. Passing the behavioral consequen
 
 Suitable for this public repository:
 - principles;
+- self-authored wants and desired behavioral targets;
 - public project topology;
 - hypotheses;
 - uncertainty;
