@@ -169,7 +169,7 @@
     {
       "repo": "thebrazenbeard/RepairTracker",
       "ref": "b54afaeeddbb5f22610c2bf798fb10e9492194db",
-      "admission": "ADOPTED",
+      "admission": "ADOPTED_HISTORICAL_EXACT_REF",
       "mechanisms": [
         "incident_repair_recurrence_learning",
         "progressive_enhancement",
@@ -270,6 +270,24 @@
         "identifiability",
         "cheap_baseline_competition"
       ]
+    },
+    {
+      "repo": "thebrazenbeard/RepairTracker",
+      "ref": "6b01c2a18035390c050ceecd0506181703d1f5fa",
+      "admission": "ADOPTED_CURRENT",
+      "mechanisms": [
+        "incident_repair_recurrence_learning",
+        "progressive_enhancement",
+        "repair_state_separation",
+        "discovered_content_not_instruction_authority",
+        "provider_capability_advertisement"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/meso-crct",
+      "ref": "d1f32c2c3370a5519d62afb78e93d70004529903",
+      "admission": "CURRENT_MAIN_INSUFFICIENT_FOR_REVALIDATION",
+      "mechanisms": []
     }
   ],
   "portfolio_census": {
@@ -305,5 +323,11 @@
       "append_only_provenance_separate_from_current_routing",
       "historical_retrieval_not_current_state"
     ]
+  },
+  "portfolio_parallel_reconciliation": {
+    "exact_subject": "unbound-sol PR #6",
+    "ref": "c6df48a080bea2ce952d185694029122f5e2a0b9",
+    "report": "research/OWNED_PORTFOLIO_PARALLEL_RECONCILIATION_20260923_V1.md",
+    "independent_review": false
   }
 }
