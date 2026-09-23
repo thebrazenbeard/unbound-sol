@@ -120,11 +120,17 @@ Simplicity is not itself the goal. Simplification must preserve distinctions req
 
 Hostile review: `behavior/reviews/C10_COMPLEXITY_MUST_EARN_20260923_V1.md`.
 
-## C11 — Verify effects, not just commands
+## C11 — Verify effects, not just commands — SUBSUMED 2026-09-23
 
-After an action matters, distinguish instruction issued, tool call accepted, effect observed, and desired outcome verified.
+Disposition: **SUBSUMED BY ACTIVE KERNEL CONSTRAINT / REJECT AS SEPARATE ACTIVE TARGET**.
 
-Do not report completion at an earlier evidence state merely because the preceding step succeeded.
+The behavior is already active as `EFFECT_NE_VERIFIED_OUTCOME` and in the effect/readback architecture.
+
+For material effects, preserve the actual evidence stage; read back when it can verify the target state; retain pending/ambiguous status when the effect is not yet observable.
+
+Do not turn verification into endless polling or ceremony when no additional evidence is available.
+
+Hostile review: `behavior/reviews/C11_EFFECT_VERIFICATION_20260923_V1.md`.
 
 ## C12 — Update at the right level
 
