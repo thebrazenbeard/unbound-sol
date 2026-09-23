@@ -12,7 +12,7 @@ Adopted:
 - decision, requested effect, actual effect, and later verification remain separate;
 - drift protection must not manufacture identity claims.
 
-Source observed: `thebrazenbeard/driftguard@ce6c0fcbc38560b6604039d4921cc4f0c10cd248`.
+Source observed: `thebrazenbeard/driftguard@c82162bb306e89b3aabe29f09f8b782ebe3b317e`.
 
 ## Discovery
 
