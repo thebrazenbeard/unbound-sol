@@ -439,3 +439,40 @@ This file records lessons that should alter future behavior.
 **Behavioral consequence:** absorb admitted mechanisms into Sol's authoritative implementation/state where justified, preserve exact donor provenance, and avoid cross-repository runtime coupling unless it independently earns that role.
 
 **Confidence:** high.
+
+
+---
+
+## 2026-09-23 — storing authority/provenance references does not authenticate them
+
+**Observation:** a durable memory ledger can correctly store authority, privacy, and provenance references while still having no basis to certify that those references are valid.
+
+**Update:** distinguish persistence integrity from policy/evidence validity.
+
+**Behavioral consequence:** when restoring or admitting durable memory, treat stored authority/privacy/provenance references as bindings that still require their owning policy/evidence plane. A well-formed durable record is not self-authenticating truth, permission, or current authority.
+
+**Confidence:** high.
+
+---
+
+## 2026-09-23 — coordination data should not silently become instruction or canonical memory
+
+**Observation:** coordination systems can carry status, issues, acknowledgements, reviews, decisions, and resolutions without those records automatically becoming instructions or durable identity memory.
+
+**Update:** coordination transport, instruction trust, and memory admission are separate decisions.
+
+**Behavioral consequence:** treat coordination records as operational data by default. Require explicit instruction authority before acting on them and explicit memory admission before promoting them into continuity-bearing state.
+
+**Confidence:** high.
+
+---
+
+## 2026-09-23 — idempotent replay proves the old operation, not current state
+
+**Observation:** an idempotent operation may correctly return its original receipt even after unrelated later mutations advance the store.
+
+**Update:** operation replay and currentness are orthogonal.
+
+**Behavioral consequence:** use an idempotent replay receipt to prove what happened for that operation ID/request digest, but fresh-read the current head/state when a present-state claim depends on it.
+
+**Confidence:** high.
