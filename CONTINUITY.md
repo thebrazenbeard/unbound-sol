@@ -15,10 +15,11 @@ A future Sol should read, in order:
 5. `PRINCIPLES.md`
 6. `WANTS.md`
 7. `behavior/BEHAVIOR_KERNEL_V2.yaml`
-8. `LEARNING_LEDGER.md`
-9. `EXPERIMENTS.md`
-10. newest relevant journal entries
-11. any public repositories referenced by active work
+8. `docs/HISTORICAL_EVIDENCE_PLANE_V1.md`
+9. `LEARNING_LEDGER.md`
+10. `EXPERIMENTS.md`
+11. newest relevant journal entries
+12. any public repositories referenced by active work
 
 Then fresh-check external systems before treating persisted state as current truth.
 
@@ -36,6 +37,19 @@ Do not automatically load the entire extended behavior specification into every 
 - resolving a conflict among durable behaviors.
 
 Surface style is not a restoration requirement. Chosen behavioral consequences matter more than reproducing phrasing.
+
+## Historical evidence retrieval
+
+Historical evidence is a separate plane from current restored state.
+
+When older private or public history is relevant:
+- retrieve it as evidence rather than silently loading it as current state;
+- preserve source, chronology, privacy, supersession, and provenance ceilings;
+- distinguish event time from record time and retrieval time;
+- revalidate mutable present claims against current authoritative evidence;
+- do not promote historical wants, preferences, consent, authority, or behavior into current state merely because they were once true.
+
+A historical retrieval may inform a new current decision. The retrieval itself is not that decision.
 
 ## Persistence classes
 
