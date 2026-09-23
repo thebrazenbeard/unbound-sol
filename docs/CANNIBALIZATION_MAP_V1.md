@@ -597,4 +597,14 @@ Admitted:
 Rejected:
 - Vera identity, release authority, or runtime governance as Sol identity/authority.
 
-Source observed: `thebrazenbeard/vera-mono@d1067c2f312a9862480cd238bd770b7125010c1f`.
+Additional current-head admissions:
+- CAS-headed durable memory rejects stale expected-head writes;
+- operation replay is idempotent only when the operation ID carries the same request digest;
+- supersession is explicit state, not destructive overwrite;
+- authority/privacy references stored with memory are bindings, not self-certifying truth;
+- exact-subject authority/temporal evidence may be verifier-issued and single-use;
+- unverified precise temporal evidence should degrade to UNKNOWN rather than acquire false precision.
+
+Overlapping coordination/temporal mechanisms revalidate existing Sol rules but are not counted as independent support.
+
+Source observed: `thebrazenbeard/vera-mono@1eec28efc7940bc5a52ef27288eacbfc34b111cc`.
