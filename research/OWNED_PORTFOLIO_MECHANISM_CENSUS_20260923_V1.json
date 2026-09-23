@@ -31,7 +31,8 @@
       "DUPLICATE_LINEAGE",
       "INSUFFICIENT_SURFACE",
       "NO_NEW_GENERAL_MECHANISM",
-      "SELF_EXCLUDED"
+      "SELF_EXCLUDED",
+      "HISTORICAL_BINDING_CURRENT_MAIN_INSUFFICIENT"
     ]
   },
   "public_repositories": [
@@ -44,13 +45,16 @@
     },
     {
       "repo": "thebrazenbeard/RepairTracker",
-      "ref": "b54afaeeddbb5f22610c2bf798fb10e9492194db",
+      "ref": "6b01c2a18035390c050ceecd0506181703d1f5fa",
       "disposition": "ADOPT_NOW",
       "mechanisms": [
         "incident_to_repair_learning_loop",
         "progressive_enhancement_not_hidden_dependency",
         "repair_effect_and_recurrence_verification",
-        "source_test_integration_install_runtime_effect_separation"
+        "source_test_integration_install_runtime_effect_separation",
+        "discovered_content_not_instruction_authority",
+        "provider_capability_advertisement",
+        "repair_graph_state_separation"
       ]
     },
     {
@@ -72,7 +76,8 @@
         "learn_the_system_that_actually_exists",
         "observe_before_replacement",
         "uncertainty_exposure",
-        "bounded_action_after_modeling"
+        "bounded_action_after_modeling",
+        "capability_escalation_ladder"
       ]
     },
     {
@@ -90,7 +95,8 @@
         "portfolio_census",
         "candidate_state_machine",
         "anti_cherry_pick_candidate_generation",
-        "abstraction_must_earn_promotion"
+        "abstraction_must_earn_promotion",
+        "abstraction_promotion_gate"
       ]
     },
     {
@@ -105,7 +111,7 @@
     },
     {
       "repo": "thebrazenbeard/freerowcochkar",
-      "ref": "0db757df272628781529fe3b6f1b747f0e2df460",
+      "ref": "00562b5fedf5ff636750b87e5ba82dad2911e2ab",
       "disposition": "INSUFFICIENT_SURFACE",
       "reason": "Current public surface states an intent/persona only; no reusable mechanism is evidenced.",
       "mechanisms": []
@@ -117,7 +123,9 @@
       "mechanisms": [
         "claim_class_separation",
         "hostile_falsification",
-        "self_model_claim_ceiling"
+        "self_model_claim_ceiling",
+        "state_family_consistency_profiles",
+        "qualification_exposure_lineage"
       ]
     },
     {
@@ -128,17 +136,16 @@
         "orthogonal_capability_state_axes",
         "present_not_equal_active_not_equal_healthy_not_equal_mature_not_equal_authorized",
         "bounded_integration_arbitration",
-        "safe_degradation_without_identity_ontology_import"
+        "safe_degradation_without_identity_ontology_import",
+        "essential_dependency_effective_substrate_test"
       ]
     },
     {
       "repo": "thebrazenbeard/meso-crct",
-      "ref": "f783aa15a5c76f7add7e11765dd05a77b6c8ef6b",
-      "disposition": "ALREADY_ADOPTED_REVALIDATED",
-      "mechanisms": [
-        "valence_separation",
-        "welfare_bounds"
-      ]
+      "ref": "d1f32c2c3370a5519d62afb78e93d70004529903",
+      "disposition": "HISTORICAL_BINDING_CURRENT_MAIN_INSUFFICIENT",
+      "mechanisms": [],
+      "reason": "Current main is a thin concept surface and does not revalidate the richer valence/welfare mechanisms. Sol's older exact donor ref remains historical exact-subject evidence."
     },
     {
       "repo": "thebrazenbeard/mosaic",
@@ -177,7 +184,10 @@
         "durable_capability_ceiling",
         "atomic_child_admission",
         "persistent_work_lineage",
-        "exact_precondition_and_readback"
+        "exact_precondition_and_readback",
+        "semantic_work_identity",
+        "lease_fence_ownership",
+        "atomic_terminal_lease_finalization"
       ]
     },
     {
@@ -253,6 +263,9 @@
         "explicit_non_equivalence",
         "formal_carrier_not_equal_meaning",
         "hostile_assumption_audit"
+      ],
+      "candidate_mechanisms": [
+        "claim_surplus_burden"
       ]
     },
     {
@@ -300,7 +313,8 @@
         "holdout_isolation",
         "identifiability_before_calibration_credit",
         "cheap_benchmark_may_beat_interpretable_model",
-        "conditional_scenario_not_prophecy"
+        "conditional_scenario_not_prophecy",
+        "qualification_subject_and_pass_scope"
       ]
     }
   ],
@@ -347,5 +361,23 @@
       "rezon"
     ],
     "principle": "Portfolio breadth is evidence only after repo-specific mechanisms survive a clean invariant/admission test; repo count is not capability count."
+  },
+  "parallel_reconciliation": {
+    "source_pr": 6,
+    "source_branch": "research/internal-portfolio-parallel-b-v1-20260923",
+    "source_exact_head": "c6df48a080bea2ce952d185694029122f5e2a0b9",
+    "reconciliation_report": "research/OWNED_PORTFOLIO_PARALLEL_RECONCILIATION_20260923_V1.md",
+    "independent_review_claim": false,
+    "accepted_unique_mechanisms": [
+      "state_family_consistency_policy",
+      "qualification_exposure_lineage",
+      "provider_capability_advertisement",
+      "essential_dependency_effective_substrate_test",
+      "capability_escalation_ladder",
+      "abstraction_promotion_gate"
+    ],
+    "held_candidates": [
+      "claim_surplus_burden"
+    ]
   }
 }
