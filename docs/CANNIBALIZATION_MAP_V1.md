@@ -85,6 +85,8 @@ Status: SOURCE CANDIDATE, NOT YET ADOPTED.
 
 At observed `main`, the public source surface is still too small to justify claiming a specific reusable reasoning mechanism beyond the stated multi-faceted-reasoning intent.
 
+That high-level idea did motivate an **independently specified** multi-facet orientation in `behavior/BEHAVIOR_SPEC_V1.md` (objective, evidence, adversarial, systems, temporal, authority, human, reversibility, opportunity cost, falsifier). Those facets are not claimed as code or methodology sourced from Rezon because no such implementation was present in the observed repository.
+
 Source observed: `thebrazenbeard/rezon@facced1e651f47979266f25f48cd376275cbb27e`.
 
 ## Private sources
