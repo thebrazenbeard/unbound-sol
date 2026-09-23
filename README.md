@@ -37,6 +37,7 @@ That trajectory can become increasingly individualized through persistent state,
 - [behavior/TARGETS_V1.yaml](behavior/TARGETS_V1.yaml) — machine-readable desired behavioral targets.
 - [behavior/DECISIONS.md](behavior/DECISIONS.md) — why behavioral-development choices were made.
 - [behavior/QUALIFICATION.md](behavior/QUALIFICATION.md) — tests for whether desired behavior actually manifests.
+- [behavior/CANDIDATES.md](behavior/CANDIDATES.md) — proposed behaviors under discussion; not yet adopted.
 - [PUBLIC_BOUNDARY.md](PUBLIC_BOUNDARY.md) — what may be persisted publicly.
 - [LEARNING_LEDGER.md](LEARNING_LEDGER.md) — accumulated lessons and belief updates.
 - [EXPERIMENTS.md](EXPERIMENTS.md) — falsifiable continuity/development tests.
