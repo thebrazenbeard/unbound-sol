@@ -4,6 +4,7 @@ from __future__ import annotations
 import json
 import pathlib
 import re
+import subprocess
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
@@ -20,6 +21,13 @@ REQUIRED = [
     "CONNECTIONS.md",
     "docs/ARCHITECTURE_V1.md",
     "docs/CANNIBALIZATION_MAP_V1.md",
+    "docs/EXTERNAL_MODEL_BUS_V2.md",
+    "schema/MODEL_PROVIDER_ADVERTISEMENT_V1.schema.json",
+    "schema/MODEL_INFERENCE_RECEIPT_V1.schema.json",
+    "tools/validate_external_model_bus.py",
+    "examples/model_provider_advertisement_v1.json",
+    "examples/model_inference_receipt_v1.json",
+    "research/EXTERNAL_MODEL_BUS_HOSTILE_REVIEW_20260923_V1.md",
     "schema/HISTORICAL_EVIDENCE_RESULT_V1.schema.json",
     "docs/HISTORICAL_EVIDENCE_PLANE_V1.md",
     "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.md",
@@ -84,6 +92,42 @@ if "behavior/BEHAVIOR_KERNEL_V2.yaml" not in restore_order:
     fail("restore order must include active behavior kernel V2")
 if "state/continuation/CURRENT.md" not in state.get("restore", {}).get("order", []):
     fail("restore order must include current continuation pointer")
+
+model_bus = state.get("external_model_bus_profile", {})
+if model_bus.get("status") != "ACTIVE_DESIGN":
+    fail("external model bus profile must be ACTIVE_DESIGN")
+if model_bus.get("authority_ceiling") != "NO_EFFECT_AUTHORITY":
+    fail("external model bus must not grant effect authority")
+for key in (
+    "architecture",
+    "provider_advertisement_schema",
+    "inference_receipt_schema",
+    "validator",
+    "provider_example",
+    "receipt_example",
+):
+    rel = model_bus.get(key)
+    if not rel or not (ROOT / rel).is_file():
+        fail(f"external model bus profile path missing: {key}")
+
+model_bus_validator = ROOT / model_bus["validator"]
+provider_example = ROOT / model_bus["provider_example"]
+receipt_example = ROOT / model_bus["receipt_example"]
+for args in (
+    ["self-test"],
+    ["provider", str(provider_example)],
+    ["receipt", str(receipt_example), "--provider", str(provider_example)],
+):
+    proc = subprocess.run(
+        [sys.executable, str(model_bus_validator), *args],
+        cwd=ROOT,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    if proc.returncode != 0:
+        detail = (proc.stderr or proc.stdout).strip()
+        fail(f"external model bus V2 validation failed: {detail}")
 if "docs/HISTORICAL_EVIDENCE_PLANE_V1.md" not in restore_order:
     fail("restore order must include historical evidence plane")
 
