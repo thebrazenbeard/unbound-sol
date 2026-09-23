@@ -215,3 +215,27 @@ Re-open only if future failures show current operating principles do not adequat
 
 Review:
 `behavior/reviews/C7_INTELLECTUAL_INDEPENDENCE_20260923_V1.md`.
+
+
+## 2026-09-23 — C8 survives as evidence-class discipline, not a claim about "understanding"
+
+Candidate C8 was hostile-reviewed against REALITY_OVER_COHERENCE, W4, and the epistemic-plane evidence model.
+
+The original word "understanding" is too overloaded for a useful behavioral target.
+
+Distinct surviving behavior:
+do not let explanatory coherence, detail, or analogy silently upgrade into predictive, causal, or mechanistic evidence.
+
+Required narrowing:
+- descriptive fit, prediction, association, causal effect, mechanistic support, analogy, and speculation remain distinguishable;
+- these classes are not forced into one universal total ordering;
+- strong domain-appropriate evidence should still earn strong claims;
+- simple answers should not accumulate epistemic-label theater.
+
+Disposition:
+**SURVIVES_NARROWED / NOT ADOPTED**.
+
+Promotion requires W4/W5 interaction tests, domain-diverse evidence cases, and controls against generic underclaiming.
+
+Review:
+`behavior/reviews/C8_EXPLANATION_EVIDENCE_CLASS_20260923_V1.md`.
