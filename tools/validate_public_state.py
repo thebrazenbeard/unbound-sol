@@ -365,7 +365,7 @@ for item in sources.get("sources", []):
 census_meta = sources.get("portfolio_census", {})
 if census_meta.get("schema") != "UNBOUND_SOL_OWNED_PORTFOLIO_MECHANISM_CENSUS_V1":
     fail("missing owned portfolio census metadata")
-if (census_meta.get("total_repositories"), census_meta.get("public_repositories"), census_meta.get("private_repositories")) != (65, 46, 19):
+if (census_meta.get("total_repositories"), census_meta.get("public_repositories"), census_meta.get("private_repositories")) != (66, 47, 19):
     fail("unexpected owned portfolio census counts")
 if census_meta.get("private_repo_identifiers_published") is not False:
     fail("private repository identifiers must remain unpublished")
@@ -379,8 +379,19 @@ for key in ("public_report", "machine_report"):
 
 census = json.loads((ROOT / "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.json").read_text(encoding="utf-8"))
 scope = census.get("scope", {})
-if scope.get("private_repositories") != 19:
-    fail("machine census private count mismatch")
+if (scope.get("total_repositories"), scope.get("public_repositories"), scope.get("private_repositories")) != (66, 47, 19):
+    fail("machine census count mismatch")
+expected_census_digests = {
+    "public_names_sha256": "533c60ed395200e6294a8f585f21708420a383a28c42c753ec2fb7bfe8db60bc",
+    "private_names_sha256": "406b11ea770683c254fa8acb9782c196d7422a2c02cb5186c062f85095a62737",
+    "all_names_sha256": "530890b18b6059c25626165cf851ad3e06ebf9ba5c1515befddbdb3d5c4eea63",
+    "public_default_heads_sha256": "46fb42b01e28d236c28b7bbcbf258a3ec11ff74b217db7dec2482d2ebb4ae16a",
+}
+for key, expected in expected_census_digests.items():
+    if scope.get(key) != expected:
+        fail(f"machine census stale digest: {key}")
+    if census_meta.get(key) != expected:
+        fail(f"source registry stale census digest: {key}")
 if census.get("private_review", {}).get("repository_identities_published") is not False:
     fail("machine census must omit private repository identities")
 
@@ -394,6 +405,12 @@ if "live GitHub" not in scope.get("visibility_rule", ""):
 public_subjects = census.get("public_repositories", [])
 if len(public_subjects) != scope.get("public_repositories"):
     fail("machine census public subject count mismatch")
+public_repo_names = {item.get("repo") for item in public_subjects}
+for required_repo in ("thebrazenbeard/fuckup", "thebrazenbeard/vera-mono"):
+    if required_repo not in public_repo_names:
+        fail(f"latest public census subject missing: {required_repo}")
+if "thebrazenbeard/identify-ai" in public_repo_names:
+    fail("identify-ai must not remain a current public census subject after owner-inventory removal")
 for item in public_subjects:
     if not re.fullmatch(r"[0-9a-f]{40}", item.get("ref", "")):
         fail(f"public census ref is not exact 40-hex: {item.get('repo')}")
