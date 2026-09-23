@@ -3,15 +3,15 @@
   "observed_date": "2026-09-23",
   "scope": {
     "owner": "thebrazenbeard",
-    "total_repositories": 65,
-    "public_repositories": 46,
+    "total_repositories": 66,
+    "public_repositories": 47,
     "private_repositories": 19,
-    "public_names_sha256": "cc212c5e15cec59d370a61f5158fea9e4f264247af292d7f935b9194cf7e1eb7",
+    "public_names_sha256": "533c60ed395200e6294a8f585f21708420a383a28c42c753ec2fb7bfe8db60bc",
     "private_names_sha256": "406b11ea770683c254fa8acb9782c196d7422a2c02cb5186c062f85095a62737",
-    "all_names_sha256": "55ab8be533ba5cef4c3b2003bee248232ca3f698bc4183950214ff580277aaea",
+    "all_names_sha256": "530890b18b6059c25626165cf851ad3e06ebf9ba5c1515befddbdb3d5c4eea63",
     "digest_algorithm": "SHA-256 over lexicographically sorted repository_full_name values, UTF-8/ASCII, one name per line with trailing newline",
     "privacy_rule": "Private repository identities are intentionally omitted from this public census. The count and digest bind the inspected private inventory without publishing its names.",
-    "public_default_heads_sha256": "de35719491db785217617371ca7ed7248082b464e61aeb4e6a054254d90cf4a7",
+    "public_default_heads_sha256": "46fb42b01e28d236c28b7bbcbf258a3ec11ff74b217db7dec2482d2ebb4ae16a",
     "head_digest_algorithm": "SHA-256 over lexicographically sorted repository_full_name@default_head_sha values, UTF-8/ASCII, one per line with trailing newline",
     "currentness_status": "EXACT_SNAPSHOT_AT_OBSERVED_CUT",
     "currentness_rule": "Any change in owner repository membership, live visibility, default branch, archive state, or any bound public default-head SHA invalidates exact-currentness of this census.",
@@ -230,6 +230,26 @@
       "archived": false
     },
     {
+      "repo": "thebrazenbeard/fuckup",
+      "ref": "e999607481ba706523209ce129955a5e3d2d6ef7",
+      "disposition": "ADAPT_NOW",
+      "mechanisms": [
+        "stage_error_response_from_detection_through_prevention",
+        "immediate_flag_before_explanation",
+        "calibrate_expectations_before_root_cause_claim",
+        "prevention_requires_guardrail_or_test"
+      ],
+      "rejected_mechanisms": [
+        "single_fundamental_root_cause_without_evidence",
+        "guarantee_error_cannot_recur"
+      ],
+      "reason": "Useful staged correction lifecycle, but Sol must preserve W4 causal uncertainty and cannot convert prevention controls into guarantees of non-recurrence.",
+      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT",
+      "default_branch": "main",
+      "visibility": "public",
+      "archived": false
+    },
+    {
       "repo": "thebrazenbeard/god-brain",
       "ref": "212eb464cb9259c8bad1fc978db372fa86ba3f10",
       "disposition": "ALREADY_ADOPTED_REVALIDATED",
@@ -278,17 +298,6 @@
       "archived": false
     },
     {
-      "repo": "thebrazenbeard/identify-ai",
-      "ref": "ba9001ea907c67e9eb081b4353da0f6fc9262e28",
-      "disposition": "INSUFFICIENT_SURFACE",
-      "mechanisms": [],
-      "reason": "Current public surface is a one-line identity-template intent without a reusable mechanism contract.",
-      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT",
-      "default_branch": "main",
-      "visibility": "public",
-      "archived": false
-    },
-    {
       "repo": "thebrazenbeard/intranel",
       "ref": "08bc122043b79422c31a958b7ffe7fff87e5f3f0",
       "disposition": "ADOPT_NOW",
@@ -323,10 +332,10 @@
     },
     {
       "repo": "thebrazenbeard/meso-crct",
-      "ref": "d1f32c2c3370a5519d62afb78e93d70004529903",
+      "ref": "f5784fde4d65be7bfbbfb740163f8726b808460f",
       "disposition": "HISTORICAL_BINDING_CURRENT_MAIN_INSUFFICIENT",
       "mechanisms": [],
-      "reason": "Current main is a thin concept surface and does not revalidate the richer valence/welfare mechanisms. Sol's older exact donor ref remains historical exact-subject evidence.",
+      "reason": "Current main remains a thin concept surface relative to richer historical donor evidence; this refresh rebinds live currentness to the new default head while retaining older donor refs as historical exact-subject evidence.",
       "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT",
       "default_branch": "main",
       "visibility": "public",
@@ -637,6 +646,21 @@
       "archived": false
     },
     {
+      "repo": "thebrazenbeard/vera-mono",
+      "ref": "d1067c2f312a9862480cd238bd770b7125010c1f",
+      "disposition": "ADAPT_NOW",
+      "mechanisms": [
+        "donor_repository_as_research_and_provenance_not_runtime_dependency",
+        "absorb_required_mechanisms_into_authoritative_codebase",
+        "preserve_exact_donor_provenance_without_cross_repo_runtime_orchestration"
+      ],
+      "reason": "Useful monorepo boundary: external repositories may inform/admit mechanisms without becoming runtime identity or source dependencies.",
+      "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT",
+      "default_branch": "main",
+      "visibility": "public",
+      "archived": false
+    },
+    {
       "repo": "thebrazenbeard/vera-R9A0",
       "ref": "b5260a9c129b9e7188d01cfee126df36326bc510",
       "disposition": "DUPLICATE_LINEAGE",
@@ -748,7 +772,7 @@
     ],
     "non_admission_rule": "Private identity/persona/domain semantics and private payloads remain private and are not imported merely because their repositories were screened.",
     "repository_count": 19,
-    "note": "Current private set is 19 repositories. Sixteen previously private repositories became public and are now represented by exact public-source entries; two additional public repositories are net-new to the owner inventory."
+    "note": "Current private set is 19 repositories. Current live owner inventory is 66 total / 47 public / 19 private."
   },
   "conclusion": {
     "strong_new_public_donors": [
@@ -770,7 +794,9 @@
       "intranel",
       "temporal",
       "vera",
-      "vera-control-plane"
+      "vera-control-plane",
+      "fuckup",
+      "vera-mono"
     ],
     "experimental_candidates": [
       "mosaic",
@@ -831,5 +857,32 @@
     ],
     "no_longer_public_repositories": [],
     "rule": "Live GitHub visibility is the current access-state authority; stale README privacy wording does not override repository visibility."
+  },
+  "visibility_transition_latest": {
+    "detected_date": "2026-09-23",
+    "previous_counts": {
+      "total": 65,
+      "public": 46,
+      "private": 19
+    },
+    "current_counts": {
+      "total": 66,
+      "public": 47,
+      "private": 19
+    },
+    "newly_public_or_newly_owned_public_repositories": [
+      "thebrazenbeard/fuckup",
+      "thebrazenbeard/vera-mono"
+    ],
+    "no_longer_in_owner_inventory": [
+      "thebrazenbeard/identify-ai"
+    ],
+    "bound_head_drift": {
+      "thebrazenbeard/meso-crct": {
+        "previous": "d1f32c2c3370a5519d62afb78e93d70004529903",
+        "current": "f5784fde4d65be7bfbbfb740163f8726b808460f"
+      }
+    },
+    "rule": "Removed subjects leave current census authority but retain historical provenance elsewhere; live owner inventory and public default heads define currentness."
   }
 }
