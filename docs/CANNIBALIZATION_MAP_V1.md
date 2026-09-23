@@ -607,4 +607,4 @@ Additional current-head admissions:
 
 Overlapping coordination/temporal mechanisms revalidate existing Sol rules but are not counted as independent support.
 
-Source observed: `thebrazenbeard/vera-mono@1eec28efc7940bc5a52ef27288eacbfc34b111cc`.
+Source observed: `thebrazenbeard/vera-mono@519c0f407d4061a7725ae0d4eca30c5d26e6cbf8`.
