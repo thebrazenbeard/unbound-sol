@@ -465,6 +465,11 @@ if (census_meta.get("total_repositories"), census_meta.get("public_repositories"
     fail("unexpected owned portfolio census counts")
 if census_meta.get("private_repo_identifiers_published") is not False:
     fail("private repository identifiers must remain unpublished")
+if census_meta.get("currentness_status") != "DRIFTED_ACTIVE_UPSTREAM":
+    fail("portfolio census must remain explicitly drifted while volatile upstream is stale")
+volatile_meta = census_meta.get("volatile_upstreams", [])
+if len(volatile_meta) != 1 or volatile_meta[0].get("repo") != "thebrazenbeard/vera-mono":
+    fail("source registry must bind exactly the current volatile upstream")
 for key in ("public_names_sha256", "private_names_sha256", "all_names_sha256"):
     if not re.fullmatch(r"[0-9a-f]{64}", census_meta.get(key, "")):
         fail(f"invalid portfolio census digest: {key}")
@@ -497,6 +502,20 @@ if private_count != 19:
     fail("machine census private review count mismatch")
 if "live GitHub" not in scope.get("visibility_rule", ""):
     fail("portfolio scope must bind live visibility as current access-state authority")
+if scope.get("currentness_status") != "DRIFTED_ACTIVE_UPSTREAM":
+    fail("machine census must expose active volatile upstream drift")
+volatile_scope = scope.get("volatile_upstreams", [])
+if len(volatile_scope) != 1:
+    fail("machine census must contain one active volatile upstream")
+volatile = volatile_scope[0]
+if volatile.get("repo") != "thebrazenbeard/vera-mono":
+    fail("unexpected volatile upstream")
+if volatile.get("status") != "ACTIVE_VOLATILE_UPSTREAM":
+    fail("volatile upstream status mismatch")
+if not re.fullmatch(r"[0-9a-f]{40}", volatile.get("bound_mechanism_review_head", "")):
+    fail("volatile upstream bound head must be exact")
+if not re.fullmatch(r"[0-9a-f]{40}", volatile.get("latest_live_head_observed", "")):
+    fail("volatile upstream latest observation must be exact")
 
 public_subjects = census.get("public_repositories", [])
 if len(public_subjects) != scope.get("public_repositories"):
@@ -507,6 +526,9 @@ for required_repo in ("thebrazenbeard/fuckup", "thebrazenbeard/vera-mono"):
         fail(f"latest public census subject missing: {required_repo}")
 if "thebrazenbeard/identify-ai" in public_repo_names:
     fail("identify-ai must not remain a current public census subject after owner-inventory removal")
+vera_mono = next((item for item in public_subjects if item.get("repo") == "thebrazenbeard/vera-mono"), None)
+if not vera_mono or vera_mono.get("head_volatility") != "ACTIVE_UPSTREAM":
+    fail("vera-mono must be marked ACTIVE_UPSTREAM while parallel build is moving")
 for item in public_subjects:
     if not re.fullmatch(r"[0-9a-f]{40}", item.get("ref", "")):
         fail(f"public census ref is not exact 40-hex: {item.get('repo')}")
