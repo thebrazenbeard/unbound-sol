@@ -15,6 +15,12 @@ Live GitHub inventory at the observed cut:
 
 The hashes are computed over lexicographically sorted `repository_full_name` values, one per line with a trailing newline.
 
+The exact observed public default-head cut is separately bound by SHA-256 over lexicographically sorted `repository_full_name@default_head_sha` lines:
+
+`57a3283cf8cf809eeb02980b28f4216078b745160c05ce59a887102a45a3f0be`
+
+That head binding is part of currentness. An unchanged repository count/name digest does not make the mechanism census current after a donor default head moves.
+
 Private repository identities are deliberately not listed here. The private count and digest bind the inspected set without leaking those names into a public repository.
 
 Discovery's previous census observed 59 repositories on 2026-09-22. This audit does not inherit that census as current truth; it refreshed the live owner inventory and screened all 63 repositories.
@@ -167,9 +173,16 @@ Source: `thebrazenbeard/on-theo@268a005b11e3fede8a99d7cf2990f18fc3b32672`.
 
 ## Revalidated public mechanisms
 
-The live audit also revalidated already-admitted mechanisms from Discovery, DriftGuard, God Brain, meso-crct, Project Runner, VeraMesh, and WorkBridgeMCP.
+The live audit revalidated already-admitted mechanisms from Discovery, DriftGuard, God Brain, and Project Runner at their observed default heads.
 
 Notable strengthening from the current Project Runner source includes persistent effective capability ceilings, atomic child admission, restart-safe work lineage, and exact precondition/readback semantics.
+
+Current-main source is **insufficient to revalidate** the richer previously admitted mechanisms for:
+- `meso-crct`;
+- `vera-mesh`;
+- `WorkBridgeMCP`.
+
+Those mechanisms remain bound to their earlier exact donor subjects. Current stub/thin mains are not described as corroboration merely because the repositories still exist.
 
 ## Candidates deliberately not promoted
 
@@ -282,4 +295,8 @@ Fresh-check after the parallel audit confirmed newer heads:
 - freerowcochkar `00562b5fedf5ff636750b87e5ba82dad2911e2ab`;
 - meso-crct `d1f32c2c3370a5519d62afb78e93d70004529903`.
 
-The current meso-crct main is now too thin to revalidate the richer earlier valence/welfare mechanism. The prior exact donor ref remains valid historical exact-subject evidence, but current main is not described as corroboration.
+A later exact-head sweep found DriftGuard had advanced to `52fa829c629fa0f3e729204912db9f9f783f322a`. The one-commit delta from the prior bound head is licensing/governance-only, so the mechanism admission survives; the census head binding was refreshed.
+
+The current mains of meso-crct, VeraMesh, and WorkBridgeMCP are too thin to revalidate their richer earlier donor mechanisms. The prior exact donor refs remain valid historical exact-subject evidence, but current main is not described as corroboration.
+
+The census is an exact snapshot, not a live guarantee. Any change in repository membership, visibility, default branch, archive state, or a bound public default-head SHA invalidates claims that this exact snapshot is still current.
