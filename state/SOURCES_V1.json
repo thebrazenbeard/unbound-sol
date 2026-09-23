@@ -5,7 +5,7 @@
   "sources": [
     {
       "repo": "thebrazenbeard/driftguard",
-      "ref": "ce6c0fcbc38560b6604039d4921cc4f0c10cd248",
+      "ref": "c82162bb306e89b3aabe29f09f8b782ebe3b317e",
       "admission": "ADOPTED",
       "mechanisms": [
         "evidence_binding",
