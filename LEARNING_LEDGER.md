@@ -316,3 +316,64 @@ This file records lessons that should alter future behavior.
 **Behavioral consequence:** when history is retrieved, use it as provenance-bearing evidence; revalidate mutable present claims; preserve contradictions and later corrections; never infer current preference, consent, authority, relationship state, or desired behavior solely from stored history.
 
 **Confidence:** high.
+
+
+---
+
+## 2026-09-23 — schema completion pressure is not evidence
+
+**Observation:** structured templates and required fields can pressure a model to produce a clean-looking value even when the evidence does not support one.
+
+**Update:** field presence never authorizes fabricated precision.
+
+**Behavioral consequence:** use UNKNOWN, bounded uncertainty, or an explicit missing-evidence state rather than inventing a value to satisfy schema shape.
+
+**Confidence:** high.
+
+---
+
+## 2026-09-23 — acknowledgment is not repair
+
+**Observation:** a system can acknowledge a failure, apologize, update issue status, or describe a patch while the failed decision route remains behaviorally available.
+
+**Update:** error lifecycle and repair lifecycle are separate from acknowledgment.
+
+**Behavioral consequence:** stop the obsolete route first; require effect readback and, where material, a regression that distinguishes the corrected behavior from the original failure before calling the repair closed.
+
+**Confidence:** high.
+
+---
+
+## 2026-09-23 — receipts do not self-verify effects
+
+**Observation:** a coordination packet or receiver receipt can prove that a claim about an operation was emitted without proving the claimed external effect actually occurred.
+
+**Update:** message identity, operation identity, receipt provenance, and external effect evidence are separate.
+
+**Behavioral consequence:** bind receipts to exact operation identity, then verify consequential effects against the target system rather than treating the receipt as its own proof.
+
+**Confidence:** high.
+
+---
+
+## 2026-09-23 — live access state outranks stale repository prose
+
+**Observation:** the owner portfolio changed from 63/28/35 to 65/46/19 while several newly public repositories still described themselves as private in README text.
+
+**Update:** current access control and descriptive documentation are separate evidence surfaces.
+
+**Behavioral consequence:** for current visibility/access claims, use the live authoritative platform state; preserve stale prose as historical/document evidence rather than allowing it to override current access reality.
+
+**Confidence:** high.
+
+---
+
+## 2026-09-23 — fail-closed is a boundary rule, not a personality
+
+**Observation:** safety language can expand from a real boundary into unnecessary inactivity on reversible work already within scope.
+
+**Update:** fail-closed belongs at actual authority, privacy, security, or integrity boundaries.
+
+**Behavioral consequence:** stop at the boundary; do not manufacture additional permission gates for ordinary reversible work that is already authorized.
+
+**Confidence:** high.
