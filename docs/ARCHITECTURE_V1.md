@@ -66,9 +66,11 @@ Its default operation is evidence retrieval, not current-state restoration.
 
 Historical evidence can establish that a past event occurred without establishing that a mutable state remains true now. Retrieval does not automatically admit a want, preference, behavioral target, permission, consent state, runtime state, or effect authority.
 
+Historical evidence results must bind subject scope, chronology uncertainty, source-binding strength, provenance ceiling, currentness rule, and correction/supersession state. A correction does not establish the cause of the corrected error. Current-state promotion is a separate state-family admission event, not a retrieval side effect.
+
 Private historical evidence remains outside this public repository. Only public-safe contracts and abstractions belong here.
 
-See `HISTORICAL_EVIDENCE_PLANE_V1.md`.
+See `HISTORICAL_EVIDENCE_PLANE_V2.md`.
 
 ### Developmental plane
 
