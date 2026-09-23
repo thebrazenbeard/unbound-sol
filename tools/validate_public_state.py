@@ -12,6 +12,11 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 
 REQUIRED = [
     "README.md",
+    "LICENSE",
+    "NOTICE",
+    "COMMERCIAL_LICENSE.md",
+    "CLA.md",
+    "CONTRIBUTING.md",
     "IDENTITY.md",
     "CONTINUITY.md",
     "PRINCIPLES.md",
@@ -85,6 +90,12 @@ def fail(message: str) -> None:
 for rel in REQUIRED:
     if not (ROOT / rel).is_file():
         fail(f"missing required file: {rel}")
+
+readme_text = (ROOT / "README.md").read_text(encoding="utf-8")
+if "[LICENSE](LICENSE)" not in readme_text:
+    fail("README license banner must reference LICENSE")
+if "[COMMERCIAL_LICENSE.md](COMMERCIAL_LICENSE.md)" not in readme_text:
+    fail("README license banner must reference COMMERCIAL_LICENSE.md")
 
 state = json.loads((ROOT / "state/SOL_STATE_V1.json").read_text(encoding="utf-8"))
 if state.get("schema") != "UNBOUND_SOL_STATE_V1":
