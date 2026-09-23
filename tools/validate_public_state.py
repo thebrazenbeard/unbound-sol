@@ -20,6 +20,8 @@ REQUIRED = [
     "CONNECTIONS.md",
     "docs/ARCHITECTURE_V1.md",
     "docs/CANNIBALIZATION_MAP_V1.md",
+    "schema/HISTORICAL_EVIDENCE_RESULT_V1.schema.json",
+    "docs/HISTORICAL_EVIDENCE_PLANE_V1.md",
     "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.md",
     "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.json",
     "research/OWNED_PORTFOLIO_PARALLEL_RECONCILIATION_20260923_V1.md",
@@ -82,6 +84,22 @@ if "behavior/BEHAVIOR_KERNEL_V2.yaml" not in restore_order:
     fail("restore order must include active behavior kernel V2")
 if "state/continuation/CURRENT.md" not in state.get("restore", {}).get("order", []):
     fail("restore order must include current continuation pointer")
+if "docs/HISTORICAL_EVIDENCE_PLANE_V1.md" not in restore_order:
+    fail("restore order must include historical evidence plane")
+
+history = state.get("historical_evidence_profile", {})
+if history.get("schema") != "UNBOUND_SOL_HISTORICAL_EVIDENCE_RESULT_V1":
+    fail("missing or unexpected historical evidence profile schema")
+if history.get("default_operation") != "EVIDENCE_SEARCH":
+    fail("historical evidence default must be EVIDENCE_SEARCH")
+if history.get("automatic_current_state_promotion") is not False:
+    fail("historical evidence must not auto-promote current state")
+if history.get("automatic_behavior_target_promotion") is not False:
+    fail("historical evidence must not auto-promote behavior targets")
+for key in ("architecture", "result_schema"):
+    rel = history.get(key)
+    if not rel or not (ROOT / rel).is_file():
+        fail(f"historical evidence profile path missing: {key}")
 
 sources = json.loads((ROOT / "state/SOURCES_V1.json").read_text(encoding="utf-8"))
 if sources.get("schema") != "UNBOUND_SOL_PUBLIC_SOURCES_V1":
