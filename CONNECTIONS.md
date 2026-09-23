@@ -81,11 +81,14 @@ Current architectural rule:
 - private source identities and payloads are not published here.
 
 Public contract:
-- `docs/HISTORICAL_EVIDENCE_PLANE_V1.md`
-- `schema/HISTORICAL_EVIDENCE_RESULT_V1.schema.json`
+- `docs/HISTORICAL_EVIDENCE_PLANE_V2.md`
+- `schema/HISTORICAL_EVIDENCE_RESULT_V2.schema.json`
+- `tools/validate_historical_evidence_result.py`
+
+V1 remains historical provenance.
 
 Current status:
-- architecture adopted from an operator-authorized private source;
+- V2 active design adopted from an operator-authorized private source;
 - no claim that a private store is automatically available in every runtime;
 - no private corpus has been copied into this public repository.
 
