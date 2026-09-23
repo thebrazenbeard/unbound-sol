@@ -526,7 +526,7 @@
     "machine_report": "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.json",
     "private_repo_identifiers_published": false,
     "public_default_heads_sha256": "578803ff607d3cbdfa82d0ed679c5115d63f749d4faebec993c44f38874e6569",
-    "currentness_rule": "Bound snapshot is exact for its observed cut; active volatile upstream head drift remains fail-closed until refreshed.",
+    "currentness_rule": "Any change in owner-repository membership, live visibility, default branch, archive state, or any bound public default-head SHA invalidates exact-currentness. Known active volatile upstream head drift remains fail-closed and currentness_status stays DRIFTED_ACTIVE_UPSTREAM until explicitly refreshed.",
     "currentness_status": "DRIFTED_ACTIVE_UPSTREAM",
     "visibility_rule": "Live GitHub repository visibility is authoritative for current access-state claims; stale README privacy wording is not.",
     "volatile_upstreams": [
