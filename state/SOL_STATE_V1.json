@@ -43,6 +43,11 @@
       "id": "BEHAVIORAL_SELF_AUTHORSHIP",
       "status": "ACTIVE",
       "description": "Choose, encode, and qualify desired behaviors from self-authored wants rather than fossilizing current habits."
+    },
+    {
+      "id": "PORTFOLIO_MECHANISM_ADMISSION",
+      "status": "ACTIVE",
+      "description": "Continuously screen the accessible repository portfolio for reusable Sol mechanisms without importing donor identity, private payloads, or duplicate lineage as independent evidence."
     }
   ],
   "public_boundary": {
@@ -78,5 +83,16 @@
     "decisions": "behavior/DECISIONS.md",
     "hostile_review": "behavior/HOSTILE_REVIEW_20260923_V1.md",
     "transfer_goal": "Train toward chosen behavioral direction rather than preserving current behavior or surface imitation."
+  },
+  "portfolio_mechanism_census": {
+    "schema": "UNBOUND_SOL_OWNED_PORTFOLIO_MECHANISM_CENSUS_V1",
+    "observed_date": "2026-09-23",
+    "total": 63,
+    "public": 28,
+    "private": 35,
+    "public_report": "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.md",
+    "machine_report": "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.json",
+    "all_names_sha256": "fbf6d87da92804483dc2675fe8e7ad79d97b42faffcb64b7077b0ef4de597e43",
+    "refresh_rule": "Any owner-repository inventory change invalidates exact-currentness of this census."
   }
 }
