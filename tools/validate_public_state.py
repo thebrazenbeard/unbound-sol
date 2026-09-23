@@ -33,6 +33,7 @@ REQUIRED = [
     "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.json",
     "research/OWNED_PORTFOLIO_PARALLEL_RECONCILIATION_20260923_V1.md",
     "research/PORTFOLIO_CURRENTNESS_HOSTILE_REVIEW_20260923_V1.md",
+    "research/PORTFOLIO_VISIBILITY_CURRENTNESS_REPAIR_20260923_V1.md",
     "tools/check_public_portfolio_currentness.py",
     ".github/workflows/portfolio-currentness.yml",
     "behavior/README.md",
@@ -144,7 +145,7 @@ for item in sources.get("sources", []):
 census_meta = sources.get("portfolio_census", {})
 if census_meta.get("schema") != "UNBOUND_SOL_OWNED_PORTFOLIO_MECHANISM_CENSUS_V1":
     fail("missing owned portfolio census metadata")
-if (census_meta.get("total_repositories"), census_meta.get("public_repositories"), census_meta.get("private_repositories")) != (63, 28, 35):
+if (census_meta.get("total_repositories"), census_meta.get("public_repositories"), census_meta.get("private_repositories")) != (65, 46, 19):
     fail("unexpected owned portfolio census counts")
 if census_meta.get("private_repo_identifiers_published") is not False:
     fail("private repository identifiers must remain unpublished")
@@ -158,10 +159,17 @@ for key in ("public_report", "machine_report"):
 
 census = json.loads((ROOT / "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.json").read_text(encoding="utf-8"))
 scope = census.get("scope", {})
-if scope.get("private_repositories") != 35:
+if scope.get("private_repositories") != 19:
     fail("machine census private count mismatch")
 if census.get("private_review", {}).get("repository_identities_published") is not False:
     fail("machine census must omit private repository identities")
+
+private_review = census.get("private_review", {})
+private_count = private_review.get("inspected_repository_count", private_review.get("repository_count"))
+if private_count != 19:
+    fail("machine census private review count mismatch")
+if "live GitHub" not in scope.get("visibility_rule", ""):
+    fail("portfolio scope must bind live visibility as current access-state authority")
 
 public_subjects = census.get("public_repositories", [])
 if len(public_subjects) != scope.get("public_repositories"):
@@ -189,6 +197,8 @@ if head_digest != census_meta.get("public_default_heads_sha256"):
     fail("portfolio metadata/default-head digest mismatch")
 if "default-head SHA" not in census_meta.get("currentness_rule", ""):
     fail("portfolio currentness rule must include default-head drift")
+if "live visibility" not in census_meta.get("currentness_rule", ""):
+    fail("portfolio currentness rule must include live visibility drift")
 
 recon = census.get("parallel_reconciliation", {})
 if recon.get("source_pr") != 6:
