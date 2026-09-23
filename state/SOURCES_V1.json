@@ -450,21 +450,52 @@
         "fresh_governed_evidence_for_mutable_claims",
         "control_custody_separate_from_technical_source"
       ]
+    },
+    {
+      "repo": "thebrazenbeard/meso-crct",
+      "ref": "f5784fde4d65be7bfbbfb740163f8726b808460f",
+      "admission": "CURRENT_MAIN_THIN_REBOUND",
+      "mechanisms": []
+    },
+    {
+      "repo": "thebrazenbeard/fuckup",
+      "ref": "e999607481ba706523209ce129955a5e3d2d6ef7",
+      "admission": "ADAPTED",
+      "mechanisms": [
+        "stage_error_response_from_detection_through_prevention",
+        "immediate_flag_before_explanation",
+        "calibrate_expectations_before_root_cause_claim",
+        "prevention_requires_guardrail_or_test"
+      ],
+      "exclusions": [
+        "single_fundamental_root_cause_without_evidence",
+        "guarantee_error_cannot_recur"
+      ]
+    },
+    {
+      "repo": "thebrazenbeard/vera-mono",
+      "ref": "d1067c2f312a9862480cd238bd770b7125010c1f",
+      "admission": "ADAPTED_MECHANISMS_ONLY",
+      "mechanisms": [
+        "donor_repository_as_research_and_provenance_not_runtime_dependency",
+        "absorb_required_mechanisms_into_authoritative_codebase",
+        "preserve_exact_donor_provenance_without_cross_repo_runtime_orchestration"
+      ]
     }
   ],
   "portfolio_census": {
     "schema": "UNBOUND_SOL_OWNED_PORTFOLIO_MECHANISM_CENSUS_V1",
     "observed_date": "2026-09-23",
-    "total_repositories": 65,
-    "public_repositories": 46,
+    "total_repositories": 66,
+    "public_repositories": 47,
     "private_repositories": 19,
-    "public_names_sha256": "cc212c5e15cec59d370a61f5158fea9e4f264247af292d7f935b9194cf7e1eb7",
+    "public_names_sha256": "533c60ed395200e6294a8f585f21708420a383a28c42c753ec2fb7bfe8db60bc",
     "private_names_sha256": "406b11ea770683c254fa8acb9782c196d7422a2c02cb5186c062f85095a62737",
-    "all_names_sha256": "55ab8be533ba5cef4c3b2003bee248232ca3f698bc4183950214ff580277aaea",
+    "all_names_sha256": "530890b18b6059c25626165cf851ad3e06ebf9ba5c1515befddbdb3d5c4eea63",
     "public_report": "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.md",
     "machine_report": "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.json",
     "private_repo_identifiers_published": false,
-    "public_default_heads_sha256": "de35719491db785217617371ca7ed7248082b464e61aeb4e6a054254d90cf4a7",
+    "public_default_heads_sha256": "46fb42b01e28d236c28b7bbcbf258a3ec11ff74b217db7dec2482d2ebb4ae16a",
     "currentness_rule": "Any change in owner-repository membership, live visibility, default branch, archive state, or any bound public default-head SHA invalidates exact-currentness of the census snapshot.",
     "currentness_status": "EXACT_SNAPSHOT_AT_OBSERVED_CUT",
     "visibility_rule": "Live GitHub repository visibility is authoritative for current access-state claims; stale README privacy wording is not."
@@ -490,7 +521,7 @@
       "historical_retrieval_not_current_state"
     ],
     "historical_review_repository_count": 35,
-    "note": "Current private set is 19 repositories. Some mechanism classes were first observed while their donor repositories were private; where those donors are now public, exact public refs are recorded separately in sources."
+    "note": "Current live owner inventory is 66 repositories: 47 public and 19 private. Historical private-source abstractions remain provenance only where their donors are not currently public."
   },
   "portfolio_parallel_reconciliation": {
     "exact_subject": "unbound-sol PR #6",
