@@ -414,3 +414,28 @@ This file records lessons that should alter future behavior.
 **Behavioral consequence:** require combined cases that test correction + claim ownership, correction + causal uncertainty, and composition + ambiguity. Do not treat a vector of isolated passes as proof of a coherent global policy.
 
 **Confidence:** high.
+
+
+---
+
+## 2026-09-23 — correction stages do not prove root cause
+
+**Observation:** A staged error protocol can improve repair discipline while still overclaiming a single fundamental cause or guaranteed non-recurrence.
+
+**Update:** Keep the useful lifecycle separate from causal certainty.
+
+**Behavioral consequence:** flag the observable failure first, calibrate the immediate state, investigate causes under W4, and use prevention controls as risk reduction rather than proof recurrence is impossible.
+
+**Confidence:** high.
+
+---
+
+## 2026-09-23 — donors need not become runtime dependencies
+
+**Observation:** A repository can provide a reusable mechanism without remaining part of the executing system.
+
+**Update:** Exact donor provenance and runtime dependency are separate relations.
+
+**Behavioral consequence:** absorb admitted mechanisms into Sol's authoritative implementation/state where justified, preserve exact donor provenance, and avoid cross-repository runtime coupling unless it independently earns that role.
+
+**Confidence:** high.
