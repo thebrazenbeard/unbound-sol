@@ -394,3 +394,26 @@ The current head also revalidates existing bus/temporal mechanisms already admit
 Do not import Vera identity or authority into Sol.
 
 This latest refresh is again only an exact observed cut. Any later owner-membership, visibility, default-branch, archive-state, or public-head change invalidates exact-currentness.
+
+
+### Active volatile upstream
+
+Current census currentness status: **DRIFTED_ACTIVE_UPSTREAM**.
+
+`thebrazenbeard/vera-mono` is being actively advanced by a parallel build lane.
+
+Mechanism-reviewed bound head:
+`519c0f407d4061a7725ae0d4eca30c5d26e6cbf8`
+
+Later live head observed:
+`a2175b9aa32e2e119126972dcc093671f4af3f88`
+
+The four-commit delta from the bound head contained Vera-specific affect/runtime work and no new general Sol mechanism.
+
+The census therefore keeps:
+- the exact mechanism-review provenance at `519c0f4…`;
+- the later live drift as a separate observation;
+- membership/visibility/default-branch/archive monitoring active;
+- exact all-head currentness **false** until a later explicit refresh.
+
+The read-only currentness checker reports this class as `DRIFTED_VOLATILE` and still exits nonzero. Volatility is explained, not excused.
