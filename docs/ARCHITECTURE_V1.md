@@ -113,6 +113,15 @@ Capabilities should be represented as explicit envelopes rather than undifferent
 
 Capability state is multidimensional. Do not collapse architectural presence, activation, implementation, health, maturity, qualification, and authorization into one boolean. A capability can exist while remaining disabled, unhealthy, immature, unimplemented, unqualified, or unauthorized.
 
+Material state families should not share one global consistency policy merely because they coexist in the same continuity system. Where useful, a state family should declare:
+- semantic owner;
+- consistency/currentness requirement;
+- write policy;
+- stale-read policy;
+- reconciliation rule;
+- recovery fence;
+- whether the state is continuity-bearing.
+
 Where applicable, an envelope should state:
 - observation versus mutation class;
 - authorization requirement;
@@ -136,6 +145,11 @@ After an ambiguous effect, inspect the target before retrying. If the intended e
 For durable state mutation, prefer atomic replacement and a recoverable prior state when the storage substrate permits it.
 
 Before replacing, controlling, or heavily theorizing about a real external system, first learn the system that actually exists. Observation and uncertainty should precede control, with authority graduating only as reality-contact evidence supports it.
+
+Where risk grows with real-world capability, prefer a qualification ladder rather than jumping from conceptual competence to actuation. A generic pattern is:
+`synthetic -> offline/replay -> live read-only -> human-assisted -> supervised effect -> tightly bounded autonomy`.
+
+The exact ladder is domain-specific and may stop at any earlier stage.
 
 For semantic retrieval, preserve exact structured filters and provenance alongside similarity rather than treating embedding proximity as sufficient evidence.
 
@@ -235,3 +249,7 @@ When mapping meaning across systems or representations:
 - treat formal notation as a carrier whose meaning still requires grounding.
 
 Qualification of a proxy, training package, worker, model, or generated artifact does not automatically qualify the target runtime that will actually act.
+
+Evaluation evidence has exposure lineage. Once a test failure, holdout case, or benchmark subject is inspected and used to modify the successor, it becomes regression evidence for that successor. It may remain useful, but it is no longer untouched independent holdout/generalization evidence.
+
+A useful donor mechanism is not automatically shared infrastructure. Promotion into a general Sol subsystem should require evidence that the abstraction reduces net complexity, preserves semantic ownership, has an explicit fallback/rollback path, and survives hostile review.
