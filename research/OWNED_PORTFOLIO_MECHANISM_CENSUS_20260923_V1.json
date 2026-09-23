@@ -11,7 +11,7 @@
     "all_names_sha256": "530890b18b6059c25626165cf851ad3e06ebf9ba5c1515befddbdb3d5c4eea63",
     "digest_algorithm": "SHA-256 over lexicographically sorted repository_full_name values, UTF-8/ASCII, one name per line with trailing newline",
     "privacy_rule": "Private repository identities are intentionally omitted from this public census. The count and digest bind the inspected private inventory without publishing its names.",
-    "public_default_heads_sha256": "46fb42b01e28d236c28b7bbcbf258a3ec11ff74b217db7dec2482d2ebb4ae16a",
+    "public_default_heads_sha256": "b97f8b70199dae2e0ce0e697dbcddb10c5bd7a8e32251f1847bb5268034f969c",
     "head_digest_algorithm": "SHA-256 over lexicographically sorted repository_full_name@default_head_sha values, UTF-8/ASCII, one per line with trailing newline",
     "currentness_status": "EXACT_SNAPSHOT_AT_OBSERVED_CUT",
     "currentness_rule": "Any change in owner repository membership, live visibility, default branch, archive state, or any bound public default-head SHA invalidates exact-currentness of this census.",
@@ -647,14 +647,20 @@
     },
     {
       "repo": "thebrazenbeard/vera-mono",
-      "ref": "d1067c2f312a9862480cd238bd770b7125010c1f",
+      "ref": "1eec28efc7940bc5a52ef27288eacbfc34b111cc",
       "disposition": "ADAPT_NOW",
       "mechanisms": [
         "donor_repository_as_research_and_provenance_not_runtime_dependency",
         "absorb_required_mechanisms_into_authoritative_codebase",
-        "preserve_exact_donor_provenance_without_cross_repo_runtime_orchestration"
+        "preserve_exact_donor_provenance_without_cross_repo_runtime_orchestration",
+        "memory_cas_head_prevents_stale_admission",
+        "operation_idempotency_bound_to_request_digest",
+        "supersession_explicit_not_overwrite",
+        "authority_and_privacy_refs_are_bindings_not_self_authenticating",
+        "exact_subject_single_use_authority_evidence",
+        "precise_temporal_claim_requires_verified_evidence_or_unknown"
       ],
-      "reason": "Useful monorepo boundary: external repositories may inform/admit mechanisms without becoming runtime identity or source dependencies.",
+      "reason": "Current head materially expands the monorepo with memory and coordination implementations. Admit CAS/idempotency/supersession and exact-subject verification mechanics; overlapping bus/temporal semantics revalidate existing Sol mechanisms rather than counting as independent support.",
       "ref_role": "DEFAULT_BRANCH_HEAD_AT_OBSERVED_CUT",
       "default_branch": "main",
       "visibility": "public",
@@ -881,6 +887,10 @@
       "thebrazenbeard/meso-crct": {
         "previous": "d1f32c2c3370a5519d62afb78e93d70004529903",
         "current": "f5784fde4d65be7bfbbfb740163f8726b808460f"
+      },
+      "thebrazenbeard/vera-mono": {
+        "previous": "d1067c2f312a9862480cd238bd770b7125010c1f",
+        "current": "1eec28efc7940bc5a52ef27288eacbfc34b111cc"
       }
     },
     "rule": "Removed subjects leave current census authority but retain historical provenance elsewhere; live owner inventory and public default heads define currentness."
