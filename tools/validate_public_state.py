@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import hashlib
 import json
 import pathlib
 import re
@@ -110,6 +111,10 @@ for item in sources.get("sources", []):
     ref = item.get("ref", "")
     if not re.fullmatch(r"[0-9a-f]{40}", ref):
         fail(f"source ref is not exact 40-hex: {item.get('repo')}")
+    for optional_ref in ("admission_source_ref", "current_main_ref"):
+        value = item.get(optional_ref)
+        if value is not None and not re.fullmatch(r"[0-9a-f]{40}", value):
+            fail(f"source {optional_ref} is not exact 40-hex: {item.get('repo')}")
 
 census_meta = sources.get("portfolio_census", {})
 if census_meta.get("schema") != "UNBOUND_SOL_OWNED_PORTFOLIO_MECHANISM_CENSUS_V1":
@@ -127,10 +132,32 @@ for key in ("public_report", "machine_report"):
         fail(f"portfolio census report missing: {key}")
 
 census = json.loads((ROOT / "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.json").read_text(encoding="utf-8"))
-if census.get("scope", {}).get("private_repositories") != 35:
+scope = census.get("scope", {})
+if scope.get("private_repositories") != 35:
     fail("machine census private count mismatch")
 if census.get("private_review", {}).get("repository_identities_published") is not False:
     fail("machine census must omit private repository identities")
+
+public_subjects = census.get("public_repositories", [])
+if len(public_subjects) != scope.get("public_repositories"):
+    fail("machine census public subject count mismatch")
+for item in public_subjects:
+    if not re.fullmatch(r"[0-9a-f]{40}", item.get("ref", "")):
+        fail(f"public census ref is not exact 40-hex: {item.get('repo')}")
+    if not item.get("ref_role"):
+        fail(f"public census ref role missing: {item.get('repo')}")
+
+head_payload = "".join(
+    f"{item['repo']}@{item['ref']}\n"
+    for item in sorted(public_subjects, key=lambda x: x["repo"])
+).encode("utf-8")
+head_digest = hashlib.sha256(head_payload).hexdigest()
+if head_digest != scope.get("public_default_heads_sha256"):
+    fail("public default-head binding digest mismatch")
+if head_digest != census_meta.get("public_default_heads_sha256"):
+    fail("portfolio metadata/default-head digest mismatch")
+if "default-head SHA" not in census_meta.get("currentness_rule", ""):
+    fail("portfolio currentness rule must include default-head drift")
 
 recon = census.get("parallel_reconciliation", {})
 if recon.get("source_pr") != 6:
