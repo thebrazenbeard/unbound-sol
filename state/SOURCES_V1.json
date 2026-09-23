@@ -526,9 +526,17 @@
     "machine_report": "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.json",
     "private_repo_identifiers_published": false,
     "public_default_heads_sha256": "578803ff607d3cbdfa82d0ed679c5115d63f749d4faebec993c44f38874e6569",
-    "currentness_rule": "Any change in owner-repository membership, live visibility, default branch, archive state, or any bound public default-head SHA invalidates exact-currentness of the census snapshot.",
-    "currentness_status": "EXACT_SNAPSHOT_AT_OBSERVED_CUT",
-    "visibility_rule": "Live GitHub repository visibility is authoritative for current access-state claims; stale README privacy wording is not."
+    "currentness_rule": "Bound snapshot is exact for its observed cut; active volatile upstream head drift remains fail-closed until refreshed.",
+    "currentness_status": "DRIFTED_ACTIVE_UPSTREAM",
+    "visibility_rule": "Live GitHub repository visibility is authoritative for current access-state claims; stale README privacy wording is not.",
+    "volatile_upstreams": [
+      {
+        "repo": "thebrazenbeard/vera-mono",
+        "bound_mechanism_review_head": "519c0f407d4061a7725ae0d4eca30c5d26e6cbf8",
+        "latest_live_head_observed": "a2175b9aa32e2e119126972dcc093671f4af3f88",
+        "status": "ACTIVE_VOLATILE_UPSTREAM"
+      }
+    ]
   },
   "private_source_mechanism_classes": {
     "observed_date": "2026-09-23",
