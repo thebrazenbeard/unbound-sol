@@ -1,0 +1,67 @@
+{
+  "schema": "UNBOUND_SOL_MODEL_PROVIDER_ADVERTISEMENT_V1",
+  "provider_id": "synthetic-local-provider",
+  "provider_kind": "LOCAL",
+  "runtime": {
+    "name": "synthetic-runtime",
+    "version": "0.0.0-example",
+    "artifact_digest": "sha256:1111111111111111111111111111111111111111111111111111111111111111"
+  },
+  "observed_at": "2030-01-01T00:00:10Z",
+  "health": {
+    "status": "READY",
+    "checked_at": "2030-01-01T00:00:00Z",
+    "details": "Synthetic fixture only."
+  },
+  "dependency_role": "OPTIONAL_INSTRUMENT",
+  "replacement_plan": null,
+  "authority_ceiling": "NO_EFFECT_AUTHORITY",
+  "capabilities": [
+    {
+      "name": "reasoning",
+      "declared": true,
+      "active": true,
+      "healthy": true,
+      "qualified": true,
+      "qualification_ref": "synthetic:qualification",
+      "operations": [
+        "INFER",
+        "TOOL_CALL_PROPOSAL"
+      ],
+      "output_evidence_classes": [
+        "GENERATED_INFERENCE",
+        "GENERATED_PROPOSAL"
+      ]
+    }
+  ],
+  "provenance": {
+    "status": "COMPLETE",
+    "model_id": "synthetic-model",
+    "model_source": "example/synthetic",
+    "model_revision": "example-revision",
+    "model_artifact_digest": "sha256:2222222222222222222222222222222222222222222222222222222222222222",
+    "adapter_digest": null,
+    "prompt_template_id": "synthetic-template-v1",
+    "missing_fields": []
+  },
+  "replay": {
+    "semantics": "NONDETERMINISTIC_REEXECUTION",
+    "idempotency_key_supported": true
+  },
+  "privacy": {
+    "prompt_egress": "LOCAL_ONLY",
+    "retention_status": "NO_PROVIDER_RETENTION",
+    "notes": "Synthetic fixture only."
+  },
+  "currentness": {
+    "max_age_seconds": 300,
+    "semantics": "ADVERTISEMENT_IS_OBSERVATION_NOT_PERMANENT_TRUTH"
+  },
+  "resource_envelope": {
+    "max_context_tokens": 8192,
+    "max_output_tokens": 1024,
+    "timeout_seconds": 60,
+    "concurrency_limit": 1,
+    "retry_limit": 1
+  }
+}
