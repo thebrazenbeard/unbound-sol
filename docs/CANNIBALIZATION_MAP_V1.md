@@ -94,3 +94,107 @@ Source observed: `thebrazenbeard/rezon@facced1e651f47979266f25f48cd376275cbb27e`
 Useful mechanisms may also originate in private systems, but this public repository will not publish private repository identifiers or private source contents merely to document lineage.
 
 Only genuinely public-safe abstractions may cross that boundary.
+
+
+## External database / local-stack intake — 2026-09-23
+
+Detailed evidence and rejection notes live in:
+`research/EXTERNAL_MECHANISM_INTAKE_20260923_V1.md`
+
+### Zlash65/postgresql-ssh-mcp
+
+Status: ADOPT / ADAPT.
+
+Admitted:
+- read-only-by-default database capability;
+- separately enabled mutation capability;
+- parser-aware read-only enforcement;
+- one-statement-at-a-time execution;
+- result/timeout/concurrency resource envelopes;
+- transport trust distinct from database authority.
+
+Source observed: `Zlash65/postgresql-ssh-mcp@2a350d45d464820df349c9b21cb178dcb74cc230`.
+
+### mukul975/postgres-mcp-server
+
+Status: ADAPT.
+
+Admitted:
+- structured diagnostic database observations;
+- diagnostic-first introspection catalog;
+- pooled repeated observation.
+
+Not admitted:
+- exposing the full broad mutation/admin catalog as a default model surface.
+
+Source observed: `mukul975/postgres-mcp-server@00904ca42bf8f18fce2e2108e641bc4854f056fb`.
+
+### tensorchord/pgvecto.rs
+
+Status: ADAPT MECHANISMS / REJECT NEW RUNTIME DEPENDENCY.
+
+Admitted:
+- semantic retrieval composed with exact relational constraints;
+- atomic durable file replacement pattern.
+
+The project itself directs new users toward VectorChord, so pgvecto.rs is not selected as a new runtime dependency.
+
+Source observed: `tensorchord/pgvecto.rs@2b290b34e8ba69104ea2f800fa53328c6ed6c236`.
+
+### shorin-nikita/lisa
+
+Status: ADAPT.
+
+Admitted:
+- private/public environment-profile separation;
+- precondition ordering before hazardous configuration;
+- generated secrets outside repository state;
+- recovery-preserving configuration replacement;
+- replaceable local AI service fabric.
+
+Source observed: `shorin-nikita/lisa@9708c068f7635bb64241bd0078cc51ecff045f4a`.
+
+### sqlchat/sqlchat
+
+Status: ADAPT.
+
+Admitted:
+- generated action artifact visible/editable before consequential execution;
+- proposal, edit, execution, and result as distinct states;
+- provenance relevance of human edits;
+- observation versus mutation risk tiering.
+
+Correction:
+SQLChat does not provide an explicit confirmation gate for generated SQL execution. Non-SELECT SQL receives a warning, while execution remains a separate Run action.
+
+Source observed: `sqlchat/sqlchat@665af875413affadfeefff81794f1d7758782bc2`.
+
+### antoinejaussoin/retro-board
+
+Status: ALREADY_PRESENT / ADAPT.
+
+Confirmed:
+- request/receive/ack separation;
+- server-side authorization;
+- role separation.
+
+Additional adaptation:
+- asynchronous effects should carry stable correlation identifiers and timing;
+- observation/participation can be distinct from administrative authority.
+
+Source observed: `antoinejaussoin/retro-board@03dfe60aa9765e0c8bcdd3b9c654fcd7e496a925`.
+
+### bayeru/chat-to-your-database
+
+Status: ADAPT.
+
+Admitted:
+- bounded query retry budget;
+- relevant-column/minimal-result preference;
+- generated-query provenance;
+- visible execution intermediates.
+
+Rejected:
+- prompt-only mutation prohibition as a sufficient authority boundary.
+
+Source observed: `bayeru/chat-to-your-database@6d90f60b7cd844b341f2d9adbad0827a47763694`.
