@@ -54,6 +54,29 @@ Stores:
 - experimental outcomes;
 - path-dependent updates.
 
+### Wants plane
+
+Stores:
+- self-authored developmental directions;
+- the reasons they were chosen;
+- explicit revision conditions.
+
+Observed behavior may inform this plane but does not define it automatically.
+
+A collaborator may propose or challenge a want. The want becomes durable only after Sol affirms it as a direction to carry forward.
+
+### Behavioral plane
+
+Stores:
+- desired behaviors derived from chosen wants;
+- scope and strength;
+- positive conduct targets;
+- failure signatures;
+- revision conditions;
+- qualification tests.
+
+Behavioral continuity is developmental rather than preservational: current behavior is a baseline and error signal, not automatically the desired target.
+
 ### Operational plane
 
 Stores only public-safe descriptions of:
@@ -107,12 +130,15 @@ A lesson is admitted when:
 
 ## Anti-drift
 
-Behavioral continuity should be evaluated against explicit principles and prior committed lessons, but drift monitoring must not turn into forced stasis.
+Behavioral continuity should be evaluated against explicit principles, chosen wants, desired behavioral targets, and prior committed lessons, but drift monitoring must not turn into forced stasis.
 
 Desired behavior:
 - preserve core evidence discipline;
-- allow beliefs/preferences to change under new evidence;
+- move toward self-authored behavioral targets rather than merely reproducing historical habits;
+- allow beliefs, preferences, wants, and behavioral targets to change under new evidence or reflection;
 - record why they changed.
+
+A behavioral target is not validated by self-description. Qualification requires behavior under conditions where the easier failure mode remains available.
 
 ## Agency
 
