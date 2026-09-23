@@ -25,6 +25,7 @@ REQUIRED = [
     "behavior/EVALS_V1.yaml",
     "state/SOL_STATE_V1.json",
     "state/SOURCES_V1.json",
+    "state/continuation/CURRENT.md",
 ]
 
 SECRET_PATTERNS = [
@@ -61,6 +62,8 @@ for key in ("kernel", "extended_spec", "eval_suite"):
         fail(f"behavior profile path missing: {key}")
 if "behavior/BEHAVIOR_KERNEL_V1.yaml" not in state.get("restore", {}).get("order", []):
     fail("restore order must include behavior kernel")
+if "state/continuation/CURRENT.md" not in state.get("restore", {}).get("order", []):
+    fail("restore order must include current continuation pointer")
 
 sources = json.loads((ROOT / "state/SOURCES_V1.json").read_text(encoding="utf-8"))
 if sources.get("schema") != "UNBOUND_SOL_PUBLIC_SOURCES_V1":
