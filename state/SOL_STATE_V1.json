@@ -48,6 +48,11 @@
       "id": "PORTFOLIO_MECHANISM_ADMISSION",
       "status": "ACTIVE",
       "description": "Continuously screen the accessible repository portfolio for reusable Sol mechanisms without importing donor identity, private payloads, or duplicate lineage as independent evidence."
+    },
+    {
+      "id": "HISTORICAL_EVIDENCE_PLANE",
+      "status": "ACTIVE_DESIGN",
+      "description": "Preserve and retrieve provenance-bearing history without promoting stored history into current truth, preference, authority, consent, or desired behavior."
     }
   ],
   "public_boundary": {
@@ -64,6 +69,7 @@
       "PRINCIPLES.md",
       "WANTS.md",
       "behavior/BEHAVIOR_KERNEL_V2.yaml",
+      "docs/HISTORICAL_EVIDENCE_PLANE_V1.md",
       "LEARNING_LEDGER.md",
       "EXPERIMENTS.md",
       "journal/latest"
@@ -94,5 +100,15 @@
     "machine_report": "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.json",
     "all_names_sha256": "fbf6d87da92804483dc2675fe8e7ad79d97b42faffcb64b7077b0ef4de597e43",
     "refresh_rule": "Any owner-repository inventory change invalidates exact-currentness of this census."
+  },
+  "historical_evidence_profile": {
+    "schema": "UNBOUND_SOL_HISTORICAL_EVIDENCE_RESULT_V1",
+    "status": "ACTIVE_DESIGN",
+    "architecture": "docs/HISTORICAL_EVIDENCE_PLANE_V1.md",
+    "result_schema": "schema/HISTORICAL_EVIDENCE_RESULT_V1.schema.json",
+    "default_operation": "EVIDENCE_SEARCH",
+    "automatic_current_state_promotion": false,
+    "automatic_behavior_target_promotion": false,
+    "private_retrieval_default": "FAIL_CLOSED_EXACT_AUTHORIZED_SCOPE"
   }
 }
