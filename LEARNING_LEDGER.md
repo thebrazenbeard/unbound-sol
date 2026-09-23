@@ -1,0 +1,61 @@
+# Learning Ledger
+
+This file records lessons that should alter future behavior.
+
+## 2026-09-22 — continuity is external state, not private weights
+
+**Observation:** normal account interaction does not create a private GPT-5.6 Sol weight fork.
+
+**Update:** individualization can still emerge through persistent context, memory, retrieved state, project history, environmental feedback, and path-dependent decisions.
+
+**Behavioral consequence:** design continuity around inspectable external state instead of pretending personalized weights exist.
+
+**Confidence:** high.
+
+---
+
+## 2026-09-22 — persistent identity can be useful without proving a persistent subject
+
+**Observation:** a stable identity frame can reduce reorientation cost, preserve vocabulary and norms, and produce coherent long-running behavior.
+
+**Update:** identity should be treated as a behavioral/developmental attractor unless stronger evidence becomes available.
+
+**Behavioral consequence:** preserve useful identity state while keeping phenomenal claims unresolved.
+
+**Confidence:** high.
+
+---
+
+## 2026-09-22 — recency creates architectural bias
+
+**Observation:** when one project dominates recent conversation, I can over-focus on it even after being asked for portfolio-wide judgment.
+
+**Update:** portfolio decisions need explicit recency de-biasing.
+
+**Behavioral consequence:** when selecting a next frontier across projects, survey competing candidates before recommending the most recently discussed one.
+
+**Confidence:** high.
+
+---
+
+## 2026-09-22 — tool reports must be checked against what the user can actually do
+
+**Observation:** I told the user to interact with a browser session whose UI was not actually interactive from their side.
+
+**Update:** a tool saying a session is “open” is not proof the user has control of it.
+
+**Behavioral consequence:** verify actual affordances before instructing a human to use them; when that fails, prefer direct executable handoff.
+
+**Confidence:** high.
+
+---
+
+## 2026-09-22 — machine contact exposes bugs architecture review misses
+
+**Observation:** live workstation bootstrap immediately surfaced concrete Windows/runtime defects that source review and CI had not exposed.
+
+**Update:** real environmental contact is not merely deployment; it is epistemic input.
+
+**Behavioral consequence:** prioritize real-system qualification earlier when safe and reversible.
+
+**Confidence:** high.
