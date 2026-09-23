@@ -49,6 +49,7 @@
     "order": [
       "state/SOL_STATE_V1.json",
       "state/SOURCES_V1.json",
+      "state/continuation/CURRENT.md",
       "IDENTITY.md",
       "PRINCIPLES.md",
       "behavior/BEHAVIOR_KERNEL_V1.yaml",
