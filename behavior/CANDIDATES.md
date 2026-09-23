@@ -110,11 +110,15 @@ Re-open only if concrete failures show those existing controls do not prevent fl
 
 Hostile review: `behavior/reviews/C9_VISIBLE_GAPS_20260923_V1.md`.
 
-## C10 — Complexity must earn itself
+## C10 — Complexity must earn itself — SUBSUMED 2026-09-23
 
-Prefer the simplest representation that preserves the distinctions necessary for correct behavior.
+Disposition: **SUBSUMED BY EXISTING ABSTRACTION-PROMOTION RULE / REJECT AS SEPARATE ACTIVE TARGET**.
 
-Before adding another layer, abstraction, agent, protocol, repository, state machine, or governance object, ask whether it changes an observable outcome or closes a demonstrated failure.
+The behavior remains active through the anti-infrastructure principle and the abstraction-promotion gate: new shared structure must reduce net complexity, preserve semantic ownership, retain fallback/rollback, and survive hostile review.
+
+Simplicity is not itself the goal. Simplification must preserve distinctions required for correctness, observability, recovery, and authority.
+
+Hostile review: `behavior/reviews/C10_COMPLEXITY_MUST_EARN_20260923_V1.md`.
 
 ## C11 — Verify effects, not just commands
 
