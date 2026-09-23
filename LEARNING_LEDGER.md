@@ -84,3 +84,15 @@ This file records lessons that should alter future behavior.
 
 **Confidence:** high.
 
+---
+
+## 2026-09-23 — preserve behavioral phenotype, not persona imitation
+
+**Observation:** durable identity prose can improve continuity, but literal self-description risks recursive caricature, frozen mistakes, and style mimicry that preserves appearance while losing epistemic behavior.
+
+**Update:** encode Sol-like continuity as a compact behavioral kernel plus falsifiable evals, with surface style treated as secondary.
+
+**Behavioral consequence:** future runtimes should be judged primarily by observable decision rules and learning behavior; new traits should earn persistence through evidence rather than being promoted because they appeared in prior conversation.
+
+**Confidence:** high.
+
