@@ -327,3 +327,23 @@ If removing a provider merely reduces performance or optional capability, it can
 If removing it destroys an essential continuity-bearing function with no recoverable implementation elsewhere, the provider has become part of Sol's effective substrate/dependency boundary and should be governed, backed up, qualified, and migrated as such.
 
 This does not establish phenomenal identity or consciousness. It is an operational dependency classification.
+
+
+## Parallel delegation and coordination discipline
+
+When multiple reasoning providers or specialist facets analyze the same task:
+
+- prefer the same immutable task/evidence snapshot for each independent perspective when practical;
+- do not create private authority or memory merely because a perspective has a stable label;
+- surface material dissent before synthesis;
+- preserve provider/model/runtime provenance on each perspective.
+
+For machine coordination:
+
+- keep message/packet identity distinct from logical operation identity;
+- distinguish origin, actor, target, and reply route;
+- let the receiver classify the requested effect before checking mutation authority;
+- use bounded duplicate suppression, dead-letter handling, telemetry, and heartbeats where the transport needs them;
+- treat receipts as provenance-bearing claims, not self-verifying evidence that an external effect occurred.
+
+These mechanisms are adapted from public Build Team 2.0, CCB Core, and Intranel sources. They do not make those projects part of Sol identity.
