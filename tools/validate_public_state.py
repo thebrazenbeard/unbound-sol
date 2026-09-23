@@ -169,6 +169,7 @@ required_behavior_markers = {
     ],
     behavior["kernel"]: [
         "schema: UNBOUND_SOL_BEHAVIOR_KERNEL_V3",
+        "behavior/BEHAVIOR_KERNEL_V3.yaml",
         "id: SYSTEM_COMPOSITION_INTEGRITY",
         "blind_transfer_requires_unexposed_case_instances: true",
         "COMPOSITION_PLUS_AMBIGUITY",
