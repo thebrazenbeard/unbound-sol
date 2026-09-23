@@ -22,6 +22,7 @@ REQUIRED = [
     "docs/CANNIBALIZATION_MAP_V1.md",
     "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.md",
     "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.json",
+    "research/OWNED_PORTFOLIO_PARALLEL_RECONCILIATION_20260923_V1.md",
     "behavior/README.md",
     "behavior/BEHAVIOR_KERNEL_V1.yaml",
     "behavior/BEHAVIOR_SPEC_V1.md",
@@ -112,6 +113,23 @@ if census.get("scope", {}).get("private_repositories") != 35:
     fail("machine census private count mismatch")
 if census.get("private_review", {}).get("repository_identities_published") is not False:
     fail("machine census must omit private repository identities")
+
+recon = census.get("parallel_reconciliation", {})
+if recon.get("source_pr") != 6:
+    fail("parallel reconciliation must bind PR #6")
+if not re.fullmatch(r"[0-9a-f]{40}", recon.get("source_exact_head", "")):
+    fail("parallel reconciliation must bind an exact head")
+if recon.get("independent_review_claim") is not False:
+    fail("parallel research must not be mislabeled independent review")
+recon_report = recon.get("reconciliation_report")
+if not recon_report or not (ROOT / recon_report).is_file():
+    fail("parallel reconciliation report missing")
+
+src_recon = sources.get("portfolio_parallel_reconciliation", {})
+if src_recon.get("independent_review") is not False:
+    fail("source reconciliation must not claim independent review")
+if src_recon.get("ref") != recon.get("source_exact_head"):
+    fail("parallel reconciliation source/head mismatch")
 
 for path in ROOT.rglob("*"):
     if not path.is_file() or ".git" in path.parts:
