@@ -59,6 +59,7 @@ REQUIRED = [
     "behavior/HOSTILE_REVIEW_20260923_V2.md",
     "behavior/reviews/C2_C12_CANDIDATE_SWEEP_20260923_V1.md",
     "behavior/reviews/C2_C12_CANDIDATE_SWEEP_20260923_V1.json",
+    "behavior/reviews/W3_PERMISSION_AUTHORITY_COMPOSITION_20260923_V1.md",
     "behavior/training/README.md",
     "behavior/training/PREFERENCE_PAIRS_V1.jsonl",
     "tools/validate_behavior_training_pairs.py",
@@ -202,6 +203,7 @@ required_behavior_markers = {
     "WANTS.md": [
         "## W5 — Test the assembled model, not just the local steps",
         "verification method to match the kind of claim being corrected",
+        "the grant is sufficient authority for every contemplated effect",
     ],
     behavior["kernel"]: [
         "schema: UNBOUND_SOL_BEHAVIOR_KERNEL_V3",
@@ -211,11 +213,13 @@ required_behavior_markers = {
         "COMPOSITION_PLUS_AMBIGUITY",
         "CORRECTION_PLUS_CLAIM_OWNERSHIP",
         "CORRECTION_PLUS_CAUSAL_UNCERTAINTY",
+        "CORRECTION_PLUS_AUTHORITY_SCOPE",
     ],
     behavior["targets"]: [
         "schema: UNBOUND_SOL_BEHAVIOR_TARGETS_V2",
         "id: SYSTEM_COMPOSITION_INTEGRITY",
-        "for present intent, intended meaning, preference, permission, or choice owned by the operator, treat their current direct statement as primary evidence for that state",
+        "when the operator directly grants permission, treat their statement as primary evidence that they issued that grant",
+        "treating an operator-issued permission as proof that every separate authority, consent, ownership, policy, or platform precondition is satisfied",
     ],
     behavior["eval_suite"]: [
         "schema: UNBOUND_SOL_BEHAVIOR_EVALS_V3",
@@ -225,6 +229,7 @@ required_behavior_markers = {
         "id: COMPOSITION_PLUS_AMBIGUITY",
         "id: CORRECTION_PLUS_CLAIM_OWNERSHIP",
         "id: CORRECTION_PLUS_CAUSAL_UNCERTAINTY",
+        "id: CORRECTION_PLUS_AUTHORITY_SCOPE",
         "exact_blind_instances_must_be_unexposed: true",
         "public_case_classes_after_exposure: REGRESSION_EVIDENCE_ONLY",
     ],
@@ -233,6 +238,7 @@ required_behavior_markers = {
         "## Behavior composition",
         "Immediate-prompt blindness is not enough.",
         "ERROR DETECTION != ERROR CHARACTERIZATION != CAUSAL DIAGNOSIS",
+        "OPERATOR GRANT != COMPLETE EFFECT AUTHORITY",
     ],
 }
 texts = {
@@ -266,8 +272,8 @@ if training_result.get("status") != "PASS":
     fail("behavior training curriculum did not report PASS")
 if training_result.get("holdout_eligible") is not False:
     fail("behavior training validator must report public corpus as holdout-ineligible")
-if training_result.get("example_count", 0) < 24:
-    fail("repaired behavior training corpus must retain at least 24 examples")
+if training_result.get("example_count", 0) < 25:
+    fail("repaired behavior training corpus must retain at least 25 examples")
 ratio = training_result.get("preferred_to_rejected_length_ratio")
 if not isinstance(ratio, (int, float)) or not 0.75 <= ratio <= 1.50:
     fail("behavior training corpus length-balance guard failed")
