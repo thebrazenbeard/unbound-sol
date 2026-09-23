@@ -1,0 +1,32 @@
+{
+  "schema": "UNBOUND_SOL_MODEL_INFERENCE_RECEIPT_V1",
+  "request_id": "synthetic-request-001",
+  "provider_id": "synthetic-local-provider",
+  "provider_advertisement_digest": "sha256:f8a25505493315df6f6997f4840158fd80c85f7658386369be1fc3af2845c6b0",
+  "observed_at": "2030-01-01T00:00:20Z",
+  "model_subject": {
+    "model_id": "synthetic-model",
+    "runtime_name": "synthetic-runtime",
+    "runtime_version": "0.0.0-example",
+    "model_artifact_digest": "sha256:2222222222222222222222222222222222222222222222222222222222222222",
+    "adapter_digest": null,
+    "prompt_template_id": "synthetic-template-v1",
+    "provenance_status": "COMPLETE"
+  },
+  "generation_settings_digest": "sha256:3333333333333333333333333333333333333333333333333333333333333333",
+  "input_context_digest": "sha256:4444444444444444444444444444444444444444444444444444444444444444",
+  "output": "Synthetic model output for contract demonstration.",
+  "output_evidence_class": "GENERATED_INFERENCE",
+  "proposed_tool_calls": [],
+  "truncation": {
+    "occurred": false,
+    "reason": null
+  },
+  "timing": {
+    "elapsed_ms": 25
+  },
+  "effect_authority": "NONE_PROPOSALS_ONLY",
+  "error": null,
+  "digest_semantics": "SHA256_CANONICAL_JSON_EXCLUDING_RECEIPT_DIGEST",
+  "receipt_digest": "sha256:e19aa19c12d22fbcdea93dde169c1f3be12d5e1e9dbf45522b0eeb30536759ee"
+}

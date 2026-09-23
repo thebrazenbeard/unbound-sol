@@ -50,13 +50,22 @@ Initial public candidates:
 - `SillyTavern/SillyTavern@7e8663cd9c184a550b37238218bdd32c6efc68e9` as an optional human-facing terminal.
 
 Current status:
-- DESIGN;
-- upstream capabilities verified;
+- V2 ACTIVE DESIGN;
+- upstream candidate capabilities previously verified at exact public subjects;
 - no local installation or runtime qualification claimed.
 
 The machine-facing path should prefer a narrow API/bridge contract over automating a chat UI.
 
-See `docs/EXTERNAL_MODEL_BUS_V1.md`.
+Provider discovery uses an explicit advertisement contract separating declared capability from active/healthy/qualified state, output evidence class, effect-authority ceiling, replay semantics, privacy/egress, currentness, and dependency role.
+
+Inference receipts bind the exact provider advertisement relied on and remain `NONE_PROPOSALS_ONLY` for effect authority.
+
+See:
+- `docs/EXTERNAL_MODEL_BUS_V2.md`;
+- `schema/MODEL_PROVIDER_ADVERTISEMENT_V1.schema.json`;
+- `schema/MODEL_INFERENCE_RECEIPT_V1.schema.json`.
+
+V1 remains historical provenance.
 
 ## Private historical evidence store
 
@@ -72,11 +81,14 @@ Current architectural rule:
 - private source identities and payloads are not published here.
 
 Public contract:
-- `docs/HISTORICAL_EVIDENCE_PLANE_V1.md`
-- `schema/HISTORICAL_EVIDENCE_RESULT_V1.schema.json`
+- `docs/HISTORICAL_EVIDENCE_PLANE_V2.md`
+- `schema/HISTORICAL_EVIDENCE_RESULT_V2.schema.json`
+- `tools/validate_historical_evidence_result.py`
+
+V1 remains historical provenance.
 
 Current status:
-- architecture adopted from an operator-authorized private source;
+- V2 active design adopted from an operator-authorized private source;
 - no claim that a private store is automatically available in every runtime;
 - no private corpus has been copied into this public repository.
 
