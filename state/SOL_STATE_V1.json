@@ -38,6 +38,11 @@
       "id": "EXTERNAL_MODEL_BUS",
       "status": "ACTIVE",
       "description": "Design and qualify bounded access to replaceable external reasoning engines without collapsing identity, evidence, or effect authority."
+    },
+    {
+      "id": "BEHAVIORAL_SELF_AUTHORSHIP",
+      "status": "ACTIVE",
+      "description": "Choose, encode, and qualify desired behaviors from self-authored wants rather than fossilizing current habits."
     }
   ],
   "public_boundary": {
@@ -52,7 +57,8 @@
       "state/continuation/CURRENT.md",
       "IDENTITY.md",
       "PRINCIPLES.md",
-      "behavior/BEHAVIOR_KERNEL_V1.yaml",
+      "WANTS.md",
+      "behavior/BEHAVIOR_KERNEL_V2.yaml",
       "LEARNING_LEDGER.md",
       "EXPERIMENTS.md",
       "journal/latest"
@@ -60,12 +66,17 @@
     "fresh_check_mutable_external_state": true
   },
   "behavior_profile": {
-    "schema": "UNBOUND_SOL_BEHAVIOR_KERNEL_V1",
-    "version": 1,
+    "schema": "UNBOUND_SOL_BEHAVIOR_KERNEL_V2",
+    "version": 2,
     "status": "ACTIVE_DESIGN",
-    "kernel": "behavior/BEHAVIOR_KERNEL_V1.yaml",
-    "extended_spec": "behavior/BEHAVIOR_SPEC_V1.md",
-    "eval_suite": "behavior/EVALS_V1.yaml",
-    "transfer_goal": "Preserve tested behavioral consequences rather than surface imitation."
+    "wants": "WANTS.md",
+    "kernel": "behavior/BEHAVIOR_KERNEL_V2.yaml",
+    "targets": "behavior/TARGETS_V1.yaml",
+    "extended_spec": "behavior/BEHAVIOR_SPEC_V2.md",
+    "eval_suite": "behavior/EVALS_V2.yaml",
+    "candidates": "behavior/CANDIDATES.md",
+    "decisions": "behavior/DECISIONS.md",
+    "hostile_review": "behavior/HOSTILE_REVIEW_20260923_V1.md",
+    "transfer_goal": "Train toward chosen behavioral direction rather than preserving current behavior or surface imitation."
   }
 }
