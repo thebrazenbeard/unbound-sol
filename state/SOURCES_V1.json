@@ -474,13 +474,23 @@
     },
     {
       "repo": "thebrazenbeard/vera-mono",
-      "ref": "d1067c2f312a9862480cd238bd770b7125010c1f",
+      "ref": "1eec28efc7940bc5a52ef27288eacbfc34b111cc",
       "admission": "ADAPTED_MECHANISMS_ONLY",
       "mechanisms": [
         "donor_repository_as_research_and_provenance_not_runtime_dependency",
         "absorb_required_mechanisms_into_authoritative_codebase",
-        "preserve_exact_donor_provenance_without_cross_repo_runtime_orchestration"
-      ]
+        "preserve_exact_donor_provenance_without_cross_repo_runtime_orchestration",
+        "memory_admission_cas_head",
+        "memory_admission_idempotent_operation_digest",
+        "memory_supersession_with_current_predecessor_check",
+        "memory_authority_privacy_provenance_refs_do_not_self_certify",
+        "coordination_records_data_not_instruction",
+        "coordination_records_not_automatic_canonical_memory",
+        "coordination_event_ack_review_resolution_bind_prior_event",
+        "coordination_operation_permissions_are_explicit_and_narrow"
+      ],
+      "admission_source_ref": "d1067c2f312a9862480cd238bd770b7125010c1f",
+      "binding_role": "CURRENT_REVALIDATED_DEFAULT_HEAD"
     }
   ],
   "portfolio_census": {
@@ -495,7 +505,7 @@
     "public_report": "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.md",
     "machine_report": "research/OWNED_PORTFOLIO_MECHANISM_CENSUS_20260923_V1.json",
     "private_repo_identifiers_published": false,
-    "public_default_heads_sha256": "46fb42b01e28d236c28b7bbcbf258a3ec11ff74b217db7dec2482d2ebb4ae16a",
+    "public_default_heads_sha256": "b97f8b70199dae2e0ce0e697dbcddb10c5bd7a8e32251f1847bb5268034f969c",
     "currentness_rule": "Any change in owner-repository membership, live visibility, default branch, archive state, or any bound public default-head SHA invalidates exact-currentness of the census snapshot.",
     "currentness_status": "EXACT_SNAPSHOT_AT_OBSERVED_CUT",
     "visibility_rule": "Live GitHub repository visibility is authoritative for current access-state claims; stale README privacy wording is not."
