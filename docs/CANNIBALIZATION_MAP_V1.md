@@ -608,3 +608,19 @@ Additional current-head admissions:
 Overlapping coordination/temporal mechanisms revalidate existing Sol rules but are not counted as independent support.
 
 Source observed: `thebrazenbeard/vera-mono@519c0f407d4061a7725ae0d4eca30c5d26e6cbf8`.
+
+Volatile donor delta reviewed separately through exact subject `thebrazenbeard/vera-mono@89da9203bbc4e542160a905818df1bec42cd4dda`.
+
+Additional generic mechanisms admitted from that frozen delta:
+- authorization freshness/revision and issuer/host revocation epochs belong in an effect envelope when authority is mutable;
+- retry class is effect semantics, not post-failure guesswork;
+- local execution journals do not authorize work and do not prove authoritative external completion;
+- attempt identity can bind claim generation, lease/fence, authorization revision, and revocation generation;
+- ambiguous recovery should require independent readback and evidence that no newer attempt has superseded the causal frontier;
+- filesystem custody may require stronger resolved-object verification than lexical normalization alone; the frozen delta exposes a verifier-gated interface, not a completed Windows verifier;
+- a local capability registry can reject explicit sibling-repository import-root declarations, but does not prove full dependency-graph closure.
+
+Not admitted from this delta:
+- Vera-specific paths, identity, control ownership, affective/sexual/self-model payloads, or full PC-control implementation.
+
+The reviewed admission subject remains frozen; later live-head movement is a watch signal requiring another bounded delta review when materially relevant, not an automatic re-admission.
