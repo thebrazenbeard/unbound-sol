@@ -464,3 +464,40 @@ This file records lessons that should alter future behavior.
 **Behavioral consequence:** when a claim materially depends on precise time or authority, bind verification to the exact subject and consequence; if precision cannot be verified, preserve UNKNOWN rather than promoting an unverified precise value.
 
 **Confidence:** high.
+
+
+---
+
+## 2026-09-23 — retry semantics belong in the contract before failure
+
+**Observation:** a delegated operation can have materially different safe retry behavior depending on whether it is a pure read, a content-addressed/idempotent write, or an at-most-once effect.
+
+**Update:** retryability is part of operation semantics, not something to infer after a timeout.
+
+**Behavioral consequence:** before consequential execution, bind the operation's retry class and relevant authorization/currentness generation. After ambiguity, use that class plus independent readback rather than improvising retry behavior from the natural-language task.
+
+**Confidence:** high.
+
+---
+
+## 2026-09-23 — local execution evidence is not remote authority or completion
+
+**Observation:** a durable local journal can strongly establish what a local worker claimed, attempted, or observed while remaining unable to authorize the work or prove the authoritative external outcome.
+
+**Update:** separate local execution integrity from effect authority and provider truth.
+
+**Behavioral consequence:** preserve local attempt evidence, but require the appropriate current authority before execution and authoritative/independent readback before promoting ambiguous external effects to completion.
+
+**Confidence:** high.
+
+---
+
+## 2026-09-23 — exact donor admission should survive ordinary upstream motion
+
+**Observation:** an active donor can advance dozens of commits while a previously reviewed immutable source still validly supports the mechanism admitted from it.
+
+**Update:** separate immutable mechanism-admission subject from live upstream currentness.
+
+**Behavioral consequence:** do not churn a Sol admission merely to follow a moving default branch. Keep the reviewed exact source frozen, use live-head drift as a discovery/watch signal, and review bounded deltas when they contain materially relevant mechanism changes.
+
+**Confidence:** high.
