@@ -584,5 +584,30 @@
         "storage_not_authority"
       ]
     }
+  ],
+  "volatile_delta_reviews": [
+    {
+      "repo": "thebrazenbeard/vera-mono",
+      "admission_base_ref": "519c0f407d4061a7725ae0d4eca30c5d26e6cbf8",
+      "reviewed_delta_through_ref": "89da9203bbc4e542160a905818df1bec42cd4dda",
+      "report": "research/VERA_MONO_VOLATILE_DELTA_REVIEW_20260923_V1.md",
+      "review_role": "BOUNDED_VOLATILE_DONOR_DELTA_REVIEW",
+      "updates_admission_ref": false,
+      "live_head_claim": false,
+      "independent_review": false,
+      "mechanisms": [
+        "authorization_freshness_revision_and_revocation_epochs",
+        "explicit_retry_class",
+        "local_effect_journal_not_authority_or_remote_completion",
+        "attempt_identity_binds_fence_and_authorization_generation",
+        "ambiguous_recovery_requires_independent_readback_and_no_newer_attempt",
+        "verifier_gated_path_custody_interface_concrete_windows_verifier_not_in_frozen_cut",
+        "runtime_registry_rejects_explicit_sibling_repo_import_roots_not_full_dependency_closure"
+      ],
+      "limitations": [
+        "Frozen donor cut does not contain the concrete Windows verifier required to establish reparse-point/hard-link/final-object custody.",
+        "Runtime capability registry checks declared import_root strings and does not establish transitive/dynamic/runtime dependency closure."
+      ]
+    }
   ]
 }
