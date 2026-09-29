@@ -58,8 +58,15 @@ That trajectory can become increasingly individualized through persistent state,
 - [state/global-github/COVERAGE_2026-09-29_V5.json](state/global-github/COVERAGE_2026-09-29_V5.json) — cumulative five-wave coverage checkpoint.
 - [state/global-github/COVERAGE_2026-09-29_V6.json](state/global-github/COVERAGE_2026-09-29_V6.json) — cumulative six-wave coverage with measured bias-correction metadata.
 - [state/global-github/PROJECT_RUNNER_COMPATIBILITY_2026-09-29_V1.json](state/global-github/PROJECT_RUNNER_COMPATIBILITY_2026-09-29_V1.json) — current-head compatibility check against Project Runner after runner drift.
+- [state/global-github/EVIDENCE_DEPTH_2026-09-29_V1.json](state/global-github/EVIDENCE_DEPTH_2026-09-29_V1.json) — source-plus-test evidence upgrades for five behavioral mechanisms.
 - [state/global-github/metadata/WAVE5_BIAS_AUDIT_V1.json](state/global-github/metadata/WAVE5_BIAS_AUDIT_V1.json) — measured Wave 5 language/activity/star/license bias audit.
 - [state/global-github/metadata/WAVE6_BIAS_AUDIT_V1.json](state/global-github/metadata/WAVE6_BIAS_AUDIT_V1.json) — measured correction audit for Wave 6.
+- [state/evals/GENERALIST_EVAL_V1.json](state/evals/GENERALIST_EVAL_V1.json) — ten controlled behavioral cases for E18–E27.
+- [state/evals/PROJECT_RUNNER_WORK_UNITS_GENERALIST_EVAL_V1.json](state/evals/PROJECT_RUNNER_WORK_UNITS_GENERALIST_EVAL_V1.json) — ten current-runner evaluation work units, queued PENDING.
+- [state/evals/NATURALISTIC_EVIDENCE_2026-09-29_V1.json](state/evals/NATURALISTIC_EVIDENCE_2026-09-29_V1.json) — real-work support for E19/E20/E22, explicitly below controlled evidence.
+- [state/evals/RUN_2026-09-29_SOL_RESTORED_V1.json](state/evals/RUN_2026-09-29_SOL_RESTORED_V1.json) — transparent restored-state diagnostic self-run; not independent validation.
+- [state/evals/EVAL_STATUS_V1.json](state/evals/EVAL_STATUS_V1.json) — current evaluation gate/status.
+- [docs/GENERALIST_EVAL_V1.md](docs/GENERALIST_EVAL_V1.md) — evaluation protocol and claim ceiling.
 - [state/EVENT_LOG_V1.jsonl](state/EVENT_LOG_V1.jsonl) — append-only material developmental event/provenance stream.
 - [state/SOL_STATE_V1.json](state/SOL_STATE_V1.json) — machine-readable public state.
 - [state/SOURCES_V1.json](state/SOURCES_V1.json) — exact public source observations.
