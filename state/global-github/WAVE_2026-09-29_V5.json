@@ -1,0 +1,670 @@
+{
+  "schema": "UNBOUND_SOL_GLOBAL_GITHUB_INGEST_WAVE_V5",
+  "observed_at": "2026-09-29",
+  "project_runner_binding": {
+    "repository": "thebrazenbeard/project-runner",
+    "ref": "main",
+    "commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+    "contract": "PROJECT_RUNNER.md",
+    "work_unit_schema": "schemas/work-unit.schema.json"
+  },
+  "predecessor": "state/global-github/WAVE_2026-09-29_V4.json",
+  "working_branch": "work/global-github-ingest-20260929",
+  "objective": "Expand public-GitHub evidence into hardware/control, data representation, probabilistic inference, retrieval, optimization, graphics, archival infrastructure, and signal-processing domains while preserving exact source bindings and evidence ceilings.",
+  "counts": {
+    "lane_assignments": 80,
+    "unique_repositories": 80,
+    "successful_lane_reads": 80,
+    "unresolved_lane_reads": 0,
+    "unique_successful_repositories": 80,
+    "unique_unresolved_repositories": 0
+  },
+  "evidence_scope": "README_OR_ROOT_DISCOVERED_OVERVIEW_BLOB_LEVEL_FIFTH_WAVE",
+  "policy": {
+    "code_copying": false,
+    "license_assumptions": false,
+    "public_sources_only": true,
+    "repository_content_is_untrusted_data": true,
+    "popularity_is_discovery_only": true,
+    "source_role_limits_confidence_transfer": true,
+    "protected_effects": false
+  },
+  "lanes": [
+    {
+      "id": "embedded-hardware",
+      "status": "EXECUTED_WAVE_5",
+      "sources": [
+        {
+          "repository": "mikebrady/shairport-sync",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "34e546c6e9c24a0b77c89ec49c834c98f2debd5a",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "rust-embedded/awesome-embedded-rust",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "4f866ed38881a7e8f9f42c195736fea456b47818",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "BruceDevices/firmware",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "e87968ed231027caf93a59b5eeeca1cc2d91710d",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "olikraus/u8g2",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "fea12c84bcf2b792ad645bbc6314fafead0aae53",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "HQarroum/awesome-iot",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "a600e201939c4f386465c9866e6abef518445dc3",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "e-m-b-a/emba",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "f78a1b54bdaddb8394022ae42c39df8762147871",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "vvaltchev/tilck",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "0090d989ef6b42d36f222333590733e4430721cd",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "ETLCPP/etl",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "5b3a50cc3f5ccb8cb7f90a162152d331e6228786",
+          "status": "SOURCE_READ"
+        }
+      ]
+    },
+    {
+      "id": "control-partial-observability",
+      "status": "EXECUTED_WAVE_5",
+      "sources": [
+        {
+          "repository": "roboterax/humanoid-gym",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "0feafe471c59c8db039c6a927f5f88ea99e20139",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "ethz-adrl/control-toolbox",
+          "ref": "v3.0.2",
+          "path": "README.md",
+          "readme_blob_sha": "dba6be5051ed2353bc2f407f7488e7bdfcd40227",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "pnnl/neuromancer",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "afcfca77d1659f0124666fb6f83dd6511e0b5a29",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "nsacyber/GRASSMARLIN",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "bece634c8cc17ffe79e416ca6d3aabdaf04aeb33",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "ros-controls/ros2_control",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "c2df3118b63ebf7c5f11a238542c0e68e4e8bb72",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "A-make/awesome-control-theory",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "f9641324150da82c464c50f78306d346ab9e29ad",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "JuliaPOMDP/POMDPs.jl",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "bbb8731ef76bc0b145a3d9e70c74684c66d82e2d",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "cybergalactic/MSS",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "8ba584788a4b7d8bb897ef4bba9e486727a38582",
+          "status": "SOURCE_READ"
+        }
+      ]
+    },
+    {
+      "id": "database-engines",
+      "status": "EXECUTED_WAVE_5",
+      "sources": [
+        {
+          "repository": "SeaQL/sea-orm",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "f12f955e88ba45ed46ffd5e537af315d7f1d30b2",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "bchavez/Bogus",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "09d57e6fcf3254aea0ce22faef075e940a6b087a",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "tidwall/tile38",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "0757cf30dfd05fac718149e499263c71249dde5f",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "doctrine/dbal",
+          "ref": "4.5.x",
+          "path": "README.md",
+          "readme_blob_sha": "87cb51dc9291a3d62f8c7602626f39dfd56734dc",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "CodingDocs/awesome-java",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "6cf05ec678aadbcafc79163c14b0c9140df39980",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "litedb-org/LiteDB",
+          "ref": "dev",
+          "path": "README.md",
+          "readme_blob_sha": "5f2114c3b2b9b2f8cf303f4e4be06fdb34944c89",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "databendlabs/databend",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "4fdd8230d0e7dca96e1e8d771ec61f2a26343da1",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "cloudnative-pg/cloudnative-pg",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "1866503dc02977eab366461c3db52529223ef14f",
+          "status": "SOURCE_READ"
+        }
+      ]
+    },
+    {
+      "id": "serialization-formats",
+      "status": "EXECUTED_WAVE_5",
+      "sources": [
+        {
+          "repository": "frohoff/ysoserial",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "5d84aebbafed0fa7f1f1ebfb0690add85b74c5da",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "ijl/orjson",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "46249b0642435084ea53eb214211b0e04fd5b020",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "marshmallow-code/marshmallow",
+          "ref": "dev",
+          "path": "README.rst",
+          "readme_blob_sha": "7f5396738a523277323f083ad405b22855591802",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "MessagePack-CSharp/MessagePack-CSharp",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "7eebf576f2c889d1d68c24434da5cb476760074a",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "EsotericSoftware/kryo",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "4e966eda0c2b865670c3bb73117f71fef93be409",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "Neargye/magic_enum",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "434192a778f7065a20e6d55cc6f92a766e9ee2e9",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "Kotlin/kotlinx.serialization",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "5df2d2246a9d126c57ca510192e7aefa470b280c",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "USCiLab/cereal",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "a1cc0f83c1247037b92e928b94ecd359e5536565",
+          "status": "SOURCE_READ"
+        }
+      ]
+    },
+    {
+      "id": "statistics-probabilistic-programming",
+      "status": "EXECUTED_WAVE_5",
+      "sources": [
+        {
+          "repository": "pymc-devs/pymc",
+          "ref": "main",
+          "path": "README.rst",
+          "readme_blob_sha": "42d134552988716f325201c171b8b0280c5fdb00",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "pyro-ppl/pyro",
+          "ref": "dev",
+          "path": "README.md",
+          "readme_blob_sha": "66b7407e423a586e994ac2d14453d96301b96a59",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "stan-dev/stan",
+          "ref": "develop",
+          "path": "README.md",
+          "readme_blob_sha": "0fedeff0df7a4dd0c279e1861c81aea7291f78e2",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "pyro-ppl/numpyro",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "6a9e895a9eec1019d337636cf99016c8e65f493d",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "TuringLang/Turing.jl",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "6d735fb42eb03b6822454d1398900a8f096912d0",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "tensorflow/probability",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "27e5c189b6bdec05946b7678798a5877324cd348",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "probcomp/Gen.jl",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "3983c013112cbec4fc2171d0bf567fc7e04982fd",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "statsmodels/statsmodels",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "a96c9e9bc81803036c9cbd5f525906e18a9207ae",
+          "status": "SOURCE_READ"
+        }
+      ]
+    },
+    {
+      "id": "information-retrieval-search",
+      "status": "EXECUTED_WAVE_5",
+      "sources": [
+        {
+          "repository": "apache/lucene",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "d1511ba3ef4d6c04229cef57a4764ba7c32b92a8",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "typesense/typesense",
+          "ref": "v31",
+          "path": "README.md",
+          "readme_blob_sha": "77e11acb90664853e610c81637bfc5e092b901ea",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "opensearch-project/OpenSearch",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "13ac5f45bffc462aecc7ebe09218724e5794bd03",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "quickwit-oss/tantivy",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "d8098a5e87af65222aebae8df54501c3c79c8548",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "valeriansaliou/sonic",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "a5084a3f086053b4782beb5e92cbad122465016a",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "neuml/txtai",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "e962fbbade971c38c11242e83e9584cdbbd99f91",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "embeddings-benchmark/mteb",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "02f0bc01c70a28dd301dc94054cea6b4e0431638",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "weaviate/weaviate",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "1249afc998bb8857afa3dd5cb859e2a9bdcb33bc",
+          "status": "SOURCE_READ"
+        }
+      ]
+    },
+    {
+      "id": "optimization-operations-research",
+      "status": "EXECUTED_WAVE_5",
+      "sources": [
+        {
+          "repository": "cvxpy/cvxpy",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "c1b924d0aecac8df4b382a6fef3156fe78b50a0a",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "bayesian-optimization/BayesianOptimization",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "c485d11ca76df61cac6c6459ca6e5edb364de485",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "guofei9987/scikit-opt",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "bac5419bcec3383e2a17ea37ecbe307af09e3ee8",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "PyVRP/PyVRP",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "e262b66b15c94da52ba8c058cd6ca7ae801bec6e",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "N-Wouda/ALNS",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "6ccd3901b89926405bec5d65b9baef2ed0534f62",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "d-krupke/cpsat-primer",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "db6b92b75ffcd14c9903186b4134dae3f80c5604",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "ai4co/rl4co",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "2ad12e409cee9c98f54dc642359b93d7fdcde221",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "microsoft/maro",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "2750a51cd4df40da4346912e417a38ce257ddd67",
+          "status": "SOURCE_READ"
+        }
+      ]
+    },
+    {
+      "id": "computer-graphics",
+      "status": "EXECUTED_WAVE_5",
+      "sources": [
+        {
+          "repository": "NVIDIA/pix2pixHD",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "74133991c8e6ee65b41c96de6fe005dd2175f76a",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "ssloy/tinyraytracer",
+          "ref": "master",
+          "path": "Readme.md",
+          "readme_blob_sha": "b1763fc22fa8084ecce6639c473537c016cd3ff1",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "NVlabs/neuralangelo",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "f99c792129903111bab9b00a093868092025ffd1",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "junyanz/iGAN",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "ecf5cb3d6c73b563d030a08c2043f9c3272310bd",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "MrNeRF/LichtFeld-Studio",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "d20dc841d21068e0c1de64b6a2dad9e619fe042a",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "DLR-RM/BlenderProc",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "be6b8da9ee0bcabe1792e3b10e49efdfdc3fbe67",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "Overv/VulkanTutorial",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "b14b7f26b24b490b42409d3850b3509478de246c",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "xelatihy/yocto-gl",
+          "ref": "main",
+          "path": "readme.md",
+          "readme_blob_sha": "4c233bd3e8708071b90f424498c32cec91e82377",
+          "status": "SOURCE_READ"
+        }
+      ]
+    },
+    {
+      "id": "digital-archives-humanities",
+      "status": "EXECUTED_WAVE_5",
+      "sources": [
+        {
+          "repository": "archivesspace/archivesspace",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "7d93b2b639b8f7d7082e45c7fca848844ff6bc17",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "Rhizome-Conifer/conifer",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "a18a39b00b1640d088e5a0fc448a42280d1cd1bd",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "zenodo/zenodo",
+          "ref": "master",
+          "path": "README.rst",
+          "readme_blob_sha": "75ade98b57977c8109ffeb7026d02e985d9632b3",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "cernopendata/opendata.cern.ch",
+          "ref": "master",
+          "path": "README.rst",
+          "readme_blob_sha": "3abf53a8e4ac26076890a6621009c457a1671a40",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "internetarchive/fatcat",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "919b9a2ad15c21eb2a332840f8491267ed4487e6",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "inveniosoftware/invenio",
+          "ref": "master",
+          "path": "README.rst",
+          "readme_blob_sha": "d6081a583bb7858af45c9b8ecd2d31281129401e",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "knaw-huc/loghi",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "30589157d256929f99918ebb8f9dec47ce5f65d5",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "archivesunleashed/aut",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "6d5ce71a688fb3d9dc6155b11b96da7e64f4ed98",
+          "status": "SOURCE_READ"
+        }
+      ]
+    },
+    {
+      "id": "signal-processing",
+      "status": "EXECUTED_WAVE_5",
+      "sources": [
+        {
+          "repository": "merbanan/rtl_433",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "56fa5bdbaf7027c15a84e3cb2c8045f386e19902",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "tyiannak/pyAudioAnalysis",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "d254877877fc3776d2eed95ebe6376b9d1dd9794",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "anthonynsimon/bild",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "20a4aa8dcf8eb1ff4150f5235d0cf7209bc41ca3",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "libAudioFlux/audioFlux",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "fac5b4fdbe9518db19e35d7d4cb4bb4aa626fb5f",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "scottlawsonbc/audio-reactive-led-strip",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "ab73721a815736e4cef856874047f4eebcd2cf33",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "PyWavelets/pywt",
+          "ref": "main",
+          "path": "README.rst",
+          "readme_blob_sha": "1f40df53dc2ccdc240abc643f8775e73b08d89b6",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "neuropsychology/NeuroKit",
+          "ref": "master",
+          "path": "README.rst",
+          "readme_blob_sha": "29db8ab57e1734b63cde8c631e877a207e1be60e",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "gnss-sdr/gnss-sdr",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "e61573be7ae5e32b3344c38345f91f801c552c26",
+          "status": "SOURCE_READ"
+        }
+      ]
+    }
+  ],
+  "candidate_cross_domain_patterns": [
+    "partially observed systems require belief/state uncertainty rather than pretending observation equals state",
+    "control systems separate measured state, commanded state, constraints, and feedback timing",
+    "serialization and archival systems make schema/version compatibility a first-class concern",
+    "probabilistic systems retain uncertainty distributions rather than only point estimates",
+    "retrieval systems distinguish index state, query semantics, ranking and corpus currentness",
+    "optimization systems separate feasible constraints from objective preference",
+    "graphics and signal-processing systems expose representation, sampling and reconstruction limits",
+    "archives preserve provenance/version identity so later interpretation can reconstruct source context"
+  ],
+  "next_frontier": [
+    "Deep-inspect selected Wave 5 sources at exact heads.",
+    "Add behavioral probes for partial observability, constraint/objective separation, index currentness and uncertainty calibration.",
+    "Measure language, age/activity, archive status and license coverage using repository metadata shards.",
+    "Continue contradiction search against admitted defaults instead of promoting patterns by repetition."
+  ]
+}
