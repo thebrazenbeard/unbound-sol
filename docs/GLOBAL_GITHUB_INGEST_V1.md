@@ -143,3 +143,8 @@ Five exact-head domain sources are recorded in `state/global-github/DEEP_DIVE_20
 ### Evidence-transfer rule
 
 Repository ingestion now distinguishes at least these roles: TOOL, DATASET, CURATED_INDEX, COURSEWARE, MODEL_IMPLEMENTATION, KNOWLEDGE_BASE, PRIMARY_RESEARCH_ARTIFACT, and PRIMARY_SOURCE. Repository documentation can establish what a project says it is and how it operates; it cannot, by itself, promote unrelated scientific, clinical, economic, linguistic, or historical propositions to fact.
+
+
+### Four-wave coverage checkpoint
+
+The current aggregate checkpoint is `state/global-github/COVERAGE_2026-09-29_V4.json`: **320 lane assignments, 315 unique public repositories, 315/315 source-read, 40 Project Runner work units in VERIFYING, and 15 exact-head deep-inspection records**. This is a sampled coverage statement, not a representativeness or intelligence claim.
