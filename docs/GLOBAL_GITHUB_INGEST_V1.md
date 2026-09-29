@@ -173,3 +173,10 @@ The corresponding behavioral probes are E18–E22. The hostile review keeps each
 `state/global-github/COVERAGE_2026-09-29_V5.json` records **400 assignments, 395 unique/source-read repositories, 50 Project Runner work units in VERIFYING, and 20 exact-head deep-inspection records**.
 
 The next frontier should measure corpus metadata blind spots (language, age/activity, size, archive status, license/source-role distribution), execute E18–E22 against real work, and deepen selected sources into tests/specifications/papers rather than increasing repository count alone.
+
+
+### Measured metadata bias after Wave 5
+
+The first complete metadata audit is `state/global-github/metadata/WAVE5_BIAS_AUDIT_V1.json`. For the 80 Wave 5 repositories, Python + C++ account for 43/80, 59/80 have at least 2,000 stars, 52/80 were pushed within 30 days, none were created in 2025–2026, only one is archived, and 19/80 report UNKNOWN or NOASSERTION license metadata.
+
+Wave 6 therefore has a **bias-correction requirement**, not merely a larger-count requirement: sample low-star and very new repositories, deliberately include dormant/archived sources as historical evidence, increase language diversity beyond Python/C++, and preserve explicit license/activity strata.
