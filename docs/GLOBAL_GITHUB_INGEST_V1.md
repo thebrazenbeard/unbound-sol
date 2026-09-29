@@ -120,3 +120,26 @@ The cumulative three-wave source-read corpus now contains **240 lane assignments
 ### Cumulative coverage checkpoint
 
 The machine-readable aggregate checkpoint is `state/global-github/COVERAGE_2026-09-29_V3.json`. It records cumulative counts, duplicate assignments, the current coverage claim ceiling, known sampling biases, and the next metrics needed before any broader representativeness claim.
+
+
+## Wave 4 — scientific and general-knowledge expansion
+
+Wave 4 moved outside the predominantly software/AI architecture space into ten domain lanes: biology/bioinformatics, chemistry/materials, physics, astronomy/space, earth/climate, public health, economics, linguistics, history/humanities, and geoscience.
+
+The wave completed **80/80 blob-bound overview reads across 80 new public repositories**, bringing the cumulative four-wave corpus to **320 lane assignments across 315 unique public repositories**.
+
+The important correction is epistemic rather than numerical: a scientific package, curated list, dataset, course, visualization system, or domain model is not automatically evidence that the propositions it manipulates are true. Wave 4 therefore introduces repository-role and evidence-transfer ceilings.
+
+### Wave 4 deep inspection
+
+Five exact-head domain sources are recorded in `state/global-github/DEEP_DIVE_2026-09-29_V3.json`:
+
+- Nextflow — lineage from result through workflow revision, configuration, task inputs/outputs and checksums; an accepted agent ADR frames nondeterministic analyses as a reproducibility problem while naming assurance gaps;
+- SunPy — coordinate frames, units, observation metadata and WCS are part of scientific map semantics;
+- xclim — climate indicators validate input conventions, missingness, units and metadata before interpreting outputs;
+- cholera — historical-data discrepancies are distinguished from geometrically interpolated proposed repairs;
+- historical-basemaps — projection, intended scale, known positional shifts, topology and disputed-boundary perspectives are explicit properties of the dataset.
+
+### Evidence-transfer rule
+
+Repository ingestion now distinguishes at least these roles: TOOL, DATASET, CURATED_INDEX, COURSEWARE, MODEL_IMPLEMENTATION, KNOWLEDGE_BASE, PRIMARY_RESEARCH_ARTIFACT, and PRIMARY_SOURCE. Repository documentation can establish what a project says it is and how it operates; it cannot, by itself, promote unrelated scientific, clinical, economic, linguistic, or historical propositions to fact.
