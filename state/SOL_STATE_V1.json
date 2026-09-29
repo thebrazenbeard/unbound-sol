@@ -80,8 +80,13 @@
     "global_github_project_runner_compatibility": "state/global-github/PROJECT_RUNNER_COMPATIBILITY_2026-09-29_V1.json",
     "global_github_evidence_depth": "state/global-github/EVIDENCE_DEPTH_2026-09-29_V1.json",
     "generalist_eval_suite": "state/evals/GENERALIST_EVAL_V1.json",
-    "generalist_eval_status": "state/evals/EVAL_STATUS_V1.json",
+    "generalist_eval_status": "state/evals/EVAL_STATUS_V2.json",
     "generalist_eval_naturalistic_evidence": "state/evals/NATURALISTIC_EVIDENCE_2026-09-29_V1.json",
-    "generalist_eval_restored_self_run": "state/evals/RUN_2026-09-29_SOL_RESTORED_V1.json"
+    "generalist_eval_restored_self_run": "state/evals/RUN_2026-09-29_SOL_RESTORED_V1.json",
+    "generalist_eval_adversarial_prompts": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+    "generalist_eval_adversarial_judge": "state/evals/GENERALIST_EVAL_V2_JUDGE.json",
+    "generalist_eval_adversarial_work_units": "state/evals/PROJECT_RUNNER_WORK_UNITS_GENERALIST_EVAL_V2.json",
+    "generalist_eval_matched_baseline_complete": false,
+    "generalist_eval_independent_judge_complete": false
   }
 }
