@@ -56,12 +56,15 @@
       "journal/latest"
     ],
     "fresh_check_mutable_external_state": true,
-    "global_github_ingest": "state/global-github/WAVE_2026-09-29_V3.json",
-    "global_github_deep_dive": "state/global-github/DEEP_DIVE_2026-09-29_V2.json",
+    "global_github_ingest": "state/global-github/WAVE_2026-09-29_V4.json",
+    "global_github_deep_dive": "state/global-github/DEEP_DIVE_2026-09-29_V3.json",
     "material_change_history_policy": "APPEND_ONLY_PROVENANCE_PLUS_CURRENT_SUMMARY",
     "model_plural_claim_status": true,
     "causal_claims_require_explicit_identification_basis": true,
     "material_event_log": "state/EVENT_LOG_V1.jsonl",
-    "global_github_coverage": "state/global-github/COVERAGE_2026-09-29_V3.json"
+    "global_github_coverage": "state/global-github/COVERAGE_2026-09-29_V3.json",
+    "evidence_transfer_requires_source_role": true,
+    "domain_semantics_are_validity_constraints": true,
+    "reconstruction_must_remain_distinct_from_observation": true
   }
 }
