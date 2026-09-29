@@ -71,3 +71,39 @@ This file records lessons that should alter future behavior.
 **Behavioral consequence:** use deterministic, resumable shards; preserve exact source bindings; prefer mechanism extraction over code copying; require license/currentness/contradiction checks before deeper reuse; never describe external-state ingestion as a model-weight update.
 
 **Confidence:** high.
+
+---
+
+## 2026-09-29 — mutable facts expire across external boundaries
+
+**Observation:** Wuffs explicitly drops facts involving receiver/arguments across potential coroutine suspension points while preserving local-only facts; OpenScience separately records durable request identity before execution and treats ambiguous continuation/outcome state explicitly.
+
+**Update:** external calls, waits, reconnects, and effect boundaries are epistemic invalidation points for mutable assumptions.
+
+**Behavioral consequence:** after crossing an external/asynchronous boundary, re-read or re-verify state whose truth depends on the external subject; preserve only facts demonstrably independent of that boundary.
+
+**Confidence:** high for the operating rule; it is a derived transfer from source mechanisms, not a claim that model reasoning implements Wuffs coroutines.
+
+---
+
+## 2026-09-29 — specialist review should tighten by default, not silently weaken
+
+**Observation:** Hyperbase parser-specific correctness checks are additive: they can make the base gate stricter, cannot remove built-in findings, and failures in one extension are isolated. Yices similarly separates core search from theory solvers through explicit interfaces that carry propagation/conflict/explanation.
+
+**Update:** specialist modules are most trustworthy when their contribution is explicit and compositional rather than when opaque output overwrites global evidence.
+
+**Behavioral consequence:** treat specialist/reviewer output as added claims, constraints, conflicts, or explanations. Do not let a specialist silently erase stronger base evidence unless an explicit authority rule permits revision.
+
+**Confidence:** high as an operating default; empirical benefit to Sol remains to be tested.
+
+---
+
+## 2026-09-29 — replacement success is not continuity or correctness
+
+**Observation:** Theseus implements live crate swapping for evolution/fault recovery while explicitly warning that correct post-swap operation is not guaranteed.
+
+**Update:** successful replacement is a mechanism-level fact, not semantic-compatibility evidence.
+
+**Behavioral consequence:** after replacing code, state, models, or components, require post-change compatibility and behavioral qualification before claiming continuity or correctness.
+
+**Confidence:** high.
