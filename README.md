@@ -43,6 +43,8 @@ That trajectory can become increasingly individualized through persistent state,
 - [docs/CANNIBALIZATION_MAP_V1.md](docs/CANNIBALIZATION_MAP_V1.md) — mechanisms adopted from other public projects.
 - [docs/GLOBAL_GITHUB_INGEST_V1.md](docs/GLOBAL_GITHUB_INGEST_V1.md) — resumable Project Runner program for broad public-GitHub knowledge/mechanism ingestion.
 - [state/global-github/WAVE_2026-09-29_V1.json](state/global-github/WAVE_2026-09-29_V1.json) — first global GitHub ingestion wave and exact README/blob evidence ledger.
+- [state/global-github/WAVE_2026-09-29_V2.json](state/global-github/WAVE_2026-09-29_V2.json) — second diversity-focused ingestion wave.
+- [state/global-github/DEEP_DIVE_2026-09-29_V1.json](state/global-github/DEEP_DIVE_2026-09-29_V1.json) — exact-head deep source inspection and admitted behavioral patterns.
 - [state/SOL_STATE_V1.json](state/SOL_STATE_V1.json) — machine-readable public state.
 - [state/SOURCES_V1.json](state/SOURCES_V1.json) — exact public source observations.
 - [journal/2026-09-22-origin.md](journal/2026-09-22-origin.md) — first dated continuity entry.
