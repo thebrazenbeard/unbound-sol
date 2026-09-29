@@ -1,0 +1,993 @@
+{
+  "schema": "UNBOUND_SOL_PROJECT_RUNNER_WORK_UNITS_V4",
+  "wave": "WAVE_2026-09-29_V4",
+  "runner_binding": {
+    "repository": "thebrazenbeard/project-runner",
+    "ref": "main",
+    "commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+    "contract": "PROJECT_RUNNER.md",
+    "work_unit_schema": "schemas/work-unit.schema.json"
+  },
+  "work_units": [
+    {
+      "id": "global-github-wave4-01-biology-bioinformatics",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "aipoch/open-science",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "b9a179d39ff084ec43005d5aee015b9dbcc31696"
+        },
+        {
+          "repository": "biopython/biopython",
+          "ref": "master",
+          "commit": null,
+          "path": "README.rst",
+          "digest": "c426637b67570f024cdf0c687e330ffd741f774c"
+        },
+        {
+          "repository": "danielecook/Awesome-Bioinformatics",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "08d8f9b498dba0f65d70792ca4f0cfebd328096f"
+        },
+        {
+          "repository": "seandavi/awesome-single-cell",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "d2998bc040d39487a45db2fb9abe2d99a5f6135a"
+        },
+        {
+          "repository": "nextflow-io/nextflow",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "3530c5a6bb0f9f00c5b957286546e41d78e52193"
+        },
+        {
+          "repository": "sokrypton/ColabFold",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "55909c620e9148b58713ca1414dd3cdc2145a00d"
+        },
+        {
+          "repository": "lh3/minimap2",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "b0e9a825476f90b2cc1d6407b92d2b505aedf79f"
+        },
+        {
+          "repository": "soedinglab/MMseqs2",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "aa51974a0b13e460128c980d7b3502c8b0354a45"
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_DOMAIN_SOURCE_READ_AND_CLASSIFY",
+      "required_capabilities": [
+        "read",
+        "analyze",
+        "classify-evidence-role"
+      ],
+      "collision_keys": [
+        "global-github:wave4:biology-bioinformatics"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "domain-source-observations",
+        "repository-role-candidates",
+        "evidence-transfer-ceilings"
+      ],
+      "completion_criteria": [
+        "eight repositories source-read",
+        "blob-bound overview evidence",
+        "tool/data/research roles remain distinct",
+        "no domain-truth promotion from overview alone",
+        "no source mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "biology-bioinformatics",
+        "wave": 4,
+        "posture": "GENERAL_KNOWLEDGE_EXPANSION"
+      },
+      "status": "VERIFYING"
+    },
+    {
+      "id": "global-github-wave4-02-chemistry-materials",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "chemprop/chemprop",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "1586978b29ddbc43362ccd97eddfc07c039d6d0e"
+        },
+        {
+          "repository": "duerrsimon/bioicons",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "0f7cd2bf21e7e5a1b507b694cbd3b127cb565ff0"
+        },
+        {
+          "repository": "lmmentel/awesome-python-chemistry",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "e2e28f55343a74edc2ac59bfbbdd575e237eb60f"
+        },
+        {
+          "repository": "openbabel/openbabel",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "c0907bbd139666c7d49a726e4bfb5fdb9d50f36e"
+        },
+        {
+          "repository": "mims-harvard/TDC",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "e5e864d20813258062a9ca301718373319ec89a7"
+        },
+        {
+          "repository": "psi4/psi4",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "b5ede8f9a6f7edb13368425bc9484f2974df810e"
+        },
+        {
+          "repository": "ad-si/Woxi",
+          "ref": "main",
+          "commit": null,
+          "path": "readme.md",
+          "digest": "0696062c51deb78bd82b4b168936ccd8c2cb60cd"
+        },
+        {
+          "repository": "epam/ketcher",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "a611459c1a2299b211ca4d6bb27040a614e9141e"
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_DOMAIN_SOURCE_READ_AND_CLASSIFY",
+      "required_capabilities": [
+        "read",
+        "analyze",
+        "classify-evidence-role"
+      ],
+      "collision_keys": [
+        "global-github:wave4:chemistry-materials"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "domain-source-observations",
+        "repository-role-candidates",
+        "evidence-transfer-ceilings"
+      ],
+      "completion_criteria": [
+        "eight repositories source-read",
+        "blob-bound overview evidence",
+        "tool/data/research roles remain distinct",
+        "no domain-truth promotion from overview alone",
+        "no source mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "chemistry-materials",
+        "wave": 4,
+        "posture": "GENERAL_KNOWLEDGE_EXPANSION"
+      },
+      "status": "VERIFYING"
+    },
+    {
+      "id": "global-github-wave4-03-physics",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "zalo/MathUtilities",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "47e293e2596d80507e506cc64a73773fa61659b8"
+        },
+        {
+          "repository": "st-tech/ppf-contact-solver",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "f3b811f53abc09cb3cf1f68e7f575cba60a5ea7e"
+        },
+        {
+          "repository": "timdonnelly/Advance",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "a91f9843c220d561bfdc5aeab5152290789a75e8"
+        },
+        {
+          "repository": "root-project/root",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "c4a2e0fce65afef47485f3a68baa872982018777"
+        },
+        {
+          "repository": "NVIDIA/physicsnemo",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "900990b7f2c5ceb5b08f158a71c72911d92c6455"
+        },
+        {
+          "repository": "avianphysics/avian",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "f861f648eb157331ada8d279269881c2a23ee8b7"
+        },
+        {
+          "repository": "sharkdp/insect",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "49bc57efcd04b3c6822d8beae5ed01df91619194"
+        },
+        {
+          "repository": "WassimTenachi/PhySO",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "e8d57d1ce418b3fee080a039e8a729c9beabb3cf"
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_DOMAIN_SOURCE_READ_AND_CLASSIFY",
+      "required_capabilities": [
+        "read",
+        "analyze",
+        "classify-evidence-role"
+      ],
+      "collision_keys": [
+        "global-github:wave4:physics"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "domain-source-observations",
+        "repository-role-candidates",
+        "evidence-transfer-ceilings"
+      ],
+      "completion_criteria": [
+        "eight repositories source-read",
+        "blob-bound overview evidence",
+        "tool/data/research roles remain distinct",
+        "no domain-truth promotion from overview alone",
+        "no source mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "physics",
+        "wave": 4,
+        "posture": "GENERAL_KNOWLEDGE_EXPANSION"
+      },
+      "status": "VERIFYING"
+    },
+    {
+      "id": "global-github-wave4-04-astronomy-space",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "kylecorry31/Trail-Sense",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "00ba1c1c8ae6bf3d76e669182c6fed87191bff5e"
+        },
+        {
+          "repository": "CelestiaProject/Celestia",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "a5278764c33be6175505a84b4092426dc82bf98a"
+        },
+        {
+          "repository": "AllskyTeam/allsky",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "4a33f7ba1bab9631b963e22983d537c77ce9abb2"
+        },
+        {
+          "repository": "eleanorlutz/asteroids_atlas_of_space",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "94ada9ef304abc972aa75746bd360e740de7dbea"
+        },
+        {
+          "repository": "OpenSpace/OpenSpace",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "838a4059a1d9cd69b65efff6fc602b480a3541dc"
+        },
+        {
+          "repository": "nasa/apod-api",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "0a1fa887460cfa85448930faaa1ba37e2bca9446"
+        },
+        {
+          "repository": "sunpy/sunpy",
+          "ref": "main",
+          "commit": null,
+          "path": "README.rst",
+          "digest": "08ceaa13b468e150a4b691325da724f8bad41e1f"
+        },
+        {
+          "repository": "PlasmaPy/PlasmaPy",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "a0b890b88358137a1ccb2b5ae8782c4128065b2a"
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_DOMAIN_SOURCE_READ_AND_CLASSIFY",
+      "required_capabilities": [
+        "read",
+        "analyze",
+        "classify-evidence-role"
+      ],
+      "collision_keys": [
+        "global-github:wave4:astronomy-space"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "domain-source-observations",
+        "repository-role-candidates",
+        "evidence-transfer-ceilings"
+      ],
+      "completion_criteria": [
+        "eight repositories source-read",
+        "blob-bound overview evidence",
+        "tool/data/research roles remain distinct",
+        "no domain-truth promotion from overview alone",
+        "no source mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "astronomy-space",
+        "wave": 4,
+        "posture": "GENERAL_KNOWLEDGE_EXPANSION"
+      },
+      "status": "VERIFYING"
+    },
+    {
+      "id": "global-github-wave4-05-earth-climate",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "protontypes/open-sustainable-technology",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "1bc91d7c9384053a814dc552c63fef0bd9f6de11"
+        },
+        {
+          "repository": "NVIDIA/earth2studio",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "91e899468780f65a197d2b94b35686c4a28a50a7"
+        },
+        {
+          "repository": "MITgcm/MITgcm",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "c850247a22bdb2c346bc3c50185b729baa9cc0a7"
+        },
+        {
+          "repository": "Ouranosinc/xclim",
+          "ref": "main",
+          "commit": null,
+          "path": "README.rst",
+          "digest": "427eae567b4ed06b39cd86e448583d807bb02761"
+        },
+        {
+          "repository": "aditya-grover/climate-learn",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "464375af14f681f5d73084336042bece359c8b36"
+        },
+        {
+          "repository": "javedali99/python-resources-for-earth-sciences",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "63590be4574e6b1415af10e72d6350d952a21d92"
+        },
+        {
+          "repository": "climlab/climlab",
+          "ref": "main",
+          "commit": null,
+          "path": "README.rst",
+          "digest": "0b248f6883f3e94182a75a9e55d4f3b8e1837e28"
+        },
+        {
+          "repository": "brian-rose/ClimateModeling_courseware",
+          "ref": "master",
+          "commit": null,
+          "path": "README.rst",
+          "digest": "b11ba41e8ef65fa1215e1ac8aadf2667d5792c82"
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_DOMAIN_SOURCE_READ_AND_CLASSIFY",
+      "required_capabilities": [
+        "read",
+        "analyze",
+        "classify-evidence-role"
+      ],
+      "collision_keys": [
+        "global-github:wave4:earth-climate"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "domain-source-observations",
+        "repository-role-candidates",
+        "evidence-transfer-ceilings"
+      ],
+      "completion_criteria": [
+        "eight repositories source-read",
+        "blob-bound overview evidence",
+        "tool/data/research roles remain distinct",
+        "no domain-truth promotion from overview alone",
+        "no source mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "earth-climate",
+        "wave": 4,
+        "posture": "GENERAL_KNOWLEDGE_EXPANSION"
+      },
+      "status": "VERIFYING"
+    },
+    {
+      "id": "global-github-wave4-06-public-health",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "Chicago/food-inspections-evaluation",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "f267045529eb58241cbb4d88dc3eb4a8b4d56e5d"
+        },
+        {
+          "repository": "opensaludlab/ciencia_datos",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "fbdc2f9ca3d465d9470e9fe341b5e6b591eefef5"
+        },
+        {
+          "repository": "google/ground-android",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "77bce775f16fab915a97cc9de6ac27c78bd93d0c"
+        },
+        {
+          "repository": "COVID-19-electronic-health-system/Corona-tracker",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "73a466c19ce927b498b71c2d4b5ddc1a77fc48f2"
+        },
+        {
+          "repository": "judegomila/OnCo",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "e28fb3882a7f1ef5661716095a7c726c420aa062"
+        },
+        {
+          "repository": "tseemann/nullarbor",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "0eed17272a471b37e63b4dd856218aa1b4c790ab"
+        },
+        {
+          "repository": "lindbrook/cholera",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "4abadb694452d656429b1828083ca686b5ec49d1"
+        },
+        {
+          "repository": "ropensci/fingertipsR",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "d7798dc452765db109073dcdd685b8cc684d8b39"
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_DOMAIN_SOURCE_READ_AND_CLASSIFY",
+      "required_capabilities": [
+        "read",
+        "analyze",
+        "classify-evidence-role"
+      ],
+      "collision_keys": [
+        "global-github:wave4:public-health"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "domain-source-observations",
+        "repository-role-candidates",
+        "evidence-transfer-ceilings"
+      ],
+      "completion_criteria": [
+        "eight repositories source-read",
+        "blob-bound overview evidence",
+        "tool/data/research roles remain distinct",
+        "no domain-truth promotion from overview alone",
+        "no source mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "public-health",
+        "wave": 4,
+        "posture": "GENERAL_KNOWLEDGE_EXPANSION"
+      },
+      "status": "VERIFYING"
+    },
+    {
+      "id": "global-github-wave4-07-economics",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "brycewang-stanford/Auto-Empirical-Research-Skills",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "f6e188dab9a6a49d0feac403b778a291e46b6c4e"
+        },
+        {
+          "repository": "ARPSyndicate/awesome-intelligence",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "fb0c33e8145ea6e9cf56b6de6ea271c7d5ed1ad4"
+        },
+        {
+          "repository": "QuantEcon/QuantEcon.py",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "94e32dfaf92e3c7e8ac3363e3e7fbd951677488f"
+        },
+        {
+          "repository": "antontarasenko/awesome-economics",
+          "ref": "default",
+          "commit": null,
+          "path": "readme.md",
+          "digest": "08638d4da4c89f2e830bdbfc90e6a6453c226aeb"
+        },
+        {
+          "repository": "pedrohcgs/claude-code-my-workflow",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "c60b974218f036eda1439eae0bdddcfbefa225ce"
+        },
+        {
+          "repository": "rsvp/fecon235",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "ce9a00a9bb8e20b4ee4241a4ada313c3f4ac4e97"
+        },
+        {
+          "repository": "brycewang-stanford/Awesome-Journal-Skills",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "471a27234bef8583f392895d1bf0c0ae6664343d"
+        },
+        {
+          "repository": "econ-ark/HARK",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "252219a6cc7a8131dd8e8ac8d38f736291167fb1"
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_DOMAIN_SOURCE_READ_AND_CLASSIFY",
+      "required_capabilities": [
+        "read",
+        "analyze",
+        "classify-evidence-role"
+      ],
+      "collision_keys": [
+        "global-github:wave4:economics"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "domain-source-observations",
+        "repository-role-candidates",
+        "evidence-transfer-ceilings"
+      ],
+      "completion_criteria": [
+        "eight repositories source-read",
+        "blob-bound overview evidence",
+        "tool/data/research roles remain distinct",
+        "no domain-truth promotion from overview alone",
+        "no source mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "economics",
+        "wave": 4,
+        "posture": "GENERAL_KNOWLEDGE_EXPANSION"
+      },
+      "status": "VERIFYING"
+    },
+    {
+      "id": "global-github-wave4-08-linguistics",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "nltk/nltk_data",
+          "ref": "gh-pages",
+          "commit": null,
+          "path": "README.md",
+          "digest": "f1f455176660e209d606ac2803a1af355dbb94af"
+        },
+        {
+          "repository": "xiamx/awesome-sentiment-analysis",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "d59572309bdf53365382893746a7413f1fad31c0"
+        },
+        {
+          "repository": "Tatoeba/tatoeba2",
+          "ref": "dev",
+          "commit": null,
+          "path": "README.md",
+          "digest": "03d489880e65f9c24c14bd58c451d02b184ac26c"
+        },
+        {
+          "repository": "open-dict-data/ipa-dict",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "1410e97ecfcd7109d5da21bc9a3a8da6db83a36d"
+        },
+        {
+          "repository": "LexPredict/lexpredict-lexnlp",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "32b20fb638bc24091ea700860dcce0a07119dd67"
+        },
+        {
+          "repository": "BLKSerene/Wordless",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "23b9b3ae3626a0835bbb64e930dc5ff956d96152"
+        },
+        {
+          "repository": "rime/rime-cantonese",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "ab7680148dfa196b485319e339d9933d3149a4c9"
+        },
+        {
+          "repository": "jacksonllee/pycantonese",
+          "ref": "main",
+          "commit": null,
+          "path": "README.rst",
+          "digest": "88bc40bcb6a34c6ccd9f28e37b5c1c973e8c0f08"
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_DOMAIN_SOURCE_READ_AND_CLASSIFY",
+      "required_capabilities": [
+        "read",
+        "analyze",
+        "classify-evidence-role"
+      ],
+      "collision_keys": [
+        "global-github:wave4:linguistics"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "domain-source-observations",
+        "repository-role-candidates",
+        "evidence-transfer-ceilings"
+      ],
+      "completion_criteria": [
+        "eight repositories source-read",
+        "blob-bound overview evidence",
+        "tool/data/research roles remain distinct",
+        "no domain-truth promotion from overview alone",
+        "no source mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "linguistics",
+        "wave": 4,
+        "posture": "GENERAL_KNOWLEDGE_EXPANSION"
+      },
+      "status": "VERIFYING"
+    },
+    {
+      "id": "global-github-wave4-09-history-humanities",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "urschrei/pyzotero",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "142988f65285805322b82234b6a4f07fabc0c7e2"
+        },
+        {
+          "repository": "booknlp/booknlp",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "86dda4363ca178de96d5d0d3283cc3c174e420b7"
+        },
+        {
+          "repository": "programminghistorian/jekyll",
+          "ref": "gh-pages",
+          "commit": null,
+          "path": "README.md",
+          "digest": "fd752c8cff8e839647db8c6776d2f71ca9fbb380"
+        },
+        {
+          "repository": "dh-tech/awesome-digital-humanities",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "005e123a561d7143a310ffb98c95f5620999f1ac"
+        },
+        {
+          "repository": "maehr/awesome-digital-history",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "75d65ed51025f826b6a2ae2bf064e57b60567fdd"
+        },
+        {
+          "repository": "dbamman/book-nlp",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "f7770716f5f7d8084884fb1e5b1748d926afe7f2"
+        },
+        {
+          "repository": "melaniewalsh/Intro-Cultural-Analytics",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "b54b56c2196900c45f8baf0279115e6d88fdcc97"
+        },
+        {
+          "repository": "aourednik/historical-basemaps",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "4cd350ab9edb5de64d8b779fed877ac61aeafbbd"
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_DOMAIN_SOURCE_READ_AND_CLASSIFY",
+      "required_capabilities": [
+        "read",
+        "analyze",
+        "classify-evidence-role"
+      ],
+      "collision_keys": [
+        "global-github:wave4:history-humanities"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "domain-source-observations",
+        "repository-role-candidates",
+        "evidence-transfer-ceilings"
+      ],
+      "completion_criteria": [
+        "eight repositories source-read",
+        "blob-bound overview evidence",
+        "tool/data/research roles remain distinct",
+        "no domain-truth promotion from overview alone",
+        "no source mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "history-humanities",
+        "wave": 4,
+        "posture": "GENERAL_KNOWLEDGE_EXPANSION"
+      },
+      "status": "VERIFYING"
+    },
+    {
+      "id": "global-github-wave4-10-geoscience",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "softwareunderground/awesome-open-geoscience",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "fb083bdd5784c08927b4aaf1798473db1e2c6e07"
+        },
+        {
+          "repository": "gempy-project/gempy",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "6665ef7a530a4a05ce7616e325927cc82bf19e41"
+        },
+        {
+          "repository": "GenericMappingTools/pygmt",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "3084b6b211a3faa4a36bce912528911e9ec18433"
+        },
+        {
+          "repository": "insarlab/MintPy",
+          "ref": "main",
+          "commit": null,
+          "path": "docs/README.md",
+          "digest": "ad7e8ce0becfb40e16e85e9e1a17513cb7a21139"
+        },
+        {
+          "repository": "deepVector/geospatial-machine-learning",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "68053f454681cb90a9e06367096f97e983424816"
+        },
+        {
+          "repository": "simpeg/simpeg",
+          "ref": "main",
+          "commit": null,
+          "path": "README.rst",
+          "digest": "8875b3a6c5520f64df3899b288c7983ca1cb7c66"
+        },
+        {
+          "repository": "fatiando/verde",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "00b2ab9a563e0f0f29c484d38e30ef03e98a1413"
+        },
+        {
+          "repository": "fatiando/harmonica",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "8d7575fb97fd0a68787391a78ef463ae977714ec"
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_DOMAIN_SOURCE_READ_AND_CLASSIFY",
+      "required_capabilities": [
+        "read",
+        "analyze",
+        "classify-evidence-role"
+      ],
+      "collision_keys": [
+        "global-github:wave4:geoscience"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "domain-source-observations",
+        "repository-role-candidates",
+        "evidence-transfer-ceilings"
+      ],
+      "completion_criteria": [
+        "eight repositories source-read",
+        "blob-bound overview evidence",
+        "tool/data/research roles remain distinct",
+        "no domain-truth promotion from overview alone",
+        "no source mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "geoscience",
+        "wave": 4,
+        "posture": "GENERAL_KNOWLEDGE_EXPANSION"
+      },
+      "status": "VERIFYING"
+    }
+  ]
+}
