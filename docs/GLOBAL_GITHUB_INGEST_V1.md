@@ -70,7 +70,7 @@ Wave 2 deliberately reduced Wave 1's popularity bias by sampling lower-star and 
 
 Wave 2 executed 80 lane assignments across 78 unique repositories. Seventy-six lane reads succeeded (74 unique repositories); four unique repositories remain unresolved under the attempted README path.
 
-Across Waves 1 and 2, the current ledger contains **160 lane assignments across 155 unique public repositories**. **143 unique repositories have successful blob-bound source reads; 12 remain unresolved**. These numbers are corpus-coverage facts, not intelligence scores.
+Across Waves 1 and 2, the current ledger contains **160 lane assignments across 155 unique public repositories**. After exact repository-root repair of filename/case/extension mismatches, **all 155 unique repositories now have successful blob-bound source reads**. These numbers are corpus-coverage facts, not intelligence scores.
 
 ### Deep-inspection lane
 
@@ -88,8 +88,13 @@ The transferred lessons are operating patterns, not claims that Sol internally i
 
 The next expansion should do three things in parallel:
 
-1. repair the 12 unresolved source paths using exact repository-root discovery;
-2. run contradiction-seeking deep dives on architectures that *disagree* with the current admitted defaults;
-3. convert the admitted operating patterns into behavioral probes, so the repository can measure whether restored state changes later decisions rather than merely accumulating prose.
+1. run contradiction-seeking deep dives on architectures that *disagree* with the current admitted defaults;
+2. execute the new behavioral probes in `EXPERIMENTS.md` for currentness invalidation, monotonic specialist review, and replacement-vs-continuity;
+3. deepen source evidence from README/docs into implementation/tests and explicit license metadata before broader mechanism admission.
 
 Coverage should also begin tracking languages, topic families, repository age/update bands, and evidence depth so the corpus can expose its own blind spots.
+
+
+### Source-path repair
+
+The original 12 unresolved reads were reclassified after repository-root inspection. Every case was a path convention mismatch, not an inaccessible repository: variants included `ReadMe.md`, `Readme.md`, `readme.md`, and `README.rst`. The corresponding work-unit inputs now bind the exact discovered path and blob SHA, preserve the initial failed path, and all 20 wave work units are back in `VERIFYING`.
