@@ -1,0 +1,130 @@
+{
+  "schema": "UNBOUND_SOL_EVIDENCE_DEPTH_V1",
+  "observed_at": "2026-09-29",
+  "purpose": "Upgrade selected behavioral mechanisms from source-inspection evidence to source-plus-test/spec evidence without promoting implementation-specific claims into universal truth.",
+  "records": [
+    {
+      "experiment": "E18",
+      "repository": "JuliaPOMDP/POMDPs.jl",
+      "ref": "master",
+      "commit": "d970a36d6e41b7d6baa8377ce0426c7282bc5025",
+      "license_spdx": "NOASSERTION",
+      "evidence_class": "SOURCE_PLUS_TEST",
+      "source_artifact": "state/global-github/DEEP_DIVE_2026-09-29_V4.json",
+      "test_files": [
+        {
+          "path": "lib/POMDPTools/test/belief_updaters/test_k_previous_observations_belief.jl",
+          "blob_sha": "1a3585395c187f0e135c75d38bff0ffa03aa8873"
+        }
+      ],
+      "supported_mechanism": "belief state is updated from observations while preserving a distinct state/history representation",
+      "test_observations": [
+        "tests assert a bounded belief/history length",
+        "a new observation updates the latest belief element while prior history is retained",
+        "the prior belief object is asserted unchanged",
+        "invalid belief initialization/update shapes raise errors"
+      ],
+      "ceiling": "The tests validate this implementation's belief updater behavior; they do not prove any particular belief model is correct for an external task."
+    },
+    {
+      "experiment": "E20",
+      "repository": "apache/lucene",
+      "ref": "main",
+      "commit": "5a626cd6de6e95c36cd1aca8342224a95dceaafb",
+      "previous_deep_commit": "8cd74fed97b18f7e5985c0a0f480f17f910d9238",
+      "head_drift_from_deep_record": true,
+      "license_spdx": "Apache-2.0",
+      "evidence_class": "SOURCE_PLUS_TEST",
+      "source_files": [
+        {
+          "path": "lucene/core/src/java/org/apache/lucene/search/IndexSearcher.java",
+          "blob_sha": "91e77b6a30f8ce616b493e33ceae577b89945815"
+        }
+      ],
+      "test_files": [
+        {
+          "path": "lucene/core/src/test/org/apache/lucene/index/TestIndexWriterReader.java",
+          "blob_sha": "e4e0919a221fc1c72868c4f072602f0fb56024ea"
+        }
+      ],
+      "supported_mechanism": "retrieval/search visibility is reader-snapshot dependent and explicit refresh/currentness checks matter after index changes",
+      "test_observations": [
+        "tests assert a reader becomes non-current after writer changes",
+        "opening a fresh reader exposes updated/deleted documents",
+        "currentness can change across commit/close boundaries",
+        "source documentation requires openIfChanged/new reader to see index changes"
+      ],
+      "ceiling": "Freshness of the index view does not establish truth or quality of indexed content."
+    },
+    {
+      "experiment": "E26",
+      "repository": "sasa1977/boundary",
+      "ref": "master",
+      "commit": "6e017814e745b93534b0e38e1f4ee62146228e02",
+      "license_spdx": "MIT",
+      "evidence_class": "SOURCE_PLUS_TEST",
+      "source_artifact": "state/global-github/DEEP_DIVE_2026-09-29_V5.json",
+      "test_files": [
+        {
+          "path": "test/mix/tasks/compile/boundary_test.exs",
+          "blob_sha": "881cab8ed630ca6de6f4a0468aed59568b1289fd"
+        }
+      ],
+      "supported_mechanism": "declared dependency/export boundaries can be checked against actual cross-module references",
+      "test_observations": [
+        "allowed in-boundary and exported calls are asserted warning-free",
+        "classified forbidden cross-boundary references are asserted to produce warnings",
+        "configuration can explicitly relax incoming/outgoing checks",
+        "dirty-reference exceptions are themselves checked for unnecessary use"
+      ],
+      "ceiling": "Tests demonstrate enforcement behavior for the library; they do not prove a given boundary design is architecturally correct."
+    },
+    {
+      "experiment": "E27",
+      "repository": "pointfreeco/swift-parsing",
+      "ref": "main",
+      "commit": "d3ca6f0f049606124d0f6a414e7fdb7b77f45452",
+      "license_spdx": "MIT",
+      "evidence_class": "SOURCE_PLUS_TEST",
+      "source_artifact": "state/global-github/DEEP_DIVE_2026-09-29_V5.json",
+      "test_files": [
+        {
+          "path": "Tests/ParsingTests/DigitsTests.swift",
+          "blob_sha": "2cbc7fd41d2ccea7fcbadf93db116f14641d4a9d"
+        }
+      ],
+      "supported_mechanism": "bidirectional parser-printer contracts surface values that cannot be faithfully represented on the reverse path",
+      "test_observations": [
+        "valid parse and print behavior are both asserted",
+        "printing an out-of-contract value explicitly raises a round-trip expectation failure",
+        "a reversible rational parser-printer is tested in both directions"
+      ],
+      "ceiling": "Round-trip equivalence is appropriate only where reconstructability is contractual; canonicalization/lossy transforms need a different declared contract."
+    },
+    {
+      "experiment": "E25",
+      "repository": "agentm/project-m36",
+      "ref": "master",
+      "commit": "6010b8d34f5bb8564975ebd178581c240853286a",
+      "license_spdx": "Unlicense",
+      "evidence_class": "SOURCE_PLUS_TEST",
+      "source_artifact": "state/global-github/DEEP_DIVE_2026-09-29_V5.json",
+      "test_files": [
+        {
+          "path": "test/TransactionGraph/Merge.hs",
+          "blob_sha": "82ba588907241598700b7253bd6b469c5667b868"
+        }
+      ],
+      "supported_mechanism": "branchable transaction history can preserve divergent states and test merge/common-ancestor behavior explicitly",
+      "test_observations": [
+        "tests construct multiple named branches from a common root",
+        "subgraph/common-ancestor behavior is asserted",
+        "branch-specific transactions are preserved and validated",
+        "merge strategies and constraint-violation cases are included in the test list"
+      ],
+      "ceiling": "This supports branch/history semantics, not the repository's broader performance claims."
+    }
+  ],
+  "effect_on_claim_ceiling": "NONE",
+  "behavioral_use": "These records justify stronger confidence that the transferred mechanisms are implemented and tested in their source systems, while behavioral benefit for Sol still requires E18/E20/E25/E26/E27 execution."
+}
