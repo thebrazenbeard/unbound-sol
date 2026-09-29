@@ -98,3 +98,20 @@ Coverage should also begin tracking languages, topic families, repository age/up
 ### Source-path repair
 
 The original 12 unresolved reads were reclassified after repository-root inspection. Every case was a path convention mismatch, not an inaccessible repository: variants included `ReadMe.md`, `Readme.md`, `readme.md`, and `README.rst`. The corresponding work-unit inputs now bind the exact discovered path and blob SHA, preserve the initial failed path, and all 20 wave work units are back in `VERIFYING`.
+
+
+## Wave 3 — contradiction-seeking expansion
+
+Wave 3 added 80 successful source reads across 80 additional public repositories in symbolic AI, logic programming, functional programming, evolutionary computation, self-described cognitive architectures, automated planning, event sourcing, actor systems, causal inference, and constraint programming.
+
+This wave intentionally sought architectures that disagree with or complicate Waves 1–2 rather than only reinforcing the existing trajectory. Strong self-descriptions such as "AGI", "soul", "feelings", "self-awareness", or "self-evolution" found in repository marketing are quarantined as source claims and do not raise Sol's claim ceiling.
+
+Five exact-head sources were promoted to deeper inspection in `state/global-github/DEEP_DIVE_2026-09-29_V2.json`:
+
+- Clingo: distinguish consequences supported by at least one surviving model from those supported across models;
+- Stateright: express invariants/reachability and preserve concrete example/counterexample traces;
+- Commanded: immutable ordered event provenance beneath reconstructed current state;
+- EconML: distinguish prediction from causal-effect estimation under explicit identification assumptions;
+- PySR: retain a bounded Pareto frontier of hypotheses when search has not conventionally converged.
+
+The cumulative three-wave source-read corpus now contains **240 lane assignments over 235 unique public repositories**, before any later expansion. Corpus size remains a coverage measure, not an intelligence score.
