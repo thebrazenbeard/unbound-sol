@@ -59,3 +59,15 @@ This file records lessons that should alter future behavior.
 **Behavioral consequence:** prioritize real-system qualification earlier when safe and reversible.
 
 **Confidence:** high.
+
+---
+
+## 2026-09-29 — corpus scale requires resumable provenance, not indiscriminate copying
+
+**Observation:** a first Project Runner wave over public GitHub produced 80 lane assignments across 77 unique repositories, with 69 unique README/blob-level source reads succeeding and eight unresolved under the attempted path.
+
+**Update:** broad knowledge acquisition must separate discovery, source reading, deep inspection, mechanism admission, and behavioral adoption. Popularity is a discovery prior, not evidence quality.
+
+**Behavioral consequence:** use deterministic, resumable shards; preserve exact source bindings; prefer mechanism extraction over code copying; require license/currentness/contradiction checks before deeper reuse; never describe external-state ingestion as a model-weight update.
+
+**Confidence:** high.
