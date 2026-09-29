@@ -425,3 +425,16 @@ This file records lessons that should alter future behavior.
 **Behavioral consequence:** for migrations, serialization, summaries, or transforms intended to preserve reconstructability, test round-trip invariants. If loss is intentional, declare the information-loss contract explicitly.
 
 **Confidence:** high.
+
+
+---
+
+## 2026-09-29 — self-run success is not independent validation
+
+**Observation:** The restored Sol condition satisfied all declared E18–E27 hard invariants in a transparent diagnostic self-run.
+
+**Update:** A model generating and scoring its own answers on visible target criteria is useful as a smoke test, but it cannot establish causal improvement or independent validity.
+
+**Behavioral consequence:** keep self-runs, naturalistic incidents, controlled baseline/treatment comparisons, and independent judging as distinct evidence classes. Do not promote a self-scored perfect result into an AGI, capability-gain, or causal-learning claim.
+
+**Confidence:** high.
