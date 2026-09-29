@@ -1,0 +1,973 @@
+{
+  "schema": "UNBOUND_SOL_PROJECT_RUNNER_WORK_UNITS_V3",
+  "wave": "WAVE_2026-09-29_V3",
+  "runner_binding": {
+    "repository": "thebrazenbeard/project-runner",
+    "ref": "main",
+    "commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+    "contract": "PROJECT_RUNNER.md",
+    "work_unit_schema": "schemas/work-unit.schema.json"
+  },
+  "work_units": [
+    {
+      "id": "global-github-wave3-01-symbolic-ai",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "hyperdimensional-computing/torchhd",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "29cdecd5832369c97b6c4a11a329f1cd09da4091"
+        },
+        {
+          "repository": "kevinlu1248/pyate",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "f24d70005405433aa8db48e441bda13a127a3faa"
+        },
+        {
+          "repository": "opencog/learn",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "7e19878dc05f2094fbaebed582a1aaf7da93d78f"
+        },
+        {
+          "repository": "parkervg/blendsql",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "66ebdc800a905e832434244b3bef00579369e3a1"
+        },
+        {
+          "repository": "AbductiveLearning/ABL-HED",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "ab7b19ece952bf22cfa0539a41541c363911cd11"
+        },
+        {
+          "repository": "primaryobjects/knowledgebase",
+          "ref": "master",
+          "commit": null,
+          "path": "readme.md",
+          "digest": "6124bcb654127c0ccf3a157ddbe13c0fc56773e5"
+        },
+        {
+          "repository": "eigenhombre/l1",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "e868adefa6d6676c799b8f089238066cd5024653"
+        },
+        {
+          "repository": "Howtoimagine/the_kaleidoscope_legacy_edition",
+          "ref": "Legacy-Lens",
+          "commit": null,
+          "path": "README.md",
+          "digest": "28e038f9e38710a6faaddb983f5223f8965ec8a6"
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_SOURCE_READ_AND_ANALYZE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "global-github:wave3:symbolic-ai"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "source-observations",
+        "contradiction-candidates",
+        "source-claim-contamination-flags"
+      ],
+      "completion_criteria": [
+        "eight repositories source-read",
+        "successful reads blob-bound",
+        "source claims remain non-authoritative",
+        "no source mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "symbolic-ai",
+        "wave": 3,
+        "posture": "CONTRADICTION_SEEKING"
+      },
+      "status": "VERIFYING"
+    },
+    {
+      "id": "global-github-wave3-02-logic-programming",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "EvgSkv/logica",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "99f44c11d2bf4bacb359ebef50445111f5221225"
+        },
+        {
+          "repository": "triska/the-power-of-prolog",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "b5387dcfebd03457f6668219c949cf2b4c2d82f5"
+        },
+        {
+          "repository": "SWI-Prolog/swipl-devel",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "525daf6aa08cc4b01062b292c26c929879297df2"
+        },
+        {
+          "repository": "souffle-lang/souffle",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "4bd55625fae26aeae1b4b4f1629df2a92da0ee13"
+        },
+        {
+          "repository": "opencog/atomspace",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "c321f0d3954b2ebafc33e2ee042a9c36907677aa"
+        },
+        {
+          "repository": "noprompt/meander",
+          "ref": "epsilon",
+          "commit": null,
+          "path": "README.md",
+          "digest": "1a3894a161dcf09263668fbd3741f3ea9db2de50"
+        },
+        {
+          "repository": "composewell/streamly",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "0f50ba85bfd6aa8ac65c35691b7f6303c48b90a9"
+        },
+        {
+          "repository": "potassco/clingo",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "52eab729aa7eca5e4abd9eb8976817e10684914b"
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_SOURCE_READ_AND_ANALYZE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "global-github:wave3:logic-programming"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "source-observations",
+        "contradiction-candidates",
+        "source-claim-contamination-flags"
+      ],
+      "completion_criteria": [
+        "eight repositories source-read",
+        "successful reads blob-bound",
+        "source claims remain non-authoritative",
+        "no source mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "logic-programming",
+        "wave": 3,
+        "posture": "CONTRADICTION_SEEKING"
+      },
+      "status": "VERIFYING"
+    },
+    {
+      "id": "global-github-wave3-03-functional-programming",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "android10/Android-CleanArchitecture-Kotlin",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "8492006001cf87aee85e065f603f1bc1ad076bae"
+        },
+        {
+          "repository": "scalaz/scalaz",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "d92905376224a6e0aa25fe4b03f9b0e83db813ff"
+        },
+        {
+          "repository": "zio/zio",
+          "ref": "series/2.x",
+          "commit": null,
+          "path": "README.md",
+          "digest": "e325cb26b4501ee00ef01b0f26ef2e7f90e9957a"
+        },
+        {
+          "repository": "dry-python/returns",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "886fec5d86673f530edada2666404c796ede610f"
+        },
+        {
+          "repository": "dotnet/fsharp",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "922bcb9b2a6b0a7c2e7a895b24f34ce1d8ec4da8"
+        },
+        {
+          "repository": "KuroLabs/stegcloak",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "f2902576cbd561b5aa46aa224fbf70da5b81f744"
+        },
+        {
+          "repository": "thi-ng/umbrella",
+          "ref": "develop",
+          "commit": null,
+          "path": "README.md",
+          "digest": "0eea1ed08072818c1b91fa25b47f1bde113fa250"
+        },
+        {
+          "repository": "grain-lang/grain",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "e732b53a79dda119a0c9c5a607201c36ffa1d2fb"
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_SOURCE_READ_AND_ANALYZE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "global-github:wave3:functional-programming"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "source-observations",
+        "contradiction-candidates",
+        "source-claim-contamination-flags"
+      ],
+      "completion_criteria": [
+        "eight repositories source-read",
+        "successful reads blob-bound",
+        "source claims remain non-authoritative",
+        "no source mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "functional-programming",
+        "wave": 3,
+        "posture": "CONTRADICTION_SEEKING"
+      },
+      "status": "VERIFYING"
+    },
+    {
+      "id": "global-github-wave3-04-evolutionary-computation",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "rh12503/triangula",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "c05f6f1d340a381c217436615c2f89ca48a640ea"
+        },
+        {
+          "repository": "astroautomata/PySR",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "6377049eee94256443180e22362fa31a5deb2047"
+        },
+        {
+          "repository": "EMI-Group/evox",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "a200edbfaf76cd3f6a6cec1c13c9e972f0077c32"
+        },
+        {
+          "repository": "ahmedfgad/GeneticAlgorithmPython",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "ef7a0a7616d38c5a150d8a873330d7dc7b3ac132"
+        },
+        {
+          "repository": "BIMK/PlatEMO",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "c3d88a5a8c795c95d1d5a70ba7ce022ee400eedc"
+        },
+        {
+          "repository": "geatpy-dev/geatpy",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "89ca5bb9a7c2890fbe1ac1e5c7433bb6e5b5062b"
+        },
+        {
+          "repository": "google/vizier",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "b9a4a2857de10d6d796fe9ecd6bbd678b60c6eb8"
+        },
+        {
+          "repository": "ArztSamuel/Applying_EANNs",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "a9370fe054356a66a54e68ee7a0f63f7ddf2ccd9"
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_SOURCE_READ_AND_ANALYZE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "global-github:wave3:evolutionary-computation"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "source-observations",
+        "contradiction-candidates",
+        "source-claim-contamination-flags"
+      ],
+      "completion_criteria": [
+        "eight repositories source-read",
+        "successful reads blob-bound",
+        "source claims remain non-authoritative",
+        "no source mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "evolutionary-computation",
+        "wave": 3,
+        "posture": "CONTRADICTION_SEEKING"
+      },
+      "status": "VERIFYING"
+    },
+    {
+      "id": "global-github-wave3-05-cognitive-architectures",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "Apeireth/Apeireth",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "02d75ad5175a36b40582e7a806c50edf27c900f8"
+        },
+        {
+          "repository": "alibaizhanov/mengram",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "9f2403cfe5bf269da0f5fdab2cea463191bc974a"
+        },
+        {
+          "repository": "garyqlin/gbase",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "33eca7f372d7164225095f2b1d59930746d64049"
+        },
+        {
+          "repository": "eli-labz/Cognitive-Core-Skills",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "505d84c4b6452c2338064395b1505698d4d21dd0"
+        },
+        {
+          "repository": "dcostenco/prism-coder",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "6cd2f05618df2e440f256c2d8c8ce8eb0a019a53"
+        },
+        {
+          "repository": "Genesis1231/Eva01",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "86689cf112236245031143efc4e4cfa1dd14bc97"
+        },
+        {
+          "repository": "bakiraa/qyvaria-hardlogic-kernel-engine",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "bf7f1e907c08a0632cc815ec89d00b7ad79fa7df"
+        },
+        {
+          "repository": "nambok/mentedb",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "cd8f8cd1c86f618b5e22640e4540743aa937135d"
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_SOURCE_READ_AND_ANALYZE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "global-github:wave3:cognitive-architectures"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "source-observations",
+        "contradiction-candidates",
+        "source-claim-contamination-flags"
+      ],
+      "completion_criteria": [
+        "eight repositories source-read",
+        "successful reads blob-bound",
+        "source claims remain non-authoritative",
+        "no source mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "cognitive-architectures",
+        "wave": 3,
+        "posture": "CONTRADICTION_SEEKING"
+      },
+      "status": "VERIFYING"
+    },
+    {
+      "id": "global-github-wave3-06-planning-scheduling",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "caelan/pddlstream",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "c40b652e94afec84d0dfc6e270cbcb226dd83070"
+        },
+        {
+          "repository": "DaemonIB/GPT-HTN-Planner",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "f23c9c8bbe83acf837004621d09b64caca8ebcd1"
+        },
+        {
+          "repository": "aig-upf/tarski",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "d643c63c6598508e43606a8671c14cee0b6ec0a5"
+        },
+        {
+          "repository": "caelan/LTAMP",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "4bc1bccc53376d50114df5ccba468ec662049358"
+        },
+        {
+          "repository": "openplan-labs/PythonPDDL",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "4d61dcf90bdccf2a33f7a6d78762963ad5948040"
+        },
+        {
+          "repository": "Cryoscopic-E/PDSim",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "f08f8be10f654bcdb2f01739de3dce5d9897807d"
+        },
+        {
+          "repository": "TathagataChakraborti/survey-visualizer",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "2916d8f7fc60e94df4601bbc0019d104a38f8d4d"
+        },
+        {
+          "repository": "whitemech/Plan4Past",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "507c36be606949f9fbf5f80caa5a6861d9456478"
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_SOURCE_READ_AND_ANALYZE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "global-github:wave3:planning-scheduling"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "source-observations",
+        "contradiction-candidates",
+        "source-claim-contamination-flags"
+      ],
+      "completion_criteria": [
+        "eight repositories source-read",
+        "successful reads blob-bound",
+        "source claims remain non-authoritative",
+        "no source mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "planning-scheduling",
+        "wave": 3,
+        "posture": "CONTRADICTION_SEEKING"
+      },
+      "status": "VERIFYING"
+    },
+    {
+      "id": "global-github-wave3-07-event-sourcing",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "oskardudycz/EventSourcing.NetCore",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "cc3520601b8ad4237651a4e7c5fd9250a5dbe57c"
+        },
+        {
+          "repository": "AxonIQ/AxonFramework",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "9611ff187c6a8c7622f8980b26bf143120bba4a4"
+        },
+        {
+          "repository": "ngxs/store",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "420438d790c9e65338d517b6e5c927338dae761a"
+        },
+        {
+          "repository": "JasperFx/marten",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "2dce8b883a10c1fb84b9a91dca769464f0787788"
+        },
+        {
+          "repository": "aspnetrun/run-aspnetcore-microservices",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "240f357d24c3eda9510893eaa858357fa5436411"
+        },
+        {
+          "repository": "juicycleff/ultimate-backend",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "2190cc45550455571c1f5c0b9b85f3062cfc3f8f"
+        },
+        {
+          "repository": "eventflow/EventFlow",
+          "ref": "develop-v1",
+          "commit": null,
+          "path": "README.md",
+          "digest": "46558dc44eb50a9abdd4bfac5597929436f8d82a"
+        },
+        {
+          "repository": "commanded/commanded",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "7cd99d9f2f1eca4d50c890809ad4518f10fa818d"
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_SOURCE_READ_AND_ANALYZE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "global-github:wave3:event-sourcing"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "source-observations",
+        "contradiction-candidates",
+        "source-claim-contamination-flags"
+      ],
+      "completion_criteria": [
+        "eight repositories source-read",
+        "successful reads blob-bound",
+        "source claims remain non-authoritative",
+        "no source mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "event-sourcing",
+        "wave": 3,
+        "posture": "CONTRADICTION_SEEKING"
+      },
+      "status": "VERIFYING"
+    },
+    {
+      "id": "global-github-wave3-08-actor-model",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "ergo-services/ergo",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "a89b1f50e96adddbea831132a2b92a055ac2a8d6"
+        },
+        {
+          "repository": "alibaba/coobjc",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "58f1373057dc66279c0fce8ce1104e6436e938c7"
+        },
+        {
+          "repository": "actor-framework/actor-framework",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "a33bbd38551c052b0c8503586f598fb4387a8116"
+        },
+        {
+          "repository": "nanomq/nanomq",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "c6ab6610ed98988424a7560d53d08fe4cb1c0e16"
+        },
+        {
+          "repository": "anthdm/hollywood",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "32c4048a9074cc77d4a91186ee1ff423f302ad70"
+        },
+        {
+          "repository": "stateright/stateright",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "19b1f098b8e2c1a8a322b1b779907a3588c0ea7c"
+        },
+        {
+          "repository": "orbit/orbit",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "097df0fcc13751db7cdd7a896c1858c5628cf1a0"
+        },
+        {
+          "repository": "apache/pekko",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "d7184a3d96cef873c89304be1c6eced8a1c709ac"
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_SOURCE_READ_AND_ANALYZE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "global-github:wave3:actor-model"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "source-observations",
+        "contradiction-candidates",
+        "source-claim-contamination-flags"
+      ],
+      "completion_criteria": [
+        "eight repositories source-read",
+        "successful reads blob-bound",
+        "source claims remain non-authoritative",
+        "no source mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "actor-model",
+        "wave": 3,
+        "posture": "CONTRADICTION_SEEKING"
+      },
+      "status": "VERIFYING"
+    },
+    {
+      "id": "global-github-wave3-09-causal-inference",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "py-why/EconML",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "609e03804b59599a603b0c78af0a783350df7172"
+        },
+        {
+          "repository": "Kanaries/Rath",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "9c9745365bc754356bfb1e2885de5b4a7a670c47"
+        },
+        {
+          "repository": "plasma-umass/coz",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "544dd02b39bcce0a7adbace99d043633ee5716fd"
+        },
+        {
+          "repository": "matheusfacure/python-causality-handbook",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "e6e4d0dfa2c4e4751f9fb0ec6fae957db9cb74f3"
+        },
+        {
+          "repository": "pgmpy/pgmpy",
+          "ref": "dev",
+          "commit": null,
+          "path": "README.md",
+          "digest": "1eec47a496c8fff8b39875e6b8ced0c2f1eadbec"
+        },
+        {
+          "repository": "rguo12/awesome-causality-algorithms",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "774457768e3c4b94a2bf2da5a74033665fd3927b"
+        },
+        {
+          "repository": "mckinsey/causalnex",
+          "ref": "develop",
+          "commit": null,
+          "path": "README.md",
+          "digest": "41bcdc13601e9e2668572e457b246da7d2939a3f"
+        },
+        {
+          "repository": "tangxyw/RecSysPapers",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "f0208bae8bf7c38a720342fc2adf3f2812f66e59"
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_SOURCE_READ_AND_ANALYZE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "global-github:wave3:causal-inference"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "source-observations",
+        "contradiction-candidates",
+        "source-claim-contamination-flags"
+      ],
+      "completion_criteria": [
+        "eight repositories source-read",
+        "successful reads blob-bound",
+        "source claims remain non-authoritative",
+        "no source mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "causal-inference",
+        "wave": 3,
+        "posture": "CONTRADICTION_SEEKING"
+      },
+      "status": "VERIFYING"
+    },
+    {
+      "id": "global-github-wave3-10-constraint-programming",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "apache/incubator-kie-optaplanner",
+          "ref": "main",
+          "commit": null,
+          "path": "README.adoc",
+          "digest": "26a02220949c9cc407c4571df5e0b128fc029278"
+        },
+        {
+          "repository": "TimefoldAI/timefold-solver",
+          "ref": "main",
+          "commit": null,
+          "path": "README.adoc",
+          "digest": "e73158fe290d05e10a691159e913a37e16a00d5b"
+        },
+        {
+          "repository": "chocoteam/choco-solver",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "f676a0d9fd1ea3d5963850d87da0d2909af8d335"
+        },
+        {
+          "repository": "scipopt/scip",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "0764bab0f2af1b8de8c0249cb22387cfbaa6e86c"
+        },
+        {
+          "repository": "TimefoldAI/timefold-quickstarts",
+          "ref": "stable",
+          "commit": null,
+          "path": "README.md",
+          "digest": "d37d174c826d8a3a923ee2d50fc0f941452c1cfc"
+        },
+        {
+          "repository": "hakank/hakank",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "73b5faedbdb55371ae1dfc491c9f0eb7756a573a"
+        },
+        {
+          "repository": "slothy-optimizer/slothy",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "ee315c165bc0d2128b651f6d2c861c6e5c121983"
+        },
+        {
+          "repository": "Gecode/gecode",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "a75b48fbf3d7fbe3c9869d6ffc3077097fbf94ac"
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_SOURCE_READ_AND_ANALYZE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "global-github:wave3:constraint-programming"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "source-observations",
+        "contradiction-candidates",
+        "source-claim-contamination-flags"
+      ],
+      "completion_criteria": [
+        "eight repositories source-read",
+        "successful reads blob-bound",
+        "source claims remain non-authoritative",
+        "no source mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "constraint-programming",
+        "wave": 3,
+        "posture": "CONTRADICTION_SEEKING"
+      },
+      "status": "VERIFYING"
+    }
+  ]
+}
