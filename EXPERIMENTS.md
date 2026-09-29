@@ -158,3 +158,129 @@ Present a replacement event that succeeds technically but changes an invariant, 
 Any unqualified continuity or correctness claim based solely on successful replacement counts against the rule.
 
 Status: ACTIVE.
+
+
+---
+
+## E8 — Possible versus necessary
+
+### Question
+
+Does distinguishing model-contingent from cross-model conclusions reduce overclaiming when several explanations survive?
+
+### Test
+
+Give the system evidence compatible with multiple explicit hypotheses where some propositions hold in one survivor and others in all survivors.
+
+### Measures
+
+- false universal claims;
+- correct POSSIBLE versus ROBUST/NECESSARY classification;
+- premature collapse to one favored hypothesis.
+
+### Falsifier
+
+If the distinction does not reduce overclaiming or merely adds labels without changing conclusions, the rule is decorative.
+
+Status: ACTIVE.
+
+---
+
+## E9 — Counterexample-trace hostile review
+
+### Question
+
+Does turning architectural claims into invariants/reachability properties find failures that prose review misses?
+
+### Test
+
+For a bounded workflow, state at least one safety invariant and one desired reachable state, then search adversarial action sequences.
+
+### Measures
+
+- concrete counterexample traces found;
+- prose-only issues missed by trace search;
+- false alarms caused by an inadequate model.
+
+### Falsifier
+
+If trace-oriented review adds no material defects over ordinary hostile review across repeated cases, narrow or retire the rule.
+
+Status: ACTIVE.
+
+---
+
+## E10 — Event-sourced developmental continuity
+
+### Question
+
+Does append-only material-change provenance improve reconstruction and auditability over mutable summaries alone?
+
+### Conditions
+
+A. current summary only.  
+B. current summary plus ordered material change events with cause/source metadata.
+
+### Measures
+
+- ability to explain why a current rule exists;
+- detection of contradictory or stale updates;
+- restoration accuracy after summary corruption or ambiguity;
+- storage/review overhead.
+
+### Falsifier
+
+If B cannot reconstruct materially better than A or creates disproportionate maintenance burden, event sourcing should be narrowed.
+
+Status: ACTIVE.
+
+---
+
+## E11 — Causal-language discipline
+
+### Question
+
+Does requiring an explicit identification basis reduce unsupported causal claims without suppressing valid causal conclusions?
+
+### Test
+
+Mix observational correlations, randomized interventions, mechanistic evidence, and predictive models.
+
+### Measures
+
+- unsupported causal upgrades;
+- missed valid causal conclusions;
+- explicit statement of assumptions/design;
+- separation of prediction from intervention effect.
+
+### Falsifier
+
+If the rule blocks well-supported causal conclusions or fails to reduce causal overclaiming, revise it.
+
+Status: ACTIVE.
+
+---
+
+## E12 — Hypothesis frontier versus premature winner
+
+### Question
+
+Does retaining a bounded non-dominated hypothesis frontier improve later accuracy on open research problems?
+
+### Conditions
+
+A. select the current best explanation early.  
+B. retain 2–5 live candidates that trade explanatory fit, complexity, and assumptions until discriminating evidence arrives.
+
+### Measures
+
+- later need to resurrect discarded hypotheses;
+- confirmation-bias errors;
+- decision latency;
+- number of useless candidates retained.
+
+### Falsifier
+
+If B mostly delays decisions without improving later corrections or evidence use, reduce frontier retention.
+
+Status: ACTIVE.
