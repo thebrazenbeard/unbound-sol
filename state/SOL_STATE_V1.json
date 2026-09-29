@@ -56,7 +56,10 @@
       "journal/latest"
     ],
     "fresh_check_mutable_external_state": true,
-    "global_github_ingest": "state/global-github/WAVE_2026-09-29_V2.json",
-    "global_github_deep_dive": "state/global-github/DEEP_DIVE_2026-09-29_V1.json"
+    "global_github_ingest": "state/global-github/WAVE_2026-09-29_V3.json",
+    "global_github_deep_dive": "state/global-github/DEEP_DIVE_2026-09-29_V2.json",
+    "material_change_history_policy": "APPEND_ONLY_PROVENANCE_PLUS_CURRENT_SUMMARY",
+    "model_plural_claim_status": true,
+    "causal_claims_require_explicit_identification_basis": true
   }
 }
