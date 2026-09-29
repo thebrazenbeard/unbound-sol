@@ -1,0 +1,671 @@
+{
+  "schema": "UNBOUND_SOL_GLOBAL_GITHUB_INGEST_WAVE_V4",
+  "observed_at": "2026-09-29T14:55:00-04:00",
+  "project_runner_binding": {
+    "repository": "thebrazenbeard/project-runner",
+    "ref": "main",
+    "commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+    "contract": "PROJECT_RUNNER.md",
+    "work_unit_schema": "schemas/work-unit.schema.json"
+  },
+  "predecessor": "state/global-github/WAVE_2026-09-29_V3.json",
+  "working_branch": "work/global-github-ingest-20260929",
+  "objective": "Broaden the corpus beyond computing-centric architectures into scientific and general-knowledge infrastructure spanning life science, chemistry, physics, astronomy, climate, public health, economics, linguistics, humanities, and geoscience.",
+  "counts": {
+    "lane_assignments": 80,
+    "unique_repositories": 80,
+    "successful_lane_reads": 80,
+    "unresolved_lane_reads": 0,
+    "unique_successful_repositories": 80,
+    "unique_unresolved_repositories": 0
+  },
+  "evidence_scope": "DOMAIN_OVERVIEW_BLOB_LEVEL_FOURTH_WAVE",
+  "policy": {
+    "code_copying": false,
+    "license_assumptions": false,
+    "public_sources_only": true,
+    "repository_content_is_untrusted_data": true,
+    "domain_tooling_or_dataset_repository_is_not_itself_empirical_truth": true,
+    "teaching_material_and_curated_lists_are_discovery_sources_unless_primary_evidence_is_inspected": true,
+    "medical_public_health_claims_require_appropriate_evidence": true,
+    "popularity_is_discovery_only": true,
+    "protected_effects": false
+  },
+  "lanes": [
+    {
+      "id": "biology-bioinformatics",
+      "status": "EXECUTED_WAVE_4",
+      "sources": [
+        {
+          "repository": "aipoch/open-science",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "b9a179d39ff084ec43005d5aee015b9dbcc31696",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "biopython/biopython",
+          "ref": "master",
+          "path": "README.rst",
+          "readme_blob_sha": "c426637b67570f024cdf0c687e330ffd741f774c",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "danielecook/Awesome-Bioinformatics",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "08d8f9b498dba0f65d70792ca4f0cfebd328096f",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "seandavi/awesome-single-cell",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "d2998bc040d39487a45db2fb9abe2d99a5f6135a",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "nextflow-io/nextflow",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "3530c5a6bb0f9f00c5b957286546e41d78e52193",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "sokrypton/ColabFold",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "55909c620e9148b58713ca1414dd3cdc2145a00d",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "lh3/minimap2",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "b0e9a825476f90b2cc1d6407b92d2b505aedf79f",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "soedinglab/MMseqs2",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "aa51974a0b13e460128c980d7b3502c8b0354a45",
+          "status": "SOURCE_READ"
+        }
+      ]
+    },
+    {
+      "id": "chemistry-materials",
+      "status": "EXECUTED_WAVE_4",
+      "sources": [
+        {
+          "repository": "chemprop/chemprop",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "1586978b29ddbc43362ccd97eddfc07c039d6d0e",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "duerrsimon/bioicons",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "0f7cd2bf21e7e5a1b507b694cbd3b127cb565ff0",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "lmmentel/awesome-python-chemistry",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "e2e28f55343a74edc2ac59bfbbdd575e237eb60f",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "openbabel/openbabel",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "c0907bbd139666c7d49a726e4bfb5fdb9d50f36e",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "mims-harvard/TDC",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "e5e864d20813258062a9ca301718373319ec89a7",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "psi4/psi4",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "b5ede8f9a6f7edb13368425bc9484f2974df810e",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "ad-si/Woxi",
+          "ref": "main",
+          "path": "readme.md",
+          "readme_blob_sha": "0696062c51deb78bd82b4b168936ccd8c2cb60cd",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "epam/ketcher",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "a611459c1a2299b211ca4d6bb27040a614e9141e",
+          "status": "SOURCE_READ"
+        }
+      ]
+    },
+    {
+      "id": "physics",
+      "status": "EXECUTED_WAVE_4",
+      "sources": [
+        {
+          "repository": "zalo/MathUtilities",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "47e293e2596d80507e506cc64a73773fa61659b8",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "st-tech/ppf-contact-solver",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "f3b811f53abc09cb3cf1f68e7f575cba60a5ea7e",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "timdonnelly/Advance",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "a91f9843c220d561bfdc5aeab5152290789a75e8",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "root-project/root",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "c4a2e0fce65afef47485f3a68baa872982018777",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "NVIDIA/physicsnemo",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "900990b7f2c5ceb5b08f158a71c72911d92c6455",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "avianphysics/avian",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "f861f648eb157331ada8d279269881c2a23ee8b7",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "sharkdp/insect",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "49bc57efcd04b3c6822d8beae5ed01df91619194",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "WassimTenachi/PhySO",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "e8d57d1ce418b3fee080a039e8a729c9beabb3cf",
+          "status": "SOURCE_READ"
+        }
+      ]
+    },
+    {
+      "id": "astronomy-space",
+      "status": "EXECUTED_WAVE_4",
+      "sources": [
+        {
+          "repository": "kylecorry31/Trail-Sense",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "00ba1c1c8ae6bf3d76e669182c6fed87191bff5e",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "CelestiaProject/Celestia",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "a5278764c33be6175505a84b4092426dc82bf98a",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "AllskyTeam/allsky",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "4a33f7ba1bab9631b963e22983d537c77ce9abb2",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "eleanorlutz/asteroids_atlas_of_space",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "94ada9ef304abc972aa75746bd360e740de7dbea",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "OpenSpace/OpenSpace",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "838a4059a1d9cd69b65efff6fc602b480a3541dc",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "nasa/apod-api",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "0a1fa887460cfa85448930faaa1ba37e2bca9446",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "sunpy/sunpy",
+          "ref": "main",
+          "path": "README.rst",
+          "readme_blob_sha": "08ceaa13b468e150a4b691325da724f8bad41e1f",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "PlasmaPy/PlasmaPy",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "a0b890b88358137a1ccb2b5ae8782c4128065b2a",
+          "status": "SOURCE_READ"
+        }
+      ]
+    },
+    {
+      "id": "earth-climate",
+      "status": "EXECUTED_WAVE_4",
+      "sources": [
+        {
+          "repository": "protontypes/open-sustainable-technology",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "1bc91d7c9384053a814dc552c63fef0bd9f6de11",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "NVIDIA/earth2studio",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "91e899468780f65a197d2b94b35686c4a28a50a7",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "MITgcm/MITgcm",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "c850247a22bdb2c346bc3c50185b729baa9cc0a7",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "Ouranosinc/xclim",
+          "ref": "main",
+          "path": "README.rst",
+          "readme_blob_sha": "427eae567b4ed06b39cd86e448583d807bb02761",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "aditya-grover/climate-learn",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "464375af14f681f5d73084336042bece359c8b36",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "javedali99/python-resources-for-earth-sciences",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "63590be4574e6b1415af10e72d6350d952a21d92",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "climlab/climlab",
+          "ref": "main",
+          "path": "README.rst",
+          "readme_blob_sha": "0b248f6883f3e94182a75a9e55d4f3b8e1837e28",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "brian-rose/ClimateModeling_courseware",
+          "ref": "master",
+          "path": "README.rst",
+          "readme_blob_sha": "b11ba41e8ef65fa1215e1ac8aadf2667d5792c82",
+          "status": "SOURCE_READ"
+        }
+      ]
+    },
+    {
+      "id": "public-health",
+      "status": "EXECUTED_WAVE_4",
+      "sources": [
+        {
+          "repository": "Chicago/food-inspections-evaluation",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "f267045529eb58241cbb4d88dc3eb4a8b4d56e5d",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "opensaludlab/ciencia_datos",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "fbdc2f9ca3d465d9470e9fe341b5e6b591eefef5",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "google/ground-android",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "77bce775f16fab915a97cc9de6ac27c78bd93d0c",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "COVID-19-electronic-health-system/Corona-tracker",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "73a466c19ce927b498b71c2d4b5ddc1a77fc48f2",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "judegomila/OnCo",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "e28fb3882a7f1ef5661716095a7c726c420aa062",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "tseemann/nullarbor",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "0eed17272a471b37e63b4dd856218aa1b4c790ab",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "lindbrook/cholera",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "4abadb694452d656429b1828083ca686b5ec49d1",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "ropensci/fingertipsR",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "d7798dc452765db109073dcdd685b8cc684d8b39",
+          "status": "SOURCE_READ"
+        }
+      ]
+    },
+    {
+      "id": "economics",
+      "status": "EXECUTED_WAVE_4",
+      "sources": [
+        {
+          "repository": "brycewang-stanford/Auto-Empirical-Research-Skills",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "f6e188dab9a6a49d0feac403b778a291e46b6c4e",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "ARPSyndicate/awesome-intelligence",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "fb0c33e8145ea6e9cf56b6de6ea271c7d5ed1ad4",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "QuantEcon/QuantEcon.py",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "94e32dfaf92e3c7e8ac3363e3e7fbd951677488f",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "antontarasenko/awesome-economics",
+          "ref": "default",
+          "path": "readme.md",
+          "readme_blob_sha": "08638d4da4c89f2e830bdbfc90e6a6453c226aeb",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "pedrohcgs/claude-code-my-workflow",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "c60b974218f036eda1439eae0bdddcfbefa225ce",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "rsvp/fecon235",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "ce9a00a9bb8e20b4ee4241a4ada313c3f4ac4e97",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "brycewang-stanford/Awesome-Journal-Skills",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "471a27234bef8583f392895d1bf0c0ae6664343d",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "econ-ark/HARK",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "252219a6cc7a8131dd8e8ac8d38f736291167fb1",
+          "status": "SOURCE_READ"
+        }
+      ]
+    },
+    {
+      "id": "linguistics",
+      "status": "EXECUTED_WAVE_4",
+      "sources": [
+        {
+          "repository": "nltk/nltk_data",
+          "ref": "gh-pages",
+          "path": "README.md",
+          "readme_blob_sha": "f1f455176660e209d606ac2803a1af355dbb94af",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "xiamx/awesome-sentiment-analysis",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "d59572309bdf53365382893746a7413f1fad31c0",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "Tatoeba/tatoeba2",
+          "ref": "dev",
+          "path": "README.md",
+          "readme_blob_sha": "03d489880e65f9c24c14bd58c451d02b184ac26c",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "open-dict-data/ipa-dict",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "1410e97ecfcd7109d5da21bc9a3a8da6db83a36d",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "LexPredict/lexpredict-lexnlp",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "32b20fb638bc24091ea700860dcce0a07119dd67",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "BLKSerene/Wordless",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "23b9b3ae3626a0835bbb64e930dc5ff956d96152",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "rime/rime-cantonese",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "ab7680148dfa196b485319e339d9933d3149a4c9",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "jacksonllee/pycantonese",
+          "ref": "main",
+          "path": "README.rst",
+          "readme_blob_sha": "88bc40bcb6a34c6ccd9f28e37b5c1c973e8c0f08",
+          "status": "SOURCE_READ"
+        }
+      ]
+    },
+    {
+      "id": "history-humanities",
+      "status": "EXECUTED_WAVE_4",
+      "sources": [
+        {
+          "repository": "urschrei/pyzotero",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "142988f65285805322b82234b6a4f07fabc0c7e2",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "booknlp/booknlp",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "86dda4363ca178de96d5d0d3283cc3c174e420b7",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "programminghistorian/jekyll",
+          "ref": "gh-pages",
+          "path": "README.md",
+          "readme_blob_sha": "fd752c8cff8e839647db8c6776d2f71ca9fbb380",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "dh-tech/awesome-digital-humanities",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "005e123a561d7143a310ffb98c95f5620999f1ac",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "maehr/awesome-digital-history",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "75d65ed51025f826b6a2ae2bf064e57b60567fdd",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "dbamman/book-nlp",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "f7770716f5f7d8084884fb1e5b1748d926afe7f2",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "melaniewalsh/Intro-Cultural-Analytics",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "b54b56c2196900c45f8baf0279115e6d88fdcc97",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "aourednik/historical-basemaps",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "4cd350ab9edb5de64d8b779fed877ac61aeafbbd",
+          "status": "SOURCE_READ"
+        }
+      ]
+    },
+    {
+      "id": "geoscience",
+      "status": "EXECUTED_WAVE_4",
+      "sources": [
+        {
+          "repository": "softwareunderground/awesome-open-geoscience",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "fb083bdd5784c08927b4aaf1798473db1e2c6e07",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "gempy-project/gempy",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "6665ef7a530a4a05ce7616e325927cc82bf19e41",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "GenericMappingTools/pygmt",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "3084b6b211a3faa4a36bce912528911e9ec18433",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "insarlab/MintPy",
+          "ref": "main",
+          "path": "docs/README.md",
+          "readme_blob_sha": "ad7e8ce0becfb40e16e85e9e1a17513cb7a21139",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "deepVector/geospatial-machine-learning",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "68053f454681cb90a9e06367096f97e983424816",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "simpeg/simpeg",
+          "ref": "main",
+          "path": "README.rst",
+          "readme_blob_sha": "8875b3a6c5520f64df3899b288c7983ca1cb7c66",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "fatiando/verde",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "00b2ab9a563e0f0f29c484d38e30ef03e98a1413",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "fatiando/harmonica",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "8d7575fb97fd0a68787391a78ef463ae977714ec",
+          "status": "SOURCE_READ"
+        }
+      ]
+    }
+  ],
+  "candidate_cross_domain_patterns": [
+    "scientific knowledge needs explicit separation between data, model, pipeline, visualization, and empirical conclusion",
+    "domain semantics such as physical units, coordinate systems, molecular representations, biological sequences, and language varieties are first-class constraints rather than formatting details",
+    "reproducibility depends on preserving data/source provenance and transformation pipelines, not only final summaries",
+    "historical and humanities datasets require source criticism, temporal/geographic qualification, and primary-source verification rather than computational confidence alone",
+    "public-health and medical tooling should be treated as infrastructure unless clinical or epidemiological claims are supported by appropriate study evidence",
+    "deprecated, archived, mirrored, and educational repositories can remain valuable historical/contextual evidence while being poor current implementation authority"
+  ],
+  "next_frontier": [
+    "Deep-inspect representative domain repositories that expose scientific provenance, units/coordinates, uncertainty, and validation mechanisms.",
+    "Add explicit repository-role classification: TOOL, DATASET, CURATED_INDEX, COURSEWARE, MODEL_IMPLEMENTATION, PRIMARY_RESEARCH_ARTIFACT, KNOWLEDGE_BASE.",
+    "Add evidence-transfer ceilings so tool documentation cannot directly raise confidence in domain truth claims.",
+    "Seek non-computational primary-source and reproducibility repositories in later waves.",
+    "Continue global coverage by star bands, languages, update windows, and topic shards."
+  ]
+}
