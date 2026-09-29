@@ -493,8 +493,10 @@
           "repository": "vercel/next.js",
           "ref": "canary",
           "commit": null,
-          "path": "README.md",
-          "digest": null
+          "path": "readme.md",
+          "digest": "29e4f3032d3dd24eb12f0381e288e4dc033e0845",
+          "initial_path": "README.md",
+          "repair": "ROOT_DISCOVERY_PATH_CASE_OR_EXTENSION"
         },
         {
           "repository": "rust-lang/rust",
@@ -542,8 +544,10 @@
           "repository": "JetBrains/kotlin",
           "ref": "master",
           "commit": null,
-          "path": "README.md",
-          "digest": null
+          "path": "ReadMe.md",
+          "digest": "08f86e4a7362a568e7cddebbe86fdb88fe78ad57",
+          "initial_path": "README.md",
+          "repair": "ROOT_DISCOVERY_PATH_CASE_OR_EXTENSION"
         }
       ],
       "operation": "GITHUB_PUBLIC_SOURCE_READ_AND_ANALYZE",
@@ -577,7 +581,7 @@
         "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
         "lane": "compilers-runtimes"
       },
-      "status": "FAILED_RETRYABLE"
+      "status": "VERIFYING"
     },
     {
       "id": "global-github-wave1-07-robotics-embodiment",
@@ -602,8 +606,10 @@
           "repository": "NaiboWang/EasySpider",
           "ref": "master",
           "commit": null,
-          "path": "README.md",
-          "digest": null
+          "path": "Readme.md",
+          "digest": "09fa4ab78408a3d41ae6fc519a2075893a8d458e",
+          "initial_path": "README.md",
+          "repair": "ROOT_DISCOVERY_PATH_CASE_OR_EXTENSION"
         },
         {
           "repository": "AtsushiSakai/PythonRobotics",
@@ -672,7 +678,7 @@
         "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
         "lane": "robotics-embodiment"
       },
-      "status": "FAILED_RETRYABLE"
+      "status": "VERIFYING"
     },
     {
       "id": "global-github-wave1-08-neuroscience-cognition",
@@ -683,8 +689,10 @@
           "repository": "mne-tools/mne-python",
           "ref": "main",
           "commit": null,
-          "path": "README.md",
-          "digest": null
+          "path": "README.rst",
+          "digest": "3508426cba8c79aa0d3499d574eabc0a6caedf5b",
+          "initial_path": "README.md",
+          "repair": "ROOT_DISCOVERY_PATH_CASE_OR_EXTENSION"
         },
         {
           "repository": "NeuromatchAcademy/course-content",
@@ -704,8 +712,10 @@
           "repository": "jeshraghian/snntorch",
           "ref": "master",
           "commit": null,
-          "path": "README.md",
-          "digest": null
+          "path": "README.rst",
+          "digest": "5d6644133f57f10113d7c83e5520c773418a49b3",
+          "initial_path": "README.md",
+          "repair": "ROOT_DISCOVERY_PATH_CASE_OR_EXTENSION"
         },
         {
           "repository": "brainflow-dev/brainflow",
@@ -718,15 +728,19 @@
           "repository": "analyticalmonk/awesome-neuroscience",
           "ref": "main",
           "commit": null,
-          "path": "README.md",
-          "digest": null
+          "path": "readme.md",
+          "digest": "10c6c5cbdffb7e3439f3baeda0d795c0ddb92a4c",
+          "initial_path": "README.md",
+          "repair": "ROOT_DISCOVERY_PATH_CASE_OR_EXTENSION"
         },
         {
           "repository": "braindecode/braindecode",
           "ref": "master",
           "commit": null,
-          "path": "README.md",
-          "digest": null
+          "path": "README.rst",
+          "digest": "b67b5121f28a7d7c0b69ebcbbbf97adefbca129d",
+          "initial_path": "README.md",
+          "repair": "ROOT_DISCOVERY_PATH_CASE_OR_EXTENSION"
         },
         {
           "repository": "brian-team/brian2",
@@ -767,7 +781,7 @@
         "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
         "lane": "neuroscience-cognition"
       },
-      "status": "FAILED_RETRYABLE"
+      "status": "VERIFYING"
     },
     {
       "id": "global-github-wave1-09-verification-security",
@@ -873,8 +887,10 @@
           "repository": "sindresorhus/awesome",
           "ref": "main",
           "commit": null,
-          "path": "README.md",
-          "digest": null
+          "path": "readme.md",
+          "digest": "0acaa99d5f45582ecf70f987213f59ae1855226f",
+          "initial_path": "README.md",
+          "repair": "ROOT_DISCOVERY_PATH_CASE_OR_EXTENSION"
         },
         {
           "repository": "vinta/awesome-python",
@@ -957,7 +973,7 @@
         "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
         "lane": "reference-index"
       },
-      "status": "FAILED_RETRYABLE"
+      "status": "VERIFYING"
     }
   ]
 }
