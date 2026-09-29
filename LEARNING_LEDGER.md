@@ -107,3 +107,16 @@ This file records lessons that should alter future behavior.
 **Behavioral consequence:** after replacing code, state, models, or components, require post-change compatibility and behavioral qualification before claiming continuity or correctness.
 
 **Confidence:** high.
+
+
+---
+
+## 2026-09-29 — guessed path is not source absence
+
+**Observation:** twelve repositories initially appeared unreadable only because the ingestion lane assumed `README.md`; repository-root discovery found `ReadMe.md`, `Readme.md`, `readme.md`, or `README.rst` in every case.
+
+**Update:** failure to fetch an assumed path is evidence about that path, not evidence that the source is absent or inaccessible.
+
+**Behavioral consequence:** when a known repository/file class misses under a conventional path, inspect the containing namespace/root before classifying the evidence as unavailable.
+
+**Confidence:** high.
