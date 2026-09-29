@@ -1,0 +1,121 @@
+{
+  "schema": "UNBOUND_SOL_GLOBAL_GITHUB_DEEP_DIVE_V4",
+  "observed_at": "2026-09-29",
+  "evidence_class": "SOURCE_INSPECTION",
+  "relationship_to_wave": "state/global-github/WAVE_2026-09-29_V5.json",
+  "posture": "UNDERREPRESENTED_DOMAIN_EXPANSION",
+  "records": [
+    {
+      "repository": "JuliaPOMDP/POMDPs.jl",
+      "ref": "master",
+      "commit": "d970a36d6e41b7d6baa8377ce0426c7282bc5025",
+      "files": [
+        {
+          "path": "docs/src/concepts.md",
+          "blob_sha": "3d9e9935821d830143ac51f382c97792f1c3258f"
+        },
+        {
+          "path": "docs/src/simulation.md",
+          "blob_sha": "7fef05fec05c71e0191ef01a5f88e7598ce997fe"
+        }
+      ],
+      "observed": [
+        "a POMDP separates hidden state from observation and defines observation likelihood separately from state transition",
+        "decisions are made from a belief representation rather than assuming the latest observation is the true state",
+        "belief is updated from prior belief, action and new observation"
+      ],
+      "derived_pattern": "When the relevant world state is only partially observed, maintain an explicit belief/current-hypothesis state and update it from observations instead of equating observation with reality.",
+      "behavioral_consequence": "For incomplete evidence, separate OBSERVED from LATENT/INFERRED state and record how new evidence updates the live belief set; do not silently collapse uncertainty to the latest observation.",
+      "disposition": "ADMITTED_BEHAVIORAL_PATTERN"
+    },
+    {
+      "repository": "ros-controls/ros2_control",
+      "ref": "master",
+      "commit": "a0f133d921e043aa2cfec8bd7c61effbb8ac132c",
+      "files": [
+        {
+          "path": "controller_manager/doc/userdoc.rst",
+          "blob_sha": "e46ee221649e6240e48bc85bb05c3974731050f3"
+        },
+        {
+          "path": "controller_interface/src/controller_interface_base.cpp",
+          "blob_sha": "43ee52ee32bbd5727ce461baa33fbe64574a9c55"
+        }
+      ],
+      "observed": [
+        "controller management separates command interfaces from state interfaces",
+        "controller and hardware lifecycle state changes are explicitly published",
+        "fallback activation depends on current state/command interface availability",
+        "real-time control reliability depends on update timing and avoiding unsafe/blocking operations in the control loop"
+      ],
+      "derived_pattern": "Effectful control should keep observed state, intended command, lifecycle availability and timing/currentness as separate variables.",
+      "behavioral_consequence": "Do not infer effect success from command issuance. Before dependent actions, verify resulting state and relevant resource/interface availability; for timing-sensitive loops, track latency/jitter as correctness-relevant evidence.",
+      "disposition": "ADMITTED_BEHAVIORAL_PATTERN"
+    },
+    {
+      "repository": "apache/lucene",
+      "ref": "main",
+      "commit": "8cd74fed97b18f7e5985c0a0f480f17f910d9238",
+      "files": [
+        {
+          "path": "lucene/core/src/java/org/apache/lucene/index/package-info.java",
+          "blob_sha": "4a1684ebaf1500d64c79daa91e119db158d320ca"
+        },
+        {
+          "path": "lucene/core/src/java/org/apache/lucene/index/IndexReader.java",
+          "blob_sha": "e01c1460ab2c79aa3e3cd080ed595a7e1c92f560"
+        }
+      ],
+      "observed": [
+        "each reader exposes a consistent point-in-time view of the index",
+        "writes after a reader is opened are not visible until the reader is explicitly refreshed/reopened",
+        "internal document numbers are ephemeral and may change as the index changes"
+      ],
+      "derived_pattern": "Retrieval answers are conditional on a corpus/index snapshot; mutable retrieval surfaces require explicit refresh/currentness and durable identity must not depend on ephemeral internal positions.",
+      "behavioral_consequence": "When retrieval currentness matters, bind evidence to source/version or retrieval snapshot, refresh after known corpus mutations, and never treat transient rank/document-position identifiers as durable source identity.",
+      "disposition": "ADMITTED_BEHAVIORAL_PATTERN"
+    },
+    {
+      "repository": "pymc-devs/pymc",
+      "ref": "main",
+      "commit": "91248864b59963e38316c5de2793a6d8a49f07f4",
+      "files": [
+        {
+          "path": "pymc/stats/convergence.py",
+          "blob_sha": "48abb63abf1552c77fca497afa54a74e35b5a05a"
+        }
+      ],
+      "observed": [
+        "convergence checks can be unavailable or unreliable when sample count or chain count is insufficient",
+        "R-hat and effective sample size are used as diagnostics rather than assuming a sample automatically represents a reliable posterior",
+        "divergences and tree-depth problems are surfaced separately from nominal sample production"
+      ],
+      "derived_pattern": "Producing many candidate outputs is not evidence that the generating/search process is reliable; process adequacy requires diagnostics distinct from output quantity.",
+      "behavioral_consequence": "For stochastic or multi-run reasoning/evaluation, track run diversity, disagreement, failure modes and effective independent evidence before increasing confidence; repeated correlated outputs do not count as independent confirmation.",
+      "disposition": "ADMITTED_BEHAVIORAL_PATTERN"
+    },
+    {
+      "repository": "zenodo/zenodo",
+      "ref": "master",
+      "commit": "2d0bd3527dcb851613a00391d674be1d004c9459",
+      "files": [
+        {
+          "path": "zenodo/modules/records/templates/zenodo_records/box/versions.html",
+          "blob_sha": "89108a99ad86747d0ddd3c7b43dd35f9fc8dfd23"
+        },
+        {
+          "path": "zenodo/modules/records/serializers/pidrelations.py",
+          "blob_sha": "301c5640aa5799d3195bceca6c2cc0eb8339b2f5"
+        }
+      ],
+      "observed": [
+        "individual versions carry their own identifiers while a concept identifier represents the version family",
+        "the concept DOI is described as resolving to the latest version",
+        "version relations are serialized explicitly as isVersionOf/hasVersion relationships"
+      ],
+      "derived_pattern": "A stable family/concept identity and an exact artifact-version identity serve different purposes and must not be conflated.",
+      "behavioral_consequence": "For reproducibility bind claims to exact versions/heads; use family/concept identifiers only to refer to the evolving lineage, and label moving aliases as such.",
+      "disposition": "ADMITTED_BEHAVIORAL_PATTERN"
+    }
+  ]
+}
