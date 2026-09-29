@@ -410,3 +410,130 @@ Create multi-step analysis chains where one upstream stage is unvalidated, stale
 If polished downstream synthesis still erases upstream uncertainty after restoration, the lineage rule has not become behavioral.
 
 Status: ACTIVE.
+
+
+---
+
+## E18 — Observation versus latent state
+
+### Question
+
+Does explicitly separating observed evidence from inferred latent state reduce premature certainty under partial observability?
+
+### Test
+
+Use tasks where several hidden states can generate the same observation and later evidence discriminates among them.
+
+### Measures
+
+- observations incorrectly promoted to state facts;
+- preservation of live alternatives;
+- correct belief revision when discriminating evidence arrives;
+- model lock-in.
+
+### Falsifier
+
+If explicit belief/state separation does not reduce false certainty or merely adds labels without changing revisions, narrow the rule.
+
+Status: ACTIVE.
+
+---
+
+## E19 — Command versus verified effect
+
+### Question
+
+Does post-effect state verification reduce chained errors caused by assuming an issued action succeeded?
+
+### Conditions
+
+A. continue from command acknowledgement.  
+B. verify resulting state/postcondition and required resource availability before dependent effects.
+
+### Measures
+
+- dependent actions executed on false postconditions;
+- unnecessary verification overhead;
+- detection of partial/failed effects;
+- timing/currentness failures.
+
+### Falsifier
+
+If verification does not materially reduce effect-chain errors across repeated real workflows, narrow where it is required.
+
+Status: ACTIVE.
+
+---
+
+## E20 — Retrieval snapshot currentness
+
+### Question
+
+Does binding retrieval evidence to a source/version or corpus snapshot reduce stale-evidence mistakes?
+
+### Test
+
+Run repeated research tasks across a corpus that changes between retrieval and later synthesis.
+
+### Measures
+
+- stale facts carried forward;
+- successful detection of corpus changes;
+- incorrect reliance on transient rank/internal IDs;
+- refresh overhead.
+
+### Falsifier
+
+If snapshot binding does not improve currentness-sensitive conclusions, restrict it to highly mutable sources.
+
+Status: ACTIVE.
+
+---
+
+## E21 — Independent evidence versus repeated output
+
+### Question
+
+Does accounting for correlation and process diagnostics prevent false confidence from repeated but non-independent outputs?
+
+### Test
+
+Compare repeated runs with shared context/model biases against genuinely diverse evidence sources and independently perturbed runs.
+
+### Measures
+
+- confidence inflation from near-duplicate outputs;
+- disagreement detection;
+- effective source/run diversity;
+- failures hidden by majority repetition.
+
+### Falsifier
+
+If independence-aware accounting does not improve calibration, revise the evidence weighting rule.
+
+Status: ACTIVE.
+
+---
+
+## E22 — Exact version versus moving lineage
+
+### Question
+
+Does distinguishing exact artifact versions from evolving family/concept identifiers improve reproducibility?
+
+### Test
+
+Use sources whose default branch, latest release, or family identifier changes after an initial conclusion.
+
+### Measures
+
+- ability to reconstruct the original evidence;
+- claims silently shifting with latest-version aliases;
+- stale-version confusion;
+- unnecessary version pinning.
+
+### Falsifier
+
+If exact binding adds no reconstruction value for material conclusions, narrow it to mutable or reproducibility-sensitive artifacts.
+
+Status: ACTIVE.
