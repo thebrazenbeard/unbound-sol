@@ -180,3 +180,39 @@ The next frontier should measure corpus metadata blind spots (language, age/acti
 The first complete metadata audit is `state/global-github/metadata/WAVE5_BIAS_AUDIT_V1.json`. For the 80 Wave 5 repositories, Python + C++ account for 43/80, 59/80 have at least 2,000 stars, 52/80 were pushed within 30 days, none were created in 2025–2026, only one is archived, and 19/80 report UNKNOWN or NOASSERTION license metadata.
 
 Wave 6 therefore has a **bias-correction requirement**, not merely a larger-count requirement: sample low-star and very new repositories, deliberately include dormant/archived sources as historical evidence, increase language diversity beyond Python/C++, and preserve explicit license/activity strata.
+
+
+## Wave 6 — measured bias correction
+
+Wave 6 was selected directly from the Wave 5 metadata audit rather than from another popularity-first topic sweep. Its ten lanes include one new/low-star cohort, one archived/dormant cohort, and eight low-star language strata: Haskell, OCaml, Elixir, R, Swift, Zig, Lua, and Clojure.
+
+The wave completed **80/80 exact path/ref/blob-bound source reads across 80 repositories with zero overlap against Waves 1–5**.
+
+The measured audit in `state/global-github/metadata/WAVE6_BIAS_AUDIT_V1.json` confirms that the selection materially changed the distribution relative to Wave 5:
+
+- repositories with at least 2,000 stars fell from 59/80 to 8/80;
+- repositories below 2,000 stars rose from 21/80 to 72/80;
+- 2025–2026-created repositories rose from 0/80 to 11/80;
+- archived repositories rose from 1/80 to 8/80;
+- repositories pushed more than two years ago rose from 7/80 to 22/80;
+- the dominant Python/C++ pattern was replaced by deliberate 8-repository strata for eight other languages.
+
+This is a **bias-correction sample**, not a claim that these proportions represent GitHub.
+
+### Wave 6 deep inspection
+
+Five exact-head sources are recorded in `state/global-github/DEEP_DIVE_2026-09-29_V5.json`:
+
+- Eff — separate abstract operation from handling policy and expose backtrack/retry/enumeration semantics explicitly;
+- Coccinelle — structural transformations with semantic matching, equivalence rules, constraints, and witnesses;
+- Project:M36 — separate change intent, historical branch, current view, and materialized consequences;
+- Boundary — machine-checkable dependency/authority boundaries with advisory development mode and hard integration enforcement;
+- Swift Parsing — forward transform success is insufficient when reconstructability is promised; round-trip invariants expose hidden loss.
+
+The corresponding behavioral probes are E23–E27.
+
+### Six-wave coverage checkpoint
+
+`state/global-github/COVERAGE_2026-09-29_V6.json` records **480 lane assignments, 475 unique/source-read repositories, 60 Project Runner work units in VERIFYING, and 25 exact-head deep-inspection records**.
+
+The next frontier should prioritize evidence-depth and behavioral evaluation: run E18–E27 on real work, inspect tests/specifications/papers for selected deep sources, expand sub-500-star coverage, and compare archived versus active guidance before transferring implementation advice.
