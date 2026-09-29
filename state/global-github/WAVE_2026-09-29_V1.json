@@ -10,7 +10,9 @@
     "lane_assignments": 80,
     "unique_repositories": 77,
     "successful_lane_reads": 72,
-    "unresolved_lane_reads": 8
+    "unresolved_lane_reads": 8,
+    "unique_successful_repositories": 69,
+    "unique_unresolved_repositories": 8
   },
   "evidence_scope": "README_BLOB_LEVEL_FIRST_WAVE",
   "policy": {
@@ -489,5 +491,12 @@
     "Record license/SPDX before any code-level reuse; prefer mechanism summaries over copied implementation.",
     "Promote only mechanisms that survive source inspection, contradiction checks, and a concrete behavioral consequence.",
     "Use reference-index repositories as discovery graphs, not as evidence that linked claims are true."
-  ]
+  ],
+  "project_runner_binding": {
+    "repository": "thebrazenbeard/project-runner",
+    "ref": "main",
+    "commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+    "contract": "PROJECT_RUNNER.md",
+    "work_unit_schema": "schemas/work-unit.schema.json"
+  }
 }
