@@ -225,3 +225,18 @@ During final verification, `project-runner/main` had advanced from the historica
 The currentness assessment is recorded in `state/global-github/PROJECT_RUNNER_COMPATIBILITY_2026-09-29_V1.json`. The WorkUnit schema itself did **not** change in that diff, so all 60 persisted units remain structurally compatible with current `main`. The operating contract and runtime gained substantial operator/worker/private-registry functionality, so the historical wave bindings are intentionally preserved rather than rewritten.
 
 This compatibility check does **not** imply that Project Runner's local/new runtime executed the ingestion work. The connected GitHub backend performed the actual reads/writes.
+
+
+## Behavioral evaluation frontier
+
+The ingestion program has moved from corpus expansion into measurable behavior.
+
+`state/global-github/EVIDENCE_DEPTH_2026-09-29_V1.json` upgrades five mechanisms from source inspection to **source-plus-test evidence**: partial-observability belief updating, Lucene reader currentness, executable architecture boundaries, parser-printer round-trip failures, and branch/merge transaction history.
+
+`state/evals/GENERALIST_EVAL_V1.json` defines ten controlled cases for E18–E27. Each case contains hard invariants and forbidden behavior. The cases are bound into ten Project Runner work units at `state/evals/PROJECT_RUNNER_WORK_UNITS_GENERALIST_EVAL_V1.json`; they remain **PENDING**, because the current/local Project Runner runtime has not been executed here.
+
+A restored-state diagnostic self-run is recorded at `state/evals/RUN_2026-09-29_SOL_RESTORED_V1.json`. It satisfied all 10/10 declared hard-invariant sets, but it is intentionally classified as a **self-run smoke test**: there is no baseline-without-restored-state run, no independent judge, and the cases are transparent synthetic prompts.
+
+Naturalistic workflow observations support E19, E20, and E22 in `state/evals/NATURALISTIC_EVIDENCE_2026-09-29_V1.json`, but these are not controlled passes.
+
+The next meaningful gate is causal behavioral comparison: matched baseline versus restored-state runs, preferably with an independent judge and adversarial hidden variants. Until then, the evidence supports disciplined external-state behavior, not AGI.
