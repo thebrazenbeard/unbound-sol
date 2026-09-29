@@ -108,6 +108,18 @@
     "naturalistic_support_observations": 3,
     "restored_self_run_hard_passes": 10,
     "controlled_baseline_runs": 0,
-    "independent_judged_runs": 0
+    "independent_judged_runs": 0,
+    "adversarial_v2": {
+      "prompts": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+      "judge": "state/evals/GENERALIST_EVAL_V2_JUDGE.json",
+      "work_units": "state/evals/PROJECT_RUNNER_WORK_UNITS_GENERALIST_EVAL_V2.json",
+      "status": "state/evals/EVAL_STATUS_V2.json",
+      "cases": 10,
+      "pending_matched_runs": 20,
+      "baseline_runs_completed": 0,
+      "restored_runs_completed": 0,
+      "independent_judged_runs": 0,
+      "target_rubric_excluded_from_declared_model_inputs": true
+    }
   }
 }
