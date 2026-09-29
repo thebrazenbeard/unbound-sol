@@ -1,0 +1,97 @@
+{
+  "schema": "UNBOUND_SOL_GLOBAL_GITHUB_COVERAGE_V4",
+  "observed_at": "2026-09-29",
+  "latest_wave": "state/global-github/WAVE_2026-09-29_V6.json",
+  "project_runner_binding": {
+    "repository": "thebrazenbeard/project-runner",
+    "ref": "main",
+    "commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+    "contract": "PROJECT_RUNNER.md",
+    "work_unit_schema": "schemas/work-unit.schema.json"
+  },
+  "cumulative": {
+    "lane_assignments": 480,
+    "unique_repositories": 475,
+    "successful_unique_repositories": 475,
+    "unresolved_unique_repositories": 0,
+    "work_units": 60,
+    "verifying_work_units": 60,
+    "deep_inspection_records": 25
+  },
+  "wave_artifacts": [
+    "state/global-github/WAVE_2026-09-29_V1.json",
+    "state/global-github/WAVE_2026-09-29_V2.json",
+    "state/global-github/WAVE_2026-09-29_V3.json",
+    "state/global-github/WAVE_2026-09-29_V4.json",
+    "state/global-github/WAVE_2026-09-29_V5.json",
+    "state/global-github/WAVE_2026-09-29_V6.json"
+  ],
+  "work_unit_artifacts": [
+    "state/global-github/PROJECT_RUNNER_WORK_UNITS_2026-09-29_V1.json",
+    "state/global-github/PROJECT_RUNNER_WORK_UNITS_2026-09-29_V2.json",
+    "state/global-github/PROJECT_RUNNER_WORK_UNITS_2026-09-29_V3.json",
+    "state/global-github/PROJECT_RUNNER_WORK_UNITS_2026-09-29_V4.json",
+    "state/global-github/PROJECT_RUNNER_WORK_UNITS_2026-09-29_V5.json",
+    "state/global-github/PROJECT_RUNNER_WORK_UNITS_2026-09-29_V6.json"
+  ],
+  "deep_artifacts": [
+    "state/global-github/DEEP_DIVE_2026-09-29_V1.json",
+    "state/global-github/DEEP_DIVE_2026-09-29_V2.json",
+    "state/global-github/DEEP_DIVE_2026-09-29_V3.json",
+    "state/global-github/DEEP_DIVE_2026-09-29_V4.json",
+    "state/global-github/DEEP_DIVE_2026-09-29_V5.json"
+  ],
+  "cross_wave_or_lane_duplicate_assignments": [
+    {
+      "repository": "amilajack/reading",
+      "assignments": 2
+    },
+    {
+      "repository": "Developer-Y/cs-video-courses",
+      "assignments": 2
+    },
+    {
+      "repository": "HKUDS/LightRAG",
+      "assignments": 2
+    },
+    {
+      "repository": "Shubhamsaboo/awesome-llm-apps",
+      "assignments": 2
+    },
+    {
+      "repository": "synthetic-sciences/openscience",
+      "assignments": 2
+    }
+  ],
+  "coverage_claim_ceiling": "BOUNDED_QUERY_SAMPLED_PUBLIC_GITHUB_SOURCE_READS_WITH_TWENTY_FIVE_EXACT_HEAD_DEEP_RECORDS_AND_TWO_METADATA_BIAS_AUDITS",
+  "known_biases": [
+    "GitHub search discoverability and manually chosen strata shape the sample.",
+    "Six waves remain tiny relative to all public GitHub repositories.",
+    "Wave 6 deliberately balances languages and low-star/archived/new strata; it is not a prevalence estimate.",
+    "Overview reads establish source self-description, not implementation quality or domain truth.",
+    "Repository geography and owner/organization type remain unmeasured.",
+    "License metadata is incomplete for many repositories and UNKNOWN/NOASSERTION is never treated as permission."
+  ],
+  "evidence_role_taxonomy": [
+    "TOOL",
+    "DATASET",
+    "CURATED_INDEX",
+    "COURSEWARE",
+    "MODEL_IMPLEMENTATION",
+    "KNOWLEDGE_BASE",
+    "PRIMARY_RESEARCH_ARTIFACT",
+    "PRIMARY_SOURCE"
+  ],
+  "next_metrics": [
+    "cross-wave metadata audit beyond Waves 5-6",
+    "sub-500-star coverage larger than current Wave 6 cohort",
+    "owner/organization type where public metadata supports it",
+    "archive/dormancy effects on guidance currentness",
+    "license inspection for deep-inspected sources",
+    "evidence-depth progression into tests/specifications/papers"
+  ],
+  "metadata_audits": [
+    "state/global-github/metadata/WAVE5_BIAS_AUDIT_V1.json",
+    "state/global-github/metadata/WAVE6_BIAS_AUDIT_V1.json"
+  ]
+}
