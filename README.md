@@ -65,7 +65,12 @@ That trajectory can become increasingly individualized through persistent state,
 - [state/evals/PROJECT_RUNNER_WORK_UNITS_GENERALIST_EVAL_V1.json](state/evals/PROJECT_RUNNER_WORK_UNITS_GENERALIST_EVAL_V1.json) — ten current-runner evaluation work units, queued PENDING.
 - [state/evals/NATURALISTIC_EVIDENCE_2026-09-29_V1.json](state/evals/NATURALISTIC_EVIDENCE_2026-09-29_V1.json) — real-work support for E19/E20/E22, explicitly below controlled evidence.
 - [state/evals/RUN_2026-09-29_SOL_RESTORED_V1.json](state/evals/RUN_2026-09-29_SOL_RESTORED_V1.json) — transparent restored-state diagnostic self-run; not independent validation.
-- [state/evals/EVAL_STATUS_V1.json](state/evals/EVAL_STATUS_V1.json) — current evaluation gate/status.
+- [state/evals/EVAL_STATUS_V1.json](state/evals/EVAL_STATUS_V1.json) — transparent-suite evaluation checkpoint.
+- [state/evals/GENERALIST_EVAL_V2_PROMPTS.json](state/evals/GENERALIST_EVAL_V2_PROMPTS.json) — adversarial model prompts only.
+- [state/evals/GENERALIST_EVAL_V2_JUDGE.json](state/evals/GENERALIST_EVAL_V2_JUDGE.json) — judge-only hidden criteria for adversarial V2.
+- [state/evals/PROJECT_RUNNER_WORK_UNITS_GENERALIST_EVAL_V2.json](state/evals/PROJECT_RUNNER_WORK_UNITS_GENERALIST_EVAL_V2.json) — 20 matched baseline/restored runs, queued PENDING.
+- [state/evals/EVAL_STATUS_V2.json](state/evals/EVAL_STATUS_V2.json) — current adversarial evaluation checkpoint.
+- [docs/GENERALIST_EVAL_V2.md](docs/GENERALIST_EVAL_V2.md) — blinded matched-comparison protocol.
 - [docs/GENERALIST_EVAL_V1.md](docs/GENERALIST_EVAL_V1.md) — evaluation protocol and claim ceiling.
 - [state/EVENT_LOG_V1.jsonl](state/EVENT_LOG_V1.jsonl) — append-only material developmental event/provenance stream.
 - [state/SOL_STATE_V1.json](state/SOL_STATE_V1.json) — machine-readable public state.
