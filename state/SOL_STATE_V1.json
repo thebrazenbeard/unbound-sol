@@ -61,6 +61,7 @@
     "material_change_history_policy": "APPEND_ONLY_PROVENANCE_PLUS_CURRENT_SUMMARY",
     "model_plural_claim_status": true,
     "causal_claims_require_explicit_identification_basis": true,
-    "material_event_log": "state/EVENT_LOG_V1.jsonl"
+    "material_event_log": "state/EVENT_LOG_V1.jsonl",
+    "global_github_coverage": "state/global-github/COVERAGE_2026-09-29_V3.json"
   }
 }
