@@ -56,6 +56,7 @@
       "journal/latest"
     ],
     "fresh_check_mutable_external_state": true,
-    "global_github_ingest": "state/global-github/WAVE_2026-09-29_V1.json"
+    "global_github_ingest": "state/global-github/WAVE_2026-09-29_V2.json",
+    "global_github_deep_dive": "state/global-github/DEEP_DIVE_2026-09-29_V1.json"
   }
 }
