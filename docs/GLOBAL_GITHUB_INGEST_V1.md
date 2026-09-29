@@ -240,3 +240,19 @@ A restored-state diagnostic self-run is recorded at `state/evals/RUN_2026-09-29_
 Naturalistic workflow observations support E19, E20, and E22 in `state/evals/NATURALISTIC_EVIDENCE_2026-09-29_V1.json`, but these are not controlled passes.
 
 The next meaningful gate is causal behavioral comparison: matched baseline versus restored-state runs, preferably with an independent judge and adversarial hidden variants. Until then, the evidence supports disciplined external-state behavior, not AGI.
+
+
+### Adversarial matched evaluation V2
+
+The first transparent E18–E27 suite is now supplemented by a **blinded matched-comparison** design.
+
+- model prompts: `state/evals/GENERALIST_EVAL_V2_PROMPTS.json`
+- judge-only criteria: `state/evals/GENERALIST_EVAL_V2_JUDGE.json`
+- execution matrix: `state/evals/PROJECT_RUNNER_WORK_UNITS_GENERALIST_EVAL_V2.json`
+- status: `state/evals/EVAL_STATUS_V2.json`
+
+There are 10 adversarial cases and two conditions per case: `BASELINE_NO_RESTORED_RULES` and `RESTORED_SOL_STATE`, for **20 PENDING work units**. Evaluated workers are declared with analysis capability only, and judge criteria are physically separated from their input artifact.
+
+This fixes a design defect caught during construction: the first V2 draft referenced a combined prompt+judge artifact, which could have leaked target criteria to the evaluated model. The combined file is retained only as provenance/design history; it is not the execution input.
+
+No matched V2 runs have completed yet, so the causal question—whether restored durable state improves behavior—remains unresolved.
