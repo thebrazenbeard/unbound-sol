@@ -86,6 +86,10 @@
     "license metadata",
     "source-role distribution",
     "evidence depth from overview to source/tests/papers/specifications",
-    "retrieval snapshot/currentness metadata where mutable indexes mediate evidence"
+    "retrieval snapshot/currentness metadata where mutable indexes mediate evidence",
+    "cross-wave metadata audit beyond Wave 5"
+  ],
+  "metadata_audits": [
+    "state/global-github/metadata/WAVE5_BIAS_AUDIT_V1.json"
   ]
 }
