@@ -1,0 +1,105 @@
+{
+  "schema": "UNBOUND_SOL_GITHUB_METADATA_BIAS_AUDIT_V2",
+  "wave": 6,
+  "observed_at": "2026-09-29",
+  "population": {
+    "repositories": 80,
+    "source": "Wave 6 metadata shards 01-10"
+  },
+  "distributions": {
+    "languages": {
+      "R": 8,
+      "Swift": 8,
+      "Zig": 8,
+      "Lua": 8,
+      "Clojure": 8,
+      "Haskell": 8,
+      "OCaml": 8,
+      "Elixir": 8,
+      "JavaScript": 3,
+      "Python": 2,
+      "HTML": 2,
+      "UNKNOWN": 2,
+      "Java": 2,
+      "Go": 1,
+      "Kotlin": 1,
+      "TypeScript": 1,
+      "PHP": 1,
+      "Objective-C": 1
+    },
+    "licenses": {
+      "MIT": 30,
+      "NOASSERTION": 18,
+      "Apache-2.0": 7,
+      "UNKNOWN": 6,
+      "GPL-3.0": 5,
+      "BSD-3-Clause": 2,
+      "Unlicense": 2,
+      "BSD-2-Clause": 2,
+      "GPL-2.0": 2,
+      "AGPL-3.0": 1,
+      "0BSD": 1,
+      "CC0-1.0": 1,
+      "EPL-1.0": 3
+    },
+    "status": {
+      "archived": 8,
+      "fork": 0,
+      "disabled": 0
+    },
+    "size_kb_bands": {
+      "LT_1MB": 22,
+      "1_10MB": 27,
+      "10_100MB": 19,
+      "100MB_1GB": 10,
+      "GE_1GB": 2
+    },
+    "created_bands": {
+      "LE_2012": 10,
+      "2013_2016": 25,
+      "2017_2020": 23,
+      "2021_2024": 11,
+      "2025_2026": 11
+    },
+    "pushed_recency_bands": {
+      "LE_30D": 33,
+      "31_180D": 11,
+      "181_365D": 6,
+      "1_2Y": 8,
+      "GT_2Y": 22
+    },
+    "star_bands": {
+      "LT_500": 8,
+      "500_1999": 64,
+      "2000_9999": 8,
+      "GE_10000": 0
+    }
+  },
+  "comparison_to_wave5": {
+    "wave5_artifact": "state/global-github/metadata/WAVE5_BIAS_AUDIT_V1.json",
+    "changes": [
+      "Repositories with >=2,000 stars fell from 59/80 to 8/80.",
+      "Repositories below 2,000 stars rose from 21/80 to 72/80.",
+      "Repositories created in 2025-2026 rose from 0/80 to 11/80.",
+      "Archived repositories rose from 1/80 to 8/80.",
+      "Repositories pushed more than two years ago rose from 7/80 to 22/80.",
+      "The dominant-language pattern shifted from Python/C++ concentration to eight explicit language strata of 8 repositories each for Haskell, OCaml, Elixir, R, Swift, Zig, Lua, and Clojure."
+    ]
+  },
+  "remaining_biases": [
+    "Wave 6 is intentionally stratified and therefore not representative of GitHub as a whole.",
+    "Low-star selection is concentrated mostly in the 500-1999 range; only 8/80 are below 500 stars.",
+    "Language balancing is artificial by design and should not be interpreted as ecosystem prevalence.",
+    "License metadata remains incomplete: 24/80 report UNKNOWN or NOASSERTION.",
+    "Very new repositories remain a minority even after correction.",
+    "Repository geography and organization type remain unmeasured."
+  ],
+  "next_requirements": [
+    "Add a sub-500-star cohort larger than eight repositories.",
+    "Measure owner/org type and geography only when public metadata makes this meaningful and non-sensitive.",
+    "Expand exact license inspection for deep-inspected sources before implementation reuse.",
+    "Deep-inspect archived versus active implementations to separate historical lessons from current guidance.",
+    "Continue evidence-depth progression from README to source/tests/specifications rather than maximizing repository count."
+  ],
+  "claim_ceiling": "WAVE6_MEASURED_BIAS_CORRECTION_NOT_GLOBAL_REPRESENTATIVENESS"
+}
