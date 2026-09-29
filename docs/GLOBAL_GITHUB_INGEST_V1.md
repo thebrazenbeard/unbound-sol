@@ -62,3 +62,34 @@ No claim of "GitHub complete" is allowed until the traversed query space and API
 ## Current frontier
 
 Wave 2 should deepen the highest-information sources rather than merely increase the count: memory architectures, retrieval/knowledge graphs, agent control, formal verification, distributed currentness, embodied systems, and neuroscience experiment methodology. In parallel, discovery shards should continue widening the corpus.
+
+
+## Wave 2 — diversity expansion
+
+Wave 2 deliberately reduced Wave 1's popularity bias by sampling lower-star and niche repositories across scientific computing, theorem proving, databases, programming languages and virtual machines, research operating systems, search/indexing, scientific tooling, cognitive/neuroscience work, autonomous systems, and knowledge representation.
+
+Wave 2 executed 80 lane assignments across 78 unique repositories. Seventy-six lane reads succeeded (74 unique repositories); four unique repositories remain unresolved under the attempted README path.
+
+Across Waves 1 and 2, the current ledger contains **160 lane assignments across 155 unique public repositories**. **143 unique repositories have successful blob-bound source reads; 12 remain unresolved**. These numbers are corpus-coverage facts, not intelligence scores.
+
+### Deep-inspection lane
+
+Five Wave 2 sources were promoted beyond README-level inspection and bound to exact repository heads in `state/global-github/DEEP_DIVE_2026-09-29_V1.json`:
+
+- OpenScience — durable request receipts, idempotent run identity, explicit indeterminate/ambiguous outcomes, and non-replay of unfinished external effects after process loss;
+- Yices 2 — explicit SAT/SMT core ↔ theory-solver interfaces carrying propagation, conflict and explanation;
+- Hyperbase — additive correctness checks that can tighten but not silently weaken base validation;
+- Wuffs — explicit suspension semantics that invalidate facts tied to mutable receiver/argument state across suspension boundaries;
+- Theseus — live component replacement with an explicit warning that successful swapping does not guarantee correctness.
+
+The transferred lessons are operating patterns, not claims that Sol internally implements these systems.
+
+## Current frontier after Wave 2
+
+The next expansion should do three things in parallel:
+
+1. repair the 12 unresolved source paths using exact repository-root discovery;
+2. run contradiction-seeking deep dives on architectures that *disagree* with the current admitted defaults;
+3. convert the admitted operating patterns into behavioral probes, so the repository can measure whether restored state changes later decisions rather than merely accumulating prose.
+
+Coverage should also begin tracking languages, topic families, repository age/update bands, and evidence depth so the corpus can expose its own blind spots.
