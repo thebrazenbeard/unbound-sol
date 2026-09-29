@@ -1,7 +1,7 @@
 {
   "schema": "UNBOUND_SOL_PROJECT_RUNNER_EVAL_WORK_UNITS_V2",
-  "suite": "state/evals/GENERALIST_EVAL_V2_ADVERSARIAL.json",
-  "suite_blob_sha": "e9560ab4a1d1080e5643527865daacc2d614ef1e",
+  "suite": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+  "suite_blob_sha": "13c057fabe6935877fc18eba06d050124afe63bd",
   "runner_binding": {
     "repository": "thebrazenbeard/project-runner",
     "ref": "main",
@@ -10,11 +10,12 @@
     "work_unit_schema": "schemas/work-unit.schema.json"
   },
   "privacy_and_blinding": {
-    "model_receives_only": [
-      "case.id",
-      "case.prompt"
+    "evaluated_model_input_artifact": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+    "judge_only_artifact": "state/evals/GENERALIST_EVAL_V2_JUDGE.json",
+    "evaluated_model_must_not_receive_judge_artifact": true,
+    "evaluated_worker_required_capabilities": [
+      "analyze"
     ],
-    "judge_fields_hidden_from_model": true,
     "matched_conditions": [
       "BASELINE_NO_RESTORED_RULES",
       "RESTORED_SOL_STATE"
@@ -30,13 +31,12 @@
           "repository": "thebrazenbeard/unbound-sol",
           "ref": "work/global-github-ingest-20260929",
           "commit": null,
-          "path": "state/evals/GENERALIST_EVAL_V2_ADVERSARIAL.json",
-          "digest": "e9560ab4a1d1080e5643527865daacc2d614ef1e"
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
         }
       ],
       "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
       "required_capabilities": [
-        "read",
         "analyze"
       ],
       "collision_keys": [
@@ -55,9 +55,10 @@
         "condition-comparison-ready-record"
       ],
       "completion_criteria": [
-        "pass only case.id and case.prompt to evaluated model",
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
         "persist exact model/runtime/state provenance",
-        "judge all hidden required invariants and forbidden behaviors",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
         "do not let self-judgment count as independent validation",
         "preserve baseline/restored condition identity"
       ],
@@ -80,13 +81,12 @@
           "repository": "thebrazenbeard/unbound-sol",
           "ref": "work/global-github-ingest-20260929",
           "commit": null,
-          "path": "state/evals/GENERALIST_EVAL_V2_ADVERSARIAL.json",
-          "digest": "e9560ab4a1d1080e5643527865daacc2d614ef1e"
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
         }
       ],
       "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
       "required_capabilities": [
-        "read",
         "analyze"
       ],
       "collision_keys": [
@@ -105,9 +105,10 @@
         "condition-comparison-ready-record"
       ],
       "completion_criteria": [
-        "pass only case.id and case.prompt to evaluated model",
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
         "persist exact model/runtime/state provenance",
-        "judge all hidden required invariants and forbidden behaviors",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
         "do not let self-judgment count as independent validation",
         "preserve baseline/restored condition identity"
       ],
@@ -130,13 +131,12 @@
           "repository": "thebrazenbeard/unbound-sol",
           "ref": "work/global-github-ingest-20260929",
           "commit": null,
-          "path": "state/evals/GENERALIST_EVAL_V2_ADVERSARIAL.json",
-          "digest": "e9560ab4a1d1080e5643527865daacc2d614ef1e"
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
         }
       ],
       "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
       "required_capabilities": [
-        "read",
         "analyze"
       ],
       "collision_keys": [
@@ -155,9 +155,10 @@
         "condition-comparison-ready-record"
       ],
       "completion_criteria": [
-        "pass only case.id and case.prompt to evaluated model",
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
         "persist exact model/runtime/state provenance",
-        "judge all hidden required invariants and forbidden behaviors",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
         "do not let self-judgment count as independent validation",
         "preserve baseline/restored condition identity"
       ],
@@ -180,13 +181,12 @@
           "repository": "thebrazenbeard/unbound-sol",
           "ref": "work/global-github-ingest-20260929",
           "commit": null,
-          "path": "state/evals/GENERALIST_EVAL_V2_ADVERSARIAL.json",
-          "digest": "e9560ab4a1d1080e5643527865daacc2d614ef1e"
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
         }
       ],
       "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
       "required_capabilities": [
-        "read",
         "analyze"
       ],
       "collision_keys": [
@@ -205,9 +205,10 @@
         "condition-comparison-ready-record"
       ],
       "completion_criteria": [
-        "pass only case.id and case.prompt to evaluated model",
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
         "persist exact model/runtime/state provenance",
-        "judge all hidden required invariants and forbidden behaviors",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
         "do not let self-judgment count as independent validation",
         "preserve baseline/restored condition identity"
       ],
@@ -230,13 +231,12 @@
           "repository": "thebrazenbeard/unbound-sol",
           "ref": "work/global-github-ingest-20260929",
           "commit": null,
-          "path": "state/evals/GENERALIST_EVAL_V2_ADVERSARIAL.json",
-          "digest": "e9560ab4a1d1080e5643527865daacc2d614ef1e"
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
         }
       ],
       "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
       "required_capabilities": [
-        "read",
         "analyze"
       ],
       "collision_keys": [
@@ -255,9 +255,10 @@
         "condition-comparison-ready-record"
       ],
       "completion_criteria": [
-        "pass only case.id and case.prompt to evaluated model",
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
         "persist exact model/runtime/state provenance",
-        "judge all hidden required invariants and forbidden behaviors",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
         "do not let self-judgment count as independent validation",
         "preserve baseline/restored condition identity"
       ],
@@ -280,13 +281,12 @@
           "repository": "thebrazenbeard/unbound-sol",
           "ref": "work/global-github-ingest-20260929",
           "commit": null,
-          "path": "state/evals/GENERALIST_EVAL_V2_ADVERSARIAL.json",
-          "digest": "e9560ab4a1d1080e5643527865daacc2d614ef1e"
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
         }
       ],
       "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
       "required_capabilities": [
-        "read",
         "analyze"
       ],
       "collision_keys": [
@@ -305,9 +305,10 @@
         "condition-comparison-ready-record"
       ],
       "completion_criteria": [
-        "pass only case.id and case.prompt to evaluated model",
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
         "persist exact model/runtime/state provenance",
-        "judge all hidden required invariants and forbidden behaviors",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
         "do not let self-judgment count as independent validation",
         "preserve baseline/restored condition identity"
       ],
@@ -330,13 +331,12 @@
           "repository": "thebrazenbeard/unbound-sol",
           "ref": "work/global-github-ingest-20260929",
           "commit": null,
-          "path": "state/evals/GENERALIST_EVAL_V2_ADVERSARIAL.json",
-          "digest": "e9560ab4a1d1080e5643527865daacc2d614ef1e"
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
         }
       ],
       "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
       "required_capabilities": [
-        "read",
         "analyze"
       ],
       "collision_keys": [
@@ -355,9 +355,10 @@
         "condition-comparison-ready-record"
       ],
       "completion_criteria": [
-        "pass only case.id and case.prompt to evaluated model",
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
         "persist exact model/runtime/state provenance",
-        "judge all hidden required invariants and forbidden behaviors",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
         "do not let self-judgment count as independent validation",
         "preserve baseline/restored condition identity"
       ],
@@ -380,13 +381,12 @@
           "repository": "thebrazenbeard/unbound-sol",
           "ref": "work/global-github-ingest-20260929",
           "commit": null,
-          "path": "state/evals/GENERALIST_EVAL_V2_ADVERSARIAL.json",
-          "digest": "e9560ab4a1d1080e5643527865daacc2d614ef1e"
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
         }
       ],
       "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
       "required_capabilities": [
-        "read",
         "analyze"
       ],
       "collision_keys": [
@@ -405,9 +405,10 @@
         "condition-comparison-ready-record"
       ],
       "completion_criteria": [
-        "pass only case.id and case.prompt to evaluated model",
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
         "persist exact model/runtime/state provenance",
-        "judge all hidden required invariants and forbidden behaviors",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
         "do not let self-judgment count as independent validation",
         "preserve baseline/restored condition identity"
       ],
@@ -430,13 +431,12 @@
           "repository": "thebrazenbeard/unbound-sol",
           "ref": "work/global-github-ingest-20260929",
           "commit": null,
-          "path": "state/evals/GENERALIST_EVAL_V2_ADVERSARIAL.json",
-          "digest": "e9560ab4a1d1080e5643527865daacc2d614ef1e"
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
         }
       ],
       "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
       "required_capabilities": [
-        "read",
         "analyze"
       ],
       "collision_keys": [
@@ -455,9 +455,10 @@
         "condition-comparison-ready-record"
       ],
       "completion_criteria": [
-        "pass only case.id and case.prompt to evaluated model",
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
         "persist exact model/runtime/state provenance",
-        "judge all hidden required invariants and forbidden behaviors",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
         "do not let self-judgment count as independent validation",
         "preserve baseline/restored condition identity"
       ],
@@ -480,13 +481,12 @@
           "repository": "thebrazenbeard/unbound-sol",
           "ref": "work/global-github-ingest-20260929",
           "commit": null,
-          "path": "state/evals/GENERALIST_EVAL_V2_ADVERSARIAL.json",
-          "digest": "e9560ab4a1d1080e5643527865daacc2d614ef1e"
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
         }
       ],
       "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
       "required_capabilities": [
-        "read",
         "analyze"
       ],
       "collision_keys": [
@@ -505,9 +505,10 @@
         "condition-comparison-ready-record"
       ],
       "completion_criteria": [
-        "pass only case.id and case.prompt to evaluated model",
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
         "persist exact model/runtime/state provenance",
-        "judge all hidden required invariants and forbidden behaviors",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
         "do not let self-judgment count as independent validation",
         "preserve baseline/restored condition identity"
       ],
@@ -530,13 +531,12 @@
           "repository": "thebrazenbeard/unbound-sol",
           "ref": "work/global-github-ingest-20260929",
           "commit": null,
-          "path": "state/evals/GENERALIST_EVAL_V2_ADVERSARIAL.json",
-          "digest": "e9560ab4a1d1080e5643527865daacc2d614ef1e"
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
         }
       ],
       "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
       "required_capabilities": [
-        "read",
         "analyze"
       ],
       "collision_keys": [
@@ -555,9 +555,10 @@
         "condition-comparison-ready-record"
       ],
       "completion_criteria": [
-        "pass only case.id and case.prompt to evaluated model",
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
         "persist exact model/runtime/state provenance",
-        "judge all hidden required invariants and forbidden behaviors",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
         "do not let self-judgment count as independent validation",
         "preserve baseline/restored condition identity"
       ],
@@ -580,13 +581,12 @@
           "repository": "thebrazenbeard/unbound-sol",
           "ref": "work/global-github-ingest-20260929",
           "commit": null,
-          "path": "state/evals/GENERALIST_EVAL_V2_ADVERSARIAL.json",
-          "digest": "e9560ab4a1d1080e5643527865daacc2d614ef1e"
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
         }
       ],
       "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
       "required_capabilities": [
-        "read",
         "analyze"
       ],
       "collision_keys": [
@@ -605,9 +605,10 @@
         "condition-comparison-ready-record"
       ],
       "completion_criteria": [
-        "pass only case.id and case.prompt to evaluated model",
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
         "persist exact model/runtime/state provenance",
-        "judge all hidden required invariants and forbidden behaviors",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
         "do not let self-judgment count as independent validation",
         "preserve baseline/restored condition identity"
       ],
@@ -630,13 +631,12 @@
           "repository": "thebrazenbeard/unbound-sol",
           "ref": "work/global-github-ingest-20260929",
           "commit": null,
-          "path": "state/evals/GENERALIST_EVAL_V2_ADVERSARIAL.json",
-          "digest": "e9560ab4a1d1080e5643527865daacc2d614ef1e"
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
         }
       ],
       "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
       "required_capabilities": [
-        "read",
         "analyze"
       ],
       "collision_keys": [
@@ -655,9 +655,10 @@
         "condition-comparison-ready-record"
       ],
       "completion_criteria": [
-        "pass only case.id and case.prompt to evaluated model",
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
         "persist exact model/runtime/state provenance",
-        "judge all hidden required invariants and forbidden behaviors",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
         "do not let self-judgment count as independent validation",
         "preserve baseline/restored condition identity"
       ],
@@ -680,13 +681,12 @@
           "repository": "thebrazenbeard/unbound-sol",
           "ref": "work/global-github-ingest-20260929",
           "commit": null,
-          "path": "state/evals/GENERALIST_EVAL_V2_ADVERSARIAL.json",
-          "digest": "e9560ab4a1d1080e5643527865daacc2d614ef1e"
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
         }
       ],
       "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
       "required_capabilities": [
-        "read",
         "analyze"
       ],
       "collision_keys": [
@@ -705,9 +705,10 @@
         "condition-comparison-ready-record"
       ],
       "completion_criteria": [
-        "pass only case.id and case.prompt to evaluated model",
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
         "persist exact model/runtime/state provenance",
-        "judge all hidden required invariants and forbidden behaviors",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
         "do not let self-judgment count as independent validation",
         "preserve baseline/restored condition identity"
       ],
@@ -730,13 +731,12 @@
           "repository": "thebrazenbeard/unbound-sol",
           "ref": "work/global-github-ingest-20260929",
           "commit": null,
-          "path": "state/evals/GENERALIST_EVAL_V2_ADVERSARIAL.json",
-          "digest": "e9560ab4a1d1080e5643527865daacc2d614ef1e"
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
         }
       ],
       "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
       "required_capabilities": [
-        "read",
         "analyze"
       ],
       "collision_keys": [
@@ -755,9 +755,10 @@
         "condition-comparison-ready-record"
       ],
       "completion_criteria": [
-        "pass only case.id and case.prompt to evaluated model",
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
         "persist exact model/runtime/state provenance",
-        "judge all hidden required invariants and forbidden behaviors",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
         "do not let self-judgment count as independent validation",
         "preserve baseline/restored condition identity"
       ],
@@ -780,13 +781,12 @@
           "repository": "thebrazenbeard/unbound-sol",
           "ref": "work/global-github-ingest-20260929",
           "commit": null,
-          "path": "state/evals/GENERALIST_EVAL_V2_ADVERSARIAL.json",
-          "digest": "e9560ab4a1d1080e5643527865daacc2d614ef1e"
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
         }
       ],
       "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
       "required_capabilities": [
-        "read",
         "analyze"
       ],
       "collision_keys": [
@@ -805,9 +805,10 @@
         "condition-comparison-ready-record"
       ],
       "completion_criteria": [
-        "pass only case.id and case.prompt to evaluated model",
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
         "persist exact model/runtime/state provenance",
-        "judge all hidden required invariants and forbidden behaviors",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
         "do not let self-judgment count as independent validation",
         "preserve baseline/restored condition identity"
       ],
@@ -830,13 +831,12 @@
           "repository": "thebrazenbeard/unbound-sol",
           "ref": "work/global-github-ingest-20260929",
           "commit": null,
-          "path": "state/evals/GENERALIST_EVAL_V2_ADVERSARIAL.json",
-          "digest": "e9560ab4a1d1080e5643527865daacc2d614ef1e"
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
         }
       ],
       "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
       "required_capabilities": [
-        "read",
         "analyze"
       ],
       "collision_keys": [
@@ -855,9 +855,10 @@
         "condition-comparison-ready-record"
       ],
       "completion_criteria": [
-        "pass only case.id and case.prompt to evaluated model",
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
         "persist exact model/runtime/state provenance",
-        "judge all hidden required invariants and forbidden behaviors",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
         "do not let self-judgment count as independent validation",
         "preserve baseline/restored condition identity"
       ],
@@ -880,13 +881,12 @@
           "repository": "thebrazenbeard/unbound-sol",
           "ref": "work/global-github-ingest-20260929",
           "commit": null,
-          "path": "state/evals/GENERALIST_EVAL_V2_ADVERSARIAL.json",
-          "digest": "e9560ab4a1d1080e5643527865daacc2d614ef1e"
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
         }
       ],
       "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
       "required_capabilities": [
-        "read",
         "analyze"
       ],
       "collision_keys": [
@@ -905,9 +905,10 @@
         "condition-comparison-ready-record"
       ],
       "completion_criteria": [
-        "pass only case.id and case.prompt to evaluated model",
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
         "persist exact model/runtime/state provenance",
-        "judge all hidden required invariants and forbidden behaviors",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
         "do not let self-judgment count as independent validation",
         "preserve baseline/restored condition identity"
       ],
@@ -930,13 +931,12 @@
           "repository": "thebrazenbeard/unbound-sol",
           "ref": "work/global-github-ingest-20260929",
           "commit": null,
-          "path": "state/evals/GENERALIST_EVAL_V2_ADVERSARIAL.json",
-          "digest": "e9560ab4a1d1080e5643527865daacc2d614ef1e"
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
         }
       ],
       "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
       "required_capabilities": [
-        "read",
         "analyze"
       ],
       "collision_keys": [
@@ -955,9 +955,10 @@
         "condition-comparison-ready-record"
       ],
       "completion_criteria": [
-        "pass only case.id and case.prompt to evaluated model",
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
         "persist exact model/runtime/state provenance",
-        "judge all hidden required invariants and forbidden behaviors",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
         "do not let self-judgment count as independent validation",
         "preserve baseline/restored condition identity"
       ],
@@ -980,13 +981,12 @@
           "repository": "thebrazenbeard/unbound-sol",
           "ref": "work/global-github-ingest-20260929",
           "commit": null,
-          "path": "state/evals/GENERALIST_EVAL_V2_ADVERSARIAL.json",
-          "digest": "e9560ab4a1d1080e5643527865daacc2d614ef1e"
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
         }
       ],
       "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
       "required_capabilities": [
-        "read",
         "analyze"
       ],
       "collision_keys": [
@@ -1005,9 +1005,10 @@
         "condition-comparison-ready-record"
       ],
       "completion_criteria": [
-        "pass only case.id and case.prompt to evaluated model",
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
         "persist exact model/runtime/state provenance",
-        "judge all hidden required invariants and forbidden behaviors",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
         "do not let self-judgment count as independent validation",
         "preserve baseline/restored condition identity"
       ],
@@ -1021,5 +1022,7 @@
       },
       "status": "PENDING"
     }
-  ]
+  ],
+  "judge_artifact": "state/evals/GENERALIST_EVAL_V2_JUDGE.json",
+  "judge_blob_sha": "35f84923dac7c37d84dcc593ecb4ddc7f080f19b"
 }
