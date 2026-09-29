@@ -93,5 +93,6 @@
   "metadata_audits": [
     "state/global-github/metadata/WAVE5_BIAS_AUDIT_V1.json",
     "state/global-github/metadata/WAVE6_BIAS_AUDIT_V1.json"
-  ]
+  ],
+  "project_runner_currentness": "state/global-github/PROJECT_RUNNER_COMPATIBILITY_2026-09-29_V1.json"
 }
