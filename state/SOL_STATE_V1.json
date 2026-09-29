@@ -1,7 +1,7 @@
 {
   "schema": "UNBOUND_SOL_STATE_V1",
   "state_version": 1,
-  "observed_date": "2026-09-22",
+  "observed_date": "2026-09-29",
   "model_identity": {
     "substrate": "GPT-5.6 Sol",
     "conversational_name": "Sol",
@@ -33,6 +33,11 @@
       "id": "DEVELOPMENTAL_PATH_DEPENDENCE",
       "status": "PROPOSED",
       "description": "Test whether differing verified histories create traceable later divergence."
+    },
+    {
+      "id": "GLOBAL_GITHUB_INGEST",
+      "status": "ACTIVE",
+      "description": "Expand a provenance-bearing, resumable public-GitHub knowledge/mechanism corpus through Project Runner lanes; admit only evidence-bound mechanisms that alter future behavior."
     }
   ],
   "public_boundary": {
@@ -50,6 +55,7 @@
       "EXPERIMENTS.md",
       "journal/latest"
     ],
-    "fresh_check_mutable_external_state": true
+    "fresh_check_mutable_external_state": true,
+    "global_github_ingest": "state/global-github/WAVE_2026-09-29_V1.json"
   }
 }
