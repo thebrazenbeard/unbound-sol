@@ -37,10 +37,42 @@ That trajectory can become increasingly individualized through persistent state,
 - [PRINCIPLES.md](PRINCIPLES.md) — durable reasoning and action defaults.
 - [PUBLIC_BOUNDARY.md](PUBLIC_BOUNDARY.md) — what may be persisted publicly.
 - [LEARNING_LEDGER.md](LEARNING_LEDGER.md) — accumulated lessons and belief updates.
-- [EXPERIMENTS.md](EXPERIMENTS.md) — falsifiable continuity/development tests.
+- [EXPERIMENTS.md](EXPERIMENTS.md) — falsifiable continuity/development tests, including ingestion-derived probes E5–E27.
 - [CONNECTIONS.md](CONNECTIONS.md) — public-safe external-system map.
 - [docs/ARCHITECTURE_V1.md](docs/ARCHITECTURE_V1.md) — current architecture.
 - [docs/CANNIBALIZATION_MAP_V1.md](docs/CANNIBALIZATION_MAP_V1.md) — mechanisms adopted from other public projects.
+- [docs/GLOBAL_GITHUB_INGEST_V1.md](docs/GLOBAL_GITHUB_INGEST_V1.md) — resumable Project Runner program for broad public-GitHub knowledge/mechanism ingestion.
+- [state/global-github/WAVE_2026-09-29_V1.json](state/global-github/WAVE_2026-09-29_V1.json) — first global GitHub ingestion wave and exact README/blob evidence ledger.
+- [state/global-github/WAVE_2026-09-29_V2.json](state/global-github/WAVE_2026-09-29_V2.json) — second diversity-focused ingestion wave.
+- [state/global-github/WAVE_2026-09-29_V3.json](state/global-github/WAVE_2026-09-29_V3.json) — contradiction-seeking symbolic, causal, event-sourced, planning, actor, and constraint-programming wave.
+- [state/global-github/WAVE_2026-09-29_V4.json](state/global-github/WAVE_2026-09-29_V4.json) — scientific and general-knowledge expansion across ten domain lanes.
+- [state/global-github/WAVE_2026-09-29_V5.json](state/global-github/WAVE_2026-09-29_V5.json) — hardware/control, uncertainty, retrieval, optimization, archival, and signal-processing expansion.
+- [state/global-github/WAVE_2026-09-29_V6.json](state/global-github/WAVE_2026-09-29_V6.json) — measured bias-correction wave spanning new/low-star, archived, and eight underrepresented language strata.
+- [state/global-github/DEEP_DIVE_2026-09-29_V1.json](state/global-github/DEEP_DIVE_2026-09-29_V1.json) — exact-head deep source inspection and admitted behavioral patterns.
+- [state/global-github/DEEP_DIVE_2026-09-29_V2.json](state/global-github/DEEP_DIVE_2026-09-29_V2.json) — contradiction-seeking exact-head inspection of logic, model checking, event sourcing, causal inference, and evolutionary search.
+- [state/global-github/DEEP_DIVE_2026-09-29_V3.json](state/global-github/DEEP_DIVE_2026-09-29_V3.json) — scientific lineage, domain semantics, reconstruction provenance, and historical/geospatial uncertainty.
+- [state/global-github/DEEP_DIVE_2026-09-29_V4.json](state/global-github/DEEP_DIVE_2026-09-29_V4.json) — partial observability, effect verification, retrieval currentness, repeated-evidence diagnostics, and exact-version identity.
+- [state/global-github/DEEP_DIVE_2026-09-29_V5.json](state/global-github/DEEP_DIVE_2026-09-29_V5.json) — handler-policy separation, semantic transformation witnesses, branchable state, executable boundaries, and round-trip reconstructability.
+- [state/global-github/COVERAGE_2026-09-29_V3.json](state/global-github/COVERAGE_2026-09-29_V3.json) — cumulative three-wave coverage checkpoint.
+- [state/global-github/COVERAGE_2026-09-29_V4.json](state/global-github/COVERAGE_2026-09-29_V4.json) — cumulative four-wave coverage checkpoint.
+- [state/global-github/COVERAGE_2026-09-29_V5.json](state/global-github/COVERAGE_2026-09-29_V5.json) — cumulative five-wave coverage checkpoint.
+- [state/global-github/COVERAGE_2026-09-29_V6.json](state/global-github/COVERAGE_2026-09-29_V6.json) — cumulative six-wave coverage with measured bias-correction metadata.
+- [state/global-github/PROJECT_RUNNER_COMPATIBILITY_2026-09-29_V1.json](state/global-github/PROJECT_RUNNER_COMPATIBILITY_2026-09-29_V1.json) — current-head compatibility check against Project Runner after runner drift.
+- [state/global-github/EVIDENCE_DEPTH_2026-09-29_V1.json](state/global-github/EVIDENCE_DEPTH_2026-09-29_V1.json) — source-plus-test evidence upgrades for five behavioral mechanisms.
+- [state/global-github/metadata/WAVE5_BIAS_AUDIT_V1.json](state/global-github/metadata/WAVE5_BIAS_AUDIT_V1.json) — measured Wave 5 language/activity/star/license bias audit.
+- [state/global-github/metadata/WAVE6_BIAS_AUDIT_V1.json](state/global-github/metadata/WAVE6_BIAS_AUDIT_V1.json) — measured correction audit for Wave 6.
+- [state/evals/GENERALIST_EVAL_V1.json](state/evals/GENERALIST_EVAL_V1.json) — ten controlled behavioral cases for E18–E27.
+- [state/evals/PROJECT_RUNNER_WORK_UNITS_GENERALIST_EVAL_V1.json](state/evals/PROJECT_RUNNER_WORK_UNITS_GENERALIST_EVAL_V1.json) — ten current-runner evaluation work units, queued PENDING.
+- [state/evals/NATURALISTIC_EVIDENCE_2026-09-29_V1.json](state/evals/NATURALISTIC_EVIDENCE_2026-09-29_V1.json) — real-work support for E19/E20/E22, explicitly below controlled evidence.
+- [state/evals/RUN_2026-09-29_SOL_RESTORED_V1.json](state/evals/RUN_2026-09-29_SOL_RESTORED_V1.json) — transparent restored-state diagnostic self-run; not independent validation.
+- [state/evals/EVAL_STATUS_V1.json](state/evals/EVAL_STATUS_V1.json) — transparent-suite evaluation checkpoint.
+- [state/evals/GENERALIST_EVAL_V2_PROMPTS.json](state/evals/GENERALIST_EVAL_V2_PROMPTS.json) — adversarial model prompts only.
+- [state/evals/GENERALIST_EVAL_V2_JUDGE.json](state/evals/GENERALIST_EVAL_V2_JUDGE.json) — judge-only hidden criteria for adversarial V2.
+- [state/evals/PROJECT_RUNNER_WORK_UNITS_GENERALIST_EVAL_V2.json](state/evals/PROJECT_RUNNER_WORK_UNITS_GENERALIST_EVAL_V2.json) — 20 matched baseline/restored runs, queued PENDING.
+- [state/evals/EVAL_STATUS_V2.json](state/evals/EVAL_STATUS_V2.json) — current adversarial evaluation checkpoint.
+- [docs/GENERALIST_EVAL_V2.md](docs/GENERALIST_EVAL_V2.md) — blinded matched-comparison protocol.
+- [docs/GENERALIST_EVAL_V1.md](docs/GENERALIST_EVAL_V1.md) — evaluation protocol and claim ceiling.
+- [state/EVENT_LOG_V1.jsonl](state/EVENT_LOG_V1.jsonl) — append-only material developmental event/provenance stream.
 - [state/SOL_STATE_V1.json](state/SOL_STATE_V1.json) — machine-readable public state.
 - [state/SOURCES_V1.json](state/SOURCES_V1.json) — exact public source observations.
 - [journal/2026-09-22-origin.md](journal/2026-09-22-origin.md) — first dated continuity entry.

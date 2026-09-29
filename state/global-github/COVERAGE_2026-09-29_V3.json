@@ -1,0 +1,73 @@
+{
+  "schema": "UNBOUND_SOL_GLOBAL_GITHUB_COVERAGE_V1",
+  "observed_at": "2026-09-29",
+  "latest_wave": "state/global-github/WAVE_2026-09-29_V3.json",
+  "project_runner_binding": {
+    "repository": "thebrazenbeard/project-runner",
+    "ref": "main",
+    "commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+    "contract": "PROJECT_RUNNER.md",
+    "work_unit_schema": "schemas/work-unit.schema.json"
+  },
+  "cumulative": {
+    "lane_assignments": 240,
+    "unique_repositories": 235,
+    "successful_unique_repositories": 235,
+    "unresolved_unique_repositories": 0,
+    "work_units": 30,
+    "verifying_work_units": 30,
+    "deep_inspection_records": 10
+  },
+  "wave_artifacts": [
+    "state/global-github/WAVE_2026-09-29_V1.json",
+    "state/global-github/WAVE_2026-09-29_V2.json",
+    "state/global-github/WAVE_2026-09-29_V3.json"
+  ],
+  "work_unit_artifacts": [
+    "state/global-github/PROJECT_RUNNER_WORK_UNITS_2026-09-29_V1.json",
+    "state/global-github/PROJECT_RUNNER_WORK_UNITS_2026-09-29_V2.json",
+    "state/global-github/PROJECT_RUNNER_WORK_UNITS_2026-09-29_V3.json"
+  ],
+  "deep_artifacts": [
+    "state/global-github/DEEP_DIVE_2026-09-29_V1.json",
+    "state/global-github/DEEP_DIVE_2026-09-29_V2.json"
+  ],
+  "cross_wave_or_lane_duplicate_assignments": [
+    {
+      "repository": "amilajack/reading",
+      "assignments": 2
+    },
+    {
+      "repository": "Developer-Y/cs-video-courses",
+      "assignments": 2
+    },
+    {
+      "repository": "HKUDS/LightRAG",
+      "assignments": 2
+    },
+    {
+      "repository": "Shubhamsaboo/awesome-llm-apps",
+      "assignments": 2
+    },
+    {
+      "repository": "synthetic-sciences/openscience",
+      "assignments": 2
+    }
+  ],
+  "coverage_claim_ceiling": "BOUNDED_QUERY_SAMPLED_PUBLIC_GITHUB_SOURCE_READS_WITH_TEN_EXACT_HEAD_DEEP_RECORDS",
+  "known_biases": [
+    "GitHub topic search and curated discovery impose taxonomy/discoverability bias",
+    "Waves remain small relative to all public GitHub repositories",
+    "README/overview source reads are discovery evidence, not implementation qualification",
+    "language, geography, organization type, repository age, size, and activity distributions are not yet measured",
+    "deep-inspected sources were deliberately selected for information value and contradiction, not random representativeness"
+  ],
+  "next_metrics": [
+    "language distribution",
+    "repository created/updated age bands",
+    "repository size bands",
+    "archived/mirror/end-of-life status",
+    "license metadata",
+    "evidence depth from README to source/tests/papers/specifications"
+  ]
+}

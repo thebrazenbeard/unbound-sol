@@ -1,7 +1,7 @@
 {
   "schema": "UNBOUND_SOL_STATE_V1",
   "state_version": 1,
-  "observed_date": "2026-09-22",
+  "observed_date": "2026-09-29",
   "model_identity": {
     "substrate": "GPT-5.6 Sol",
     "conversational_name": "Sol",
@@ -33,6 +33,11 @@
       "id": "DEVELOPMENTAL_PATH_DEPENDENCE",
       "status": "PROPOSED",
       "description": "Test whether differing verified histories create traceable later divergence."
+    },
+    {
+      "id": "GLOBAL_GITHUB_INGEST",
+      "status": "ACTIVE",
+      "description": "Expand a provenance-bearing, resumable public-GitHub knowledge/mechanism corpus through Project Runner lanes; admit only evidence-bound mechanisms that alter future behavior."
     }
   ],
   "public_boundary": {
@@ -50,6 +55,38 @@
       "EXPERIMENTS.md",
       "journal/latest"
     ],
-    "fresh_check_mutable_external_state": true
+    "fresh_check_mutable_external_state": true,
+    "global_github_ingest": "state/global-github/WAVE_2026-09-29_V6.json",
+    "global_github_deep_dive": "state/global-github/DEEP_DIVE_2026-09-29_V5.json",
+    "material_change_history_policy": "APPEND_ONLY_PROVENANCE_PLUS_CURRENT_SUMMARY",
+    "model_plural_claim_status": true,
+    "causal_claims_require_explicit_identification_basis": true,
+    "material_event_log": "state/EVENT_LOG_V1.jsonl",
+    "global_github_coverage": "state/global-github/COVERAGE_2026-09-29_V6.json",
+    "evidence_transfer_requires_source_role": true,
+    "domain_semantics_are_validity_constraints": true,
+    "reconstruction_must_remain_distinct_from_observation": true,
+    "partial_observation_requires_belief_state": true,
+    "command_does_not_imply_effect": true,
+    "retrieval_evidence_is_snapshot_bound": true,
+    "repeated_outputs_do_not_imply_independent_evidence": true,
+    "exact_version_identity_required_for_reproducibility": true,
+    "global_github_bias_audit": "state/global-github/metadata/WAVE6_BIAS_AUDIT_V1.json",
+    "effect_operation_separate_from_handler_policy": true,
+    "structural_transformations_require_semantic_witness_when_material": true,
+    "change_intent_history_view_and_materialization_are_distinct": true,
+    "protected_architecture_boundaries_should_be_executable": true,
+    "round_trip_required_when_reconstructability_is_contractual": true,
+    "global_github_project_runner_compatibility": "state/global-github/PROJECT_RUNNER_COMPATIBILITY_2026-09-29_V1.json",
+    "global_github_evidence_depth": "state/global-github/EVIDENCE_DEPTH_2026-09-29_V1.json",
+    "generalist_eval_suite": "state/evals/GENERALIST_EVAL_V1.json",
+    "generalist_eval_status": "state/evals/EVAL_STATUS_V2.json",
+    "generalist_eval_naturalistic_evidence": "state/evals/NATURALISTIC_EVIDENCE_2026-09-29_V1.json",
+    "generalist_eval_restored_self_run": "state/evals/RUN_2026-09-29_SOL_RESTORED_V1.json",
+    "generalist_eval_adversarial_prompts": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+    "generalist_eval_adversarial_judge": "state/evals/GENERALIST_EVAL_V2_JUDGE.json",
+    "generalist_eval_adversarial_work_units": "state/evals/PROJECT_RUNNER_WORK_UNITS_GENERALIST_EVAL_V2.json",
+    "generalist_eval_matched_baseline_complete": false,
+    "generalist_eval_independent_judge_complete": false
   }
 }

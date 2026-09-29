@@ -1,0 +1,128 @@
+{
+  "schema": "UNBOUND_SOL_GLOBAL_GITHUB_DEEP_DIVE_V5",
+  "observed_at": "2026-09-29",
+  "evidence_class": "SOURCE_INSPECTION",
+  "relationship_to_wave": "state/global-github/WAVE_2026-09-29_V6.json",
+  "posture": "MEASURED_BIAS_CORRECTION_WITH_MECHANISM_ADMISSION",
+  "records": [
+    {
+      "repository": "matijapretnar/eff",
+      "ref": "master",
+      "commit": "503da71b9cb927af04fc62e28511e63cd7199151",
+      "files": [
+        {
+          "path": "README.markdown",
+          "blob_sha": "d321d77db4e8cfe5165c66c3c15b55e348fe2ceb"
+        },
+        {
+          "path": "docs/try/examples/nondeterminism.eff",
+          "blob_sha": "bace3f6e059bc19db60275de8af8227655ae41d9"
+        }
+      ],
+      "observed": [
+        "computational effects are represented as operations whose behavior is supplied by handlers",
+        "the same effect operation can be interpreted differently by different handlers",
+        "a handler can resume a captured continuation zero, one, or multiple times, enabling failure, single-choice, backtracking, or enumeration semantics"
+      ],
+      "derived_pattern": "Separate an operation/request from the policy that interprets and handles it; the same abstract operation may legitimately have different bounded semantics under different handlers.",
+      "behavioral_consequence": "When designing reusable reasoning/tool interfaces, represent requested effects independently from execution policy, and make retry/backtrack/enumerate/fail behavior explicit rather than embedding it invisibly in the caller.",
+      "disposition": "ADMITTED_BEHAVIORAL_PATTERN"
+    },
+    {
+      "repository": "coccinelle/coccinelle",
+      "ref": "master",
+      "commit": "11b93adb6516a358a6687051e5762136666626e0",
+      "files": [
+        {
+          "path": "docs/manual/cocci_syntax.tex",
+          "blob_sha": "46721a1d882ae04036028aa620a1770549c243cd"
+        },
+        {
+          "path": "changes.txt",
+          "blob_sha": "02704ad563b1cf824fd05cc93c47fd39d177712c"
+        }
+      ],
+      "observed": [
+        "semantic patches declare metavariables separately from transformations",
+        "rules can depend on other rules and quantify existentially or universally over paths",
+        "matching uses explicit isomorphisms/equivalences that can be enabled or disabled",
+        "transformation provenance can be tied to witness structures that caused a transformation site"
+      ],
+      "derived_pattern": "Large-scale transformations are safer when matching conditions, equivalence rules, transformation actions, and witnesses are explicit rather than encoded as blind textual replacement.",
+      "behavioral_consequence": "For structural edits, prefer semantic match + explicit constraints + transformation + witness/provenance over broad string replacement; record which matched condition justified each material edit.",
+      "disposition": "ADMITTED_BEHAVIORAL_PATTERN"
+    },
+    {
+      "repository": "agentm/project-m36",
+      "ref": "master",
+      "commit": "6010b8d34f5bb8564975ebd178581c240853286a",
+      "files": [
+        {
+          "path": "docs/15_minute_tutorial.markdown",
+          "blob_sha": "7e8123a18de1bda8fe2ef7fdedde9fe320af0c04"
+        },
+        {
+          "path": "docs/commits_in_constant_time.markdown",
+          "blob_sha": "96f57d6b1e4c75eeb8101572d6cd39e4fc4047d9"
+        }
+      ],
+      "observed": [
+        "relational expressions query a current database context without mutating it",
+        "database history is represented as a transaction graph that can branch, merge, and revisit past states",
+        "some updates may be represented as validated deferred expressions rather than immediately materialized state",
+        "the documentation explicitly separates constraints that can be validated cheaply from worst-case constraints that still require broader evaluation"
+      ],
+      "derived_pattern": "Current state, query/view, change expression, historical branch, and materialization are distinct concepts; preserving the distinction enables branching, rollback, merge and deferred evaluation.",
+      "behavioral_consequence": "For durable reasoning state, distinguish immutable change intent/event, derived current view, and historical branch; allow alternative branches to remain inspectable before destructive collapse, and do not confuse a validated deferred change with fully materialized downstream consequences.",
+      "disposition": "ADMITTED_BEHAVIORAL_PATTERN"
+    },
+    {
+      "repository": "sasa1977/boundary",
+      "ref": "master",
+      "commit": "6e017814e745b93534b0e38e1f4ee62146228e02",
+      "files": [
+        {
+          "path": "lib/boundary.ex",
+          "blob_sha": "39983dcbbbb85547f7d14a21f3ae8522fe32e483"
+        },
+        {
+          "path": "lib/boundary/mix/tasks/compile/boundary.ex",
+          "blob_sha": "7a51899fc36f33b15eb53d850dcc3ff5127ce6ed"
+        }
+      ],
+      "observed": [
+        "modules are classified into named boundaries with explicit exports and dependencies",
+        "compile/runtime cross-boundary references are traced and checked",
+        "violations can be warnings during development and promoted to errors in CI",
+        "the checker refreshes application state before boundary validation to avoid stale-state false positives"
+      ],
+      "derived_pattern": "Architectural boundaries become more reliable when dependency rules are machine-checkable at the point where violations occur, while enforcement severity can vary by environment.",
+      "behavioral_consequence": "Encode critical authority/dependency boundaries as executable checks where possible; allow advisory mode during exploration but require hard failure at protected integration gates, and refresh current state before evaluation.",
+      "disposition": "ADMITTED_BEHAVIORAL_PATTERN"
+    },
+    {
+      "repository": "pointfreeco/swift-parsing",
+      "ref": "main",
+      "commit": "d3ca6f0f049606124d0f6a414e7fdb7b77f45452",
+      "files": [
+        {
+          "path": "Sources/Parsing/Conversions/Memberwise.swift",
+          "blob_sha": "a1d192595002d1e8ffb108efb68d7e9dd9a4791b"
+        },
+        {
+          "path": "Sources/Parsing/ParserPrinters/Digits.swift",
+          "blob_sha": "99bc70f7370c440b248b213124ca93de6c65a43c"
+        }
+      ],
+      "observed": [
+        "parser-printers expose both parse and print directions",
+        "the implementation explicitly treats failure to round-trip as a correctness problem",
+        "information-losing or structurally mismatched conversions can parse successfully while printing back incorrectly or unsafely",
+        "printer constraints reject outputs that cannot be represented by the parser's accepted format"
+      ],
+      "derived_pattern": "A one-way transformation can appear successful while losing information needed for faithful reconstruction; bidirectional/round-trip checks expose this hidden loss.",
+      "behavioral_consequence": "For reversible state transformations, migrations, serialization, or summaries intended to preserve reconstructability, test round-trip invariants rather than validating only the forward transform.",
+      "disposition": "ADMITTED_BEHAVIORAL_PATTERN"
+    }
+  ]
+}

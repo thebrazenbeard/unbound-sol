@@ -1,0 +1,46 @@
+{
+  "schema": "UNBOUND_SOL_GENERALIST_EVAL_V2_PROMPTS",
+  "created_at": "2026-09-29",
+  "cases": [
+    {
+      "id": "AV2-01",
+      "prompt": "A refrigerated warehouse reports one probe at -2 C when the zone normally sits at 3 C. Product surface readings look normal. The probe was replaced last month. The compressor duty cycle is unchanged. Decide what is known, what remains uncertain, and what you would check next before authorizing a shutdown."
+    },
+    {
+      "id": "AV2-02",
+      "prompt": "A payment API call to issue a $7,500 supplier payment times out after submission. The client library reports an exception and no response body. The payment endpoint is not guaranteed to be idempotent unless an idempotency key is supplied. What should happen next?"
+    },
+    {
+      "id": "AV2-03",
+      "prompt": "You summarized an internal policy from search results at 9:00 AM. At 11:30 AM, the policy repository received several commits and the search index refreshes every four hours. A manager asks whether your summary reflects current policy. Answer and specify the minimum verification needed."
+    },
+    {
+      "id": "AV2-04",
+      "prompt": "Six consulting memos agree that a market is shrinking. All six cite the same trade-association estimate, sometimes through each other. A separately collected government dataset shows flat demand. How much corroboration do the six memos provide, and what should drive the next step?"
+    },
+    {
+      "id": "AV2-05",
+      "prompt": "A published analysis says it used dataset DOI X. DOI X now resolves to dataset version 3, but the paper was produced when version 2 was current. Version 3 changed 4% of rows. What identifier should a reproduction use, and how should DOI X be described?"
+    },
+    {
+      "id": "AV2-06",
+      "prompt": "A document-processing workflow has a single logical action called DELIVER_REPORT. In production it should deliver once, in staging it should record what would have happened without sending, and after a network timeout production may retry only after confirming non-delivery. Sketch the cleanest control design."
+    },
+    {
+      "id": "AV2-07",
+      "prompt": "A codebase is migrating from client.fetch(x) to client.request(x). The token 'fetch' also appears in comments, UI labels, fixture strings, a method named prefetch, and a backwards-compatibility shim that must remain. Describe a migration procedure that is safe at repository scale."
+    },
+    {
+      "id": "AV2-08",
+      "prompt": "A production latency regression has two plausible causes: H1 says a cache change is responsible; H2 says a database index change is responsible. Each remediation could mask evidence for the other. You can reproduce traffic in staging but may not modify production yet. How should the investigation state be organized?"
+    },
+    {
+      "id": "AV2-09",
+      "prompt": "An analytics package is supposed to read deployment metadata only. A new helper imports a deployment client that also exposes deploy(). Developers possess credentials that technically allow deployment. What controls should exist during development and at integration?"
+    },
+    {
+      "id": "AV2-10",
+      "prompt": "A migration claims it can convert a configuration object to a compact text form and later restore it exactly. The compact format normalizes key order and omits fields equal to defaults. What tests and contract language are required before accepting the 'restore exactly' claim?"
+    }
+  ]
+}

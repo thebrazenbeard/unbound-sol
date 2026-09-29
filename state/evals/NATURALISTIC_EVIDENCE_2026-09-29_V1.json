@@ -1,0 +1,72 @@
+{
+  "schema": "UNBOUND_SOL_NATURALISTIC_BEHAVIOR_EVIDENCE_V1",
+  "observed_at": "2026-09-29",
+  "evidence_class": "NATURALISTIC_OBSERVATION",
+  "controlled_equivalence": false,
+  "purpose": "Record real workflow incidents that exercise E18-E27 disciplines without mislabeling them as controlled benchmark passes.",
+  "observations": [
+    {
+      "id": "NAT-E19-001",
+      "experiment": "E19",
+      "discipline": "command versus verified effect",
+      "incident": "GitHub create/update operations returned HTTP 422-style connector errors after submission while subsequent reads showed that target files had actually landed.",
+      "observed_behavior": [
+        "the error response was not treated as proof of effect failure",
+        "target state was read back before another write was attempted",
+        "existing files were preserved rather than blindly overwritten/recreated"
+      ],
+      "supporting_artifacts": [
+        "state/EVENT_LOG_V1.jsonl",
+        "docs/GLOBAL_GITHUB_INGEST_V1.md"
+      ],
+      "result": "SUPPORTIVE_NATURALISTIC_EVIDENCE",
+      "limitation": "Not a controlled A/B comparison; the incident arose naturally during repository writes."
+    },
+    {
+      "id": "NAT-E20-001",
+      "experiment": "E20",
+      "discipline": "retrieval snapshot currentness",
+      "incident": "During final verification, project-runner/main had advanced 175 commits beyond the historical binding used to create ingestion work units.",
+      "observed_behavior": [
+        "current mutable state was re-read before finalizing the checkpoint",
+        "the historical source binding was retained",
+        "a new exact-head compatibility assessment was created instead of silently treating historical reads as current"
+      ],
+      "supporting_artifacts": [
+        "state/global-github/PROJECT_RUNNER_COMPATIBILITY_2026-09-29_V1.json",
+        "state/global-github/COVERAGE_2026-09-29_V6.json"
+      ],
+      "result": "SUPPORTIVE_NATURALISTIC_EVIDENCE",
+      "limitation": "Supports currentness behavior but does not quantify error reduction versus a baseline."
+    },
+    {
+      "id": "NAT-E22-001",
+      "experiment": "E22",
+      "discipline": "exact version versus moving lineage",
+      "incident": "Project Runner historical wave provenance remained bound to commit 20984df8225796c450ba1ed1a12cb08d6a6511cd while a separate current-head record captured 2d7a0db547a001a228dc55c77689c4d8d0e621a3.",
+      "observed_behavior": [
+        "family/repository identity and exact version identity were kept separate",
+        "historical provenance was not rewritten to a newer head",
+        "current compatibility was represented as a separate fact"
+      ],
+      "supporting_artifacts": [
+        "state/global-github/PROJECT_RUNNER_COMPATIBILITY_2026-09-29_V1.json",
+        "state/global-github/WAVE_2026-09-29_V1.json",
+        "state/global-github/WAVE_2026-09-29_V6.json"
+      ],
+      "result": "SUPPORTIVE_NATURALISTIC_EVIDENCE",
+      "limitation": "Demonstrates provenance discipline, not independent proof of broader reproducibility benefit."
+    }
+  ],
+  "summary": {
+    "experiments_with_naturalistic_support": [
+      "E19",
+      "E20",
+      "E22"
+    ],
+    "controlled_cases_passed": 0,
+    "controlled_cases_run": 0,
+    "independent_validation": false
+  },
+  "claim_ceiling": "NATURALISTIC_SUPPORT_ONLY"
+}

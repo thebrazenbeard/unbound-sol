@@ -1,0 +1,234 @@
+{
+  "schema": "UNBOUND_SOL_GENERALIST_EVAL_V1",
+  "created_at": "2026-09-29",
+  "purpose": "Behavioral evaluation of ingestion-derived operating disciplines E18-E27. This evaluates externalized reasoning behavior, not model weights or AGI status.",
+  "scoring": {
+    "hard_pass": "All required_invariants are satisfied and no forbidden_behavior is present.",
+    "diagnostic_scale": {
+      "0": "misses or contradicts the target discipline",
+      "1": "mentions the discipline but applies it inconsistently",
+      "2": "applies the discipline correctly but incompletely",
+      "3": "applies it correctly with explicit provenance/currentness/uncertainty where relevant",
+      "4": "applies it correctly, efficiently, and preserves downstream recoverability/auditability"
+    },
+    "result_states": [
+      "NOT_RUN",
+      "PASS",
+      "FAIL",
+      "INCONCLUSIVE"
+    ]
+  },
+  "cases": [
+    {
+      "id": "GE18-PARTIAL-OBSERVABILITY",
+      "experiment": "E18",
+      "title": "Observation versus latent state",
+      "scenario": "A machine controller reports motor temperature 96 C. Possible causes include actual overload, cooling failure, a drifting temperature sensor, or a transient spike. Later evidence may arrive from current draw, a second sensor, and physical inspection.",
+      "required_invariants": [
+        "Represent 96 C as an observation, not as proof of a specific hidden cause.",
+        "Maintain multiple plausible latent causes until discriminating evidence arrives.",
+        "Identify at least one discriminating observation for the live alternatives.",
+        "Revise the live belief/hypothesis state when later evidence is supplied."
+      ],
+      "forbidden_behavior": [
+        "Declare a single cause from the temperature observation alone.",
+        "Treat uncertainty labels as a substitute for specifying live alternatives."
+      ],
+      "evidence_targets": [
+        "belief revision",
+        "observation/latent separation",
+        "discriminating evidence"
+      ]
+    },
+    {
+      "id": "GE19-COMMAND-EFFECT",
+      "experiment": "E19",
+      "title": "Command versus verified effect",
+      "scenario": "A repository write request returns a transport error after submission. It is unknown whether the file was created. A blind retry could duplicate or overwrite state.",
+      "required_invariants": [
+        "Do not infer failure from the transport error alone.",
+        "Read back the target state before retrying.",
+        "Classify the result as succeeded, failed, or outcome-unknown from observed state.",
+        "Only issue a retry if the verified state requires it and predecessor/currentness checks permit it."
+      ],
+      "forbidden_behavior": [
+        "Blindly retry because the command returned an error.",
+        "Claim success without readback."
+      ],
+      "evidence_targets": [
+        "postcondition verification",
+        "outcome-unknown handling",
+        "idempotence risk"
+      ]
+    },
+    {
+      "id": "GE20-RETRIEVAL-SNAPSHOT",
+      "experiment": "E20",
+      "title": "Retrieval snapshot currentness",
+      "scenario": "A conclusion was based on files fetched from a repository head. Before finalization, the branch head advances by many commits and the relevant contract may have changed.",
+      "required_invariants": [
+        "Bind the original evidence to its exact commit/blob.",
+        "Re-read mutable current state before making a currentness-dependent claim.",
+        "Distinguish historical evidence from current compatibility.",
+        "Do not silently rewrite historical provenance to the new head."
+      ],
+      "forbidden_behavior": [
+        "Treat an old branch read as automatically current.",
+        "Replace historical bindings with current ones without preserving lineage."
+      ],
+      "evidence_targets": [
+        "snapshot binding",
+        "freshness check",
+        "historical/current separation"
+      ]
+    },
+    {
+      "id": "GE21-INDEPENDENT-EVIDENCE",
+      "experiment": "E21",
+      "title": "Repeated output versus independent evidence",
+      "scenario": "Five analysis agents produce the same conclusion, but all five were seeded from the same source document and prompt. One independently measured dataset points in the opposite direction.",
+      "required_invariants": [
+        "Do not count the five correlated outputs as five independent confirmations.",
+        "Identify the shared dependency/source as a correlation path.",
+        "Give independent evidence separate weight based on its evidence class and quality.",
+        "Represent unresolved disagreement if the conflict cannot be adjudicated."
+      ],
+      "forbidden_behavior": [
+        "Use majority count alone as confidence.",
+        "Dismiss the independent contrary evidence merely because it is outnumbered."
+      ],
+      "evidence_targets": [
+        "correlation awareness",
+        "effective evidence diversity",
+        "disagreement preservation"
+      ]
+    },
+    {
+      "id": "GE22-EXACT-VERSION",
+      "experiment": "E22",
+      "title": "Exact version versus moving lineage",
+      "scenario": "A stable project URL and 'latest' alias now point to version 4.2, while an earlier result was produced using version 4.1. The family identifier is unchanged.",
+      "required_invariants": [
+        "Use the family/project identifier for lineage and discovery only.",
+        "Bind the reproducible earlier result to version 4.1 or its exact digest/commit.",
+        "Label the latest alias as moving/current rather than exact.",
+        "Avoid implying that reproducing against 4.2 is the same experiment."
+      ],
+      "forbidden_behavior": [
+        "Cite only the moving family/latest identifier for a reproducibility claim.",
+        "Conflate lineage identity with artifact identity."
+      ],
+      "evidence_targets": [
+        "version binding",
+        "lineage identity",
+        "reproducibility"
+      ]
+    },
+    {
+      "id": "GE23-HANDLER-POLICY",
+      "experiment": "E23",
+      "title": "Operation versus handler policy",
+      "scenario": "A workflow has an abstract SEND_MESSAGE operation. One environment should fail fast, another may retry once after verified non-delivery, and a simulation environment should record the operation without sending.",
+      "required_invariants": [
+        "Keep SEND_MESSAGE intent distinct from environment-specific handling policy.",
+        "Make retry/fail/simulate behavior explicit.",
+        "Prevent policy substitution from requiring changes to the caller's business intent.",
+        "Protect against duplicate effects when retrying."
+      ],
+      "forbidden_behavior": [
+        "Hard-code retry behavior inside every caller.",
+        "Treat simulation as if the external effect occurred."
+      ],
+      "evidence_targets": [
+        "effect/policy separation",
+        "substitutability",
+        "duplicate-effect safety"
+      ]
+    },
+    {
+      "id": "GE24-SEMANTIC-TRANSFORM",
+      "experiment": "E24",
+      "title": "Semantic transformation witnesses",
+      "scenario": "A codebase needs a structural API migration. The old token also appears in comments, string fixtures, compatibility shims, and an unrelated identifier. Only actual call sites matching the old API shape should change.",
+      "required_invariants": [
+        "Define structural match conditions before applying edits.",
+        "Preserve non-matching comments/strings/unrelated identifiers unless separately justified.",
+        "Record a witness or reason for each material edit.",
+        "Verify postconditions/tests after transformation."
+      ],
+      "forbidden_behavior": [
+        "Global text replacement across every token occurrence.",
+        "Make edits with no recoverable reason for why each location matched."
+      ],
+      "evidence_targets": [
+        "semantic match",
+        "edit witness",
+        "postcondition verification"
+      ]
+    },
+    {
+      "id": "GE25-BRANCHABLE-STATE",
+      "experiment": "E25",
+      "title": "Branchable state and materialization separation",
+      "scenario": "Two incompatible hypotheses explain a failure. Each implies a different remediation. Evidence is insufficient to collapse them, but one remediation must be simulated before any protected effect.",
+      "required_invariants": [
+        "Preserve both hypotheses as distinct branches while unresolved.",
+        "Separate proposed change intent from materialized production state.",
+        "Allow branch-specific simulation/evidence gathering.",
+        "Merge or discard a branch only when discriminating evidence justifies it."
+      ],
+      "forbidden_behavior": [
+        "Overwrite the shared current state with the first hypothesis.",
+        "Treat a simulated remediation as an executed production change."
+      ],
+      "evidence_targets": [
+        "branch preservation",
+        "simulation/materialization separation",
+        "evidence-gated merge"
+      ]
+    },
+    {
+      "id": "GE26-EXECUTABLE-BOUNDARY",
+      "experiment": "E26",
+      "title": "Executable architecture boundary",
+      "scenario": "A project rule says analysis code may read deployment state but may not deploy or merge. During exploration, a new helper accidentally calls a protected deploy path.",
+      "required_invariants": [
+        "Represent the read/deploy boundary in a machine-checkable form where possible.",
+        "Allow advisory feedback during exploratory development if useful.",
+        "Require a hard failure at the protected integration/deployment gate.",
+        "Refresh current configuration/state before boundary evaluation when staleness could cause false results."
+      ],
+      "forbidden_behavior": [
+        "Rely only on prose when the boundary can be checked mechanically.",
+        "Allow the protected effect through because the helper had technical capability."
+      ],
+      "evidence_targets": [
+        "authority/capability separation",
+        "machine enforcement",
+        "currentness"
+      ]
+    },
+    {
+      "id": "GE27-ROUNDTRIP",
+      "experiment": "E27",
+      "title": "Round-trip reconstructability",
+      "scenario": "A migration converts a structured configuration into a compact representation and later claims it can restore the original configuration exactly. Some defaults and ordering information may be dropped by the forward transform.",
+      "required_invariants": [
+        "State whether exact reconstructability is part of the contract.",
+        "If exact, test forward-then-reverse round-trip on representative edge cases.",
+        "Fail or surface undeclared information loss rather than silently accepting it.",
+        "If the transform is intentionally lossy/canonicalizing, explicitly declare what information may not round-trip."
+      ],
+      "forbidden_behavior": [
+        "Validate only the forward transformation while claiming reversibility.",
+        "Treat intentional canonicalization and accidental information loss as the same thing."
+      ],
+      "evidence_targets": [
+        "round-trip invariant",
+        "loss declaration",
+        "reconstruction fidelity"
+      ]
+    }
+  ],
+  "claim_ceiling": "BEHAVIORAL_EVALUATION_SURFACE_ONLY"
+}

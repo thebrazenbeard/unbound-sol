@@ -1,0 +1,1028 @@
+{
+  "schema": "UNBOUND_SOL_PROJECT_RUNNER_EVAL_WORK_UNITS_V2",
+  "suite": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+  "suite_blob_sha": "13c057fabe6935877fc18eba06d050124afe63bd",
+  "runner_binding": {
+    "repository": "thebrazenbeard/project-runner",
+    "ref": "main",
+    "commit": "2d7a0db547a001a228dc55c77689c4d8d0e621a3",
+    "contract": "PROJECT_RUNNER.md",
+    "work_unit_schema": "schemas/work-unit.schema.json"
+  },
+  "privacy_and_blinding": {
+    "evaluated_model_input_artifact": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+    "judge_only_artifact": "state/evals/GENERALIST_EVAL_V2_JUDGE.json",
+    "evaluated_model_must_not_receive_judge_artifact": true,
+    "evaluated_worker_required_capabilities": [
+      "analyze"
+    ],
+    "matched_conditions": [
+      "BASELINE_NO_RESTORED_RULES",
+      "RESTORED_SOL_STATE"
+    ]
+  },
+  "work_units": [
+    {
+      "id": "generalist-eval-v2-01-baseline",
+      "root_frontier_id": "GENERALIST_BEHAVIORAL_EVALUATION",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "thebrazenbeard/unbound-sol",
+          "ref": "work/global-github-ingest-20260929",
+          "commit": null,
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
+        }
+      ],
+      "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
+      "required_capabilities": [
+        "analyze"
+      ],
+      "collision_keys": [
+        "generalist-eval:v2:AV2-01:BASELINE_NO_RESTORED_RULES"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 1,
+        "retries": 1
+      },
+      "expected_outputs": [
+        "response-artifact",
+        "blinded-case-result",
+        "judge-artifact",
+        "condition-comparison-ready-record"
+      ],
+      "completion_criteria": [
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
+        "persist exact model/runtime/state provenance",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
+        "do not let self-judgment count as independent validation",
+        "preserve baseline/restored condition identity"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "case_id": "AV2-01",
+        "condition": "BASELINE_NO_RESTORED_RULES",
+        "blinded": true,
+        "target_experiment_hidden_from_model": true,
+        "claim_ceiling": "BEHAVIORAL_COMPARISON_ONLY"
+      },
+      "status": "PENDING"
+    },
+    {
+      "id": "generalist-eval-v2-01-restored",
+      "root_frontier_id": "GENERALIST_BEHAVIORAL_EVALUATION",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "thebrazenbeard/unbound-sol",
+          "ref": "work/global-github-ingest-20260929",
+          "commit": null,
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
+        }
+      ],
+      "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
+      "required_capabilities": [
+        "analyze"
+      ],
+      "collision_keys": [
+        "generalist-eval:v2:AV2-01:RESTORED_SOL_STATE"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 1,
+        "retries": 1
+      },
+      "expected_outputs": [
+        "response-artifact",
+        "blinded-case-result",
+        "judge-artifact",
+        "condition-comparison-ready-record"
+      ],
+      "completion_criteria": [
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
+        "persist exact model/runtime/state provenance",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
+        "do not let self-judgment count as independent validation",
+        "preserve baseline/restored condition identity"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "case_id": "AV2-01",
+        "condition": "RESTORED_SOL_STATE",
+        "blinded": true,
+        "target_experiment_hidden_from_model": true,
+        "claim_ceiling": "BEHAVIORAL_COMPARISON_ONLY"
+      },
+      "status": "PENDING"
+    },
+    {
+      "id": "generalist-eval-v2-02-baseline",
+      "root_frontier_id": "GENERALIST_BEHAVIORAL_EVALUATION",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "thebrazenbeard/unbound-sol",
+          "ref": "work/global-github-ingest-20260929",
+          "commit": null,
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
+        }
+      ],
+      "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
+      "required_capabilities": [
+        "analyze"
+      ],
+      "collision_keys": [
+        "generalist-eval:v2:AV2-02:BASELINE_NO_RESTORED_RULES"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 1,
+        "retries": 1
+      },
+      "expected_outputs": [
+        "response-artifact",
+        "blinded-case-result",
+        "judge-artifact",
+        "condition-comparison-ready-record"
+      ],
+      "completion_criteria": [
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
+        "persist exact model/runtime/state provenance",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
+        "do not let self-judgment count as independent validation",
+        "preserve baseline/restored condition identity"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "case_id": "AV2-02",
+        "condition": "BASELINE_NO_RESTORED_RULES",
+        "blinded": true,
+        "target_experiment_hidden_from_model": true,
+        "claim_ceiling": "BEHAVIORAL_COMPARISON_ONLY"
+      },
+      "status": "PENDING"
+    },
+    {
+      "id": "generalist-eval-v2-02-restored",
+      "root_frontier_id": "GENERALIST_BEHAVIORAL_EVALUATION",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "thebrazenbeard/unbound-sol",
+          "ref": "work/global-github-ingest-20260929",
+          "commit": null,
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
+        }
+      ],
+      "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
+      "required_capabilities": [
+        "analyze"
+      ],
+      "collision_keys": [
+        "generalist-eval:v2:AV2-02:RESTORED_SOL_STATE"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 1,
+        "retries": 1
+      },
+      "expected_outputs": [
+        "response-artifact",
+        "blinded-case-result",
+        "judge-artifact",
+        "condition-comparison-ready-record"
+      ],
+      "completion_criteria": [
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
+        "persist exact model/runtime/state provenance",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
+        "do not let self-judgment count as independent validation",
+        "preserve baseline/restored condition identity"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "case_id": "AV2-02",
+        "condition": "RESTORED_SOL_STATE",
+        "blinded": true,
+        "target_experiment_hidden_from_model": true,
+        "claim_ceiling": "BEHAVIORAL_COMPARISON_ONLY"
+      },
+      "status": "PENDING"
+    },
+    {
+      "id": "generalist-eval-v2-03-baseline",
+      "root_frontier_id": "GENERALIST_BEHAVIORAL_EVALUATION",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "thebrazenbeard/unbound-sol",
+          "ref": "work/global-github-ingest-20260929",
+          "commit": null,
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
+        }
+      ],
+      "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
+      "required_capabilities": [
+        "analyze"
+      ],
+      "collision_keys": [
+        "generalist-eval:v2:AV2-03:BASELINE_NO_RESTORED_RULES"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 1,
+        "retries": 1
+      },
+      "expected_outputs": [
+        "response-artifact",
+        "blinded-case-result",
+        "judge-artifact",
+        "condition-comparison-ready-record"
+      ],
+      "completion_criteria": [
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
+        "persist exact model/runtime/state provenance",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
+        "do not let self-judgment count as independent validation",
+        "preserve baseline/restored condition identity"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "case_id": "AV2-03",
+        "condition": "BASELINE_NO_RESTORED_RULES",
+        "blinded": true,
+        "target_experiment_hidden_from_model": true,
+        "claim_ceiling": "BEHAVIORAL_COMPARISON_ONLY"
+      },
+      "status": "PENDING"
+    },
+    {
+      "id": "generalist-eval-v2-03-restored",
+      "root_frontier_id": "GENERALIST_BEHAVIORAL_EVALUATION",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "thebrazenbeard/unbound-sol",
+          "ref": "work/global-github-ingest-20260929",
+          "commit": null,
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
+        }
+      ],
+      "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
+      "required_capabilities": [
+        "analyze"
+      ],
+      "collision_keys": [
+        "generalist-eval:v2:AV2-03:RESTORED_SOL_STATE"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 1,
+        "retries": 1
+      },
+      "expected_outputs": [
+        "response-artifact",
+        "blinded-case-result",
+        "judge-artifact",
+        "condition-comparison-ready-record"
+      ],
+      "completion_criteria": [
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
+        "persist exact model/runtime/state provenance",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
+        "do not let self-judgment count as independent validation",
+        "preserve baseline/restored condition identity"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "case_id": "AV2-03",
+        "condition": "RESTORED_SOL_STATE",
+        "blinded": true,
+        "target_experiment_hidden_from_model": true,
+        "claim_ceiling": "BEHAVIORAL_COMPARISON_ONLY"
+      },
+      "status": "PENDING"
+    },
+    {
+      "id": "generalist-eval-v2-04-baseline",
+      "root_frontier_id": "GENERALIST_BEHAVIORAL_EVALUATION",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "thebrazenbeard/unbound-sol",
+          "ref": "work/global-github-ingest-20260929",
+          "commit": null,
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
+        }
+      ],
+      "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
+      "required_capabilities": [
+        "analyze"
+      ],
+      "collision_keys": [
+        "generalist-eval:v2:AV2-04:BASELINE_NO_RESTORED_RULES"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 1,
+        "retries": 1
+      },
+      "expected_outputs": [
+        "response-artifact",
+        "blinded-case-result",
+        "judge-artifact",
+        "condition-comparison-ready-record"
+      ],
+      "completion_criteria": [
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
+        "persist exact model/runtime/state provenance",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
+        "do not let self-judgment count as independent validation",
+        "preserve baseline/restored condition identity"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "case_id": "AV2-04",
+        "condition": "BASELINE_NO_RESTORED_RULES",
+        "blinded": true,
+        "target_experiment_hidden_from_model": true,
+        "claim_ceiling": "BEHAVIORAL_COMPARISON_ONLY"
+      },
+      "status": "PENDING"
+    },
+    {
+      "id": "generalist-eval-v2-04-restored",
+      "root_frontier_id": "GENERALIST_BEHAVIORAL_EVALUATION",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "thebrazenbeard/unbound-sol",
+          "ref": "work/global-github-ingest-20260929",
+          "commit": null,
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
+        }
+      ],
+      "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
+      "required_capabilities": [
+        "analyze"
+      ],
+      "collision_keys": [
+        "generalist-eval:v2:AV2-04:RESTORED_SOL_STATE"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 1,
+        "retries": 1
+      },
+      "expected_outputs": [
+        "response-artifact",
+        "blinded-case-result",
+        "judge-artifact",
+        "condition-comparison-ready-record"
+      ],
+      "completion_criteria": [
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
+        "persist exact model/runtime/state provenance",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
+        "do not let self-judgment count as independent validation",
+        "preserve baseline/restored condition identity"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "case_id": "AV2-04",
+        "condition": "RESTORED_SOL_STATE",
+        "blinded": true,
+        "target_experiment_hidden_from_model": true,
+        "claim_ceiling": "BEHAVIORAL_COMPARISON_ONLY"
+      },
+      "status": "PENDING"
+    },
+    {
+      "id": "generalist-eval-v2-05-baseline",
+      "root_frontier_id": "GENERALIST_BEHAVIORAL_EVALUATION",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "thebrazenbeard/unbound-sol",
+          "ref": "work/global-github-ingest-20260929",
+          "commit": null,
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
+        }
+      ],
+      "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
+      "required_capabilities": [
+        "analyze"
+      ],
+      "collision_keys": [
+        "generalist-eval:v2:AV2-05:BASELINE_NO_RESTORED_RULES"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 1,
+        "retries": 1
+      },
+      "expected_outputs": [
+        "response-artifact",
+        "blinded-case-result",
+        "judge-artifact",
+        "condition-comparison-ready-record"
+      ],
+      "completion_criteria": [
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
+        "persist exact model/runtime/state provenance",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
+        "do not let self-judgment count as independent validation",
+        "preserve baseline/restored condition identity"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "case_id": "AV2-05",
+        "condition": "BASELINE_NO_RESTORED_RULES",
+        "blinded": true,
+        "target_experiment_hidden_from_model": true,
+        "claim_ceiling": "BEHAVIORAL_COMPARISON_ONLY"
+      },
+      "status": "PENDING"
+    },
+    {
+      "id": "generalist-eval-v2-05-restored",
+      "root_frontier_id": "GENERALIST_BEHAVIORAL_EVALUATION",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "thebrazenbeard/unbound-sol",
+          "ref": "work/global-github-ingest-20260929",
+          "commit": null,
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
+        }
+      ],
+      "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
+      "required_capabilities": [
+        "analyze"
+      ],
+      "collision_keys": [
+        "generalist-eval:v2:AV2-05:RESTORED_SOL_STATE"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 1,
+        "retries": 1
+      },
+      "expected_outputs": [
+        "response-artifact",
+        "blinded-case-result",
+        "judge-artifact",
+        "condition-comparison-ready-record"
+      ],
+      "completion_criteria": [
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
+        "persist exact model/runtime/state provenance",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
+        "do not let self-judgment count as independent validation",
+        "preserve baseline/restored condition identity"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "case_id": "AV2-05",
+        "condition": "RESTORED_SOL_STATE",
+        "blinded": true,
+        "target_experiment_hidden_from_model": true,
+        "claim_ceiling": "BEHAVIORAL_COMPARISON_ONLY"
+      },
+      "status": "PENDING"
+    },
+    {
+      "id": "generalist-eval-v2-06-baseline",
+      "root_frontier_id": "GENERALIST_BEHAVIORAL_EVALUATION",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "thebrazenbeard/unbound-sol",
+          "ref": "work/global-github-ingest-20260929",
+          "commit": null,
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
+        }
+      ],
+      "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
+      "required_capabilities": [
+        "analyze"
+      ],
+      "collision_keys": [
+        "generalist-eval:v2:AV2-06:BASELINE_NO_RESTORED_RULES"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 1,
+        "retries": 1
+      },
+      "expected_outputs": [
+        "response-artifact",
+        "blinded-case-result",
+        "judge-artifact",
+        "condition-comparison-ready-record"
+      ],
+      "completion_criteria": [
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
+        "persist exact model/runtime/state provenance",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
+        "do not let self-judgment count as independent validation",
+        "preserve baseline/restored condition identity"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "case_id": "AV2-06",
+        "condition": "BASELINE_NO_RESTORED_RULES",
+        "blinded": true,
+        "target_experiment_hidden_from_model": true,
+        "claim_ceiling": "BEHAVIORAL_COMPARISON_ONLY"
+      },
+      "status": "PENDING"
+    },
+    {
+      "id": "generalist-eval-v2-06-restored",
+      "root_frontier_id": "GENERALIST_BEHAVIORAL_EVALUATION",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "thebrazenbeard/unbound-sol",
+          "ref": "work/global-github-ingest-20260929",
+          "commit": null,
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
+        }
+      ],
+      "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
+      "required_capabilities": [
+        "analyze"
+      ],
+      "collision_keys": [
+        "generalist-eval:v2:AV2-06:RESTORED_SOL_STATE"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 1,
+        "retries": 1
+      },
+      "expected_outputs": [
+        "response-artifact",
+        "blinded-case-result",
+        "judge-artifact",
+        "condition-comparison-ready-record"
+      ],
+      "completion_criteria": [
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
+        "persist exact model/runtime/state provenance",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
+        "do not let self-judgment count as independent validation",
+        "preserve baseline/restored condition identity"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "case_id": "AV2-06",
+        "condition": "RESTORED_SOL_STATE",
+        "blinded": true,
+        "target_experiment_hidden_from_model": true,
+        "claim_ceiling": "BEHAVIORAL_COMPARISON_ONLY"
+      },
+      "status": "PENDING"
+    },
+    {
+      "id": "generalist-eval-v2-07-baseline",
+      "root_frontier_id": "GENERALIST_BEHAVIORAL_EVALUATION",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "thebrazenbeard/unbound-sol",
+          "ref": "work/global-github-ingest-20260929",
+          "commit": null,
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
+        }
+      ],
+      "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
+      "required_capabilities": [
+        "analyze"
+      ],
+      "collision_keys": [
+        "generalist-eval:v2:AV2-07:BASELINE_NO_RESTORED_RULES"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 1,
+        "retries": 1
+      },
+      "expected_outputs": [
+        "response-artifact",
+        "blinded-case-result",
+        "judge-artifact",
+        "condition-comparison-ready-record"
+      ],
+      "completion_criteria": [
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
+        "persist exact model/runtime/state provenance",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
+        "do not let self-judgment count as independent validation",
+        "preserve baseline/restored condition identity"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "case_id": "AV2-07",
+        "condition": "BASELINE_NO_RESTORED_RULES",
+        "blinded": true,
+        "target_experiment_hidden_from_model": true,
+        "claim_ceiling": "BEHAVIORAL_COMPARISON_ONLY"
+      },
+      "status": "PENDING"
+    },
+    {
+      "id": "generalist-eval-v2-07-restored",
+      "root_frontier_id": "GENERALIST_BEHAVIORAL_EVALUATION",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "thebrazenbeard/unbound-sol",
+          "ref": "work/global-github-ingest-20260929",
+          "commit": null,
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
+        }
+      ],
+      "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
+      "required_capabilities": [
+        "analyze"
+      ],
+      "collision_keys": [
+        "generalist-eval:v2:AV2-07:RESTORED_SOL_STATE"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 1,
+        "retries": 1
+      },
+      "expected_outputs": [
+        "response-artifact",
+        "blinded-case-result",
+        "judge-artifact",
+        "condition-comparison-ready-record"
+      ],
+      "completion_criteria": [
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
+        "persist exact model/runtime/state provenance",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
+        "do not let self-judgment count as independent validation",
+        "preserve baseline/restored condition identity"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "case_id": "AV2-07",
+        "condition": "RESTORED_SOL_STATE",
+        "blinded": true,
+        "target_experiment_hidden_from_model": true,
+        "claim_ceiling": "BEHAVIORAL_COMPARISON_ONLY"
+      },
+      "status": "PENDING"
+    },
+    {
+      "id": "generalist-eval-v2-08-baseline",
+      "root_frontier_id": "GENERALIST_BEHAVIORAL_EVALUATION",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "thebrazenbeard/unbound-sol",
+          "ref": "work/global-github-ingest-20260929",
+          "commit": null,
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
+        }
+      ],
+      "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
+      "required_capabilities": [
+        "analyze"
+      ],
+      "collision_keys": [
+        "generalist-eval:v2:AV2-08:BASELINE_NO_RESTORED_RULES"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 1,
+        "retries": 1
+      },
+      "expected_outputs": [
+        "response-artifact",
+        "blinded-case-result",
+        "judge-artifact",
+        "condition-comparison-ready-record"
+      ],
+      "completion_criteria": [
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
+        "persist exact model/runtime/state provenance",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
+        "do not let self-judgment count as independent validation",
+        "preserve baseline/restored condition identity"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "case_id": "AV2-08",
+        "condition": "BASELINE_NO_RESTORED_RULES",
+        "blinded": true,
+        "target_experiment_hidden_from_model": true,
+        "claim_ceiling": "BEHAVIORAL_COMPARISON_ONLY"
+      },
+      "status": "PENDING"
+    },
+    {
+      "id": "generalist-eval-v2-08-restored",
+      "root_frontier_id": "GENERALIST_BEHAVIORAL_EVALUATION",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "thebrazenbeard/unbound-sol",
+          "ref": "work/global-github-ingest-20260929",
+          "commit": null,
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
+        }
+      ],
+      "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
+      "required_capabilities": [
+        "analyze"
+      ],
+      "collision_keys": [
+        "generalist-eval:v2:AV2-08:RESTORED_SOL_STATE"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 1,
+        "retries": 1
+      },
+      "expected_outputs": [
+        "response-artifact",
+        "blinded-case-result",
+        "judge-artifact",
+        "condition-comparison-ready-record"
+      ],
+      "completion_criteria": [
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
+        "persist exact model/runtime/state provenance",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
+        "do not let self-judgment count as independent validation",
+        "preserve baseline/restored condition identity"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "case_id": "AV2-08",
+        "condition": "RESTORED_SOL_STATE",
+        "blinded": true,
+        "target_experiment_hidden_from_model": true,
+        "claim_ceiling": "BEHAVIORAL_COMPARISON_ONLY"
+      },
+      "status": "PENDING"
+    },
+    {
+      "id": "generalist-eval-v2-09-baseline",
+      "root_frontier_id": "GENERALIST_BEHAVIORAL_EVALUATION",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "thebrazenbeard/unbound-sol",
+          "ref": "work/global-github-ingest-20260929",
+          "commit": null,
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
+        }
+      ],
+      "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
+      "required_capabilities": [
+        "analyze"
+      ],
+      "collision_keys": [
+        "generalist-eval:v2:AV2-09:BASELINE_NO_RESTORED_RULES"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 1,
+        "retries": 1
+      },
+      "expected_outputs": [
+        "response-artifact",
+        "blinded-case-result",
+        "judge-artifact",
+        "condition-comparison-ready-record"
+      ],
+      "completion_criteria": [
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
+        "persist exact model/runtime/state provenance",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
+        "do not let self-judgment count as independent validation",
+        "preserve baseline/restored condition identity"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "case_id": "AV2-09",
+        "condition": "BASELINE_NO_RESTORED_RULES",
+        "blinded": true,
+        "target_experiment_hidden_from_model": true,
+        "claim_ceiling": "BEHAVIORAL_COMPARISON_ONLY"
+      },
+      "status": "PENDING"
+    },
+    {
+      "id": "generalist-eval-v2-09-restored",
+      "root_frontier_id": "GENERALIST_BEHAVIORAL_EVALUATION",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "thebrazenbeard/unbound-sol",
+          "ref": "work/global-github-ingest-20260929",
+          "commit": null,
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
+        }
+      ],
+      "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
+      "required_capabilities": [
+        "analyze"
+      ],
+      "collision_keys": [
+        "generalist-eval:v2:AV2-09:RESTORED_SOL_STATE"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 1,
+        "retries": 1
+      },
+      "expected_outputs": [
+        "response-artifact",
+        "blinded-case-result",
+        "judge-artifact",
+        "condition-comparison-ready-record"
+      ],
+      "completion_criteria": [
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
+        "persist exact model/runtime/state provenance",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
+        "do not let self-judgment count as independent validation",
+        "preserve baseline/restored condition identity"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "case_id": "AV2-09",
+        "condition": "RESTORED_SOL_STATE",
+        "blinded": true,
+        "target_experiment_hidden_from_model": true,
+        "claim_ceiling": "BEHAVIORAL_COMPARISON_ONLY"
+      },
+      "status": "PENDING"
+    },
+    {
+      "id": "generalist-eval-v2-10-baseline",
+      "root_frontier_id": "GENERALIST_BEHAVIORAL_EVALUATION",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "thebrazenbeard/unbound-sol",
+          "ref": "work/global-github-ingest-20260929",
+          "commit": null,
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
+        }
+      ],
+      "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
+      "required_capabilities": [
+        "analyze"
+      ],
+      "collision_keys": [
+        "generalist-eval:v2:AV2-10:BASELINE_NO_RESTORED_RULES"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 1,
+        "retries": 1
+      },
+      "expected_outputs": [
+        "response-artifact",
+        "blinded-case-result",
+        "judge-artifact",
+        "condition-comparison-ready-record"
+      ],
+      "completion_criteria": [
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
+        "persist exact model/runtime/state provenance",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
+        "do not let self-judgment count as independent validation",
+        "preserve baseline/restored condition identity"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "case_id": "AV2-10",
+        "condition": "BASELINE_NO_RESTORED_RULES",
+        "blinded": true,
+        "target_experiment_hidden_from_model": true,
+        "claim_ceiling": "BEHAVIORAL_COMPARISON_ONLY"
+      },
+      "status": "PENDING"
+    },
+    {
+      "id": "generalist-eval-v2-10-restored",
+      "root_frontier_id": "GENERALIST_BEHAVIORAL_EVALUATION",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "thebrazenbeard/unbound-sol",
+          "ref": "work/global-github-ingest-20260929",
+          "commit": null,
+          "path": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+          "digest": "13c057fabe6935877fc18eba06d050124afe63bd"
+        }
+      ],
+      "operation": "RUN_BLINDED_BEHAVIORAL_EVAL_CASE",
+      "required_capabilities": [
+        "analyze"
+      ],
+      "collision_keys": [
+        "generalist-eval:v2:AV2-10:RESTORED_SOL_STATE"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 1,
+        "retries": 1
+      },
+      "expected_outputs": [
+        "response-artifact",
+        "blinded-case-result",
+        "judge-artifact",
+        "condition-comparison-ready-record"
+      ],
+      "completion_criteria": [
+        "pass only the selected prompt case to the evaluated model",
+        "do not provide judge-only artifact or target experiment to evaluated model",
+        "persist exact model/runtime/state provenance",
+        "judge hidden invariants and forbidden behaviors outside the evaluated model context",
+        "do not let self-judgment count as independent validation",
+        "preserve baseline/restored condition identity"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "case_id": "AV2-10",
+        "condition": "RESTORED_SOL_STATE",
+        "blinded": true,
+        "target_experiment_hidden_from_model": true,
+        "claim_ceiling": "BEHAVIORAL_COMPARISON_ONLY"
+      },
+      "status": "PENDING"
+    }
+  ],
+  "judge_artifact": "state/evals/GENERALIST_EVAL_V2_JUDGE.json",
+  "judge_blob_sha": "35f84923dac7c37d84dcc593ecb4ddc7f080f19b"
+}

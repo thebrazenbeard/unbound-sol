@@ -1,0 +1,95 @@
+{
+  "schema": "UNBOUND_SOL_GLOBAL_GITHUB_COVERAGE_V3",
+  "observed_at": "2026-09-29",
+  "latest_wave": "state/global-github/WAVE_2026-09-29_V5.json",
+  "project_runner_binding": {
+    "repository": "thebrazenbeard/project-runner",
+    "ref": "main",
+    "commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+    "contract": "PROJECT_RUNNER.md",
+    "work_unit_schema": "schemas/work-unit.schema.json"
+  },
+  "cumulative": {
+    "lane_assignments": 400,
+    "unique_repositories": 395,
+    "successful_unique_repositories": 395,
+    "unresolved_unique_repositories": 0,
+    "work_units": 50,
+    "verifying_work_units": 50,
+    "deep_inspection_records": 20
+  },
+  "wave_artifacts": [
+    "state/global-github/WAVE_2026-09-29_V1.json",
+    "state/global-github/WAVE_2026-09-29_V2.json",
+    "state/global-github/WAVE_2026-09-29_V3.json",
+    "state/global-github/WAVE_2026-09-29_V4.json",
+    "state/global-github/WAVE_2026-09-29_V5.json"
+  ],
+  "work_unit_artifacts": [
+    "state/global-github/PROJECT_RUNNER_WORK_UNITS_2026-09-29_V1.json",
+    "state/global-github/PROJECT_RUNNER_WORK_UNITS_2026-09-29_V2.json",
+    "state/global-github/PROJECT_RUNNER_WORK_UNITS_2026-09-29_V3.json",
+    "state/global-github/PROJECT_RUNNER_WORK_UNITS_2026-09-29_V4.json",
+    "state/global-github/PROJECT_RUNNER_WORK_UNITS_2026-09-29_V5.json"
+  ],
+  "deep_artifacts": [
+    "state/global-github/DEEP_DIVE_2026-09-29_V1.json",
+    "state/global-github/DEEP_DIVE_2026-09-29_V2.json",
+    "state/global-github/DEEP_DIVE_2026-09-29_V3.json",
+    "state/global-github/DEEP_DIVE_2026-09-29_V4.json"
+  ],
+  "cross_wave_or_lane_duplicate_assignments": [
+    {
+      "repository": "amilajack/reading",
+      "assignments": 2
+    },
+    {
+      "repository": "Developer-Y/cs-video-courses",
+      "assignments": 2
+    },
+    {
+      "repository": "HKUDS/LightRAG",
+      "assignments": 2
+    },
+    {
+      "repository": "Shubhamsaboo/awesome-llm-apps",
+      "assignments": 2
+    },
+    {
+      "repository": "synthetic-sciences/openscience",
+      "assignments": 2
+    }
+  ],
+  "coverage_claim_ceiling": "BOUNDED_QUERY_SAMPLED_PUBLIC_GITHUB_SOURCE_READS_WITH_TWENTY_EXACT_HEAD_DEEP_RECORDS",
+  "known_biases": [
+    "GitHub search discoverability and manually chosen lane taxonomies shape the sample",
+    "five waves remain tiny relative to all public GitHub repositories",
+    "overview/README reads establish project self-description, not implementation or domain-truth validation",
+    "repository language, geography, organization type, age, size, activity and citation-impact distributions are not yet distribution-matched",
+    "deep sources are purposefully selected for information value, contradiction and domain semantics rather than random representativeness"
+  ],
+  "evidence_role_taxonomy": [
+    "TOOL",
+    "DATASET",
+    "CURATED_INDEX",
+    "COURSEWARE",
+    "MODEL_IMPLEMENTATION",
+    "KNOWLEDGE_BASE",
+    "PRIMARY_RESEARCH_ARTIFACT",
+    "PRIMARY_SOURCE"
+  ],
+  "next_metrics": [
+    "language distribution",
+    "repository created/updated age bands",
+    "repository size bands",
+    "archived/mirror/end-of-life status",
+    "license metadata",
+    "source-role distribution",
+    "evidence depth from overview to source/tests/papers/specifications",
+    "retrieval snapshot/currentness metadata where mutable indexes mediate evidence",
+    "cross-wave metadata audit beyond Wave 5"
+  ],
+  "metadata_audits": [
+    "state/global-github/metadata/WAVE5_BIAS_AUDIT_V1.json"
+  ]
+}

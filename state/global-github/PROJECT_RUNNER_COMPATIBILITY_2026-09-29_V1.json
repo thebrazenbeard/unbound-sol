@@ -1,0 +1,40 @@
+{
+  "schema": "UNBOUND_SOL_PROJECT_RUNNER_COMPATIBILITY_V1",
+  "observed_at": "2026-09-29",
+  "historical_wave_binding": {
+    "repository": "thebrazenbeard/project-runner",
+    "commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+    "contract": "PROJECT_RUNNER.md",
+    "work_unit_schema": "schemas/work-unit.schema.json"
+  },
+  "current_runner": {
+    "repository": "thebrazenbeard/project-runner",
+    "ref": "main",
+    "commit": "2d7a0db547a001a228dc55c77689c4d8d0e621a3",
+    "contract_blob_sha": "9c93274a2e1b40c8fe05cedaa575293d0125f212",
+    "work_unit_schema_blob_sha": "65fd4f1af1812c280cbec0726a55b61b6ff02e76"
+  },
+  "comparison": {
+    "status": "ahead",
+    "commits_ahead": 175,
+    "work_unit_schema_changed": false,
+    "contract_changed": true,
+    "notable_new_runtime_surfaces": [
+      "operator execution",
+      "portfolio/private registry handling",
+      "queue consumer",
+      "reference worker",
+      "worker routing",
+      "additional runtime/registry tests"
+    ]
+  },
+  "compatibility_assessment": {
+    "persisted_work_unit_shape": "COMPATIBLE_WITH_CURRENT_SCHEMA",
+    "persisted_work_units_checked": 60,
+    "migration_required": false,
+    "local_runner_runtime_executed": false,
+    "actual_ingestion_backend": "connected GitHub backend",
+    "note": "Historical wave bindings remain unchanged because they record the contract observed when those units were created. Current compatibility is a separate currentness fact."
+  },
+  "authority_ceiling": "SCHEMA_COMPATIBILITY_ONLY_NOT_RUNTIME_EXECUTION_OR_AUTHORITY_GRANT"
+}

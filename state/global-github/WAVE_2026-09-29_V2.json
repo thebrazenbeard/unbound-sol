@@ -1,0 +1,681 @@
+{
+  "schema": "UNBOUND_SOL_GLOBAL_GITHUB_INGEST_WAVE_V2",
+  "observed_at": "2026-09-29T13:20:00-04:00",
+  "project_runner_binding": {
+    "repository": "thebrazenbeard/project-runner",
+    "ref": "main",
+    "commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+    "contract": "PROJECT_RUNNER.md",
+    "work_unit_schema": "schemas/work-unit.schema.json"
+  },
+  "predecessor": "state/global-github/WAVE_2026-09-29_V1.json",
+  "working_branch": "work/global-github-ingest-20260929",
+  "objective": "Counter Wave 1 popularity bias by widening public GitHub ingestion into lower-star and niche technical/scientific domains while preserving bounded read-only provenance.",
+  "counts": {
+    "lane_assignments": 80,
+    "unique_repositories": 78,
+    "successful_lane_reads": 80,
+    "unresolved_lane_reads": 0,
+    "unique_successful_repositories": 78,
+    "unique_unresolved_repositories": 0
+  },
+  "evidence_scope": "README_BLOB_LEVEL_SECOND_WAVE",
+  "policy": {
+    "code_copying": false,
+    "license_assumptions": false,
+    "public_sources_only": true,
+    "repository_content_is_untrusted_data": true,
+    "popularity_is_discovery_only": true,
+    "protected_effects": false
+  },
+  "lanes": [
+    {
+      "id": "epistemology-research",
+      "status": "EXECUTED_WAVE_2",
+      "sources": [
+        {
+          "repository": "alandefreitas/matplotplusplus",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "830042d2eab5bcfef3ecfd67370a6db0586f9fdb",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "arrayfire/arrayfire",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "b0297c417726161d5b1e7c198ada1a0734a5d17d",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "rust-ml/linfa",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "10ad4f8dbd62879e8d0f2c436e80f9f671572cbb",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "rust-ndarray/ndarray",
+          "ref": "master",
+          "path": "README.rst",
+          "readme_blob_sha": "d11e2e0551b4f07288716bdfffa1b9b60766e233",
+          "status": "SOURCE_READ",
+          "initial_attempt_path": "README.md",
+          "repair": "ROOT_DISCOVERY_PATH_CASE_OR_EXTENSION"
+        },
+        {
+          "repository": "dpilger26/NumCpp",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "da0b58e692ae4e2155f60102e14ea2dc4dd89900",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "synthetic-sciences/openscience",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "d9f94ccf3a3393670269fb22e8e80cba39eb2849",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "bshoshany/thread-pool",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "55315d619a19a4dfed8124daeb40e30473d225b2",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "scikit-optimize/scikit-optimize",
+          "ref": "master",
+          "path": "README.rst",
+          "readme_blob_sha": "9ba47228395a44b45efc8ea8afa12fa28e39ed40",
+          "status": "SOURCE_READ",
+          "initial_attempt_path": "README.md",
+          "repair": "ROOT_DISCOVERY_PATH_CASE_OR_EXTENSION"
+        }
+      ]
+    },
+    {
+      "id": "formal-math",
+      "status": "EXECUTED_WAVE_2",
+      "sources": [
+        {
+          "repository": "HigherOrderCO/Kind",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "6526f75524413c5fe1bdccef83ea35a20adf23ed",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "SRI-CSL/yices2",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "bc13db1154f148673bd870cf3ac5a4a185ce6fe4",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "acl2/acl2",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "c8ea77bfb9e56d77438d300844e6ae9844dccfc7",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "newca12/awesome-rust-formalized-reasoning",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "2a9077375f5fbb8c6c6b79f27811afde0000ad23",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "johnyf/tool_lists",
+          "ref": "main",
+          "path": "readme.md",
+          "readme_blob_sha": "d678b4ba5ba65a91f9be488ffa98a3b6a85bdd21",
+          "status": "SOURCE_READ",
+          "initial_attempt_path": "README.md",
+          "repair": "ROOT_DISCOVERY_PATH_CASE_OR_EXTENSION"
+        },
+        {
+          "repository": "0vercl0k/z3-playground",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "ead64ca066ecc1c069217fc3ac5595902c5b300e",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "Chymyst/curryhoward",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "577473e5ae1c0fadce4494376a0e75bd1de55b82",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "lukaszcz/coqhammer",
+          "ref": "rocq-9.2",
+          "path": "README.md",
+          "readme_blob_sha": "38947cb5acad6a63bd97d22d2221eb8a15fa3c9a",
+          "status": "SOURCE_READ"
+        }
+      ]
+    },
+    {
+      "id": "storage-databases",
+      "status": "EXECUTED_WAVE_2",
+      "sources": [
+        {
+          "repository": "orientechnologies/orientdb",
+          "ref": "develop",
+          "path": "README.md",
+          "readme_blob_sha": "699a81ea519c749c5977371a151a854807bce5c8",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "uptrace/bun",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "6fe991323e88dd44c0edc921183bb1a2106c8454",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "catfan/Medoo",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "2f7c9778ef288976a5ffedbea34b76b04d501537",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "rosedblabs/rosedb",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "88f794085c525c462a6150a24b3f272ed53bd6c1",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "tidwall/buntdb",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "32c11fe471142d5d541ad7b2dc23cc86fee0d8a3",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "pudo/dataset",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "28814a5f4d08383c7d4915355ca84ebf2dc3581a",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "backup/backup",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "1aae6780e2bc8e495bd2b5491d05e1b9434e7dc6",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "ydb-platform/ydb",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "b7637c6c423ad52e0b241a2d8c6cc04cd3319d3a",
+          "status": "SOURCE_READ"
+        }
+      ]
+    },
+    {
+      "id": "languages-vms",
+      "status": "EXECUTED_WAVE_2",
+      "sources": [
+        {
+          "repository": "gopl-zh/gopl-zh.github.com",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "ce6c65b46887a0298e8fd0c5f76c02db6c9c686b",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "samuelmtimbo/unit",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "ef0446a43d178a054527584a1a546d535c74d56b",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "google/wuffs",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "9fc35c7fc0538c7b9481e910c18e3e35b7f07f37",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "ProvableHQ/leo",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "8c2324d036b9d3ac2f09ac38c743f5f7ceaee3f6",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "borgo-lang/borgo",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "c5cd951c99cd46ccfbf5e5bb84deb11147d0290f",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "marcobambini/gravity",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "8cf101d149e6fe1370c1c2d69e0a5d689542fec2",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "appcypher/awesome-wasm-langs",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "a72424d9f1b05ed0f686ab9057019e5ad6973105",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "evhub/coconut",
+          "ref": "master",
+          "path": "README.rst",
+          "readme_blob_sha": "0cabbec8c6aac641be643c9c916118d7ae30db66",
+          "status": "SOURCE_READ",
+          "initial_attempt_path": "README.md",
+          "repair": "ROOT_DISCOVERY_PATH_CASE_OR_EXTENSION"
+        }
+      ]
+    },
+    {
+      "id": "os-networking",
+      "status": "EXECUTED_WAVE_2",
+      "sources": [
+        {
+          "repository": "unikraft/unikraft",
+          "ref": "staging",
+          "path": "README.md",
+          "readme_blob_sha": "0ba35f1d85827d5c4828c8e7695be681f823510a",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "littlekernel/lk",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "ff3ebaae077db6c8b3a6b400cd729f1c1bfe2a16",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "amilajack/reading",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "1e39a7d6fdb34450914f250d865a0896b5a2d98d",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "yhzhang0128/egos-2000",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "f6ebc7942b441b61bc15d0e91562926d0be75660",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "nuta/kerla",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "82c3210b8959bdf7d2113d302e7268fc295d6e32",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "maestro-os/maestro",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "a3102afbfd031048a77f0d994a9ec6f3c8276d80",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "theseus-os/Theseus",
+          "ref": "theseus_main",
+          "path": "README.md",
+          "readme_blob_sha": "ac748ca685f1f3d51da945ee8b04acdb14015fb4",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "IceWhaleTech/ZimaOS",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "665c0bc1bc459e880bbea37b2123502968f84ddc",
+          "status": "SOURCE_READ"
+        }
+      ]
+    },
+    {
+      "id": "search-indexing",
+      "status": "EXECUTED_WAVE_2",
+      "sources": [
+        {
+          "repository": "ffffffff0x/Digital-Privacy",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "1c1bbf9b336aa444e1d903047a4cd6781828a164",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "infiniflow/infinity",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "8140a9474c207a03984eab8972d4224051932937",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "ssrajadh/sentrysearch",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "d596f10746323fc5e7d06250dcab52ab97348e1c",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "cboxdoerfer/fsearch",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "a409a6ce969f638c808d0ef9ccc9813ec715c610",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "apache/lucene-solr",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "90141a549069690b64d7a86453594664f00f0b26",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "unum-cloud/USearch",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "696e717867a77c55591fc9417e021440096c40a4",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "toshi-search/Toshi",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "a3c0f4f7eda3f02199538bd2ef57abf8e00d701e",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "yacy/yacy_search_server",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "6ac533d1b49f38ff1db8b29bda9e8a3cc374440f",
+          "status": "SOURCE_READ"
+        }
+      ]
+    },
+    {
+      "id": "scientific-tools",
+      "status": "EXECUTED_WAVE_2",
+      "sources": [
+        {
+          "repository": "ruc-datalab/DeepAnalyze",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "3d90fb1bfec842a478703263c4f320938887f04f",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "plotters-rs/plotters",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "4acc060c2f4e0564c2129a19386ecf66635e4345",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "Developer-Y/math-science-video-lectures",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "36f1d2fbc4c6a913d593e0d8042281a71aa6c8ac",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "synthetic-sciences/openscience",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "d9f94ccf3a3393670269fb22e8e80cba39eb2849",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "google/deepvariant",
+          "ref": "r1.10",
+          "path": "README.md",
+          "readme_blob_sha": "157bc079462ecbab21ff48fea78eeaa4ccc56949",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "Revolutionary-Games/Thrive",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "ff18e50e1352cd58f1af162cfe18f735d9420077",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "amilajack/reading",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "1e39a7d6fdb34450914f250d865a0896b5a2d98d",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "sbrugman/deep-learning-papers",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "105f69bc6bb9d2d86de6641ebaf838156f43ea91",
+          "status": "SOURCE_READ"
+        }
+      ]
+    },
+    {
+      "id": "cognitive-neuro",
+      "status": "EXECUTED_WAVE_2",
+      "sources": [
+        {
+          "repository": "hyperquest-hq/hyperbase",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "e5c35a7cbee4c2e5aea66b0dc129a55f1334de84",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "24kchengYe/human-skill-tree",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "0e994c0fda59014b3828067e37150672796fd0a5",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "Derek-Jones/ESEUR-code-data",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "c61dbb099e8d918d3f32661863177ddbf46bd10d",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "probmods/probmods2",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "82b963fe3817cc6745559163af88f70774926982",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "ucdavis/erplab",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "38230cf14e6ee3a0cbdb436c555de76b097a8788",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "awjuliani/neuro-nav",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "ccb830fff4ddbc13f4b4aea24eeb863ff8981c54",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "NACLab/ngc-learn",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "a948198620fa9e5aba6354530b173b439cd72e1a",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "ViCCo-Group/thingsvision",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "8501f3b77c5fc19ede8082115c9cb317296ff836",
+          "status": "SOURCE_READ"
+        }
+      ]
+    },
+    {
+      "id": "autonomous-systems",
+      "status": "EXECUTED_WAVE_2",
+      "sources": [
+        {
+          "repository": "OpenDriveLab/UniAD",
+          "ref": "v2.0",
+          "path": "README.md",
+          "readme_blob_sha": "88f2e334c88de04ac48185ee62fab3a9d378c81b",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "fundamentalvision/BEVFormer",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "bccd444a731776d4207674f12007544bee908580",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "Ly0n/awesome-robotic-tooling",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "574e80c632d7330776ea4de701ad60505a575e59",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "OpenDriveLab/End-to-end-Autonomous-Driving",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "9901ec464c044a5200d7b88d4f42ff1e3240641b",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "waymo-research/waymo-open-dataset",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "439ccf0a096bc3bc7b035841eeb3ebb6e8817729",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "Farama-Foundation/HighwayEnv",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "a1d453832cf960baccbd3d37c8731674afb1a09a",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "PJLab-ADG/SensorsCalibration",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "bdea00e682cafec938d7932f155baf3aaa33ba34",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "zhulf0804/3D-PointCloud",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "e525cf56dd5747a467e677d58dee893ae7fa38c8",
+          "status": "SOURCE_READ"
+        }
+      ]
+    },
+    {
+      "id": "knowledge-representation",
+      "status": "EXECUTED_WAVE_2",
+      "sources": [
+        {
+          "repository": "trustgraph-ai/trustgraph",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "8ea87394a3c486f3c1c3fe8b08eac041ce33c490",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "EtienneLescot/n8n-as-code",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "ac0de4f70d7a45caa7318b9e641040a9af9a2725",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "protegeproject/protege",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "f3fc113bf9d7d1ab9933d8d054f20c3aee281fe7",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "datavane/tis",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "0ec587f69276b40237a2ffc57e2816cba611811e",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "google/schema-dts",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "fc57a396384abb5711e8ce930ff46b4e4b1917ae",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "yuezhiai/jonex",
+          "ref": "mian",
+          "path": "README.md",
+          "readme_blob_sha": "3cbcc5937fdcaddf6f435fe3592b60587ef24825",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "ontio/ontology",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "d48ad47dcd05104b30d228b076769960a7e48237",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "jerlendds/osintbuddy",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "8f6c99a0c43685aff4583e89076b36d8651658fe",
+          "status": "SOURCE_READ"
+        }
+      ]
+    }
+  ],
+  "candidate_cross_domain_patterns": [
+    "formal reasoning benefits from explicit proof/checker/solver boundaries rather than fluent confidence",
+    "knowledge representation has multiple useful forms: ontologies, semantic hypergraphs, schemas, graph databases and retrieval graphs",
+    "scientific systems benefit from reproducible pipelines that bind data, code, experiment and result",
+    "embodied autonomy requires perception, temporal state, calibration, planning, control and evaluation to remain distinct",
+    "operating systems and language runtimes expose useful patterns for isolation, intermediate representations, capability boundaries and staged execution",
+    "search quality is architecture-dependent: lexical, vector, tensor, graph, decentralized and hybrid retrieval have different failure modes",
+    "durable storage designs trade write paths, indexing, consistency, persistence and recovery differently; no single memory substrate dominates every task"
+  ],
+  "next_frontier": [
+    "Deep-inspect a bounded set of high-information repositories using implementation/tests/docs rather than README claims.",
+    "Add explicit license and evidence-class fields before any mechanism moves from candidate to admitted.",
+    "Begin cross-wave deduplication and topic-coverage metrics.",
+    "Create behavioral probes that test whether admitted mechanisms actually improve future Sol decisions."
+  ],
+  "repair_summary": {
+    "repaired_sources": 4,
+    "method": "repository root discovery followed by exact-path read",
+    "observed_at": "2026-09-29T13:48:00-04:00"
+  }
+}

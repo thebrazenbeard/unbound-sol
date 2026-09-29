@@ -1,0 +1,973 @@
+{
+  "schema": "UNBOUND_SOL_PROJECT_RUNNER_WORK_UNITS_V5",
+  "wave": "WAVE_2026-09-29_V5",
+  "runner_binding": {
+    "repository": "thebrazenbeard/project-runner",
+    "ref": "main",
+    "commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+    "contract": "PROJECT_RUNNER.md",
+    "work_unit_schema": "schemas/work-unit.schema.json"
+  },
+  "work_units": [
+    {
+      "id": "global-github-wave5-01-embedded-hardware",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "mikebrady/shairport-sync",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "34e546c6e9c24a0b77c89ec49c834c98f2debd5a"
+        },
+        {
+          "repository": "rust-embedded/awesome-embedded-rust",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "4f866ed38881a7e8f9f42c195736fea456b47818"
+        },
+        {
+          "repository": "BruceDevices/firmware",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "e87968ed231027caf93a59b5eeeca1cc2d91710d"
+        },
+        {
+          "repository": "olikraus/u8g2",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "fea12c84bcf2b792ad645bbc6314fafead0aae53"
+        },
+        {
+          "repository": "HQarroum/awesome-iot",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "a600e201939c4f386465c9866e6abef518445dc3"
+        },
+        {
+          "repository": "e-m-b-a/emba",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "f78a1b54bdaddb8394022ae42c39df8762147871"
+        },
+        {
+          "repository": "vvaltchev/tilck",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "0090d989ef6b42d36f222333590733e4430721cd"
+        },
+        {
+          "repository": "ETLCPP/etl",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "5b3a50cc3f5ccb8cb7f90a162152d331e6228786"
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_SOURCE_READ_AND_ANALYZE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "global-github:wave5:embedded-hardware"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "source-observations",
+        "candidate-mechanisms",
+        "domain-evidence-ceilings"
+      ],
+      "completion_criteria": [
+        "eight repositories source-read",
+        "all reads exact path/ref/blob-bound",
+        "source text remains non-authoritative",
+        "no source mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "embedded-hardware",
+        "wave": 5,
+        "posture": "UNDERREPRESENTED_DOMAIN_EXPANSION"
+      },
+      "status": "VERIFYING"
+    },
+    {
+      "id": "global-github-wave5-02-control-partial-observability",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "roboterax/humanoid-gym",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "0feafe471c59c8db039c6a927f5f88ea99e20139"
+        },
+        {
+          "repository": "ethz-adrl/control-toolbox",
+          "ref": "v3.0.2",
+          "commit": null,
+          "path": "README.md",
+          "digest": "dba6be5051ed2353bc2f407f7488e7bdfcd40227"
+        },
+        {
+          "repository": "pnnl/neuromancer",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "afcfca77d1659f0124666fb6f83dd6511e0b5a29"
+        },
+        {
+          "repository": "nsacyber/GRASSMARLIN",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "bece634c8cc17ffe79e416ca6d3aabdaf04aeb33"
+        },
+        {
+          "repository": "ros-controls/ros2_control",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "c2df3118b63ebf7c5f11a238542c0e68e4e8bb72"
+        },
+        {
+          "repository": "A-make/awesome-control-theory",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "f9641324150da82c464c50f78306d346ab9e29ad"
+        },
+        {
+          "repository": "JuliaPOMDP/POMDPs.jl",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "bbb8731ef76bc0b145a3d9e70c74684c66d82e2d"
+        },
+        {
+          "repository": "cybergalactic/MSS",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "8ba584788a4b7d8bb897ef4bba9e486727a38582"
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_SOURCE_READ_AND_ANALYZE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "global-github:wave5:control-partial-observability"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "source-observations",
+        "candidate-mechanisms",
+        "domain-evidence-ceilings"
+      ],
+      "completion_criteria": [
+        "eight repositories source-read",
+        "all reads exact path/ref/blob-bound",
+        "source text remains non-authoritative",
+        "no source mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "control-partial-observability",
+        "wave": 5,
+        "posture": "UNDERREPRESENTED_DOMAIN_EXPANSION"
+      },
+      "status": "VERIFYING"
+    },
+    {
+      "id": "global-github-wave5-03-database-engines",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "SeaQL/sea-orm",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "f12f955e88ba45ed46ffd5e537af315d7f1d30b2"
+        },
+        {
+          "repository": "bchavez/Bogus",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "09d57e6fcf3254aea0ce22faef075e940a6b087a"
+        },
+        {
+          "repository": "tidwall/tile38",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "0757cf30dfd05fac718149e499263c71249dde5f"
+        },
+        {
+          "repository": "doctrine/dbal",
+          "ref": "4.5.x",
+          "commit": null,
+          "path": "README.md",
+          "digest": "87cb51dc9291a3d62f8c7602626f39dfd56734dc"
+        },
+        {
+          "repository": "CodingDocs/awesome-java",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "6cf05ec678aadbcafc79163c14b0c9140df39980"
+        },
+        {
+          "repository": "litedb-org/LiteDB",
+          "ref": "dev",
+          "commit": null,
+          "path": "README.md",
+          "digest": "5f2114c3b2b9b2f8cf303f4e4be06fdb34944c89"
+        },
+        {
+          "repository": "databendlabs/databend",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "4fdd8230d0e7dca96e1e8d771ec61f2a26343da1"
+        },
+        {
+          "repository": "cloudnative-pg/cloudnative-pg",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "1866503dc02977eab366461c3db52529223ef14f"
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_SOURCE_READ_AND_ANALYZE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "global-github:wave5:database-engines"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "source-observations",
+        "candidate-mechanisms",
+        "domain-evidence-ceilings"
+      ],
+      "completion_criteria": [
+        "eight repositories source-read",
+        "all reads exact path/ref/blob-bound",
+        "source text remains non-authoritative",
+        "no source mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "database-engines",
+        "wave": 5,
+        "posture": "UNDERREPRESENTED_DOMAIN_EXPANSION"
+      },
+      "status": "VERIFYING"
+    },
+    {
+      "id": "global-github-wave5-04-serialization-formats",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "frohoff/ysoserial",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "5d84aebbafed0fa7f1f1ebfb0690add85b74c5da"
+        },
+        {
+          "repository": "ijl/orjson",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "46249b0642435084ea53eb214211b0e04fd5b020"
+        },
+        {
+          "repository": "marshmallow-code/marshmallow",
+          "ref": "dev",
+          "commit": null,
+          "path": "README.rst",
+          "digest": "7f5396738a523277323f083ad405b22855591802"
+        },
+        {
+          "repository": "MessagePack-CSharp/MessagePack-CSharp",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "7eebf576f2c889d1d68c24434da5cb476760074a"
+        },
+        {
+          "repository": "EsotericSoftware/kryo",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "4e966eda0c2b865670c3bb73117f71fef93be409"
+        },
+        {
+          "repository": "Neargye/magic_enum",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "434192a778f7065a20e6d55cc6f92a766e9ee2e9"
+        },
+        {
+          "repository": "Kotlin/kotlinx.serialization",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "5df2d2246a9d126c57ca510192e7aefa470b280c"
+        },
+        {
+          "repository": "USCiLab/cereal",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "a1cc0f83c1247037b92e928b94ecd359e5536565"
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_SOURCE_READ_AND_ANALYZE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "global-github:wave5:serialization-formats"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "source-observations",
+        "candidate-mechanisms",
+        "domain-evidence-ceilings"
+      ],
+      "completion_criteria": [
+        "eight repositories source-read",
+        "all reads exact path/ref/blob-bound",
+        "source text remains non-authoritative",
+        "no source mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "serialization-formats",
+        "wave": 5,
+        "posture": "UNDERREPRESENTED_DOMAIN_EXPANSION"
+      },
+      "status": "VERIFYING"
+    },
+    {
+      "id": "global-github-wave5-05-statistics-probabilistic-programming",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "pymc-devs/pymc",
+          "ref": "main",
+          "commit": null,
+          "path": "README.rst",
+          "digest": "42d134552988716f325201c171b8b0280c5fdb00"
+        },
+        {
+          "repository": "pyro-ppl/pyro",
+          "ref": "dev",
+          "commit": null,
+          "path": "README.md",
+          "digest": "66b7407e423a586e994ac2d14453d96301b96a59"
+        },
+        {
+          "repository": "stan-dev/stan",
+          "ref": "develop",
+          "commit": null,
+          "path": "README.md",
+          "digest": "0fedeff0df7a4dd0c279e1861c81aea7291f78e2"
+        },
+        {
+          "repository": "pyro-ppl/numpyro",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "6a9e895a9eec1019d337636cf99016c8e65f493d"
+        },
+        {
+          "repository": "TuringLang/Turing.jl",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "6d735fb42eb03b6822454d1398900a8f096912d0"
+        },
+        {
+          "repository": "tensorflow/probability",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "27e5c189b6bdec05946b7678798a5877324cd348"
+        },
+        {
+          "repository": "probcomp/Gen.jl",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "3983c013112cbec4fc2171d0bf567fc7e04982fd"
+        },
+        {
+          "repository": "statsmodels/statsmodels",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "a96c9e9bc81803036c9cbd5f525906e18a9207ae"
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_SOURCE_READ_AND_ANALYZE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "global-github:wave5:statistics-probabilistic-programming"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "source-observations",
+        "candidate-mechanisms",
+        "domain-evidence-ceilings"
+      ],
+      "completion_criteria": [
+        "eight repositories source-read",
+        "all reads exact path/ref/blob-bound",
+        "source text remains non-authoritative",
+        "no source mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "statistics-probabilistic-programming",
+        "wave": 5,
+        "posture": "UNDERREPRESENTED_DOMAIN_EXPANSION"
+      },
+      "status": "VERIFYING"
+    },
+    {
+      "id": "global-github-wave5-06-information-retrieval-search",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "apache/lucene",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "d1511ba3ef4d6c04229cef57a4764ba7c32b92a8"
+        },
+        {
+          "repository": "typesense/typesense",
+          "ref": "v31",
+          "commit": null,
+          "path": "README.md",
+          "digest": "77e11acb90664853e610c81637bfc5e092b901ea"
+        },
+        {
+          "repository": "opensearch-project/OpenSearch",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "13ac5f45bffc462aecc7ebe09218724e5794bd03"
+        },
+        {
+          "repository": "quickwit-oss/tantivy",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "d8098a5e87af65222aebae8df54501c3c79c8548"
+        },
+        {
+          "repository": "valeriansaliou/sonic",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "a5084a3f086053b4782beb5e92cbad122465016a"
+        },
+        {
+          "repository": "neuml/txtai",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "e962fbbade971c38c11242e83e9584cdbbd99f91"
+        },
+        {
+          "repository": "embeddings-benchmark/mteb",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "02f0bc01c70a28dd301dc94054cea6b4e0431638"
+        },
+        {
+          "repository": "weaviate/weaviate",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "1249afc998bb8857afa3dd5cb859e2a9bdcb33bc"
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_SOURCE_READ_AND_ANALYZE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "global-github:wave5:information-retrieval-search"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "source-observations",
+        "candidate-mechanisms",
+        "domain-evidence-ceilings"
+      ],
+      "completion_criteria": [
+        "eight repositories source-read",
+        "all reads exact path/ref/blob-bound",
+        "source text remains non-authoritative",
+        "no source mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "information-retrieval-search",
+        "wave": 5,
+        "posture": "UNDERREPRESENTED_DOMAIN_EXPANSION"
+      },
+      "status": "VERIFYING"
+    },
+    {
+      "id": "global-github-wave5-07-optimization-operations-research",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "cvxpy/cvxpy",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "c1b924d0aecac8df4b382a6fef3156fe78b50a0a"
+        },
+        {
+          "repository": "bayesian-optimization/BayesianOptimization",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "c485d11ca76df61cac6c6459ca6e5edb364de485"
+        },
+        {
+          "repository": "guofei9987/scikit-opt",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "bac5419bcec3383e2a17ea37ecbe307af09e3ee8"
+        },
+        {
+          "repository": "PyVRP/PyVRP",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "e262b66b15c94da52ba8c058cd6ca7ae801bec6e"
+        },
+        {
+          "repository": "N-Wouda/ALNS",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "6ccd3901b89926405bec5d65b9baef2ed0534f62"
+        },
+        {
+          "repository": "d-krupke/cpsat-primer",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "db6b92b75ffcd14c9903186b4134dae3f80c5604"
+        },
+        {
+          "repository": "ai4co/rl4co",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "2ad12e409cee9c98f54dc642359b93d7fdcde221"
+        },
+        {
+          "repository": "microsoft/maro",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "2750a51cd4df40da4346912e417a38ce257ddd67"
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_SOURCE_READ_AND_ANALYZE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "global-github:wave5:optimization-operations-research"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "source-observations",
+        "candidate-mechanisms",
+        "domain-evidence-ceilings"
+      ],
+      "completion_criteria": [
+        "eight repositories source-read",
+        "all reads exact path/ref/blob-bound",
+        "source text remains non-authoritative",
+        "no source mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "optimization-operations-research",
+        "wave": 5,
+        "posture": "UNDERREPRESENTED_DOMAIN_EXPANSION"
+      },
+      "status": "VERIFYING"
+    },
+    {
+      "id": "global-github-wave5-08-computer-graphics",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "NVIDIA/pix2pixHD",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "74133991c8e6ee65b41c96de6fe005dd2175f76a"
+        },
+        {
+          "repository": "ssloy/tinyraytracer",
+          "ref": "master",
+          "commit": null,
+          "path": "Readme.md",
+          "digest": "b1763fc22fa8084ecce6639c473537c016cd3ff1"
+        },
+        {
+          "repository": "NVlabs/neuralangelo",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "f99c792129903111bab9b00a093868092025ffd1"
+        },
+        {
+          "repository": "junyanz/iGAN",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "ecf5cb3d6c73b563d030a08c2043f9c3272310bd"
+        },
+        {
+          "repository": "MrNeRF/LichtFeld-Studio",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "d20dc841d21068e0c1de64b6a2dad9e619fe042a"
+        },
+        {
+          "repository": "DLR-RM/BlenderProc",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "be6b8da9ee0bcabe1792e3b10e49efdfdc3fbe67"
+        },
+        {
+          "repository": "Overv/VulkanTutorial",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "b14b7f26b24b490b42409d3850b3509478de246c"
+        },
+        {
+          "repository": "xelatihy/yocto-gl",
+          "ref": "main",
+          "commit": null,
+          "path": "readme.md",
+          "digest": "4c233bd3e8708071b90f424498c32cec91e82377"
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_SOURCE_READ_AND_ANALYZE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "global-github:wave5:computer-graphics"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "source-observations",
+        "candidate-mechanisms",
+        "domain-evidence-ceilings"
+      ],
+      "completion_criteria": [
+        "eight repositories source-read",
+        "all reads exact path/ref/blob-bound",
+        "source text remains non-authoritative",
+        "no source mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "computer-graphics",
+        "wave": 5,
+        "posture": "UNDERREPRESENTED_DOMAIN_EXPANSION"
+      },
+      "status": "VERIFYING"
+    },
+    {
+      "id": "global-github-wave5-09-digital-archives-humanities",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "archivesspace/archivesspace",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "7d93b2b639b8f7d7082e45c7fca848844ff6bc17"
+        },
+        {
+          "repository": "Rhizome-Conifer/conifer",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "a18a39b00b1640d088e5a0fc448a42280d1cd1bd"
+        },
+        {
+          "repository": "zenodo/zenodo",
+          "ref": "master",
+          "commit": null,
+          "path": "README.rst",
+          "digest": "75ade98b57977c8109ffeb7026d02e985d9632b3"
+        },
+        {
+          "repository": "cernopendata/opendata.cern.ch",
+          "ref": "master",
+          "commit": null,
+          "path": "README.rst",
+          "digest": "3abf53a8e4ac26076890a6621009c457a1671a40"
+        },
+        {
+          "repository": "internetarchive/fatcat",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "919b9a2ad15c21eb2a332840f8491267ed4487e6"
+        },
+        {
+          "repository": "inveniosoftware/invenio",
+          "ref": "master",
+          "commit": null,
+          "path": "README.rst",
+          "digest": "d6081a583bb7858af45c9b8ecd2d31281129401e"
+        },
+        {
+          "repository": "knaw-huc/loghi",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "30589157d256929f99918ebb8f9dec47ce5f65d5"
+        },
+        {
+          "repository": "archivesunleashed/aut",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "6d5ce71a688fb3d9dc6155b11b96da7e64f4ed98"
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_SOURCE_READ_AND_ANALYZE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "global-github:wave5:digital-archives-humanities"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "source-observations",
+        "candidate-mechanisms",
+        "domain-evidence-ceilings"
+      ],
+      "completion_criteria": [
+        "eight repositories source-read",
+        "all reads exact path/ref/blob-bound",
+        "source text remains non-authoritative",
+        "no source mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "digital-archives-humanities",
+        "wave": 5,
+        "posture": "UNDERREPRESENTED_DOMAIN_EXPANSION"
+      },
+      "status": "VERIFYING"
+    },
+    {
+      "id": "global-github-wave5-10-signal-processing",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "merbanan/rtl_433",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "56fa5bdbaf7027c15a84e3cb2c8045f386e19902"
+        },
+        {
+          "repository": "tyiannak/pyAudioAnalysis",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "d254877877fc3776d2eed95ebe6376b9d1dd9794"
+        },
+        {
+          "repository": "anthonynsimon/bild",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "20a4aa8dcf8eb1ff4150f5235d0cf7209bc41ca3"
+        },
+        {
+          "repository": "libAudioFlux/audioFlux",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "fac5b4fdbe9518db19e35d7d4cb4bb4aa626fb5f"
+        },
+        {
+          "repository": "scottlawsonbc/audio-reactive-led-strip",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "ab73721a815736e4cef856874047f4eebcd2cf33"
+        },
+        {
+          "repository": "PyWavelets/pywt",
+          "ref": "main",
+          "commit": null,
+          "path": "README.rst",
+          "digest": "1f40df53dc2ccdc240abc643f8775e73b08d89b6"
+        },
+        {
+          "repository": "neuropsychology/NeuroKit",
+          "ref": "master",
+          "commit": null,
+          "path": "README.rst",
+          "digest": "29db8ab57e1734b63cde8c631e877a207e1be60e"
+        },
+        {
+          "repository": "gnss-sdr/gnss-sdr",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "e61573be7ae5e32b3344c38345f91f801c552c26"
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_SOURCE_READ_AND_ANALYZE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "global-github:wave5:signal-processing"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "source-observations",
+        "candidate-mechanisms",
+        "domain-evidence-ceilings"
+      ],
+      "completion_criteria": [
+        "eight repositories source-read",
+        "all reads exact path/ref/blob-bound",
+        "source text remains non-authoritative",
+        "no source mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "signal-processing",
+        "wave": 5,
+        "posture": "UNDERREPRESENTED_DOMAIN_EXPANSION"
+      },
+      "status": "VERIFYING"
+    }
+  ]
+}

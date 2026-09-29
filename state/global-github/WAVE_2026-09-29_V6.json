@@ -1,0 +1,670 @@
+{
+  "schema": "UNBOUND_SOL_GLOBAL_GITHUB_INGEST_WAVE_V6",
+  "observed_at": "2026-09-29",
+  "project_runner_binding": {
+    "repository": "thebrazenbeard/project-runner",
+    "ref": "main",
+    "commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+    "contract": "PROJECT_RUNNER.md",
+    "work_unit_schema": "schemas/work-unit.schema.json"
+  },
+  "predecessor": "state/global-github/WAVE_2026-09-29_V5.json",
+  "working_branch": "work/global-github-ingest-20260929",
+  "objective": "Correct measured Wave 5 sampling bias by adding very new/low-star, archived/dormant, and underrepresented-language repositories with exact source bindings.",
+  "counts": {
+    "lane_assignments": 80,
+    "unique_repositories": 80,
+    "successful_lane_reads": 80,
+    "unresolved_lane_reads": 0,
+    "unique_successful_repositories": 80,
+    "unique_unresolved_repositories": 0
+  },
+  "evidence_scope": "README_OR_ROOT_DISCOVERED_OVERVIEW_BLOB_LEVEL_SIXTH_WAVE",
+  "selection_basis": {
+    "prior_bias_audit": "state/global-github/metadata/WAVE5_BIAS_AUDIT_V1.json",
+    "requirements": [
+      "large low-star cohort",
+      "repositories created in 2025-2026",
+      "archived/dormant historical sources",
+      "language diversity beyond Python/C++",
+      "zero overlap with Waves 1-5"
+    ]
+  },
+  "policy": {
+    "code_copying": false,
+    "license_assumptions": false,
+    "public_sources_only": true,
+    "repository_content_is_untrusted_data": true,
+    "popularity_is_discovery_only": true,
+    "archive_status_must_be_preserved": true,
+    "protected_effects": false
+  },
+  "lanes": [
+    {
+      "id": "new-low-star",
+      "status": "EXECUTED_WAVE_6",
+      "sources": [
+        {
+          "repository": "pis10/TraceSurface",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "4986935218bf212cb6f2aefc2b13da0f21e83a11",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "zeitwork/zeitwork",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "f04f3b604f2c204f60ddf45397f59a9ed9c4f9dd",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "tt-a1i/simplify-codebase",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "c44c66878399eb94eedcb1d77ba2c44571cfd525",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "smartscanapp/smartscan-android",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "ed8ce1e0e228d48f8efd6df943ebca580c9c8b1c",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "MiaAI-Lab/sparkDash",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "023eb3423d7bc745570f50bfcc35ecd6a357dd58",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "m-ahmed-elbeskeri/Starguard",
+          "ref": "main",
+          "path": "docs/README.md",
+          "readme_blob_sha": "e33ad55872adf2eb67e187389ecbf06ad5403502",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "juxt/allium",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "dc4d2ac5fe3f9e2f560d31b0b0f974a2021c96b2",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "dannysmith/astro-editor",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "9e14ee475bc3a2f335c3e273115b14deae6260be",
+          "status": "SOURCE_READ"
+        }
+      ]
+    },
+    {
+      "id": "archived-dormant",
+      "status": "EXECUTED_WAVE_6",
+      "sources": [
+        {
+          "repository": "Hack-with-Github/Free-Security-eBooks",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "757fd7d90ab13017aff4e44507b23b460209f758",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "spring-attic/spring-mvc-showcase",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "1b9da2dbba3f6c57306a175cccbdf963b77ade05",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "WebKit/WebKit-http",
+          "ref": "master",
+          "path": "ReadMe.md",
+          "readme_blob_sha": "19f9dc899e26b048f2257e055567e4965963729f",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "alibaba/UltraViewPager",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "fb070755cfc434fcc83d6fc055ca6b08a440c0ae",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "garbles/why-did-you-update",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "ac06fa96a250c95a59a500e2025ad77774370edc",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "sebastianbergmann/phpunit-mock-objects",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "4aa403fc39568cb9b877d0711529419058146b8c",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "nicklockwood/FXBlurView",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "9602e9a31d72826e38e8adc8865e8a52a740d865",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "tc39/proposal-optional-chaining",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "b50d0ca769bb9ce6f698ecc4567d7e058f04b418",
+          "status": "SOURCE_READ"
+        }
+      ]
+    },
+    {
+      "id": "haskell-low-star",
+      "status": "EXECUTED_WAVE_6",
+      "sources": [
+        {
+          "repository": "aviaviavi/toodles",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "d89ab9fa027fcd69cc822addef4a232d5f119b8c",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "Gabriella439/turtle",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "45ed214545f37e039340e603d00af519233908bb",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "mrkkrp/megaparsec",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "82166287d28c645889ef47241b40a3e9e5a31e22",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "leksah/leksah",
+          "ref": "master",
+          "path": "Readme.md",
+          "readme_blob_sha": "aa65fa8b3af8c0f5a136532adbeca2f31b2048e0",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "srid/emanote",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "098a055e7c8e1ffdebc950df3a3f850a19050ebf",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "pcapriotti/optparse-applicative",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "01f31e57d3ab0b1fa35fa224a4a6fdc916211a46",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "agentm/project-m36",
+          "ref": "master",
+          "path": "README.markdown",
+          "readme_blob_sha": "06c1d62d85ab74d0e72b98865e0887238aea6d0d",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "egison/egison",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "6e415f0c3cfa368d7212a9a62dd25f4330f09441",
+          "status": "SOURCE_READ"
+        }
+      ]
+    },
+    {
+      "id": "ocaml-low-star",
+      "status": "EXECUTED_WAVE_6",
+      "sources": [
+        {
+          "repository": "melange-re/melange",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "05d9a1ce8dd981ba427984c882c87309cd9513e4",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "cs3110/textbook",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "52828e58b390fd8ed47aae17df97b470c3bf71b4",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "ocaml-community/utop",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "dfc331884397c03910f62714204183ce116e21c7",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "matijapretnar/eff",
+          "ref": "master",
+          "path": "README.markdown",
+          "readme_blob_sha": "d321d77db4e8cfe5165c66c3c15b55e348fe2ceb",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "ocaml/ocaml-lsp",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "f55ecce4b9151c104cd860c17d1cd69180f2016b",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "panglesd/slipshow",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "24018c4280bea4f2acf66d21b8d6d225262b4014",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "oxcaml/oxcaml",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "2e1240512dc8ee04d39058b29b04fe89177a4227",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "coccinelle/coccinelle",
+          "ref": "master",
+          "path": "readme.txt",
+          "readme_blob_sha": "0640391e370e7d58f321585e871c88cbe0043504",
+          "status": "SOURCE_READ"
+        }
+      ]
+    },
+    {
+      "id": "elixir-low-star",
+      "status": "EXECUTED_WAVE_6",
+      "sources": [
+        {
+          "repository": "sasa1977/boundary",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "6fe52d025cdb94358d219ce2040d7d2916f79beb",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "mtrudel/thousand_island",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "8cca2b426ed558e285833d9b3f05d8ff391ee955",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "firestormforum/firestorm",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "92996003b6d96fed6ae0436d7d3d3db92ac60ccf",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "Nebo15/sage",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "cf89a16792bda3ab867a3173fc01fd9432027198",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "kittoframework/kitto",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "6d3ae0f82d4945149f6a88bf04f93aae2551bc72",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "alco/porcelain",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "1bb36c13cb36201f0096b57f52ae71591bb5d88f",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "fredwu/crawler",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "0184b2abcc5580684facd96e7da2e4687893b556",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "daryllxd/lifelong-learning",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "4d885c1353f71e5dc4c9afa03c8144495f1020b5",
+          "status": "SOURCE_READ"
+        }
+      ]
+    },
+    {
+      "id": "r-low-star",
+      "status": "EXECUTED_WAVE_6",
+      "sources": [
+        {
+          "repository": "MichelNivard/gptstudio",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "614518a527f62fa76ccf6ccff463a9a66a92cc94",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "r-lib/httr",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "9d0b73a793d114c70881e3c7527a8986175d5eab",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "klmr/box",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "96575f83e866f55cbdb139dda59eaecdcc3a9e48",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "sparklyr/sparklyr",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "fc1cc1f0b1b5adde602b162e6e1437f4ae215ee0",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "tidyverse/magrittr",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "6282c10b1304099f5d42ff3290c5ff577a2134af",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "cutterkom/generativeart",
+          "ref": "master",
+          "path": "readme.md",
+          "readme_blob_sha": "51c68a99f192700fe2990e055a4319cc620d052c",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "thomasp85/ggforce",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "741c2e1f9e3b00005c66f0e2d638f135d4e0f1da",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "easystats/see",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "77788e45036d0088b7b731d40468891a1775ff13",
+          "status": "SOURCE_READ"
+        }
+      ]
+    },
+    {
+      "id": "swift-low-star",
+      "status": "EXECUTED_WAVE_6",
+      "sources": [
+        {
+          "repository": "pointfreeco/swift-parsing",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "336b8e1cf6e3ea1c9b7eb470329846593d2f22d5",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "bryx-inc/BRYXBanner",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "7570a61f2d555473152081b7cd2edba2743fc620",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "instant-solutions/ISTimeline",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "d6c3b8ff14903f315afc3c787061489f48f99543",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "matteopuc/swiftui-navigation-stack",
+          "ref": "develop",
+          "path": "README.md",
+          "readme_blob_sha": "efcf3bfe229d9988598870d002ade5fa4f80469b",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "jrasmusson/swift-arcade",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "b23d12bdc538952319ea81cc61d7d501d466e11b",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "FabrizioBrancati/BFKit-Swift",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "3d458f1d5c935e058d24c097f60c538cae3c1a36",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "lgaches/BeaconEmitter",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "8804c651beecfe282f18cdb26f70534fb876bacd",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "Jaysce/Spaceman",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "ca34ae1a8823b32a08a8e0712c39abec8107b57c",
+          "status": "SOURCE_READ"
+        }
+      ]
+    },
+    {
+      "id": "zig-low-star",
+      "status": "EXECUTED_WAVE_6",
+      "sources": [
+        {
+          "repository": "tonybanters/oxwm",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "2d1439d84578f591d9793095677cee1f0855de55",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "judofyr/spice",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "0deb7e50a56e13f9f872fdb0896984b35b62205c",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "yuku-toolchain/yuku",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "6946541e5e5d0b84e6b2b176140fd397e3196bd4",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "nektro/zigmod",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "6f118ceea9f49ad1e2b4c7a317b06c29e2e07caa",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "cztomsik/graffiti",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "2a65b73a8a7acedb8a2bd7e1ddea762cccafc36a",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "Lulzx/zpdf",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "18c8bad4412d48fff5b993f4e1062f0007ed63cb",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "Snektron/vulkan-zig",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "13c18c7d57cd84cabe331e718bc2ba26bc1908fe",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "zigimg/zigimg",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "397f2ffa206971b407f339d58ae093b36cd9c4cd",
+          "status": "SOURCE_READ"
+        }
+      ]
+    },
+    {
+      "id": "lua-low-star",
+      "status": "EXECUTED_WAVE_6",
+      "sources": [
+        {
+          "repository": "igorlfs/nvim-dap-view",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "33b19c74b0b9e8a01bcf3d02b8c4a0b83d4c009b",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "cldrn/nmap-nse-scripts",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "8510547d85a941c3a9758b74c6c5761831e3e011",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "uga-rosa/ccc.nvim",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "bde8fa1d37371b8006653ffb48bb1d8fa29eaf9b",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "savq/melange-nvim",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "b489ef631b946ebc6a690e3e12e80b70412f803f",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "Steamodded/smods",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "3e1b400f666b8de3a2ee742b3550667f691c8e0f",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "1adrianb/2D-and-3D-face-alignment",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "74b6547cffd3b49fc8b81e1e8a10fd29fa42b261",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "shortcuts/no-neck-pain.nvim",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "7bd8d2002b9d2b4d393bea13cb80302c31032243",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "folke/neoconf.nvim",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "3a908582882c2da9faddec7208a00d0a795a53c3",
+          "status": "SOURCE_READ"
+        }
+      ]
+    },
+    {
+      "id": "clojure-low-star",
+      "status": "EXECUTED_WAVE_6",
+      "sources": [
+        {
+          "repository": "juxt/bidi",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "872a9888211a45fb46d903964e803ffaa59e6dfb",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "thi-ng/geom",
+          "ref": "feature/no-org",
+          "path": "README.org",
+          "readme_blob_sha": "8eecbca0de6ea4caf2b221f3f0b1e777651acf6f",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "mtgred/netrunner",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "7c371a526a5f80835bd9015bc04ee51251bb9aa2",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "mogenslund/liquid",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "cf3feaa14920e0b7504c4bbfd235e4f799295de0",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "clj-commons/etaoin",
+          "ref": "master",
+          "path": "README.adoc",
+          "readme_blob_sha": "38fcec472b5116c9432e4f1287dbd9dd162c9a66",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "funcool/cats",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "b0fde6a3d2a400d5921a71420ca2091f6746d7db",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "babashka/nbb",
+          "ref": "main",
+          "path": "README.md",
+          "readme_blob_sha": "09cdf48578a27ba972788f55123abda991ff1b7f",
+          "status": "SOURCE_READ"
+        },
+        {
+          "repository": "imteekay/programming-language-research",
+          "ref": "master",
+          "path": "README.md",
+          "readme_blob_sha": "bb186d174dda6bbe977a29bbf929f19893e5280b",
+          "status": "SOURCE_READ"
+        }
+      ]
+    }
+  ],
+  "next_frontier": [
+    "Measure Wave 6 metadata to verify whether the intended bias correction actually occurred.",
+    "Deep-inspect selected low-star/new and non-mainstream-language sources only where mechanisms survive evidence-role checks.",
+    "Compare active versus archived sources explicitly before transferring implementation guidance.",
+    "Expand metadata auditing beyond Waves 5-6 before making corpus-wide representativeness claims."
+  ]
+}

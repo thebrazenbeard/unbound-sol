@@ -1,0 +1,106 @@
+{
+  "schema": "UNBOUND_SOL_GLOBAL_GITHUB_DEEP_DIVE_V2",
+  "observed_at": "2026-09-29T14:28:00-04:00",
+  "evidence_class": "SOURCE_INSPECTION",
+  "relationship_to_wave": "state/global-github/WAVE_2026-09-29_V3.json",
+  "posture": "CONTRADICTION_SEEKING",
+  "records": [
+    {
+      "repository": "potassco/clingo",
+      "ref": "master",
+      "commit": "91f90454f2d5c7b7d0aa8e7e692efd1adc48618f",
+      "files": [
+        {
+          "path": "libclingo/clingo/control.hh",
+          "blob_sha": "0e33a2f27e0d8ee8acc6dc3cfdc82e8596c5a03c"
+        }
+      ],
+      "observed": [
+        "the model interface explicitly distinguishes StableModel, BraveConsequences, and CautiousConsequences",
+        "consequence inspection can represent true, false, or unknown"
+      ],
+      "derived_pattern": "When multiple admissible models or explanations remain, distinguish claims supported by at least one model from claims supported by every surviving model.",
+      "behavioral_consequence": "Use POSSIBLE/BRAVE versus NECESSARY/CAUTIOUS claim status when uncertainty is model-plural; do not flatten existence of one consistent explanation into universal support.",
+      "disposition": "ADMITTED_BEHAVIORAL_PATTERN"
+    },
+    {
+      "repository": "stateright/stateright",
+      "ref": "master",
+      "commit": "ab8c8be9341505e0f71edbe5dd88ed275bd976a4",
+      "files": [
+        {
+          "path": "src/lib.rs",
+          "blob_sha": "d91703fad5a4a15dd35ada0bd4b83298a1303426"
+        }
+      ],
+      "observed": [
+        "models declare always properties for safety/invariants and sometimes properties for reachable outcomes",
+        "the checker searches for counterexamples to always-properties and examples for sometimes-properties",
+        "discoveries are represented as explicit paths/traces of system steps"
+      ],
+      "derived_pattern": "A hostile review is stronger when a claim is translated into an explicit invariant/reachability property and the system searches for a concrete counterexample trace.",
+      "behavioral_consequence": "For substantial architecture claims, state at least one invariant or reachability property and preserve a concrete falsifying trace when found, rather than relying only on prose critique.",
+      "disposition": "ADMITTED_BEHAVIORAL_PATTERN"
+    },
+    {
+      "repository": "commanded/commanded",
+      "ref": "main",
+      "commit": "936dbb166af0e348bf3317c4714590112336b827",
+      "files": [
+        {
+          "path": "lib/commanded/event_store/recorded_event.ex",
+          "blob_sha": "2177c327e1ca6f79556c99c12ce47f3a36d83bcd"
+        },
+        {
+          "path": "lib/commanded/aggregates/aggregate.ex",
+          "blob_sha": "c707db0930a6bd52c677b26a7b0c5aab13d79b99"
+        }
+      ],
+      "observed": [
+        "recorded events are immutable and carry globally ordered event number, stream identity/version, causation id, correlation id, metadata, and creation time",
+        "aggregate state is event sourced and may use snapshots, with snapshot versions controlling whether older snapshots are ignored during state rebuild"
+      ],
+      "derived_pattern": "Mutable current state should be reconstructible from an immutable, causally annotated event history when continuity or auditability matters.",
+      "behavioral_consequence": "For material Sol state changes, preserve append-only change events/provenance in addition to current summaries; summaries remain convenience views, not the only historical evidence.",
+      "disposition": "ADMITTED_BEHAVIORAL_PATTERN"
+    },
+    {
+      "repository": "py-why/EconML",
+      "ref": "main",
+      "commit": "f0fc2e7d39d20e1a9d9201233fb7945e88cab0cc",
+      "files": [
+        {
+          "path": "doc/spec/estimation/dml.rst",
+          "blob_sha": "74a19221327a5d5f3e20d796eab2dff30a9395e1"
+        }
+      ],
+      "observed": [
+        "Double Machine Learning is presented as treatment-effect estimation under an explicit observed-confounders assumption",
+        "predictive nuisance tasks are estimated separately from the final treatment-effect model",
+        "cross-fitting and orthogonality are used to protect the final estimate from nuisance-estimation error under stated conditions"
+      ],
+      "derived_pattern": "Predictive accuracy and causal effect estimation are different evidence tasks; causal language needs explicit identification assumptions and separation of nuisance prediction from the target causal claim.",
+      "behavioral_consequence": "Do not upgrade correlation, prediction, or mechanistic plausibility into causal language without an explicit causal design/assumption set; label causal identification separately from predictive evidence.",
+      "disposition": "ADMITTED_BEHAVIORAL_PATTERN"
+    },
+    {
+      "repository": "astroautomata/PySR",
+      "ref": "master",
+      "commit": "10c300a5fc03ceb86121c5fc337af98afd6d1c4c",
+      "files": [
+        {
+          "path": "skills/pysr/SKILL.md",
+          "blob_sha": "ac34153f4e7cbefeb24207270701d7364f38c791"
+        }
+      ],
+      "observed": [
+        "search evolves populations of expressions rather than one candidate trajectory",
+        "the output exposes an accuracy/complexity Pareto front and allows selecting any candidate rather than only the default",
+        "the guidance explicitly notes evolutionary search lacks conventional convergence and can jump families after long search"
+      ],
+      "derived_pattern": "For open-ended hypothesis search, preserve a diverse frontier of non-dominated candidates and explicit tradeoffs instead of prematurely collapsing to one favored explanation.",
+      "behavioral_consequence": "When several live hypotheses trade explanatory fit against complexity/risk, preserve the frontier and report why a candidate is retained or discarded; do not treat current best as converged truth.",
+      "disposition": "ADMITTED_BEHAVIORAL_PATTERN"
+    }
+  ]
+}

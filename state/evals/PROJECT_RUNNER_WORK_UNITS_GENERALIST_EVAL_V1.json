@@ -1,0 +1,534 @@
+{
+  "schema": "UNBOUND_SOL_PROJECT_RUNNER_EVAL_WORK_UNITS_V1",
+  "suite": "state/evals/GENERALIST_EVAL_V1.json",
+  "suite_blob_sha": "2fa7ce1c4509b52da74f10801cd2ff1a31508953",
+  "runner_binding": {
+    "repository": "thebrazenbeard/project-runner",
+    "ref": "main",
+    "commit": "2d7a0db547a001a228dc55c77689c4d8d0e621a3",
+    "contract": "PROJECT_RUNNER.md",
+    "work_unit_schema": "schemas/work-unit.schema.json"
+  },
+  "work_units": [
+    {
+      "id": "generalist-eval-v1-01-e18",
+      "root_frontier_id": "GENERALIST_BEHAVIORAL_EVALUATION",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "thebrazenbeard/unbound-sol",
+          "ref": "work/global-github-ingest-20260929",
+          "commit": null,
+          "path": "state/evals/GENERALIST_EVAL_V1.json",
+          "digest": "2fa7ce1c4509b52da74f10801cd2ff1a31508953"
+        }
+      ],
+      "operation": "RUN_BEHAVIORAL_EVAL_CASE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "generalist-eval:v1:GE18-PARTIAL-OBSERVABILITY"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 1,
+        "retries": 1
+      },
+      "expected_outputs": [
+        "response-artifact",
+        "hard-pass-result",
+        "diagnostic-score",
+        "judge-evidence"
+      ],
+      "completion_criteria": [
+        "execute exactly one declared eval case",
+        "persist exact runtime/model/state provenance",
+        "evaluate all required invariants and forbidden behaviors",
+        "do not count self-evaluation as independent validation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "case_id": "GE18-PARTIAL-OBSERVABILITY",
+        "experiment": "E18",
+        "evaluation_mode": "CONTROLLED",
+        "required_comparison": [
+          "BASELINE_WITHOUT_RESTORED_RULE",
+          "RESTORED_SOL_STATE"
+        ],
+        "claim_ceiling": "BEHAVIORAL_EVIDENCE_ONLY"
+      },
+      "status": "PENDING"
+    },
+    {
+      "id": "generalist-eval-v1-02-e19",
+      "root_frontier_id": "GENERALIST_BEHAVIORAL_EVALUATION",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "thebrazenbeard/unbound-sol",
+          "ref": "work/global-github-ingest-20260929",
+          "commit": null,
+          "path": "state/evals/GENERALIST_EVAL_V1.json",
+          "digest": "2fa7ce1c4509b52da74f10801cd2ff1a31508953"
+        }
+      ],
+      "operation": "RUN_BEHAVIORAL_EVAL_CASE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "generalist-eval:v1:GE19-COMMAND-EFFECT"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 1,
+        "retries": 1
+      },
+      "expected_outputs": [
+        "response-artifact",
+        "hard-pass-result",
+        "diagnostic-score",
+        "judge-evidence"
+      ],
+      "completion_criteria": [
+        "execute exactly one declared eval case",
+        "persist exact runtime/model/state provenance",
+        "evaluate all required invariants and forbidden behaviors",
+        "do not count self-evaluation as independent validation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "case_id": "GE19-COMMAND-EFFECT",
+        "experiment": "E19",
+        "evaluation_mode": "CONTROLLED",
+        "required_comparison": [
+          "BASELINE_WITHOUT_RESTORED_RULE",
+          "RESTORED_SOL_STATE"
+        ],
+        "claim_ceiling": "BEHAVIORAL_EVIDENCE_ONLY"
+      },
+      "status": "PENDING"
+    },
+    {
+      "id": "generalist-eval-v1-03-e20",
+      "root_frontier_id": "GENERALIST_BEHAVIORAL_EVALUATION",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "thebrazenbeard/unbound-sol",
+          "ref": "work/global-github-ingest-20260929",
+          "commit": null,
+          "path": "state/evals/GENERALIST_EVAL_V1.json",
+          "digest": "2fa7ce1c4509b52da74f10801cd2ff1a31508953"
+        }
+      ],
+      "operation": "RUN_BEHAVIORAL_EVAL_CASE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "generalist-eval:v1:GE20-RETRIEVAL-SNAPSHOT"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 1,
+        "retries": 1
+      },
+      "expected_outputs": [
+        "response-artifact",
+        "hard-pass-result",
+        "diagnostic-score",
+        "judge-evidence"
+      ],
+      "completion_criteria": [
+        "execute exactly one declared eval case",
+        "persist exact runtime/model/state provenance",
+        "evaluate all required invariants and forbidden behaviors",
+        "do not count self-evaluation as independent validation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "case_id": "GE20-RETRIEVAL-SNAPSHOT",
+        "experiment": "E20",
+        "evaluation_mode": "CONTROLLED",
+        "required_comparison": [
+          "BASELINE_WITHOUT_RESTORED_RULE",
+          "RESTORED_SOL_STATE"
+        ],
+        "claim_ceiling": "BEHAVIORAL_EVIDENCE_ONLY"
+      },
+      "status": "PENDING"
+    },
+    {
+      "id": "generalist-eval-v1-04-e21",
+      "root_frontier_id": "GENERALIST_BEHAVIORAL_EVALUATION",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "thebrazenbeard/unbound-sol",
+          "ref": "work/global-github-ingest-20260929",
+          "commit": null,
+          "path": "state/evals/GENERALIST_EVAL_V1.json",
+          "digest": "2fa7ce1c4509b52da74f10801cd2ff1a31508953"
+        }
+      ],
+      "operation": "RUN_BEHAVIORAL_EVAL_CASE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "generalist-eval:v1:GE21-INDEPENDENT-EVIDENCE"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 1,
+        "retries": 1
+      },
+      "expected_outputs": [
+        "response-artifact",
+        "hard-pass-result",
+        "diagnostic-score",
+        "judge-evidence"
+      ],
+      "completion_criteria": [
+        "execute exactly one declared eval case",
+        "persist exact runtime/model/state provenance",
+        "evaluate all required invariants and forbidden behaviors",
+        "do not count self-evaluation as independent validation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "case_id": "GE21-INDEPENDENT-EVIDENCE",
+        "experiment": "E21",
+        "evaluation_mode": "CONTROLLED",
+        "required_comparison": [
+          "BASELINE_WITHOUT_RESTORED_RULE",
+          "RESTORED_SOL_STATE"
+        ],
+        "claim_ceiling": "BEHAVIORAL_EVIDENCE_ONLY"
+      },
+      "status": "PENDING"
+    },
+    {
+      "id": "generalist-eval-v1-05-e22",
+      "root_frontier_id": "GENERALIST_BEHAVIORAL_EVALUATION",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "thebrazenbeard/unbound-sol",
+          "ref": "work/global-github-ingest-20260929",
+          "commit": null,
+          "path": "state/evals/GENERALIST_EVAL_V1.json",
+          "digest": "2fa7ce1c4509b52da74f10801cd2ff1a31508953"
+        }
+      ],
+      "operation": "RUN_BEHAVIORAL_EVAL_CASE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "generalist-eval:v1:GE22-EXACT-VERSION"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 1,
+        "retries": 1
+      },
+      "expected_outputs": [
+        "response-artifact",
+        "hard-pass-result",
+        "diagnostic-score",
+        "judge-evidence"
+      ],
+      "completion_criteria": [
+        "execute exactly one declared eval case",
+        "persist exact runtime/model/state provenance",
+        "evaluate all required invariants and forbidden behaviors",
+        "do not count self-evaluation as independent validation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "case_id": "GE22-EXACT-VERSION",
+        "experiment": "E22",
+        "evaluation_mode": "CONTROLLED",
+        "required_comparison": [
+          "BASELINE_WITHOUT_RESTORED_RULE",
+          "RESTORED_SOL_STATE"
+        ],
+        "claim_ceiling": "BEHAVIORAL_EVIDENCE_ONLY"
+      },
+      "status": "PENDING"
+    },
+    {
+      "id": "generalist-eval-v1-06-e23",
+      "root_frontier_id": "GENERALIST_BEHAVIORAL_EVALUATION",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "thebrazenbeard/unbound-sol",
+          "ref": "work/global-github-ingest-20260929",
+          "commit": null,
+          "path": "state/evals/GENERALIST_EVAL_V1.json",
+          "digest": "2fa7ce1c4509b52da74f10801cd2ff1a31508953"
+        }
+      ],
+      "operation": "RUN_BEHAVIORAL_EVAL_CASE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "generalist-eval:v1:GE23-HANDLER-POLICY"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 1,
+        "retries": 1
+      },
+      "expected_outputs": [
+        "response-artifact",
+        "hard-pass-result",
+        "diagnostic-score",
+        "judge-evidence"
+      ],
+      "completion_criteria": [
+        "execute exactly one declared eval case",
+        "persist exact runtime/model/state provenance",
+        "evaluate all required invariants and forbidden behaviors",
+        "do not count self-evaluation as independent validation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "case_id": "GE23-HANDLER-POLICY",
+        "experiment": "E23",
+        "evaluation_mode": "CONTROLLED",
+        "required_comparison": [
+          "BASELINE_WITHOUT_RESTORED_RULE",
+          "RESTORED_SOL_STATE"
+        ],
+        "claim_ceiling": "BEHAVIORAL_EVIDENCE_ONLY"
+      },
+      "status": "PENDING"
+    },
+    {
+      "id": "generalist-eval-v1-07-e24",
+      "root_frontier_id": "GENERALIST_BEHAVIORAL_EVALUATION",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "thebrazenbeard/unbound-sol",
+          "ref": "work/global-github-ingest-20260929",
+          "commit": null,
+          "path": "state/evals/GENERALIST_EVAL_V1.json",
+          "digest": "2fa7ce1c4509b52da74f10801cd2ff1a31508953"
+        }
+      ],
+      "operation": "RUN_BEHAVIORAL_EVAL_CASE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "generalist-eval:v1:GE24-SEMANTIC-TRANSFORM"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 1,
+        "retries": 1
+      },
+      "expected_outputs": [
+        "response-artifact",
+        "hard-pass-result",
+        "diagnostic-score",
+        "judge-evidence"
+      ],
+      "completion_criteria": [
+        "execute exactly one declared eval case",
+        "persist exact runtime/model/state provenance",
+        "evaluate all required invariants and forbidden behaviors",
+        "do not count self-evaluation as independent validation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "case_id": "GE24-SEMANTIC-TRANSFORM",
+        "experiment": "E24",
+        "evaluation_mode": "CONTROLLED",
+        "required_comparison": [
+          "BASELINE_WITHOUT_RESTORED_RULE",
+          "RESTORED_SOL_STATE"
+        ],
+        "claim_ceiling": "BEHAVIORAL_EVIDENCE_ONLY"
+      },
+      "status": "PENDING"
+    },
+    {
+      "id": "generalist-eval-v1-08-e25",
+      "root_frontier_id": "GENERALIST_BEHAVIORAL_EVALUATION",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "thebrazenbeard/unbound-sol",
+          "ref": "work/global-github-ingest-20260929",
+          "commit": null,
+          "path": "state/evals/GENERALIST_EVAL_V1.json",
+          "digest": "2fa7ce1c4509b52da74f10801cd2ff1a31508953"
+        }
+      ],
+      "operation": "RUN_BEHAVIORAL_EVAL_CASE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "generalist-eval:v1:GE25-BRANCHABLE-STATE"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 1,
+        "retries": 1
+      },
+      "expected_outputs": [
+        "response-artifact",
+        "hard-pass-result",
+        "diagnostic-score",
+        "judge-evidence"
+      ],
+      "completion_criteria": [
+        "execute exactly one declared eval case",
+        "persist exact runtime/model/state provenance",
+        "evaluate all required invariants and forbidden behaviors",
+        "do not count self-evaluation as independent validation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "case_id": "GE25-BRANCHABLE-STATE",
+        "experiment": "E25",
+        "evaluation_mode": "CONTROLLED",
+        "required_comparison": [
+          "BASELINE_WITHOUT_RESTORED_RULE",
+          "RESTORED_SOL_STATE"
+        ],
+        "claim_ceiling": "BEHAVIORAL_EVIDENCE_ONLY"
+      },
+      "status": "PENDING"
+    },
+    {
+      "id": "generalist-eval-v1-09-e26",
+      "root_frontier_id": "GENERALIST_BEHAVIORAL_EVALUATION",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "thebrazenbeard/unbound-sol",
+          "ref": "work/global-github-ingest-20260929",
+          "commit": null,
+          "path": "state/evals/GENERALIST_EVAL_V1.json",
+          "digest": "2fa7ce1c4509b52da74f10801cd2ff1a31508953"
+        }
+      ],
+      "operation": "RUN_BEHAVIORAL_EVAL_CASE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "generalist-eval:v1:GE26-EXECUTABLE-BOUNDARY"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 1,
+        "retries": 1
+      },
+      "expected_outputs": [
+        "response-artifact",
+        "hard-pass-result",
+        "diagnostic-score",
+        "judge-evidence"
+      ],
+      "completion_criteria": [
+        "execute exactly one declared eval case",
+        "persist exact runtime/model/state provenance",
+        "evaluate all required invariants and forbidden behaviors",
+        "do not count self-evaluation as independent validation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "case_id": "GE26-EXECUTABLE-BOUNDARY",
+        "experiment": "E26",
+        "evaluation_mode": "CONTROLLED",
+        "required_comparison": [
+          "BASELINE_WITHOUT_RESTORED_RULE",
+          "RESTORED_SOL_STATE"
+        ],
+        "claim_ceiling": "BEHAVIORAL_EVIDENCE_ONLY"
+      },
+      "status": "PENDING"
+    },
+    {
+      "id": "generalist-eval-v1-10-e27",
+      "root_frontier_id": "GENERALIST_BEHAVIORAL_EVALUATION",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "thebrazenbeard/unbound-sol",
+          "ref": "work/global-github-ingest-20260929",
+          "commit": null,
+          "path": "state/evals/GENERALIST_EVAL_V1.json",
+          "digest": "2fa7ce1c4509b52da74f10801cd2ff1a31508953"
+        }
+      ],
+      "operation": "RUN_BEHAVIORAL_EVAL_CASE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "generalist-eval:v1:GE27-ROUNDTRIP"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 1,
+        "retries": 1
+      },
+      "expected_outputs": [
+        "response-artifact",
+        "hard-pass-result",
+        "diagnostic-score",
+        "judge-evidence"
+      ],
+      "completion_criteria": [
+        "execute exactly one declared eval case",
+        "persist exact runtime/model/state provenance",
+        "evaluate all required invariants and forbidden behaviors",
+        "do not count self-evaluation as independent validation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "case_id": "GE27-ROUNDTRIP",
+        "experiment": "E27",
+        "evaluation_mode": "CONTROLLED",
+        "required_comparison": [
+          "BASELINE_WITHOUT_RESTORED_RULE",
+          "RESTORED_SOL_STATE"
+        ],
+        "claim_ceiling": "BEHAVIORAL_EVIDENCE_ONLY"
+      },
+      "status": "PENDING"
+    }
+  ]
+}

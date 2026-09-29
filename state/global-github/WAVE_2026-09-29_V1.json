@@ -1,0 +1,691 @@
+{
+  "schema": "UNBOUND_SOL_GLOBAL_GITHUB_INGEST_WAVE_V1",
+  "observed_at": "2026-09-29T12:54:00-04:00",
+  "orchestrator": "PROJECT_RUNNER_WORK_UNIT_SEMANTICS",
+  "target_repository": "thebrazenbeard/unbound-sol",
+  "target_base_commit": "d4284dd1f044e506bb85554856c00497d6790d44",
+  "working_branch": "work/global-github-ingest-20260929",
+  "goal": "Build a resumable public-GitHub knowledge/mechanism ingestion program that can alter future Sol behavior through durable external state without claiming model-weight modification or AGI.",
+  "counts": {
+    "lane_assignments": 80,
+    "unique_repositories": 77,
+    "successful_lane_reads": 80,
+    "unresolved_lane_reads": 0,
+    "unique_successful_repositories": 77,
+    "unique_unresolved_repositories": 0
+  },
+  "evidence_scope": "README_OR_ROOT_DISCOVERED_OVERVIEW_BLOB_LEVEL_FIRST_WAVE",
+  "policy": {
+    "code_copying": false,
+    "license_assumptions": false,
+    "public_sources_only": true,
+    "repository_content_is_evidence_not_truth": true,
+    "ingestion_does_not_modify_model_weights": true,
+    "protected_effects": false
+  },
+  "lanes": [
+    {
+      "id": "model-learning",
+      "status": "EXECUTED_WAVE_1",
+      "sources": [
+        {
+          "repository": "tensorflow/tensorflow",
+          "readme_blob_sha": "24ce6ff362b00e77474edcbf67b49689889765c2",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "master"
+        },
+        {
+          "repository": "f/prompts.chat",
+          "readme_blob_sha": "2ef16acadbac7599287913d2e8cc6a39e0def3b5",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        },
+        {
+          "repository": "huggingface/transformers",
+          "readme_blob_sha": "730084a5a55486821a1d600d8084beb9069f805b",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        },
+        {
+          "repository": "rasbt/LLMs-from-scratch",
+          "readme_blob_sha": "4703bc5afc86803540abd6cbc465d635aa3eb5e8",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        },
+        {
+          "repository": "pytorch/pytorch",
+          "readme_blob_sha": "938c15dba315963266102bcfeaf935306b24a165",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        },
+        {
+          "repository": "microsoft/ML-For-Beginners",
+          "readme_blob_sha": "bf4a5274ff17858a8e4d2c833b55e3b4b8925743",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        },
+        {
+          "repository": "Developer-Y/cs-video-courses",
+          "readme_blob_sha": "c347dd3c19b2e694c25545a309f181856e49aeee",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "master"
+        },
+        {
+          "repository": "mlabonne/llm-course",
+          "readme_blob_sha": "c605bee6695691d73a68de0aa21669b0f67b5412",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        }
+      ]
+    },
+    {
+      "id": "agents",
+      "status": "EXECUTED_WAVE_1",
+      "sources": [
+        {
+          "repository": "Significant-Gravitas/AutoGPT",
+          "readme_blob_sha": "563bea54c643b48a5254801c90b830b8bf54c46a",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "master"
+        },
+        {
+          "repository": "langflow-ai/langflow",
+          "readme_blob_sha": "ccba723089429cedfa4a3bbbb11a897a57eb11e6",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        },
+        {
+          "repository": "langchain-ai/langchain",
+          "readme_blob_sha": "aeea8c38765f4a33c777e8755ac2f439132ffbb0",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "master"
+        },
+        {
+          "repository": "Shubhamsaboo/awesome-llm-apps",
+          "readme_blob_sha": "e8b91511659f82c52ef8d5c1ce5cd6aabea03c19",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        },
+        {
+          "repository": "dair-ai/Prompt-Engineering-Guide",
+          "readme_blob_sha": "87082c1cbe20bbd22d29ea272fc9efd3753f2e4b",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        },
+        {
+          "repository": "ruvnet/ruflo",
+          "readme_blob_sha": "e5233c9aa886d2aa9f47ce6c0c74df355913c26f",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        },
+        {
+          "repository": "mem0ai/mem0",
+          "readme_blob_sha": "9a81e74effacbd7433e91b6c1fcc907f110d4773",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        },
+        {
+          "repository": "usestrix/strix",
+          "readme_blob_sha": "351b96e753b3df42f027ba7536fedcde21d1d5a0",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        }
+      ]
+    },
+    {
+      "id": "memory-rag",
+      "status": "EXECUTED_WAVE_1",
+      "sources": [
+        {
+          "repository": "infiniflow/ragflow",
+          "readme_blob_sha": "4b9a48fd2920442f1723a5cd071a529e5ba4be07",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        },
+        {
+          "repository": "pathwaycom/llm-app",
+          "readme_blob_sha": "5f18d70bcdfbec286612efc4d495c0acd59954e9",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        },
+        {
+          "repository": "HKUDS/LightRAG",
+          "readme_blob_sha": "5dd8b7db99231f6ecede9b76ba8dc304d9638f3c",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        },
+        {
+          "repository": "chatchat-space/Langchain-Chatchat",
+          "readme_blob_sha": "a8ca2614d2805219784c9d6fdf46dc303460eb62",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "master"
+        },
+        {
+          "repository": "VectifyAI/PageIndex",
+          "readme_blob_sha": "05457ee57115bfffe5cec2ff1490d3f894e2240f",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        },
+        {
+          "repository": "stanford-oval/storm",
+          "readme_blob_sha": "e0dba464b54fc82a16119dbee1d073f2404dfaae",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        },
+        {
+          "repository": "NirDiamant/RAG_Techniques",
+          "readme_blob_sha": "94e43c7e65380aa87349c39058be257f71319e10",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        },
+        {
+          "repository": "deepset-ai/haystack",
+          "readme_blob_sha": "afa079b2a7e90e815fdaf9b09edcd7ad010e3e91",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        }
+      ]
+    },
+    {
+      "id": "knowledge-semantics",
+      "status": "EXECUTED_WAVE_1",
+      "sources": [
+        {
+          "repository": "Graphify-Labs/graphify",
+          "readme_blob_sha": "cada9528b43dfd41641f5caf008d38c46e589b1f",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "v8"
+        },
+        {
+          "repository": "Egonex-AI/Understand-Anything",
+          "readme_blob_sha": "5474b0e4d3cd944d13605ff33688efba8dba1f68",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        },
+        {
+          "repository": "666ghj/MiroFish",
+          "readme_blob_sha": "5e8071d0a53ad17b7ecf694b159498e1e872a1ae",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        },
+        {
+          "repository": "DeusData/codebase-memory-mcp",
+          "readme_blob_sha": "9c82c18aeda046668571e5b56706a012c0264041",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        },
+        {
+          "repository": "logseq/logseq",
+          "readme_blob_sha": "662bad17d543ea6865cd8d146c91478858436dc2",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "master"
+        },
+        {
+          "repository": "HKUDS/LightRAG",
+          "readme_blob_sha": "5dd8b7db99231f6ecede9b76ba8dc304d9638f3c",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        },
+        {
+          "repository": "TriliumNext/Trilium",
+          "readme_blob_sha": "80b39d4443b540232776a31f6ea6b661d29bf0d4",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        },
+        {
+          "repository": "tirth8205/code-review-graph",
+          "readme_blob_sha": "a16038f8517f56e6e267b174f9f1e82799f2820f",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "staging"
+        }
+      ]
+    },
+    {
+      "id": "distributed-data",
+      "status": "EXECUTED_WAVE_1",
+      "sources": [
+        {
+          "repository": "doocs/advanced-java",
+          "readme_blob_sha": "99266dba30d14eb5ef7551db1ba74f1fee0e611c",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        },
+        {
+          "repository": "redis/redis",
+          "readme_blob_sha": "fcc7c29a1c93f4ac9e3688c2b26ac36c25351675",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "unstable"
+        },
+        {
+          "repository": "binhnguyennus/awesome-scalability",
+          "readme_blob_sha": "ecd1e3db7c03595e715e691a8e23119440a77778",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "master"
+        },
+        {
+          "repository": "etcd-io/etcd",
+          "readme_blob_sha": "19b0b357f67647f5326d96e0da0a3ac4dd020ccf",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        },
+        {
+          "repository": "karanpratapsingh/system-design",
+          "readme_blob_sha": "cf1beb4f7864c689c5ea6836cafd95f215ffed9f",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        },
+        {
+          "repository": "ashishps1/awesome-system-design-resources",
+          "readme_blob_sha": "ddbed30d6ceb33f67e801f53112d3283644ec007",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        },
+        {
+          "repository": "apache/dubbo",
+          "readme_blob_sha": "c2fa196a54c94f244d60854a1b3817b44a98e5fe",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "3.3"
+        },
+        {
+          "repository": "spacedriveapp/spacedrive",
+          "readme_blob_sha": "3c4f2cf0627177a83317b1610ab22e4e4d6ff4ce",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        }
+      ]
+    },
+    {
+      "id": "compilers-runtimes",
+      "status": "EXECUTED_WAVE_1",
+      "sources": [
+        {
+          "repository": "vercel/next.js",
+          "readme_blob_sha": "29e4f3032d3dd24eb12f0381e288e4dc033e0845",
+          "status": "SOURCE_READ",
+          "initial_attempt_path": "README.md",
+          "path": "readme.md",
+          "repair": "ROOT_DISCOVERY_PATH_CASE_OR_EXTENSION",
+          "ref": "canary"
+        },
+        {
+          "repository": "rust-lang/rust",
+          "readme_blob_sha": "ed35016eb3a238614741e5922a06b9bf83f9780e",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        },
+        {
+          "repository": "sveltejs/svelte",
+          "readme_blob_sha": "7ea71647521ae850fd0933665f94760806ac5b29",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        },
+        {
+          "repository": "webpack/webpack",
+          "readme_blob_sha": "ba5cf0cbc7202362b721f26624b7d35e6fa7c3a8",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        },
+        {
+          "repository": "FuelLabs/sway",
+          "readme_blob_sha": "1aa9ac8866950f7ec03cbe5eb08262a8a01dad5d",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "master"
+        },
+        {
+          "repository": "typst/typst",
+          "readme_blob_sha": "a8d18a6180c3f1849feb2688fe179f3a93677682",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        },
+        {
+          "repository": "gatsbyjs/gatsby",
+          "readme_blob_sha": "c64f761e067d798d837056e7c569f0a85a1bf34b",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "master"
+        },
+        {
+          "repository": "JetBrains/kotlin",
+          "readme_blob_sha": "08f86e4a7362a568e7cddebbe86fdb88fe78ad57",
+          "status": "SOURCE_READ",
+          "initial_attempt_path": "README.md",
+          "path": "ReadMe.md",
+          "repair": "ROOT_DISCOVERY_PATH_CASE_OR_EXTENSION",
+          "ref": "master"
+        }
+      ]
+    },
+    {
+      "id": "robotics-embodiment",
+      "status": "EXECUTED_WAVE_1",
+      "sources": [
+        {
+          "repository": "Developer-Y/cs-video-courses",
+          "readme_blob_sha": "c347dd3c19b2e694c25545a309f181856e49aeee",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "master"
+        },
+        {
+          "repository": "commaai/openpilot",
+          "readme_blob_sha": "21737a1ae12eac9fe6dcf98b0c4b1eb12fda4774",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "master"
+        },
+        {
+          "repository": "NaiboWang/EasySpider",
+          "readme_blob_sha": "09fa4ab78408a3d41ae6fc519a2075893a8d458e",
+          "status": "SOURCE_READ",
+          "initial_attempt_path": "README.md",
+          "path": "Readme.md",
+          "repair": "ROOT_DISCOVERY_PATH_CASE_OR_EXTENSION",
+          "ref": "master"
+        },
+        {
+          "repository": "AtsushiSakai/PythonRobotics",
+          "readme_blob_sha": "f828d90e1d1d22ad9443b0b8c1cf16a2c40e8080",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "master"
+        },
+        {
+          "repository": "harvard-edge/cs249r_book",
+          "readme_blob_sha": "abb9f3534645a5406bed8e8dd2e062c1dec00cfc",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "dev"
+        },
+        {
+          "repository": "wechaty/wechaty",
+          "readme_blob_sha": "446424e1e16738a6cac1f7bddba25d6cd549dedb",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        },
+        {
+          "repository": "questdb/questdb",
+          "readme_blob_sha": "12f63ee62deae18334471d44bcd00d0b7d9c2a18",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "master"
+        },
+        {
+          "repository": "earthtojake/text-to-cad",
+          "readme_blob_sha": "e109c12bb0561878295088a542332d8bf6cc2242",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        }
+      ]
+    },
+    {
+      "id": "neuroscience-cognition",
+      "status": "EXECUTED_WAVE_1",
+      "sources": [
+        {
+          "repository": "mne-tools/mne-python",
+          "readme_blob_sha": "3508426cba8c79aa0d3499d574eabc0a6caedf5b",
+          "status": "SOURCE_READ",
+          "initial_attempt_path": "README.md",
+          "path": "README.rst",
+          "repair": "ROOT_DISCOVERY_PATH_CASE_OR_EXTENSION",
+          "ref": "main"
+        },
+        {
+          "repository": "NeuromatchAcademy/course-content",
+          "readme_blob_sha": "637b59ca8070ee5e18601170558ab48299fb0306",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        },
+        {
+          "repository": "psychopy/psychopy",
+          "readme_blob_sha": "acdc49f61c5c5850e1c850a89abb2eaf28168093",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "dev"
+        },
+        {
+          "repository": "jeshraghian/snntorch",
+          "readme_blob_sha": "5d6644133f57f10113d7c83e5520c773418a49b3",
+          "status": "SOURCE_READ",
+          "initial_attempt_path": "README.md",
+          "path": "README.rst",
+          "repair": "ROOT_DISCOVERY_PATH_CASE_OR_EXTENSION",
+          "ref": "master"
+        },
+        {
+          "repository": "brainflow-dev/brainflow",
+          "readme_blob_sha": "6a2c4e023d165a7dcd43fb9581b5db6ff66b038b",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "master"
+        },
+        {
+          "repository": "analyticalmonk/awesome-neuroscience",
+          "readme_blob_sha": "10c6c5cbdffb7e3439f3baeda0d795c0ddb92a4c",
+          "status": "SOURCE_READ",
+          "initial_attempt_path": "README.md",
+          "path": "readme.md",
+          "repair": "ROOT_DISCOVERY_PATH_CASE_OR_EXTENSION",
+          "ref": "main"
+        },
+        {
+          "repository": "braindecode/braindecode",
+          "readme_blob_sha": "b67b5121f28a7d7c0b69ebcbbbf97adefbca129d",
+          "status": "SOURCE_READ",
+          "initial_attempt_path": "README.md",
+          "path": "README.rst",
+          "repair": "ROOT_DISCOVERY_PATH_CASE_OR_EXTENSION",
+          "ref": "master"
+        },
+        {
+          "repository": "brian-team/brian2",
+          "readme_blob_sha": "d9d6d60b30ea4583d07e0c88df70f1bda91d6e38",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "master"
+        }
+      ]
+    },
+    {
+      "id": "verification-security",
+      "status": "EXECUTED_WAVE_1",
+      "sources": [
+        {
+          "repository": "p-org/P",
+          "readme_blob_sha": "a63176ad80b55044ebb10a29b5b1d76d76337bf8",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "master"
+        },
+        {
+          "repository": "creusot-rs/creusot",
+          "readme_blob_sha": "c31a3174ffb594128352dcdb011cd77980bffdc0",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "master"
+        },
+        {
+          "repository": "hacl-star/hacl-star",
+          "readme_blob_sha": "8815628e9cea88ca1cbb777e5f30cab98b66e012",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        },
+        {
+          "repository": "prusti/prusti",
+          "readme_blob_sha": "4c4e79a097b4bd39350c75f90265d28e36b3e96c",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        },
+        {
+          "repository": "CakeML/cakeml",
+          "readme_blob_sha": "8215ddfa23ab8d2254cb475b10689e1d4f92a6ec",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "master"
+        },
+        {
+          "repository": "formal-land/rocq-of-rust",
+          "readme_blob_sha": "27b4353790bd4204f99d62d0b7e8c19a268ebf89",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        },
+        {
+          "repository": "AeneasVerif/aeneas",
+          "readme_blob_sha": "7326e8ea5223171dec810a0cb669b8683c48eddc",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        },
+        {
+          "repository": "magmide/magmide",
+          "readme_blob_sha": "c65f0a2530a6bc4689bbe86ac0d19e440b45c268",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        }
+      ]
+    },
+    {
+      "id": "reference-index",
+      "status": "EXECUTED_WAVE_1",
+      "sources": [
+        {
+          "repository": "sindresorhus/awesome",
+          "readme_blob_sha": "0acaa99d5f45582ecf70f987213f59ae1855226f",
+          "status": "SOURCE_READ",
+          "initial_attempt_path": "README.md",
+          "path": "readme.md",
+          "repair": "ROOT_DISCOVERY_PATH_CASE_OR_EXTENSION",
+          "ref": "main"
+        },
+        {
+          "repository": "vinta/awesome-python",
+          "readme_blob_sha": "9f9b69cc9c0c1137c6648c67ad949d0d78b13eb7",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "master"
+        },
+        {
+          "repository": "awesome-selfhosted/awesome-selfhosted",
+          "readme_blob_sha": "6f0f8caa717a637bf1a62ed362275a095b7fcd9d",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "master"
+        },
+        {
+          "repository": "rust-unofficial/awesome-rust",
+          "readme_blob_sha": "90218274a0852e5e35ee9e9a3b8ac22823ad6610",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        },
+        {
+          "repository": "avelino/awesome-go",
+          "readme_blob_sha": "dfa56d13330856aa575642668abd4344d913e0a0",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        },
+        {
+          "repository": "xingshaocheng/architect-awesome",
+          "readme_blob_sha": "aae2ae3fa5ed74533556609e46a8b40fe61268af",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "master"
+        },
+        {
+          "repository": "Shubhamsaboo/awesome-llm-apps",
+          "readme_blob_sha": "e8b91511659f82c52ef8d5c1ce5cd6aabea03c19",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "main"
+        },
+        {
+          "repository": "Hack-with-Github/Awesome-Hacking",
+          "readme_blob_sha": "130e88ae8067b586c96a703c29cfcb8e9d82964f",
+          "status": "SOURCE_READ",
+          "path": "README.md",
+          "ref": "master"
+        }
+      ]
+    }
+  ],
+  "next_frontier": [
+    "Expand each lane by deterministic pagination and subtopic shards rather than star rank alone.",
+    "Record license/SPDX before any code-level reuse; prefer mechanism summaries over copied implementation.",
+    "Promote only mechanisms that survive source inspection, contradiction checks, and a concrete behavioral consequence.",
+    "Use reference-index repositories as discovery graphs, not as evidence that linked claims are true."
+  ],
+  "project_runner_binding": {
+    "repository": "thebrazenbeard/project-runner",
+    "ref": "main",
+    "commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+    "contract": "PROJECT_RUNNER.md",
+    "work_unit_schema": "schemas/work-unit.schema.json"
+  },
+  "repair_summary": {
+    "repaired_sources": 8,
+    "method": "repository root discovery followed by exact-path read",
+    "observed_at": "2026-09-29T13:48:00-04:00"
+  },
+  "binding_reconciliation": {
+    "observed_at": "2026-09-29",
+    "source": "state/global-github/PROJECT_RUNNER_WORK_UNITS_2026-09-29_V1.json",
+    "fields_backfilled": [
+      "path",
+      "ref"
+    ],
+    "source_records_changed": false
+  }
+}
