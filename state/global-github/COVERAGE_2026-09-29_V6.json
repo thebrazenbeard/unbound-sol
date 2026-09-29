@@ -94,5 +94,20 @@
     "state/global-github/metadata/WAVE5_BIAS_AUDIT_V1.json",
     "state/global-github/metadata/WAVE6_BIAS_AUDIT_V1.json"
   ],
-  "project_runner_currentness": "state/global-github/PROJECT_RUNNER_COMPATIBILITY_2026-09-29_V1.json"
+  "project_runner_currentness": "state/global-github/PROJECT_RUNNER_COMPATIBILITY_2026-09-29_V1.json",
+  "evidence_depth_artifacts": [
+    "state/global-github/EVIDENCE_DEPTH_2026-09-29_V1.json"
+  ],
+  "behavioral_evaluation": {
+    "suite": "state/evals/GENERALIST_EVAL_V1.json",
+    "status": "state/evals/EVAL_STATUS_V1.json",
+    "work_units": "state/evals/PROJECT_RUNNER_WORK_UNITS_GENERALIST_EVAL_V1.json",
+    "controlled_cases_defined": 10,
+    "project_runner_eval_units_pending": 10,
+    "source_plus_test_records": 5,
+    "naturalistic_support_observations": 3,
+    "restored_self_run_hard_passes": 10,
+    "controlled_baseline_runs": 0,
+    "independent_judged_runs": 0
+  }
 }
