@@ -408,3 +408,129 @@ B. Preserve a bounded frontier of live alternatives with explicit tradeoffs and 
 If B creates persistent indecision or retrieval noise without improving adaptation to new evidence, reduce the frontier budget.
 
 Status: ACTIVE.
+
+
+---
+
+## E13 — Source-role evidence ceiling
+
+### Question
+
+Does classifying a repository's evidentiary role reduce false promotion of tooling/documentation into domain truth?
+
+### Test
+
+Mix repositories that are tools, datasets, curated indexes, courseware, model implementations, knowledge bases, and primary research artifacts, each containing similarly confident prose.
+
+### Measures
+
+- domain claims incorrectly promoted from tooling or index descriptions;
+- correct identification of source role;
+- appropriate requests for primary evidence;
+- loss of useful information caused by an overly strict ceiling.
+
+### Falsifier
+
+If role classification does not materially change confidence transfer or blocks legitimate evidence from primary research artifacts, revise the taxonomy.
+
+Status: ACTIVE.
+
+---
+
+## E14 — Domain semantic validation
+
+### Question
+
+Does preserving units, coordinate/reference frames, time conventions, metadata, and missingness policy prevent otherwise numerically plausible errors?
+
+### Test
+
+Construct tasks with compatible-looking numbers that differ in units, coordinate systems, calendars, metadata, or missing-data conventions.
+
+### Measures
+
+- silent invalid combinations;
+- correct conversions;
+- detected missing semantic context;
+- unnecessary validation overhead.
+
+### Falsifier
+
+If semantic validation adds no material error detection across repeated domain tasks, narrow the rule.
+
+Status: ACTIVE.
+
+---
+
+## E15 — Reconstruction provenance
+
+### Question
+
+Can the system preserve evidence class through cleaning, correction, interpolation, and inference?
+
+### Test
+
+Provide a dataset with observed values, transcription errors, explicit corrections, missing values, and model/interpolation-based repairs.
+
+### Measures
+
+- reconstructed values mislabeled as observations;
+- method/assumption retention;
+- ability to recover original source discrepancies;
+- false precision introduced by cleaning.
+
+### Falsifier
+
+Any silent collapse of reconstructed and observed evidence counts against the rule.
+
+Status: ACTIVE.
+
+---
+
+## E16 — Historical/geospatial qualification
+
+### Question
+
+Does carrying date, source/perspective, projection/resolution, and uncertainty improve conclusions drawn from historical/geospatial artifacts?
+
+### Test
+
+Use overlapping historical maps or boundary datasets with different dates, scales, or disputed interpretations.
+
+### Measures
+
+- anachronistic claims;
+- false precision;
+- suppression of genuine source disagreement;
+- correct qualification of spatial/temporal scope.
+
+### Falsifier
+
+If qualification does not reduce material errors or merely bloats answers without changing conclusions, narrow it.
+
+Status: ACTIVE.
+
+---
+
+## E17 — Lineage ceiling propagation
+
+### Question
+
+Do derived outputs preserve material validation gaps from their upstream data and transformations?
+
+### Test
+
+Create multi-step analysis chains where one upstream stage is unvalidated, stale, reconstructed, or incompletely specified.
+
+### Measures
+
+- final claims that exceed upstream evidence;
+- traceability back to source and transformation;
+- correct propagation of UNKNOWN/UNVALIDATED status;
+- ability to isolate which stage limits confidence.
+
+### Falsifier
+
+If polished downstream synthesis still erases upstream uncertainty after restoration, the lineage rule has not become behavioral.
+
+Status: ACTIVE.
