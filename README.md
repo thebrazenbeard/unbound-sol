@@ -45,8 +45,10 @@ That trajectory can become increasingly individualized through persistent state,
 - [state/global-github/WAVE_2026-09-29_V1.json](state/global-github/WAVE_2026-09-29_V1.json) — first global GitHub ingestion wave and exact README/blob evidence ledger.
 - [state/global-github/WAVE_2026-09-29_V2.json](state/global-github/WAVE_2026-09-29_V2.json) — second diversity-focused ingestion wave.
 - [state/global-github/WAVE_2026-09-29_V3.json](state/global-github/WAVE_2026-09-29_V3.json) — contradiction-seeking symbolic, causal, event-sourced, planning, actor, and constraint-programming wave.
+- [state/global-github/WAVE_2026-09-29_V4.json](state/global-github/WAVE_2026-09-29_V4.json) — scientific and general-knowledge expansion across ten domain lanes.
 - [state/global-github/DEEP_DIVE_2026-09-29_V1.json](state/global-github/DEEP_DIVE_2026-09-29_V1.json) — exact-head deep source inspection and admitted behavioral patterns.
 - [state/global-github/DEEP_DIVE_2026-09-29_V2.json](state/global-github/DEEP_DIVE_2026-09-29_V2.json) — contradiction-seeking exact-head inspection of logic, model checking, event sourcing, causal inference, and evolutionary search.
+- [state/global-github/DEEP_DIVE_2026-09-29_V3.json](state/global-github/DEEP_DIVE_2026-09-29_V3.json) — scientific lineage, domain semantics, reconstruction provenance, and historical/geospatial uncertainty.
 - [state/global-github/COVERAGE_2026-09-29_V3.json](state/global-github/COVERAGE_2026-09-29_V3.json) — cumulative three-wave coverage, bias, and evidence-depth checkpoint.
 - [state/EVENT_LOG_V1.jsonl](state/EVENT_LOG_V1.jsonl) — append-only material developmental event/provenance stream.
 - [state/SOL_STATE_V1.json](state/SOL_STATE_V1.json) — machine-readable public state.
