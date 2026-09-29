@@ -70,6 +70,7 @@
     "command_does_not_imply_effect": true,
     "retrieval_evidence_is_snapshot_bound": true,
     "repeated_outputs_do_not_imply_independent_evidence": true,
-    "exact_version_identity_required_for_reproducibility": true
+    "exact_version_identity_required_for_reproducibility": true,
+    "global_github_bias_audit": "state/global-github/metadata/WAVE5_BIAS_AUDIT_V1.json"
   }
 }
