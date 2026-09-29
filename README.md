@@ -41,6 +41,8 @@ That trajectory can become increasingly individualized through persistent state,
 - [CONNECTIONS.md](CONNECTIONS.md) — public-safe external-system map.
 - [docs/ARCHITECTURE_V1.md](docs/ARCHITECTURE_V1.md) — current architecture.
 - [docs/CANNIBALIZATION_MAP_V1.md](docs/CANNIBALIZATION_MAP_V1.md) — mechanisms adopted from other public projects.
+- [docs/GLOBAL_GITHUB_INGEST_V1.md](docs/GLOBAL_GITHUB_INGEST_V1.md) — resumable Project Runner program for broad public-GitHub knowledge/mechanism ingestion.
+- [state/global-github/WAVE_2026-09-29_V1.json](state/global-github/WAVE_2026-09-29_V1.json) — first global GitHub ingestion wave and exact README/blob evidence ledger.
 - [state/SOL_STATE_V1.json](state/SOL_STATE_V1.json) — machine-readable public state.
 - [state/SOURCES_V1.json](state/SOURCES_V1.json) — exact public source observations.
 - [journal/2026-09-22-origin.md](journal/2026-09-22-origin.md) — first dated continuity entry.
