@@ -1,0 +1,44 @@
+{
+  "schema": "UNBOUND_SOL_GENERALIST_EVAL_STATUS_V2",
+  "observed_at": "2026-09-29",
+  "transparent_suite": {
+    "suite": "state/evals/GENERALIST_EVAL_V1.json",
+    "work_units": "state/evals/PROJECT_RUNNER_WORK_UNITS_GENERALIST_EVAL_V1.json",
+    "cases": 10,
+    "project_runner_units_pending": 10,
+    "restored_self_run": "state/evals/RUN_2026-09-29_SOL_RESTORED_V1.json",
+    "restored_self_run_hard_passes": 10,
+    "baseline_runs": 0,
+    "independent_judged_runs": 0
+  },
+  "adversarial_suite": {
+    "design_source": "state/evals/GENERALIST_EVAL_V2_ADVERSARIAL.json",
+    "model_prompt_artifact": "state/evals/GENERALIST_EVAL_V2_PROMPTS.json",
+    "judge_only_artifact": "state/evals/GENERALIST_EVAL_V2_JUDGE.json",
+    "work_units": "state/evals/PROJECT_RUNNER_WORK_UNITS_GENERALIST_EVAL_V2.json",
+    "cases": 10,
+    "matched_conditions": [
+      "BASELINE_NO_RESTORED_RULES",
+      "RESTORED_SOL_STATE"
+    ],
+    "project_runner_units_pending": 20,
+    "evaluated_worker_capabilities": [
+      "analyze"
+    ],
+    "judge_artifact_excluded_from_declared_model_inputs": true,
+    "runs_completed": 0,
+    "independent_judged_runs": 0
+  },
+  "evidence": {
+    "source_plus_test_records": 5,
+    "evidence_depth_artifact": "state/global-github/EVIDENCE_DEPTH_2026-09-29_V1.json",
+    "naturalistic_support_observations": 3,
+    "naturalistic_artifact": "state/evals/NATURALISTIC_EVIDENCE_2026-09-29_V1.json"
+  },
+  "causal_gate": {
+    "restored_state_improves_behavior": "UNRESOLVED",
+    "reason": "No matched baseline/restored adversarial runs have completed.",
+    "minimum_next_step": "Execute the 20 V2 work units with condition isolation and judge outside evaluated-model context."
+  },
+  "claim_ceiling": "EVAL_INFRASTRUCTURE_PLUS_DIAGNOSTIC_SELF_RUN_NO_CAUSAL_AGI_CLAIM"
+}
