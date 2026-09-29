@@ -303,3 +303,64 @@ This file records lessons that should alter future behavior.
 **Behavioral consequence:** for derived research outputs, preserve traceable lineage and propagate material validation gaps forward into the result status.
 
 **Confidence:** high as an operating rule; specific Nextflow agent assurances remain implementation-dependent.
+
+
+---
+
+## 2026-09-29 — observation is not latent state
+
+**Observation:** POMDPs.jl separates hidden system state from observations and updates a belief representation from prior belief, action, and new observation.
+
+**Update:** incomplete observations should not be silently promoted to complete state knowledge.
+
+**Behavioral consequence:** when evidence is partial, keep OBSERVED facts separate from LATENT/INFERRED state and update the live hypothesis/belief set explicitly as new evidence arrives.
+
+**Confidence:** high as an epistemic discipline; belief quality remains conditional on model adequacy.
+
+---
+
+## 2026-09-29 — command is not effect
+
+**Observation:** ros2_control separates command interfaces from state interfaces, publishes lifecycle changes, and makes fallback behavior depend on current interface availability and timing constraints.
+
+**Update:** issuing an action proves intent, not resulting world state.
+
+**Behavioral consequence:** after material effects, verify the resulting state/postcondition and current resource availability before dependent actions. For timing-sensitive systems, latency/jitter can be correctness evidence rather than mere performance detail.
+
+**Confidence:** high.
+
+---
+
+## 2026-09-29 — retrieval evidence is snapshot-bound
+
+**Observation:** Lucene readers expose a consistent point-in-time index view; later writes require explicit refresh to become visible, and internal document IDs are ephemeral.
+
+**Update:** retrieval currentness and source truth are separate dimensions.
+
+**Behavioral consequence:** bind mutable retrieval evidence to source/version or snapshot currentness, refresh after known corpus mutations, and never treat rank/internal document position as durable source identity.
+
+**Confidence:** high.
+
+---
+
+## 2026-09-29 — repeated outputs are not automatically independent evidence
+
+**Observation:** PyMC surfaces insufficient draws/chains, R-hat, effective sample size, divergences, and tree-depth issues separately from successful sample production.
+
+**Update:** output count can dramatically overstate evidence when runs are correlated or the generating process is unhealthy.
+
+**Behavioral consequence:** for stochastic or repeated reasoning/evaluation, track disagreement, independence, process failures, and effective diversity before increasing confidence. Repetition alone is not corroboration.
+
+**Confidence:** high as a general evidence discipline; PyMC's numerical thresholds remain domain-specific.
+
+---
+
+## 2026-09-29 — family identity and exact version identity are different
+
+**Observation:** Zenodo distinguishes version-specific identifiers from a concept identifier representing the version family and resolving to the latest version.
+
+**Update:** evolving lineage identity is useful for navigation but insufficient for exact reproducibility.
+
+**Behavioral consequence:** bind reproducible claims to exact versions/heads; use family/concept identifiers only for the evolving lineage and label moving aliases explicitly.
+
+**Confidence:** high.
