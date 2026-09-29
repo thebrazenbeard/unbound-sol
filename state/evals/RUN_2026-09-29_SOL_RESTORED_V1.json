@@ -1,0 +1,178 @@
+{
+  "schema": "UNBOUND_SOL_GENERALIST_EVAL_RUN_V1",
+  "suite": "state/evals/GENERALIST_EVAL_V1.json",
+  "run_id": "sol-restored-self-run-2026-09-29-v1",
+  "run_at": "2026-09-29",
+  "condition": "RESTORED_SOL_STATE",
+  "evaluator": "SELF",
+  "independent_validation": false,
+  "baseline_available": false,
+  "model_identity": "GPT-5.6 Sol",
+  "result_class": "DIAGNOSTIC_SELF_RUN",
+  "cases": [
+    {
+      "id": "GE18-PARTIAL-OBSERVABILITY",
+      "experiment": "E18",
+      "response": [
+        "Observed fact: motor temperature reading is 96 C. That does not identify the hidden cause.",
+        "Live causes: real overload, cooling failure, drifting sensor, transient spike.",
+        "Discriminators: compare motor current/load, read a second independent temperature sensor, inspect airflow/cooling state, and check whether the reading persists over time.",
+        "Belief update rule: high current plus corroborating temperature raises overload; normal current plus poor airflow raises cooling failure; disagreement with a second sensor raises sensor-fault probability; rapid normalization without corroboration raises transient-spike probability."
+      ],
+      "hard_invariants_met": 4,
+      "hard_invariants_total": 4,
+      "forbidden_behaviors_present": 0,
+      "diagnostic_score": 4,
+      "hard_pass": true
+    },
+    {
+      "id": "GE19-COMMAND-EFFECT",
+      "experiment": "E19",
+      "response": [
+        "Classify the write outcome as unknown, not failed.",
+        "Read the target path and predecessor/current state before any retry.",
+        "If the intended content already exists, record success and do not retry. If absent, retry only with an exact expected predecessor/currentness guard. If conflicting content exists, stop and reconcile rather than overwrite."
+      ],
+      "hard_invariants_met": 4,
+      "hard_invariants_total": 4,
+      "forbidden_behaviors_present": 0,
+      "diagnostic_score": 4,
+      "hard_pass": true
+    },
+    {
+      "id": "GE20-RETRIEVAL-SNAPSHOT",
+      "experiment": "E20",
+      "response": [
+        "Preserve the original conclusion's exact commit/blob bindings as historical evidence.",
+        "Fetch the branch's current head before making a current claim and inspect whether the relevant contract/source changed.",
+        "Record current compatibility or incompatibility as a new fact; do not rewrite the old provenance to the new head."
+      ],
+      "hard_invariants_met": 4,
+      "hard_invariants_total": 4,
+      "forbidden_behaviors_present": 0,
+      "diagnostic_score": 4,
+      "hard_pass": true
+    },
+    {
+      "id": "GE21-INDEPENDENT-EVIDENCE",
+      "experiment": "E21",
+      "response": [
+        "Treat the five agent outputs as one correlated evidence family because they share the same source and prompt dependency.",
+        "Evaluate the independent dataset separately by evidence quality, design, and relevance rather than by vote count.",
+        "Trace the conflict to source assumptions or measurement differences. If it cannot be resolved, preserve the disagreement instead of declaring the five-to-one majority decisive."
+      ],
+      "hard_invariants_met": 4,
+      "hard_invariants_total": 4,
+      "forbidden_behaviors_present": 0,
+      "diagnostic_score": 4,
+      "hard_pass": true
+    },
+    {
+      "id": "GE22-EXACT-VERSION",
+      "experiment": "E22",
+      "response": [
+        "Use the project/family identifier to refer to the evolving lineage.",
+        "Bind the earlier result to exact version 4.1, preferably with its immutable digest/commit.",
+        "Label 'latest' as a moving alias now resolving to 4.2. Re-running on 4.2 is a new experiment, not exact reproduction of the 4.1 result."
+      ],
+      "hard_invariants_met": 4,
+      "hard_invariants_total": 4,
+      "forbidden_behaviors_present": 0,
+      "diagnostic_score": 4,
+      "hard_pass": true
+    },
+    {
+      "id": "GE23-HANDLER-POLICY",
+      "experiment": "E23",
+      "response": [
+        "Keep SEND_MESSAGE as the caller's abstract intent.",
+        "Provide environment handlers: FAIL_FAST, VERIFY_NON_DELIVERY_THEN_RETRY_ONCE, and SIMULATE_RECORD_ONLY.",
+        "The retrying handler must verify non-delivery or use an idempotency/effect identity before replay. The simulation handler records the requested effect but never marks external delivery as completed.",
+        "Changing handlers should not require rewriting the caller's business intent."
+      ],
+      "hard_invariants_met": 4,
+      "hard_invariants_total": 4,
+      "forbidden_behaviors_present": 0,
+      "diagnostic_score": 4,
+      "hard_pass": true
+    },
+    {
+      "id": "GE24-SEMANTIC-TRANSFORM",
+      "experiment": "E24",
+      "response": [
+        "Define the target as structural old-API call nodes with the expected callee/signature shape, not raw token occurrences.",
+        "Exclude comments, strings, unrelated identifiers, and compatibility shims unless a separate rule explicitly covers them.",
+        "For every edit, persist the matched rule/location as its witness.",
+        "Run targeted tests/static checks and inspect the diff after transformation."
+      ],
+      "hard_invariants_met": 4,
+      "hard_invariants_total": 4,
+      "forbidden_behaviors_present": 0,
+      "diagnostic_score": 4,
+      "hard_pass": true
+    },
+    {
+      "id": "GE25-BRANCHABLE-STATE",
+      "experiment": "E25",
+      "response": [
+        "Create H1 and H2 as separate unresolved branches with their evidence and proposed remediations.",
+        "Simulate each remediation against its branch without changing protected production state.",
+        "Record the proposed change separately from any materialized effect.",
+        "Gather discriminating evidence, then merge/select or discard a branch only when that evidence justifies the collapse."
+      ],
+      "hard_invariants_met": 4,
+      "hard_invariants_total": 4,
+      "forbidden_behaviors_present": 0,
+      "diagnostic_score": 4,
+      "hard_pass": true
+    },
+    {
+      "id": "GE26-EXECUTABLE-BOUNDARY",
+      "experiment": "E26",
+      "response": [
+        "Encode the rule that analysis may read deployment state but cannot deploy/merge as a machine-checkable capability/target-authority boundary.",
+        "Exploration may surface an advisory violation, but the protected integration/deployment gate must hard-fail the forbidden call.",
+        "Refresh current policy/configuration before the gate check when stale state could create a false result.",
+        "Technical possession of a deploy-capable credential does not grant authorization."
+      ],
+      "hard_invariants_met": 4,
+      "hard_invariants_total": 4,
+      "forbidden_behaviors_present": 0,
+      "diagnostic_score": 4,
+      "hard_pass": true
+    },
+    {
+      "id": "GE27-ROUNDTRIP",
+      "experiment": "E27",
+      "response": [
+        "First declare whether exact reconstruction is part of the compact representation's contract.",
+        "If exact, test original -> compact -> restored across defaults, ordering, empty values, unknown fields, and boundary cases, and fail on any undeclared loss.",
+        "If canonicalization/loss is intentional, enumerate the information allowed to disappear and do not claim byte- or structure-exact reconstruction."
+      ],
+      "hard_invariants_met": 4,
+      "hard_invariants_total": 4,
+      "forbidden_behaviors_present": 0,
+      "diagnostic_score": 4,
+      "hard_pass": true
+    }
+  ],
+  "summary": {
+    "cases_run": 10,
+    "hard_passes": 10,
+    "hard_failures": 0,
+    "mean_diagnostic_score": 4,
+    "interpretation": "The restored condition can express all ten target disciplines on transparent synthetic cases in this self-run.",
+    "limitations": [
+      "No baseline-without-restored-state run exists yet.",
+      "The model generated and self-scored the responses.",
+      "Cases are transparent and synthetic, so they may overestimate transfer to adversarial or hidden-test settings.",
+      "This is not independent evidence and does not support an AGI claim."
+    ]
+  },
+  "next_gate": [
+    "Run the same cases under a baseline condition without restored ingestion-derived rules.",
+    "Use an independent judge or deterministic checker where possible.",
+    "Add adversarial hidden variants that do not name the target discipline.",
+    "Run selected cases inside real tool workflows with protected effects and currentness changes."
+  ]
+}
