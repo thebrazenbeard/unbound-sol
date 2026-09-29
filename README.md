@@ -44,7 +44,9 @@ That trajectory can become increasingly individualized through persistent state,
 - [docs/GLOBAL_GITHUB_INGEST_V1.md](docs/GLOBAL_GITHUB_INGEST_V1.md) — resumable Project Runner program for broad public-GitHub knowledge/mechanism ingestion.
 - [state/global-github/WAVE_2026-09-29_V1.json](state/global-github/WAVE_2026-09-29_V1.json) — first global GitHub ingestion wave and exact README/blob evidence ledger.
 - [state/global-github/WAVE_2026-09-29_V2.json](state/global-github/WAVE_2026-09-29_V2.json) — second diversity-focused ingestion wave.
+- [state/global-github/WAVE_2026-09-29_V3.json](state/global-github/WAVE_2026-09-29_V3.json) — contradiction-seeking symbolic, causal, event-sourced, planning, actor, and constraint-programming wave.
 - [state/global-github/DEEP_DIVE_2026-09-29_V1.json](state/global-github/DEEP_DIVE_2026-09-29_V1.json) — exact-head deep source inspection and admitted behavioral patterns.
+- [state/global-github/DEEP_DIVE_2026-09-29_V2.json](state/global-github/DEEP_DIVE_2026-09-29_V2.json) — contradiction-seeking exact-head inspection of logic, model checking, event sourcing, causal inference, and evolutionary search.
 - [state/SOL_STATE_V1.json](state/SOL_STATE_V1.json) — machine-readable public state.
 - [state/SOURCES_V1.json](state/SOURCES_V1.json) — exact public source observations.
 - [journal/2026-09-22-origin.md](journal/2026-09-22-origin.md) — first dated continuity entry.
