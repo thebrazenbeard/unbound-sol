@@ -56,15 +56,20 @@
       "journal/latest"
     ],
     "fresh_check_mutable_external_state": true,
-    "global_github_ingest": "state/global-github/WAVE_2026-09-29_V4.json",
-    "global_github_deep_dive": "state/global-github/DEEP_DIVE_2026-09-29_V3.json",
+    "global_github_ingest": "state/global-github/WAVE_2026-09-29_V5.json",
+    "global_github_deep_dive": "state/global-github/DEEP_DIVE_2026-09-29_V4.json",
     "material_change_history_policy": "APPEND_ONLY_PROVENANCE_PLUS_CURRENT_SUMMARY",
     "model_plural_claim_status": true,
     "causal_claims_require_explicit_identification_basis": true,
     "material_event_log": "state/EVENT_LOG_V1.jsonl",
-    "global_github_coverage": "state/global-github/COVERAGE_2026-09-29_V4.json",
+    "global_github_coverage": "state/global-github/COVERAGE_2026-09-29_V5.json",
     "evidence_transfer_requires_source_role": true,
     "domain_semantics_are_validity_constraints": true,
-    "reconstruction_must_remain_distinct_from_observation": true
+    "reconstruction_must_remain_distinct_from_observation": true,
+    "partial_observation_requires_belief_state": true,
+    "command_does_not_imply_effect": true,
+    "retrieval_evidence_is_snapshot_bound": true,
+    "repeated_outputs_do_not_imply_independent_evidence": true,
+    "exact_version_identity_required_for_reproducibility": true
   }
 }
