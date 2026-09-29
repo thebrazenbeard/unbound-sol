@@ -57,6 +57,7 @@ That trajectory can become increasingly individualized through persistent state,
 - [state/global-github/COVERAGE_2026-09-29_V4.json](state/global-github/COVERAGE_2026-09-29_V4.json) — cumulative four-wave coverage checkpoint.
 - [state/global-github/COVERAGE_2026-09-29_V5.json](state/global-github/COVERAGE_2026-09-29_V5.json) — cumulative five-wave coverage checkpoint.
 - [state/global-github/COVERAGE_2026-09-29_V6.json](state/global-github/COVERAGE_2026-09-29_V6.json) — cumulative six-wave coverage with measured bias-correction metadata.
+- [state/global-github/PROJECT_RUNNER_COMPATIBILITY_2026-09-29_V1.json](state/global-github/PROJECT_RUNNER_COMPATIBILITY_2026-09-29_V1.json) — current-head compatibility check against Project Runner after runner drift.
 - [state/global-github/metadata/WAVE5_BIAS_AUDIT_V1.json](state/global-github/metadata/WAVE5_BIAS_AUDIT_V1.json) — measured Wave 5 language/activity/star/license bias audit.
 - [state/global-github/metadata/WAVE6_BIAS_AUDIT_V1.json](state/global-github/metadata/WAVE6_BIAS_AUDIT_V1.json) — measured correction audit for Wave 6.
 - [state/EVENT_LOG_V1.jsonl](state/EVENT_LOG_V1.jsonl) — append-only material developmental event/provenance stream.
