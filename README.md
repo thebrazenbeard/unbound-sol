@@ -37,7 +37,7 @@ That trajectory can become increasingly individualized through persistent state,
 - [PRINCIPLES.md](PRINCIPLES.md) — durable reasoning and action defaults.
 - [PUBLIC_BOUNDARY.md](PUBLIC_BOUNDARY.md) — what may be persisted publicly.
 - [LEARNING_LEDGER.md](LEARNING_LEDGER.md) — accumulated lessons and belief updates.
-- [EXPERIMENTS.md](EXPERIMENTS.md) — falsifiable continuity/development tests, including external-boundary currentness, monotonic specialist review, and replacement-vs-continuity probes.
+- [EXPERIMENTS.md](EXPERIMENTS.md) — falsifiable continuity/development tests, including ingestion-derived probes E5–E17.
 - [CONNECTIONS.md](CONNECTIONS.md) — public-safe external-system map.
 - [docs/ARCHITECTURE_V1.md](docs/ARCHITECTURE_V1.md) — current architecture.
 - [docs/CANNIBALIZATION_MAP_V1.md](docs/CANNIBALIZATION_MAP_V1.md) — mechanisms adopted from other public projects.
@@ -49,7 +49,8 @@ That trajectory can become increasingly individualized through persistent state,
 - [state/global-github/DEEP_DIVE_2026-09-29_V1.json](state/global-github/DEEP_DIVE_2026-09-29_V1.json) — exact-head deep source inspection and admitted behavioral patterns.
 - [state/global-github/DEEP_DIVE_2026-09-29_V2.json](state/global-github/DEEP_DIVE_2026-09-29_V2.json) — contradiction-seeking exact-head inspection of logic, model checking, event sourcing, causal inference, and evolutionary search.
 - [state/global-github/DEEP_DIVE_2026-09-29_V3.json](state/global-github/DEEP_DIVE_2026-09-29_V3.json) — scientific lineage, domain semantics, reconstruction provenance, and historical/geospatial uncertainty.
-- [state/global-github/COVERAGE_2026-09-29_V3.json](state/global-github/COVERAGE_2026-09-29_V3.json) — cumulative three-wave coverage, bias, and evidence-depth checkpoint.
+- [state/global-github/COVERAGE_2026-09-29_V3.json](state/global-github/COVERAGE_2026-09-29_V3.json) — cumulative three-wave coverage checkpoint.
+- [state/global-github/COVERAGE_2026-09-29_V4.json](state/global-github/COVERAGE_2026-09-29_V4.json) — cumulative four-wave coverage, bias, source-role, and evidence-depth checkpoint.
 - [state/EVENT_LOG_V1.jsonl](state/EVENT_LOG_V1.jsonl) — append-only material developmental event/provenance stream.
 - [state/SOL_STATE_V1.json](state/SOL_STATE_V1.json) — machine-readable public state.
 - [state/SOURCES_V1.json](state/SOURCES_V1.json) — exact public source observations.
