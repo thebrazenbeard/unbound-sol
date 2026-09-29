@@ -148,3 +148,28 @@ Repository ingestion now distinguishes at least these roles: TOOL, DATASET, CURA
 ### Four-wave coverage checkpoint
 
 The current aggregate checkpoint is `state/global-github/COVERAGE_2026-09-29_V4.json`: **320 lane assignments, 315 unique public repositories, 315/315 source-read, 40 Project Runner work units in VERIFYING, and 15 exact-head deep-inspection records**. This is a sampled coverage statement, not a representativeness or intelligence claim.
+
+
+## Wave 5 — hardware, uncertainty, retrieval, and archival expansion
+
+Wave 5 added ten non-overlapping lanes: embedded/hardware, control and partial observability, database engines, serialization/formats, statistics and probabilistic programming, information retrieval/search, optimization and operations research, computer graphics, digital archives/humanities infrastructure, and signal processing.
+
+The wave completed **80/80 exact path/ref/blob-bound overview reads across 80 new public repositories**. The cumulative corpus is now **400 lane assignments across 395 unique public repositories**, with no unresolved source reads.
+
+### Wave 5 deep inspection
+
+Five exact-head sources are recorded in `state/global-github/DEEP_DIVE_2026-09-29_V4.json`:
+
+- POMDPs.jl — observation is distinct from hidden state; decisions operate on an updated belief representation under partial observability;
+- ros2_control — commands, observed state, lifecycle/resource availability, and timing are distinct parts of effectful control;
+- Lucene — retrieval sees a point-in-time index snapshot and requires explicit refresh for later writes; internal document positions are ephemeral;
+- PyMC — successful sample production is separate from convergence/process diagnostics and effective independent evidence;
+- Zenodo — an evolving concept/family identifier is distinct from an exact version identifier.
+
+The corresponding behavioral probes are E18–E22. The hostile review keeps each transfer bounded to its evidence class and explicitly rejects the stronger claims that belief models are necessarily correct, fresh retrieval is necessarily true, repeated model output is independent corroboration, or version pinning establishes correctness.
+
+### Five-wave coverage checkpoint
+
+`state/global-github/COVERAGE_2026-09-29_V5.json` records **400 assignments, 395 unique/source-read repositories, 50 Project Runner work units in VERIFYING, and 20 exact-head deep-inspection records**.
+
+The next frontier should measure corpus metadata blind spots (language, age/activity, size, archive status, license/source-role distribution), execute E18–E22 against real work, and deepen selected sources into tests/specifications/papers rather than increasing repository count alone.
