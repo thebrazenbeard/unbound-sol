@@ -14,10 +14,10 @@
   "counts": {
     "lane_assignments": 80,
     "unique_repositories": 78,
-    "successful_lane_reads": 76,
-    "unresolved_lane_reads": 4,
-    "unique_successful_repositories": 74,
-    "unique_unresolved_repositories": 4
+    "successful_lane_reads": 80,
+    "unresolved_lane_reads": 0,
+    "unique_successful_repositories": 78,
+    "unique_unresolved_repositories": 0
   },
   "evidence_scope": "README_BLOB_LEVEL_SECOND_WAVE",
   "policy": {
@@ -57,9 +57,11 @@
         {
           "repository": "rust-ndarray/ndarray",
           "ref": "master",
-          "path": "README.md",
-          "readme_blob_sha": null,
-          "status": "READ_UNRESOLVED"
+          "path": "README.rst",
+          "readme_blob_sha": "d11e2e0551b4f07288716bdfffa1b9b60766e233",
+          "status": "SOURCE_READ",
+          "initial_attempt_path": "README.md",
+          "repair": "ROOT_DISCOVERY_PATH_CASE_OR_EXTENSION"
         },
         {
           "repository": "dpilger26/NumCpp",
@@ -85,9 +87,11 @@
         {
           "repository": "scikit-optimize/scikit-optimize",
           "ref": "master",
-          "path": "README.md",
-          "readme_blob_sha": null,
-          "status": "READ_UNRESOLVED"
+          "path": "README.rst",
+          "readme_blob_sha": "9ba47228395a44b45efc8ea8afa12fa28e39ed40",
+          "status": "SOURCE_READ",
+          "initial_attempt_path": "README.md",
+          "repair": "ROOT_DISCOVERY_PATH_CASE_OR_EXTENSION"
         }
       ]
     },
@@ -126,9 +130,11 @@
         {
           "repository": "johnyf/tool_lists",
           "ref": "main",
-          "path": "README.md",
-          "readme_blob_sha": null,
-          "status": "READ_UNRESOLVED"
+          "path": "readme.md",
+          "readme_blob_sha": "d678b4ba5ba65a91f9be488ffa98a3b6a85bdd21",
+          "status": "SOURCE_READ",
+          "initial_attempt_path": "README.md",
+          "repair": "ROOT_DISCOVERY_PATH_CASE_OR_EXTENSION"
         },
         {
           "repository": "0vercl0k/z3-playground",
@@ -271,9 +277,11 @@
         {
           "repository": "evhub/coconut",
           "ref": "master",
-          "path": "README.md",
-          "readme_blob_sha": null,
-          "status": "READ_UNRESOLVED"
+          "path": "README.rst",
+          "readme_blob_sha": "0cabbec8c6aac641be643c9c916118d7ae30db66",
+          "status": "SOURCE_READ",
+          "initial_attempt_path": "README.md",
+          "repair": "ROOT_DISCOVERY_PATH_CASE_OR_EXTENSION"
         }
       ]
     },
@@ -660,10 +668,14 @@
     "durable storage designs trade write paths, indexing, consistency, persistence and recovery differently; no single memory substrate dominates every task"
   ],
   "next_frontier": [
-    "Resolve Wave 2 README-path misses by exact root inspection.",
     "Deep-inspect a bounded set of high-information repositories using implementation/tests/docs rather than README claims.",
     "Add explicit license and evidence-class fields before any mechanism moves from candidate to admitted.",
     "Begin cross-wave deduplication and topic-coverage metrics.",
     "Create behavioral probes that test whether admitted mechanisms actually improve future Sol decisions."
-  ]
+  ],
+  "repair_summary": {
+    "repaired_sources": 4,
+    "method": "repository root discovery followed by exact-path read",
+    "observed_at": "2026-09-29T13:48:00-04:00"
+  }
 }
