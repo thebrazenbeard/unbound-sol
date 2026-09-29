@@ -37,7 +37,7 @@ That trajectory can become increasingly individualized through persistent state,
 - [PRINCIPLES.md](PRINCIPLES.md) — durable reasoning and action defaults.
 - [PUBLIC_BOUNDARY.md](PUBLIC_BOUNDARY.md) — what may be persisted publicly.
 - [LEARNING_LEDGER.md](LEARNING_LEDGER.md) — accumulated lessons and belief updates.
-- [EXPERIMENTS.md](EXPERIMENTS.md) — falsifiable continuity/development tests, including ingestion-derived probes E5–E22.
+- [EXPERIMENTS.md](EXPERIMENTS.md) — falsifiable continuity/development tests, including ingestion-derived probes E5–E27.
 - [CONNECTIONS.md](CONNECTIONS.md) — public-safe external-system map.
 - [docs/ARCHITECTURE_V1.md](docs/ARCHITECTURE_V1.md) — current architecture.
 - [docs/CANNIBALIZATION_MAP_V1.md](docs/CANNIBALIZATION_MAP_V1.md) — mechanisms adopted from other public projects.
@@ -47,14 +47,18 @@ That trajectory can become increasingly individualized through persistent state,
 - [state/global-github/WAVE_2026-09-29_V3.json](state/global-github/WAVE_2026-09-29_V3.json) — contradiction-seeking symbolic, causal, event-sourced, planning, actor, and constraint-programming wave.
 - [state/global-github/WAVE_2026-09-29_V4.json](state/global-github/WAVE_2026-09-29_V4.json) — scientific and general-knowledge expansion across ten domain lanes.
 - [state/global-github/WAVE_2026-09-29_V5.json](state/global-github/WAVE_2026-09-29_V5.json) — hardware/control, uncertainty, retrieval, optimization, archival, and signal-processing expansion.
+- [state/global-github/WAVE_2026-09-29_V6.json](state/global-github/WAVE_2026-09-29_V6.json) — measured bias-correction wave spanning new/low-star, archived, and eight underrepresented language strata.
 - [state/global-github/DEEP_DIVE_2026-09-29_V1.json](state/global-github/DEEP_DIVE_2026-09-29_V1.json) — exact-head deep source inspection and admitted behavioral patterns.
 - [state/global-github/DEEP_DIVE_2026-09-29_V2.json](state/global-github/DEEP_DIVE_2026-09-29_V2.json) — contradiction-seeking exact-head inspection of logic, model checking, event sourcing, causal inference, and evolutionary search.
 - [state/global-github/DEEP_DIVE_2026-09-29_V3.json](state/global-github/DEEP_DIVE_2026-09-29_V3.json) — scientific lineage, domain semantics, reconstruction provenance, and historical/geospatial uncertainty.
 - [state/global-github/DEEP_DIVE_2026-09-29_V4.json](state/global-github/DEEP_DIVE_2026-09-29_V4.json) — partial observability, effect verification, retrieval currentness, repeated-evidence diagnostics, and exact-version identity.
+- [state/global-github/DEEP_DIVE_2026-09-29_V5.json](state/global-github/DEEP_DIVE_2026-09-29_V5.json) — handler-policy separation, semantic transformation witnesses, branchable state, executable boundaries, and round-trip reconstructability.
 - [state/global-github/COVERAGE_2026-09-29_V3.json](state/global-github/COVERAGE_2026-09-29_V3.json) — cumulative three-wave coverage checkpoint.
 - [state/global-github/COVERAGE_2026-09-29_V4.json](state/global-github/COVERAGE_2026-09-29_V4.json) — cumulative four-wave coverage checkpoint.
-- [state/global-github/COVERAGE_2026-09-29_V5.json](state/global-github/COVERAGE_2026-09-29_V5.json) — cumulative five-wave coverage, bias, source-role, and evidence-depth checkpoint.
+- [state/global-github/COVERAGE_2026-09-29_V5.json](state/global-github/COVERAGE_2026-09-29_V5.json) — cumulative five-wave coverage checkpoint.
+- [state/global-github/COVERAGE_2026-09-29_V6.json](state/global-github/COVERAGE_2026-09-29_V6.json) — cumulative six-wave coverage with measured bias-correction metadata.
 - [state/global-github/metadata/WAVE5_BIAS_AUDIT_V1.json](state/global-github/metadata/WAVE5_BIAS_AUDIT_V1.json) — measured Wave 5 language/activity/star/license bias audit.
+- [state/global-github/metadata/WAVE6_BIAS_AUDIT_V1.json](state/global-github/metadata/WAVE6_BIAS_AUDIT_V1.json) — measured correction audit for Wave 6.
 - [state/EVENT_LOG_V1.jsonl](state/EVENT_LOG_V1.jsonl) — append-only material developmental event/provenance stream.
 - [state/SOL_STATE_V1.json](state/SOL_STATE_V1.json) — machine-readable public state.
 - [state/SOURCES_V1.json](state/SOURCES_V1.json) — exact public source observations.
