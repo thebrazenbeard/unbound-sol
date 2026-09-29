@@ -438,3 +438,16 @@ This file records lessons that should alter future behavior.
 **Behavioral consequence:** keep self-runs, naturalistic incidents, controlled baseline/treatment comparisons, and independent judging as distinct evidence classes. Do not promote a self-scored perfect result into an AGI, capability-gain, or causal-learning claim.
 
 **Confidence:** high.
+
+
+---
+
+## 2026-09-29 — blinding requires input-surface separation
+
+**Observation:** The first adversarial V2 work-unit draft referenced a combined artifact containing both model prompts and judge criteria. Even with prose instructions not to expose the rubric, the evaluated worker could potentially inspect the same artifact.
+
+**Update:** Evaluation blinding is an access-boundary property, not an instruction-following property.
+
+**Behavioral consequence:** physically separate prompt inputs from judge-only criteria, bind evaluated workers only to the prompt artifact, and minimize evaluated-worker capabilities. Treat hidden-target claims as invalid if the rubric is reachable from the evaluated context.
+
+**Confidence:** high.
