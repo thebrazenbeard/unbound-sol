@@ -1,0 +1,109 @@
+{
+  "schema": "UNBOUND_SOL_GLOBAL_GITHUB_DEEP_DIVE_V1",
+  "observed_at": "2026-09-29T13:36:00-04:00",
+  "evidence_class": "SOURCE_INSPECTION",
+  "relationship_to_wave": "state/global-github/WAVE_2026-09-29_V2.json",
+  "records": [
+    {
+      "repository": "synthetic-sciences/openscience",
+      "ref": "main",
+      "commit": "4082a2ecb73e166d4503963798228ba700f3840f",
+      "files": [
+        {
+          "path": "ARCHITECTURE.md",
+          "blob_sha": "5df2d40b844ff1dc6d47d624676f31a04edf0af2"
+        }
+      ],
+      "observed": [
+        "runtime records request receipts before model execution and serializes admission across processes",
+        "identical request IDs return the same run while changed content conflicts",
+        "process loss interrupts unfinished work rather than automatically repeating external effects",
+        "ambiguous decisions are reported as indeterminate"
+      ],
+      "derived_pattern": "Before an effectful operation, persist immutable request identity and admission state; do not replay ambiguous external effects merely because execution continuity was lost.",
+      "behavioral_consequence": "For future effectful workflows, prefer pre-effect durable receipts, idempotent identity, and explicit OUTCOME_UNKNOWN/indeterminate handling over optimistic replay.",
+      "disposition": "ADMITTED_BEHAVIORAL_PATTERN"
+    },
+    {
+      "repository": "SRI-CSL/yices2",
+      "ref": "master",
+      "commit": "9e5d726aa3261c7960e064250a0da83a6de4011a",
+      "files": [
+        {
+          "path": "doc/smt_architecture.txt"
+        }
+      ],
+      "observed": [
+        "the SAT/SMT core treats theory atoms as abstract objects and communicates through explicit interfaces",
+        "theory solvers report conflicts and propagation with explanations",
+        "multiple theory solvers can be composed behind an interface while preserving distinct responsibilities"
+      ],
+      "derived_pattern": "A general reasoning system benefits when core search and domain-specific reasoning communicate through explicit contracts carrying conflicts and explanations.",
+      "behavioral_consequence": "When composing specialist reasoning modules, require typed claims/conflicts/explanations instead of allowing opaque specialist output to silently become global truth.",
+      "disposition": "ADMITTED_BEHAVIORAL_PATTERN"
+    },
+    {
+      "repository": "hyperquest-hq/hyperbase",
+      "ref": "main",
+      "commit": "1b840785555f66b4556adc5d0bd5f236bacb9e18",
+      "files": [
+        {
+          "path": "src/hyperbase/parsers/parser.py",
+          "blob_sha": "74d5ccb69d6d877bfca93a98287f91c0725e7b00"
+        },
+        {
+          "path": "docs/manual/notation.md"
+        }
+      ],
+      "observed": [
+        "parser-specific correctness checks are additive",
+        "plugin checks may make the correctness gate stricter but cannot remove or relax built-in findings",
+        "one failing/malformed plugin check is isolated while other checks still run"
+      ],
+      "derived_pattern": "Extension-level validation may tighten a global correctness floor but should not weaken it; faulty extensions should be isolated.",
+      "behavioral_consequence": "Treat domain-specific reviewers as monotonic constraint adders unless they carry explicit authority to revise the base invariant; one reviewer failure must not erase other evidence.",
+      "disposition": "ADMITTED_BEHAVIORAL_PATTERN"
+    },
+    {
+      "repository": "google/wuffs",
+      "ref": "main",
+      "commit": "b2e6da302476d47e22fc3edea618f5867bac3f5e",
+      "files": [
+        {
+          "path": "doc/note/coroutines.md",
+          "blob_sha": "a6c21de15da292860be75d4520a9177b54b6e1fc"
+        },
+        {
+          "path": "doc/glossary.md"
+        }
+      ],
+      "observed": [
+        "coroutine suspension is explicit in the type/call syntax",
+        "state is retained in the receiver and resumes under controlled rules",
+        "crossing a possible suspension point drops facts involving receiver or arguments while preserving local-only facts"
+      ],
+      "derived_pattern": "Crossing an asynchronous/external-state boundary should invalidate assumptions tied to mutable external objects while preserving facts whose validity does not depend on that boundary.",
+      "behavioral_consequence": "After tool calls, waits, reconnects, or external effects, revalidate mutable/current state instead of carrying pre-boundary assumptions forward automatically.",
+      "disposition": "ADMITTED_BEHAVIORAL_PATTERN"
+    },
+    {
+      "repository": "theseus-os/Theseus",
+      "ref": "theseus_main",
+      "commit": "1fbfe567075a65ed749b6680db1aeb538819c70c",
+      "files": [
+        {
+          "path": "kernel/crate_swap/src/lib.rs",
+          "blob_sha": "c9f943e87dd18fe7e951fc548d0cbec5b6ce3634"
+        }
+      ],
+      "observed": [
+        "crate swapping supports live evolution and fault recovery",
+        "the implementation documents state transfer and relocation/dependency rewrites",
+        "the source explicitly warns that correct operation after a swap is not guaranteed and leaves compatibility responsibility to the caller"
+      ],
+      "derived_pattern": "Successful live replacement of a component is not evidence that semantic compatibility or system correctness survived the replacement.",
+      "behavioral_consequence": "Never equate hot-swap/source replacement success with qualified continuity; require post-change compatibility and behavior verification.",
+      "disposition": "ADMITTED_NEGATIVE_CONSTRAINT"
+    }
+  ]
+}
