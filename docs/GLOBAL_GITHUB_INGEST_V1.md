@@ -216,3 +216,12 @@ The corresponding behavioral probes are E23–E27.
 `state/global-github/COVERAGE_2026-09-29_V6.json` records **480 lane assignments, 475 unique/source-read repositories, 60 Project Runner work units in VERIFYING, and 25 exact-head deep-inspection records**.
 
 The next frontier should prioritize evidence-depth and behavioral evaluation: run E18–E27 on real work, inspect tests/specifications/papers for selected deep sources, expand sub-500-star coverage, and compare archived versus active guidance before transferring implementation advice.
+
+
+### Project Runner currentness after Wave 6
+
+During final verification, `project-runner/main` had advanced from the historical wave binding `20984df8225796c450ba1ed1a12cb08d6a6511cd` to `2d7a0db547a001a228dc55c77689c4d8d0e621a3` (175 commits ahead).
+
+The currentness assessment is recorded in `state/global-github/PROJECT_RUNNER_COMPATIBILITY_2026-09-29_V1.json`. The WorkUnit schema itself did **not** change in that diff, so all 60 persisted units remain structurally compatible with current `main`. The operating contract and runtime gained substantial operator/worker/private-registry functionality, so the historical wave bindings are intentionally preserved rather than rewritten.
+
+This compatibility check does **not** imply that Project Runner's local/new runtime executed the ingestion work. The connected GitHub backend performed the actual reads/writes.
