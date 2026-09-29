@@ -1,0 +1,95 @@
+{
+  "schema": "UNBOUND_SOL_GITHUB_METADATA_BIAS_AUDIT_V1",
+  "wave": 5,
+  "observed_at": "2026-09-29",
+  "population": {
+    "repositories": 80,
+    "source": "Wave 5 metadata shards 01-10"
+  },
+  "distributions": {
+    "languages": {
+      "Python": 29,
+      "C++": 14,
+      "C": 5,
+      "UNKNOWN": 4,
+      "Java": 4,
+      "Rust": 4,
+      "Go": 4,
+      "Julia": 3,
+      "C#": 3,
+      "Shell": 2,
+      "Jupyter Notebook": 2,
+      "MATLAB": 1,
+      "PHP": 1,
+      "HTML": 1,
+      "Kotlin": 1,
+      "Ruby": 1,
+      "Scala": 1
+    },
+    "licenses": {
+      "MIT": 25,
+      "Apache-2.0": 17,
+      "NOASSERTION": 15,
+      "GPL-3.0": 5,
+      "BSD-3-Clause": 4,
+      "UNKNOWN": 4,
+      "GPL-2.0": 3,
+      "BSD-2-Clause": 2,
+      "AGPL-3.0": 1,
+      "CC0-1.0": 1,
+      "MPL-2.0": 1,
+      "CC-BY-4.0": 1,
+      "CC-BY-SA-4.0": 1
+    },
+    "status": {
+      "archived": 1,
+      "fork": 2,
+      "disabled": 0
+    },
+    "size_kb_bands": {
+      "10_100MB": 40,
+      "100MB_1GB": 21,
+      "1_10MB": 12,
+      "LT_1MB": 5,
+      "GE_1GB": 2
+    },
+    "created_bands": {
+      "2013_2016": 32,
+      "2017_2020": 29,
+      "2021_2024": 14,
+      "LE_2012": 5,
+      "2025_2026": 0
+    },
+    "pushed_recency_bands": {
+      "LE_30D": 52,
+      "181_365D": 9,
+      "31_180D": 6,
+      "1_2Y": 6,
+      "GT_2Y": 7
+    },
+    "star_bands": {
+      "2000_9999": 52,
+      "500_1999": 17,
+      "GE_10000": 7,
+      "LT_500": 4
+    }
+  },
+  "measured_biases": [
+    "Python plus C++ account for 43/80 repositories (53.75%).",
+    "59/80 repositories (73.75%) have at least 2,000 stars; only 4/80 are below 500 stars.",
+    "52/80 repositories (65%) were pushed within 30 days of observation.",
+    "0/80 repositories were created in 2025-2026.",
+    "Only 1/80 repositories is archived.",
+    "19/80 repositories (23.75%) report UNKNOWN or NOASSERTION license metadata.",
+    "Wave 5 therefore over-samples visible, established, active repositories and under-samples very new, low-star, dormant/archived, and less-common-language projects."
+  ],
+  "next_wave_requirements": [
+    "Include explicit star strata with a large LT_500 cohort.",
+    "Include repositories created in 2025-2026.",
+    "Include dormant/archived repositories as historical counterevidence, labeled as such.",
+    "Increase representation of languages outside Python/C++ and UNKNOWN-language curated lists.",
+    "Capture explicit license metadata before any code-level reuse; UNKNOWN/NOASSERTION is not permission.",
+    "Preserve activity/age strata so current implementation advice is not inferred from historical repositories."
+  ],
+  "claim_ceiling": "WAVE5_METADATA_BIAS_MEASUREMENT_ONLY_NOT_GLOBAL_GITHUB_REPRESENTATIVENESS"
+}
