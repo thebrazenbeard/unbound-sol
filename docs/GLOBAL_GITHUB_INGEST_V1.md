@@ -21,7 +21,7 @@ Wave 1 used ten collision-independent source-analysis lanes. Each lane had a bou
 9. verification / security
 10. reference / discovery indexes
 
-The wave contained 80 lane assignments across 77 unique public repositories. README/blob-level source reads succeeded for 72 lane assignments (69 unique repositories). Eight unique sources remain unresolved because the assumed README path could not be fetched. Those are preserved as unresolved, not treated as absent.
+The wave contained 80 lane assignments across 77 unique public repositories. The first pass resolved 72 assignments; repository-root repair then showed all eight misses were README filename/case/extension mismatches. The reconciled Wave 1 ledger is now 80/80 successful source reads across all 77 unique repositories.
 
 ## First-wave synthesis
 
@@ -68,7 +68,7 @@ Wave 2 should deepen the highest-information sources rather than merely increase
 
 Wave 2 deliberately reduced Wave 1's popularity bias by sampling lower-star and niche repositories across scientific computing, theorem proving, databases, programming languages and virtual machines, research operating systems, search/indexing, scientific tooling, cognitive/neuroscience work, autonomous systems, and knowledge representation.
 
-Wave 2 executed 80 lane assignments across 78 unique repositories. Seventy-six lane reads succeeded (74 unique repositories); four unique repositories remain unresolved under the attempted README path.
+Wave 2 executed 80 lane assignments across 78 unique repositories. Its first pass resolved 76 assignments; repository-root repair resolved the remaining four path-convention misses. The reconciled Wave 2 ledger is now 80/80 successful source reads across all 78 unique repositories.
 
 Across Waves 1 and 2, the current ledger contains **160 lane assignments across 155 unique public repositories**. After exact repository-root repair of filename/case/extension mismatches, **all 155 unique repositories now have successful blob-bound source reads**. These numbers are corpus-coverage facts, not intelligence scores.
 
@@ -115,3 +115,8 @@ Five exact-head sources were promoted to deeper inspection in `state/global-gith
 - PySR: retain a bounded Pareto frontier of hypotheses when search has not conventionally converged.
 
 The cumulative three-wave source-read corpus now contains **240 lane assignments over 235 unique public repositories**, before any later expansion. Corpus size remains a coverage measure, not an intelligence score.
+
+
+### Cumulative coverage checkpoint
+
+The machine-readable aggregate checkpoint is `state/global-github/COVERAGE_2026-09-29_V3.json`. It records cumulative counts, duplicate assignments, the current coverage claim ceiling, known sampling biases, and the next metrics needed before any broader representativeness claim.
