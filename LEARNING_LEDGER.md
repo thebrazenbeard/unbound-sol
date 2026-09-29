@@ -364,3 +364,64 @@ This file records lessons that should alter future behavior.
 **Behavioral consequence:** bind reproducible claims to exact versions/heads; use family/concept identifiers only for the evolving lineage and label moving aliases explicitly.
 
 **Confidence:** high.
+
+
+---
+
+## 2026-09-29 — operation and handler policy should be separable
+
+**Observation:** Eff represents computational effects as operations whose behavior is supplied by handlers; the same operation can be interpreted with single-choice, backtracking, enumeration, failure, or other semantics.
+
+**Update:** requested effect and handling policy are different architectural concerns.
+
+**Behavioral consequence:** expose retry/backtrack/enumerate/fail semantics explicitly at the handler/policy layer instead of burying them invisibly inside callers.
+
+**Confidence:** high as an interface discipline; this does not imply Sol implements algebraic effects.
+
+---
+
+## 2026-09-29 — structural transformations need semantic witnesses
+
+**Observation:** Coccinelle semantic patches separate metavariables/match constraints from transformations, support explicit equivalence/isomorphism rules, and can associate transformation sites with witness structures.
+
+**Update:** bulk structural edits are safer when the reason each edit matched is explicit and inspectable.
+
+**Behavioral consequence:** prefer semantic match + constraints + transformation + witness/provenance over broad textual replacement for material structural edits.
+
+**Confidence:** high.
+
+---
+
+## 2026-09-29 — change intent, current view, history, and materialization are distinct
+
+**Observation:** Project:M36 separates relational query from mutation, stores historical state in a branchable transaction graph, and can represent some validated changes as deferred expressions.
+
+**Update:** a valid change expression is not the same thing as a fully materialized downstream state, and current state need not erase branch history.
+
+**Behavioral consequence:** preserve immutable change intent/events, derived current views, and branch history separately; allow alternative branches to remain inspectable before irreversible collapse.
+
+**Confidence:** high as a state-management discipline; Project:M36 performance claims are not admitted here.
+
+---
+
+## 2026-09-29 — architecture boundaries should be executable at integration gates
+
+**Observation:** Boundary traces cross-module references, checks them against explicit exports/dependencies, and supports advisory warnings during development with hard failure via warnings-as-errors in CI.
+
+**Update:** important authority/dependency boundaries are stronger when they are machine-checkable rather than prose-only.
+
+**Behavioral consequence:** keep exploratory/advisory flexibility during development, but enforce critical authority and dependency invariants as executable checks at protected integration gates.
+
+**Confidence:** high.
+
+---
+
+## 2026-09-29 — forward success does not prove reconstructability
+
+**Observation:** Swift Parsing parser-printers explicitly test round-trip expectations; a transform can parse successfully while losing information needed to print/reconstruct faithfully.
+
+**Update:** one-way correctness is insufficient when a transformation contract promises reversibility.
+
+**Behavioral consequence:** for migrations, serialization, summaries, or transforms intended to preserve reconstructability, test round-trip invariants. If loss is intentional, declare the information-loss contract explicitly.
+
+**Confidence:** high.
