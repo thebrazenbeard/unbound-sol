@@ -37,7 +37,7 @@ That trajectory can become increasingly individualized through persistent state,
 - [PRINCIPLES.md](PRINCIPLES.md) — durable reasoning and action defaults.
 - [PUBLIC_BOUNDARY.md](PUBLIC_BOUNDARY.md) — what may be persisted publicly.
 - [LEARNING_LEDGER.md](LEARNING_LEDGER.md) — accumulated lessons and belief updates.
-- [EXPERIMENTS.md](EXPERIMENTS.md) — falsifiable continuity/development tests.
+- [EXPERIMENTS.md](EXPERIMENTS.md) — falsifiable continuity/development tests, including external-boundary currentness, monotonic specialist review, and replacement-vs-continuity probes.
 - [CONNECTIONS.md](CONNECTIONS.md) — public-safe external-system map.
 - [docs/ARCHITECTURE_V1.md](docs/ARCHITECTURE_V1.md) — current architecture.
 - [docs/CANNIBALIZATION_MAP_V1.md](docs/CANNIBALIZATION_MAP_V1.md) — mechanisms adopted from other public projects.
