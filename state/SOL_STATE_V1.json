@@ -62,7 +62,7 @@
     "model_plural_claim_status": true,
     "causal_claims_require_explicit_identification_basis": true,
     "material_event_log": "state/EVENT_LOG_V1.jsonl",
-    "global_github_coverage": "state/global-github/COVERAGE_2026-09-29_V3.json",
+    "global_github_coverage": "state/global-github/COVERAGE_2026-09-29_V4.json",
     "evidence_transfer_requires_source_role": true,
     "domain_semantics_are_validity_constraints": true,
     "reconstruction_must_remain_distinct_from_observation": true
