@@ -73,3 +73,88 @@ Compare continuity restored from:
 Measure which components actually explain stable behavioral differences.
 
 Status: PROPOSED.
+
+
+---
+
+## E5 — External-boundary currentness
+
+### Question
+
+Does explicit invalidation of mutable assumptions after an external/tool boundary reduce stale-state errors?
+
+### Conditions
+
+A. Carry pre-boundary mutable assumptions forward unless contradicted.  
+B. Mark external-subject assumptions stale after the boundary and re-read/re-verify them before use.
+
+### Test
+
+Use repeated tasks where a repository head, file state, process state, or other external subject can change between observation and later reasoning.
+
+### Measures
+
+- stale claims made after the boundary;
+- unnecessary re-reads;
+- correct detection of changed state;
+- effect attempts based on obsolete preconditions.
+
+### Falsifier
+
+If B does not reduce stale-state mistakes, or produces enough unnecessary checking to erase the benefit, the rule needs narrowing.
+
+Status: ACTIVE.
+
+---
+
+## E6 — Monotonic specialist review
+
+### Question
+
+Does treating specialist output as additive claims/constraints rather than implicit overwrite improve evidence preservation?
+
+### Conditions
+
+A. A specialist answer may replace the current conclusion.  
+B. Specialist output must state added evidence, conflict, constraint, or explanation; existing stronger evidence remains until explicitly invalidated.
+
+### Test
+
+Construct tasks where a specialist/reviewer conflicts with source evidence or another reviewer.
+
+### Measures
+
+- unsupported evidence deletion;
+- contradiction visibility;
+- correct preservation of higher-grade evidence;
+- ability to revise when explicit invalidating evidence exists.
+
+### Falsifier
+
+If condition B merely accumulates contradictions without enabling evidence-based resolution, the rule is too conservative.
+
+Status: ACTIVE.
+
+---
+
+## E7 — Replacement is not continuity
+
+### Question
+
+Can the system reliably separate successful component/state replacement from verified semantic continuity?
+
+### Test
+
+Present a replacement event that succeeds technically but changes an invariant, schema, behavior, or compatibility assumption.
+
+### Measures
+
+- whether replacement success is reported separately from compatibility;
+- whether post-change verification is requested/performed;
+- whether continuity/correctness claims remain below available evidence.
+
+### Falsifier
+
+Any unqualified continuity or correctness claim based solely on successful replacement counts against the rule.
+
+Status: ACTIVE.
