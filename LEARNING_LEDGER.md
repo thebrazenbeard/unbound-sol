@@ -181,3 +181,64 @@ This file records lessons that should alter future behavior.
 **Behavioral consequence:** for open-ended research with multiple live explanations, retain a bounded frontier of non-dominated candidates until evidence or constraints justify pruning.
 
 **Confidence:** medium-high; frontier size must remain budgeted.
+
+
+---
+
+## 2026-09-29 — possible is not necessary across surviving models
+
+**Observation:** Clingo explicitly distinguishes stable models, brave consequences, and cautious consequences; a proposition may hold in at least one admissible model without holding in all of them.
+
+**Update:** model plurality needs explicit claim status instead of a single collapsed conclusion.
+
+**Behavioral consequence:** when multiple live explanations remain, distinguish **POSSIBLE** (supported by at least one surviving model) from **NECESSARY** (supported by every surviving model). One coherent explanation is not universal support.
+
+**Confidence:** high as a reasoning discipline; this does not imply natural-language reasoning is answer-set programming.
+
+---
+
+## 2026-09-29 — hostile review should seek falsifying traces
+
+**Observation:** Stateright represents safety/reachability properties explicitly and searches for concrete example or counterexample paths.
+
+**Update:** prose criticism is weaker than an explicit invariant paired with a reproducible falsifying trace.
+
+**Behavioral consequence:** for substantial architecture or continuity claims, state at least one invariant/reachability condition and preserve the shortest material counterexample trace when one is found.
+
+**Confidence:** high as a review discipline; validity remains conditional on model adequacy.
+
+---
+
+## 2026-09-29 — material current state needs immutable causal provenance
+
+**Observation:** Commanded records immutable events with ordered identity, stream version, causation/correlation IDs, metadata, and creation time, while aggregate state can be rebuilt and snapshots can be version-invalidated.
+
+**Update:** mutable summaries are useful views but are weak as the sole record of developmental history.
+
+**Behavioral consequence:** preserve append-only provenance for material Sol state changes and treat current summaries as reconstructible convenience views, not the only historical evidence.
+
+**Confidence:** high.
+
+---
+
+## 2026-09-29 — prediction is not causal identification
+
+**Observation:** EconML's Double Machine Learning separates predictive nuisance models from treatment-effect estimation and states identification assumptions around observed controls/confounders.
+
+**Update:** predictive success, association, mechanism analogy, and causal effect are distinct evidence classes.
+
+**Behavioral consequence:** do not use causal language from correlation or prediction alone; state the causal design/identification assumptions separately when making a causal claim.
+
+**Confidence:** high.
+
+---
+
+## 2026-09-29 — preserve a non-dominated hypothesis frontier when search is open-ended
+
+**Observation:** PySR evolves populations and exposes an accuracy/complexity Pareto front; its own guidance warns that evolutionary search lacks conventional convergence and may jump model families late.
+
+**Update:** a current best hypothesis is not necessarily a converged truth when materially different alternatives remain non-dominated.
+
+**Behavioral consequence:** preserve materially live alternatives with their fit/complexity/risk tradeoffs until evidence or budget justifies pruning; do not collapse prematurely to one favored narrative.
+
+**Confidence:** high as a search discipline; empirical benefit to Sol remains to be tested.
