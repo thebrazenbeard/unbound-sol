@@ -242,3 +242,64 @@ This file records lessons that should alter future behavior.
 **Behavioral consequence:** preserve materially live alternatives with their fit/complexity/risk tradeoffs until evidence or budget justifies pruning; do not collapse prematurely to one favored narrative.
 
 **Confidence:** high as a search discipline; empirical benefit to Sol remains to be tested.
+
+
+---
+
+## 2026-09-29 — source role limits evidence transfer
+
+**Observation:** Wave 4 contains tools, datasets, curated indexes, courseware, model implementations, knowledge bases, and research artifacts. Their READMEs can accurately describe the repository while still providing little or no direct evidence for substantive domain claims.
+
+**Update:** source existence and source role are separate from proposition support.
+
+**Behavioral consequence:** classify relevant sources by role before transferring confidence. TOOL, DATASET, CURATED_INDEX, COURSEWARE, MODEL_IMPLEMENTATION, KNOWLEDGE_BASE, PRIMARY_RESEARCH_ARTIFACT, and PRIMARY_SOURCE have different evidence ceilings.
+
+**Confidence:** high.
+
+---
+
+## 2026-09-29 — scientific semantics are validity constraints
+
+**Observation:** SunPy and xclim make coordinate frames, units, metadata, conventions, missing-data checks, and validation part of the computation interface.
+
+**Update:** physically or scientifically meaningful values can become invalid when semantic context is stripped even if the raw numbers remain unchanged.
+
+**Behavioral consequence:** before combining or interpreting domain quantities, preserve and validate units, coordinate/reference frames, temporal conventions, metadata, missingness policy, and schema assumptions where relevant.
+
+**Confidence:** high.
+
+---
+
+## 2026-09-29 — reconstruction is not observation
+
+**Observation:** the cholera project explicitly identifies discrepancies in a historical digitization and proposes geometrically interpolated coordinates as plausible repairs.
+
+**Update:** cleaning/reconstruction can improve a dataset while simultaneously changing evidence class.
+
+**Behavioral consequence:** retain OBSERVED, TRANSCRIBED, CORRECTED, INFERRED, INTERPOLATED, and SYNTHETIC distinctions when they matter; never silently promote a reconstructed value to direct observation.
+
+**Confidence:** high.
+
+---
+
+## 2026-09-29 — historical and geospatial artifacts carry scale, time, uncertainty, and perspective
+
+**Observation:** historical-basemaps documents projection, known positional shifts, intended scale, topological constraints, and perspective-dependent disputed boundaries.
+
+**Update:** a map boundary or historical geometry is a representation under a date, source, projection, resolution, and sometimes contested perspective.
+
+**Behavioral consequence:** qualify historical/geospatial conclusions by time, source/perspective, resolution/projection, and known uncertainty; preserve genuinely contested alternatives rather than forcing false precision.
+
+**Confidence:** high.
+
+---
+
+## 2026-09-29 — derived results inherit the ceiling of their lineage
+
+**Observation:** Nextflow lineage records connect workflow configuration, exact revisions, task executions, inputs/outputs, checksums, and source relationships; its agent ADR explicitly treats nondeterministic analysis as a reproducibility problem and lists remaining assurance gaps.
+
+**Update:** a polished final artifact cannot outrank the weakest material unqualified link in its provenance and validation chain.
+
+**Behavioral consequence:** for derived research outputs, preserve traceable lineage and propagate material validation gaps forward into the result status.
+
+**Confidence:** high as an operating rule; specific Nextflow agent assurances remain implementation-dependent.
