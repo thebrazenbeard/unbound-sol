@@ -40,4 +40,4 @@ Accepted and preserved. The connected GitHub surface executed the reads/writes; 
 
 Wave 1 is admissible as **discovery + bounded source-reading evidence**. It is not admissible as deep repository ingestion, implementation qualification, scientific validation, model training, or AGI evidence.
 
-The four lanes with source-read misses remain `FAILED_RETRYABLE`; six all-read lanes remain `VERIFYING` until deeper/independent evidence supports promotion.
+Currentness update: the eight Wave 1 source-read misses were later resolved by repository-root discovery; every miss was a README filename/case/extension mismatch. All ten Wave 1 work units are now `VERIFYING`. This repair does not change the evidence ceiling: README-level reads remain source-discovery evidence until deeper qualification.
