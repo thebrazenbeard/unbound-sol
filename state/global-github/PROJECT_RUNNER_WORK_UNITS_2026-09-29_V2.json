@@ -39,8 +39,10 @@
           "repository": "rust-ndarray/ndarray",
           "ref": "master",
           "commit": null,
-          "path": "README.md",
-          "digest": null
+          "path": "README.rst",
+          "digest": "d11e2e0551b4f07288716bdfffa1b9b60766e233",
+          "initial_path": "README.md",
+          "repair": "ROOT_DISCOVERY_PATH_CASE_OR_EXTENSION"
         },
         {
           "repository": "dpilger26/NumCpp",
@@ -67,8 +69,10 @@
           "repository": "scikit-optimize/scikit-optimize",
           "ref": "master",
           "commit": null,
-          "path": "README.md",
-          "digest": null
+          "path": "README.rst",
+          "digest": "9ba47228395a44b45efc8ea8afa12fa28e39ed40",
+          "initial_path": "README.md",
+          "repair": "ROOT_DISCOVERY_PATH_CASE_OR_EXTENSION"
         }
       ],
       "operation": "GITHUB_PUBLIC_SOURCE_READ_AND_ANALYZE",
@@ -103,7 +107,7 @@
         "lane": "epistemology-research",
         "wave": 2
       },
-      "status": "FAILED_RETRYABLE"
+      "status": "VERIFYING"
     },
     {
       "id": "global-github-wave2-02-formal-math",
@@ -142,8 +146,10 @@
           "repository": "johnyf/tool_lists",
           "ref": "main",
           "commit": null,
-          "path": "README.md",
-          "digest": null
+          "path": "readme.md",
+          "digest": "d678b4ba5ba65a91f9be488ffa98a3b6a85bdd21",
+          "initial_path": "README.md",
+          "repair": "ROOT_DISCOVERY_PATH_CASE_OR_EXTENSION"
         },
         {
           "repository": "0vercl0k/z3-playground",
@@ -199,7 +205,7 @@
         "lane": "formal-math",
         "wave": 2
       },
-      "status": "FAILED_RETRYABLE"
+      "status": "VERIFYING"
     },
     {
       "id": "global-github-wave2-03-storage-databases",
@@ -355,8 +361,10 @@
           "repository": "evhub/coconut",
           "ref": "master",
           "commit": null,
-          "path": "README.md",
-          "digest": null
+          "path": "README.rst",
+          "digest": "0cabbec8c6aac641be643c9c916118d7ae30db66",
+          "initial_path": "README.md",
+          "repair": "ROOT_DISCOVERY_PATH_CASE_OR_EXTENSION"
         }
       ],
       "operation": "GITHUB_PUBLIC_SOURCE_READ_AND_ANALYZE",
@@ -391,7 +399,7 @@
         "lane": "languages-vms",
         "wave": 2
       },
-      "status": "FAILED_RETRYABLE"
+      "status": "VERIFYING"
     },
     {
       "id": "global-github-wave2-05-os-networking",
