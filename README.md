@@ -54,6 +54,7 @@ That trajectory can become increasingly individualized through persistent state,
 - [state/global-github/COVERAGE_2026-09-29_V3.json](state/global-github/COVERAGE_2026-09-29_V3.json) — cumulative three-wave coverage checkpoint.
 - [state/global-github/COVERAGE_2026-09-29_V4.json](state/global-github/COVERAGE_2026-09-29_V4.json) — cumulative four-wave coverage checkpoint.
 - [state/global-github/COVERAGE_2026-09-29_V5.json](state/global-github/COVERAGE_2026-09-29_V5.json) — cumulative five-wave coverage, bias, source-role, and evidence-depth checkpoint.
+- [state/global-github/metadata/WAVE5_BIAS_AUDIT_V1.json](state/global-github/metadata/WAVE5_BIAS_AUDIT_V1.json) — measured Wave 5 language/activity/star/license bias audit.
 - [state/EVENT_LOG_V1.jsonl](state/EVENT_LOG_V1.jsonl) — append-only material developmental event/provenance stream.
 - [state/SOL_STATE_V1.json](state/SOL_STATE_V1.json) — machine-readable public state.
 - [state/SOURCES_V1.json](state/SOURCES_V1.json) — exact public source observations.
