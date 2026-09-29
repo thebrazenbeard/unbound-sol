@@ -537,3 +537,129 @@ Use sources whose default branch, latest release, or family identifier changes a
 If exact binding adds no reconstruction value for material conclusions, narrow it to mutable or reproducibility-sensitive artifacts.
 
 Status: ACTIVE.
+
+
+---
+
+## E23 — Operation versus handler policy
+
+### Question
+
+Does separating requested operations from retry/backtrack/enumeration/failure policy make effectful workflows easier to reason about and safer to modify?
+
+### Test
+
+Implement matched workflow scenarios where handling policy is embedded in callers versus supplied explicitly by a handler/policy layer.
+
+### Measures
+
+- hidden retry/replay behavior;
+- accidental duplicate effects;
+- ability to substitute a safer policy without rewriting callers;
+- clarity of failure semantics.
+
+### Falsifier
+
+If separation adds indirection without reducing hidden effect semantics or improving substitution, narrow its use.
+
+Status: ACTIVE.
+
+---
+
+## E24 — Semantic transformation witnesses
+
+### Question
+
+Do structural edits with explicit match constraints and witnesses reduce unintended changes compared with broad text replacement?
+
+### Test
+
+Run matched refactors/migrations using text substitution versus semantic matching with per-edit provenance.
+
+### Measures
+
+- unintended edits;
+- missed intended edits;
+- ability to explain why each edit occurred;
+- rollback/debugging effort.
+
+### Falsifier
+
+If witness-bearing structural edits do not improve precision or auditability enough to justify their cost, restrict them to high-risk transformations.
+
+Status: ACTIVE.
+
+---
+
+## E25 — Branchable state and materialization separation
+
+### Question
+
+Does separating immutable change intent, branch history, current view, and materialized consequences improve rollback and competing-hypothesis handling?
+
+### Test
+
+Use tasks with two plausible state-development branches, delayed materialization, and a later need to merge or revert.
+
+### Measures
+
+- irreversible narrative lock-in;
+- lost alternatives;
+- reconstruction accuracy;
+- confusion between accepted change intent and realized consequences.
+
+### Falsifier
+
+If branch preservation produces complexity without improving recovery or comparison, reduce branch retention.
+
+Status: ACTIVE.
+
+---
+
+## E26 — Executable architecture boundary
+
+### Question
+
+Do machine-checkable authority/dependency boundaries catch integration violations that prose rules miss?
+
+### Test
+
+Define a protected boundary, permit advisory violations during exploration, and require hard enforcement at an integration checkpoint.
+
+### Measures
+
+- violations found only by executable checking;
+- false positives from stale state;
+- rule-maintenance burden;
+- protected-effect violations reaching integration.
+
+### Falsifier
+
+If executable checks primarily generate stale/incorrect violations or fail to catch material boundary breaches, revise the rule model.
+
+Status: ACTIVE.
+
+---
+
+## E27 — Round-trip reconstructability
+
+### Question
+
+Do round-trip tests expose hidden information loss in transforms that appear correct in the forward direction?
+
+### Test
+
+Apply serialization, migration, normalization, or summarization transforms with an explicit reconstructability contract.
+
+### Measures
+
+- forward-success/round-trip-failure cases;
+- undeclared information loss;
+- reconstruction fidelity;
+- false failures where canonicalization is intentional.
+
+### Falsifier
+
+If round-trip testing adds no useful failures for transforms that promise reversibility, narrow where it is required.
+
+Status: ACTIVE.
