@@ -1,0 +1,963 @@
+{
+  "schema": "UNBOUND_SOL_PROJECT_RUNNER_WORK_UNITS_V1",
+  "wave": "WAVE_2026-09-29_V1",
+  "runner_binding": {
+    "repository": "thebrazenbeard/project-runner",
+    "ref": "main",
+    "commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+    "contract": "PROJECT_RUNNER.md",
+    "work_unit_schema": "schemas/work-unit.schema.json"
+  },
+  "work_units": [
+    {
+      "id": "global-github-wave1-01-model-learning",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "tensorflow/tensorflow",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "24ce6ff362b00e77474edcbf67b49689889765c2"
+        },
+        {
+          "repository": "f/prompts.chat",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "2ef16acadbac7599287913d2e8cc6a39e0def3b5"
+        },
+        {
+          "repository": "huggingface/transformers",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "730084a5a55486821a1d600d8084beb9069f805b"
+        },
+        {
+          "repository": "rasbt/LLMs-from-scratch",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "4703bc5afc86803540abd6cbc465d635aa3eb5e8"
+        },
+        {
+          "repository": "pytorch/pytorch",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "938c15dba315963266102bcfeaf935306b24a165"
+        },
+        {
+          "repository": "microsoft/ML-For-Beginners",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "bf4a5274ff17858a8e4d2c833b55e3b4b8925743"
+        },
+        {
+          "repository": "Developer-Y/cs-video-courses",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "c347dd3c19b2e694c25545a309f181856e49aeee"
+        },
+        {
+          "repository": "mlabonne/llm-course",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "c605bee6695691d73a68de0aa21669b0f67b5412"
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_SOURCE_READ_AND_ANALYZE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "global-github:lane:model-learning"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "source-observations",
+        "candidate-mechanisms",
+        "unresolved-source-list"
+      ],
+      "completion_criteria": [
+        "eight repositories discovered",
+        "read attempted for every repository",
+        "source evidence is blob-bound where successful",
+        "unresolved reads remain explicit",
+        "no source repository mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "model-learning"
+      },
+      "status": "VERIFYING"
+    },
+    {
+      "id": "global-github-wave1-02-agents",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "Significant-Gravitas/AutoGPT",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "563bea54c643b48a5254801c90b830b8bf54c46a"
+        },
+        {
+          "repository": "langflow-ai/langflow",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "ccba723089429cedfa4a3bbbb11a897a57eb11e6"
+        },
+        {
+          "repository": "langchain-ai/langchain",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "aeea8c38765f4a33c777e8755ac2f439132ffbb0"
+        },
+        {
+          "repository": "Shubhamsaboo/awesome-llm-apps",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "e8b91511659f82c52ef8d5c1ce5cd6aabea03c19"
+        },
+        {
+          "repository": "dair-ai/Prompt-Engineering-Guide",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "87082c1cbe20bbd22d29ea272fc9efd3753f2e4b"
+        },
+        {
+          "repository": "ruvnet/ruflo",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "e5233c9aa886d2aa9f47ce6c0c74df355913c26f"
+        },
+        {
+          "repository": "mem0ai/mem0",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "9a81e74effacbd7433e91b6c1fcc907f110d4773"
+        },
+        {
+          "repository": "usestrix/strix",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "351b96e753b3df42f027ba7536fedcde21d1d5a0"
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_SOURCE_READ_AND_ANALYZE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "global-github:lane:agents"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "source-observations",
+        "candidate-mechanisms",
+        "unresolved-source-list"
+      ],
+      "completion_criteria": [
+        "eight repositories discovered",
+        "read attempted for every repository",
+        "source evidence is blob-bound where successful",
+        "unresolved reads remain explicit",
+        "no source repository mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "agents"
+      },
+      "status": "VERIFYING"
+    },
+    {
+      "id": "global-github-wave1-03-memory-rag",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "infiniflow/ragflow",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "4b9a48fd2920442f1723a5cd071a529e5ba4be07"
+        },
+        {
+          "repository": "pathwaycom/llm-app",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "5f18d70bcdfbec286612efc4d495c0acd59954e9"
+        },
+        {
+          "repository": "HKUDS/LightRAG",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "5dd8b7db99231f6ecede9b76ba8dc304d9638f3c"
+        },
+        {
+          "repository": "chatchat-space/Langchain-Chatchat",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "a8ca2614d2805219784c9d6fdf46dc303460eb62"
+        },
+        {
+          "repository": "VectifyAI/PageIndex",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "05457ee57115bfffe5cec2ff1490d3f894e2240f"
+        },
+        {
+          "repository": "stanford-oval/storm",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "e0dba464b54fc82a16119dbee1d073f2404dfaae"
+        },
+        {
+          "repository": "NirDiamant/RAG_Techniques",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "94e43c7e65380aa87349c39058be257f71319e10"
+        },
+        {
+          "repository": "deepset-ai/haystack",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "afa079b2a7e90e815fdaf9b09edcd7ad010e3e91"
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_SOURCE_READ_AND_ANALYZE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "global-github:lane:memory-rag"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "source-observations",
+        "candidate-mechanisms",
+        "unresolved-source-list"
+      ],
+      "completion_criteria": [
+        "eight repositories discovered",
+        "read attempted for every repository",
+        "source evidence is blob-bound where successful",
+        "unresolved reads remain explicit",
+        "no source repository mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "memory-rag"
+      },
+      "status": "VERIFYING"
+    },
+    {
+      "id": "global-github-wave1-04-knowledge-semantics",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "Graphify-Labs/graphify",
+          "ref": "v8",
+          "commit": null,
+          "path": "README.md",
+          "digest": "cada9528b43dfd41641f5caf008d38c46e589b1f"
+        },
+        {
+          "repository": "Egonex-AI/Understand-Anything",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "5474b0e4d3cd944d13605ff33688efba8dba1f68"
+        },
+        {
+          "repository": "666ghj/MiroFish",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "5e8071d0a53ad17b7ecf694b159498e1e872a1ae"
+        },
+        {
+          "repository": "DeusData/codebase-memory-mcp",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "9c82c18aeda046668571e5b56706a012c0264041"
+        },
+        {
+          "repository": "logseq/logseq",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "662bad17d543ea6865cd8d146c91478858436dc2"
+        },
+        {
+          "repository": "HKUDS/LightRAG",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "5dd8b7db99231f6ecede9b76ba8dc304d9638f3c"
+        },
+        {
+          "repository": "TriliumNext/Trilium",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "80b39d4443b540232776a31f6ea6b661d29bf0d4"
+        },
+        {
+          "repository": "tirth8205/code-review-graph",
+          "ref": "staging",
+          "commit": null,
+          "path": "README.md",
+          "digest": "a16038f8517f56e6e267b174f9f1e82799f2820f"
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_SOURCE_READ_AND_ANALYZE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "global-github:lane:knowledge-semantics"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "source-observations",
+        "candidate-mechanisms",
+        "unresolved-source-list"
+      ],
+      "completion_criteria": [
+        "eight repositories discovered",
+        "read attempted for every repository",
+        "source evidence is blob-bound where successful",
+        "unresolved reads remain explicit",
+        "no source repository mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "knowledge-semantics"
+      },
+      "status": "VERIFYING"
+    },
+    {
+      "id": "global-github-wave1-05-distributed-data",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "doocs/advanced-java",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "99266dba30d14eb5ef7551db1ba74f1fee0e611c"
+        },
+        {
+          "repository": "redis/redis",
+          "ref": "unstable",
+          "commit": null,
+          "path": "README.md",
+          "digest": "fcc7c29a1c93f4ac9e3688c2b26ac36c25351675"
+        },
+        {
+          "repository": "binhnguyennus/awesome-scalability",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "ecd1e3db7c03595e715e691a8e23119440a77778"
+        },
+        {
+          "repository": "etcd-io/etcd",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "19b0b357f67647f5326d96e0da0a3ac4dd020ccf"
+        },
+        {
+          "repository": "karanpratapsingh/system-design",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "cf1beb4f7864c689c5ea6836cafd95f215ffed9f"
+        },
+        {
+          "repository": "ashishps1/awesome-system-design-resources",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "ddbed30d6ceb33f67e801f53112d3283644ec007"
+        },
+        {
+          "repository": "apache/dubbo",
+          "ref": "3.3",
+          "commit": null,
+          "path": "README.md",
+          "digest": "c2fa196a54c94f244d60854a1b3817b44a98e5fe"
+        },
+        {
+          "repository": "spacedriveapp/spacedrive",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "3c4f2cf0627177a83317b1610ab22e4e4d6ff4ce"
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_SOURCE_READ_AND_ANALYZE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "global-github:lane:distributed-data"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "source-observations",
+        "candidate-mechanisms",
+        "unresolved-source-list"
+      ],
+      "completion_criteria": [
+        "eight repositories discovered",
+        "read attempted for every repository",
+        "source evidence is blob-bound where successful",
+        "unresolved reads remain explicit",
+        "no source repository mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "distributed-data"
+      },
+      "status": "VERIFYING"
+    },
+    {
+      "id": "global-github-wave1-06-compilers-runtimes",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "vercel/next.js",
+          "ref": "canary",
+          "commit": null,
+          "path": "README.md",
+          "digest": null
+        },
+        {
+          "repository": "rust-lang/rust",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "ed35016eb3a238614741e5922a06b9bf83f9780e"
+        },
+        {
+          "repository": "sveltejs/svelte",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "7ea71647521ae850fd0933665f94760806ac5b29"
+        },
+        {
+          "repository": "webpack/webpack",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "ba5cf0cbc7202362b721f26624b7d35e6fa7c3a8"
+        },
+        {
+          "repository": "FuelLabs/sway",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "1aa9ac8866950f7ec03cbe5eb08262a8a01dad5d"
+        },
+        {
+          "repository": "typst/typst",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "a8d18a6180c3f1849feb2688fe179f3a93677682"
+        },
+        {
+          "repository": "gatsbyjs/gatsby",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "c64f761e067d798d837056e7c569f0a85a1bf34b"
+        },
+        {
+          "repository": "JetBrains/kotlin",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": null
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_SOURCE_READ_AND_ANALYZE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "global-github:lane:compilers-runtimes"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "source-observations",
+        "candidate-mechanisms",
+        "unresolved-source-list"
+      ],
+      "completion_criteria": [
+        "eight repositories discovered",
+        "read attempted for every repository",
+        "source evidence is blob-bound where successful",
+        "unresolved reads remain explicit",
+        "no source repository mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "compilers-runtimes"
+      },
+      "status": "FAILED_RETRYABLE"
+    },
+    {
+      "id": "global-github-wave1-07-robotics-embodiment",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "Developer-Y/cs-video-courses",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "c347dd3c19b2e694c25545a309f181856e49aeee"
+        },
+        {
+          "repository": "commaai/openpilot",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "21737a1ae12eac9fe6dcf98b0c4b1eb12fda4774"
+        },
+        {
+          "repository": "NaiboWang/EasySpider",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": null
+        },
+        {
+          "repository": "AtsushiSakai/PythonRobotics",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "f828d90e1d1d22ad9443b0b8c1cf16a2c40e8080"
+        },
+        {
+          "repository": "harvard-edge/cs249r_book",
+          "ref": "dev",
+          "commit": null,
+          "path": "README.md",
+          "digest": "abb9f3534645a5406bed8e8dd2e062c1dec00cfc"
+        },
+        {
+          "repository": "wechaty/wechaty",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "446424e1e16738a6cac1f7bddba25d6cd549dedb"
+        },
+        {
+          "repository": "questdb/questdb",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "12f63ee62deae18334471d44bcd00d0b7d9c2a18"
+        },
+        {
+          "repository": "earthtojake/text-to-cad",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "e109c12bb0561878295088a542332d8bf6cc2242"
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_SOURCE_READ_AND_ANALYZE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "global-github:lane:robotics-embodiment"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "source-observations",
+        "candidate-mechanisms",
+        "unresolved-source-list"
+      ],
+      "completion_criteria": [
+        "eight repositories discovered",
+        "read attempted for every repository",
+        "source evidence is blob-bound where successful",
+        "unresolved reads remain explicit",
+        "no source repository mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "robotics-embodiment"
+      },
+      "status": "FAILED_RETRYABLE"
+    },
+    {
+      "id": "global-github-wave1-08-neuroscience-cognition",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "mne-tools/mne-python",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": null
+        },
+        {
+          "repository": "NeuromatchAcademy/course-content",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "637b59ca8070ee5e18601170558ab48299fb0306"
+        },
+        {
+          "repository": "psychopy/psychopy",
+          "ref": "dev",
+          "commit": null,
+          "path": "README.md",
+          "digest": "acdc49f61c5c5850e1c850a89abb2eaf28168093"
+        },
+        {
+          "repository": "jeshraghian/snntorch",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": null
+        },
+        {
+          "repository": "brainflow-dev/brainflow",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "6a2c4e023d165a7dcd43fb9581b5db6ff66b038b"
+        },
+        {
+          "repository": "analyticalmonk/awesome-neuroscience",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": null
+        },
+        {
+          "repository": "braindecode/braindecode",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": null
+        },
+        {
+          "repository": "brian-team/brian2",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "d9d6d60b30ea4583d07e0c88df70f1bda91d6e38"
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_SOURCE_READ_AND_ANALYZE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "global-github:lane:neuroscience-cognition"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "source-observations",
+        "candidate-mechanisms",
+        "unresolved-source-list"
+      ],
+      "completion_criteria": [
+        "eight repositories discovered",
+        "read attempted for every repository",
+        "source evidence is blob-bound where successful",
+        "unresolved reads remain explicit",
+        "no source repository mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "neuroscience-cognition"
+      },
+      "status": "FAILED_RETRYABLE"
+    },
+    {
+      "id": "global-github-wave1-09-verification-security",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "p-org/P",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "a63176ad80b55044ebb10a29b5b1d76d76337bf8"
+        },
+        {
+          "repository": "creusot-rs/creusot",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "c31a3174ffb594128352dcdb011cd77980bffdc0"
+        },
+        {
+          "repository": "hacl-star/hacl-star",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "8815628e9cea88ca1cbb777e5f30cab98b66e012"
+        },
+        {
+          "repository": "prusti/prusti",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "4c4e79a097b4bd39350c75f90265d28e36b3e96c"
+        },
+        {
+          "repository": "CakeML/cakeml",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "8215ddfa23ab8d2254cb475b10689e1d4f92a6ec"
+        },
+        {
+          "repository": "formal-land/rocq-of-rust",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "27b4353790bd4204f99d62d0b7e8c19a268ebf89"
+        },
+        {
+          "repository": "AeneasVerif/aeneas",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "7326e8ea5223171dec810a0cb669b8683c48eddc"
+        },
+        {
+          "repository": "magmide/magmide",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "c65f0a2530a6bc4689bbe86ac0d19e440b45c268"
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_SOURCE_READ_AND_ANALYZE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "global-github:lane:verification-security"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "source-observations",
+        "candidate-mechanisms",
+        "unresolved-source-list"
+      ],
+      "completion_criteria": [
+        "eight repositories discovered",
+        "read attempted for every repository",
+        "source evidence is blob-bound where successful",
+        "unresolved reads remain explicit",
+        "no source repository mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "verification-security"
+      },
+      "status": "VERIFYING"
+    },
+    {
+      "id": "global-github-wave1-10-reference-index",
+      "root_frontier_id": "GLOBAL_GITHUB_INGEST",
+      "parent_work_id": null,
+      "inputs": [
+        {
+          "repository": "sindresorhus/awesome",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": null
+        },
+        {
+          "repository": "vinta/awesome-python",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "9f9b69cc9c0c1137c6648c67ad949d0d78b13eb7"
+        },
+        {
+          "repository": "awesome-selfhosted/awesome-selfhosted",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "6f0f8caa717a637bf1a62ed362275a095b7fcd9d"
+        },
+        {
+          "repository": "rust-unofficial/awesome-rust",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "90218274a0852e5e35ee9e9a3b8ac22823ad6610"
+        },
+        {
+          "repository": "avelino/awesome-go",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "dfa56d13330856aa575642668abd4344d913e0a0"
+        },
+        {
+          "repository": "xingshaocheng/architect-awesome",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "aae2ae3fa5ed74533556609e46a8b40fe61268af"
+        },
+        {
+          "repository": "Shubhamsaboo/awesome-llm-apps",
+          "ref": "main",
+          "commit": null,
+          "path": "README.md",
+          "digest": "e8b91511659f82c52ef8d5c1ce5cd6aabea03c19"
+        },
+        {
+          "repository": "Hack-with-Github/Awesome-Hacking",
+          "ref": "master",
+          "commit": null,
+          "path": "README.md",
+          "digest": "130e88ae8067b586c96a703c29cfcb8e9d82964f"
+        }
+      ],
+      "operation": "GITHUB_PUBLIC_SOURCE_READ_AND_ANALYZE",
+      "required_capabilities": [
+        "read",
+        "analyze"
+      ],
+      "collision_keys": [
+        "global-github:lane:reference-index"
+      ],
+      "recursion_depth": 0,
+      "budget_allocation": {
+        "active": 1,
+        "backend_jobs": 8,
+        "retries": 8
+      },
+      "expected_outputs": [
+        "source-observations",
+        "candidate-mechanisms",
+        "unresolved-source-list"
+      ],
+      "completion_criteria": [
+        "eight repositories discovered",
+        "read attempted for every repository",
+        "source evidence is blob-bound where successful",
+        "unresolved reads remain explicit",
+        "no source repository mutation"
+      ],
+      "payload": {
+        "effect_ceiling": "READ_ONLY",
+        "project_runner_commit": "20984df8225796c450ba1ed1a12cb08d6a6511cd",
+        "lane": "reference-index"
+      },
+      "status": "FAILED_RETRYABLE"
+    }
+  ]
+}
