@@ -31,7 +31,7 @@ class WorkspaceAutorunScanTest(unittest.TestCase):
         self.write(".vscode/settings.json", '{"task.allowAutomaticTasks":true}')
         self.write("public/fonts/fa-solid.lkf", "obfuscated")
         rules = {finding["rule"] for finding in scan(self.root)}
-        self.assertEqual(rules, {"workspace-folder-open", "workspace-auto-allow", "disguised-asset-reference", "disguised-executable-asset"})
+        self.assertEqual(rules, {"workspace-folder-open", "workspace-auto-allow", "invalid-auto-task-setting", "disguised-asset-reference", "disguised-executable-asset"})
 
     def test_woff2_node_disguise_is_blocked_but_real_font_not(self) -> None:
         self.write("public/fonts/fa-solid-500.woff2", b"node disguised content")
@@ -65,6 +65,16 @@ class WorkspaceAutorunScanTest(unittest.TestCase):
         except (NotImplementedError, OSError):
             self.skipTest("symlinks unavailable")
         self.assertIn("unscanned-config", {finding["rule"] for finding in scan(self.root)})
+
+    def test_valid_on_is_blocked_and_valid_off_is_not(self) -> None:
+        self.write(".vscode/settings.json", '{"task.allowAutomaticTasks":"on"}')
+        self.assertIn("workspace-auto-allow", {finding["rule"] for finding in scan(self.root)})
+        self.write(".vscode/settings.json", '{"task.allowAutomaticTasks":"off"}')
+        self.assertEqual(scan(self.root), [])
+
+    def test_boolean_false_is_not_a_valid_off_setting(self) -> None:
+        self.write(".vscode/settings.json", '{"task.allowAutomaticTasks":false}')
+        self.assertIn("invalid-auto-task-setting", {finding["rule"] for finding in scan(self.root)})
 
 
 if __name__ == "__main__":
