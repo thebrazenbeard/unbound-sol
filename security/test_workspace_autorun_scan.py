@@ -51,6 +51,21 @@ class WorkspaceAutorunScanTest(unittest.TestCase):
         self.write(".vscode/tasks.json", '{"runOn":"folderOpen"}')
         self.assertEqual(main([str(self.root)]), 2)
 
+    def test_oversized_configuration_fails_closed(self) -> None:
+        self.write(".vscode/tasks.json", "x" * 1_000_001)
+        self.assertIn("unscanned-config", {finding["rule"] for finding in scan(self.root)})
+
+    def test_symlinked_workspace_file_fails_closed(self) -> None:
+        outside = self.root / "outside.txt"
+        outside.write_text("do not follow", encoding="utf-8")
+        target = self.root / ".vscode" / "tasks.json"
+        target.parent.mkdir(parents=True, exist_ok=True)
+        try:
+            target.symlink_to(outside)
+        except (NotImplementedError, OSError):
+            self.skipTest("symlinks unavailable")
+        self.assertIn("unscanned-config", {finding["rule"] for finding in scan(self.root)})
+
 
 if __name__ == "__main__":
     unittest.main()
