@@ -18,13 +18,28 @@ FOLDER_OPEN = re.compile(r'["\']runOn["\']\s*:\s*["\']folderOpen["\']', re.I)
 ALLOW_AUTOMATIC = re.compile(r'["\']task\.allowAutomaticTasks["\']\s*:\s*true\b', re.I)
 KNOWN_NODE_HOOK = re.compile(r'\bnode(?:\.exe)?\s+(?:\./)?api\.js\b', re.I)
 SUSPICIOUS_FONT_NAMES = {"fa-solid.lkf", "fa-solid-500.woff2"}
+MAX_CONFIG_BYTES = 1_000_000
 
 
-def _read_text(root: Path, relative: str) -> str | None:
-    path = root / relative
-    if path.is_symlink() or not path.is_file():
-        return None
-    return path.read_text(encoding="utf-8", errors="replace")
+def _guarded_path(root: Path, relative: str) -> tuple[Path | None, str | None]:
+    """Reject symlink traversal instead of accidentally reading outside root."""
+    path = root
+    for component in Path(relative).parts:
+        path = path / component
+        if path.is_symlink():
+            return None, "symlink"
+    return path, None
+
+
+def _read_text(root: Path, relative: str) -> tuple[str | None, str | None]:
+    path, problem = _guarded_path(root, relative)
+    if problem or path is None:
+        return None, problem
+    if not path.is_file():
+        return None, None
+    if path.stat().st_size > MAX_CONFIG_BYTES:
+        return None, "oversized"
+    return path.read_text(encoding="utf-8", errors="replace"), None
 
 
 def scan(root: Path) -> list[dict[str, str]]:
@@ -35,7 +50,9 @@ def scan(root: Path) -> list[dict[str, str]]:
         findings.append({"path": path, "rule": rule, "detail": detail})
 
     for relative in (".vscode/tasks.json", ".vscode/settings.json"):
-        content = _read_text(root, relative)
+        content, problem = _read_text(root, relative)
+        if problem:
+            flag(relative, "unscanned-config", f"Cannot inspect {problem} configuration safely")
         if content is None:
             continue
         if FOLDER_OPEN.search(content):
@@ -46,7 +63,9 @@ def scan(root: Path) -> list[dict[str, str]]:
             if name in content:
                 flag(relative, "disguised-asset-reference", f"References {name}")
 
-    package = _read_text(root, "package.json")
+    package, problem = _read_text(root, "package.json")
+    if problem:
+        flag("package.json", "unscanned-config", f"Cannot inspect {problem} package file safely")
     if package is not None:
         try:
             scripts = json.loads(package).get("scripts", {})
@@ -61,10 +80,15 @@ def scan(root: Path) -> list[dict[str, str]]:
                         flag("package.json", "known-node-hook", f"Script {name!r} invokes node api.js")
 
     fonts = root / "public" / "fonts"
-    if fonts.is_dir() and not fonts.is_symlink():
+    guarded_fonts, problem = _guarded_path(root, "public/fonts")
+    if problem:
+        flag("public/fonts", "unscanned-assets", "Font directory crosses a symlink")
+    elif guarded_fonts is not None and guarded_fonts.is_dir():
         for name in sorted(SUSPICIOUS_FONT_NAMES):
             asset = fonts / name
-            if asset.is_file() and not asset.is_symlink():
+            if asset.is_symlink():
+                flag(str(asset.relative_to(root)), "unscanned-asset", "Suspicious asset path is a symlink")
+            elif asset.is_file():
                 if asset.suffix == ".lkf":
                     flag(str(asset.relative_to(root)), "disguised-executable-asset", "Known suspicious .lkf path exists")
                 else:
