@@ -15,7 +15,9 @@ from pathlib import Path
 
 
 FOLDER_OPEN = re.compile(r'["\']runOn["\']\s*:\s*["\']folderOpen["\']', re.I)
-ALLOW_AUTOMATIC = re.compile(r'["\']task\.allowAutomaticTasks["\']\s*:\s*true\b', re.I)
+AUTO_TASK_SETTING = re.compile(
+    r'["\']task\.allowAutomaticTasks["\']\s*:\s*(true|false|["\']on["\']|["\']off["\'])', re.I
+)
 KNOWN_NODE_HOOK = re.compile(r'\bnode(?:\.exe)?\s+(?:\./)?api\.js\b', re.I)
 SUSPICIOUS_FONT_NAMES = {"fa-solid.lkf", "fa-solid-500.woff2"}
 MAX_CONFIG_BYTES = 1_000_000
@@ -57,8 +59,13 @@ def scan(root: Path) -> list[dict[str, str]]:
             continue
         if FOLDER_OPEN.search(content):
             flag(relative, "workspace-folder-open", "Automatic workspace task found")
-        if ALLOW_AUTOMATIC.search(content):
-            flag(relative, "workspace-auto-allow", "Automatic workspace tasks explicitly enabled")
+        setting = AUTO_TASK_SETTING.search(content)
+        if setting:
+            value = setting.group(1).strip('"\'').lower()
+            if value in {"true", "on"}:
+                flag(relative, "workspace-auto-allow", "Automatic workspace tasks explicitly enabled or attempted")
+            if value in {"true", "false"}:
+                flag(relative, "invalid-auto-task-setting", "VS Code expects the string 'on' or 'off', not a boolean")
         for name in SUSPICIOUS_FONT_NAMES:
             if name in content:
                 flag(relative, "disguised-asset-reference", f"References {name}")
