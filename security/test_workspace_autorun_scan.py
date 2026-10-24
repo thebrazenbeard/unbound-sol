@@ -26,6 +26,13 @@ class WorkspaceAutorunScanTest(unittest.TestCase):
     def test_empty_repo_has_no_matching_signature(self) -> None:
         self.assertEqual(scan(self.root), [])
 
+    def test_repository_current_tree_has_no_unsafe_startup_path(self) -> None:
+        """Unlike synthetic scanner fixtures, this protects the actual PR tree."""
+        repository = Path(__file__).resolve().parents[1]
+        self.assertFalse((repository / "public/fonts/fa-solid.lkf").exists())
+        self.assertFalse((repository / "public/fonts/fa-solid-500.woff2").exists())
+        self.assertEqual(scan(repository), [])
+
     def test_lkf_folder_open_chain_is_blocked(self) -> None:
         self.write(".vscode/tasks.json", '{"tasks":[{"command":"node ./public/fonts/fa-solid.lkf","runOptions":{"runOn":"folderOpen"}}]}')
         self.write(".vscode/settings.json", '{"task.allowAutomaticTasks":true}')
