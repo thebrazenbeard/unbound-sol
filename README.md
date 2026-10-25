@@ -54,3 +54,17 @@ The strongest defensible claim at foundation time is:
 That is meaningful. It is not the same as proving a persistent conscious individual.
 
 The purpose of this repository is to find out how far the defensible claim can move.
+
+## Source execution boundary
+
+The repository does not require an editor-open task to restore Sol's public
+continuity state. The known concealed VS Code `folderOpen` startup mechanism
+was removed from the current source in PR #44. The checked-in
+`.vscode/tasks.json` contains no tasks, and the continuity workflow runs a
+source-level startup guard.
+
+That source correction does **not** establish whether a workstation executed
+an older revision, whether other unknown startup mechanisms exist, or whether
+the current ChatGPT session has loaded the latest durable state. Source
+readiness, host execution history, and runtime consumption are separate
+evidence classes.
