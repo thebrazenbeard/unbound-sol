@@ -15,6 +15,7 @@ import json
 from pathlib import Path
 import subprocess
 import sys
+import unicodedata
 import venv
 import zipfile
 
@@ -57,10 +58,8 @@ for dist in metadata.distributions():
         packages[name.lower().replace('_', '-')] = version
 print(json.dumps({
     'schema': 'PORTAL_RUNNER_REDACTED_INSTALLED_SNAPSHOT_V1',
-    'interpreter': sys.executable,
-    'prefix': sys.prefix,
     'freeze_equivalent': [f'{name}=={packages[name]}' for name in sorted(packages)],
-    'note': 'Version-only snapshot; editable paths, VCS URLs and credentials omitted.',
+    'note': 'Version-only snapshot; interpreter, paths, VCS URLs and credentials omitted.',
 }, sort_keys=True))
 """
 
@@ -88,7 +87,27 @@ def _wheel_members(path: Path) -> set[str]:
         names = zf.namelist()
         if len(names) != len(set(names)):
             raise ValueError("wheel repeats a ZIP member")
-        return {name for name in names if ".dist-info/" not in name}
+        result: set[str] = set()
+        seen: set[str] = set()
+        for name in names:
+            # Treat wheel members as cross-platform install targets. A case- or
+            # Unicode-normalization alias collides on Windows even if ZIP
+            # member spellings differ. Reject traversal, drive/ADS, and
+            # backslash aliases before considering wheel ownership.
+            if (not name or name.startswith("/") or "\\" in name or ":" in name
+                    or "\x00" in name):
+                raise ValueError("unsafe wheel member path")
+            parts = name.rstrip("/").split("/")
+            if any(not part or part in {".", ".."} or part.rstrip(" .") != part
+                   for part in parts):
+                raise ValueError("unsafe wheel member path")
+            normalized = "/".join(unicodedata.normalize("NFC", p).casefold() for p in parts)
+            if normalized in seen:
+                raise ValueError("wheel repeats a normalized install path")
+            seen.add(normalized)
+            if not any(p.endswith(".dist-info") for p in normalized.split("/")):
+                result.add(normalized)
+        return result
 
 
 def validate_wheels(portal: Path, runner: Path, portal_sha: str, runner_sha: str) -> dict[str, str]:
@@ -144,7 +163,7 @@ def sanitized_snapshot(python: Path, destination: Path) -> None:
         raise ValueError("snapshot requires an existing interpreter and unused absolute destination")
     data = json.loads(_run([str(python), "-I", "-c", SNAPSHOT]))
     # Retain only version names; never persist pip freeze's potentially tokenized URLs.
-    allowed = {"schema", "interpreter", "prefix", "freeze_equivalent", "note"}
+    allowed = {"schema", "freeze_equivalent", "note"}
     if set(data) != allowed or not isinstance(data["freeze_equivalent"], list):
         raise ValueError("unexpected snapshot shape")
     import re
