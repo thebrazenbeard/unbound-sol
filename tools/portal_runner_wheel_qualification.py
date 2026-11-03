@@ -68,6 +68,10 @@ print(json.dumps({
 """
 
 
+class HostCustodyHold(ValueError):
+    """No OS-protected staging root or separate host identity was established."""
+
+
 def _safe_subprocess_env() -> dict[str, str]:
     # Inherited pip options such as PIP_TARGET/PIP_PREFIX can redirect an
     # apparently isolated venv installation to an unrelated filesystem path.
@@ -302,6 +306,10 @@ def main(argv: list[str] | None = None) -> int:
     stage.add_argument("--portal-sha256", required=True)
     stage.add_argument("--runner-sha256", required=True)
     stage.add_argument("--wheelhouse", type=Path, required=True)
+    stage.add_argument(
+        "--disposable-test-only", action="store_true",
+        help="explicit untrusted offline lab staging; same-user race risk remains",
+    )
     args = parser.parse_args(argv)
     try:
         if args.mode == "snapshot":
@@ -310,6 +318,12 @@ def main(argv: list[str] | None = None) -> int:
         elif args.mode == "verify":
             result = probe_python(args.python)
         else:
+            # A caller-owned path and a pure-Python venv builder cannot prove
+            # absence of concurrent same-UID symlink/junction replacement.
+            # Default is a pre-write HOLD until a host-owned separate-identity
+            # staging capability is supplied outside this source-only tool.
+            if not args.disposable_test_only:
+                raise HostCustodyHold("no protected staging custody capability")
             candidate = require_unused_candidate(args.candidate_dir)
             parent_identity = require_private_stage_parent(candidate)
             if not args.wheelhouse.is_dir():
@@ -331,9 +345,16 @@ def main(argv: list[str] | None = None) -> int:
                   "--prefix", str(candidate),
                   *[str(path) for path in staged_wheels]], limit_seconds=180)
             _run([str(python), "-m", "pip", "--isolated", "check"])
-            result = {**checks, **probe_python(python), "candidate": str(candidate)}
+            result = {**checks, **probe_python(python), "candidate": str(candidate),
+                      "host_custody": "NOT_ATTESTED_DISPOSABLE_TEST_ONLY"}
         print(json.dumps(result, sort_keys=True))
         return 0
+    except HostCustodyHold:
+        print(json.dumps({"status": "HOST_CUSTODY_HOLD",
+                          "reason": "NO_OS_PROTECTED_SEPARATE_IDENTITY_STAGING",
+                          "rollback": "No candidate was created. Use read-only verify, or a "
+                          "separately approved disposable test-only environment."}))
+        return 2
     except (ValueError, OSError, RuntimeError, subprocess.TimeoutExpired,
             json.JSONDecodeError, zipfile.BadZipFile) as exc:
         print(json.dumps({"status": "HOLD", "reason": type(exc).__name__,
