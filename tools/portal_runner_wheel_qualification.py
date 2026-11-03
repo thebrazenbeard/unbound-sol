@@ -89,6 +89,8 @@ def _wheel_members(path: Path) -> set[str]:
             raise ValueError("wheel repeats a ZIP member")
         result: set[str] = set()
         seen: set[str] = set()
+        reserved = {"con", "prn", "aux", "nul", *(f"com{i}" for i in range(1, 10)),
+                    *(f"lpt{i}" for i in range(1, 10))}
         for name in names:
             # Treat wheel members as cross-platform install targets. A case- or
             # Unicode-normalization alias collides on Windows even if ZIP
@@ -102,6 +104,14 @@ def _wheel_members(path: Path) -> set[str]:
                    for part in parts):
                 raise ValueError("unsafe wheel member path")
             normalized = "/".join(unicodedata.normalize("NFC", p).casefold() for p in parts)
+            segments = normalized.split("/")
+            if any(p.split(".")[0] in reserved for p in segments):
+                raise ValueError("unsafe Windows-reserved wheel member path")
+            # PEP 427 .data/{purelib,platlib,...} members are relocated by pip.
+            # Refuse them until an independently tested target-path resolver is
+            # available; otherwise comparing archive names can miss collisions.
+            if any(p.endswith(".data") for p in segments):
+                raise ValueError("relocated wheel .data entries require separate qualification")
             if normalized in seen:
                 raise ValueError("wheel repeats a normalized install path")
             seen.add(normalized)
@@ -166,6 +176,9 @@ def sanitized_snapshot(python: Path, destination: Path) -> None:
     allowed = {"schema", "freeze_equivalent", "note"}
     if set(data) != allowed or not isinstance(data["freeze_equivalent"], list):
         raise ValueError("unexpected snapshot shape")
+    if (data["schema"] != "PORTAL_RUNNER_REDACTED_INSTALLED_SNAPSHOT_V1"
+            or data["note"] != "Version-only snapshot; interpreter, paths, VCS URLs and credentials omitted."):
+        raise ValueError("unsafe snapshot metadata")
     import re
     if any(not isinstance(item, str) or
            re.fullmatch(r"[A-Za-z0-9_.-]{1,120}==[A-Za-z0-9_.+!~-]{1,120}", item) is None
