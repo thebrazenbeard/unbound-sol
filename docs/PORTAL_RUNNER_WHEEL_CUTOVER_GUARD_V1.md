@@ -23,7 +23,13 @@ authenticate Executor, or grant a capability.
    --portal-wheel <exact-portal.whl> --runner-wheel <exact-runner.whl>
    --portal-sha256 <64-hex> --runner-sha256 <64-hex>
    --wheelhouse <local-offline-wheelhouse>`. Staging creates a **new virtual
-   environment only**. The command never touches the existing Python install.
+   environment only**. Place the candidate under a newly created, user-owned
+   **private staging parent** (mode `0700` on POSIX; Windows ACL custody must
+   be independently checked by the host owner). The guard rejects an open or
+   changed parent; it also clears inherited pip/Python options, uses isolated
+   offline pip, refuses direct-reference dependencies, and installs from
+   candidate-private copies of checksum-checked input wheels. The command
+   never intentionally touches the existing Python install.
 5. Run `verify --python <candidate-venv-python>` from a neutral directory.
    The guard requires both modules to resolve under that environment, the
    exact package versions, installed Runner schema resources, and both CLI
@@ -40,3 +46,11 @@ An offline candidate PASS cannot qualify live Executor delivery, host identity,
 worker authorization, model training, or a production service deployment.
 The Project Runner Executor-discovery producer also has an independent source
 ownership/release gate. Do not use a hand-written test mapping as its receipt.
+
+**HOST_CUSTODY_HOLD:** This helper is not an OS sandbox. A hostile process
+already running as the staging user can race pathname checks, replace candidate
+files, or execute arbitrary wheel installation code with the same permissions.
+Do not stage with privileged credentials, under a shared writable parent, or
+while path/ACL custody is unqualified. The supplied dependency wheelhouse is
+not independently hash-attested as a released supply-chain closure. Source-only
+and isolated-candidate success never authorize a global launcher cutover.
