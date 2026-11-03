@@ -53,6 +53,25 @@ class PortalRunnerQualificationTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "mismatch"):
             qual.validate_wheels(portal, runner, "0" * 64, runner_hash)
 
+    def test_cross_platform_casefold_alias_is_a_collision(self) -> None:
+        portal = self.root / "portal.whl"
+        runner = self.root / "runner.whl"
+        portal_hash = wheel(portal, "Runner/Schema.py")
+        runner_hash = wheel(runner, "runner/schema.py")
+        with self.assertRaisesRegex(ValueError, "overwrite"):
+            qual.validate_wheels(portal, runner, portal_hash, runner_hash)
+
+    def test_wheel_rejects_traversal_and_windows_path_aliases(self) -> None:
+        portal = self.root / "portal.whl"
+        runner = self.root / "runner.whl"
+        runner_hash = wheel(runner, "runner/schema.py")
+        for unsafe in ("../escape.py", "runner/../escape.py", "runner\\schema.py",
+                       "/absolute.py", "C:relative.py", "runner/name. "):
+            with self.subTest(member=unsafe):
+                portal_hash = wheel(portal, unsafe)
+                with self.assertRaisesRegex(ValueError, "unsafe"):
+                    qual.validate_wheels(portal, runner, portal_hash, runner_hash)
+
     def test_duplicate_member_in_wheel_is_rejected(self) -> None:
         portal = self.root / "portal.whl"
         runner = self.root / "runner.whl"
@@ -124,8 +143,6 @@ class PortalRunnerQualificationTests(unittest.TestCase):
         output = self.root / "private-snapshot.json"
         safe = {
             "schema": "PORTAL_RUNNER_REDACTED_INSTALLED_SNAPSHOT_V1",
-            "interpreter": "python",
-            "prefix": "prefix",
             "freeze_equivalent": ["portal-coordinator==0.2.0", "project-runner==0.1.0"],
             "note": "version only",
         }
@@ -133,6 +150,8 @@ class PortalRunnerQualificationTests(unittest.TestCase):
             qual.sanitized_snapshot(python, output)
         self.assertEqual(json.loads(output.read_text())["freeze_equivalent"],
                          safe["freeze_equivalent"])
+        self.assertNotIn("interpreter", output.read_text())
+        self.assertNotIn("prefix", output.read_text())
         with self.assertRaisesRegex(ValueError, "unused"):
             qual.sanitized_snapshot(python, output)
         bad = dict(safe)
