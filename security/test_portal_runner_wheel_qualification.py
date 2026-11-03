@@ -220,7 +220,7 @@ class PortalRunnerQualificationTests(unittest.TestCase):
     def test_stage_never_reuses_existing_target_or_wheelhouse(self) -> None:
         with patch.object(qual, "venv") as virtualenv:
             result = qual.main([
-                "stage", "--candidate-dir", str(self.root),
+                "stage", "--disposable-test-only", "--candidate-dir", str(self.root),
                 "--portal-wheel", str(self.root / "missing1.whl"),
                 "--runner-wheel", str(self.root / "missing2.whl"),
                 "--portal-sha256", "0" * 64,
@@ -244,7 +244,7 @@ class PortalRunnerQualificationTests(unittest.TestCase):
                 candidate = self.root / f"candidate-{inherited_key.lower()}"
                 outside = self.root / f"outside-{inherited_key.lower()}"
                 options = [
-                    "stage", "--candidate-dir", str(candidate),
+                    "stage", "--disposable-test-only", "--candidate-dir", str(candidate),
                     "--portal-wheel", str(portal), "--runner-wheel", str(runner),
                     "--portal-sha256", portal_sha, "--runner-sha256", runner_sha,
                     "--wheelhouse", str(wheels),
@@ -279,7 +279,7 @@ class PortalRunnerQualificationTests(unittest.TestCase):
         with patch.object(qual.venv.EnvBuilder, "create", new=swap_after_private_copy):
             with redirect_stdout(io.StringIO()):
                 status = qual.main([
-                    "stage", "--candidate-dir", str(candidate),
+                    "stage", "--disposable-test-only", "--candidate-dir", str(candidate),
                     "--portal-wheel", str(portal), "--runner-wheel", str(runner),
                     "--portal-sha256", portal_sha, "--runner-sha256", runner_sha,
                     "--wheelhouse", str(wheels),
@@ -306,7 +306,7 @@ class PortalRunnerQualificationTests(unittest.TestCase):
                 candidate = self.root / f"candidate-{kind}"
                 with redirect_stdout(io.StringIO()):
                     status = qual.main([
-                        "stage", "--candidate-dir", str(candidate),
+                        "stage", "--disposable-test-only", "--candidate-dir", str(candidate),
                         "--portal-wheel", str(portal), "--runner-wheel", str(runner),
                         "--portal-sha256", portal_sha, "--runner-sha256", runner_sha,
                         "--wheelhouse", str(wheels),
@@ -329,7 +329,7 @@ class PortalRunnerQualificationTests(unittest.TestCase):
         rh = installable_wheel(runner, "project-runner", "0.1.0", "runner")
         with redirect_stdout(io.StringIO()):
             status = qual.main([
-                "stage", "--candidate-dir", str(candidate),
+                "stage", "--disposable-test-only", "--candidate-dir", str(candidate),
                 "--portal-wheel", str(portal), "--runner-wheel", str(runner),
                 "--portal-sha256", ph, "--runner-sha256", rh,
                 "--wheelhouse", str(wheels),
@@ -366,7 +366,7 @@ class PortalRunnerQualificationTests(unittest.TestCase):
         with patch.object(qual, "validate_wheels", side_effect=swap_parent):
             with redirect_stdout(io.StringIO()):
                 status = qual.main([
-                    "stage", "--candidate-dir", str(candidate),
+                    "stage", "--disposable-test-only", "--candidate-dir", str(candidate),
                     "--portal-wheel", str(portal), "--runner-wheel", str(runner),
                     "--portal-sha256", ph, "--runner-sha256", rh,
                     "--wheelhouse", str(wheels),
@@ -374,6 +374,59 @@ class PortalRunnerQualificationTests(unittest.TestCase):
         self.assertEqual(status, 2)
         self.assertFalse((outside / "candidate").exists())
         self.assertFalse((moved_parent / "candidate").exists())
+
+    def test_default_stage_holds_before_any_path_based_writes(self) -> None:
+        wheels = self.root / "wheelhouse"
+        wheels.mkdir()
+        portal = wheels / "portal_coordinator-0.2.0-py3-none-any.whl"
+        runner = wheels / "project_runner-0.1.0-py3-none-any.whl"
+        ph = installable_wheel(portal, "portal-coordinator", "0.2.0", "portal")
+        rh = installable_wheel(runner, "project-runner", "0.1.0", "runner")
+        candidate = self.root / "candidate"
+        with patch.object(qual.venv.EnvBuilder, "create") as create:
+            with redirect_stdout(io.StringIO()) as output:
+                result = qual.main([
+                    "stage", "--candidate-dir", str(candidate),
+                    "--portal-wheel", str(portal), "--runner-wheel", str(runner),
+                    "--portal-sha256", ph, "--runner-sha256", rh,
+                    "--wheelhouse", str(wheels),
+                ])
+        self.assertEqual(result, 2)
+        self.assertEqual(json.loads(output.getvalue())["status"], "HOST_CUSTODY_HOLD")
+        create.assert_not_called()
+        self.assertFalse(candidate.exists())
+
+    @unittest.skipIf(os.name == "nt", "POSIX symlink adversary reproduction")
+    def test_default_stage_blocks_actual_parent_swap_before_create(self) -> None:
+        parent = self.root / "private-parent"
+        parent.mkdir(mode=0o700)
+        outside = self.root / "outside"
+        outside.mkdir(mode=0o700)
+        candidate = parent / "candidate"
+        wheels = self.root / "wheelhouse"
+        wheels.mkdir()
+        portal = wheels / "portal_coordinator-0.2.0-py3-none-any.whl"
+        runner = wheels / "project_runner-0.1.0-py3-none-any.whl"
+        ph = installable_wheel(portal, "portal-coordinator", "0.2.0", "portal")
+        rh = installable_wheel(runner, "project-runner", "0.1.0", "runner")
+        actual_create = qual.venv.EnvBuilder.create
+
+        def attack_at_create(builder: object, destination: Path) -> None:
+            parent.rename(self.root / "moved-parent")
+            parent.symlink_to(outside, target_is_directory=True)
+            actual_create(builder, destination)
+
+        with patch.object(qual.venv.EnvBuilder, "create", new=attack_at_create):
+            with redirect_stdout(io.StringIO()) as output:
+                status = qual.main([
+                    "stage", "--candidate-dir", str(candidate),
+                    "--portal-wheel", str(portal), "--runner-wheel", str(runner),
+                    "--portal-sha256", ph, "--runner-sha256", rh,
+                    "--wheelhouse", str(wheels),
+                ])
+        self.assertEqual(status, 2)
+        self.assertEqual(json.loads(output.getvalue())["status"], "HOST_CUSTODY_HOLD")
+        self.assertFalse((outside / "candidate").exists())
 
 
 if __name__ == "__main__":
