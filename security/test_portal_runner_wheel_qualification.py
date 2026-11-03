@@ -72,6 +72,26 @@ class PortalRunnerQualificationTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, "unsafe"):
                     qual.validate_wheels(portal, runner, portal_hash, runner_hash)
 
+    def test_wheel_rejects_relocated_data_member_instead_of_missing_collision(self) -> None:
+        portal = self.root / "portal.whl"
+        runner = self.root / "runner.whl"
+        # A wheel's .data/purelib is installed into site-packages/; a raw ZIP
+        # member comparison would miss the collision with runner/schema.py.
+        portal_hash = wheel(portal, "portal_coordinator-0.2.0.data/purelib/runner/schema.py")
+        runner_hash = wheel(runner, "runner/schema.py")
+        with self.assertRaisesRegex(ValueError, "relocated"):
+            qual.validate_wheels(portal, runner, portal_hash, runner_hash)
+
+    def test_wheel_rejects_windows_reserved_device_basename(self) -> None:
+        portal = self.root / "portal.whl"
+        runner = self.root / "runner.whl"
+        runner_hash = wheel(runner, "runner/schema.py")
+        for name in ("portal/CON.py", "portal/lpt1.txt", "NUL", "runner/COM9.bin"):
+            with self.subTest(name=name):
+                portal_hash = wheel(portal, name)
+                with self.assertRaisesRegex(ValueError, "reserved"):
+                    qual.validate_wheels(portal, runner, portal_hash, runner_hash)
+
     def test_duplicate_member_in_wheel_is_rejected(self) -> None:
         portal = self.root / "portal.whl"
         runner = self.root / "runner.whl"
@@ -144,14 +164,14 @@ class PortalRunnerQualificationTests(unittest.TestCase):
         safe = {
             "schema": "PORTAL_RUNNER_REDACTED_INSTALLED_SNAPSHOT_V1",
             "freeze_equivalent": ["portal-coordinator==0.2.0", "project-runner==0.1.0"],
-            "note": "version only",
+            "note": "Version-only snapshot; interpreter, paths, VCS URLs and credentials omitted.",
         }
         with patch.object(qual, "_run", return_value=json.dumps(safe)):
             qual.sanitized_snapshot(python, output)
         self.assertEqual(json.loads(output.read_text())["freeze_equivalent"],
                          safe["freeze_equivalent"])
-        self.assertNotIn("interpreter", output.read_text())
-        self.assertNotIn("prefix", output.read_text())
+        self.assertNotIn("interpreter", json.loads(output.read_text()))
+        self.assertNotIn("prefix", json.loads(output.read_text()))
         with self.assertRaisesRegex(ValueError, "unused"):
             qual.sanitized_snapshot(python, output)
         bad = dict(safe)
@@ -161,6 +181,24 @@ class PortalRunnerQualificationTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "unsafe"):
                 qual.sanitized_snapshot(python, fresh)
         self.assertFalse(fresh.exists())
+
+    def test_snapshot_rejects_spoofed_schema_or_note_content(self) -> None:
+        python = self.root / "python.exe"
+        python.touch()
+        valid = {
+            "schema": "PORTAL_RUNNER_REDACTED_INSTALLED_SNAPSHOT_V1",
+            "freeze_equivalent": ["project-runner==0.1.0"],
+            "note": "Version-only snapshot; interpreter, paths, VCS URLs and credentials omitted.",
+        }
+        for field, content in (("schema", "source=/private/location"),
+                               ("note", "interpreter=/private/location")):
+            with self.subTest(field=field):
+                data = dict(valid, **{field: content})
+                output = self.root / f"spoof-{field}.json"
+                with patch.object(qual, "_run", return_value=json.dumps(data)):
+                    with self.assertRaisesRegex(ValueError, "unsafe"):
+                        qual.sanitized_snapshot(python, output)
+                self.assertFalse(output.exists())
 
     def test_stage_never_reuses_existing_target_or_wheelhouse(self) -> None:
         with patch.object(qual, "venv") as virtualenv:
