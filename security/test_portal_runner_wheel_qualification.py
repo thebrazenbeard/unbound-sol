@@ -237,27 +237,28 @@ class PortalRunnerQualificationTests(unittest.TestCase):
         runner = wheels / "project_runner-0.1.0-py3-none-any.whl"
         portal_sha = installable_wheel(portal, "portal-coordinator", "0.2.0", "portal")
         runner_sha = installable_wheel(runner, "project-runner", "0.1.0", "runner")
-        candidate = self.root / "candidate"
-        outside = self.root / "outside-target"
         # Before the fix, pip inherited PIP_TARGET and wrote both packages
         # outside the new candidate before returning HOLD on the CLI probe.
-        options = [
-            "stage", "--candidate-dir", str(candidate),
-            "--portal-wheel", str(portal), "--runner-wheel", str(runner),
-            "--portal-sha256", portal_sha, "--runner-sha256", runner_sha,
-            "--wheelhouse", str(wheels),
-        ]
-        with patch.dict(os.environ, {"PIP_TARGET": str(outside),
-                                         "PIP_PREFIX": str(outside)}, clear=False):
-            with redirect_stdout(io.StringIO()):
-                status = qual.main(options)
-        # Fake test wheels have no actual CLI entrypoints or packaged schema,
-        # so verify must HOLD after a successful offline candidate install.
-        self.assertEqual(status, 2)
-        self.assertFalse(outside.exists(), "pip escaped the isolated candidate")
-        self.assertTrue(candidate.exists())
-        self.assertTrue(any(p.parent.name == "portal" for p in candidate.rglob("__init__.py")),
-                        "synthetic portal package did not reach candidate")
+        for inherited_key in ("PIP_TARGET", "PIP_PREFIX"):
+            with self.subTest(inherited_key=inherited_key):
+                candidate = self.root / f"candidate-{inherited_key.lower()}"
+                outside = self.root / f"outside-{inherited_key.lower()}"
+                options = [
+                    "stage", "--candidate-dir", str(candidate),
+                    "--portal-wheel", str(portal), "--runner-wheel", str(runner),
+                    "--portal-sha256", portal_sha, "--runner-sha256", runner_sha,
+                    "--wheelhouse", str(wheels),
+                ]
+                with patch.dict(os.environ, {inherited_key: str(outside)}, clear=False):
+                    with redirect_stdout(io.StringIO()):
+                        status = qual.main(options)
+                # Fake test wheels have no CLI entrypoints or schema, so verify
+                # HOLD follows the successful isolated candidate installation.
+                self.assertEqual(status, 2)
+                self.assertFalse(outside.exists(), "pip escaped the isolated candidate")
+                self.assertTrue(candidate.exists())
+                self.assertTrue(any(p.parent.name == "portal" for p in candidate.rglob("__init__.py")),
+                                "synthetic portal package did not reach candidate")
 
     def test_stage_installs_pinned_copy_if_original_wheel_swaps_before_pip(self) -> None:
         wheels = self.root / "wheelhouse"
