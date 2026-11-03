@@ -19,7 +19,13 @@ authenticate Executor, or grant a capability.
    lockfile.
 3. Build/download the exact approved wheels into an operator-owned directory,
    verify their SHA-256, and prepare an offline dependency wheelhouse.
-4. Run `stage --candidate-dir <unused-absolute-directory>
+4. By default, `stage` returns `HOST_CUSTODY_HOLD` **before any filesystem
+   writes** because a normal Python process cannot prove an adversarial
+   same-user process will not replace the candidate directory or its parent
+   during `venv.EnvBuilder.create()`. No release or host-qualification flag
+   exists in this source-only tool. For an explicitly disposable laboratory
+   test with no asserted protection against that adversary, run
+   `stage --disposable-test-only --candidate-dir <unused-absolute-directory>
    --portal-wheel <exact-portal.whl> --runner-wheel <exact-runner.whl>
    --portal-sha256 <64-hex> --runner-sha256 <64-hex>
    --wheelhouse <local-offline-wheelhouse>`. Staging creates a **new virtual
@@ -29,7 +35,8 @@ authenticate Executor, or grant a capability.
    changed parent; it also clears inherited pip/Python options, uses isolated
    offline pip, refuses direct-reference dependencies, and installs from
    candidate-private copies of checksum-checked input wheels. The command
-   never intentionally touches the existing Python install.
+   never intentionally touches the existing Python install. Even a successful
+   disposable run returns `host_custody: NOT_ATTESTED_DISPOSABLE_TEST_ONLY`.
 5. Run `verify --python <candidate-venv-python>` from a neutral directory.
    The guard requires both modules to resolve under that environment, the
    exact package versions, installed Runner schema resources, and both CLI
@@ -50,7 +57,10 @@ ownership/release gate. Do not use a hand-written test mapping as its receipt.
 **HOST_CUSTODY_HOLD:** This helper is not an OS sandbox. A hostile process
 already running as the staging user can race pathname checks, replace candidate
 files, or execute arbitrary wheel installation code with the same permissions.
-Do not stage with privileged credentials, under a shared writable parent, or
-while path/ACL custody is unqualified. The supplied dependency wheelhouse is
+The default staging mode is disabled until a separate, host-enforced protected
+staging authority exists. `--disposable-test-only` is an explicit lab bypass,
+**not an assertion that the race is fixed or that host custody passed**. Do
+not use the bypass with privileged credentials, under a shared writable parent,
+or while path/ACL custody is unqualified. The supplied dependency wheelhouse is
 not independently hash-attested as a released supply-chain closure. Source-only
 and isolated-candidate success never authorize a global launcher cutover.
