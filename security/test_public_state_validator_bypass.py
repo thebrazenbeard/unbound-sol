@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import json
 import importlib.util
+import os
 import pathlib
 import shutil
 import subprocess
@@ -55,9 +56,10 @@ class PublicStateValidatorBypassTests(unittest.TestCase):
         subprocess.run(["git", "-C", str(self.root), *arguments],
                        check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
-    def check(self) -> subprocess.CompletedProcess[str]:
+    def check(self, timeout: float = 5.0) -> subprocess.CompletedProcess[str]:
         return subprocess.run([sys.executable, str(self.root / "tools/validate_public_state.py")],
-                              cwd=self.root, text=True, capture_output=True, check=False)
+                              cwd=self.root, text=True, capture_output=True,
+                              check=False, timeout=timeout)
 
     def tracked_payload(self, name: str, payload: bytes) -> None:
         path = self.root / name
@@ -102,6 +104,31 @@ class PublicStateValidatorBypassTests(unittest.TestCase):
         result = self.check()
         self.assertEqual(result.returncode, 0, result.stderr + result.stdout)
 
+    def test_index_staged_secret_overwritten_by_harmless_worktree_is_rejected(self) -> None:
+        name = "synthetic-index.env"
+        self.tracked_payload(name, self.fake_token())
+        (self.root / name).write_text("harmless unstaged replacement\n", encoding="utf-8")
+        result = self.check()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("possible secret-like material", result.stderr + result.stdout)
+
+    def test_benign_index_with_unstaged_worktree_secret_is_rejected(self) -> None:
+        name = "synthetic-worktree.env"
+        self.tracked_payload(name, b"harmless public fixture")
+        (self.root / name).write_bytes(self.fake_token())
+        result = self.check()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("possible secret-like material", result.stderr + result.stdout)
+
+    def test_normalized_git_blob_and_crlf_worktree_are_both_inspected(self) -> None:
+        (self.root / ".gitattributes").write_text("*.txt text eol=lf\n", encoding="utf-8")
+        self.git("add", ".gitattributes")
+        self.tracked_payload("normalized.txt", b"harmless public fixture\r\n")
+        staged = subprocess.check_output(["git", "-C", str(self.root), "show", ":normalized.txt"])
+        self.assertNotEqual(staged, (self.root / "normalized.txt").read_bytes())
+        result = self.check()
+        self.assertEqual(result.returncode, 0, result.stderr + result.stdout)
+
     def test_known_binary_asset_without_secrets_is_supported(self) -> None:
         self.tracked_payload("public/fonts/test.woff", b"wOFF" + b"\0" * 24 + b"\xff\xfe")
         result = self.check()
@@ -120,10 +147,16 @@ class PublicStateValidatorBypassTests(unittest.TestCase):
         self.assertIn("possible secret-like material", result.stderr + result.stdout)
 
     def test_unknown_nul_bearing_payload_fails_closed(self) -> None:
-        self.tracked_payload("synthetic.dat", b"\0\xff\0")
+        self.tracked_payload("synthetic.dat", b"\0public\0")
         result = self.check()
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("unclassified NUL-bearing", result.stderr + result.stdout)
+
+    def test_invalid_utf8_without_nul_fails_closed(self) -> None:
+        self.tracked_payload("synthetic.txt", b"public\xffsource")
+        result = self.check()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("invalid UTF-8", result.stderr + result.stdout)
 
     def test_missing_tracked_file_fails_closed(self) -> None:
         self.tracked_payload("synthetic.txt", b"public fixture")
@@ -132,6 +165,16 @@ class PublicStateValidatorBypassTests(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("tracked file is unreadable", result.stderr + result.stdout)
 
+    @unittest.skipUnless(hasattr(os, "mkfifo"), "POSIX FIFO unavailable")
+    def test_tracked_regular_file_replaced_with_fifo_fails_without_blocking(self) -> None:
+        self.tracked_payload("synthetic-fifo", b"public fixture")
+        path = self.root / "synthetic-fifo"
+        path.unlink()
+        os.mkfifo(path)
+        result = self.check(timeout=1.5)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("non-regular", result.stderr + result.stdout)
+
     def test_permission_denied_tracked_file_fails_closed(self) -> None:
         self.tracked_payload("synthetic.txt", b"public fixture")
         module_path = self.root / "tools/validate_public_state.py"
@@ -139,14 +182,14 @@ class PublicStateValidatorBypassTests(unittest.TestCase):
         self.assertIsNotNone(spec)
         self.assertIsNotNone(spec.loader)
         module = importlib.util.module_from_spec(spec)
-        open_original = pathlib.Path.open
+        open_original = os.open
 
-        def deny_one(path: pathlib.Path, *args: object, **kwargs: object):
-            if path == self.root / "synthetic.txt":
+        def deny_one(path: object, *args: object, **kwargs: object):
+            if pathlib.Path(path) == self.root / "synthetic.txt":
                 raise PermissionError("synthetic permission denial")
             return open_original(path, *args, **kwargs)
 
-        with mock.patch.object(pathlib.Path, "open", deny_one):
+        with mock.patch.object(os, "open", deny_one):
             with self.assertRaisesRegex(SystemExit, "tracked file is unreadable"):
                 spec.loader.exec_module(module)
 

@@ -2,9 +2,11 @@
 from __future__ import annotations
 
 import json
+import hashlib
 import os
 import pathlib
 import re
+import stat
 import subprocess
 import sys
 
@@ -41,8 +43,8 @@ def fail(message: str) -> None:
     raise SystemExit(message)
 
 
-def tracked_files(root: pathlib.Path) -> list[pathlib.Path]:
-    """Inspect exactly Git's staged/tracked paths, never an untracked private file."""
+def tracked_files(root: pathlib.Path) -> list[tuple[pathlib.Path, str]]:
+    """Bind each tracked path to its exact Git index blob, not just its name."""
     try:
         top = subprocess.check_output(
             ["git", "-C", str(root), "rev-parse", "--show-toplevel"],
@@ -50,48 +52,114 @@ def tracked_files(root: pathlib.Path) -> list[pathlib.Path]:
         )
         if pathlib.Path(os.fsdecode(top).strip()).resolve() != root.resolve():
             fail("public validation must run at the checkout root")
-        paths = subprocess.check_output(
-            ["git", "-C", str(root), "ls-files", "--cached", "-z"],
+        entries = subprocess.check_output(
+            ["git", "-C", str(root), "ls-files", "--cached", "--stage", "-z"],
             stderr=subprocess.DEVNULL,
         ).split(b"\0")
     except (OSError, subprocess.CalledProcessError):
         fail("unable to enumerate tracked repository files")
-    files = [pathlib.Path(os.fsdecode(raw)) for raw in paths if raw]
+    files: list[tuple[pathlib.Path, str]] = []
+    for entry in entries:
+        if not entry:
+            continue
+        try:
+            header, name = entry.split(b"\t", 1)
+            mode, object_id, stage = header.split(b" ")
+        except ValueError:
+            fail("malformed Git index entry")
+        if stage != b"0":
+            fail("unmerged Git index stage")
+        if mode == b"120000":
+            fail("tracked symlink entry in Git index")
+        if mode not in (b"100644", b"100755"):
+            fail("non-regular Git index entry")
+        if not re.fullmatch(rb"[0-9a-f]{40}", object_id):
+            fail("malformed Git index object identity")
+        files.append((pathlib.Path(os.fsdecode(name)), object_id.decode("ascii")))
     if not files:
         fail("repository has no tracked files")
-    if any(path.is_absolute() or ".." in path.parts for path in files):
+    if any(path.is_absolute() or ".." in path.parts for path, _ in files):
         fail("unsafe tracked file path")
     return files
 
 
+def indexed_blob(root: pathlib.Path, rel: pathlib.Path, object_id: str) -> bytes:
+    """Read bounded Git index content, rejecting replacement-object spoofing."""
+    try:
+        size = int(subprocess.check_output(
+            ["git", "-C", str(root), "cat-file", "-s", object_id],
+            stderr=subprocess.DEVNULL,
+        ))
+        if size < 0 or size > MAX_INSPECTED_BYTES:
+            fail(f"indexed file exceeds inspection size: {rel}")
+        data = subprocess.check_output(
+            ["git", "-C", str(root), "cat-file", "blob", object_id],
+            stderr=subprocess.DEVNULL,
+        )
+    except (OSError, subprocess.CalledProcessError, ValueError):
+        fail(f"Git index blob unavailable: {rel}")
+    digest = hashlib.sha1(b"blob " + str(len(data)).encode("ascii") + b"\0" + data).hexdigest()
+    if len(data) != size or digest != object_id:
+        fail(f"Git index blob identity mismatch: {rel}")
+    return data
+
+
+def inspect_contents(rel: pathlib.Path, data: bytes) -> None:
+    if len(data) > MAX_INSPECTED_BYTES:
+        fail(f"tracked file exceeds inspection size: {rel}")
+    # Even binary assets are checked for embedded ASCII/UTF-16 secrets.
+    # Unknown NUL-bearing files fail closed rather than being skipped.
+    if rel.suffix.lower() not in KNOWN_BINARY_SUFFIXES:
+        try:
+            content = data.decode("utf-8", errors="strict")
+        except UnicodeDecodeError:
+            fail(f"invalid UTF-8 in non-font tracked file: {rel}")
+    else:
+        content = data.decode("utf-8", errors="replace")
+    candidates = [content]
+    if b"\0" in data:
+        candidates.extend((
+            data.decode("utf-16-le", errors="replace"),
+            data.decode("utf-16-be", errors="replace"),
+        ))
+    for content in candidates:
+        for pattern in SECRET_PATTERNS:
+            if pattern.search(content):
+                fail(f"possible secret-like material in {rel}")
+    if b"\0" in data and rel.suffix.lower() not in KNOWN_BINARY_SUFFIXES:
+        fail(f"unclassified NUL-bearing tracked file: {rel}")
+
+
 def scan_tracked_files(root: pathlib.Path) -> None:
-    for rel in tracked_files(root):
+    pinned_entries = tracked_files(root)
+    for rel, object_id in pinned_entries:
+        inspect_contents(rel, indexed_blob(root, rel, object_id))
         path = root
         for part in rel.parts:
             path = path / part
-            if path.is_symlink():
+            try:
+                info = path.lstat()
+            except OSError:
+                fail(f"tracked file is unreadable: {rel}")
+            reparse = getattr(info, "st_file_attributes", 0) & getattr(stat, "FILE_ATTRIBUTE_REPARSE_POINT", 0)
+            if stat.S_ISLNK(info.st_mode) or reparse:
                 fail(f"tracked symlink or redirected path: {rel}")
+        if not stat.S_ISREG(info.st_mode):
+            fail(f"tracked file is non-regular: {rel}")
         try:
-            with path.open("rb") as stream:
+            # A replaced FIFO would block plain open() before any file check.
+            # Recheck the opened descriptor to close the normal lstat/open race.
+            flags = os.O_RDONLY | getattr(os, "O_BINARY", 0) | getattr(os, "O_NONBLOCK", 0) | getattr(os, "O_NOFOLLOW", 0)
+            descriptor = os.open(path, flags)
+            with os.fdopen(descriptor, "rb") as stream:
+                if not stat.S_ISREG(os.fstat(stream.fileno()).st_mode):
+                    fail(f"tracked file is non-regular: {rel}")
                 data = stream.read(MAX_INSPECTED_BYTES + 1)
         except OSError:
             fail(f"tracked file is unreadable: {rel}")
-        if len(data) > MAX_INSPECTED_BYTES:
-            fail(f"tracked file exceeds inspection size: {rel}")
-        # Even binary assets are checked for embedded ASCII/UTF-16 secrets.
-        # Unknown NUL-bearing files fail closed rather than being skipped.
-        candidates = [data.decode("utf-8", errors="replace")]
-        if b"\0" in data:
-            candidates.extend((
-                data.decode("utf-16-le", errors="replace"),
-                data.decode("utf-16-be", errors="replace"),
-            ))
-        for content in candidates:
-            for pattern in SECRET_PATTERNS:
-                if pattern.search(content):
-                    fail(f"possible secret-like material in {rel}")
-        if b"\0" in data and rel.suffix.lower() not in KNOWN_BINARY_SUFFIXES:
-            fail(f"unclassified NUL-bearing tracked file: {rel}")
+        inspect_contents(rel, data)
+    if pinned_entries != tracked_files(root):
+        fail("Git index changed during public validation")
 
 
 for rel in REQUIRED:
