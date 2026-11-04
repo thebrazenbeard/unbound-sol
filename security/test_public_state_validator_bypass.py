@@ -220,17 +220,20 @@ class PublicStateValidatorBypassTests(unittest.TestCase):
             def swap_parent(path: object, *args: object, **kwargs: object):
                 if pathlib.Path(path) == target and not swapped:
                     target.parent.rename(self.root / "nested.original")
-                    try:
-                        target.parent.symlink_to(outside, target_is_directory=True)
-                    except (OSError, NotImplementedError):
-                        if os.name != "nt":
-                            self.skipTest("symlink creation unavailable")
+                    if os.name == "nt":
+                        # Exercise an NTFS junction specifically. A developer-
+                        # mode symlink succeeding would otherwise hide this case.
                         junction = subprocess.run(
                             ["cmd", "/d", "/c", "mklink", "/J", str(target.parent), str(outside)],
                             capture_output=True, check=False,
                         )
                         if junction.returncode:
                             self.skipTest("Windows junction creation unavailable")
+                    else:
+                        try:
+                            target.parent.symlink_to(outside, target_is_directory=True)
+                        except (OSError, NotImplementedError):
+                            self.skipTest("symlink creation unavailable")
                     swapped.append(True)
                 return original_open(path, *args, **kwargs)
 
