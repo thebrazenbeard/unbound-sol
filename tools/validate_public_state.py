@@ -135,6 +135,7 @@ def scan_tracked_files(root: pathlib.Path) -> None:
     for rel, object_id in pinned_entries:
         inspect_contents(rel, indexed_blob(root, rel, object_id))
         path = root
+        preflight_components = []
         for part in rel.parts:
             path = path / part
             try:
@@ -144,6 +145,7 @@ def scan_tracked_files(root: pathlib.Path) -> None:
             reparse = getattr(info, "st_file_attributes", 0) & getattr(stat, "FILE_ATTRIBUTE_REPARSE_POINT", 0)
             if stat.S_ISLNK(info.st_mode) or reparse:
                 fail(f"tracked symlink or redirected path: {rel}")
+            preflight_components.append((path, info))
         if not stat.S_ISREG(info.st_mode):
             fail(f"tracked file is non-regular: {rel}")
         try:
@@ -152,8 +154,24 @@ def scan_tracked_files(root: pathlib.Path) -> None:
             flags = os.O_RDONLY | getattr(os, "O_BINARY", 0) | getattr(os, "O_NONBLOCK", 0) | getattr(os, "O_NOFOLLOW", 0)
             descriptor = os.open(path, flags)
             with os.fdopen(descriptor, "rb") as stream:
-                if not stat.S_ISREG(os.fstat(stream.fileno()).st_mode):
+                opened = os.fstat(stream.fileno())
+                if not stat.S_ISREG(opened.st_mode):
                     fail(f"tracked file is non-regular: {rel}")
+                # O_NOFOLLOW protects only the last path component; Windows
+                # does not expose it at all. Bind the opened handle to the
+                # preflight file identity before reading any content.
+                if (not opened.st_ino or not info.st_ino or
+                    (opened.st_dev, opened.st_ino) != (info.st_dev, info.st_ino)):
+                    fail(f"tracked symlink or redirected path: {rel}")
+                for component, before in preflight_components:
+                    try:
+                        after = component.lstat()
+                    except OSError:
+                        fail(f"tracked file is unreadable: {rel}")
+                    reparse = getattr(after, "st_file_attributes", 0) & getattr(stat, "FILE_ATTRIBUTE_REPARSE_POINT", 0)
+                    if (stat.S_ISLNK(after.st_mode) or reparse or
+                        (after.st_dev, after.st_ino) != (before.st_dev, before.st_ino)):
+                        fail(f"tracked symlink or redirected path: {rel}")
                 data = stream.read(MAX_INSPECTED_BYTES + 1)
         except OSError:
             fail(f"tracked file is unreadable: {rel}")
