@@ -246,7 +246,9 @@ class PublicStateValidatorBypassTests(unittest.TestCase):
             self.assertTrue(swapped)
 
     def test_absent_git_index_fails_closed(self) -> None:
-        shutil.rmtree(self.root / ".git")
+        # Git packs/loose objects can be read-only on Windows; an atomic move
+        # gives the same missing-checkout condition without removing blobs.
+        (self.root / ".git").rename(self.root / ".git-disabled")
         result = self.check()
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("unable to enumerate tracked", result.stderr + result.stdout)
