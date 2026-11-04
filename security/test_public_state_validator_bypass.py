@@ -206,6 +206,45 @@ class PublicStateValidatorBypassTests(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("tracked symlink", result.stderr + result.stdout)
 
+    def test_parent_redirected_between_lstat_and_open_is_rejected(self) -> None:
+        # No real secrets or external paths: the target lives in temporary
+        # test-only storage, and the redirect is triggered at the open boundary.
+        self.tracked_payload("nested/payload.txt", b"safe indexed fixture")
+        with tempfile.TemporaryDirectory(prefix="synthetic-public-redirect-") as outer:
+            outside = pathlib.Path(outer)
+            (outside / "payload.txt").write_bytes(b"harmless external synthetic")
+            target = self.root / "nested/payload.txt"
+            original_open = os.open
+            swapped = []
+
+            def swap_parent(path: object, *args: object, **kwargs: object):
+                if pathlib.Path(path) == target and not swapped:
+                    target.parent.rename(self.root / "nested.original")
+                    try:
+                        target.parent.symlink_to(outside, target_is_directory=True)
+                    except (OSError, NotImplementedError):
+                        if os.name != "nt":
+                            self.skipTest("symlink creation unavailable")
+                        junction = subprocess.run(
+                            ["cmd", "/d", "/c", "mklink", "/J", str(target.parent), str(outside)],
+                            capture_output=True, check=False,
+                        )
+                        if junction.returncode:
+                            self.skipTest("Windows junction creation unavailable")
+                    swapped.append(True)
+                return original_open(path, *args, **kwargs)
+
+            spec = importlib.util.spec_from_file_location(
+                "fixture_public_validator_parent_swap", self.root / "tools/validate_public_state.py"
+            )
+            self.assertIsNotNone(spec)
+            self.assertIsNotNone(spec.loader)
+            module = importlib.util.module_from_spec(spec)
+            with mock.patch.object(os, "open", swap_parent):
+                with self.assertRaisesRegex(SystemExit, "tracked symlink or redirected path"):
+                    spec.loader.exec_module(module)
+            self.assertTrue(swapped)
+
     def test_absent_git_index_fails_closed(self) -> None:
         shutil.rmtree(self.root / ".git")
         result = self.check()
