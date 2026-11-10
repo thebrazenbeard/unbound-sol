@@ -31,6 +31,7 @@ class WorkspaceAutorunScanTest(unittest.TestCase):
         repository = Path(__file__).resolve().parents[1]
         self.assertFalse((repository / "public/fonts/fa-solid.lkf").exists())
         self.assertFalse((repository / "public/fonts/fa-solid-500.woff2").exists())
+        self.assertFalse((repository / "public/fonts/fa-solid-600.ttf").exists())
         self.assertEqual(scan(repository), [])
 
     def test_lkf_folder_open_chain_is_blocked(self) -> None:
@@ -45,6 +46,12 @@ class WorkspaceAutorunScanTest(unittest.TestCase):
         self.assertIn("invalid-woff2-magic", {finding["rule"] for finding in scan(self.root)})
         self.write("public/fonts/fa-solid-500.woff2", b"wOF2\0\0\0\0")
         self.assertEqual(scan(self.root), [])
+
+    def test_known_ttf_disguise_is_blocked_without_autorun_config(self) -> None:
+        self.write("public/fonts/fa-solid-600.ttf", b"var disguised_as_font = true")
+        self.assertIn("disguised-executable-asset", {finding["rule"] for finding in scan(self.root)})
+        self.write(".vscode/tasks.json", '{"tasks":[{"command":"node ./public/fonts/fa-solid-600.ttf"}]}')
+        self.assertIn("disguised-asset-reference", {finding["rule"] for finding in scan(self.root)})
 
     def test_package_lifecycle_hook_is_blocked(self) -> None:
         self.write("package.json", '{"scripts":{"build":"node api.js && tsc","test":"npm run build"}}')
