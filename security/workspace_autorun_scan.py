@@ -57,6 +57,9 @@ def scan(root: Path) -> list[dict[str, str]]:
             flag(relative, "unscanned-config", f"Cannot inspect {problem} configuration safely")
         if content is None:
             continue
+        # VS Code JSON strings decode Unicode escapes before interpreting keys/values.
+        # Normalize them for this conservative source-only signature scanner.
+        content = re.sub(r"\\u([0-9a-fA-F]{4})", lambda match: chr(int(match.group(1), 16)), content)
         if FOLDER_OPEN.search(content):
             flag(relative, "workspace-folder-open", "Automatic workspace task found")
         setting = AUTO_TASK_SETTING.search(content)
@@ -97,7 +100,7 @@ def scan(root: Path) -> list[dict[str, str]]:
                 flag(str(asset.relative_to(root)), "unscanned-asset", "Suspicious asset path is a symlink")
             elif asset.is_file():
                 if asset.suffix in {".lkf", ".ttf"}:
-                    flag(str(asset.relative_to(root)), "disguised-executable-asset", "Known suspicious .lkf path exists")
+                    flag(str(asset.relative_to(root)), "disguised-executable-asset", "Known disguised executable asset path exists")
                 else:
                     with asset.open("rb") as handle:
                         magic = handle.read(4)
