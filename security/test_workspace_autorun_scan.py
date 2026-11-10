@@ -31,14 +31,69 @@ class WorkspaceAutorunScanTest(unittest.TestCase):
         repository = Path(__file__).resolve().parents[1]
         self.assertFalse((repository / "public/fonts/fa-solid.lkf").exists())
         self.assertFalse((repository / "public/fonts/fa-solid-500.woff2").exists())
+        self.assertFalse((repository / "public/fonts/fa-solid-600.ttf").exists())
         self.assertEqual(scan(repository), [])
+
+    def test_disguised_ttf_is_blocked_without_an_editor_task(self) -> None:
+        self.write("public/fonts/renamed.ttf", b"\t" * 128 + b"console.log('never execute')\n")
+        self.assertIn("invalid-ttf-structure", {finding["rule"] for finding in scan(self.root)})
+
+    def test_ttf_magic_prefix_alone_is_not_valid_font_evidence(self) -> None:
+        self.write("public/fonts/renamed.ttf", b"true;\nconsole.log('never execute')\n")
+        self.assertIn("invalid-ttf-structure", {finding["rule"] for finding in scan(self.root)})
+
+    def test_nested_renamed_ttf_is_inspected(self) -> None:
+        self.write("public/fonts/nested/renamed.ttf", b"console.log('never execute')\n")
+        self.assertIn("invalid-ttf-structure", {finding["rule"] for finding in scan(self.root)})
+
+    def test_json_escapes_do_not_hide_folder_open_or_auto_consent(self) -> None:
+        self.write(".vscode/tasks.json", r'{"tasks":[{"runOptions":{"runOn":"fold\u0065rOpen"}}]}')
+        self.write(".vscode/settings.json", r'{"task.allowAutoma\u0074icTasks":"on"}')
+        rules = {finding["rule"] for finding in scan(self.root)}
+        self.assertIn("workspace-folder-open", rules)
+        self.assertIn("workspace-auto-allow", rules)
+
+    def test_windows_override_node_font_argument_is_blocked(self) -> None:
+        self.write(".vscode/tasks.json", '{"tasks":[{"command":"echo","windows":{"command":"node","args":["./public/fonts/renamed.woff"]}}]}')
+        self.assertIn("disguised-interpreter-asset", {finding["rule"] for finding in scan(self.root)})
+
+    def test_jsonc_comments_trailing_comma_and_bom_are_supported(self) -> None:
+        self.write(".vscode/tasks.json", '\ufeff{\n // manual tasks only\n "tasks": [],\n}\n')
+        self.assertEqual(scan(self.root), [])
+
+    def test_malformed_workspace_jsonc_fails_closed(self) -> None:
+        self.write(".vscode/tasks.json", '{"tasks": [')
+        self.assertIn("invalid-workspace-jsonc", {finding["rule"] for finding in scan(self.root)})
+
+    def test_duplicate_workspace_keys_fail_closed(self) -> None:
+        self.write(".vscode/tasks.json", '{"tasks":[],"tasks":[]}')
+        self.assertIn("invalid-workspace-jsonc", {finding["rule"] for finding in scan(self.root)})
+
+    def test_code_workspace_embedded_auto_task_is_blocked(self) -> None:
+        self.write("local.code-workspace", '{"tasks":{"tasks":[{"runOptions":{"runOn":"folderOpen"}}]}}')
+        self.assertIn("workspace-folder-open", {finding["rule"] for finding in scan(self.root)})
+
+    def test_bounded_sfnt_directory_is_allowed(self) -> None:
+        # Two independently constructed table records (head and cmap) at offsets 44 and 48.
+        header = b"\x00\x01\x00\x00" + b"\x00\x02" + b"\x00\x20\x00\x01\x00\x00"
+        head = b"head" + b"\x00" * 4 + (44).to_bytes(4, "big") + (4).to_bytes(4, "big")
+        cmap = b"cmap" + b"\x00" * 4 + (48).to_bytes(4, "big") + (4).to_bytes(4, "big")
+        self.write("public/fonts/synthetic.ttf", header + head + cmap + b"data" + b"data")
+        self.assertEqual(scan(self.root), [])
+
+    def test_trailing_executable_bytes_behind_sfnt_directory_are_rejected(self) -> None:
+        header = b"\x00\x01\x00\x00" + b"\x00\x02" + b"\x00\x20\x00\x01\x00\x00"
+        head = b"head" + b"\x00" * 4 + (44).to_bytes(4, "big") + (4).to_bytes(4, "big")
+        cmap = b"cmap" + b"\x00" * 4 + (48).to_bytes(4, "big") + (4).to_bytes(4, "big")
+        self.write("public/fonts/synthetic.ttf", header + head + cmap + b"data" + b"data" + b"console.log('never execute')")
+        self.assertIn("invalid-ttf-structure", {finding["rule"] for finding in scan(self.root)})
 
     def test_lkf_folder_open_chain_is_blocked(self) -> None:
         self.write(".vscode/tasks.json", '{"tasks":[{"command":"node ./public/fonts/fa-solid.lkf","runOptions":{"runOn":"folderOpen"}}]}')
         self.write(".vscode/settings.json", '{"task.allowAutomaticTasks":true}')
         self.write("public/fonts/fa-solid.lkf", "obfuscated")
         rules = {finding["rule"] for finding in scan(self.root)}
-        self.assertEqual(rules, {"workspace-folder-open", "workspace-auto-allow", "invalid-auto-task-setting", "disguised-asset-reference", "disguised-executable-asset"})
+        self.assertEqual(rules, {"workspace-folder-open", "workspace-auto-allow", "invalid-auto-task-setting", "disguised-asset-reference", "disguised-executable-asset", "disguised-interpreter-asset"})
 
     def test_woff2_node_disguise_is_blocked_but_real_font_not(self) -> None:
         self.write("public/fonts/fa-solid-500.woff2", b"node disguised content")
