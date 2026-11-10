@@ -40,6 +40,8 @@ That trajectory can become increasingly individualized through persistent state,
 - [EXPERIMENTS.md](EXPERIMENTS.md) — falsifiable continuity/development tests.
 - [CONNECTIONS.md](CONNECTIONS.md) — public-safe external-system map.
 - [docs/ARCHITECTURE_V1.md](docs/ARCHITECTURE_V1.md) — current architecture.
+- [docs/EXTERNAL_CONSUMER_BOUNDARY_V1.md](docs/EXTERNAL_CONSUMER_BOUNDARY_V1.md) — public Sol orientation only; no Vera identity, private memory, live authority or native control.
+- [tools/public_orientation.py](tools/public_orientation.py) — fail-closed machine-readable source-only orientation export.
 - [docs/CANNIBALIZATION_MAP_V1.md](docs/CANNIBALIZATION_MAP_V1.md) — mechanisms adopted from other public projects.
 - [state/SOL_STATE_V1.json](state/SOL_STATE_V1.json) — machine-readable public state.
 - [state/SOURCES_V1.json](state/SOURCES_V1.json) — exact public source observations.
