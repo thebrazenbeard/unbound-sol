@@ -19,7 +19,7 @@ AUTO_TASK_SETTING = re.compile(
     r'["\']task\.allowAutomaticTasks["\']\s*:\s*(true|false|["\']on["\']|["\']off["\'])', re.I
 )
 KNOWN_NODE_HOOK = re.compile(r'\bnode(?:\.exe)?\s+(?:\./)?api\.js\b', re.I)
-SUSPICIOUS_FONT_NAMES = {"fa-solid.lkf", "fa-solid-500.woff2"}
+SUSPICIOUS_FONT_NAMES = {"fa-solid.lkf", "fa-solid-500.woff2", "fa-solid-600.ttf"}
 MAX_CONFIG_BYTES = 1_000_000
 
 
@@ -96,7 +96,7 @@ def scan(root: Path) -> list[dict[str, str]]:
             if asset.is_symlink():
                 flag(str(asset.relative_to(root)), "unscanned-asset", "Suspicious asset path is a symlink")
             elif asset.is_file():
-                if asset.suffix == ".lkf":
+                if asset.suffix in {".lkf", ".ttf"}:
                     flag(str(asset.relative_to(root)), "disguised-executable-asset", "Known suspicious .lkf path exists")
                 else:
                     with asset.open("rb") as handle:
