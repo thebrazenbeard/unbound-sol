@@ -53,6 +53,10 @@ class WorkspaceAutorunScanTest(unittest.TestCase):
         self.write(".vscode/tasks.json", '{"tasks":[{"command":"node ./public/fonts/fa-solid-600.ttf"}]}')
         self.assertIn("disguised-asset-reference", {finding["rule"] for finding in scan(self.root)})
 
+    def test_unicode_escaped_folder_open_keys_are_blocked(self) -> None:
+        self.write(".vscode/tasks.json", r'{"tasks":[{"runOptions":{"r\u0075nOn":"f\u006flderOpen"}}]}')
+        self.assertIn("workspace-folder-open", {finding["rule"] for finding in scan(self.root)})
+
     def test_package_lifecycle_hook_is_blocked(self) -> None:
         self.write("package.json", '{"scripts":{"build":"node api.js && tsc","test":"npm run build"}}')
         self.assertIn("known-node-hook", {finding["rule"] for finding in scan(self.root)})
