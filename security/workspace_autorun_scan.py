@@ -19,7 +19,7 @@ FOLDER_OPEN = re.compile(r'["\']runOn["\']\s*:\s*["\']folderOpen["\']', re.I)
 AUTO_TASK_SETTING = re.compile(
     r'["\']task\.allowAutomaticTasks["\']\s*:\s*(true|false|["\']on["\']|["\']off["\'])', re.I
 )
-KNOWN_NODE_HOOK = re.compile(r'\bnode(?:\.exe)?\s+(?:\.[\\/])?api\.js\b', re.I)
+KNOWN_NODE_HOOK = re.compile(r'\bnode(?:\.exe)?\s+(?:\.[\\/]+)?api\.js\b', re.I)
 SUSPICIOUS_FONT_NAMES = {"fa-solid.lkf", "fa-solid-500.woff2", "fa-solid-600.ttf"}
 MAX_CONFIG_BYTES = 1_000_000
 MAX_TTF_BYTES = 64 * 1024 * 1024
