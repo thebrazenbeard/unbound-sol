@@ -194,13 +194,14 @@ def _read_text(root: Path, relative: str) -> tuple[str | None, str | None]:
     return path.read_text(encoding="utf-8", errors="replace"), None
 
 
-def _workspace_config_paths(root: Path) -> tuple[list[str], list[str]]:
+def _workspace_config_paths(root: Path) -> tuple[list[str], list[str], list[str]]:
     """Enumerate nested VS Code config without following symlinked directories.
 
     Generated dependencies and .git internals are not workspace source files.
     Directory read failures cannot silently produce a clean result.
     """
     configs = {".vscode/tasks.json", ".vscode/settings.json"}
+    packages = {"package.json"}
     unreadable: list[str] = []
     excluded = {".git", "node_modules", ".venv", "venv", "__pycache__", ".tox"}
 
@@ -212,8 +213,11 @@ def _workspace_config_paths(root: Path) -> tuple[list[str], list[str]]:
         in_editor_config = parent.name.casefold() == ".vscode"
         for filename in files:
             folded = filename.casefold()
+            relative = (parent / filename).relative_to(root).as_posix()
             if (in_editor_config and folded in {"tasks.json", "settings.json"}) or folded.endswith(".code-workspace"):
-                configs.add((parent / filename).relative_to(root).as_posix())
+                configs.add(relative)
+            if folded == "package.json":
+                packages.add(relative)
 
         safe_directories = []
         for dirname in directories:
@@ -229,7 +233,7 @@ def _workspace_config_paths(root: Path) -> tuple[list[str], list[str]]:
                 safe_directories.append(dirname)
         directories[:] = safe_directories
 
-    return sorted(configs), unreadable
+    return sorted(configs), sorted(packages), unreadable
 
 
 def scan(root: Path) -> list[dict[str, str]]:
@@ -239,7 +243,7 @@ def scan(root: Path) -> list[dict[str, str]]:
     def flag(path: str, rule: str, detail: str) -> None:
         findings.append({"path": path, "rule": rule, "detail": detail})
 
-    config_paths, blocked_directories = _workspace_config_paths(root)
+    config_paths, package_paths, blocked_directories = _workspace_config_paths(root)
     for directory in blocked_directories:
         flag(directory, "unscanned-config", "Cannot safely inspect a directory while locating workspace files")
     for relative in config_paths:
@@ -275,21 +279,28 @@ def scan(root: Path) -> list[dict[str, str]]:
             if name in content:
                 flag(relative, "disguised-asset-reference", f"References {name}")
 
-    package, problem = _read_text(root, "package.json")
-    if problem:
-        flag("package.json", "unscanned-config", f"Cannot inspect {problem} package file safely")
-    if package is not None:
+    for relative in package_paths:
+        package, problem = _read_text(root, relative)
+        if problem:
+            flag(relative, "unscanned-config", f"Cannot inspect {problem} package file safely")
+        if package is None:
+            continue
         try:
-            scripts = json.loads(package).get("scripts", {})
-        except (ValueError, AttributeError):
-            flag("package.json", "invalid-package-json", "Cannot inspect scripts reliably")
-        else:
-            if not isinstance(scripts, dict):
-                flag("package.json", "invalid-scripts", "Scripts must be an object")
-            else:
-                for name, command in scripts.items():
-                    if isinstance(command, str) and KNOWN_NODE_HOOK.search(command):
-                        flag("package.json", "known-node-hook", f"Script {name!r} invokes node api.js")
+            manifest = json.loads(package)
+            scripts = manifest.get("scripts", {}) if isinstance(manifest, dict) else None
+        except ValueError:
+            flag(relative, "invalid-package-json", "Cannot inspect scripts reliably")
+            continue
+        if not isinstance(scripts, dict):
+            flag(relative, "invalid-scripts", "Scripts must be an object")
+            continue
+        for name, command in scripts.items():
+            if not isinstance(command, str):
+                continue
+            if KNOWN_NODE_HOOK.search(command):
+                flag(relative, "known-node-hook", f"Script {name!r} invokes node api.js")
+            if NODE_INTERPRETER.search(command) and FONT_PROGRAM.search(command):
+                flag(relative, "disguised-interpreter-asset", f"Script {name!r} runs a font-like asset using Node")
 
     fonts = root / "public" / "fonts"
     guarded_fonts, problem = _guarded_path(root, "public/fonts")
