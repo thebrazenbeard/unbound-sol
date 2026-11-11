@@ -73,6 +73,41 @@ class WorkspaceAutorunScanTest(unittest.TestCase):
         self.write("local.code-workspace", '{"tasks":{"tasks":[{"runOptions":{"runOn":"folderOpen"}}]}}')
         self.assertIn("workspace-folder-open", {finding["rule"] for finding in scan(self.root)})
 
+    def test_nested_editor_folder_open_task_is_rejected(self) -> None:
+        self.write(
+            "packages/crew/.vscode/tasks.json",
+            '{"tasks":[{"label":"inert fixture","runOptions":{"runOn":"folderOpen"}}]}',
+        )
+        findings = {(entry["path"], entry["rule"]) for entry in scan(self.root)}
+        self.assertIn(("packages/crew/.vscode/tasks.json", "workspace-folder-open"), findings)
+
+    def test_nested_case_variant_workspace_and_windows_override_are_rejected(self) -> None:
+        self.write(
+            "apps/crew/.VSCODE/TASKS.JSON",
+            '{"tasks":[{"command":"echo","windows":{"command":"node","args":["./public/fonts/not-a-font.ttf"]}}]}',
+        )
+        self.write(
+            "apps/crew/CREW.CODE-WORKSPACE",
+            '{"tasks":{"tasks":[{"runOptions":{"runOn":"folderOpen"}}]}}',
+        )
+        findings = {(entry["path"], entry["rule"]) for entry in scan(self.root)}
+        self.assertIn(("apps/crew/.VSCODE/TASKS.JSON", "disguised-interpreter-asset"), findings)
+        self.assertIn(("apps/crew/CREW.CODE-WORKSPACE", "workspace-folder-open"), findings)
+
+    def test_nested_editor_auto_consent_is_rejected(self) -> None:
+        self.write("modules/client/.VSCODE/SETTINGS.JSON", '{"task.allowAutomaticTasks":"on"}')
+        findings = {(entry["path"], entry["rule"]) for entry in scan(self.root)}
+        self.assertIn(("modules/client/.VSCODE/SETTINGS.JSON", "workspace-auto-allow"), findings)
+
+    def test_repair_preserves_local_config_and_dependency_ignores(self) -> None:
+        repository = Path(__file__).resolve().parents[1]
+        patterns = {
+            value.strip()
+            for value in (repository / ".gitignore").read_text(encoding="utf-8").splitlines()
+            if value.strip() and not value.lstrip().startswith("#")
+        }
+        self.assertTrue({"config.bat", "node_modules"} <= patterns)
+
     def test_bounded_sfnt_directory_is_allowed(self) -> None:
         # Two independently constructed table records (head and cmap) at offsets 44 and 48.
         header = b"\x00\x01\x00\x00" + b"\x00\x02" + b"\x00\x20\x00\x01\x00\x00"
