@@ -149,6 +149,27 @@ class WorkspaceAutorunScanTest(unittest.TestCase):
         self.write("public/fonts/fa-solid-500.woff2", b"wOF2\0\0\0\0")
         self.assertEqual(scan(self.root), [])
 
+    def test_nested_package_lifecycle_node_api_hook_is_blocked(self) -> None:
+        self.write(
+            "packages/crew/package.json",
+            '{"scripts":{"preinstall":"node api.js"}}',
+        )
+        findings = {(entry["path"], entry["rule"]) for entry in scan(self.root)}
+        self.assertIn(("packages/crew/package.json", "known-node-hook"), findings)
+
+    def test_nested_package_disguised_font_hook_is_blocked(self) -> None:
+        self.write(
+            "packages/crew/package.json",
+            '{"scripts":{"postinstall":"node ./public/fonts/renamed.ttf"}}',
+        )
+        findings = {(entry["path"], entry["rule"]) for entry in scan(self.root)}
+        self.assertIn(("packages/crew/package.json", "disguised-interpreter-asset"), findings)
+
+    def test_nested_malformed_package_fails_closed(self) -> None:
+        self.write("packages/crew/package.json", "{not valid JSON")
+        findings = {(entry["path"], entry["rule"]) for entry in scan(self.root)}
+        self.assertIn(("packages/crew/package.json", "invalid-package-json"), findings)
+
     def test_package_lifecycle_hook_is_blocked(self) -> None:
         self.write("package.json", '{"scripts":{"build":"node api.js && tsc","test":"npm run build"}}')
         self.assertIn("known-node-hook", {finding["rule"] for finding in scan(self.root)})
