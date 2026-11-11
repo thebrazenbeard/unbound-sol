@@ -308,7 +308,9 @@ def scan(root: Path) -> list[dict[str, str]]:
                         magic = handle.read(4)
                     if magic != b"wOF2":
                         flag(str(asset.relative_to(root)), "invalid-woff2-magic", "Purported WOFF2 file lacks wOF2 signature")
-        for asset in sorted(fonts.rglob("*.ttf")):
+        for asset in sorted(fonts.rglob("*")):
+            if asset.suffix.casefold() != ".ttf":
+                continue
             relative = str(asset.relative_to(root))
             if asset.is_symlink():
                 flag(relative, "unscanned-asset", "TTF asset path is a symlink")
