@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -193,6 +194,44 @@ def _read_text(root: Path, relative: str) -> tuple[str | None, str | None]:
     return path.read_text(encoding="utf-8", errors="replace"), None
 
 
+def _workspace_config_paths(root: Path) -> tuple[list[str], list[str]]:
+    """Enumerate nested VS Code config without following symlinked directories.
+
+    Generated dependencies and .git internals are not workspace source files.
+    Directory read failures cannot silently produce a clean result.
+    """
+    configs = {".vscode/tasks.json", ".vscode/settings.json"}
+    unreadable: list[str] = []
+    excluded = {".git", "node_modules", ".venv", "venv", "__pycache__", ".tox"}
+
+    def on_error(_error: OSError) -> None:
+        unreadable.append("directory-enumeration-error")
+
+    for folder, directories, files in os.walk(root, topdown=True, followlinks=False, onerror=on_error):
+        parent = Path(folder)
+        in_editor_config = parent.name.casefold() == ".vscode"
+        for filename in files:
+            folded = filename.casefold()
+            if (in_editor_config and folded in {"tasks.json", "settings.json"}) or folded.endswith(".code-workspace"):
+                configs.add((parent / filename).relative_to(root).as_posix())
+
+        safe_directories = []
+        for dirname in directories:
+            if dirname.casefold() in excluded:
+                continue
+            candidate = parent / dirname
+            if candidate.is_symlink():
+                if dirname.casefold() == ".vscode":
+                    configs.add((candidate / "tasks.json").relative_to(root).as_posix())
+                else:
+                    unreadable.append(candidate.relative_to(root).as_posix())
+            else:
+                safe_directories.append(dirname)
+        directories[:] = safe_directories
+
+    return sorted(configs), unreadable
+
+
 def scan(root: Path) -> list[dict[str, str]]:
     """Return evidence, not a host-execution or malware attribution verdict."""
     findings: list[dict[str, str]] = []
@@ -200,8 +239,9 @@ def scan(root: Path) -> list[dict[str, str]]:
     def flag(path: str, rule: str, detail: str) -> None:
         findings.append({"path": path, "rule": rule, "detail": detail})
 
-    config_paths = [".vscode/tasks.json", ".vscode/settings.json"]
-    config_paths.extend(str(path.relative_to(root)) for path in sorted(root.glob("*.code-workspace")))
+    config_paths, blocked_directories = _workspace_config_paths(root)
+    for directory in blocked_directories:
+        flag(directory, "unscanned-config", "Cannot safely inspect a directory while locating workspace files")
     for relative in config_paths:
         content, problem = _read_text(root, relative)
         if problem:
@@ -217,7 +257,7 @@ def scan(root: Path) -> list[dict[str, str]]:
             if AUTO_TASK_SETTING.search(content):
                 flag(relative, "workspace-auto-allow", "Automatic-task setting exists in malformed configuration")
         else:
-            if relative == ".vscode/settings.json" and isinstance(decoded.get("tasks"), (dict, list)):
+            if Path(relative).name.casefold() == "settings.json" and Path(relative).parent.name.casefold() == ".vscode" and isinstance(decoded.get("tasks"), (dict, list)):
                 flag(relative, "workspace-embedded-tasks", "Settings file embeds workspace tasks")
             for node in _walk_objects(decoded):
                 if node.get("runOn") == "folderOpen":
