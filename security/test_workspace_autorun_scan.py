@@ -157,6 +157,11 @@ class WorkspaceAutorunScanTest(unittest.TestCase):
         findings = {(entry["path"], entry["rule"]) for entry in scan(self.root)}
         self.assertIn(("packages/crew/package.json", "known-node-hook"), findings)
 
+    def test_nested_package_relative_api_hook_is_blocked(self) -> None:
+        self.write("packages/crew/package.json", '{"scripts":{"postinstall":"node ./api.js"}}')
+        findings = {(entry["path"], entry["rule"]) for entry in scan(self.root)}
+        self.assertIn(("packages/crew/package.json", "known-node-hook"), findings)
+
     def test_nested_package_disguised_font_hook_is_blocked(self) -> None:
         self.write(
             "packages/crew/package.json",
