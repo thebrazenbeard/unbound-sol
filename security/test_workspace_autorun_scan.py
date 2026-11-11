@@ -99,6 +99,19 @@ class WorkspaceAutorunScanTest(unittest.TestCase):
         findings = {(entry["path"], entry["rule"]) for entry in scan(self.root)}
         self.assertIn(("modules/client/.VSCODE/SETTINGS.JSON", "workspace-auto-allow"), findings)
 
+    def test_platform_only_windows_command_cannot_hide_disguised_font(self) -> None:
+        self.write(
+            ".vscode/tasks.json",
+            '{"tasks":[{"windows":{"command":"node","args":["./public/fonts/hidden.ttf"]}}]}',
+        )
+        findings = {entry["rule"] for entry in scan(self.root)}
+        self.assertIn("disguised-interpreter-asset", findings)
+
+    def test_uppercase_ttf_without_task_cannot_hide_fake_font(self) -> None:
+        self.write("public/fonts/UNTRUSTED.TTF", b"console.log('inert fixture')\\n")
+        findings = {entry["rule"] for entry in scan(self.root)}
+        self.assertIn("invalid-ttf-structure", findings)
+
     def test_repair_preserves_local_config_and_dependency_ignores(self) -> None:
         repository = Path(__file__).resolve().parents[1]
         patterns = {
