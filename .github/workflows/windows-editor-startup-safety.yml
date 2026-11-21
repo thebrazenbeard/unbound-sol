@@ -4,7 +4,9 @@ name: unbound-sol Windows editor startup safety
 # default-branch workflow and treats the candidate checkout strictly as data.
 on:
   pull_request:
+    branches: [main]
   pull_request_target:
+    branches: [main]
   push:
     branches: [main]
   workflow_dispatch:
@@ -17,6 +19,14 @@ jobs:
     runs-on: windows-latest
     timeout-minutes: 15
     steps:
+      - name: Require trusted main as PR base
+        shell: pwsh
+        env:
+          BASE_BRANCH: ${{ github.event.pull_request.base.ref || 'main' }}
+          BASE_REPOSITORY: ${{ github.event.pull_request.base.repo.full_name || github.repository }}
+        run: |
+          if ($env:BASE_BRANCH -ne 'main') { throw "PR base must be main" }
+          if ($env:BASE_REPOSITORY -ne $env:GITHUB_REPOSITORY) { throw "PR base must belong to this repository" }
       - name: Check out trusted base for scanner and tests
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
