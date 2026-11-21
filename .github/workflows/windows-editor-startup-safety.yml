@@ -1,7 +1,10 @@
 name: unbound-sol Windows editor startup safety
 
+# PR-head workflows are provisional; pull_request_target runs the trusted
+# default-branch workflow and treats the candidate checkout strictly as data.
 on:
   pull_request:
+  pull_request_target:
   push:
     branches: [main]
   workflow_dispatch:
@@ -14,28 +17,42 @@ jobs:
     runs-on: windows-latest
     timeout-minutes: 15
     steps:
-      - name: Check out exact PR head or main commit
+      - name: Check out trusted base for scanner and tests
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          ref: ${{ github.event.pull_request.base.sha || github.sha }}
+          path: trusted-tools
           persist-credentials: false
-      - name: Verify checked-out source identity
+      - name: Check out PR candidate as untrusted data
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: candidate
+          persist-credentials: false
+      - name: Verify exact trusted and candidate source commits
         shell: pwsh
         env:
-          EXPECTED_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+          EXPECTED_TRUSTED_SHA: ${{ github.event.pull_request.base.sha || github.sha }}
+          EXPECTED_CANDIDATE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
         run: |
-          $actual = (git rev-parse HEAD).Trim()
-          if ($actual -ne $env:EXPECTED_SHA) { throw "Exact source commit mismatch" }
+          $trusted = (git -C trusted-tools rev-parse HEAD).Trim()
+          if ($trusted -ne $env:EXPECTED_TRUSTED_SHA) { throw "Trusted source commit mismatch" }
+          $candidate = (git -C candidate rev-parse HEAD).Trim()
+          if ($candidate -ne $env:EXPECTED_CANDIDATE_SHA) { throw "Candidate source commit mismatch" }
       - name: Use pinned Python
         uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: '3.12'
-      - name: Guard editor startup without executing workspace assets
+      - name: Inspect candidate as data using trusted base scanner
         shell: pwsh
         run: |
-          python -B security/workspace_autorun_scan.py .
+          python -B trusted-tools/security/workspace_autorun_scan.py candidate
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-          python -B -m unittest discover -s security -p 'test_*.py' -v
+          python -B -m unittest discover -s trusted-tools/security -p 'test_*.py' -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-          python -B tools/validate_public_state.py
+      - name: Validate trusted base public state only
+        shell: pwsh
+        run: |
+          python -B trusted-tools/tools/validate_public_state.py
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
