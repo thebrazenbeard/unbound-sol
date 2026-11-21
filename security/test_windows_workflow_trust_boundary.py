@@ -28,3 +28,11 @@ class WindowsWorkflowTrustBoundaryTest(unittest.TestCase):
         self.assertIn("EXPECTED_CANDIDATE_SHA:", self.workflow)
         self.assertIn("throw \"Trusted source commit mismatch\"", self.workflow)
         self.assertIn("throw \"Candidate source commit mismatch\"", self.workflow)
+
+    def test_untrusted_pull_request_target_must_target_main_in_same_repository(self):
+        self.assertIn("pull_request_target:\n    branches: [main]", self.workflow)
+        self.assertIn("pull_request:\n    branches: [main]", self.workflow)
+        self.assertIn("BASE_BRANCH: ${{ github.event.pull_request.base.ref || 'main' }}", self.workflow)
+        self.assertIn("BASE_REPOSITORY: ${{ github.event.pull_request.base.repo.full_name || github.repository }}", self.workflow)
+        self.assertIn("if ($env:BASE_BRANCH -ne 'main')", self.workflow)
+        self.assertIn("if ($env:BASE_REPOSITORY -ne $env:GITHUB_REPOSITORY)", self.workflow)
